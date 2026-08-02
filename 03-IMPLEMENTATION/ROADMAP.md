@@ -828,12 +828,12 @@ admin lifecycle (M3).
   defense-in-depth, not a substitute. See
   [store-and-key-lifecycle](../02-DESIGN/soulfold/store-and-key-lifecycle.md)
   and [journey 0004](../04-JOURNEY/0051-soulfold-kv-encryption-at-rest.md).
-- **The bootstrap story** (gates M3): the first admin's first passkey —
-  the fold's equivalent of soulidentity's first-key research; invite
-  URLs, their custody, and their honest naming.
-- **The pocket-id surface audit** (informs M3): which of pocket-id's
-  admin capabilities the fold actually needs, held against constitution
-  III — the smallest lifecycle surface that serves a real deployment.
+- **The bootstrap story** (gates M3) — **opened 2026-08-03** as
+  [bootstrap-story](../01-RESEARCH/bootstrap-story/README.md), four
+  pre-registered bars: the from-nothing ceremony counted and closed,
+  invites bearer-shaped and D12-honest, the store alone unable to
+  enroll, and the pocket-id surface audit as M3's scope input (the
+  audit folded in as Bar 4).
 
 ### One-way doors
 
