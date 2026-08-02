@@ -543,6 +543,18 @@ directive) — both since dissolved by the upstream landings above.
 
 ### soulfold — the fold (as of 2026-08-02)
 
+**M4 ships — the fold joins the fleet**
+([episode 0007](0054-soulfold-m4-the-fold-in-the-fleet.md);
+`specs/003-fold-in-the-fleet/`, the `e2e/` rig module): a browser
+user's passkey sign-in becomes a NATS admission — fold-issued access
+token + public sentinel through soulidentity's auth callout at its
+published tag v0.1.0, the role value resolving against the declared
+binding, scope server-enforced, refusals audited; and the identical
+rig passes with an Entra-shaped stub (constitution II demonstrated).
+The fold's tokens speak Entra's claim vocabulary (oid /
+preferred_username / roles) because the seam's verifier keys subjects
+by oid. **Soulnode's public door is unblocked; M5 (embed) next.**
+
 **M2 ships — the refusal becomes behavior**
 ([episode 0006](0053-soulfold-m2-passkeys.md); `specs/002-passkeys/`):
 WebAuthn ceremonies from go-webauthn are the only way through — the
@@ -678,6 +690,7 @@ key-lifecycle research. No product code exists yet.
 | 0051 | soulfold | [The envelope is decided: xkeys seal the store (2026-08-02)](0051-soulfold-kv-encryption-at-rest.md) |
 | 0052 | soulfold | [M1 ships: the OP skeleton on the sealed store (2026-08-02)](0052-soulfold-m1-the-op-skeleton.md) |
 | 0053 | soulfold | [M2 ships: passkeys, the refusal becomes behavior (2026-08-02)](0053-soulfold-m2-passkeys.md) |
+| 0054 | soulfold | [M4 ships: the fold joins the fleet (2026-08-02)](0054-soulfold-m4-the-fold-in-the-fleet.md) |
 
 ## Pre-merge numbering map
 

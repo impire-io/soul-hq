@@ -16,7 +16,7 @@ changes to it are decisions and belong in the journey as episodes.
 | [soulrealm](#soulrealm--the-room) | Phases 1–2 complete — native, microsandbox, and Kubernetes backends run byte-identical declarations; soulstream pinned | Phase 3 (Fleet) unblocked: design 0003, M3.1 runs spec-kit next |
 | [soulidentity](#soulidentity--the-name) | M1/M3/M4 shipped (+ Entra/OIDC lane, D25 registry dissolution, D28/D29 consumer-proven additions); `v0.1.0` tagged | M2's node half — proven upstream by soulstream 018; roadmap check-off pending. M5 gated on soulstream demand |
 | [soulnode](#soulnode--the-house) | Phases 1–2 (local mode) complete: `init && up`, agent under enforcement, MCP door on the founding token; all four upstreams pinned by tag (2026-08-02) | Public door mode gated on soulfold upstream; Phase 3 (tsnet) gated on Phase 2 fronting measured insufficient |
-| [soulfold](#soulfold--the-fold) | M1+M2 shipped ([episodes 0052](../04-JOURNEY/0052-soulfold-m1-the-op-skeleton.md)/[0053](../04-JOURNEY/0053-soulfold-m2-passkeys.md)): the OP skeleton on the sealed store + passkey ceremonies as the only way in; physical-authenticator runbook pending (human act) | M4 (the callout admission proof) next per the public-door priority; then M5 embed; M3 last |
+| [soulfold](#soulfold--the-fold) | M1+M2+M4 shipped ([episodes 0052](../04-JOURNEY/0052-soulfold-m1-the-op-skeleton.md)/[0053](../04-JOURNEY/0053-soulfold-m2-passkeys.md)/[0054](../04-JOURNEY/0054-soulfold-m4-the-fold-in-the-fleet.md)): passkey sign-in → access token → callout admission proven both-arms at soulidentity v0.1.0; physical-authenticator runbook pending (human act) | soulnode public door unblocked; M5 (embed) next; M3 last |
 
 Cross-component dependencies, tracked openly: soulnode consumes everything by
 tag — the standing pin exception closed 2026-08-02 (soulrealm v0.1.0,
@@ -759,14 +759,20 @@ admin lifecycle (M3).
    **Gate**: from-nothing bootstrap to a signed-in admin in a counted,
    documented number of acts; group membership changes surface in the
    next issued token [measured].
-4. **M4 — the fold in the fleet.** The consumer-position proof against
-   soulidentity: a soulfold-issued access token admits a browser user
-   through soulidentity's auth callout (its D23 seam), the token's role
-   value naming a declared role — with zero soulfold-aware behavior on
-   either side. **Gate**: the admission proven in an e2e rig importing
-   both systems from consumer position; the same rig passing with the
-   fold swapped for the stub issuer, demonstrating indistinguishability
-   [measured].
+4. ✅ **M4 — the fold in the fleet** (shipped 2026-08-02 — before M3,
+   the operator's public-door priority — [journey
+   0007](../04-JOURNEY/0054-soulfold-m4-the-fold-in-the-fleet.md),
+   `specs/003-fold-in-the-fleet/`, the `e2e/` rig module). **Gate met
+   [measured]**: a passkey user's fold-issued access token admits
+   through soulidentity's callout — imported at its published tag
+   v0.1.0 via the public embed seam, configured with issuer URL +
+   audience only — the role value resolving against the declared
+   binding, scope server-enforced, refusals audited; and the identical
+   rig passes with an Entra-shaped stub issuer
+   (indistinguishability). Decision of record: the fold's access
+   tokens speak Entra's claim vocabulary (oid / preferred_username /
+   roles) because the seam's verifier keys subjects by oid
+   [mechanism-argument].
 5. **M5 — the embed seam and the default wiring.** The public serve
    assembly (the ecosystem's embed pattern, soulidentity D29) so the
    single-binary distribution runs the fold in-process, and the
