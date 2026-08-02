@@ -456,7 +456,23 @@ questions before their milestones (NGS callout
 capabilities, the sentinel-credential flow, the first-key story, the
 claims-mapping shape, service round-trip latency) are named on the roadmap.
 
-### soulnode — the house (as of 2026-08-02)
+### soulnode — the house (as of 2026-08-03)
+
+**The public door opens — Phase 2 completes**
+([episode 0007](0055-soulnode-the-public-door.md);
+`specs/005-public-door/`): `planes.door` grew
+`public_url`/`auth_issuer`/`auth_audience` additively and the node now
+serves the whole hosted-client OAuth story — a scripted client knowing
+only the door URL walks challenge → resource metadata → DCR →
+code+PKCE → token, and the bearer forms an MCP session whose realm
+identity is the token's subject (lane=oidc, role=realm in the audit).
+Founding token coexists; undeclared roles and garbage refuse; the
+listener stays loopback with HTTPS as deployment fronting. Measured
+against the upstream AS contract's stand-in — AS-agnostic, soulfold
+the intended default (its own admission proof is episode 0054). Bonus
+root-cause fix: listen port 0 no longer collides with nats-server's
+default-port reading. **Next:** the bundled-fold wiring (soulfold M5),
+day-2, or Phase 3's tsnet gate when fronting measures insufficient.
 
 **The door is open — Phase 2's local mode is done** ([episode
 0006](0049-soulnode-the-door-opens.md); `specs/004-the-front-door/`): upstream's
@@ -691,6 +707,7 @@ key-lifecycle research. No product code exists yet.
 | 0052 | soulfold | [M1 ships: the OP skeleton on the sealed store (2026-08-02)](0052-soulfold-m1-the-op-skeleton.md) |
 | 0053 | soulfold | [M2 ships: passkeys, the refusal becomes behavior (2026-08-02)](0053-soulfold-m2-passkeys.md) |
 | 0054 | soulfold | [M4 ships: the fold joins the fleet (2026-08-02)](0054-soulfold-m4-the-fold-in-the-fleet.md) |
+| 0055 | soulnode | [The public door opens (2026-08-03)](0055-soulnode-the-public-door.md) |
 
 ## Pre-merge numbering map
 

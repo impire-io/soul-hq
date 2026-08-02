@@ -15,7 +15,7 @@ changes to it are decisions and belong in the journey as episodes.
 | [soulstream](#soulstream--the-record) | `v0.7.0` — MVP + most of day-2 shipped; the remote MCP node built and consumable; two-week dogfood run live since 2026-07-27 | Sealed-topics build priority gated on the dogfood chafe log (to 2026-08-10); eg-walker gated on stage-1 chafe |
 | [soulrealm](#soulrealm--the-room) | Phases 1–2 complete — native, microsandbox, and Kubernetes backends run byte-identical declarations; soulstream pinned | Phase 3 (Fleet) unblocked: design 0003, M3.1 runs spec-kit next |
 | [soulidentity](#soulidentity--the-name) | M1/M3/M4 shipped (+ Entra/OIDC lane, D25 registry dissolution, D28/D29 consumer-proven additions); `v0.1.0` tagged | M2's node half — proven upstream by soulstream 018; roadmap check-off pending. M5 gated on soulstream demand |
-| [soulnode](#soulnode--the-house) | Phases 1–2 (local mode) complete: `init && up`, agent under enforcement, MCP door on the founding token; all four upstreams pinned by tag (2026-08-02) | Public door mode gated on soulfold upstream; Phase 3 (tsnet) gated on Phase 2 fronting measured insufficient |
+| [soulnode](#soulnode--the-house) | Phase 2 complete including public mode ([episode 0055](../04-JOURNEY/0055-soulnode-the-public-door.md)): the full hosted-client OAuth story — challenge → metadata → DCR → PKCE → bearer MCP session — measured against the AS contract; all four upstreams pinned by tag | Bundled-fold default wiring rides soulfold M5; Phase 3 (tsnet) gated on fronting measured insufficient |
 | [soulfold](#soulfold--the-fold) | M1+M2+M4 shipped ([episodes 0052](../04-JOURNEY/0052-soulfold-m1-the-op-skeleton.md)/[0053](../04-JOURNEY/0053-soulfold-m2-passkeys.md)/[0054](../04-JOURNEY/0054-soulfold-m4-the-fold-in-the-fleet.md)): passkey sign-in → access token → callout admission proven both-arms at soulidentity v0.1.0; physical-authenticator runbook pending (human act) | soulnode public door unblocked; M5 (embed) next; M3 last |
 
 Cross-component dependencies, tracked openly: soulnode consumes everything by
@@ -646,11 +646,20 @@ v0.7.0), its node module made consumable (soulstream journey 0010).
   custodies nothing (state dir untouched); disabled arm identical to
   Phase 1. The fourth pseudo-version pin (`soulstream/node`) closed
   2026-08-02 with the `node/v0.7.0` tag.
-- **Public mode — named, upstream-gated**: the OAuth resource-metadata
-  story needs an external authorization server (soulfold is upstream's
-  intended AS); `planes.door` grows `public_url`/`auth_issuer`
-  additively when it exists. HTTPS today is deployment fronting
-  (`tailscale serve` before the loopback door).
+- **Public mode.** ✅ **Done** ([episode
+  0055](../04-JOURNEY/0055-soulnode-the-public-door.md);
+  `specs/005-public-door/`). `planes.door` grew
+  `public_url`/`auth_issuer`/`auth_audience` additively (a package
+  deal, validated); the OIDC lane rides the identity plane. Measured:
+  the full hosted-client walk — 401 challenge → resource metadata →
+  DCR → code+PKCE → bearer MCP session with the token's subject as the
+  realm identity — against the upstream AS contract's stand-in;
+  founding token coexists; undeclared roles and garbage refuse. HTTPS
+  is deployment fronting (`tailscale serve` before the loopback door);
+  the bundled-fold default (`auth_issuer` at the in-process fold) is
+  soulfold M5's wiring. One consumer-caught fix: listen port 0 now
+  means "any free port" to the embedded server too, not nats-server's
+  default 4222.
 
 ### Phase 3 — The tailnet inside — gated
 
