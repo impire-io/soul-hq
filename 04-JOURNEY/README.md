@@ -458,6 +458,19 @@ claims-mapping shape, service round-trip latency) are named on the roadmap.
 
 ### soulnode — the house (as of 2026-08-03)
 
+**The folded realm — one binary, real people**
+([episode 0008](0057-soulnode-the-folded-realm.md);
+`specs/006-the-fold-plane/`): `planes.fold` runs the bundled
+passkey-first OIDC provider (soulfold by tag, public embed seam) on
+the node's own JetStream, and public door mode defaults its AS at it.
+Measured end to end with zero external services: DCR → passkey
+sign-in (first touch enrolls) → bearer MCP session at the door →
+`whoami` names the fold identity; founding token coexists; old state
+dirs load unchanged. Startup order recorded as load-bearing (fold
+before identity plane). Two upstream tags rode along (soulfold v0.1.1,
+v0.1.2). **Next:** release/distribution polish, the fold's M3
+upstream, or Phase 3's tsnet gate.
+
 **The public door opens — Phase 2 completes**
 ([episode 0007](0055-soulnode-the-public-door.md);
 `specs/005-public-door/`): `planes.door` grew
@@ -722,6 +735,7 @@ key-lifecycle research. No product code exists yet.
 | 0054 | soulfold | [M4 ships: the fold joins the fleet (2026-08-02)](0054-soulfold-m4-the-fold-in-the-fleet.md) |
 | 0055 | soulnode | [The public door opens (2026-08-03)](0055-soulnode-the-public-door.md) |
 | 0056 | soulfold | [M5 ships: the fold learns to live in your house (2026-08-03)](0056-soulfold-m5-the-embed-seam.md) |
+| 0057 | soulnode | [The folded realm: one binary, real people (2026-08-03)](0057-soulnode-the-folded-realm.md) |
 
 ## Pre-merge numbering map
 

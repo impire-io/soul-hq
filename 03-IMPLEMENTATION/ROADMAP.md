@@ -15,7 +15,7 @@ changes to it are decisions and belong in the journey as episodes.
 | [soulstream](#soulstream--the-record) | `v0.7.0` — MVP + most of day-2 shipped; the remote MCP node built and consumable; two-week dogfood run live since 2026-07-27 | Sealed-topics build priority gated on the dogfood chafe log (to 2026-08-10); eg-walker gated on stage-1 chafe |
 | [soulrealm](#soulrealm--the-room) | Phases 1–2 complete — native, microsandbox, and Kubernetes backends run byte-identical declarations; soulstream pinned | Phase 3 (Fleet) unblocked: design 0003, M3.1 runs spec-kit next |
 | [soulidentity](#soulidentity--the-name) | M1/M3/M4 shipped (+ Entra/OIDC lane, D25 registry dissolution, D28/D29 consumer-proven additions); `v0.1.0` tagged | M2's node half — proven upstream by soulstream 018; roadmap check-off pending. M5 gated on soulstream demand |
-| [soulnode](#soulnode--the-house) | Phase 2 complete including public mode ([episode 0055](../04-JOURNEY/0055-soulnode-the-public-door.md)): the full hosted-client OAuth story — challenge → metadata → DCR → PKCE → bearer MCP session — measured against the AS contract; all four upstreams pinned by tag | Bundled-fold default wiring rides soulfold M5; Phase 3 (tsnet) gated on fronting measured insufficient |
+| [soulnode](#soulnode--the-house) | Phase 2 complete + the folded realm ([episodes 0055](../04-JOURNEY/0055-soulnode-the-public-door.md)/[0057](../04-JOURNEY/0057-soulnode-the-folded-realm.md)): the bundled fold signs real people in by passkey and their tokens open MCP sessions at the public door — one binary, zero external services; five upstreams pinned by tag | Day-2/release polish; Phase 3 (tsnet) gated on fronting measured insufficient |
 | [soulfold](#soulfold--the-fold) | M1+M2+M4+M5 shipped ([episodes 0052](../04-JOURNEY/0052-soulfold-m1-the-op-skeleton.md)–[0056](../04-JOURNEY/0056-soulfold-m5-the-embed-seam.md)): the whole public-door path in one day — passkeys, callout admission both-arms, public embed seam + DCR + fixed audience; physical-authenticator runbook pending (human act) | M3 (lifecycle + bootstrap research) is all that remains; soulnode's fold plane can now land in its repo |
 
 Cross-component dependencies, tracked openly: soulnode consumes everything by
@@ -667,6 +667,21 @@ An embedded tailnet node (tsnet) behind a flag: a stable MagicDNS name and
 HTTPS certs with zero host setup. Built only if Phase 2 measures the
 host-`tailscale serve` path insufficient for the audience — the dependency
 is heavy, and the gate exists to keep it honest.
+
+### The fold plane — ✅ landed 2026-08-03
+
+**The bundled sign-in** ([episode
+0057](../04-JOURNEY/0057-soulnode-the-folded-realm.md);
+`specs/006-the-fold-plane/`): `planes.fold` (opt-in) runs soulfold by
+tag through its public embed seam on the node's own JetStream; public
+door mode defaults its AS at the bundled fold. Measured: the whole
+human chain — DCR, passkey sign-in at the bundled fold, bearer MCP
+session at the door, `whoami` naming the fold identity — with zero
+external services; old state dirs load unchanged (absent block =
+disabled); the fold serves before the identity plane (its OIDC
+validator discovers at startup). Two consumer-proven upstream
+additions tagged on the way (soulfold v0.1.1 NATSCreds, v0.1.2
+persona-shaped ids).
 
 ### Later horizons (named, not planned)
 
