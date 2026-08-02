@@ -32,8 +32,9 @@ What happened, with the honest numbers [measured]:
   (core/extensions, `NNNN-` numbers, D-numbers). **03-IMPLEMENTATION**: one
   ROADMAP with a cross-component state table; the five roadmaps carried
   whole, every gate state intact — soulfold M1 still gated on the open
-  [`kv-encryption-at-rest`](../01-RESEARCH/kv-encryption-at-rest/README.md)
-  topic (the only live research topic, moved in as-is), soulstream
+  `kv-encryption-at-rest` topic (the only live research topic, moved in
+  as-is; concluded later the same day —
+  [episode 0051](0051-soulfold-kv-encryption-at-rest.md)), soulstream
   sealed-topics still gated on the dogfood chafe log (to 2026-08-10),
   soulnode's public door still gated on soulfold upstream.
 - **Enforcement moved with the structure**: a unified `internal/hqlint`

@@ -467,9 +467,11 @@ real MCP client with the founding token forms a session, lists the tool
 surface, and `whoami` names the realm-admitted owner; garbage bearers
 refuse; the state dir is untouched by the door. The vision sentence
 executes: `init && up`, paste the token, work. Public mode waits on
-soulfold upstream; four pseudo-version pins await upstream tags.
-**Next:** day-2 polish and releases (tags), or Phase 3's tsnet gate when
-Phase 2 fronting is measured insufficient.
+soulfold upstream. The pseudo-version exception closed 2026-08-02: all
+four upstreams tagged (soulrealm v0.1.0, archivist v0.2.0,
+soulstream/node v0.7.0, soulidentity v0.1.0) and soulnode pins them by
+tag. **Next:** public door mode when soulfold lands, or Phase 3's tsnet
+gate when Phase 2 fronting is measured insufficient.
 
 **Phase 1 is complete — an agent runs** ([episode
 0005](0045-soulnode-an-agent-runs.md); `specs/003-an-agent-runs/`): `soulnode
@@ -540,6 +542,19 @@ no dev fork). Feasibility entered measured; so did the obstacles
 directive) — both since dissolved by the upstream landings above.
 
 ### soulfold — the fold (as of 2026-08-02)
+
+**The envelope is decided — M1 is unblocked**
+([episode 0004](0051-soulfold-kv-encryption-at-rest.md)): the last
+M1-gating research concluded with all four pre-registered bars passing
+[measured] — the store's proven mechanics survive xkey sealing
+byte-for-byte (restart 7/7, matrix 24/24, CAS 8,000/8,000,
+redemption 100/100), a stopped-store scan with positive controls
+recovers nothing (and forced the D6 amendment digesting the username
+index key), filestore encryption was measured leaving the NATS surface
+plaintext (the decisive asymmetry), and the cost landed at +44 B / ~57 µs
+per record and +1.19 ms on a real end-to-end sign-in. The store design
+grew D16–D19; every research gate M1 names is now concluded to design —
+the build is next.
 
 **The sign-in surface is decided**
 ([episode 0003](0046-soulfold-session-and-ui-shape.md)): the second M1-gating
@@ -633,6 +648,7 @@ key-lifecycle research. No product code exists yet.
 | 0048 | soulstream | [The node becomes consumable: the replace drops (2026-08-02)](0048-soulstream-the-node-becomes-consumable.md) |
 | 0049 | soulnode | [The door opens: the MCP front door lands (2026-08-02)](0049-soulnode-the-door-opens.md) |
 | 0050 | ecosystem | [One hq: the five headquarters merge](0050-ecosystem-one-hq.md) |
+| 0051 | soulfold | [The envelope is decided: xkeys seal the store (2026-08-02)](0051-soulfold-kv-encryption-at-rest.md) |
 
 ## Pre-merge numbering map
 

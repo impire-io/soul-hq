@@ -15,13 +15,15 @@ changes to it are decisions and belong in the journey as episodes.
 | [soulstream](#soulstream--the-record) | `v0.7.0` — MVP + most of day-2 shipped; the remote MCP node built and consumable; two-week dogfood run live since 2026-07-27 | Sealed-topics build priority gated on the dogfood chafe log (to 2026-08-10); eg-walker gated on stage-1 chafe |
 | [soulrealm](#soulrealm--the-room) | Phases 1–2 complete — native, microsandbox, and Kubernetes backends run byte-identical declarations; soulstream pinned | Phase 3 (Fleet) unblocked: design 0003, M3.1 runs spec-kit next |
 | [soulidentity](#soulidentity--the-name) | M1/M3/M4 shipped (+ Entra/OIDC lane, D25 registry dissolution, D28/D29 consumer-proven additions); `v0.1.0` tagged | M2's node half — proven upstream by soulstream 018; roadmap check-off pending. M5 gated on soulstream demand |
-| [soulnode](#soulnode--the-house) | Phases 1–2 (local mode) complete: `init && up`, agent under enforcement, MCP door on the founding token | Public door mode gated on soulfold upstream; Phase 3 (tsnet) gated on Phase 2 fronting measured insufficient; four pseudo-version pins await upstream tags |
-| [soulfold](#soulfold--the-fold) | Genesis + two M1-gating research topics concluded into designs (D1–D15); no product code yet | M1 build gated on the open [kv-encryption-at-rest](../01-RESEARCH/kv-encryption-at-rest/README.md) topic |
+| [soulnode](#soulnode--the-house) | Phases 1–2 (local mode) complete: `init && up`, agent under enforcement, MCP door on the founding token; all four upstreams pinned by tag (2026-08-02) | Public door mode gated on soulfold upstream; Phase 3 (tsnet) gated on Phase 2 fronting measured insufficient |
+| [soulfold](#soulfold--the-fold) | Genesis + all three M1-gating research topics concluded into designs (D1–D19, [episode 0051](../04-JOURNEY/0051-soulfold-kv-encryption-at-rest.md)); no product code yet | **M1 build unblocked** — the OP skeleton is next |
 
 Cross-component dependencies, tracked openly: soulnode consumes everything by
-tag (pins pending upstream tags on soulidentity, archivist, soulrealm,
-soulstream/node); soulnode's public door and soulstream's node AS-story wait
-on soulfold; soulrealm's preferred fleet minting rides soulidentity D28.
+tag — the standing pin exception closed 2026-08-02 (soulrealm v0.1.0,
+soulstream-archivist v0.2.0, soulstream/node v0.7.0, soulidentity v0.1.0 all
+tagged; soulnode pins them); soulnode's public door and soulstream's node
+AS-story wait on soulfold; soulrealm's preferred fleet minting rides
+soulidentity D28.
 
 ---
 
@@ -579,9 +581,10 @@ operator-mode server, identity plane, memory plane on ordinary loopback
 connections; `soulnode workload start` runs a declared agent with a
 minted credential under full enforcement. Every §9 exit criterion of
 design [`0001-soulnode-composition.md`](../02-DESIGN/soulnode/0001-soulnode-composition.md)
-is measured green in `make test`. Standing exception: three
-pseudo-version pins await upstream tags (soulidentity, archivist,
-soulrealm). **Next:** Phase 2 — the front door — gated on soulstream's
+is measured green in `make test`. The standing pseudo-version exception
+**closed 2026-08-02**: soulrealm v0.1.0, soulstream-archivist v0.2.0,
+soulstream/node v0.7.0, and soulidentity v0.1.0 are all tagged and
+pinned by tag. **Next:** Phase 2 — the front door — gated on soulstream's
 `018-remote-mcp-node` cycle (in flight upstream, carrying the fourth
 embed ask).
 
@@ -627,9 +630,9 @@ criteria made precise per feature in `specs/NNN-*/`:
   `3fee11f`: agents need `$JS.API.INFO`). Third pseudo-version pin
   tracked (soulrealm, no tags upstream).
 
-External dependency, tracked openly: soulrealm has no tagged release yet
-(it pins soulstream v0.6.0 but is itself consumed at `main` until it
-tags); SoulNode pins it the moment it does.
+External dependency, resolved 2026-08-02: soulrealm tagged `v0.1.0`
+and SoulNode pins it by tag, alongside soulstream-archivist `v0.2.0`,
+soulstream/node `v0.7.0`, and soulidentity `v0.1.0`.
 
 ### Phase 2 — The front door — ✅ local mode done 2026-08-02
 
@@ -641,8 +644,8 @@ v0.7.0), its node module made consumable (soulstream journey 0010).
   `specs/004-the-front-door/`). Measured: MCP client + founding token →
   session, tools, realm-admitted `whoami`; garbage refused; the door
   custodies nothing (state dir untouched); disabled arm identical to
-  Phase 1. Fourth pseudo-version pin tracked (`soulstream/node`,
-  untagged).
+  Phase 1. The fourth pseudo-version pin (`soulstream/node`) closed
+  2026-08-02 with the `node/v0.7.0` tag.
 - **Public mode — named, upstream-gated**: the OAuth resource-metadata
   story needs an external authorization server (soulfold is upstream's
   intended AS); `planes.door` grows `public_url`/`auth_issuer`
@@ -689,16 +692,19 @@ a task.*
 
 ### Where we are (2026-08-02)
 
-**Both of M1's named research topics are concluded** — the store
+**Every research gate M1 names is concluded** — the store
 ([journey 0002](../04-JOURNEY/0043-soulfold-kv-schema-and-key-lifecycle.md) →
 [store-and-key-lifecycle](../02-DESIGN/soulfold/store-and-key-lifecycle.md),
-D1–D8) and the sign-in surface
+D1–D8), the sign-in surface
 ([journey 0003](../04-JOURNEY/0046-soulfold-session-and-ui-shape.md) →
-[session-and-ui](../02-DESIGN/soulfold/session-and-ui.md), D9–D15), every
-pre-registered bar passing [measured]. One research topic now stands
-before the M1 build: **KV entry protection at rest** (opened at the
-operator's direction, xkeys hypothesis) — it gates M1 because the
-record envelope sits inside the store-shape one-way door. Genesis:
+[session-and-ui](../02-DESIGN/soulfold/session-and-ui.md), D9–D15), and
+the envelope
+([journey 0004](../04-JOURNEY/0051-soulfold-kv-encryption-at-rest.md) →
+store-and-key-lifecycle D16–D19, amending D6): records are sealed
+app-layer with the deployment's xkey, seed custodied outside the store,
+username index digested, filestore encryption defense-in-depth only —
+four bars, four passes, cost +1.19 ms on a real sign-in [measured].
+**The M1 build is unblocked and next.** Genesis:
 [journey 0001](../04-JOURNEY/0041-soulfold-genesis-the-fold.md). No product
 code exists yet.
 
@@ -718,8 +724,9 @@ code exists yet.
    the session and UI shape — **done**
    ([design](../02-DESIGN/soulfold/session-and-ui.md),
    [journey 0003](../04-JOURNEY/0046-soulfold-session-and-ui-shape.md));
-   KV entry protection at rest — open (the record envelope is inside
-   the store-shape one-way door).
+   KV entry protection at rest — **done**
+   ([design](../02-DESIGN/soulfold/store-and-key-lifecycle.md) D16–D19,
+   [journey 0004](../04-JOURNEY/0051-soulfold-kv-encryption-at-rest.md)).
 2. **M2 — passkeys.** WebAuthn registration and login ceremonies
    (`go-webauthn`) replace the seeded stub; the passkey-only rule
    (constitution I) becomes enforced behavior. **Gate**: full
@@ -759,12 +766,12 @@ code exists yet.
   2026-08-02, all bars passed: see
   [session-and-ui](../02-DESIGN/soulfold/session-and-ui.md) and
   [journey 0003](../04-JOURNEY/0046-soulfold-session-and-ui-shape.md).
-- **KV entry protection at rest** (gates M1): whether records are
-  sealed app-layer with NATS xkeys (x25519 curve keys — nkeys sign,
-  xkeys encrypt), protected by server-side filestore encryption, or
-  field-level only — and the key-custody story that makes any of it
-  more than obfuscation. Opened at the operator's direction; gates M1
-  because the envelope is part of the store shape (one-way door).
+- ~~**KV entry protection at rest** (gates M1)~~ — concluded
+  2026-08-02, all bars passed: app-layer xkey sealing ships (D16–D19,
+  D6 amended — username index digested); filestore encryption is
+  defense-in-depth, not a substitute. See
+  [store-and-key-lifecycle](../02-DESIGN/soulfold/store-and-key-lifecycle.md)
+  and [journey 0004](../04-JOURNEY/0051-soulfold-kv-encryption-at-rest.md).
 - **The bootstrap story** (gates M3): the first admin's first passkey —
   the fold's equivalent of soulidentity's first-key research; invite
   URLs, their custody, and their honest naming.

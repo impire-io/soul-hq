@@ -1,7 +1,10 @@
 # The store and the key lifecycle
 
 **Graduated from research:** kv-schema-and-key-lifecycle, 2026-08-02 —
-[episode 0002](../../04-JOURNEY/0043-soulfold-kv-schema-and-key-lifecycle.md).
+[episode 0002](../../04-JOURNEY/0043-soulfold-kv-schema-and-key-lifecycle.md);
+extended by kv-encryption-at-rest (the envelope, D16–D19; D6 amended),
+2026-08-02 —
+[episode 0051](../../04-JOURNEY/0051-soulfold-kv-encryption-at-rest.md).
 **Realized by:** M1 (the OP skeleton) on the
 [roadmap](../../03-IMPLEMENTATION/ROADMAP.md).
 
@@ -93,7 +96,7 @@ in the record, the janitor lives in the bucket [mechanism-argument].
 | Bucket | Key | Record |
 |---|---|---|
 | `users` | `<user-id>` | user |
-| `users` | `idx.username.<username>` | index → user id |
+| `users` | `idx.username.<hex(sha256(lower(username)))[:32]>` | index → user id (**amended by D16's research**: a plaintext username in a KV key would hand a store scan what the envelope withholds — D12's digest rule extends to user-supplied names; exact-match lookup is all the fold needs) |
 | `clients` | `<client-id>` | client |
 | `keys` | `key.<kid>` | signing key |
 | `keys` | `active` | pointer → kid |
@@ -177,6 +180,71 @@ verifier of record grows ES256 support and a deployment need for it
 appears, this becomes a per-deployment algorithm choice; the record
 shape already carries `alg` per key.
 
+### D16 — Records are sealed app-layer with the deployment's xkey
+
+Every record value in the four buckets is stored as the raw sealed
+output of an NATS curve-key (xkey, X25519) `Seal`, self-addressed to
+the deployment's seal key; `Open` on every read. The plaintext inside
+remains the D2/D6 JSON — the envelope changes custody, not shape. KV
+*keys* stay structural (ids, digests, `active`); no user-supplied
+plaintext may appear in a key (D6 as amended).
+
+Reasoning: the graduating research re-ran the store's three mechanic
+rigs through the envelope — restart byte-identical, additive matrix
+24/24 identical to the unsealed baseline, CAS exact at 8,000/8,000
+with exactly-once redemption 100/100 [measured]. The decisive threat
+is the NATS surface itself: D1 lets the fold share a JetStream domain
+with its parent deployment, and an ordinary API-level reader saw full
+plaintext under server-side filestore encryption but nothing under the
+envelope [measured]. Cost, priced on the real flow: +44 bytes and
+~57 µs per record operation, +1.19 ms on an end-to-end sign-in
+[measured]. Sealing halves contended CAS throughput (~3,165/s vs
+~7,116/s accepted writes) — orders beyond an IdP's write rate
+[measured].
+
+### D17 — The seal seed's custody story
+
+- **Birth**: generated at first start (single binary: by the fold;
+  embedded: by or under the parent's ceremony), written `0600`.
+- **Home, per deployment shape**: always outside the JetStream store
+  directory. Single binary: a file beside the config, never under the
+  store dir; embedded (soulnode): the parent's state area, sibling to
+  — never inside — its `jetstream/` dir; shared JetStream: the seed
+  stays with the fold process, and the JetStream operator holds only
+  ciphertext — this is the shape where custody bites hardest.
+- **Re-keying**: a stated re-seal migration — walk every record, open
+  with the old key, seal with the new, CAS-write; flip the config;
+  destroy the old seed. Never a silent re-read (the store-shape door).
+- **Loss**: total, honest data loss of record contents. Deployments
+  back up the seed *separately* from the store; a full-machine backup
+  that captures both is plaintext-equivalent and the docs must say so
+  [judgment].
+
+### D18 — Tokens and codes stay out of the store's trust
+
+Unchanged by the envelope and restated so nobody relies on it: bearer
+secrets never appear verbatim server-side (D12) and nothing the fold
+stores may be sufficient to impersonate a user (constitution I). The
+envelope defends *confidentiality* of records; it is not the
+impersonation boundary and must never be argued as one
+[mechanism-argument].
+
+### D19 — Filestore encryption is defense-in-depth, not a substitute
+
+JetStream filestore encryption (ChaCha) protects the disk artifact
+alone: restart green, disk scan clean, API reader sees plaintext — all
+demonstrated [measured]. Deployments may enable it *in addition to*
+the envelope (single binary: worth offering; shared JetStream: the
+parent's call), but it satisfies no bar the envelope satisfies. Threat
+table, from the graduating rig:
+
+| Threat | Filestore cipher | App-layer envelope (D16) |
+|---|---|---|
+| Stolen disk / store-dir backup | covered | covered |
+| NATS-API-level reader (shared domain, ops tooling) | **not covered** [measured] | covered [measured] |
+| Root on the live host | not covered (server key on host) | not covered (seed on host) — stated honestly |
+| Fold process compromise | not covered | not covered |
+
 ## Acceptance criteria (the M1 gate inherits these)
 
 1. Restart round-trip: the full working set survives a server restart
@@ -189,3 +257,8 @@ shape already carries `alg` per key.
    verification failures across a full key rotation, old-key tokens
    verify until expiry, and the retired key is absent from published
    JWKS.
+5. The envelope (D16–D17): every stored value opens only with the
+   deployment seal key; a marker scan over the stopped store dir and a
+   full API-level dump finds no record plaintext (positive-control
+   scan proven); the seed lives outside the store dir and its loss/
+   re-keying story is in the deployment docs.
