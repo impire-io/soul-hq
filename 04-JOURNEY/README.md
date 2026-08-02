@@ -543,6 +543,20 @@ directive) — both since dissolved by the upstream landings above.
 
 ### soulfold — the fold (as of 2026-08-02)
 
+**M1 ships — the OP skeleton is real**
+([episode 0005](0052-soulfold-m1-the-op-skeleton.md);
+`specs/001-op-skeleton/`): discovery, JWKS, and the code+PKCE flow on
+the sealed store, all measured in `make test` against an embedded
+nats-server — a stock go-oidc RP signs in end to end (tokens verifying
+against published JWKS, subject the seeded user), a full restart
+between the login POST and the token exchange is invisible, forged
+POSTs (missing/wrong CSRF, foreign Origin) leave the store's revision
+unmoved, a rotation runs under a never-restarted verifier at 61/61
+verifications, and the custody scan stays clean with its positive
+control. The page inventory is exactly {login, error}. **Next: M2
+(passkeys), then M4 before M3** per the operator's public-door
+priority.
+
 **The envelope is decided — M1 is unblocked**
 ([episode 0004](0051-soulfold-kv-encryption-at-rest.md)): the last
 M1-gating research concluded with all four pre-registered bars passing
@@ -649,6 +663,7 @@ key-lifecycle research. No product code exists yet.
 | 0049 | soulnode | [The door opens: the MCP front door lands (2026-08-02)](0049-soulnode-the-door-opens.md) |
 | 0050 | ecosystem | [One hq: the five headquarters merge](0050-ecosystem-one-hq.md) |
 | 0051 | soulfold | [The envelope is decided: xkeys seal the store (2026-08-02)](0051-soulfold-kv-encryption-at-rest.md) |
+| 0052 | soulfold | [M1 ships: the OP skeleton on the sealed store (2026-08-02)](0052-soulfold-m1-the-op-skeleton.md) |
 
 ## Pre-merge numbering map
 

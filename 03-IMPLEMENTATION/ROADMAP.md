@@ -16,7 +16,7 @@ changes to it are decisions and belong in the journey as episodes.
 | [soulrealm](#soulrealm--the-room) | Phases 1–2 complete — native, microsandbox, and Kubernetes backends run byte-identical declarations; soulstream pinned | Phase 3 (Fleet) unblocked: design 0003, M3.1 runs spec-kit next |
 | [soulidentity](#soulidentity--the-name) | M1/M3/M4 shipped (+ Entra/OIDC lane, D25 registry dissolution, D28/D29 consumer-proven additions); `v0.1.0` tagged | M2's node half — proven upstream by soulstream 018; roadmap check-off pending. M5 gated on soulstream demand |
 | [soulnode](#soulnode--the-house) | Phases 1–2 (local mode) complete: `init && up`, agent under enforcement, MCP door on the founding token; all four upstreams pinned by tag (2026-08-02) | Public door mode gated on soulfold upstream; Phase 3 (tsnet) gated on Phase 2 fronting measured insufficient |
-| [soulfold](#soulfold--the-fold) | Genesis + all three M1-gating research topics concluded into designs (D1–D19, [episode 0051](../04-JOURNEY/0051-soulfold-kv-encryption-at-rest.md)); no product code yet | **M1 build unblocked** — the OP skeleton is next |
+| [soulfold](#soulfold--the-fold) | M1 shipped ([episode 0052](../04-JOURNEY/0052-soulfold-m1-the-op-skeleton.md)): the OP skeleton — discovery/JWKS/code+PKCE on the sealed store, restarts invisible, rotation under live verifiers | M2 (passkeys) next; then M4 (the callout admission proof) per the public-door priority |
 
 Cross-component dependencies, tracked openly: soulnode consumes everything by
 tag — the standing pin exception closed 2026-08-02 (soulrealm v0.1.0,
@@ -704,21 +704,32 @@ store-and-key-lifecycle D16–D19, amending D6): records are sealed
 app-layer with the deployment's xkey, seed custodied outside the store,
 username index digested, filestore encryption defense-in-depth only —
 four bars, four passes, cost +1.19 ms on a real sign-in [measured].
-**The M1 build is unblocked and next.** Genesis:
-[journey 0001](../04-JOURNEY/0041-soulfold-genesis-the-fold.md). No product
-code exists yet.
+**M1 shipped the same day** ([journey
+0005](../04-JOURNEY/0052-soulfold-m1-the-op-skeleton.md),
+`specs/001-op-skeleton/`): the OP skeleton is real — a stock go-oidc RP
+signs in end to end on the sealed store, restarts (full and mid-flow)
+are invisible, forged POSTs change nothing, and a full key rotation
+runs under a never-restarted verifier with zero failures [measured].
+Genesis: [journey 0001](../04-JOURNEY/0041-soulfold-genesis-the-fold.md).
+**Next: M2 (passkeys), then M4 before M3** — the operator's
+public-door-path priority (2026-08-02), openly reordering the milestone
+list below: the door needs the admission proof (M4) sooner than the
+admin lifecycle (M3).
 
 ### Milestones
 
-1. **M1 — the OP skeleton.** Discovery, JWKS, and the authorization-code
-   flow with PKCE served from the certified OP library
-   (`zitadel/oidc`), storage on JetStream KV (users, clients, signing
-   keys, sessions), a seeded user and client standing in for the
-   ceremonies. **Gate**: a stock OIDC relying party (`go-oidc`)
-   completes sign-in against the running fold with an embedded
-   nats-server as the store; the issued tokens verify against the
-   published JWKS; the fold survives restart with its state in KV
-   [measured]. Research before build: the KV schema and the signing-key
+1. ✅ **M1 — the OP skeleton** (shipped 2026-08-02, [journey
+   0005](../04-JOURNEY/0052-soulfold-m1-the-op-skeleton.md),
+   `specs/001-op-skeleton/`). Discovery, JWKS, and the
+   authorization-code flow with PKCE served from the certified OP
+   library (`zitadel/oidc`), storage on JetStream KV under the D16
+   envelope, a seeded user and client standing in for the ceremonies.
+   **Gate met [measured]**: a stock `go-oidc` RP completes sign-in
+   against the running fold with an embedded nats-server as the store;
+   the issued tokens (ID + JWT access, D15) verify against published
+   JWKS; the fold survives restart — including mid-flow — with its
+   state in KV; forged POSTs rejected with zero state change; a full
+   key rotation under a never-restarted verifier at zero failures. Research before build: the KV schema and the signing-key
    lifecycle — **done** ([design](../02-DESIGN/soulfold/store-and-key-lifecycle.md),
    [journey 0002](../04-JOURNEY/0043-soulfold-kv-schema-and-key-lifecycle.md));
    the session and UI shape — **done**
