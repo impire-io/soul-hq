@@ -60,7 +60,7 @@ Reversal condition: none of its own — a completed build; the direction
 decisions it realizes carry theirs (D15's prefix-inexpressible JWT class,
 D18's second-boolean smell, D13's secretless-host class), all unchanged.
 
-Trail: [`../02-DESIGN/nats-surface.md`](../02-DESIGN/nats-surface.md)
-(D14–D18 as built), [`../02-DESIGN/agent.md`](../02-DESIGN/agent.md) (D2,
+Trail: [`../02-DESIGN/nats-surface.md`](../02-DESIGN/soulidentity/nats-surface.md)
+(D14–D18 as built), [`../02-DESIGN/agent.md`](../02-DESIGN/soulidentity/agent.md) (D2,
 milestone-1 section), `client/e2e_test.go` (the measured gate), README and
 roadmap in the same change.

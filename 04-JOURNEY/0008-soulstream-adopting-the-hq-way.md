@@ -11,12 +11,12 @@ nothing mechanically holding decisions against the vision.
 ## What happened
 
 Everything about *how Soulstream is run* now lives under `hq/`, modeled on the PRA
-layout. **GENESIS** is the fixed point: [`vision.md`](../00-GENESIS/vision.md)
+layout. **GENESIS** is the fixed point: [`vision.md`](../99-ARCHIVE/genesis/soulstream/vision.md)
 (what Soulstream is and refuses to become — protocol not platform, no coordinator,
-no bot API), [`constitution.md`](../00-GENESIS/constitution.md) **bumped 1.0.0 →
+no bot API), [`constitution.md`](../99-ARCHIVE/genesis/soulstream/constitution.md) **bumped 1.0.0 →
 1.1.0** to add The Working Agreement (teach-back, evidence-class tags with only
 `[measured]` closing a debate, recorded reversal conditions, adversarial pass on
-protocol-shape changes), and [`how-we-work.md`](../00-GENESIS/how-we-work.md)
+protocol-shape changes), and [`how-we-work.md`](../99-ARCHIVE/genesis/soulstream/how-we-work.md)
 (pipeline, research lifecycle, the journey duty, the gate). The canonical
 constitution moved into GENESIS and `.specify/memory/constitution.md` became a
 relative symlink to it, so spec-kit's Constitution Check reads the real articles
@@ -56,7 +56,7 @@ otherwise — `014` is merged and tagged **`v0.3.0` (2026-07-23)**, with a **`v0
 registry fix on top (2026-07-24) [measured]. The judgment call, made and flagged
 rather than papered over: **build the journey and the spec statuses to reality,
 not to the brief.** So the founding retrospective
-([0001](0001-genesis-and-the-reference-library.md)) runs genesis → v0.3.1 (not → v0.2.0), and
+([0001](0007-soulstream-genesis-and-the-reference-library.md)) runs genesis → v0.3.1 (not → v0.2.0), and
 `014`'s spec `Status` reads `Shipped (v0.3.0)` (not left as `Draft`). Reflecting
 reality is the whole point of the honesty discipline being adopted; leaving a
 shipped feature marked in-flight would have contradicted it on day one.

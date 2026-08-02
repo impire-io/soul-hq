@@ -12,7 +12,7 @@ surface, and its acceptance criteria, with no guessing left to the spec
 writer. New documents take the next free `NNNN-` number (`0001-…` onward).
 Graduating research enters through `/research-graduate`; behavioral changes
 made during implementation propagate back here (see
-[`../00-GENESIS/how-we-work.md`](../00-GENESIS/how-we-work.md)).
+[`../00-GENESIS/how-we-work.md`](../../99-ARCHIVE/genesis/soulnode/how-we-work.md)).
 
 ## Documents
 

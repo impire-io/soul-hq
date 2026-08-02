@@ -1,5 +1,6 @@
 # <Title — the question, phrased as a question>
 
+**Component:** <soulstream | soulrealm | soulidentity | soulnode | soulfold | ecosystem>
 **State:** active
 **Started:** <YYYY-MM-DD>
 
@@ -16,9 +17,10 @@ mid-investigation, it becomes its own topic or a named successor.>
 ## Pre-registered bars
 
 <Written BEFORE any experiment runs. Each bar is a pass/fail criterion with its
-threshold and its measurement protocol (what is run, against which NATS setup,
-what counts as pass). Amending a bar later is allowed only openly, with the raw
-numbers that showed it degenerate recorded in JOURNEY.md.>
+threshold and its measurement protocol (what is run — a NATS rig, a spike, a
+consumer-position module, a protocol rig — against which setup, and what counts
+as pass). Amending a bar later is allowed only openly, with the raw numbers
+that showed it degenerate recorded in JOURNEY.md.>
 
 - **Bar 1:** <criterion, threshold, protocol>
 - **Bar 2:** <criterion, threshold, protocol>

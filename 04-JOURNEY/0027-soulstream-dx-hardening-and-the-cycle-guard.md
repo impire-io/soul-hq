@@ -67,5 +67,5 @@ Trail: `specs/017-signer-seam/contracts/library.md` + `quickstart.md`
 `topic/discover.go`, `topic/memory.go`, `curator/curator.go`,
 `internal/cli/discover_cmd.go`; SoulIdentity
 `hq/03-IMPLEMENTATION/ROADMAP.md` M2 (commit `4c55693` there); episode
-[0006](0006-the-signer-seam.md). Commits: the `017-dx-polish` branch
+[0006](0026-soulstream-the-signer-seam.md). Commits: the `017-dx-polish` branch
 series into the v0.6.0 release.

@@ -2,7 +2,7 @@
 
 **Status of this document:** graduated from the `kubernetes-backend` research
 topic (episode 0008); **built and landed as M2.1**
-([`specs/004-kubernetes-backend/`](../../specs/004-kubernetes-backend/),
+([`specs/004-kubernetes-backend/`](../../../soulrealm/specs/004-kubernetes-backend/),
 episode 0009). All four pre-registered research bars were **measured PASS**
 via spikes, and the implementation's five e2e scenarios run green on a real
 cluster (`make test-k8s`). The `[O]`s this document carried were decided in
@@ -16,7 +16,7 @@ Tags mark what is validated **[V]** and what remains open **[O]**.
 Maturity tags per [`README.md`](README.md). Seam vocabulary per
 [`0001-soulrealm-runtime.md`](0001-soulrealm-runtime.md) §6 and the frozen
 contract in
-[`specs/003-microsandbox-backend/contracts/backend-seam.md`](../../specs/003-microsandbox-backend/contracts/backend-seam.md).
+[`specs/003-microsandbox-backend/contracts/backend-seam.md`](../../../soulrealm/specs/003-microsandbox-backend/contracts/backend-seam.md).
 
 ---
 

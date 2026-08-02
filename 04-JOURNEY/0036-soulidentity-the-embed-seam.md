@@ -58,7 +58,7 @@ consumer forking `embed` or re-riding the namespace dodge to inject a
 type, recorded as an issue) reopens the options shape toward exposing the
 internal interfaces deliberately.
 
-Trail: D29 in [`../02-DESIGN/agent.md`](../02-DESIGN/agent.md);
+Trail: D29 in [`../02-DESIGN/agent.md`](../02-DESIGN/soulidentity/agent.md);
 `specs/002-embed-seam/` (spec, research R1–R6, data model, contract,
 quickstart, tasks); `embed/embed.go`; `e2e/embedgate/`;
 `cmd/soulidentity/main.go`; Makefile. Commits: the `002-embed-seam`

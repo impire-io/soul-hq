@@ -1,8 +1,8 @@
 # 0001 — The SoulNode composition
 
 **Status**: graduated from `single-binary-composition` (journey
-[episode 0002](../04-JOURNEY/0002-the-composition-gate.md)), 2026-08-02.
-Governs Phase 1 of the [roadmap](../03-IMPLEMENTATION/roadmap.md); the
+[episode 0002](../../04-JOURNEY/0040-soulnode-the-composition-gate.md)), 2026-08-02.
+Governs Phase 1 of the [roadmap](../../03-IMPLEMENTATION/ROADMAP.md); the
 front door (Phase 2) is seamed here but designed later.
 
 Validation tags per the [design README](README.md): **[V]** validated by

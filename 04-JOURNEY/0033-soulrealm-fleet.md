@@ -67,7 +67,7 @@ work; a zombie that answers probes without progressing needs a cap policy;
 single-host clocks and single-server JetStream leave clock-skew tolerance
 and clustered total order unmeasured.
 
-What it opened: design [`0003-fleet.md`](../02-DESIGN/0003-fleet.md) — the
+What it opened: design [`0003-fleet.md`](../02-DESIGN/soulrealm/0003-fleet.md) — the
 homogeneous fleet node (claim-race placement, sweep + probe reclaim,
 identity-plane enrollment and minting, tag-template scopes preferred with
 spike-3 delegated minting as measured fallback), carrying the open
@@ -86,5 +86,5 @@ history in git) — opened `a2146b7`, Bar 2 amendment `25fdb56`, spike 1
 `0580a44`, probe pre-registration `2e1d15a`, spike 2 `b79cdc5`, spike 3
 `d506ec8`, identity-plane desk findings `967f6ce`, spike 4 `e8ff821`,
 verdict `04a3aca`;
-design [`0003-fleet.md`](../02-DESIGN/0003-fleet.md); spike code in the
+design [`0003-fleet.md`](../02-DESIGN/soulrealm/0003-fleet.md); spike code in the
 session scratchpad (throwaway, per how-we-work).

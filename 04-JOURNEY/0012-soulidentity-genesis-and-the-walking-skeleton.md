@@ -12,7 +12,7 @@ compromise equal to identity theft. The answer is an **ssh-agent for
 personas**: a vault that answers sign requests, keys never leaving.
 
 The design landed as ten numbered decisions (D1–D10 in
-[`../02-DESIGN/agent.md`](../02-DESIGN/agent.md)), the load-bearing ones:
+[`../02-DESIGN/agent.md`](../02-DESIGN/soulidentity/agent.md)), the load-bearing ones:
 nonce signing rides nats.go's own credential callbacks — the oracle plugs
 into a seam the client library ships, no fork [mechanism-argument] (D1);
 identities are declared `(account, user)`, never inferred — minting *is* the
@@ -57,7 +57,7 @@ short-lived delegated session keys, recorded as a new D-decision with its own
 threat analysis. D-level reversal conditions live with their decisions in the
 design doc.
 
-Trail: [`../02-DESIGN/agent.md`](../02-DESIGN/agent.md) (D1–D10),
+Trail: [`../02-DESIGN/agent.md`](../02-DESIGN/soulidentity/agent.md) (D1–D10),
 [`../03-IMPLEMENTATION/ROADMAP.md`](../03-IMPLEMENTATION/ROADMAP.md) (M1–M5),
 soulstream journey 0005 and the 2026-07-28 design thread; commits `cd04faa`
 (scaffold + design), `84bad09` (skeleton + e2e), this change (hq adoption).

@@ -4,14 +4,14 @@
 the second lane of the connection ladder (D12), representing external
 identities inside NATS. Decisions here continue the numbering: D19–D24,
 grounded in the sentinel-credential and claims-mapping research
-([journey 0008](../04-JOURNEY/0008-sentinel-credential-flow.md),
-[journey 0009](../04-JOURNEY/0009-claims-mapping-shape.md)) [measured
+([journey 0008](../../04-JOURNEY/0019-soulidentity-sentinel-credential-flow.md),
+[journey 0009](../../04-JOURNEY/0021-soulidentity-claims-mapping-shape.md)) [measured
 where tagged]. The first authn backend is API tokens (D19–D22); the
 Entra/OIDC lane landed 2026-07-29 as the second backend on the same
 pipeline (D23–D24, spec-driven feature `specs/001-entra-oidc-backend`,
-[journey 0012](../04-JOURNEY/0012-entra-role-claim-lane.md)). The
+[journey 0012](../../04-JOURNEY/0025-soulidentity-entra-role-claim-lane.md)). The
 milestone and gate live in
-[`../03-IMPLEMENTATION/ROADMAP.md`](../03-IMPLEMENTATION/ROADMAP.md).*
+[`../03-IMPLEMENTATION/ROADMAP.md`](../../03-IMPLEMENTATION/ROADMAP.md).*
 
 ## D19 — The connection contract: URL plus credential, sentinel underneath
 
@@ -248,7 +248,7 @@ policy source.
 
 - **Multi-issuer dispatch**: D23 pins one OIDC issuer. The ecosystem's
   default IdP is the sibling project soulfold ([journey
-  0019](../04-JOURNEY/0019-soulfold-the-default-idp.md)) — reached
+  0019](../../04-JOURNEY/0039-soulidentity-soulfold-the-default-idp.md)) — reached
   through this same seam, indistinguishable from Entra by design — so a
   deployment running soulfold beside a second external issuer needs
   dispatch across issuers. Named, not built (constitution III); the

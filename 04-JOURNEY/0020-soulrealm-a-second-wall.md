@@ -56,12 +56,12 @@ revisit the backend choice — the seam contract
 Docker/Firecracker implementation can replace it without touching a
 declaration.
 
-Trail: [`specs/003-microsandbox-backend/`](../../specs/003-microsandbox-backend/)
+Trail: [`specs/003-microsandbox-backend/`](../../soulrealm/specs/003-microsandbox-backend/)
 (spec, measured research D1–D6, plan, contracts, tasks — full spec-kit flow,
 no short-circuit this time); design
-[`0001-soulrealm-runtime.md`](../02-DESIGN/0001-soulrealm-runtime.md) §4/§6/§8/§9
+[`0001-soulrealm-runtime.md`](../02-DESIGN/soulrealm/0001-soulrealm-runtime.md) §4/§6/§8/§9
 amended (including the soulidentity pointer behind the minter seam);
-[`roadmap.md`](../03-IMPLEMENTATION/roadmap.md) M1.3 closed; code in
+[`roadmap.md`](../03-IMPLEMENTATION/ROADMAP.md) M1.3 closed; code in
 `backend/msb/`, `cmd/soulrealm` (node-side `SOULREALM_BACKEND` selection),
 `integration/msb_e2e_test.go`, `Makefile` (`test-msb`); commits on
 `003-microsandbox-backend`.

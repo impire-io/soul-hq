@@ -47,7 +47,7 @@ The asker merges, ranks, and resolves conflicts. That burden is deliberately on 
 
 ## The epistemics: signatures make anyone a witness
 
-Ops optionally carry an author signature over the canonical record, which binds realm and topic ([../core/01-protocol.md](../core/01-protocol.md)). This is the load-bearing piece: **a signed op is self-authenticating evidence, no matter who kept it or how it travelled.** An **exhibit** is a canonical record plus its signature — a self-contained document, verifiable against the author's pinned key ([registry.md](./registry.md)) with no NATS message in sight. Provenance is decentralised to whoever bothered to keep bytes; there is no trusted archive role in the trust model at all.
+Ops optionally carry an author signature over the canonical record, which binds realm and topic ([../core/01-protocol.md](../core/01-protocol.md)). This is the load-bearing piece: **a signed op is self-authenticating evidence, no matter who kept it or how it travelled.** An **exhibit** is a canonical record plus its signature — a self-contained document, verifiable against the author's pinned key ([registry.md](registry.md)) with no NATS message in sight. Provenance is decentralised to whoever bothered to keep bytes; there is no trusted archive role in the trust model at all.
 
 Every claim in an answer is graded by verifiability:
 
@@ -69,11 +69,11 @@ Because evidence is self-authenticating, a realm needs no archive role — it ne
 
 A realm whose coverage feels thin can add **archivist personas** — a *historian* keeping the full uncompacted archive and answering `memory.fetch` with exhibits, a *librarian* curating and summarising. Ordinary personas with a storage habit: run none, one, or several; several may disagree, which is honest. Each declares `coverage_from` in its answers, because **retention is not retrofittable** — an archivist added later has a permanent op-granularity blind spot, bounded by baselines. A realm makes that trade knowingly, once, at setup: accept the bound, or start an archivist with the realm.
 
-*As implemented (015, 2026-07-25):* answers carry citations only, never inline exhibit documents — provenance is a deliberate follow-up `memory.fetch`. The reference library ships the convention and the public witness surface (`topic.RespondMemory`, with the query-answering and fetch-serving capabilities independently optional); the first archivist lives in its own repository under impire-io, built exclusively on that public surface ([journey 0003](../../04-JOURNEY/0003-memory-convention-and-exhibits.md)).
+*As implemented (015, 2026-07-25):* answers carry citations only, never inline exhibit documents — provenance is a deliberate follow-up `memory.fetch`. The reference library ships the convention and the public witness surface (`topic.RespondMemory`, with the query-answering and fetch-serving capabilities independently optional); the first archivist lives in its own repository under impire-io, built exclusively on that public surface ([journey 0003](../../../04-JOURNEY/0009-soulstream-memory-convention-and-exhibits.md)).
 
 ## Sealed topics and memory
 
-Sealed content ([sealed-topics.md](./sealed-topics.md)) never enters collective search. A shared historian archives sealed topics only as ciphertext — provable *that* an op existed, not what it said. A *member* necessarily remembers content; convention, stated hard: **sealed content may only appear in an answer when the asker is provably a member of the topic's current epoch** — in practice, sealed recall happens inside the sealed topic. Mathematics can't prevent a member leaking over the open subject; membership trust has to.
+Sealed content ([sealed-topics.md](sealed-topics.md)) never enters collective search. A shared historian archives sealed topics only as ciphertext — provable *that* an op existed, not what it said. A *member* necessarily remembers content; convention, stated hard: **sealed content may only appear in an answer when the asker is provably a member of the topic's current epoch** — in practice, sealed recall happens inside the sealed topic. Mathematics can't prevent a member leaking over the open subject; membership trust has to.
 
 ## What this extension commits the realm to
 

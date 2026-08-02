@@ -40,7 +40,7 @@ Two enforcement levels, chosen per persona:
 ## Attribution has two lifetimes
 
 - **Live** — trusting `Soulstream-Author` on a message as it arrives — is the transport's job: credentials and subject permissions, no app-layer crypto.
-- **Durable** — trusting `Soulstream-Author` on an op that has left the stream (archived, quoted, exported) — cannot lean on the transport. That is what the optional `Soulstream-Sig` is for ([01-protocol.md](./01-protocol.md)): a signature over the canonical record makes any kept copy self-authenticating. Core defines the signature; how signing keys are published and pinned is an extension concern ([../extensions/registry.md](../extensions/registry.md)).
+- **Durable** — trusting `Soulstream-Author` on an op that has left the stream (archived, quoted, exported) — cannot lean on the transport. That is what the optional `Soulstream-Sig` is for ([01-protocol.md](01-protocol.md)): a signature over the canonical record makes any kept copy self-authenticating. Core defines the signature; how signing keys are published and pinned is an extension concern ([../extensions/registry.md](../extensions/registry.md)).
 
 ## Delegation
 

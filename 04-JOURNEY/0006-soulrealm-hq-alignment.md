@@ -62,10 +62,10 @@ Article VI's parenthetical must return to naming the lint as future work and
 this episode's "the lint now exists" claim no longer holds.
 
 Trail: the lint in `internal/hqlint` (doc.go + hqlint_test.go); amended
-[constitution.md](../00-GENESIS/constitution.md) Article VI; softened the
+[constitution.md](../99-ARCHIVE/genesis/soulrealm/constitution.md) Article VI; softened the
 journey-log and research-graduate skills; specs
-[001](../../specs/001-launch-an-agent/spec.md) and
-[002](../../specs/002-call-a-tool/spec.md) marked Shipped; vendored spec-kit
-under [`.specify`](../../.specify/README.md); [roadmap](../03-IMPLEMENTATION/roadmap.md)
-refreshed; MIT [`LICENSE`](../../LICENSE) added. Commits 73aeee5, 5431fa2,
+[001](../../soulrealm/specs/001-launch-an-agent/spec.md) and
+[002](../../soulrealm/specs/002-call-a-tool/spec.md) marked Shipped; vendored spec-kit
+under [`.specify`](../../soulrealm/.specify/README.md); [roadmap](../03-IMPLEMENTATION/ROADMAP.md)
+refreshed; MIT [`LICENSE`](../../soulrealm/LICENSE) added. Commits 73aeee5, 5431fa2,
 d5d67d0, f30e0ed, and this one, plus a follow-up license commit.

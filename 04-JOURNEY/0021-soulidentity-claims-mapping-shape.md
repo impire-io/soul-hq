@@ -2,7 +2,7 @@
 
 The last shape-gate on M4, opened the same day the operator scoped it —
 **API tokens first, Entra later** — and graduated to design (D22 in
-[`../02-DESIGN/auth-callout.md`](../02-DESIGN/auth-callout.md)) with all
+[`../02-DESIGN/auth-callout.md`](../02-DESIGN/soulidentity/auth-callout.md)) with all
 three pre-registered bars passed. The question: what declared configuration
 maps a validated external credential to a registry identity, such that the
 API-token backend and a claims-bearing issuer are one shape with different
@@ -47,7 +47,7 @@ or later a claim rule overriding a registry column per user, is the
 observable that demotes claims-derived authorization and returns the
 registry to sole-source.
 
-Trail: [`../02-DESIGN/auth-callout.md`](../02-DESIGN/auth-callout.md)
+Trail: [`../02-DESIGN/auth-callout.md`](../02-DESIGN/soulidentity/auth-callout.md)
 (D22); `hq/01-RESEARCH/claims-mapping-shape/` in git history
 (pre-registration af5b2b0 → investigation f579470 → removed at
 graduation); spike in the session scratchpad, its shape recorded in the

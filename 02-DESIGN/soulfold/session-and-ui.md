@@ -1,9 +1,9 @@
 # The session and the sign-in surface
 
 **Graduated from research:** session-and-ui-shape, 2026-08-02 —
-[episode 0003](../04-JOURNEY/0003-session-and-ui-shape.md).
+[episode 0003](../../04-JOURNEY/0046-soulfold-session-and-ui-shape.md).
 **Realized by:** M1 (the OP skeleton) and M2 (passkeys) on the
-[roadmap](../03-IMPLEMENTATION/ROADMAP.md). The store mechanics these
+[roadmap](../../03-IMPLEMENTATION/ROADMAP.md). The store mechanics these
 records ride on are
 [store-and-key-lifecycle](store-and-key-lifecycle.md) (D1–D8).
 

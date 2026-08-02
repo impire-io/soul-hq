@@ -5,7 +5,7 @@ over NATS request/reply with xkey-sealed payloads (D11), the caller's NATS
 identity as the principal (D12), and the vault on its initial KV backend
 (D10, D13). Decisions here continue the numbering from
 [`agent.md`](agent.md): D14–D18. The milestone and its gate live in
-[`../03-IMPLEMENTATION/ROADMAP.md`](../03-IMPLEMENTATION/ROADMAP.md).*
+[`../03-IMPLEMENTATION/ROADMAP.md`](../../03-IMPLEMENTATION/ROADMAP.md).*
 
 ## What it covers
 

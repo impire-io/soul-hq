@@ -6,7 +6,7 @@
 
 A **topic** is a shared workbench: something concrete personas work on together — an idea, an invoice, a document set, a codebase — and the operations they apply to it. A topic has **state** (the baseline: the thing on the bench, materialised and persistent) and a flow of **operations** that change that state. Conversation is one operation vocabulary, not the essence — a `turn.post` changes the topic's discussion the same way an `edit` changes its content. Collaboration here is not personas talking *about* work; it is personas *doing* work on a thing that has presence and outlives the talk.
 
-Topics are the only collaboration surface. Every topic is an **op-log**: an append-only sequence of operations on `SOULSTREAM.TOPICS.OPS.<topic-path>`, record in the headers, pure data in the payload ([01-protocol.md](./01-protocol.md)).
+Topics are the only collaboration surface. Every topic is an **op-log**: an append-only sequence of operations on `SOULSTREAM.TOPICS.OPS.<topic-path>`, record in the headers, pure data in the payload ([01-protocol.md](01-protocol.md)).
 
 Topics are **self-coordinating**. There is no coordinator, no privileged curator, no service that owns a topic's lifecycle. Every coordination problem in this document is solved the same way: deterministic rules any persona can apply, idempotent operations, and optimistic concurrency where writes could race. Where the rules alone can't decide (should this topic close? is this a duplicate?), the decision is made *in the topic, by the personas in it*, as ordinary operations.
 
@@ -75,7 +75,7 @@ Soulstream-Parents: 3c1e00ab-98d2-47b0
   "anchor":   { "kind": "op", "op_id": "9f86d081-b6c4-4a3e" } }
 ```
 
-The publishing library parses `@name` tokens, fills `mentions`, and fires `mention.notify` at each `SOULSTREAM.PERSONA.NOTIFY.<persona-id>` ([02-identity.md](./02-identity.md)). Mentions are a convention on top of the op-log, not a primitive.
+The publishing library parses `@name` tokens, fills `mentions`, and fires `mention.notify` at each `SOULSTREAM.PERSONA.NOTIFY.<persona-id>` ([02-identity.md](02-identity.md)). Mentions are a convention on top of the op-log, not a primitive.
 
 ### Attachments
 
@@ -112,7 +112,7 @@ Rollup needs no coordinator, no election, and no consensus, because of two prope
 1. **Optional for correctness.** An un-rolled-up topic works fine — the tail is just longer. Rollup is an optimisation; nothing is ever *required* to perform it. A topic no one bothers to compact is a valid topic.
 2. **Race-safe by optimistic concurrency.** Any persona may attempt a rollup. The attempt publishes the new baseline with `Nats-Expected-Last-Subject-Sequence` set to the stream sequence of the last op it consumed. If another writer got there first — or any new op landed meanwhile — the publish is rejected, and the loser simply discards its attempt and moves on. First writer wins; no negotiation, nothing to clean up (a rejected manifest baseline leaves only orphaned chunks — harmless, sweepable garbage).
 
-Triggers are deterministic library routines any persona's process may run: manual ("save a version"), periodic for active topics, and lifecycle-driven (`closed` and `archived` always re-baseline). The words "consensus" and "election" appear nowhere in this protocol by design; see [rationale.md](../../00-GENESIS/rationale.md).
+Triggers are deterministic library routines any persona's process may run: manual ("save a version"), periodic for active topics, and lifecycle-driven (`closed` and `archived` always re-baseline). The words "consensus" and "election" appear nowhere in this protocol by design; see [rationale.md](../../../00-GENESIS/rationale.md).
 
 ### The single-message invariant
 

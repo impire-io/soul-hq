@@ -6,7 +6,7 @@ credential reach an operator-mode server so auth callout can fire? Opened as
 `sentinel-credential-flow` with three pre-registered bars; all three passed
 the same day in one spike against embedded nats-server 2.14.3, and the topic
 graduated to the M4 design doc
-([`../02-DESIGN/auth-callout.md`](../02-DESIGN/auth-callout.md), D19–D21).
+([`../02-DESIGN/auth-callout.md`](../02-DESIGN/soulidentity/auth-callout.md), D19–D21).
 
 **The answer is smaller than the question assumed** [measured]: with
 `default_sentinel` in the server config, the client holds the URL and its
@@ -47,8 +47,8 @@ consumer blocked at connection, recorded as an issue), the carrier map
 re-opens for that client class. D11's own reversal condition is now half
 resolved: the sentinel flow is proven; the NGS half remains open.
 
-Trail: [`../02-DESIGN/auth-callout.md`](../02-DESIGN/auth-callout.md)
-(D19–D21), [`../02-DESIGN/agent.md`](../02-DESIGN/agent.md) (D12
+Trail: [`../02-DESIGN/auth-callout.md`](../02-DESIGN/soulidentity/auth-callout.md)
+(D19–D21), [`../02-DESIGN/agent.md`](../02-DESIGN/soulidentity/agent.md) (D12
 amendment); `hq/01-RESEARCH/sentinel-credential-flow/` in git history
 (pre-registration 4abf74d → investigation c8e0e6a → removed at
 graduation); spike in the session scratchpad, its shape recorded in the

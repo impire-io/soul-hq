@@ -1,15 +1,15 @@
 # 01-RESEARCH — active investigations
 
-One folder per open research topic. Each folder is a self-contained
-investigation: a `README.md` (from [`TEMPLATE.md`](TEMPLATE.md)) stating the
-question, its state, and the **pre-registered bars**, plus a `JOURNEY.md`
-recording the investigation as it happens, plus whatever documents the work
-produces.
+One folder per open research topic, for any component of the ecosystem. Each
+folder is a self-contained investigation: a `README.md` (from
+[`TEMPLATE.md`](TEMPLATE.md)) stating the question, its component, its state,
+and the **pre-registered bars**, plus a `JOURNEY.md` recording the
+investigation as it happens, plus whatever documents the work produces.
 
-Research is for the questions that come *before* a design — "what does the
-first admin's first passkey look like?", "does JWKS rollover behave the way
-we think against a live consumer?" — the ones where the answer decides
-whether or how to build.
+Research is for the questions that come *before* a spec — "is this the right
+shape for the protocol?", "does this NATS mechanism actually behave the way
+we think?" — the ones spec-kit can't help with because spec-kit assumes the
+answer is already known.
 
 ## Lifecycle
 
@@ -25,9 +25,9 @@ whether or how to build.
 /research-graduate <slug> --to design | artifact | abandoned
         │
         ├─ always: composes the topic's journey into the next-numbered
-        │          hq/04-JOURNEY/ episode (verdict, evidence tags,
+        │          04-JOURNEY/ episode (verdict, evidence tags,
         │          reversal condition)
-        ├─ design:   creates/updates the hq/02-DESIGN doc
+        ├─ design:   creates/updates the 02-DESIGN/<component>/ doc
         ├─ artifact: the deliverable itself ships (example, tool, doc)
         └─ always: the topic folder is REMOVED — git history keeps the trail
 ```
@@ -36,9 +36,14 @@ whether or how to build.
 
 - **States are exactly** `active`, `graduated`, `abandoned` — and no folder
   with a terminal state lingers here (the structural lint enforces both).
+- **Every topic names its component** (`soulstream`, `soulrealm`,
+  `soulidentity`, `soulnode`, `soulfold`, or `ecosystem`), so the graduation
+  knows which design folder receives the outcome.
 - **Always committed and pushed**, including work heading for abandonment.
   Abandoned research is a result: it gets the same quality of episode as a
   success, and its full history survives in git after the folder is gone.
 - **Bars before experiments.** The pass/fail criteria are written down before
   any run; if a bar proves degenerate it is amended openly with the raw
-  numbers recorded in the topic's JOURNEY.md.
+  numbers recorded (the working agreement's `[measured]` discipline).
+- **Research never goes through spec-kit** — see
+  [`../00-GENESIS/how-we-work.md`](../00-GENESIS/how-we-work.md).

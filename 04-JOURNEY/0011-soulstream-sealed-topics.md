@@ -81,7 +81,7 @@ that had to stay blind already was; the amendments are all at the
 vocabulary and profile-field level, none structural.
 
 The design doc
-([`../02-DESIGN/extensions/sealed-topics.md`](../02-DESIGN/extensions/sealed-topics.md))
+([`../02-DESIGN/extensions/sealed-topics.md`](../02-DESIGN/soulstream/extensions/sealed-topics.md))
 now carries the amendments and is speckit-ready. The build's *priority*
 remains gated: the dogfood chafe log runs to 2026-08-10, and a zero-entry
 "this felt wrong to write into a plaintext realm" outcome keeps sealing
@@ -96,8 +96,8 @@ priority (not the design's validity).
 
 Trail: research topic `hq/01-RESEARCH/sealed-topics/` (removed at
 graduation; full bar evidence in its JOURNEY.md, in git history),
-[`../02-DESIGN/extensions/sealed-topics.md`](../02-DESIGN/extensions/sealed-topics.md)
+[`../02-DESIGN/extensions/sealed-topics.md`](../02-DESIGN/soulstream/extensions/sealed-topics.md)
 (amended),
-[`../02-DESIGN/extensions/registry.md`](../02-DESIGN/extensions/registry.md)
+[`../02-DESIGN/extensions/registry.md`](../02-DESIGN/soulstream/extensions/registry.md)
 (sealing-key endorsement rule); commits 64040af (Bar 1), c426595 (Bar 2),
 7eb7797 (Bar 3), 18d3a6a (Bar 4), plus the graduation commit.

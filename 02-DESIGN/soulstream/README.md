@@ -4,14 +4,14 @@ This is what Soulstream *is*, specified functionally: **what must exist** and
 **how each part behaves**. An implementer should be able to build a working
 system from these documents without needing undocumented decisions. The reasons
 behind the choices are not here — they live in
-[`../00-GENESIS/rationale.md`](../00-GENESIS/rationale.md).
+[`../00-GENESIS/rationale.md`](../../00-GENESIS/rationale.md).
 
 **The spec-kit rule:** every document here is written explicit enough to be the
 argument to `/speckit-specify` — the capability, its seams, its configuration
 surface, and its acceptance criteria, with no guessing left to the spec writer.
 Graduating research enters through `/research-graduate`; behavioral changes made
 during implementation propagate back here (see
-[`../00-GENESIS/how-we-work.md`](../00-GENESIS/how-we-work.md)).
+[`../00-GENESIS/how-we-work.md`](../../99-ARCHIVE/genesis/soulstream/how-we-work.md)).
 
 ## core/ — normative; this *is* Soulstream
 
@@ -37,5 +37,5 @@ A realm running none of these is still a working soulstream.
 | [`extensions/memory.md`](extensions/memory.md) | Persona memory and collective search |
 
 The build order for all of the above is in
-[`../03-IMPLEMENTATION/ROADMAP.md`](../03-IMPLEMENTATION/ROADMAP.md); the frozen
+[`../03-IMPLEMENTATION/ROADMAP.md`](../../03-IMPLEMENTATION/ROADMAP.md); the frozen
 per-feature spec-kit artifacts are in `specs/NNN-*/`.

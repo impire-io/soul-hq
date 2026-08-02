@@ -41,6 +41,6 @@ prefix drift across components (observable: support issues naming the
 prefix) move service discovery to a well-known unprefixed subject as a new
 D-decision.
 
-Trail: [`../02-DESIGN/nats-surface.md`](../02-DESIGN/nats-surface.md) (D14
+Trail: [`../02-DESIGN/nats-surface.md`](../02-DESIGN/soulidentity/nats-surface.md) (D14
 amendment, ops-table note, config surface); `client/e2e_test.go` (the
 prefixed M3 gate); README in the same change.

@@ -1,7 +1,7 @@
 # Episode 0001 — Genesis to v0.3: the protocol, and the library that proves it (2026-07-11 → 2026-07-24)
 
 A founding retrospective, composed from [`../00-GENESIS/rationale.md`](../00-GENESIS/rationale.md),
-the decision log in [`../../README.md`](../../README.md), the CLAUDE.md "Done"
+the decision log in [`../../README.md`](../../soulstream/README.md), the CLAUDE.md "Done"
 list, and git history. It records where Soulstream came from and what it shipped
 before this journal existed — so later episodes have a floor to stand on. Load-
 bearing claims carry their evidence class; the retrospective is honest about one
@@ -89,6 +89,6 @@ optimistic concurrency fails to keep race-safe. Absent such a reading, elections
 and consensus stay banned in the protocol.
 
 Trail: [`../00-GENESIS/rationale.md`](../00-GENESIS/rationale.md); the decision
-log in [`../../README.md`](../../README.md); `specs/001-*` … `specs/014-*`
+log in [`../../README.md`](../../soulstream/README.md); `specs/001-*` … `specs/014-*`
 (bodies frozen, `Status` records the shipping version); git tags `v0.1.0`
 `v0.2.0` `v0.3.0` `v0.3.1`; commits `42f310a` (genesis) … `034f7ca` (v0.3.1).

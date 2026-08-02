@@ -1,10 +1,13 @@
 # Episode template
 
-Copy for the next-numbered episode (`NNNN-short-kebab-slug.md`). Every field
-below is part of the record; **Reversal condition** and evidence-class tags are
-required (the structural lint checks for the Reversal-condition line). After
-writing the episode, add it to the index in [`README.md`](README.md) and refresh
-"Where things stand" there.
+Copy for the next-numbered episode (`NNNN-<component>-<short-kebab-slug>.md`
+— component one of `soulstream`, `soulrealm`, `soulidentity`, `soulnode`,
+`soulfold`, or `ecosystem` for cross-cutting work; the sequence is shared
+across all of them). Every field below is part of the record; **Reversal
+condition** and evidence-class tags are required (the structural lint checks
+for the Reversal-condition line). After writing the episode, add it to the
+index in [`README.md`](README.md) and refresh the component's "Where things
+stand" there.
 
 ```markdown
 # Episode NNNN — <title> (<dates>)

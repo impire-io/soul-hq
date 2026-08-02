@@ -142,7 +142,7 @@ selects a backend; the declaration is unchanged across them (constitution III).
   `msb` CLI is supervised as a child process; the workload sees the identical
   env contract, with loopback NATS rewritten to the guest's host alias under
   a host-only network policy. Seam contract frozen in
-  [`specs/003-microsandbox-backend/contracts/backend-seam.md`](../../specs/003-microsandbox-backend/contracts/backend-seam.md).
+  [`specs/003-microsandbox-backend/contracts/backend-seam.md`](../../../soulrealm/specs/003-microsandbox-backend/contracts/backend-seam.md).
 - **Kubernetes pod** `[D]` — third backend, landed M2.1 (episode 0009;
   designed in [`0002-kubernetes-backend.md`](0002-kubernetes-backend.md),
   research episode 0008). One runner-supervised pod per workload; the

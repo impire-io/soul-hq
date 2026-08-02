@@ -43,7 +43,7 @@ keychain/KMS) and D15's (a JWT class that cannot express the prefix
 template forces in-envelope caller authentication) transfer unchanged to
 the amended shapes.
 
-Trail: [`../02-DESIGN/nats-surface.md`](../02-DESIGN/nats-surface.md)
+Trail: [`../02-DESIGN/nats-surface.md`](../02-DESIGN/soulidentity/nats-surface.md)
 (D14–D17 amended in place),
-[`../02-DESIGN/agent.md`](../02-DESIGN/agent.md) (D13 amendment); episodes
+[`../02-DESIGN/agent.md`](../02-DESIGN/soulidentity/agent.md) (D13 amendment); episodes
 0004–0005 unchanged as the pre-review record.

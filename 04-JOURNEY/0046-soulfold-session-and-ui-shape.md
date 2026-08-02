@@ -41,13 +41,13 @@ Nothing was refuted; two findings sharpened the store design rather
 than changing it: authorization codes are indexed by digest (a bearer
 secret must never be a KV key), and the session record gained its
 `csrf`/`done` fields — both propagated into
-[store-and-key-lifecycle](../02-DESIGN/store-and-key-lifecycle.md) D6.
+[store-and-key-lifecycle](../02-DESIGN/soulfold/store-and-key-lifecycle.md) D6.
 One decision was argued rather than measured: M1 issues JWT access
 tokens (D15), because M4's seam verifies access tokens against JWKS
 and Entra's are JWTs [mechanism-argument].
 
 What it opened: the second design doc,
-[session-and-ui](../02-DESIGN/session-and-ui.md) (D9–D15). M1's two
+[session-and-ui](../02-DESIGN/soulfold/session-and-ui.md) (D9–D15). M1's two
 named research topics are now both concluded; the store-envelope
 question opened by the operator (KV entry protection at rest, xkeys)
 is pre-registered as its own topic before the M1 build starts.
@@ -60,8 +60,8 @@ reopens the minimal-surface direction. The naming rules reverse only
 with WebAuthn spec/browser behavior changes (observable: a browser
 shipping assertions across renamed RP IDs).
 
-Trail: [session-and-ui](../02-DESIGN/session-and-ui.md);
-[store-and-key-lifecycle](../02-DESIGN/store-and-key-lifecycle.md)
+Trail: [session-and-ui](../02-DESIGN/soulfold/session-and-ui.md);
+[store-and-key-lifecycle](../02-DESIGN/soulfold/store-and-key-lifecycle.md)
 (D6 propagation); topic pre-registration, journey, and verdict in git
 history at `hq/01-RESEARCH/session-and-ui-shape/` (opened c330ee3,
 results d7f27bb, verdict 1eb535d; folder removed by this graduation);

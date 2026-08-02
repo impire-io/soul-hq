@@ -1,5 +1,6 @@
 # Should KV records be sealed with xkeys — and where would the key live?
 
+**Component:** soulfold
 **State:** active
 **Started:** 2026-08-02
 

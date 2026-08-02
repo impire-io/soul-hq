@@ -13,6 +13,6 @@ the system as it is.
 | [`auth-callout.md`](auth-callout.md) | Auth callout (M4): sentinel connection contract, issuer-as-mint, AUTH topology, the mapping shape — decisions D19–D22 |
 
 Future documents arrive by research graduation (see
-[`../01-RESEARCH/README.md`](../01-RESEARCH/README.md)) or design propagation
+[`../01-RESEARCH/README.md`](../../01-RESEARCH/README.md)) or design propagation
 from landed work; the roadmap names the expected ones (auth callout with
 claims-derived authorization, attestation issuance, sealing keys).

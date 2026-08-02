@@ -7,7 +7,7 @@ connections. Nothing here is protocol-normative: the node speaks the same core
 subjects any client does; it adds reach, never capability.*
 
 Graduated from research topic `remote-mcp-node`
-([episode 0008](../../04-JOURNEY/0008-remote-mcp-node.md)), Bars 1–3 and the
+([episode 0008](../../../04-JOURNEY/0038-soulstream-remote-mcp-node.md)), Bars 1–3 and the
 reversal-condition measurement PASS on a Synadia Cloud BYON; Bar 4 partial —
 the OAuth authorization-server story below is the open build decision.
 
@@ -15,7 +15,7 @@ the OAuth authorization-server story below is the open build decision.
 
 ## Why it exists
 
-The [MCP adapter](../../../docs/mcp.md) runs next to the agent and holds one
+The [MCP adapter](../../../../soulstream/docs/mcp.md) runs next to the agent and holds one
 persona's credentials ([library-and-adapters.md](library-and-adapters.md),
 Layer 2). Some hosts cannot run it at all: sandboxed Claude Desktop (observed
 failing to install the binary), claude.ai custom connectors, locked-down

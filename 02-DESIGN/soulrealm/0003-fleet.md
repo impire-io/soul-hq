@@ -1,7 +1,7 @@
 # 0003 — Fleet
 
 **Status of this document:** graduated from the `fleet` research topic
-(episode [0010](../04-JOURNEY/0010-fleet.md)); **not yet built** — the
+(episode [0010](../../04-JOURNEY/0033-soulrealm-fleet.md)); **not yet built** — the
 spec-kit pass for the first Fleet milestone starts from here. All three
 pre-registered research bars were **measured PASS** via spikes (placement,
 node death, seedless scoped launch), plus a measured post-bar follow-up

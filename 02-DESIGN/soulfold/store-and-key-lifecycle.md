@@ -1,9 +1,9 @@
 # The store and the key lifecycle
 
 **Graduated from research:** kv-schema-and-key-lifecycle, 2026-08-02 —
-[episode 0002](../04-JOURNEY/0002-kv-schema-and-key-lifecycle.md).
+[episode 0002](../../04-JOURNEY/0043-soulfold-kv-schema-and-key-lifecycle.md).
 **Realized by:** M1 (the OP skeleton) on the
-[roadmap](../03-IMPLEMENTATION/ROADMAP.md).
+[roadmap](../../03-IMPLEMENTATION/ROADMAP.md).
 
 What Soulfold keeps, where, and how it changes: the JetStream KV layout
 that is the fold's only store, and the signing-key lifecycle that lets

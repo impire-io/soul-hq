@@ -54,7 +54,7 @@ shape; the divergence demotes to a candidate upstream issue. Constitution
 III was reworded accordingly and the constitution ratified at 1.0.0 with
 this graduation.
 
-Opened: design [`0001-soulnode-composition.md`](../02-DESIGN/0001-soulnode-composition.md)
+Opened: design [`0001-soulnode-composition.md`](../02-DESIGN/soulnode/0001-soulnode-composition.md)
 — the all-loopback composition, per-plane connection configuration, the
 persisted ceremony (`soulnode init`), and Phase 1's acceptance criteria.
 Phase 1 is unblocked.

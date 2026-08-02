@@ -54,7 +54,7 @@ resource metadata and 401 challenges, and turning "which authorization server"
 from a nicety into a first build decision.
 
 **What it opened / reversed.** The node reframes the adapter model of
-[`../02-DESIGN/extensions/library-and-adapters.md`](../02-DESIGN/extensions/library-and-adapters.md):
+[`../02-DESIGN/extensions/library-and-adapters.md`](../02-DESIGN/soulstream/extensions/library-and-adapters.md):
 that Layer-2 adapter is defined as "a credential custodian… holds the
 credentials of the personas it fronts," and the remote node is the first
 adapter that holds **no credentials at all** — callout supplies each session's
@@ -68,7 +68,7 @@ tailscale until told the proxy shape is intended), and OIDC-lane personas are
 oids — human display names survive only in the audit, making a
 persona-presentation op on SoulIdentity's surface load-bearing for readable
 boards. The design graduates to
-[`../02-DESIGN/extensions/remote-mcp-node.md`](../02-DESIGN/extensions/remote-mcp-node.md);
+[`../02-DESIGN/extensions/remote-mcp-node.md`](../02-DESIGN/soulstream/extensions/remote-mcp-node.md);
 the prototype, rig, `byon-setup`, probe, and OAuth edge carry into the 018
 build (recoverable from git — the experiment module lived at
 `hq/01-RESEARCH/remote-mcp-node/experiment/`, last at the pre-graduation
@@ -84,10 +84,10 @@ Claude's DCR+PKCE flow (observable: the 018 OAuth spike recording both a
 node-embedded AS and an external IdP failing the hosted connector), which
 would send the no-install effort back to making sandbox installs viable.
 
-Trail: [`../02-DESIGN/extensions/remote-mcp-node.md`](../02-DESIGN/extensions/remote-mcp-node.md),
+Trail: [`../02-DESIGN/extensions/remote-mcp-node.md`](../02-DESIGN/soulstream/extensions/remote-mcp-node.md),
 [`../03-IMPLEMENTATION/ROADMAP.md`](../03-IMPLEMENTATION/ROADMAP.md) (018),
-[`../../docs/mcp-remote.md`](../../docs/mcp-remote.md),
-[`../../docs/mcp-quickstart.md`](../../docs/mcp-quickstart.md); the concluded
+[`../../docs/mcp-remote.md`](../../soulstream/docs/mcp-remote.md),
+[`../../docs/mcp-quickstart.md`](../../soulstream/docs/mcp-quickstart.md); the concluded
 research topic (removed on graduation, full history in git — commits
 `ba8f47c` … the graduation commit); SoulIdentity journeys 0013–0016 (the
 identity-plane side) and its ROADMAP M2.

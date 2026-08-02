@@ -1,6 +1,6 @@
 # Episode 0001 — Genesis: soulrealm gets an HQ (2026-07-22)
 
-Soulrealm was bootstrapped as a sibling to [soulstream](../../../soulstream):
+Soulrealm was bootstrapped as a sibling to [soulstream](../../soulstream):
 soulstream is the *record* (topics, ops, baselines, personas), soulrealm is
 the *room* — the runtime that launches, supervises, observes, and retires a
 realm's agents and tools as workloads. The starting point is soulstream's own
@@ -23,7 +23,7 @@ The founder's opening architecture question — run agents/tools on **NEX**, the
 NATS execution engine, with `agent` and `tool` as workload types — was **not
 decided**; it was opened as the first research topic
 (`nex-runtime-substrate`, since graduated →
-[episode 0002](0002-the-substrate-decision.md))
+[episode 0002](0002-soulrealm-the-substrate-decision.md))
 with four pre-registered bars. Desk research on NEX v0.4.1 found the strong
 part of the fit is real [mechanism-argument]: NEX delivers per-workload scoped
 NATS credentials (constitution II for free) and a pluggable-nexlet backend

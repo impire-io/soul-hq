@@ -59,9 +59,9 @@ authorization demotes to a bootstrap convenience. If the KV backend cannot
 pass its gate with only ciphertext ever stored [measured], the file backend
 returns as initial. Recorded identically in D12 and D10.
 
-Trail: [`../00-GENESIS/vision.md`](../00-GENESIS/vision.md),
-[`../00-GENESIS/constitution.md`](../00-GENESIS/constitution.md) (1.2.0),
-[`../02-DESIGN/agent.md`](../02-DESIGN/agent.md) (D2, D4, D7, D8, D10, D11
+Trail: [`../00-GENESIS/vision.md`](../99-ARCHIVE/genesis/soulidentity/vision.md),
+[`../00-GENESIS/constitution.md`](../99-ARCHIVE/genesis/soulidentity/constitution.md) (1.2.0),
+[`../02-DESIGN/agent.md`](../02-DESIGN/soulidentity/agent.md) (D2, D4, D7, D8, D10, D11
 amended; D12 new),
 [`../03-IMPLEMENTATION/ROADMAP.md`](../03-IMPLEMENTATION/ROADMAP.md) (M2–M5
 resequenced, research questions); this change, following episode 0002's
