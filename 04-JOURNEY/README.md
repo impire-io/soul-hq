@@ -543,6 +543,19 @@ directive) — both since dissolved by the upstream landings above.
 
 ### soulfold — the fold (as of 2026-08-02)
 
+**M2 ships — the refusal becomes behavior**
+([episode 0006](0053-soulfold-m2-passkeys.md); `specs/002-passkeys/`):
+WebAuthn ceremonies from go-webauthn are the only way through — the
+username-form login is gone, first touch registers a passkey, second
+touch asserts it, all proven in `make test` by a virtual authenticator
+doing real ES256 ceremonies through the full HTTP flow (stock go-oidc
+RP, restart mid-flow, forged POSTs inert). The D14 origin matrix
+refuses all four foreign shapes server-side; no credential secret in
+the store, positive-control-verified. Pending human act: the
+physical-authenticator runbook (feature quickstart). First-touch
+enrollment is the loud interim until M3's bootstrap research. **Next:
+M4 — the callout admission proof.**
+
 **M1 ships — the OP skeleton is real**
 ([episode 0005](0052-soulfold-m1-the-op-skeleton.md);
 `specs/001-op-skeleton/`): discovery, JWKS, and the code+PKCE flow on
@@ -664,6 +677,7 @@ key-lifecycle research. No product code exists yet.
 | 0050 | ecosystem | [One hq: the five headquarters merge](0050-ecosystem-one-hq.md) |
 | 0051 | soulfold | [The envelope is decided: xkeys seal the store (2026-08-02)](0051-soulfold-kv-encryption-at-rest.md) |
 | 0052 | soulfold | [M1 ships: the OP skeleton on the sealed store (2026-08-02)](0052-soulfold-m1-the-op-skeleton.md) |
+| 0053 | soulfold | [M2 ships: passkeys, the refusal becomes behavior (2026-08-02)](0053-soulfold-m2-passkeys.md) |
 
 ## Pre-merge numbering map
 

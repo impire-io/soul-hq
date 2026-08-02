@@ -16,7 +16,7 @@ changes to it are decisions and belong in the journey as episodes.
 | [soulrealm](#soulrealm--the-room) | Phases 1–2 complete — native, microsandbox, and Kubernetes backends run byte-identical declarations; soulstream pinned | Phase 3 (Fleet) unblocked: design 0003, M3.1 runs spec-kit next |
 | [soulidentity](#soulidentity--the-name) | M1/M3/M4 shipped (+ Entra/OIDC lane, D25 registry dissolution, D28/D29 consumer-proven additions); `v0.1.0` tagged | M2's node half — proven upstream by soulstream 018; roadmap check-off pending. M5 gated on soulstream demand |
 | [soulnode](#soulnode--the-house) | Phases 1–2 (local mode) complete: `init && up`, agent under enforcement, MCP door on the founding token; all four upstreams pinned by tag (2026-08-02) | Public door mode gated on soulfold upstream; Phase 3 (tsnet) gated on Phase 2 fronting measured insufficient |
-| [soulfold](#soulfold--the-fold) | M1 shipped ([episode 0052](../04-JOURNEY/0052-soulfold-m1-the-op-skeleton.md)): the OP skeleton — discovery/JWKS/code+PKCE on the sealed store, restarts invisible, rotation under live verifiers | M2 (passkeys) next; then M4 (the callout admission proof) per the public-door priority |
+| [soulfold](#soulfold--the-fold) | M1+M2 shipped ([episodes 0052](../04-JOURNEY/0052-soulfold-m1-the-op-skeleton.md)/[0053](../04-JOURNEY/0053-soulfold-m2-passkeys.md)): the OP skeleton on the sealed store + passkey ceremonies as the only way in; physical-authenticator runbook pending (human act) | M4 (the callout admission proof) next per the public-door priority; then M5 embed; M3 last |
 
 Cross-component dependencies, tracked openly: soulnode consumes everything by
 tag — the standing pin exception closed 2026-08-02 (soulrealm v0.1.0,
@@ -738,13 +738,20 @@ admin lifecycle (M3).
    KV entry protection at rest — **done**
    ([design](../02-DESIGN/soulfold/store-and-key-lifecycle.md) D16–D19,
    [journey 0004](../04-JOURNEY/0051-soulfold-kv-encryption-at-rest.md)).
-2. **M2 — passkeys.** WebAuthn registration and login ceremonies
-   (`go-webauthn`) replace the seeded stub; the passkey-only rule
-   (constitution I) becomes enforced behavior. **Gate**: full
-   register-then-login ceremony proven at the library level in
-   `make test`, plus a documented browser runbook against a real
-   authenticator; no credential secret in the store — public keys and
-   digests only, positive-control-verified [measured].
+2. ✅ **M2 — passkeys** (shipped 2026-08-02, [journey
+   0006](../04-JOURNEY/0053-soulfold-m2-passkeys.md),
+   `specs/002-passkeys/`). WebAuthn registration and login ceremonies
+   (`go-webauthn`) replaced the seeded stub; the passkey-only rule
+   (constitution I) is enforced behavior — the form POST is gone.
+   **Gate met [measured]**: register-then-login proven at library
+   level in `make test` (virtual authenticator doing real ES256
+   ceremonies), the e2e sign-in authenticating only by ceremony, the
+   D14 origin matrix refused server-side (4/4 foreign shapes), no
+   credential secret in the store positive-control-verified; the
+   real-authenticator browser runbook documented in the feature's
+   `quickstart.md` — **running it is a pending human act**. Interim
+   honesty: first-touch enrollment stands in for M3's researched
+   bootstrap story.
 3. **M3 — the lifecycle.** Users, groups (whose names surface as
    roles-claim values), OAuth client registration, invites, and the
    admin surface — including the bootstrap story (the first admin's
