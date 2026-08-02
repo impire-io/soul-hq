@@ -16,7 +16,7 @@ changes to it are decisions and belong in the journey as episodes.
 | [soulrealm](#soulrealm--the-room) | Phases 1–2 complete — native, microsandbox, and Kubernetes backends run byte-identical declarations; soulstream pinned | Phase 3 (Fleet) unblocked: design 0003, M3.1 runs spec-kit next |
 | [soulidentity](#soulidentity--the-name) | M1/M3/M4 shipped (+ Entra/OIDC lane, D25 registry dissolution, D28/D29 consumer-proven additions); `v0.1.0` tagged | M2's node half — proven upstream by soulstream 018; roadmap check-off pending. M5 gated on soulstream demand |
 | [soulnode](#soulnode--the-house) | Phase 2 complete including public mode ([episode 0055](../04-JOURNEY/0055-soulnode-the-public-door.md)): the full hosted-client OAuth story — challenge → metadata → DCR → PKCE → bearer MCP session — measured against the AS contract; all four upstreams pinned by tag | Bundled-fold default wiring rides soulfold M5; Phase 3 (tsnet) gated on fronting measured insufficient |
-| [soulfold](#soulfold--the-fold) | M1+M2+M4 shipped ([episodes 0052](../04-JOURNEY/0052-soulfold-m1-the-op-skeleton.md)/[0053](../04-JOURNEY/0053-soulfold-m2-passkeys.md)/[0054](../04-JOURNEY/0054-soulfold-m4-the-fold-in-the-fleet.md)): passkey sign-in → access token → callout admission proven both-arms at soulidentity v0.1.0; physical-authenticator runbook pending (human act) | soulnode public door unblocked; M5 (embed) next; M3 last |
+| [soulfold](#soulfold--the-fold) | M1+M2+M4+M5 shipped ([episodes 0052](../04-JOURNEY/0052-soulfold-m1-the-op-skeleton.md)–[0056](../04-JOURNEY/0056-soulfold-m5-the-embed-seam.md)): the whole public-door path in one day — passkeys, callout admission both-arms, public embed seam + DCR + fixed audience; physical-authenticator runbook pending (human act) | M3 (lifecycle + bootstrap research) is all that remains; soulnode's fold plane can now land in its repo |
 
 Cross-component dependencies, tracked openly: soulnode consumes everything by
 tag — the standing pin exception closed 2026-08-02 (soulrealm v0.1.0,
@@ -782,12 +782,20 @@ admin lifecycle (M3).
    tokens speak Entra's claim vocabulary (oid / preferred_username /
    roles) because the seam's verifier keys subjects by oid
    [mechanism-argument].
-5. **M5 — the embed seam and the default wiring.** The public serve
-   assembly (the ecosystem's embed pattern, soulidentity D29) so the
-   single-binary distribution runs the fold in-process, and the
-   distribution story wiring `--oidc-issuer` at the bundled fold by
-   default. **Gate**: a consumer-position module embeds and runs the
-   fold with no `internal/` import compiling [measured].
+5. ✅ **M5 — the embed seam and the default wiring** (shipped
+   2026-08-03, [journey
+   0008](../04-JOURNEY/0056-soulfold-m5-the-embed-seam.md),
+   `specs/004-embed-seam/`). The public `embed.Run(ctx, Options)`
+   assembly (D29 pattern), plus the AS-contract half the bundled story
+   needs: RFC 7591 DCR (opt-in, discovery grows
+   `registration_endpoint`) and the fixed token audience (opt-in,
+   joining every `aud`). **Gate met [measured]**: `e2e/embedgate`
+   (module path outside the namespace — `internal/` imports cannot
+   compile) embeds and runs the fold through discovery, DCR, a passkey
+   sign-in, and audience/roles-bearing tokens; the M4 rig's fold half
+   now rides the seam; `soulfold serve` is the seam's first consumer.
+   The soulnode-side default wiring (`planes.door.auth_issuer` at the
+   bundled fold) is that repo's feature to land.
 
 ### Open research questions (before their milestones)
 

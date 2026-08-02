@@ -557,7 +557,20 @@ no dev fork). Feasibility entered measured; so did the obstacles
 (SoulIdentity's serve path was `internal/`, soulrealm's `replace`
 directive) — both since dissolved by the upstream landings above.
 
-### soulfold — the fold (as of 2026-08-02)
+### soulfold — the fold (as of 2026-08-03)
+
+**M5 ships — the embed seam**
+([episode 0008](0056-soulfold-m5-the-embed-seam.md);
+`specs/004-embed-seam/`): the public `embed.Run(ctx, Options)`
+assembly (D29 pattern) with the AS-contract half the bundled story
+needs — RFC 7591 DCR and the fixed token audience, both opt-in. The
+compiler-proof consumer gate (`e2e/embedgate`, module path outside the
+namespace) runs discovery → DCR → passkey sign-in → audience/
+roles-bearing tokens; the M4 rig's fold half now rides the seam;
+`soulfold serve` is the seam's first consumer; `authtest` went public
+for consumers' own gates. **The public-door path is complete on the
+fold's side — M3 (lifecycle + bootstrap research) is all that
+remains.**
 
 **M4 ships — the fold joins the fleet**
 ([episode 0007](0054-soulfold-m4-the-fold-in-the-fleet.md);
@@ -708,6 +721,7 @@ key-lifecycle research. No product code exists yet.
 | 0053 | soulfold | [M2 ships: passkeys, the refusal becomes behavior (2026-08-02)](0053-soulfold-m2-passkeys.md) |
 | 0054 | soulfold | [M4 ships: the fold joins the fleet (2026-08-02)](0054-soulfold-m4-the-fold-in-the-fleet.md) |
 | 0055 | soulnode | [The public door opens (2026-08-03)](0055-soulnode-the-public-door.md) |
+| 0056 | soulfold | [M5 ships: the fold learns to live in your house (2026-08-03)](0056-soulfold-m5-the-embed-seam.md) |
 
 ## Pre-merge numbering map
 
