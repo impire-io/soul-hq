@@ -78,6 +78,57 @@ encryption plus constitution-I data minimization, recorded as such.
 
 ## Verdict
 
-<Empty until graduation. Filled by /research-graduate: PASS/FAIL per bar with the
-honest numbers, each load-bearing claim tagged [measured] / [mechanism-argument]
-/ [judgment].>
+**Graduated to design, 2026-08-02. Four bars, four passes.** The rig
+(session scratchpad `xkeyrig/`, stack: nats-server v2.14.4, nats.go
+v1.52.0, nkeys v0.4.16, zitadel/oidc v3.48.1, go-oidc v3.20.0) ran
+every arm against an embedded JetStream server, sealed and unsealed,
+with positive controls on every scan.
+
+- **Bar 1 — PASS [measured].** Restart round-trip: 7/7 records
+  byte-identical ciphertext across a full server stop, plaintext
+  decodes to the originals, buckets found by lookup. Additive matrix:
+  24/24 writer×reader cells over six record shapes decode identically
+  sealed vs unsealed, plus the D3 RMW demonstration through the
+  envelope (the trap is unchanged — a design rule, not a mechanism the
+  envelope could fix). CAS: 8 writers × 1,000 cycles landed at exactly
+  8,000 sealed (49,243 rejections all retried, ~3,165 accepted
+  contended writes/s vs ~7,116 unsealed — half the throughput, still
+  orders beyond an IdP's write rate); code redemption won exactly once
+  in 100/100 races of 8, both arms.
+- **Bar 2 — PASS [measured].** With the rig stopped: zero marker hits
+  (raw and base64) across the complete store directory, zero in an
+  API-level dump of every key and value — including the username,
+  because the amendment this bar forced digests the `idx.username.*`
+  key (a plaintext username in a KV *key* would hand the scan exactly
+  what the envelope withholds). The seal seed lives in a sibling
+  custody dir, mechanically asserted outside the store. Positive
+  control: 5 disk + 6 API hits unsealed — the scan is proven, not
+  assumed. The custody story is design matter (D17): the seed is born
+  at first start, lives outside the store dir per deployment shape,
+  re-keying is a stated re-seal migration, seed loss is total data
+  loss.
+- **Bar 3 — PASS [measured].** JetStream filestore encryption
+  (ChaCha): restart round-trip green, disk scan zero hits — and the
+  decisive asymmetry demonstrated, not asserted: an ordinary NATS-API
+  reader saw 6 plaintext hits under filestore encryption. Server-side
+  encryption defends the disk; only the app-layer envelope also
+  defends the NATS surface — the surface D1 explicitly shares with a
+  parent deployment. Threat table in the design (D19).
+- **Bar 4 — PASS [measured].** Seal p50 ≈ 57.4 µs, open p50 ≈ 57.2 µs
+  (~17,400/s), +44 bytes per record flat across all six shapes. Added
+  p50 per KV record operation: +45.5 µs (put), +57.2 µs (get) — bar
+  was 1 ms. End-to-end sign-in (stock go-oidc RP, authorization-code +
+  PKCE, JWT access token, id_token verified against published JWKS):
+  median 3.23 ms unsealed → 4.41 ms sealed, **+1.19 ms** — bar was
+  10 ms.
+
+The reversal condition never approached: the custody story does not
+degenerate — in the shared-JetStream shape the seed is unreachable
+from the store's own surfaces, and even single-binary deployments keep
+the seed out of the store-dir artifact set (a full-machine backup that
+grabs both is named honestly in D17 as plaintext-equivalent
+[judgment]). Direction confirmed: **app-layer xkey sealing ships as
+the fold's store envelope** (D16–D19 in
+[store-and-key-lifecycle](../../02-DESIGN/soulfold/store-and-key-lifecycle.md));
+filestore encryption stays available as defense-in-depth, not a
+substitute.
