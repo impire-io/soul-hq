@@ -125,8 +125,10 @@ The wire format already carries every future hook: `Soulstream-Parents` (merge),
     only** (soulfold the intended default, the node AS-agnostic; the AS-facing
     contract proven the interface). All five user stories measured on an
     in-process admission edge; the R4 trust model closes the prototype's
-    forged-hint DoS. CI/release wired but dormant until the private-module
-    credential exists. Design in
+    forged-hint DoS. CI/release awake since 2026-08-03 — the whole
+    impire-io stack went public, dissolving the private-module
+    credential blocker; the node CI job runs green, and the
+    node-release job proves itself on the next `v*` tag. Design in
     [extensions/remote-mcp-node.md](../02-DESIGN/soulstream/extensions/remote-mcp-node.md).
 
 Beyond the original day-2 list, five features shipped that the plan did not
