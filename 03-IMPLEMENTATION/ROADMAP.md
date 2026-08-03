@@ -844,12 +844,11 @@ admin lifecycle (M3).
   defense-in-depth, not a substitute. See
   [store-and-key-lifecycle](../02-DESIGN/soulfold/store-and-key-lifecycle.md)
   and [journey 0004](../04-JOURNEY/0051-soulfold-kv-encryption-at-rest.md).
-- **The bootstrap story** (gates M3) — **opened 2026-08-03** as
-  [bootstrap-story](../01-RESEARCH/bootstrap-story/README.md), four
-  pre-registered bars: the from-nothing ceremony counted and closed,
-  invites bearer-shaped and D12-honest, the store alone unable to
-  enroll, and the pocket-id surface audit as M3's scope input (the
-  audit folded in as Bar 4).
+- ~~**The bootstrap story** (gates M3)~~ — concluded 2026-08-03, all
+  four bars passed: invitation is the only enrollment right (D20–D24
+  in [lifecycle](../02-DESIGN/soulfold/lifecycle.md)); first-touch
+  deleted; pocket-id's open `/setup` refused. See
+  [journey 0009](../04-JOURNEY/0059-soulfold-bootstrap-story.md).
 
 ### One-way doors
 

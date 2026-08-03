@@ -583,6 +583,18 @@ directive) — both since dissolved by the upstream landings above.
 
 ### soulfold — the fold (as of 2026-08-03)
 
+**The bootstrap story concludes — invitation is the only door**
+([episode 0009](0059-soulfold-bootstrap-story.md)): M3's gating
+research passed all four bars against the fold itself — a fresh fold
+to a signed-in admin in four counted acts, invites exactly-once
+(25/25 races) and digest-stored with positive controls, the opened
+store's 29 artifacts all refusing as enrollment, and the pocket-id
+audit fixing M3's scope (its open `/setup` bootstrap refused — the
+operator-act invite is stronger trust at the same act count).
+First-touch enrollment is deleted, not disabled. Third design doc:
+[lifecycle](../02-DESIGN/soulfold/lifecycle.md) (D20–D24). **The M3
+build lands next.**
+
 **M5 ships — the embed seam**
 ([episode 0008](0056-soulfold-m5-the-embed-seam.md);
 `specs/004-embed-seam/`): the public `embed.Run(ctx, Options)`
@@ -748,6 +760,7 @@ key-lifecycle research. No product code exists yet.
 | 0056 | soulfold | [M5 ships: the fold learns to live in your house (2026-08-03)](0056-soulfold-m5-the-embed-seam.md) |
 | 0057 | soulnode | [The folded realm: one binary, real people (2026-08-03)](0057-soulnode-the-folded-realm.md) |
 | 0058 | soulnode | [v0.1.0: the house gets a shipping label (2026-08-03)](0058-soulnode-the-release-pipeline.md) |
+| 0059 | soulfold | [The bootstrap story: invitation is the only door (2026-08-03)](0059-soulfold-bootstrap-story.md) |
 
 ## Pre-merge numbering map
 
