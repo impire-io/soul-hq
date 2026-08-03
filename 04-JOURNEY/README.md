@@ -583,6 +583,19 @@ directive) — both since dissolved by the upstream landings above.
 
 ### soulfold — the fold (as of 2026-08-03)
 
+**M3 ships — the fold is complete**
+([episode 0010](0060-soulfold-m3-the-lifecycle.md);
+`specs/005-the-lifecycle/`, **v0.2.0**): users, groups→roles, invites,
+client registration, and the `/admin` JSON surface on the graduated
+lifecycle design — enrollment everywhere by single-use digest-stored
+invite, first-touch deleted, the four research bars riding `make test`
+permanently. The M3 gate measured: four acts to a signed-in admin;
+membership changes in the next token; admin-surface authz. Soulnode
+composed it the same hour: the founding invite prints once beside the
+founding token, and the owner's bearer carries admin (fold surface) +
+realm (callout admission) with the two authorities cleanly separate.
+**Every milestone on the fold's roadmap is shipped.**
+
 **The bootstrap story concludes — invitation is the only door**
 ([episode 0009](0059-soulfold-bootstrap-story.md)): M3's gating
 research passed all four bars against the fold itself — a fresh fold
@@ -761,6 +774,7 @@ key-lifecycle research. No product code exists yet.
 | 0057 | soulnode | [The folded realm: one binary, real people (2026-08-03)](0057-soulnode-the-folded-realm.md) |
 | 0058 | soulnode | [v0.1.0: the house gets a shipping label (2026-08-03)](0058-soulnode-the-release-pipeline.md) |
 | 0059 | soulfold | [The bootstrap story: invitation is the only door (2026-08-03)](0059-soulfold-bootstrap-story.md) |
+| 0060 | soulfold | [M3 ships: the fold is complete (2026-08-03)](0060-soulfold-m3-the-lifecycle.md) |
 
 ## Pre-merge numbering map
 

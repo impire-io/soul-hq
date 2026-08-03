@@ -16,7 +16,7 @@ changes to it are decisions and belong in the journey as episodes.
 | [soulrealm](#soulrealm--the-room) | Phases 1–2 complete — native, microsandbox, and Kubernetes backends run byte-identical declarations; soulstream pinned | Phase 3 (Fleet) unblocked: design 0003, M3.1 runs spec-kit next |
 | [soulidentity](#soulidentity--the-name) | M1/M3/M4 shipped (+ Entra/OIDC lane, D25 registry dissolution, D28/D29 consumer-proven additions); `v0.1.0` tagged | M2's node half — proven upstream by soulstream 018; roadmap check-off pending. M5 gated on soulstream demand |
 | [soulnode](#soulnode--the-house) | **v0.1.0 released** with binaries ([episodes 0055](../04-JOURNEY/0055-soulnode-the-public-door.md)/[0057](../04-JOURNEY/0057-soulnode-the-folded-realm.md)/[0058](../04-JOURNEY/0058-soulnode-the-release-pipeline.md)): the folded realm — passkey sign-in at the bundled fold, bearer MCP sessions at the public door — plus CI and the tag-triggered release pipeline, all measured | Day-2 items (upgrade, backup/restore); Phase 3 (tsnet) gated on fronting measured insufficient |
-| [soulfold](#soulfold--the-fold) | M1+M2+M4+M5 shipped ([episodes 0052](../04-JOURNEY/0052-soulfold-m1-the-op-skeleton.md)–[0056](../04-JOURNEY/0056-soulfold-m5-the-embed-seam.md)): the whole public-door path in one day — passkeys, callout admission both-arms, public embed seam + DCR + fixed audience; physical-authenticator runbook pending (human act) | M3 (lifecycle + bootstrap research) is all that remains; soulnode's fold plane can now land in its repo |
+| [soulfold](#soulfold--the-fold) | **Every milestone shipped — M1–M5, v0.2.0** ([episodes 0052](../04-JOURNEY/0052-soulfold-m1-the-op-skeleton.md)–[0060](../04-JOURNEY/0060-soulfold-m3-the-lifecycle.md)): the sealed store, passkeys, callout admission, the embed seam, and the lifecycle — invitation is the only door; physical-authenticator runbook pending (human act) | Named horizons only (deferred audit rows, multi-issuer demand); day-2 by demand |
 
 Cross-component dependencies, tracked openly: soulnode consumes everything by
 tag — the standing pin exception closed 2026-08-02 (soulrealm v0.1.0,
@@ -792,13 +792,19 @@ admin lifecycle (M3).
    `quickstart.md` — **running it is a pending human act**. Interim
    honesty: first-touch enrollment stands in for M3's researched
    bootstrap story.
-3. **M3 — the lifecycle.** Users, groups (whose names surface as
-   roles-claim values), OAuth client registration, invites, and the
-   admin surface — including the bootstrap story (the first admin's
-   first passkey), which is a research topic before it is code.
-   **Gate**: from-nothing bootstrap to a signed-in admin in a counted,
-   documented number of acts; group membership changes surface in the
-   next issued token [measured].
+3. ✅ **M3 — the lifecycle** (shipped 2026-08-03 — after M4/M5 per the
+   operator's public-door priority — [journey
+   0010](../04-JOURNEY/0060-soulfold-m3-the-lifecycle.md),
+   `specs/005-the-lifecycle/`, **v0.2.0**). Users, groups (names =
+   roles-claim values), client registration, invites, and the `/admin`
+   JSON surface, on the graduated lifecycle design (D20–D24; the
+   bootstrap-story research ran first, journey 0009). **Gate met
+   [measured]**: from-nothing bootstrap to a signed-in admin in four
+   counted acts; group membership changes surface in the next issued
+   token; invites exactly-once and digest-stored; first-touch
+   enrollment deleted; every prior milestone gate green on the invite
+   mechanism. Soulnode composed it the same hour (the founding invite
+   printed once beside the founding token).
 4. ✅ **M4 — the fold in the fleet** (shipped 2026-08-02 — before M3,
    the operator's public-door priority — [journey
    0007](../04-JOURNEY/0054-soulfold-m4-the-fold-in-the-fleet.md),
