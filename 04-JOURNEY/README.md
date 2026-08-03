@@ -804,6 +804,7 @@ key-lifecycle research. No product code exists yet.
 | 0060 | soulfold | [M3 ships: the fold is complete (2026-08-03)](0060-soulfold-m3-the-lifecycle.md) |
 | 0061 | soulfold | [The admin console: a browser and your passkey (2026-08-03)](0061-soulfold-the-admin-console.md) |
 | 0062 | soulnode | [The front of house: URLs, the console, no collision (2026-08-03)](0062-soulnode-the-front-of-house.md) |
+| 0063 | soulfold | [The console gets a face (2026-08-03)](0063-soulfold-the-console-gets-a-face.md) |
 
 ## Pre-merge numbering map
 
