@@ -88,6 +88,66 @@ queryable audit store, API keys, invite revocation (TTL bounds it);
 stands where Entra stands; it fronts no directory), SMTP, branding,
 custom claims.
 
+### D25a — an invite link enrols standalone, at `/enroll`
+
+The enrolment invite (D21) is delivered as `<issuer>/enroll?invite=…`
+— a **standalone page**, not `/login`. `/login` only exists inside a
+relying party's OIDC request (it needs an auth-request id); an invite
+link a person clicks has none, so it lands on `/enroll`, which runs a
+session-only registration ceremony (`Begin(username, "", invite)` →
+create → `Finish`) and shows a confirmation. The invite is the whole
+capability; a cross-origin submission is refused (D13's Origin wall),
+and the ceremony consumes the invite exactly as any registration does
+(D21). After enrolling, the user signs in through any RP with their
+passkey; an admin's convenience session lands them in the console.
+
+Reasoning: without this the printed invite URL dead-ends at "missing
+auth request" — enrolment would only work if some RP happened to
+forward the invite through `/login`, which no invite link can assume
+[measured: the bare `/login?invite=` path errors; `/enroll?invite=`
+completes].
+
+### D25 — the admin surface is two halves: a machine API and a human console
+
+D24's JSON API moves to `/api/admin/*` and gains a sibling: a
+server-rendered **console at `/admin`** for a person with a browser.
+The split is by consumer, not by capability — both call the one
+`lifecycle.Service`.
+
+- **The console authenticates by passkey session, not by bearer.** A
+  visitor with no session sees a login page whose one script runs a
+  WebAuthn *assertion* (a session-only ceremony — no relying party, no
+  auth request); on success the fold sets an `sf_session` naming the
+  user and the console renders only if that user is in the `admin`
+  group and active. This reuses D11's browser session and D9's
+  single-script exception; it adds no new page kind to the sign-in
+  flow (login/error), because the console is its own surface.
+- **State-changing POSTs carry the session's CSRF token** (minted into
+  the browser-session record, D13's rule) and land back on the
+  dashboard (POST/redirect/GET). `SameSite=Lax` is the outer wall.
+- **The one bearer a console response ever carries is the enrolment
+  invite**, shown once in the flash after minting (D21).
+- **Custody and refusals are unchanged**: a non-admin's valid passkey
+  is refused at the console door; an unauthenticated request never
+  sees the dashboard; the machine API keeps its own bearer check.
+
+Reasoning: an operator wants to click, not curl — the fold is a human
+tool, and Entra (the thing it stands in for, constitution II) has a
+portal too [judgment]. Server-rendered, no SPA, no framework
+(constitution III): the console is HTML the fold prints, gated on the
+same passkey the rest of the system already trusts. Measured: an
+admin enrols, signs into `/admin` with their passkey, and creates a
+user / mints an invite / sets groups / disables an account from the
+browser; a non-admin passkey is refused; a forged CSRF changes
+nothing [measured].
+
+Deployment note (soulnode / any two-service host): the console shares
+the fold's listener with the OIDC endpoints, so it is reachable
+wherever the fold's issuer is. It does **not** share the MCP door's
+listener — those are separate ports/services and must front to
+distinct public routes (soulnode logs both URLs and refuses a shared
+listen address).
+
 ## Acceptance criteria (the M3 gate inherits these)
 
 1. From-nothing bootstrap: a fresh fold to a signed-in admin (roles ∋
@@ -101,4 +161,7 @@ custom claims.
 4. Membership propagation: an admin-surface group change surfaces in
    the next issued token.
 5. Admin surface authz: admin-role bearers pass; non-admin bearers and
-   bare requests refuse.
+   bare requests refuse (the machine API); and the human console
+   (D25): an admin's passkey session reaches the dashboard, a
+   non-admin's does not, an unauthenticated request sees only the
+   login page, and a forged CSRF changes nothing.

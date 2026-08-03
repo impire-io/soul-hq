@@ -458,6 +458,20 @@ claims-mapping shape, service round-trip latency) are named on the roadmap.
 
 ### soulnode — the house (as of 2026-08-03)
 
+**The front of house — URLs, the console, no collision**
+([episode 0012](0062-soulnode-the-front-of-house.md); `v0.3.0`): `up`
+now logs the MCP door, the fold sign-in, and the admin console URLs;
+the fold is on by default (`init && up` lands a person at a passkey
+prompt with an admin console); the door and fold can't share a
+listener (refused by name; public mode needs two fronted routes); and
+the bare-IP RP-id footgun is caught at load (issuer defaults to
+localhost). Two bugs the live browser run surfaced were fixed
+upstream and pinned: the invite link dead-ended (soulfold grew a
+standalone `/enroll`, v0.3.1) and a phantom duplicate user (CreateUser
+made index-first, v0.3.2). Verified the whole human path in a real
+Chromium: click the enrol link → create a passkey → land in the
+console.
+
 **v0.1.0 released — the house gets a shipping label**
 ([episode 0009](0058-soulnode-the-release-pipeline.md)): CI (first
 runner run green, folded-realm gate included) and the tag-triggered
@@ -582,6 +596,19 @@ no dev fork). Feasibility entered measured; so did the obstacles
 directive) — both since dissolved by the upstream landings above.
 
 ### soulfold — the fold (as of 2026-08-03)
+
+**The admin console — a browser and your passkey**
+([episode 0011](0061-soulfold-the-admin-console.md); `v0.3.0`): the
+admin surface split (D25) — the JSON API moved to `/api/admin`, and a
+server-rendered console landed at `/admin`, authenticated by a
+passkey session gated on the `admin` group. From a browser: create
+people, mint their enrolment invites (shown once), set groups,
+disable accounts, register clients — CSRF-guarded, no server-box
+access. Verified in a real Chromium session with a CDP virtual
+authenticator, which caught a genuine constraint the Go test could
+not: WebAuthn refuses a bare-IP issuer host (use `localhost` or the
+fronted name, never `127.0.0.1`). Browser-session logic extracted to
+`internal/websession`.
 
 **M3 ships — the fold is complete**
 ([episode 0010](0060-soulfold-m3-the-lifecycle.md);
@@ -775,6 +802,8 @@ key-lifecycle research. No product code exists yet.
 | 0058 | soulnode | [v0.1.0: the house gets a shipping label (2026-08-03)](0058-soulnode-the-release-pipeline.md) |
 | 0059 | soulfold | [The bootstrap story: invitation is the only door (2026-08-03)](0059-soulfold-bootstrap-story.md) |
 | 0060 | soulfold | [M3 ships: the fold is complete (2026-08-03)](0060-soulfold-m3-the-lifecycle.md) |
+| 0061 | soulfold | [The admin console: a browser and your passkey (2026-08-03)](0061-soulfold-the-admin-console.md) |
+| 0062 | soulnode | [The front of house: URLs, the console, no collision (2026-08-03)](0062-soulnode-the-front-of-house.md) |
 
 ## Pre-merge numbering map
 
