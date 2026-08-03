@@ -34,7 +34,7 @@ The vision sentence now has its distribution half: download one
 archive, `soulnode init && soulnode up`. What still stands between
 v0.1.0 and handing it to a stranger is product, not plumbing: the
 fold's M3 lifecycle behind the loudly-interim first-touch enrollment
-(research open: [bootstrap-story](../01-RESEARCH/bootstrap-story/README.md)),
+(research since concluded — [episode 0059](0059-soulfold-bootstrap-story.md)),
 the physical-authenticator runbook (a human act, pending), and the
 named-not-planned day-2 items (upgrade in place, backup/restore).
 
