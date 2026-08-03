@@ -75,6 +75,53 @@ M3's gate is amended openly to say so.
 
 ## Verdict
 
-<Empty until graduation. Filled by /research-graduate: PASS/FAIL per bar with the
-honest numbers, each load-bearing claim tagged [measured] / [mechanism-argument]
-/ [judgment].>
+**Graduated to design, 2026-08-03. Four bars, four passes.** The rig is
+the fold itself on a lifecycle branch — invite mechanics prototyped
+against the real store, ceremonies, and HTTP surface, then measured;
+the mechanism under test: single-use, expiring, digest-stored invite
+tokens as the only enrollment right (no open lane, no first-touch).
+
+- **Bar 1 — PASS [measured].** The from-nothing ceremony is exactly
+  **four acts** — serve, seed the admin user, mint the invite (three
+  operator acts; in the bundled soulnode shape the first two collapse
+  into `init`/`up`), one browser act (the enroll URL: enrollment and
+  sign-in in a single passkey ceremony) — ending in a token whose
+  roles claim carries `admin`, verified against published JWKS. The
+  bootstrap credential is single-use: replaying the consumed invite
+  refuses at begin with the user record unmoved (1 credential before
+  and after). First-touch enrollment is structurally gone: a seeded
+  user with no invite cannot begin any ceremony (HTTP 4xx at begin).
+- **Bar 2 — PASS [measured].** Exactly one enrollment per invite:
+  25/25 rounds of 8 racing consumers produced exactly one winner (the
+  D4 CAS flip, consumed *before* the credential binds). Expired
+  (50 ms TTL, presented late), forged (well-shaped, never minted), and
+  replayed invites all refuse; afterwards the target still has zero
+  credentials and zero live invites. The store holds only digests:
+  the minted bearer appears in no KV key and no opened record field,
+  while the digest key itself is findable — the positive control.
+- **Bar 3 — PASS [measured].** With the envelope conceded (attacker
+  holds store + seal seed): all 29 artifacts recoverable from the
+  opened users bucket — every key, every string field, and each
+  invite digest re-dressed in the token prefix — were presented as
+  invites; 0 admitted. Digests don't invert [sha256 preimage:
+  mechanism-argument]; no stored artifact suffices to enroll.
+- **Bar 4 — PASS [judgment, documented].** The pocket-id audit
+  (docs.pocket-id.org, 2026-08-03): its surface is users (manual /
+  signup links / open registration), groups with per-client
+  allowed-groups, OIDC client management, LDAP sync, REST API + API
+  keys, audit logs, SMTP notifications, branding — and its first
+  admin arrives via an **open `/setup` page** (whoever gets there
+  first). The fold's audit table (design D24): NEEDED — users
+  (create/list/disable), groups + membership → roles, invites, client
+  registration, the JSON admin API; DEFERRED — per-client
+  allowed-groups, queryable audit store, API keys, invite revocation
+  (TTL bounds it); REFUSED — open registration and open `/setup`
+  (enrollment is invite possession, full stop), LDAP (the fold stands
+  where Entra stands, it does not front a directory), SMTP, branding,
+  custom claims (constitutions I–III). M3's spec scope is exactly the
+  NEEDED rows.
+
+The reversal condition never fired: the ceremony completes with only
+the terminal that founded the deployment plus a browser, and Bar 3
+holds — the operator-act invite (D22) is strictly stronger than
+pocket-id's open `/setup`, at the same act count.
