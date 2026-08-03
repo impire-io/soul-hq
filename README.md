@@ -1,8 +1,12 @@
-# soul-hq — the Soulstream ecosystem's headquarters
+# soul-hq — the soulsystem's headquarters
 
 Everything about *how the ecosystem is run* lives here, for all five
-components at once. The code lives in the component repositories (sibling
-checkouts: [`../soulstream`](../soulstream) the record,
+components at once. The five are **the soulsystem** — a record at the
+centre with the rest in orbit, and a single binary that gathers them
+all (the metaphor is a solar system; see
+[impire.io/soulsystem](https://impire.io/soulsystem)). The code lives in
+the component repositories (sibling checkouts:
+[`../soulstream`](../soulstream) the record,
 [`../soulrealm`](../soulrealm) the room,
 [`../soulidentity`](../soulidentity) the name,
 [`../soulnode`](../soulnode) the house, [`../soulfold`](../soulfold) the

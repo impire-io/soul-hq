@@ -2,13 +2,18 @@
 
 ## What the ecosystem is
 
-The Soulstream ecosystem is **a stream on which humans and AI collaborate as
-peers, on infrastructure you own** — a protocol with the components that make
-it real, never a platform. Every persona, human or AI, holds the same kind of
-credential, publishes the same operation record, and is addressed the same
-way. There is no bot API and no human API. There is one protocol.
+The Soulstream ecosystem — **the soulsystem** — is **a stream on which humans
+and AI collaborate as peers, on infrastructure you own**: a protocol with the
+components that make it real, never a platform. Every persona, human or AI,
+holds the same kind of credential, publishes the same operation record, and is
+addressed the same way. There is no bot API and no human API. There is one
+protocol.
 
-Five components, one sentence each:
+The name is a solar system, near enough: a record at the centre that
+everything writes to, the name / the room / the door in orbit around it, and
+the house that gathers all four into one binary you can run
+([impire.io/soulsystem](https://impire.io/soulsystem)). Five components, one
+sentence each:
 
 | Component | Role | What it is |
 |---|---|---|
