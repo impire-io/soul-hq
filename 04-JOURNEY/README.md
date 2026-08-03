@@ -458,6 +458,17 @@ claims-mapping shape, service round-trip latency) are named on the roadmap.
 
 ### soulnode — the house (as of 2026-08-03)
 
+**v0.1.0 released — the house gets a shipping label**
+([episode 0009](0058-soulnode-the-release-pipeline.md)): CI (first
+runner run green, folded-realm gate included) and the tag-triggered
+goreleaser release, archivist pattern; `v0.1.0` published with
+linux/darwin binaries, an artifact round-tripped, checksum-verified,
+answering `soulnode version` → `0.1.0`. No windows on purpose (the
+ceremony's owner-only modes). The operator made soulrealm public —
+the whole consumed stack now fetches with zero credentials, and the
+"private-module credential" blocker is gone. **Next:** day-2 items,
+soulfold M3 upstream, or Phase 3's tsnet gate.
+
 **The folded realm — one binary, real people**
 ([episode 0008](0057-soulnode-the-folded-realm.md);
 `specs/006-the-fold-plane/`): `planes.fold` runs the bundled
@@ -736,6 +747,7 @@ key-lifecycle research. No product code exists yet.
 | 0055 | soulnode | [The public door opens (2026-08-03)](0055-soulnode-the-public-door.md) |
 | 0056 | soulfold | [M5 ships: the fold learns to live in your house (2026-08-03)](0056-soulfold-m5-the-embed-seam.md) |
 | 0057 | soulnode | [The folded realm: one binary, real people (2026-08-03)](0057-soulnode-the-folded-realm.md) |
+| 0058 | soulnode | [v0.1.0: the house gets a shipping label (2026-08-03)](0058-soulnode-the-release-pipeline.md) |
 
 ## Pre-merge numbering map
 

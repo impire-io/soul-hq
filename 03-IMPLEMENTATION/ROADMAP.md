@@ -15,7 +15,7 @@ changes to it are decisions and belong in the journey as episodes.
 | [soulstream](#soulstream--the-record) | `v0.7.0` — MVP + most of day-2 shipped; the remote MCP node built and consumable; two-week dogfood run live since 2026-07-27 | Sealed-topics build priority gated on the dogfood chafe log (to 2026-08-10); eg-walker gated on stage-1 chafe |
 | [soulrealm](#soulrealm--the-room) | Phases 1–2 complete — native, microsandbox, and Kubernetes backends run byte-identical declarations; soulstream pinned | Phase 3 (Fleet) unblocked: design 0003, M3.1 runs spec-kit next |
 | [soulidentity](#soulidentity--the-name) | M1/M3/M4 shipped (+ Entra/OIDC lane, D25 registry dissolution, D28/D29 consumer-proven additions); `v0.1.0` tagged | M2's node half — proven upstream by soulstream 018; roadmap check-off pending. M5 gated on soulstream demand |
-| [soulnode](#soulnode--the-house) | Phase 2 complete + the folded realm ([episodes 0055](../04-JOURNEY/0055-soulnode-the-public-door.md)/[0057](../04-JOURNEY/0057-soulnode-the-folded-realm.md)): the bundled fold signs real people in by passkey and their tokens open MCP sessions at the public door — one binary, zero external services; five upstreams pinned by tag | Day-2/release polish; Phase 3 (tsnet) gated on fronting measured insufficient |
+| [soulnode](#soulnode--the-house) | **v0.1.0 released** with binaries ([episodes 0055](../04-JOURNEY/0055-soulnode-the-public-door.md)/[0057](../04-JOURNEY/0057-soulnode-the-folded-realm.md)/[0058](../04-JOURNEY/0058-soulnode-the-release-pipeline.md)): the folded realm — passkey sign-in at the bundled fold, bearer MCP sessions at the public door — plus CI and the tag-triggered release pipeline, all measured | Day-2 items (upgrade, backup/restore); Phase 3 (tsnet) gated on fronting measured insufficient |
 | [soulfold](#soulfold--the-fold) | M1+M2+M4+M5 shipped ([episodes 0052](../04-JOURNEY/0052-soulfold-m1-the-op-skeleton.md)–[0056](../04-JOURNEY/0056-soulfold-m5-the-embed-seam.md)): the whole public-door path in one day — passkeys, callout admission both-arms, public embed seam + DCR + fixed audience; physical-authenticator runbook pending (human act) | M3 (lifecycle + bootstrap research) is all that remains; soulnode's fold plane can now land in its repo |
 
 Cross-component dependencies, tracked openly: soulnode consumes everything by
@@ -682,6 +682,20 @@ disabled); the fold serves before the identity plane (its OIDC
 validator discovers at startup). Two consumer-proven upstream
 additions tagged on the way (soulfold v0.1.1 NATSCreds, v0.1.2
 persona-shaped ids).
+
+### The release pipeline — ✅ landed 2026-08-03, v0.1.0 released
+
+**CI + the tag-triggered release** ([episode
+0058](../04-JOURNEY/0058-soulnode-the-release-pipeline.md)): the
+archivist pattern composed — gofmt/build/test/lint on every push
+(first runner run green, folded-realm gate included), goreleaser
+publishing linux/darwin × amd64/arm64 with checksums and the stamped
+version. Proven live: `v0.1.0` is
+[released](https://github.com/impire-io/soulnode/releases/tag/v0.1.0),
+an artifact round-tripped and verified. No windows on purpose (the
+ceremony's owner-only modes). Zero credentials anywhere: the operator
+made soulrealm public, so the whole consumed stack fetches openly —
+the "private-module credential" blocker dissolved.
 
 ### Later horizons (named, not planned)
 
