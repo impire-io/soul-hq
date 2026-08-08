@@ -806,6 +806,7 @@ key-lifecycle research. No product code exists yet.
 | 0062 | soulnode | [The front of house: URLs, the console, no collision (2026-08-03)](0062-soulnode-the-front-of-house.md) |
 | 0063 | soulfold | [The console gets a face (2026-08-03)](0063-soulfold-the-console-gets-a-face.md) |
 | 0064 | ecosystem | [The platform turn: tenancy, guardrails, and eight decisions (2026-08-04)](0064-ecosystem-the-platform-turn.md) |
+| 0065 | ecosystem | [The ecosystem goes fair-code (2026-08-08)](0065-ecosystem-fair-code.md) |
 
 ## Pre-merge numbering map
 

@@ -64,3 +64,8 @@ a shortcut is acceptable — the answer is in
 [`00-GENESIS/`](00-GENESIS/README.md). Hold the decision against `vision.md`
 and `constitution.md`; if it still isn't clear, that's a teach-back
 conversation, not a judgment call to make alone.
+
+## License
+
+[Fair-code](https://faircode.io), under the [Sustainable Use License](LICENSE) —
+see [impire.io/license](https://impire.io/license/).
