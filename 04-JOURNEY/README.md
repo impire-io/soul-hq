@@ -807,6 +807,7 @@ key-lifecycle research. No product code exists yet.
 | 0063 | soulfold | [The console gets a face (2026-08-03)](0063-soulfold-the-console-gets-a-face.md) |
 | 0064 | ecosystem | [The platform turn: tenancy, guardrails, and eight decisions (2026-08-04)](0064-ecosystem-the-platform-turn.md) |
 | 0065 | ecosystem | [The ecosystem goes fair-code (2026-08-08)](0065-ecosystem-fair-code.md) |
+| 0066 | ecosystem | [The helm: the cockpit earns its design (2026-08-13)](0066-ecosystem-soulsystem-cockpit.md) |
 
 ## Pre-merge numbering map
 
