@@ -15,9 +15,9 @@ changes to it are decisions and belong in the journey as episodes.
 | [soulstream](#soulstream--the-record) | `v0.7.0` — MVP + most of day-2 shipped; the remote MCP node built and consumable; two-week dogfood run live since 2026-07-27 | Sealed-topics build priority gated on the dogfood chafe log (to 2026-08-10); eg-walker gated on stage-1 chafe |
 | [soulrealm](#soulrealm--the-room) | Phases 1–2 complete — native, microsandbox, and Kubernetes backends run byte-identical declarations; soulstream pinned | Phase 3 (Fleet) unblocked: design 0003, M3.1 runs spec-kit next |
 | [soulidentity](#soulidentity--the-name) | M1/M3/M4 shipped (+ Entra/OIDC lane, D25 registry dissolution, D28/D29 consumer-proven additions); `v0.1.0` tagged | M2's node half — proven upstream by soulstream 018; roadmap check-off pending. M5 gated on soulstream demand |
-| [soulnode](#soulnode--the-house) | **v0.3.0** — released binaries + the folded realm with its front of house wired ([episodes 0057](../04-JOURNEY/0057-soulnode-the-folded-realm.md)/[0058](../04-JOURNEY/0058-soulnode-the-release-pipeline.md)/[0062](../04-JOURNEY/0062-soulnode-the-front-of-house.md)): fold on by default, all URLs logged (door, sign-in, admin console), door/fold collision refused, the whole human path verified in a real browser | Day-2 items (upgrade, backup/restore); Phase 3 (tsnet) gated on fronting measured insufficient |
+| [soulnode](#soulnode--the-house) | **v0.3.0 + the helm plane on main** ([episodes 0057](../04-JOURNEY/0057-soulnode-the-folded-realm.md)/[0058](../04-JOURNEY/0058-soulnode-the-release-pipeline.md)/[0062](../04-JOURNEY/0062-soulnode-the-front-of-house.md)/[0068](../04-JOURNEY/0068-soulnode-the-helm-plane.md)): fold on by default, `planes.helm` composing soulhelm v0.1.0, four URLs logged, the OIDC lane on in local mode when the helm runs | Tag the next release (carries the helm plane); day-2 items; Phase 3 (tsnet) gated on fronting measured insufficient |
 | [soulfold](#soulfold--the-fold) | **Every milestone shipped — M1–M5, v0.2.0** ([episodes 0052](../04-JOURNEY/0052-soulfold-m1-the-op-skeleton.md)–[0060](../04-JOURNEY/0060-soulfold-m3-the-lifecycle.md)): the sealed store, passkeys, callout admission, the embed seam, and the lifecycle — invitation is the only door; physical-authenticator runbook pending (human act) | Named horizons only (deferred audit rows, multi-issuer demand); day-2 by demand |
-| [soulhelm](#soulhelm--the-helm) | **Research graduated 2026-08-13** ([episode 0066](../04-JOURNEY/0066-ecosystem-soulsystem-cockpit.md)): all four bars measured PASS in a day — pure-consumer rig, custody ceremony, three mutation classes from the browser, one design system on two surfaces; design [0001](../02-DESIGN/soulhelm/0001-soulhelm-the-helm.md) open | Found the repo, then M1 (the observe surface) via spec-kit; upstream asks: soulnode WebSocket listener, the class-(b) grant lane (rides tenancy) |
+| [soulhelm](#soulhelm--the-helm) | **v0.1.0 — founded, shipped, and composed 2026-08-13** ([episodes 0066](../04-JOURNEY/0066-ecosystem-soulsystem-cockpit.md)/[0067](../04-JOURNEY/0067-soulhelm-founding-and-first-light.md)/[0068](../04-JOURNEY/0068-soulnode-the-helm-plane.md)): observe surface + fold sessions + the first act, the whole human ceremony riding `make test`; running in soulnode as `planes.helm` | M2 — the configure surfaces (classes (b)/(c)); the standalone grant lane rides tenancy; participant client a named successor topic |
 
 Cross-component dependencies, tracked openly: soulnode consumes everything by
 tag — the standing pin exception closed 2026-08-02 (soulrealm v0.1.0,
@@ -873,38 +873,37 @@ admin lifecycle (M3).
 browser, beside the MCP door. Design:
 [`0001-soulhelm-the-helm.md`](../02-DESIGN/soulhelm/0001-soulhelm-the-helm.md).*
 
-### Where we are (2026-08-13)
+### Where we are (2026-08-13, evening)
 
-**The research is graduated — every gate the first build needs is
-measured** ([episode
-0066](../04-JOURNEY/0066-ecosystem-soulsystem-cockpit.md), the
-`soulsystem-cockpit` topic, opened and closed 2026-08-13): the
-placement (a sibling component with an embed seam, composed by
-soulnode as a plane), the rendering (Datastar over SSE, backend as
-source of truth), identity (fold sign-in via DCR, every act as the
-signed-in principal — S6), the design-system contract (cassette light,
-one token source, plain-language copy), and all four pre-registered
-bars PASS on live rigs. **The repo is not yet founded** — the
-`soulhelm` journey tag, hqlint component list, and README constellation
-are wired at founding.
+**v0.1.0 is shipped and composed** ([episode
+0067](../04-JOURNEY/0067-soulhelm-founding-and-first-light.md)):
+founded from the morning's graduated research ([episode
+0066](../04-JOURNEY/0066-ecosystem-soulsystem-cockpit.md)), the helm
+serves the observe surface with fold sessions and the first act, the
+whole human ceremony riding its consumer-position e2e in ~4 s, and
+soulnode runs it as `planes.helm` ([episode
+0068](../04-JOURNEY/0068-soulnode-the-helm-plane.md)).
 
 ### Milestones
 
-1. **M0 — founding.** The repo, constitution (pure consumer; custodies
-   nothing; composition-position e2e as the standing gate), hq wiring
-   (component tag, constellation). No research gate — the graduation is
-   it.
-2. **M1 — the observe surface.** Spec-kit against design 0001 §3/§5:
-   board, topic view with earned signature verdicts, plane health,
-   rendered through the shared token source; acceptance = §8 gates 1
-   and 4.
-3. **M2 — sessions and the configure surface.** Design 0001 §4/§6: fold
-   sign-in, per-session admission, the three mutation classes;
-   acceptance = §8 gates 2 and 3. Class-(b) standalone authority may
-   trail the tenancy topic's grant answer ([O2]).
-4. **Later, gated:** the soulnode `planes.helm` composition (soulnode's
-   feature to land); the participant client (its own research topic —
-   [O4], with upstream ask #1's WebSocket listener).
+1. ✅ **M0 — founding** (2026-08-13, episode 0067):
+   [impire-io/soulhelm](https://github.com/impire-io/soulhelm), the
+   founding articles in the README, hq wiring complete (component tag,
+   constellation, this section).
+2. ✅ **M1 — the observe surface + sessions** (v0.1.0, same day). One
+   open scope amendment recorded in episode 0067: sessions (drafted as
+   M2's first half) moved into the founding release — the surface never
+   ships unauthenticated. Acceptance gates 1, 2, and 4 of design 0001
+   §8 are standing tests; the first class-(a) act covers gate 3's
+   record-op arm.
+3. **M2 — the configure surfaces.** Design 0001 §4: classes (b) and (c)
+   in the UI (tokens/people/clients; plane toggles with restart
+   semantics). Class-(b) standalone authority may trail the tenancy
+   topic's grant answer ([O2]); as a soulnode plane the ops lane
+   carries it today.
+4. **Later, gated:** the participant client (its own research topic —
+   [O4], with upstream ask #1's WebSocket listener); a dedicated scoped
+   helm ceremony user in soulnode (hardening).
 
 ### Open research questions (before their milestones)
 

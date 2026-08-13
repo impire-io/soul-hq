@@ -1,7 +1,7 @@
 # soul-hq — the soulsystem's headquarters
 
-Everything about *how the ecosystem is run* lives here, for all five
-components at once. The five are **the soulsystem** — a record at the
+Everything about *how the ecosystem is run* lives here, for all six
+components at once. The six are **the soulsystem** — a record at the
 centre with the rest in orbit, and a single binary that gathers them
 all (the metaphor is a solar system; see
 [impire.io/soulsystem](https://impire.io/soulsystem)). The code lives in
@@ -10,7 +10,8 @@ the component repositories (sibling checkouts:
 [`../soulrealm`](../soulrealm) the room,
 [`../soulidentity`](../soulidentity) the name,
 [`../soulnode`](../soulnode) the house, [`../soulfold`](../soulfold) the
-fold), along with their frozen per-feature spec-kit artifacts
+fold, [`../soulhelm`](../soulhelm) the helm), along with their frozen
+per-feature spec-kit artifacts
 (`specs/NNN-*/`) and plain-words `docs/`. Everything else — why the
 ecosystem exists, what we're investigating, what we've designed, what we're
 building, and what happened — lives in one of the areas below.

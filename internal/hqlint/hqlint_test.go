@@ -28,8 +28,8 @@ import (
 var (
 	areas        = []string{"00-GENESIS", "01-RESEARCH", "02-DESIGN", "03-IMPLEMENTATION", "04-JOURNEY", "99-ARCHIVE"}
 	genesisFiles = []string{"README.md", "vision.md", "constitution.md", "how-we-work.md", "rationale.md"}
-	components   = []string{"soulstream", "soulrealm", "soulidentity", "soulnode", "soulfold"}
-	legalTags    = map[string]bool{"soulstream": true, "soulrealm": true, "soulidentity": true, "soulnode": true, "soulfold": true, "ecosystem": true}
+	components   = []string{"soulstream", "soulrealm", "soulidentity", "soulnode", "soulfold", "soulhelm"}
+	legalTags    = map[string]bool{"soulstream": true, "soulrealm": true, "soulidentity": true, "soulnode": true, "soulfold": true, "soulhelm": true, "ecosystem": true}
 	legalStates  = map[string]bool{"active": true, "graduated": true, "abandoned": true}
 	terminal     = map[string]bool{"graduated": true, "abandoned": true}
 	nonEpisode   = map[string]bool{"README.md": true, "TEMPLATE.md": true}

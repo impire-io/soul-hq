@@ -456,7 +456,18 @@ questions before their milestones (NGS callout
 capabilities, the sentinel-credential flow, the first-key story, the
 claims-mapping shape, service round-trip latency) are named on the roadmap.
 
-### soulnode — the house (as of 2026-08-03)
+### soulnode — the house (as of 2026-08-13)
+
+**The helm plane — the cockpit joins the bundle** ([episode
+0068](0068-soulnode-the-helm-plane.md); `specs/007-the-helm-plane/`):
+`planes.helm` runs soulhelm v0.1.0 through its public embed seam — on
+by default beside the fold, absent-block-means-disabled on old state
+dirs, `helm console` the fourth URL at `up`. Decision of record:
+`SessionIssuer()` — enabling the helm switches the identity plane's
+OIDC admission lane on in local mode with the bundled fold as AS (an
+explicit external AS wins; ephemeral listeners resolve to no issuer
+and the helm skips loudly). Named, not built: a dedicated scoped helm
+ceremony user (the plane hands the ops lane today).
 
 **The front of house — URLs, the console, no collision**
 ([episode 0012](0062-soulnode-the-front-of-house.md); `v0.3.0`): `up`
@@ -738,6 +749,27 @@ constraints — passkeys, not passwords; indistinguishable by design —
 and the roadmap sequences M1 (the OP skeleton) behind its KV-schema and
 key-lifecycle research. No product code exists yet.
 
+### soulhelm — the helm (as of 2026-08-13)
+
+**Founded, shipped, and composed in one day** ([episode
+0067](0067-soulhelm-founding-and-first-light.md); research graduated
+the same morning, [episode 0066](0066-ecosystem-soulsystem-cockpit.md)):
+**v0.1.0** is the observe surface (board, topics with earned signature
+verdicts, storage, plane health) rendered in the cassette-light token
+source over Datastar SSE, with fold sessions (RFC 7591 DCR +
+code+PKCE, memory-only, each session admitting as itself through the
+OIDC callout lane) and the first act — `work.open` signed as the
+signed-in principal. The surface is closed until sign-in (an open
+scope amendment: sessions moved into the founding release rather than
+ship an unauthenticated realm viewer). The consumer-position e2e
+(module path outside the namespace, upstreams at published tags) walks
+the whole human ceremony in ~4 s inside `make test`. Soulnode composed
+it the same day as `planes.helm` ([episode
+0068](0068-soulnode-the-helm-plane.md)). **Next:** the configure
+surfaces (classes (b)/(c) of the design's mutation table); the grant
+lane for standalone helms rides `platform-tenancy-guardrails`; the
+participant client stays a named successor topic.
+
 ## Episode index
 
 | # | Component | Episode |
@@ -808,6 +840,8 @@ key-lifecycle research. No product code exists yet.
 | 0064 | ecosystem | [The platform turn: tenancy, guardrails, and eight decisions (2026-08-04)](0064-ecosystem-the-platform-turn.md) |
 | 0065 | ecosystem | [The ecosystem goes fair-code (2026-08-08)](0065-ecosystem-fair-code.md) |
 | 0066 | ecosystem | [The helm: the cockpit earns its design (2026-08-13)](0066-ecosystem-soulsystem-cockpit.md) |
+| 0067 | soulhelm | [Founding and first light: the helm is real (2026-08-13)](0067-soulhelm-founding-and-first-light.md) |
+| 0068 | soulnode | [The helm plane: the cockpit joins the bundle (2026-08-13)](0068-soulnode-the-helm-plane.md) |
 
 ## Pre-merge numbering map
 

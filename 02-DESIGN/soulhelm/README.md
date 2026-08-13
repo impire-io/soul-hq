@@ -11,7 +11,8 @@ soulnode convention.
 Born from research topic `soulsystem-cockpit` (graduated 2026-08-13,
 episode
 [0066](../../04-JOURNEY/0066-ecosystem-soulsystem-cockpit.md); the
-topic folder lives in git history). The component repo is not yet
-founded; per the graduation record, the `soulhelm` journey tag,
-hqlint's component list, and the README constellation are wired when
-it is — journey episodes stay `ecosystem`-tagged until then.
+topic folder lives in git history). The repo was founded the same day
+([impire-io/soulhelm](https://github.com/impire-io/soulhelm), v0.1.0,
+episode [0067](../../04-JOURNEY/0067-soulhelm-founding-and-first-light.md))
+and `soulhelm` is a full component of the hq: legal journey tag,
+constellation entry, this design folder.

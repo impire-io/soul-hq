@@ -2,7 +2,8 @@
 
 This repository is the headquarters of the Soulstream ecosystem: soulstream
 (the record), soulrealm (the room), soulidentity (the name), soulnode (the
-house), soulfold (the fold). Code lives in the sibling component repos;
+house), soulfold (the fold), soulhelm (the helm). Code lives in the sibling
+component repos;
 research, designs, the roadmap, and the journey live here.
 
 ## Reading order

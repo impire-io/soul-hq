@@ -4,7 +4,7 @@
 [0066](../../04-JOURNEY/0066-ecosystem-soulsystem-cockpit.md)); every
 load-bearing claim below was measured there unless tagged otherwise.
 This document is written to be the argument to `/speckit-specify` in
-the (to-be-founded) soulhelm repo.
+the soulhelm repo (founded 2026-08-13, v0.1.0 — §10).
 
 ## §1 What soulhelm is
 
@@ -137,7 +137,26 @@ model) resolves. The helm never works around this with a side-channel.
   soulnode ahead of the participant-client topic, or with it.
 - **[O2]** Upstream ask #2: the grant-shaped answer to standalone
   class-(b) authority — tracked in `platform-tenancy-guardrails`.
-- **[O3]** The id→display mapping source (fold profile? realm
-  registry?) — decide at first build, record in this doc.
+- **[O3]** ~~The id→display mapping source~~ — first answer as built
+  (§10): the ID token's `name` claim, id fallback; richer mapping open.
 - **[O4]** The participant client — its own research topic, not helm
   scope.
+
+## §10 As built (v0.1.0, 2026-08-13 — episode 0067)
+
+Propagated from the founding build:
+
+- **Sessions shipped with the founding release** (open amendment to the
+  M1/M2 split): the surface is closed until sign-in — an
+  unauthenticated realm viewer would contradict §6.
+- **The soulnode composition** (episode 0068): the plane hands the ops
+  lane as the helm's read lane (§4's node-standing arm, as designed;
+  the dedicated scoped user is a named hardening), the public sentinel,
+  and `SessionIssuer()` — enabling the helm switches the identity
+  plane's OIDC lane on in local mode with the bundled fold as AS.
+- **O3, first answer**: display names come from the ID token's `name`
+  claim, falling back to the persona-shaped id; a richer directory
+  mapping stays open.
+- The DCR redirect URI carries the *bound* listener address (ephemeral
+  ports work).
+

@@ -2,10 +2,10 @@
 
 The headquarters of the Soulstream ecosystem — soulstream (the record),
 soulrealm (the room), soulidentity (the name), soulnode (the house),
-soulfold (the fold). This repo holds research, designs, the roadmap, and the
-journey for all five; code and frozen specs live in the sibling component
-repos (`../soulstream`, `../soulrealm`, `../soulidentity`, `../soulnode`,
-`../soulfold`).
+soulfold (the fold), soulhelm (the helm). This repo holds research,
+designs, the roadmap, and the journey for all six; code and frozen specs
+live in the sibling component repos (`../soulstream`, `../soulrealm`,
+`../soulidentity`, `../soulnode`, `../soulfold`, `../soulhelm`).
 
 **Read [`AGENTS.md`](AGENTS.md) first** (reading order + the
 non-negotiables), then hold decisions against
@@ -21,7 +21,7 @@ Conventions:
 - The journey duty: every landed feature, concluded research topic, or
   load-bearing decision gets an episode `NNNN-<component>-<slug>.md` in
   `04-JOURNEY/` (components: soulstream, soulrealm, soulidentity, soulnode,
-  soulfold, ecosystem — one shared sequence). Use `/journey-log`; research
+  soulfold, soulhelm, ecosystem — one shared sequence). Use `/journey-log`; research
   via `/research-graduate`. Refresh the index, the component's "Where things
   stand", and the roadmap in the same change.
 - Episodes 0001–0049 carry the five per-project journals (merged
