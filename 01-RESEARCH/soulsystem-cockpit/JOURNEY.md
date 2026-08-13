@@ -43,6 +43,57 @@ register the system already owns: mono label strips, wordmarks, and
 badges ("the fold", "the house"). The rose edge retires with the dark
 language.
 
+## 2026-08-13 — Bar 2 measured: PASS — the whole human ceremony, and a clean scan
+
+**All four bars are now measured.** The helm proto grew the fold-session
+layer for this run: DCR against the bundled fold (RFC 7591, no
+pre-provisioned client), code+PKCE, sessions in memory only, and —
+new at founding — public-door mode, which switched the identity
+plane's OIDC admission lane on (`oidc=true` in the issuer log).
+
+**The ceremony, end to end in a real Chromium** [measured]:
+
+1. **Enrolment**: the founding invite (written to a harness dir, never
+   logged, never in helm storage — last run's leak fixed) opened
+   soulfold's `/enroll`; a CDP virtual authenticator performed the real
+   WebAuthn registration ceremony; "Your passkey is enrolled."
+2. **Sign-in**: helm `/login` → fold authorize (the enrolment session
+   carried it) → code exchange with PKCE → ID token verified → the
+   session's **own NATS admission**: sentinel + the fold-issued bearer
+   through the OIDC callout lane. The audit line is the attribution:
+   `callout ADMITTED lane=oidc issuer=http://localhost:8378
+   subject=u-90e41123cd67bc45 role=realm display=owner`.
+3. **The mutation as the principal**: `work.open` through the session's
+   admitted connection — `ok as principal "u-90e41123cd67bc45"
+   (signed=true)` — the persona signer materialized for the *fold
+   principal* on first touch, so the op carries the human's own
+   signature. S6 held all the way down: delegated authority, never
+   borrowed identity; the helm signs as no one.
+4. **Sign-out**: session deleted, its NATS connection closed, the page
+   back to "not signed in".
+
+**The scan** [measured]: the helm's own storage after the full session
+(its working directory — two source files, vendored assets, the
+harness log) contains **zero** credential-shaped content
+(`sit_`/`sfi_`/JWT patterns). The first positive-control attempt was
+itself a lesson: a non-hex plant that the pattern could not match —
+a control that cannot fire proves nothing — replaced with a
+properly-shaped plant, which the same scanner found and which was then
+removed; final scan clean. Session state lives in memory only.
+
+**Finding**: the admitted subject is soulfold's persona-shaped id
+(`u-…`), with the username as `display` — attribution rides the id
+end-to-end (v0.1.2's decision proven from the consumer position), and
+mapping ids to display names on screen is helm UI work, noted for the
+build.
+
+**Topic status: every pre-registered bar is measured (1, 2, 3, 4 all
+PASS) and every decision C1–C8 is taken.** Two upstream asks stand for
+their component repos: #1 the WebSocket listener (soulnode), #2 an
+owner-reachable token-management lane (soulidentity / the tenancy
+topic's grant work). The topic is ready for `/research-graduate
+soulsystem-cockpit --to design`.
+
 ## 2026-08-13 — Bar 3 measured: PASS — three classes from the browser; Bar 1 complete on both halves
 
 The helm prototype (scratchpad `bar1/rig/proto/`, same consumer-position
