@@ -43,6 +43,54 @@ register the system already owns: mono label strips, wordmarks, and
 badges ("the fold", "the house"). The rose edge retires with the dark
 language.
 
+## 2026-08-13 — Bar 1 completed on the Go half; spike B measured; the rendering discrimination decided
+
+**Bar 1's remaining reads landed on the spike-A rig** [measured]: a
+claimed work item materializes with `status=claimed · owner=owner`; the
+memory plane answers a live query (5 archivist answers, each with a
+citation); the door answers HTTP on its published URL (400 to a bare
+GET — the MCP endpoint refusing a non-MCP request, which is the
+liveness signal). One finding of record: **asking memory requires a
+persona** — `MemoryQuery` refuses a persona-less client because the
+query is itself a posted op. The helm's memory panel is participation,
+not observation; it must ride the signed-in principal's client
+[measured, mechanism in the memory convention].
+
+**Spike B — the WebSocket bench** (scratchpad `bar1/wsbench/`): an
+embedded nats-server v2.12 with its WebSocket listener enabled (the
+knob is one field in the embedded server's options — upstream ask #1
+is plumbing, not invention), one publisher emitting soulstream-shaped
+ops every 700 ms, both candidate rendering paths beside it, everything
+vendored and loopback-only:
+
+- **Web component + `nats.js` (browser speaks NATS):** connected over
+  `ws://`, subscribed, rows streaming live in a real Chromium
+  [measured]. Cost observed: a four-bundle vendored chain
+  (nats-core + nkeys + nuid + tweetnacl, ~130 KB) with import-path
+  surgery, and the realm credential must live in browser JS (the
+  MCP-client trust class — acceptable under S6, but real).
+- **Datastar (backend-held subscription, SSE patches):** the same feed
+  live via `data-init="@get('/feed')"` and
+  `datastar-patch-elements` morphs [measured]. One 34 KB
+  self-initializing bundle, zero import surgery, zero credentials in
+  the browser; the backend is spike A's already-proven typed read
+  path. One protocol lesson recorded: the npm `+esm` build does not
+  self-initialize and the load trigger is `data-init` (v1), not
+  `data-on-load`.
+
+**The discrimination — decided** (delegated; `[judgment]` on measured
+evidence): **the helm renders through Datastar** — backend as source
+of truth, SSE patches, spike A's consumer-position read path as the
+data layer, credentials never in the browser (Bar 2's custody property
+falls out for free), and the house no-pipeline pattern kept (one
+vendored bundle). **The NATS-WebSocket lane stays decided (C5) for
+what it is**: the realm's browser transport for the *participant
+client* horizon and any client that genuinely needs raw subjects —
+upstream ask #1 stands, but the helm itself no longer gates on it.
+Reversal condition: if a helm interaction needs client-held state or
+sub-roundtrip latency that SSE morphing cannot express, this pick
+reopens with that interaction as the evidence.
+
 ## 2026-08-13 — Bar 1, spike A measured: the consumer position compiles and reads live
 
 The Go-shell half of Bar 1, run the same afternoon (rig in the session
