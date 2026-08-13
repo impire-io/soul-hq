@@ -43,6 +43,30 @@ register the system already owns: mono label strips, wordmarks, and
 badges ("the fold", "the house"). The rose edge retires with the dark
 language.
 
+## 2026-08-13 — Bar 3's mutation table, written before the spike runs
+
+Every mutation helm v1 offers, mapped to its class as Bar 3 requires —
+enumerated here first, demonstrated after. Participant acts (posting
+turns, comments) are outside v1 by C6 and deliberately absent.
+
+| Helm v1 mutation | Class | Existing surface |
+|---|---|---|
+| Open / claim / complete / abandon a work item | (a) op on the record | `topic` work vocabulary via a realm client, signed as the acting principal |
+| Close / transition a topic | (a) op on the record | `life.transition` op, same client |
+| Mint / revoke / list access tokens | (b) admin op on a plane surface | soulidentity token ops (`CreateToken` / `RevokeToken` / `Tokens`) |
+| People: create, invite, groups, disable | (b) admin op on a plane surface | soulfold `/api/admin` (passkey-session gated) |
+| Register an OAuth client | (b) admin op on a plane surface | soulfold `/api/admin` |
+| Enable / disable a plane (memory, door, fold) | (c) config file | `config.json` `planes.*`; applies on node restart — the stated semantics |
+| Door public mode (`public_url`+`auth_issuer`+`auth_audience`) | (c) config file | `config.json`, all-three-or-none, restart |
+| Start / stop a workload | (a) op on the record | work vocabulary via the runner (soulrealm); *named, not demonstrated in this spike* |
+
+Founding-only fields (`listen`, `realm`, listener addresses) are not
+helm mutations — soulnode refuses them post-founding by design. The
+spike demonstrates one mutation per class: `work.open` (a),
+`CreateToken` (b), `planes.memory.enabled=false` (c). No mutation in
+the table needs a new privileged side-channel or a helm-owned store —
+that claim is what the spike now has to hold up.
+
 ## 2026-08-13 — Bar 1 completed on the Go half; spike B measured; the rendering discrimination decided
 
 **Bar 1's remaining reads landed on the spike-A rig** [measured]: a
