@@ -43,6 +43,35 @@ register the system already owns: mono label strips, wordmarks, and
 badges ("the fold", "the house"). The rose edge retires with the dark
 language.
 
+## 2026-08-13 — Bar 1, spike A measured: the consumer position compiles and reads live
+
+The Go-shell half of Bar 1, run the same afternoon (rig in the session
+scratchpad, `bar1/rig/`):
+
+- **The module**: `soulhelm.invalid/rig` — outside every component's
+  namespace, so an `internal/` import cannot compile — requiring
+  soulnode **v0.3.1**, soulstream **v0.7.0**, soulidentity **v0.1.0**
+  by tag (soulfold v0.3.3, soulrealm v0.1.0, the archivist v0.2.0
+  arriving transitively, all tagged). **Zero `replace` directives**
+  [measured]; `go vet` clean.
+- **One run, ~1.5 s wall**: boot a whole realm in-process from
+  soulnode's public `ceremony`/`node` surfaces (ephemeral ports) →
+  found it (`sit_` token) → connect as the founding owner on the
+  admission lane → `PersonaSigner` through the identity plane (the key
+  materializing on first touch) → `StartTopic` + `PostTurn` → then a
+  second, read-only realm client: `Board` returns the topic,
+  `Materialise` returns 1 contribution on an active lifecycle, and the
+  keyring built from `keys.public` yields **`sig=verified`** — the
+  verdict earned, not defaulted [measured].
+- **What this proves of Bar 1**: the compile guarantee and the
+  live-read path, entirely on public tagged surfaces — the Go half
+  needed **zero** upstream asks.
+- **What remains**: plane-health and workload-lifecycle reads on the
+  same rig; and spike B — the browser half (`nats.js` over WebSocket,
+  Datastar-vs-web-components discrimination) — gated on upstream ask
+  #1 (soulnode's WebSocket listener), with a stock operator-mode
+  nats-server as the honest interim bench.
+
 ## 2026-08-13 — C4–C8 decided: browser-live over the realm's wire, plain words on screen
 
 Four decisions from the operator in one sitting, plus a copy rule that
