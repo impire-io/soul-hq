@@ -79,12 +79,12 @@ if soulidentity ever special-cases an issuer or the node ever validates a token 
 makes the node a trust holder and re-opens the custody model. Neither is measured
 today.
 
-Trail: [`../02-DESIGN/extensions/remote-mcp-node.md`](../02-DESIGN/soulstream/extensions/remote-mcp-node.md),
+Trail: [`../02-DESIGN/extensions/remote-mcp-node.md`](../02-DESIGN/soulstream-core/extensions/remote-mcp-node.md),
 [`../03-IMPLEMENTATION/ROADMAP.md`](../03-IMPLEMENTATION/ROADMAP.md) (018),
-[`../../specs/018-remote-mcp-node/`](../../soulstream/specs/018-remote-mcp-node/) (spec, plan,
+[`../../specs/018-remote-mcp-node/`](../../soulstream-core/specs/018-remote-mcp-node/) (spec, plan,
 research R1–R11, contracts/{library,authorization-server,http}, data-model, quickstart,
-tasks), [`../../docs/mcp-remote.md`](../../soulstream/docs/mcp-remote.md),
-[`../../docs/mcp.md`](../../soulstream/docs/mcp.md); the `node/` module; episode
+tasks), [`../../docs/mcp-remote.md`](../../soulstream-core/docs/mcp-remote.md),
+[`../../docs/mcp.md`](../../soulstream-core/docs/mcp.md); the `node/` module; episode
 [0008](0038-soulstream-remote-mcp-node.md) (the research proof) and the prototype at pre-graduation
 commit `56c7a2e`; SoulIdentity journey 0019 (soulfold, the sibling IdP). Feature branch
 `018-remote-mcp-node`, released **v0.7.0**.

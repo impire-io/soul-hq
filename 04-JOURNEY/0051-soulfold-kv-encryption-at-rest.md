@@ -49,7 +49,7 @@ the full-machine-backup caveat named honestly in the design
 [judgment].
 
 What it opened: the store design grows the envelope (D16–D19 in
-[store-and-key-lifecycle](../02-DESIGN/soulfold/store-and-key-lifecycle.md)) and
+[store-and-key-lifecycle](../02-DESIGN/soulstream-idp/store-and-key-lifecycle.md)) and
 amends D6's username index. **M1 is now unblocked** — every research
 gate the roadmap names for it has concluded to design. The rig's
 provider + storage shape is the M1 skeleton's reference.
@@ -65,7 +65,7 @@ as the topic pre-registered.
 Trail: verdict and topic journey in git history at
 `01-RESEARCH/kv-encryption-at-rest/` (folder removed by this
 graduation); design
-[store-and-key-lifecycle](../02-DESIGN/soulfold/store-and-key-lifecycle.md)
+[store-and-key-lifecycle](../02-DESIGN/soulstream-idp/store-and-key-lifecycle.md)
 (D6 amended, D16–D19 added); rig in the session scratchpad
 (`xkeyrig/` — envelope, matrix, CAS, custody scans, filestore arm,
 flow rig), stack pinned in the verdict.

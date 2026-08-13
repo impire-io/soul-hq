@@ -55,7 +55,7 @@ bootstrap-story research stand as written.
 
 Trail: `specs/002-passkeys/` (spec, plan, tasks, quickstart with the
 runbook); design
-[session-and-ui](../02-DESIGN/soulfold/session-and-ui.md) (D9, D13,
-D14) and [store-and-key-lifecycle](../02-DESIGN/soulfold/store-and-key-lifecycle.md)
+[session-and-ui](../02-DESIGN/soulstream-idp/session-and-ui.md) (D9, D13,
+D14) and [store-and-key-lifecycle](../02-DESIGN/soulstream-idp/store-and-key-lifecycle.md)
 (D2/D6 additive credentials); the `002-passkeys` merge in the soulfold
 repo.

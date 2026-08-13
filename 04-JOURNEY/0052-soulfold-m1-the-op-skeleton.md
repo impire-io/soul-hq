@@ -60,6 +60,6 @@ already-graduated designs; the designs' own reversal conditions
 (episodes 0043, 0046, 0051) stay armed.
 
 Trail: `specs/001-op-skeleton/` (spec, plan, tasks, quickstart);
-designs [store-and-key-lifecycle](../02-DESIGN/soulfold/store-and-key-lifecycle.md)
-(D1–D8, D16–D19) and [session-and-ui](../02-DESIGN/soulfold/session-and-ui.md)
+designs [store-and-key-lifecycle](../02-DESIGN/soulstream-idp/store-and-key-lifecycle.md)
+(D1–D8, D16–D19) and [session-and-ui](../02-DESIGN/soulstream-idp/session-and-ui.md)
 (D9–D15); the `001-op-skeleton` branch merge in the soulfold repo.

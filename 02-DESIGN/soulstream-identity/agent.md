@@ -1,4 +1,4 @@
-# SoulIdentity — the agent design
+# soulstream-identity — the agent design
 
 *The identity plane of the Soulstream ecosystem: an identity vault, a signing
 oracle, and a NATS credential minter, delivered as a NATS service. Decisions
@@ -9,7 +9,7 @@ honestly later. The NATS-surface design continues the numbering (D14–D18) in
 
 ## What it is
 
-SoulIdentity is the representation of identity for humans and agents in the
+soulstream-identity is the representation of identity for humans and agents in the
 Soulstream ecosystem. It holds every secret its identities need — NATS
 account signing keys, NATS user keys, persona Ed25519 record-signing keys,
 later X25519 sealing keys — and answers **sign and mint requests instead of
@@ -23,7 +23,7 @@ xkey-sealed payloads, the caller authenticated by its own NATS identity.
 There is no socket. The pre-NATS moment is answered by the connection ladder
 (D12), not a local surface: a client presenting a creds file in its
 connection options connects directly — the server verifies it natively and
-SoulIdentity is not in the path — while a client presenting an external
+soulstream-identity is not in the path — while a client presenting an external
 token arrives through auth callout. The shipped walking skeleton's socket
 surface is transitional and retires when the NATS surface lands (M3).
 
@@ -57,7 +57,7 @@ third named at the 2026-07-28 re-centering, journey 0002):
 NATS NKey authentication is challenge-response: the server sends a nonce, the
 client signs it. `nats.go` accepts the signature as a **callback**
 (`nats.Nkey(pub, sigCB)`, `nats.UserJWT(jwtCB, sigCB)`) precisely so the seed
-can live elsewhere. SoulIdentity implements that callback over the agent
+can live elsewhere. soulstream-identity implements that callback over the agent
 socket. No fork, no patched client — the oracle plugs into the seam the
 client library ships with.
 
@@ -73,7 +73,7 @@ is establishing [mechanism-argument].
 
 *Amended again the same day (journey 0003): with the socket dropped (D12),
 the nonce oracle leaves the connection story entirely.* Connections are
-creds-bypass or callout — nothing signs nonces through SoulIdentity anymore.
+creds-bypass or callout — nothing signs nonces through soulstream-identity anymore.
 What survives of D1 is the layer above: record signing ("sign these
 canonical bytes as persona X") stays a signing-oracle request, served over
 the NATS surface on an already-established connection. The `NATSOption`
@@ -135,7 +135,7 @@ Deployments climb a ladder; the identity registry is the same at every rung:
 2. **Mint mode** — durable user JWTs signed by *account signing keys held in
    the vault*. The simple self-custody path: load your account's signing
    key(s), register identities, mint.
-3. **Auth-callout mode** — SoulIdentity (or a plugin behind it) acts as the
+3. **Auth-callout mode** — soulstream-identity (or a plugin behind it) acts as the
    NATS auth-callout service: it validates the connecting user against a
    pluggable backend (KV of API tokens, Entra/OIDC, LDAP, …) and issues
    **ephemeral** user JWTs. *Amended 2026-07-28 (journey 0002): this rung is
@@ -146,7 +146,7 @@ Deployments climb a ladder; the identity registry is the same at every rung:
 
 *Amended again the same day (journey 0003): the ladder collapses into the
 two-lane road of D12.* A client with a creds file connects directly —
-server-verified, SoulIdentity out of the path (rung 1's shared-node-creds
+server-verified, soulstream-identity out of the path (rung 1's shared-node-creds
 floor disappears: a node no longer needs shared creds, it passes each user's
 token through callout). A client with an external token goes through callout,
 authorized by registry or claims (D2). Mint mode stops being a *connection*
@@ -157,7 +157,7 @@ obtains their bypass credentials.
 A policy KV consulted *instead of* NATS enforcement would be a second source
 of truth; the same KV as the *backend of the callout issuer* is the native
 model — the server enforces what the issuer decides. That is the answer to
-"is this against the NATS way of minting users": SoulIdentity *becomes* the
+"is this against the NATS way of minting users": soulstream-identity *becomes* the
 minter, in whichever mode the deployment picks.
 
 ## D5 — Scoped signing keys carry the NATS permissions
@@ -165,7 +165,7 @@ minter, in whichever mode the deployment picks.
 In mint mode, permission policy lives NATS-side: the account defines
 **scoped signing keys** (roles with permission templates), and any user JWT
 signed by a scoped key gets exactly the scope's permissions — enforced by
-the server, impossible to exceed at mint time. SoulIdentity's mint decision
+the server, impossible to exceed at mint time. soulstream-identity's mint decision
 reduces to "which scoped key = which role" (`role` on the identity record
 names the vault key). The registry then holds only what is genuinely
 Soulstream-level: **which identity may act as which persona**. Transport
@@ -185,8 +185,8 @@ D-decision — as declared configuration, never a field on a token record
 (D22's watch).
 
 *Amended 2026-07-31 (journey 0017): the reversal condition fired —
-soulrealm's fleet needs one scoped key per role on one account
-(soulidentity#1). D28 answers it: role selection by declared role name,
+soulstream-workloads's fleet needs one scoped key per role on one account
+(soulstream-identity#1). D28 answers it: role selection by declared role name,
 exposed as the `mint.ephemeral` op; the binding path's ambiguity refusal
 stands unchanged. The nouns, fixed the same day: a team is the account,
 the tenant; a role is the declared signing key.*
@@ -270,13 +270,13 @@ NATS-native rebuild (M3). Stated honestly: envelope encryption relocates the
 root secret, it does not eliminate it — the unwrapping xkey seed and the
 service's own NATS creds are the only local secrets, and the first-key story
 was researched and decided as D13 (journey 0004). OS keychains and a Vault
-transit engine remain later options. SoulIdentity wraps storage, it does not
+transit engine remain later options. soulstream-identity wraps storage, it does not
 reimplement it.
 
 ## D11 — The service surface is NATS-native
 
 *Decided 2026-07-28 at the identity-plane re-centering (journey 0002),
-superseding the planned TCP listener.* SoulIdentity's primary surface is a
+superseding the planned TCP listener.* soulstream-identity's primary surface is a
 NATS service: request/reply on its own subject space, every payload sealed
 end-to-end with xkeys (the caller encrypts to the service's curve key and
 vice versa, so not even the NATS server sees request bodies), and the caller
@@ -293,7 +293,7 @@ Why NATS instead of the TCP-plus-tokens listener the genesis planned
 - **It is the shape callout already has.** Auth-callout mode (D4 rung 3) is
   by protocol a NATS service receiving xkey-encrypted requests. One surface
   shape serves both the API and the callout duty.
-- **It composes with the ecosystem.** Consumers of SoulIdentity are NATS
+- **It composes with the ecosystem.** Consumers of soulstream-identity are NATS
   clients already; a NATS surface needs no new listener, port, or TLS story.
 
 The strongest argument against, recorded at full strength: the bootstrap.
@@ -327,16 +327,16 @@ end-to-end proof [measured]; the NGS half remains open.*
 
 *Decided 2026-07-28 (journey 0003), superseding the socket-as-bootstrap-rung
 answer recorded hours earlier (journey 0002).* How anything connects to NATS
-in a SoulIdentity deployment is exactly one of two lanes:
+in a soulstream-identity deployment is exactly one of two lanes:
 
 - **Creds bypass.** A client that presents a creds file (or nkey seed) in
   its connection options connects directly; the server verifies it natively
-  and SoulIdentity is not in the path. This is the self-custody lane:
-  operators, break-glass, the laptop case, and SoulIdentity's own service
+  and soulstream-identity is not in the path. This is the self-custody lane:
+  operators, break-glass, the laptop case, and soulstream-identity's own service
   connection. Creds are obtained through the loud export escape (D7) or
   external tooling (`nsc`).
 - **Callout.** A client that presents an external credential — a JWT in the
-  token connection option, an API token — is authenticated by SoulIdentity
+  token connection option, an API token — is authenticated by soulstream-identity
   as the auth-callout issuer: the credential is validated, the team deduced
   (registry-declared or claims-derived — D2), and an ephemeral user JWT is
   issued. *Amended 2026-07-28 (journey 0008): the JWT is issued for the
@@ -356,7 +356,7 @@ by the identity's *owner* is self-custody, not a custody leak; what
 Constitution I protects is that *represented* identities never touch key
 material, and in the callout lane they never do. Second: callout on the
 connect path couples represented users' connection availability to
-SoulIdentity's availability [mechanism-argument]. Answer: accepted as the
+soulstream-identity's availability [mechanism-argument]. Answer: accepted as the
 cost of representation; the bypass lane is unaffected, and operators always
 have the break-glass path.
 
@@ -453,12 +453,12 @@ persona subjects) reopens this alignment as a new D-decision.
 
 ## D28 — Role selection by declared role name
 
-*Decided 2026-07-31 (journey 0017, soulidentity#1) — the D5 amendment's
+*Decided 2026-07-31 (journey 0017, soulstream-identity#1) — the D5 amendment's
 reversal condition, fired exactly as written; nouns corrected by the
-operator the same day (see the amendment below).* Soulrealm's fleet
+operator the same day (see the amendment below).* soulstream-workloads's fleet
 research needs one scoped signing key **per role** on one realm account
-(`soulrealm-agent`, `soulrealm-tool`, later `soulrealm-node`), and measured
-`[measured, soulrealm journey 0010]` that the shape holds: per-tag scoped
+(`soulstream-workloads-agent`, `soulstream-workloads-tool`, later `soulstream-workloads-node`), and measured
+`[measured, soulstream-workloads journey 0010]` that the shape holds: per-tag scoped
 templates clamp in both directions, and a user JWT carrying its own
 permissions but signed by a scoped key is rejected at connection time — the
 mint path cannot over-scope. Importing those keys makes the account
@@ -520,7 +520,7 @@ such answer stays declared configuration, never a token-record field.
 
 ## D29 — The embed seam: the serve assembly becomes public
 
-*Decided 2026-08-01 at the operator's direction (soulnode's
+*Decided 2026-08-01 at the operator's direction (soulstream's
 `single-binary-composition` research measured all three of its bars against
 this repo's serve path), M2's second consumer.* The serve-side assembly —
 vault, service, callout issuer, their wiring — exists only inside
@@ -528,8 +528,8 @@ vault, service, callout issuer, their wiring — exists only inside
 process** must either supervise the binary as a child or ride the
 module-namespace dodge (a module named under this repo's path so
 `internal/` imports become legal — soulstream's remote-mcp-node experiment
-did it, soulnode's rig had to repeat it, and both recorded the necessity as
-a finding [measured, soulnode's topic]). A distribution whose constitution
+did it, soulstream's rig had to repeat it, and both recorded the necessity as
+a finding [measured, soulstream's topic]). A distribution whose constitution
 forbids `internal/` reaches cannot exist until this seam does. The seam:
 
 - **One public package, `embed`**: `Run(ctx context.Context, o Options)
@@ -551,7 +551,7 @@ forbids `internal/` reaches cannot exist until this seam does. The seam:
   two entrypoints, no drift by construction.
 - **Provisioning stays on the wire**: no in-process admin API arrives with
   this seam. An embedding process provisions through `client/` over its
-  own connection, as any operator does — soulnode's rig proved the whole
+  own connection, as any operator does — soulstream's rig proved the whole
   founding ceremony (key imports, token, sentinel) through the public
   client in-process [measured, its topic journal]; the sealed surface and
   its ACL story (D15, D25) stay the only mutation path.
@@ -573,7 +573,7 @@ deliberately, never by accident.
 - `internal/mint` — user JWTs signed by the identity's role key
   (`issuer_account` set, permissions left to the scope), user keys generated
   in-vault; explicit creds export.
-- `internal/agent` + `cmd/soulidentity serve` — HTTP over a Unix socket:
+- `internal/agent` + `cmd/soulstream-identity serve` — HTTP over a Unix socket:
   status, keys, identities, sign-nonce, sign-record, mint.
 - `client` — Go client for the socket plus `NATSOption(account, user)`
   returning a `nats.Option` whose JWT and signature callbacks run through

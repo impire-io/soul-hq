@@ -50,5 +50,5 @@ measures insufficient for the audience).
 
 Trail: `specs/005-public-door/` (spec, quickstart with the fronting
 runbook); upstream design
-[remote-mcp-node](../02-DESIGN/soulstream/extensions/remote-mcp-node.md);
+[remote-mcp-node](../02-DESIGN/soulstream-core/extensions/remote-mcp-node.md);
 the `005-public-door` merge in the soulnode repo.

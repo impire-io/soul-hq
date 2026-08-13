@@ -44,7 +44,7 @@ surface existing only for it, or a helm-owned store of record), the
 component dissolves back into the existing surfaces.
 
 Trail: design
-[`0001-soulhelm-the-helm.md`](../02-DESIGN/soulhelm/0001-soulhelm-the-helm.md);
+[`0001-soulhelm-the-helm.md`](../02-DESIGN/soulstream-shell/0001-soulhelm-the-helm.md);
 soulhelm `bb02c24` (founding commit), tag `v0.1.0`; composed by
 soulnode the same day (episode
 [0068](0068-soulnode-the-helm-plane.md)).

@@ -2,7 +2,7 @@
 
 **Status of this document:** graduated from the `kubernetes-backend` research
 topic (episode 0008); **built and landed as M2.1**
-([`specs/004-kubernetes-backend/`](../../../soulrealm/specs/004-kubernetes-backend/),
+([`specs/004-kubernetes-backend/`](../../../soulstream-workloads/specs/004-kubernetes-backend/),
 episode 0009). All four pre-registered research bars were **measured PASS**
 via spikes, and the implementation's five e2e scenarios run green on a real
 cluster (`make test-k8s`). The `[O]`s this document carried were decided in
@@ -16,7 +16,7 @@ Tags mark what is validated **[V]** and what remains open **[O]**.
 Maturity tags per [`README.md`](README.md). Seam vocabulary per
 [`0001-soulrealm-runtime.md`](0001-soulrealm-runtime.md) §6 and the frozen
 contract in
-[`specs/003-microsandbox-backend/contracts/backend-seam.md`](../../../soulrealm/specs/003-microsandbox-backend/contracts/backend-seam.md).
+[`specs/003-microsandbox-backend/contracts/backend-seam.md`](../../../soulstream-workloads/specs/003-microsandbox-backend/contracts/backend-seam.md).
 
 ---
 
@@ -41,15 +41,15 @@ Fleet horizon's question, explicitly not this backend's.
 
 ## 2. The seam contract
 
-- The backend implements soulrealm's `backend.Backend`/`Handle` interface
+- The backend implements soulstream-workloads's `backend.Backend`/`Handle` interface
   **unchanged** — the research needed no interface amendment `[V]`.
-- The workload sees the identical `SOULREALM_*` environment contract as
+- The workload sees the identical `SOULSTREAM_*` environment contract as
   under native/msb, values adapted to the pod `[V]`: creds file at an
   in-pod path, loopback NATS URLs rewritten to a node-side host alias,
   non-loopback URLs passed through untouched (both branches exercised
   `[V]`).
 - The declaration MUST NOT name the backend, an image, or any Kubernetes
-  concept; backend selection stays node-side (`SOULREALM_BACKEND`,
+  concept; backend selection stays node-side (`SOULSTREAM_BACKEND`,
   M1.3 convention) `[D]`.
 - Like every backend it publishes **no ops** and owns no control channel;
   lifecycle publication is the runner's job (constitutions I and V) `[D]`.
@@ -124,15 +124,15 @@ Fleet horizon's question, explicitly not this backend's.
 
 ## 6. Node-side configuration surface
 
-All of it node configuration (`SOULREALM_K8S_*`); none of it may appear in
+All of it node configuration (`SOULSTREAM_K8S_*`); none of it may appear in
 a declaration. As landed `[V]`:
 
 - Cluster access: kubeconfig via client-go's standard loading rules +
-  `SOULREALM_K8S_CONTEXT`; target namespace `SOULREALM_K8S_NAMESPACE`.
-- `SOULREALM_K8S_REGISTRY` (required): the OCI repository prefix per-run
+  `SOULSTREAM_K8S_CONTEXT`; target namespace `SOULSTREAM_K8S_NAMESPACE`.
+- `SOULSTREAM_K8S_REGISTRY` (required): the OCI repository prefix per-run
   artifact images are pushed to and pulled from.
-- `SOULREALM_K8S_BASE_IMAGE` (default `alpine:3.22`): the CA-trusted base.
-- `SOULREALM_K8S_HOST_ALIAS`: loopback-rewrite target
+- `SOULSTREAM_K8S_BASE_IMAGE` (default `alpine:3.22`): the CA-trusted base.
+- `SOULSTREAM_K8S_HOST_ALIAS`: loopback-rewrite target
   (environment-specific; e.g. the Docker Desktop host address under kind).
   A loopback realm with no alias fails loud pre-launch.
 - **Client internal** (decided in the specs/004 plan, research D1):

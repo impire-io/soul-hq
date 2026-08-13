@@ -1,6 +1,6 @@
 # 02-DESIGN — the normative design
 
-What Soulfold *is*, functional-level: capabilities, seams, configuration
+What soulstream-idp *is*, functional-level: capabilities, seams, configuration
 surfaces, acceptance criteria. Load-bearing decisions carry numbered entries
 with their reasoning, so future changes argue against the real reasons.
 Behavioral changes made during implementation propagate back here — these

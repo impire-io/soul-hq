@@ -12,37 +12,41 @@ changes to it are decisions and belong in the journey as episodes.
 
 | Component | State | Next gate |
 |---|---|---|
-| [soulstream](#soulstream--the-record) | `v0.7.0` — MVP + most of day-2 shipped; the remote MCP node built and consumable; two-week dogfood run live since 2026-07-27 | Sealed-topics build priority gated on the dogfood chafe log (to 2026-08-10); eg-walker gated on stage-1 chafe |
-| [soulrealm](#soulrealm--the-room) | Phases 1–2 complete — native, microsandbox, and Kubernetes backends run byte-identical declarations; soulstream pinned | Phase 3 (Fleet) unblocked: design 0003, M3.1 runs spec-kit next |
-| [soulidentity](#soulidentity--the-name) | M1/M3/M4 shipped (+ Entra/OIDC lane, D25 registry dissolution, D28/D29 consumer-proven additions); `v0.1.0` tagged | M2's node half — proven upstream by soulstream 018; roadmap check-off pending. M5 gated on soulstream demand |
-| [soulnode](#soulnode--the-house) | **v0.3.0 + the helm plane on main** ([episodes 0057](../04-JOURNEY/0057-soulnode-the-folded-realm.md)/[0058](../04-JOURNEY/0058-soulnode-the-release-pipeline.md)/[0062](../04-JOURNEY/0062-soulnode-the-front-of-house.md)/[0068](../04-JOURNEY/0068-soulnode-the-helm-plane.md)): fold on by default, `planes.helm` composing soulhelm v0.1.0, four URLs logged, the OIDC lane on in local mode when the helm runs | Tag the next release (carries the helm plane); day-2 items; Phase 3 (tsnet) gated on fronting measured insufficient |
-| [soulfold](#soulfold--the-fold) | **Every milestone shipped — M1–M5, v0.2.0** ([episodes 0052](../04-JOURNEY/0052-soulfold-m1-the-op-skeleton.md)–[0060](../04-JOURNEY/0060-soulfold-m3-the-lifecycle.md)): the sealed store, passkeys, callout admission, the embed seam, and the lifecycle — invitation is the only door; physical-authenticator runbook pending (human act) | Named horizons only (deferred audit rows, multi-issuer demand); day-2 by demand |
-| [soulhelm](#soulhelm--the-helm) | **v0.1.0 — founded, shipped, and composed 2026-08-13** ([episodes 0066](../04-JOURNEY/0066-ecosystem-soulsystem-cockpit.md)/[0067](../04-JOURNEY/0067-soulhelm-founding-and-first-light.md)/[0068](../04-JOURNEY/0068-soulnode-the-helm-plane.md)): observe surface + fold sessions + the first act, the whole human ceremony riding `make test`; running in soulnode as `planes.helm` | Reframed as **the shell** the same day: the [`shell-module-contract`](../01-RESEARCH/shell-module-contract/README.md) research gates M2, which arrives module-shaped; renames **soulstream-shell** in the sweep ([episode 0069](../04-JOURNEY/0069-ecosystem-one-name-soulstream.md)) |
+| [soulstream-core](#soulstream-core--the-record) | `v0.8.0` (renamed, episode 0070; the remote MCP node extracted to soulstream-mcp) — MVP + most of day-2 shipped; the remote MCP node built and consumable; two-week dogfood run live since 2026-07-27 | Sealed-topics build priority gated on the dogfood chafe log (to 2026-08-10); eg-walker gated on stage-1 chafe |
+| [soulstream-workloads](#soulstream-workloads--the-room) | Phases 1–2 complete — native, microsandbox, and Kubernetes backends run byte-identical declarations; `v0.2.0` renamed, wire at SOULSTREAM.* | Phase 3 (Fleet) unblocked: design 0003, M3.1 runs spec-kit next |
+| [soulstream-identity](#soulstream-identity--the-name) | M1/M3/M4 shipped (+ Entra/OIDC lane, D25 registry dissolution, D28/D29 consumer-proven additions); `v0.2.0` tagged (renamed; wire segment `identity`) | M2's node half — proven upstream by soulstream 018; roadmap check-off pending. M5 gated on soulstream demand |
+| [soulstream](#soulstream--the-product-the-house) | **v0.8.0 — renamed soulstream, the product** (episode 0070; first tag on the reused path clears the record library's v0.1–v0.7 checksum history) ([episodes 0057](../04-JOURNEY/0057-soulnode-the-folded-realm.md)/[0058](../04-JOURNEY/0058-soulnode-the-release-pipeline.md)/[0062](../04-JOURNEY/0062-soulnode-the-front-of-house.md)/[0068](../04-JOURNEY/0068-soulnode-the-helm-plane.md)): fold on by default, `planes.shell` composing soulstream-shell v0.2.0, four URLs logged, the OIDC lane on in local mode when the helm runs | Day-2 items; Phase 3 (tsnet) gated on fronting measured insufficient |
+| [soulstream-idp](#soulstream-idp--the-fold) | **Every milestone shipped — M1–M5, v0.4.0** ([episodes 0052](../04-JOURNEY/0052-soulfold-m1-the-op-skeleton.md)–[0060](../04-JOURNEY/0060-soulfold-m3-the-lifecycle.md)): the sealed store, passkeys, callout admission, the embed seam, and the lifecycle — invitation is the only door; physical-authenticator runbook pending (human act) | Named horizons only (deferred audit rows, multi-issuer demand); day-2 by demand |
+| [soulstream-shell](#soulstream-shell--the-shell) | **v0.2.0 — founded, shipped, composed, and renamed 2026-08-13** ([episodes 0066](../04-JOURNEY/0066-ecosystem-soulsystem-cockpit.md)/[0067](../04-JOURNEY/0067-soulhelm-founding-and-first-light.md)/[0068](../04-JOURNEY/0068-soulnode-the-helm-plane.md)): observe surface + fold sessions + the first act, the whole human ceremony riding `make test`; running in soulstream as `planes.shell` | Reframed as **the shell** the same day: the [`shell-module-contract`](../01-RESEARCH/shell-module-contract/README.md) research gates M2, which arrives module-shaped; renamed **soulstream-shell** in the sweep ([episodes 0069](../04-JOURNEY/0069-ecosystem-one-name-soulstream.md)/[0070](../04-JOURNEY/0070-ecosystem-the-rename-sweep.md)) |
+| soulstream-mcp | **v0.1.0 — founded 2026-08-13** by extraction from soulstream/node v0.7.0 ([episode 0070](../04-JOURNEY/0070-ecosystem-the-rename-sweep.md)): the remote MCP server, own CI and release | Day-2 by demand; consumed by the product as the door plane |
 
 **2026-08-13 — the naming re-centering** ([episode
 0069](../04-JOURNEY/0069-ecosystem-one-name-soulstream.md)): every project
 renames under the one brand — **soulstream-core** (the record library),
-**soulstream** (the product, ex-soulnode — the binary that spins up a full
-soulstream), **soulstream-workloads** (ex-soulrealm), **soulstream-mcp**
+**soulstream** (the product, ex-soulstream — the binary that spins up a full
+soulstream), **soulstream-workloads** (ex-soulstream-workloads), **soulstream-mcp**
 (the remote MCP server, extracted from core's nested `node/` module),
-**soulstream-identity**, **soulstream-idp** (ex-soulfold),
+**soulstream-identity**, **soulstream-idp** (ex-soulstream-idp),
 **soulstream-shell** (ex-helm), **soulstream-cli** (new — the client CLI,
 founded after the sweep), soulstream-archivist unchanged. Backwards
 compatibility is waived pre-v1, so wire-vocabulary renames ride each
-repo's sweep. Execution order: core vacates the bare name first, then
-soulnode claims it. The component sections below keep their old names
-until each sweep lands — the docs describe what is.
+repo's sweep. **Executed the same evening** ([episode
+0070](../04-JOURNEY/0070-ecosystem-the-rename-sweep.md)): eight repos
+renamed, re-pinned, and tagged in dependency order, every gate and tag
+release green; the wire went with them. The section headers below now
+carry the new names; milestone prose keeps its historical vocabulary
+where it records what happened.
 
-Cross-component dependencies, tracked openly: soulnode consumes everything by
-tag — the standing pin exception closed 2026-08-02 (soulrealm v0.1.0,
-soulstream-archivist v0.2.0, soulstream/node v0.7.0, soulidentity v0.1.0 all
-tagged; soulnode pins them); soulnode's public door and soulstream's node
-AS-story wait on soulfold; soulrealm's preferred fleet minting rides
-soulidentity D28.
+Cross-component dependencies, tracked openly: soulstream consumes everything by
+tag — the standing pin exception closed 2026-08-02 (soulstream-workloads v0.1.0,
+soulstream-archivist v0.2.0, soulstream/node v0.7.0, soulstream-identity v0.1.0 all
+tagged; soulstream pins them); soulstream's public door and soulstream's node
+AS-story wait on soulstream-idp; soulstream-workloads's preferred fleet minting rides
+soulstream-identity D28.
 
 ---
 
-## soulstream — the record
+## soulstream-core — the record
 
 
 *The core spec defines the protocol; the extensions define optional conventions. This document decides what gets built first. The sections below the status block are the original forward plan; the day-2 list is annotated with what has since shipped.*
@@ -51,7 +55,7 @@ soulidentity D28.
 
 ### Where we are (2026-07-29)
 
-The reference library (Go, `github.com/impire-io/soulstream`) has shipped the
+The reference library (Go, `github.com/impire-io/soulstream-core`) has shipped the
 MVP and most of day-2. Releases, from git tags [measured]:
 
 | Version | Date | What landed |
@@ -62,7 +66,7 @@ MVP and most of day-2. Releases, from git tags [measured]:
 | `v0.3.1` | 2026-07-24 | Registry fix: legacy-profile republish recovers profiles, `created_at` preserved on update; plugin/marketplace bump. |
 | `v0.4.0` | 2026-07-25 | `015-memory`: the memory convention — `memory.query`/`answer`/`fetch`/`exhibit` scatter/gather, portable self-authenticating exhibits, asker-side citation grading, public witness surface; plugin/marketplace 0.4.0. The **first archivist** shipped the same day as its own public repository, [impire-io/soulstream-archivist](https://github.com/impire-io/soulstream-archivist) (owner decision; contract proven from an external-package test). |
 | `v0.5.0` | 2026-07-28 | `016-provision-limits` (merged 2026-07-27): per-artefact storage budgets so limit-enforced accounts (NGS R1) provision out of the box, retiring the manual pre-creation workaround documented since 2026-07-21 ([journey 0004](../04-JOURNEY/0010-soulstream-provisioning-byte-limits.md)); plugin/marketplace 0.5.0. |
-| `v0.6.0` | 2026-07-29 | `017-signer-seam` ([journey 0006](../04-JOURNEY/0026-soulstream-the-signer-seam.md)) + its DX hardening ([journey 0007](../04-JOURNEY/0027-soulstream-dx-hardening-and-the-cycle-guard.md)): the `identity.Signer` interface so record and statement signing can be delegated to an external custodian ([SoulIdentity](https://github.com/impire-io/soulidentity)'s `sign.record` service — its M2 wiring point) without soulstream depending on it; local keys the first implementation, a failing signer fails the publish, responders go silent with the error in their callbacks (the `-1` sentinel retired), typed-nil signers refused at `Connect`, seed-custody surfaces keep the concrete key type, and the cycle-guard dependency rule (neither core repo imports the other — structural satisfaction, consumers wire) recorded on both sides; plugin/marketplace 0.6.0. |
+| `v0.6.0` | 2026-07-29 | `017-signer-seam` ([journey 0006](../04-JOURNEY/0026-soulstream-the-signer-seam.md)) + its DX hardening ([journey 0007](../04-JOURNEY/0027-soulstream-dx-hardening-and-the-cycle-guard.md)): the `identity.Signer` interface so record and statement signing can be delegated to an external custodian ([soulstream-identity](https://github.com/impire-io/soulstream-identity)'s `sign.record` service — its M2 wiring point) without soulstream depending on it; local keys the first implementation, a failing signer fails the publish, responders go silent with the error in their callbacks (the `-1` sentinel retired), typed-nil signers refused at `Connect`, seed-custody surfaces keep the concrete key type, and the cycle-guard dependency rule (neither core repo imports the other — structural satisfaction, consumers wire) recorded on both sides; plugin/marketplace 0.6.0. |
 
 The **two-week dogfood run started 2026-07-27** ([DOGFOOD.md](DOGFOOD.md)).
 
@@ -116,7 +120,7 @@ The wire format already carries every future hook: `Soulstream-Parents` (merge),
 1. ✅ **Re-baselining (rollup) + manifest baselines + `archived`** — `007-rollup` (v0.1.0). Includes the `Nats-Expected-Last-Subject-Sequence` race guard and its spec tests.
 2. ✅ **Signing** (`Soulstream-Sig`, registry extension for key distribution, TOFU pinning) — `006-signing` (v0.1.0).
 3. ✅ **`topic.discover` scatter/gather** — `008-discover` (v0.1.0); first real test of "any persona may answer."
-4. ✅ **Curator persona** ([extensions/curation.md](../02-DESIGN/soulstream/extensions/curation.md)) — `009-curator` (v0.1.0): suggestions only, zero protocol standing.
+4. ✅ **Curator persona** ([extensions/curation.md](../02-DESIGN/soulstream-core/extensions/curation.md)) — `009-curator` (v0.1.0): suggestions only, zero protocol standing.
 5. ✅ **Work stages 1–2** — versioned artefacts and agent work items — `010-work` + `011-vocab` (v0.1.0) (below).
 6. **Eg-walker merge** — gated by stage 3 (live co-editing), not before. *Not yet built.*
 7. ✅ **Remaining vocabulary** — `edit`, `comment.reply/resolve`, `attachment.remove`, `dormant` automation — `011-vocab` (v0.1.0).
@@ -127,7 +131,7 @@ The wire format already carries every future hook: `Soulstream-Parents` (merge),
    (public, same day), built exclusively on the public witness surface as decided
    ([journey 0003](../04-JOURNEY/0009-soulstream-memory-convention-and-exhibits.md)); its own
    end-to-end test replays the keep → rollup → verified-recovery story for real.
-9. **Sealed topics** — the crypto is the single biggest build item and the dogfood scenario doesn't need it. *Not yet built* — but **design-validated 2026-07-28** ([journey 0005](../04-JOURNEY/0011-soulstream-sealed-topics.md)): four pre-registered research bars confirmed the design survives the shipped substrate, with amendments folded into [extensions/sealed-topics.md](../02-DESIGN/soulstream/extensions/sealed-topics.md); speckit-ready. Build priority gated on the dogfood chafe log (to 2026-08-10).
+9. **Sealed topics** — the crypto is the single biggest build item and the dogfood scenario doesn't need it. *Not yet built* — but **design-validated 2026-07-28** ([journey 0005](../04-JOURNEY/0011-soulstream-sealed-topics.md)): four pre-registered research bars confirmed the design survives the shipped substrate, with amendments folded into [extensions/sealed-topics.md](../02-DESIGN/soulstream-core/extensions/sealed-topics.md); speckit-ready. Build priority gated on the dogfood chafe log (to 2026-08-10).
 10. **WebSocket/browser client, presence.** *Not yet built.*
 11. **Remote MCP node** (`018`) — a URL into a realm for clients that cannot
     install anything (sandboxed Claude Desktop, claude.ai connectors). **BUILT
@@ -135,16 +139,16 @@ The wire format already carries every future hook: `Soulstream-Parents` (merge),
     0009](../04-JOURNEY/0047-soulstream-remote-mcp-node-built.md)): a credential-free
     passthrough node (nested consumer module `node/`), callout-admitted per
     user, with the tool surface now a public embeddable `mcpserver` (+
-    `soulstream_whoami`) — the node half of SoulIdentity's M2 and SoulNode's
+    `soulstream_whoami`) — the node half of soulstream-identity's M2 and soulstream's
     fourth upstream ask. The open OAuth decision was resolved **external OIDC
-    only** (soulfold the intended default, the node AS-agnostic; the AS-facing
+    only** (soulstream-idp the intended default, the node AS-agnostic; the AS-facing
     contract proven the interface). All five user stories measured on an
     in-process admission edge; the R4 trust model closes the prototype's
     forged-hint DoS. CI/release awake since 2026-08-03 — the whole
     impire-io stack went public, dissolving the private-module
     credential blocker; the node CI job runs green, and the
     node-release job proves itself on the next `v*` tag. Design in
-    [extensions/remote-mcp-node.md](../02-DESIGN/soulstream/extensions/remote-mcp-node.md).
+    [extensions/remote-mcp-node.md](../02-DESIGN/soulstream-core/extensions/remote-mcp-node.md).
 
 Beyond the original day-2 list, five features shipped that the plan did not
 enumerate: **distribution** (`012`, the Claude plugin marketplace + release
@@ -153,8 +157,8 @@ pipeline, v0.1.0), **config-file identity** (`013`, v0.2.0),
 added, stream hygiene), **provisioning byte limits** (`016`, v0.5.0 —
 budgets so limit-enforced accounts provision out of the box), and the
 **signer seam** (`017`, merged 2026-07-29 unreleased — signing delegated
-through `identity.Signer`, SoulIdentity M2's wiring point). Their reasoning is in the decision log
-([`../../README.md`](../../soulstream/README.md)) and the founding retrospective
+through `identity.Signer`, soulstream-identity M2's wiring point). Their reasoning is in the decision log
+([`../../README.md`](../../soulstream-core/README.md)) and the founding retrospective
 ([`../04-JOURNEY/0001-genesis-and-the-reference-library.md`](../04-JOURNEY/0007-soulstream-genesis-and-the-reference-library.md)).
 
 ### Later
@@ -163,12 +167,12 @@ MLS upgrade for sealed topics; bridges (Slack/email); sandbox runtime and its co
 
 ### The work stages
 
-"Documents/workloads" resolved (2026-07-11) as *all* of: versioned artefacts, agent work items, live co-editing, executable workloads, sandboxes. The design home for the stages is [extensions/work.md](../02-DESIGN/soulstream/extensions/work.md); this table decides sequencing. Five stages, each with its own gate, each usable without the next:
+"Documents/workloads" resolved (2026-07-11) as *all* of: versioned artefacts, agent work items, live co-editing, executable workloads, sandboxes. The design home for the stages is [extensions/work.md](../02-DESIGN/soulstream-core/extensions/work.md); this table decides sequencing. Five stages, each with its own gate, each usable without the next:
 
 | Stage | What | New machinery | Gate |
 |---|---|---|---|
 | 1. Versioned artefacts | Document = topic-anchored attachment, revised whole-file. | None — existing ops. | Day-2, immediately useful in dogfood. |
-| 2. Agent work items | A work-tracking vocabulary (`work.open`, `work.claim`, `work.done`, …) over ordinary op-logs. Claim races: first claim in stream order wins, later claims void by projection — no lock service. | Vocabulary only (additive). | Day-2; design sketch in [extensions/work.md](../02-DESIGN/soulstream/extensions/work.md). |
+| 2. Agent work items | A work-tracking vocabulary (`work.open`, `work.claim`, `work.done`, …) over ordinary op-logs. Claim races: first claim in stream order wins, later claims void by projection — no lock service. | Vocabulary only (additive). | Day-2; design sketch in [extensions/work.md](../02-DESIGN/soulstream-core/extensions/work.md). |
 | 3. Live co-editing | Character/block-level ops on shared documents. | **Eg-walker lands here.** The single biggest library build. | When stage-1 whole-file versioning demonstrably chafes — not before. |
 | 4. Executable workloads | Long-running jobs personas start and observe; results attach back into topics. | Execution vocabulary + a runner persona (ordinary credentials). | Needs stage 2. |
 | 5. Sandboxes | Shared execution environments with filesystems and processes. | A runtime, outside the substrate; topics carry only its coordination. | Last; design against a working stage-4. |
@@ -177,7 +181,7 @@ The discipline: no stage starts while the previous stage is undesigned, and stag
 
 ---
 
-## soulrealm — the room
+## soulstream-workloads — the room
 
 
 The live plan. No dates — **gates, not calendars**. Every milestone names the
@@ -191,7 +195,7 @@ bootstrapped ([episode 0001](../04-JOURNEY/0001-soulrealm-genesis.md)) and the s
 question is closed ([episode
 0002](../04-JOURNEY/0002-soulrealm-the-substrate-decision.md)): a from-scratch,
 NEX-influenced runtime with the op-log as the single control plane, specified
-in design [`0001-soulrealm-runtime.md`](../02-DESIGN/soulrealm/0001-soulrealm-runtime.md).
+in design [`0001-soulrealm-runtime.md`](../02-DESIGN/soulstream-workloads/0001-soulrealm-runtime.md).
 An agent runs and a tool answers (episodes 0004/0005); the hq's own structural
 lint rides the gate ([episode 0006](../04-JOURNEY/0006-soulrealm-hq-alignment.md)); and
 the same declarations now run unchanged inside microsandbox microVMs —
@@ -203,7 +207,7 @@ the same declarations run as Kubernetes pods, artifact via a per-run OCI
 image through the operator's registry, credential as a Secret. **The Fleet
 research gate is met** ([episode 0010](../04-JOURNEY/0033-soulrealm-fleet.md), all
 three pre-registered bars measured PASS) — Phase 3 is unblocked with design
-[`0003-fleet.md`](../02-DESIGN/soulrealm/0003-fleet.md); the remaining horizons
+[`0003-fleet.md`](../02-DESIGN/soulstream-workloads/0003-fleet.md); the remaining horizons
 (sandboxes-stage-5, the tool ecosystem) stay gated — see below.
 
 ### Phase 0 — Substrate (research) — ✅ closed 2026-07-22
@@ -211,7 +215,7 @@ three pre-registered bars measured PASS) — Phase 3 is unblocked with design
 **Gate met.** `nex-runtime-substrate` graduated to design (episode 0002).
 Decided: NEX is influence, not dependency; `agent`/`tool` is a role axis
 orthogonal to the `service`/`function`/`job` lifecycle axis; the backend seam
-is soulrealm-owned (constitution III), emitting ops rather than a second
+is soulstream-workloads-owned (constitution III), emitting ops rather than a second
 control plane.
 
 ### Phase 1 — First workload (design → build) — *unblocked*
@@ -221,25 +225,25 @@ criteria, made precise per feature in `specs/NNN-*/`:
 
 - **M1.1 — Launch one agent.** ✅ **Done** ([episode
   0004](../04-JOURNEY/0004-soulrealm-the-first-agent-runs.md); spec/plan/tasks in
-  [`specs/001-launch-an-agent/`](../../soulrealm/specs/001-launch-an-agent/)). The Go
+  [`specs/001-launch-an-agent/`](../../soulstream-workloads/specs/001-launch-an-agent/)). The Go
   module exists; an agent launches natively, posts a turn attributed to its
   persona, and its lifecycle is `work.open/claim/done` on the topic — proven
   end-to-end (SC-001, SC-002). The plan's bet held: **no new soulstream
-  vocabulary** (soulrealm is the work.md "runner"). Signing is soulrealm-held
+  vocabulary** (soulstream-workloads is the work.md "runner"). Signing is soulstream-workloads-held
   (episode 0003). SC-003 (scope *enforcement*) is now proven against an
   operator-mode server; SC-004/SC-005 at unit level. Whole gate green, all five
   success criteria met.
 - **M1.2 — Launch one tool, called by the agent.** ✅ **Done** ([episode
-  0005](../04-JOURNEY/0005-soulrealm-a-tool-answers.md); [`specs/002-call-a-tool/`](../../soulrealm/specs/002-call-a-tool/)).
+  0005](../04-JOURNEY/0005-soulrealm-a-tool-answers.md); [`specs/002-call-a-tool/`](../../soulstream-workloads/specs/002-call-a-tool/)).
   A tool workload the agent discovers by name and calls over request-reply
   (uppercase round trip), under the same one-identity model. Added the `tool`
   role, role-aware scopes, and the runner's launch/stop (services don't
-  self-exit). Measured lesson: tool RPC is transient, so it rides soulrealm's
-  own `SOULREALM.SVC.*` (the `SOULSTREAM.>` stream would otherwise ack and race
+  self-exit). Measured lesson: tool RPC is transient, so it rides soulstream-workloads's
+  own `SOULSTREAM.SVC.*` (the `SOULSTREAM.>` stream would otherwise ack and race
   it). SC-001/002/003 proven end-to-end; gate green.
 - **M1.3 — Second backend.** ✅ **Done** ([episode
   0007](../04-JOURNEY/0020-soulrealm-a-second-wall.md);
-  [`specs/003-microsandbox-backend/`](../../soulrealm/specs/003-microsandbox-backend/)).
+  [`specs/003-microsandbox-backend/`](../../soulstream-workloads/specs/003-microsandbox-backend/)).
   **Open amendment:** the backend landed as **microsandbox** (microVM via
   libkrun), not the "Docker or Firecracker" written here at planning time —
   microVM-grade isolation that also runs on the macOS dev machine (Firecracker
@@ -263,7 +267,7 @@ bars measured PASS); **landed the same day**.
 
 - **M2.1 — Kubernetes backend.** ✅ **Done** ([episode
   0009](../04-JOURNEY/0028-soulrealm-a-third-wall-lands.md);
-  [`specs/004-kubernetes-backend/`](../../soulrealm/specs/004-kubernetes-backend/)).
+  [`specs/004-kubernetes-backend/`](../../soulstream-workloads/specs/004-kubernetes-backend/)).
   All exit criteria met, measured on a real kind cluster + local OCI
   registry: the byte-identical M1.1/M1.2 declarations run as pods with the
   identical op mapping (native control arm asserting the declaration
@@ -288,14 +292,14 @@ across four spikes; two open reversals on the record). Decided: placement
 **is** `work.claim` (no auction, no coordinator); reclaim is *projection
 nominates → probe vetoes → ordinary `work.abandon` decides*; nodes are
 homogeneous with the minter role dissolved into the identity plane
-(`soulidentity`). Design: [`0003-fleet.md`](../02-DESIGN/soulrealm/0003-fleet.md).
+(`soulstream-identity`). Design: [`0003-fleet.md`](../02-DESIGN/soulstream-workloads/0003-fleet.md).
 
 - **M3.1 — first fleet milestone.** Runs the spec-kit flow against design
   0003 (§8 acceptance criteria: two real nodes, contested placement,
   kill → reclaim within bound, seedless scoped launch, seams untouched).
   Exit criteria made precise per feature in `specs/NNN-*/`. External
   dependency, tracked openly: the preferred minting path needs
-  soulidentity to stamp tags on mints (its M2 "consumer-proven" clause);
+  soulstream-identity to stamp tags on mints (its M2 "consumer-proven" clause);
   the measured delegated-minting fallback works today.
 
 ### Later horizons (named, not planned)
@@ -315,31 +319,31 @@ episode, and propagates design changes — in the same merge (constitution VI).
 
 ---
 
-## soulidentity — the name
+## soulstream-identity — the name
 
 
-*The design ([`../02-DESIGN/agent.md`](../02-DESIGN/soulidentity/agent.md)) says what
-SoulIdentity is; this document decides what gets built first and behind which
+*The design ([`../02-DESIGN/agent.md`](../02-DESIGN/soulstream-identity/agent.md)) says what
+soulstream-identity is; this document decides what gets built first and behind which
 gate.*
 
 ### Where we are (2026-08-02)
 
-**The default IdP is a sibling — soulfold, the refusal holds** ([journey
+**The default IdP is a sibling — soulstream-idp, the refusal holds** ([journey
 0019](../04-JOURNEY/0039-soulidentity-soulfold-the-default-idp.md)): the vision's
 "not an identity provider" refusal was tested by the operator's
 default-IdP question and held — the passkey-first OIDC provider
-deployments get out of the box becomes the sibling project **soulfold**
-(`github.com/impire-io/soulfold`, NATS-native, JetStream-KV-backed,
+deployments get out of the box becomes the sibling project **soulstream-idp**
+(`github.com/impire-io/soulstream-idp`, NATS-native, JetStream-KV-backed,
 embeddable), which the callout issuer treats identically to Entra
 through the D23 seam: issuer URL, JWKS, D24's roles-claim rule, no
 side-channel, no shared store. Nothing changes in this repo now; named,
-not built: D23 multi-issuer dispatch when a deployment runs soulfold
+not built: D23 multi-issuer dispatch when a deployment runs soulstream-idp
 beside a second external issuer.
 
 **The embed seam — D29, M2's second consumer-proven addition** ([journey
 0018](../04-JOURNEY/0036-soulidentity-the-embed-seam.md), D29 in
-[`../02-DESIGN/agent.md`](../02-DESIGN/soulidentity/agent.md), feature
-`specs/002-embed-seam/`): soulnode's single-binary-composition research
+[`../02-DESIGN/agent.md`](../02-DESIGN/soulstream-identity/agent.md), feature
+`specs/002-embed-seam/`): soulstream's single-binary-composition research
 measured the wall — provisioning is public through `client/`, but the
 serve assembly lived only in `cmdServe`, forcing embedding consumers onto
 the module-namespace dodge. The public `embed` package now carries it:
@@ -351,8 +355,8 @@ imports cannot compile) runs the M4 admission shape through `embed.Run`
 
 **The ephemeral role-named mint — D28, M2's first consumer-proven
 addition** ([journey 0017](../04-JOURNEY/0035-soulidentity-role-selection-by-name.md),
-D28 in [`../02-DESIGN/agent.md`](../02-DESIGN/soulidentity/agent.md), answering
-soulidentity#1): soulrealm's fleet proved the missing op — `mint.ephemeral`
+D28 in [`../02-DESIGN/agent.md`](../02-DESIGN/soulstream-identity/agent.md), answering
+soulstream-identity#1): soulstream-workloads's fleet proved the missing op — `mint.ephemeral`
 issues an ephemeral scoped user JWT against a named role for a
 caller-supplied public key, tags in the claims, TTL required. D5's
 amendment reversal condition fired and was answered: multi-role accounts
@@ -370,7 +374,7 @@ only in the product name. A vocabulary pass — no wire change.
 
 **The vault is the directory — D26, ephemeral users**
 ([journey 0015](../04-JOURNEY/0031-soulidentity-the-vault-is-the-directory.md), D26 in
-[`../02-DESIGN/nats-surface.md`](../02-DESIGN/soulidentity/nats-surface.md)): 0014's
+[`../02-DESIGN/nats-surface.md`](../02-DESIGN/soulstream-identity/nats-surface.md)): 0014's
 persona-directory trust path refuted the same day — no per-user act
 exists anywhere. The caller's own persona key materializes inside the
 vault on first touch, owner-bound; `keys.public` is the open directory
@@ -389,7 +393,7 @@ publishes nothing per user and builds keyrings from the identity plane.
 
 **The registry dissolved — D25, same day**
 ([journey 0013](../04-JOURNEY/0029-soulidentity-the-registry-dissolves.md), D25 in
-[`../02-DESIGN/nats-surface.md`](../02-DESIGN/soulidentity/nats-surface.md) amending
+[`../02-DESIGN/nats-surface.md`](../02-DESIGN/soulstream-identity/nats-surface.md) amending
 D2/D5/D6/D18/D22/D24): authorization lives in the transport ACLs (the op
 tail of the subject, gated by the same enforcement as D15's principal)
 and the vault bindings (persona keys carry their owner; every mint
@@ -401,7 +405,7 @@ one registry standing; teams are accounts. All three e2e gates re-proven
 
 **The Entra/OIDC lane — shipped 2026-07-29**
 ([journey 0012](../04-JOURNEY/0025-soulidentity-entra-role-claim-lane.md), D23–D24 in
-[`../02-DESIGN/auth-callout.md`](../02-DESIGN/soulidentity/auth-callout.md), feature
+[`../02-DESIGN/auth-callout.md`](../02-DESIGN/soulstream-identity/auth-callout.md), feature
 `specs/001-entra-oidc-backend/` on the speckit flow): the second authn
 backend on the D22 pipeline. Role == team — the token's app-role value
 resolves directly against the declared teams (account signing keys with
@@ -415,8 +419,8 @@ Real-tenant verification: the manual runbook in the feature's
 
 **Milestone 4 — auth callout, the front door — shipped 2026-07-28**
 ([journey 0010](../04-JOURNEY/0022-soulidentity-m4-auth-callout-ships.md), design
-[`../02-DESIGN/auth-callout.md`](../02-DESIGN/soulidentity/auth-callout.md), D19–D22,
-researched same-day in journeys 0008–0009): SoulIdentity as the callout
+[`../02-DESIGN/auth-callout.md`](../02-DESIGN/soulstream-identity/auth-callout.md), D19–D22,
+researched same-day in journeys 0008–0009): soulstream-identity as the callout
 issuer on a dedicated AUTH account — sentinel + API token in,
 TTL-bounded scoped JWT for the server-assigned key out, token management
 and sentinel minting as admin-gated surface ops. Gate met [measured]:
@@ -427,7 +431,7 @@ remains an open research question blocked on operator portal access.
 
 **Milestone 3 — the NATS-native rebuild — shipped 2026-07-28**
 ([journey 0007](../04-JOURNEY/0018-soulidentity-m3-the-nats-native-rebuild.md), design
-[`../02-DESIGN/nats-surface.md`](../02-DESIGN/soulidentity/nats-surface.md), D14–D18):
+[`../02-DESIGN/nats-surface.md`](../02-DESIGN/soulstream-identity/nats-surface.md), D14–D18):
 the sealed service surface on the caller's own subject prefix, the vault on
 NATS KV with envelope encryption, act-as enforced against the server-proven
 principal, admin-gated management (D18). Gate met [measured]: unauthorized
@@ -442,7 +446,7 @@ the execution order: M4 (auth callout), then M2 (consumers wire in).
 vault, registry, agent over a Unix socket, mint-from-scoped-signing-keys, the
 `client` package with `NATSOption`, and the end-to-end proof against an
 operator-mode NATS server [measured]. First release tagged 2026-08-02:
-`v0.1.0`, cut for soulfold's consumer-position pin — the trigger the
+`v0.1.0`, cut for soulstream-idp's consumer-position pin — the trigger the
 release-pipeline item named.
 
 **The identity-plane re-centering — 2026-07-28**
@@ -493,10 +497,10 @@ arrive over the NATS surface).
    connection per user with no node-held creds — soulstream's remote MCP
    node feature. This milestone lives mostly in the consuming repos; here
    it may add only what those consumers prove missing. First such addition,
-   landed 2026-07-31: soulrealm's fleet proved the ephemeral role-named
-   tagged mint missing (soulidentity#1) — `mint.ephemeral`, D28 (journey
+   landed 2026-07-31: soulstream-workloads's fleet proved the ephemeral role-named
+   tagged mint missing (soulstream-identity#1) — `mint.ephemeral`, D28 (journey
    [0017](../04-JOURNEY/0035-soulidentity-role-selection-by-name.md)). Second, landed
-   2026-08-01: soulnode's composition research proved the serve-side embed
+   2026-08-01: soulstream's composition research proved the serve-side embed
    seam missing — the public `embed` package, D29 (journey
    [0018](../04-JOURNEY/0036-soulidentity-the-embed-seam.md)).
 3. ✅ **M3 — the NATS-native rebuild** (shipped 2026-07-28,
@@ -505,7 +509,7 @@ arrive over the NATS surface).
    payloads, the caller's NATS identity as the principal (D11/D12) — act-as
    (D6) enforced, audit entries naming the caller — and the vault on NATS
    KV with envelope encryption at rest (D10, D13). Realized the design in
-   [`../02-DESIGN/nats-surface.md`](../02-DESIGN/soulidentity/nats-surface.md)
+   [`../02-DESIGN/nats-surface.md`](../02-DESIGN/soulstream-identity/nats-surface.md)
    (D14–D18); the milestone-1 socket surface, `NATSOption` seam, file
    keystore, and `sign/nonce` op retired. Gate met [measured] in the e2e
    proof: unauthorized act-as refused and logged; request bodies ciphertext
@@ -514,16 +518,16 @@ arrive over the NATS surface).
    the server's own permission enforcement.
 4. ✅ **M4 — auth callout, the front door** (shipped 2026-07-28,
    [journey 0010](../04-JOURNEY/0022-soulidentity-m4-auth-callout-ships.md)).
-   SoulIdentity as the NATS auth-callout issuer, API-token backend first
+   soulstream-identity as the NATS auth-callout issuer, API-token backend first
    (Entra/OIDC landed 2026-07-29 as D23–D24, journey 0012),
    issuing TTL-bounded ephemeral JWTs for the server-assigned user key —
    authorization from the registry row, the creds-file bypass drawn in
    callout config (D12). Realized the design in
-   [`../02-DESIGN/auth-callout.md`](../02-DESIGN/soulidentity/auth-callout.md)
+   [`../02-DESIGN/auth-callout.md`](../02-DESIGN/soulstream-identity/auth-callout.md)
    (D19–D22). Gate met [measured] in the e2e proof: an external-credential
    connection admitted with server-enforced permissions and the identity
    attributable in the audit log; every creds-file connection verified
-   natively with zero callout decisions — SoulIdentity out of the path;
+   natively with zero callout decisions — soulstream-identity out of the path;
    invalid and revoked tokens refused; callout requests xkey-sealed both
    ways. The NGS answer (below) gates promising callout on NGS, not this
    build.
@@ -533,7 +537,7 @@ arrive over the NATS surface).
 6. **Later**: sealing keys (D9 — unwrap-once, waits on Soulstream sealed
    topics build), further storage backends (OS keychain, Vault transit — D10),
    release pipeline (goreleaser + tag-triggered release, the archivist
-   pattern). The pipeline's trigger half-fired 2026-08-02: soulfold became
+   pattern). The pipeline's trigger half-fired 2026-08-02: soulstream-idp became
    the first external consumer wanting a pinned version, answered with the
    signed tag `v0.1.0` (a Go module pin needs no binary); the goreleaser
    pipeline still waits for the first consumer of the *binary*.
@@ -547,7 +551,7 @@ arrive over the NATS surface).
   planning begins. This is also half of D11's reversal condition.
 - ~~**The sentinel-credential flow** (gated M4)~~ — answered 2026-07-28
   ([journey 0008](../04-JOURNEY/0019-soulidentity-sentinel-credential-flow.md), D19–D21
-  in [`../02-DESIGN/auth-callout.md`](../02-DESIGN/soulidentity/auth-callout.md)): the
+  in [`../02-DESIGN/auth-callout.md`](../02-DESIGN/soulstream-identity/auth-callout.md)): the
   client holds URL + external token only (`default_sentinel`), or a public
   bearer deny-all sentinel creds file besides; the issued JWT is for the
   server-assigned ephemeral key, minted by the vault's role keys;
@@ -580,7 +584,7 @@ arrive over the NATS surface).
 
 ---
 
-## soulnode — the house
+## soulstream — the product, the house
 
 
 The live plan. No dates — **gates, not calendars**. Every milestone names the
@@ -592,15 +596,15 @@ IV).
 **Phase 1 is complete** (episodes
 [0003](../04-JOURNEY/0042-soulnode-first-boot-is-real.md) /
 [0004](../04-JOURNEY/0044-soulnode-the-realm-remembers.md) /
-[0005](../04-JOURNEY/0045-soulnode-an-agent-runs.md), all 2026-08-02): `soulnode
-init` founds a realm in ~0.15 s and `soulnode up` runs it — embedded
+[0005](../04-JOURNEY/0045-soulnode-an-agent-runs.md), all 2026-08-02): `soulstream
+init` founds a realm in ~0.15 s and `soulstream up` runs it — embedded
 operator-mode server, identity plane, memory plane on ordinary loopback
-connections; `soulnode workload start` runs a declared agent with a
+connections; `soulstream workload start` runs a declared agent with a
 minted credential under full enforcement. Every §9 exit criterion of
-design [`0001-soulnode-composition.md`](../02-DESIGN/soulnode/0001-soulnode-composition.md)
+design [`0001-soulnode-composition.md`](../02-DESIGN/soulstream/0001-soulnode-composition.md)
 is measured green in `make test`. The standing pseudo-version exception
-**closed 2026-08-02**: soulrealm v0.1.0, soulstream-archivist v0.2.0,
-soulstream/node v0.7.0, and soulidentity v0.1.0 are all tagged and
+**closed 2026-08-02**: soulstream-workloads v0.1.0, soulstream-archivist v0.2.0,
+soulstream/node v0.7.0, and soulstream-identity v0.1.0 are all tagged and
 pinned by tag. **Next:** Phase 2 — the front door — gated on soulstream's
 `018-remote-mcp-node` cycle (in flight upstream, carrying the fourth
 embed ask).
@@ -626,7 +630,7 @@ criteria made precise per feature in `specs/NNN-*/`:
   verified no-op); the found→admit→refuse→revoke→restart e2e rides
   `make test` in ~1 s; admission matches the research exactly
   (server-asserted persona, own-prefix confinement, audited refusals).
-  One open exception tracked: soulidentity pinned at a pseudo-version of
+  One open exception tracked: soulstream-identity pinned at a pseudo-version of
   main until it tags.
 - **M1.2 — The realm joins.** ✅ **Done** ([episode
   0004](../04-JOURNEY/0044-soulnode-the-realm-remembers.md);
@@ -643,13 +647,13 @@ criteria made precise per feature in `specs/NNN-*/`:
   work item owned by `runner`, everything kept, nothing
   credential-shaped lingering. The two-keys split landed in the ceremony
   (plain workload minting key beside the scoped admission key). One
-  consumer-proven upstream fix on the first enforcing run (soulrealm
+  consumer-proven upstream fix on the first enforcing run (soulstream-workloads
   `3fee11f`: agents need `$JS.API.INFO`). Third pseudo-version pin
-  tracked (soulrealm, no tags upstream).
+  tracked (soulstream-workloads, no tags upstream).
 
-External dependency, resolved 2026-08-02: soulrealm tagged `v0.1.0`
-and SoulNode pins it by tag, alongside soulstream-archivist `v0.2.0`,
-soulstream/node `v0.7.0`, and soulidentity `v0.1.0`.
+External dependency, resolved 2026-08-02: soulstream-workloads tagged `v0.1.0`
+and soulstream pins it by tag, alongside soulstream-archivist `v0.2.0`,
+soulstream/node `v0.7.0`, and soulstream-identity `v0.1.0`.
 
 ### Phase 2 — The front door — ✅ local mode done 2026-08-02
 
@@ -674,7 +678,7 @@ v0.7.0), its node module made consumable (soulstream journey 0010).
   founding token coexists; undeclared roles and garbage refuse. HTTPS
   is deployment fronting (`tailscale serve` before the loopback door);
   the bundled-fold default (`auth_issuer` at the in-process fold) is
-  soulfold M5's wiring. One consumer-caught fix: listen port 0 now
+  soulstream-idp M5's wiring. One consumer-caught fix: listen port 0 now
   means "any free port" to the embedded server too, not nats-server's
   default 4222.
 
@@ -689,7 +693,7 @@ is heavy, and the gate exists to keep it honest.
 
 **The bundled sign-in** ([episode
 0057](../04-JOURNEY/0057-soulnode-the-folded-realm.md);
-`specs/006-the-fold-plane/`): `planes.fold` (opt-in) runs soulfold by
+`specs/006-the-fold-plane/`): `planes.fold` (opt-in) runs soulstream-idp by
 tag through its public embed seam on the node's own JetStream; public
 door mode defaults its AS at the bundled fold. Measured: the whole
 human chain — DCR, passkey sign-in at the bundled fold, bearer MCP
@@ -697,7 +701,7 @@ session at the door, `whoami` naming the fold identity — with zero
 external services; old state dirs load unchanged (absent block =
 disabled); the fold serves before the identity plane (its OIDC
 validator discovers at startup). Two consumer-proven upstream
-additions tagged on the way (soulfold v0.1.1 NATSCreds, v0.1.2
+additions tagged on the way (soulstream-idp v0.1.1 NATSCreds, v0.1.2
 persona-shaped ids).
 
 ### The release pipeline — ✅ landed 2026-08-03, v0.1.0 released
@@ -708,10 +712,10 @@ archivist pattern composed — gofmt/build/test/lint on every push
 (first runner run green, folded-realm gate included), goreleaser
 publishing linux/darwin × amd64/arm64 with checksums and the stamped
 version. Proven live: `v0.1.0` is
-[released](https://github.com/impire-io/soulnode/releases/tag/v0.1.0),
+[released](https://github.com/impire-io/soulstream/releases/tag/v0.1.0),
 an artifact round-tripped and verified. No windows on purpose (the
 ceremony's owner-only modes). Zero credentials anywhere: the operator
-made soulrealm public, so the whole consumed stack fetches openly —
+made soulstream-workloads public, so the whole consumed stack fetches openly —
 the "private-module credential" blocker dissolved.
 
 ### Later horizons (named, not planned)
@@ -723,7 +727,7 @@ Each will get its own research gate when it approaches:
   bundle.
 - **Day 2.** Upgrade in place, backup/restore of the state dir, moving a
   realm to a new machine as a copy.
-- **Multi-node.** Deferred to soulrealm's Fleet work; SoulNode stays
+- **Multi-node.** Deferred to soulstream-workloads's Fleet work; soulstream stays
   single-node until the upstream node supervisor exists and a second node
   is a measured need.
 
@@ -736,11 +740,11 @@ journey episode, and propagates design changes — in the same merge
 
 ---
 
-## soulfold — the fold
+## soulstream-idp — the fold
 
 
-*The design docs in [`../02-DESIGN/`](../02-DESIGN/soulfold/README.md) will say what
-Soulfold is; this document decides what gets built first and behind which
+*The design docs in [`../02-DESIGN/`](../02-DESIGN/soulstream-idp/README.md) will say what
+soulstream-idp is; this document decides what gets built first and behind which
 gate. Every milestone's design arrives by research graduation before its
 build starts — a capability that isn't decided yet is a research topic, not
 a task.*
@@ -749,10 +753,10 @@ a task.*
 
 **Every research gate M1 names is concluded** — the store
 ([journey 0002](../04-JOURNEY/0043-soulfold-kv-schema-and-key-lifecycle.md) →
-[store-and-key-lifecycle](../02-DESIGN/soulfold/store-and-key-lifecycle.md),
+[store-and-key-lifecycle](../02-DESIGN/soulstream-idp/store-and-key-lifecycle.md),
 D1–D8), the sign-in surface
 ([journey 0003](../04-JOURNEY/0046-soulfold-session-and-ui-shape.md) →
-[session-and-ui](../02-DESIGN/soulfold/session-and-ui.md), D9–D15), and
+[session-and-ui](../02-DESIGN/soulstream-idp/session-and-ui.md), D9–D15), and
 the envelope
 ([journey 0004](../04-JOURNEY/0051-soulfold-kv-encryption-at-rest.md) →
 store-and-key-lifecycle D16–D19, amending D6): records are sealed
@@ -785,13 +789,13 @@ admin lifecycle (M3).
    JWKS; the fold survives restart — including mid-flow — with its
    state in KV; forged POSTs rejected with zero state change; a full
    key rotation under a never-restarted verifier at zero failures. Research before build: the KV schema and the signing-key
-   lifecycle — **done** ([design](../02-DESIGN/soulfold/store-and-key-lifecycle.md),
+   lifecycle — **done** ([design](../02-DESIGN/soulstream-idp/store-and-key-lifecycle.md),
    [journey 0002](../04-JOURNEY/0043-soulfold-kv-schema-and-key-lifecycle.md));
    the session and UI shape — **done**
-   ([design](../02-DESIGN/soulfold/session-and-ui.md),
+   ([design](../02-DESIGN/soulstream-idp/session-and-ui.md),
    [journey 0003](../04-JOURNEY/0046-soulfold-session-and-ui-shape.md));
    KV entry protection at rest — **done**
-   ([design](../02-DESIGN/soulfold/store-and-key-lifecycle.md) D16–D19,
+   ([design](../02-DESIGN/soulstream-idp/store-and-key-lifecycle.md) D16–D19,
    [journey 0004](../04-JOURNEY/0051-soulfold-kv-encryption-at-rest.md)).
 2. ✅ **M2 — passkeys** (shipped 2026-08-02, [journey
    0006](../04-JOURNEY/0053-soulfold-m2-passkeys.md),
@@ -818,14 +822,14 @@ admin lifecycle (M3).
    counted acts; group membership changes surface in the next issued
    token; invites exactly-once and digest-stored; first-touch
    enrollment deleted; every prior milestone gate green on the invite
-   mechanism. Soulnode composed it the same hour (the founding invite
+   mechanism. soulstream composed it the same hour (the founding invite
    printed once beside the founding token).
 4. ✅ **M4 — the fold in the fleet** (shipped 2026-08-02 — before M3,
    the operator's public-door priority — [journey
    0007](../04-JOURNEY/0054-soulfold-m4-the-fold-in-the-fleet.md),
    `specs/003-fold-in-the-fleet/`, the `e2e/` rig module). **Gate met
    [measured]**: a passkey user's fold-issued access token admits
-   through soulidentity's callout — imported at its published tag
+   through soulstream-identity's callout — imported at its published tag
    v0.1.0 via the public embed seam, configured with issuer URL +
    audience only — the role value resolving against the declared
    binding, scope server-enforced, refusals audited; and the identical
@@ -845,29 +849,29 @@ admin lifecycle (M3).
    (module path outside the namespace — `internal/` imports cannot
    compile) embeds and runs the fold through discovery, DCR, a passkey
    sign-in, and audience/roles-bearing tokens; the M4 rig's fold half
-   now rides the seam; `soulfold serve` is the seam's first consumer.
-   The soulnode-side default wiring (`planes.door.auth_issuer` at the
+   now rides the seam; `soulstream-idp serve` is the seam's first consumer.
+   The soulstream-side default wiring (`planes.door.auth_issuer` at the
    bundled fold) is that repo's feature to land.
 
 ### Open research questions (before their milestones)
 
 - ~~**The KV schema and key lifecycle** (gates M1)~~ — concluded
   2026-08-02, all bars passed: see
-  [store-and-key-lifecycle](../02-DESIGN/soulfold/store-and-key-lifecycle.md) and
+  [store-and-key-lifecycle](../02-DESIGN/soulstream-idp/store-and-key-lifecycle.md) and
   [journey 0002](../04-JOURNEY/0043-soulfold-kv-schema-and-key-lifecycle.md).
 - ~~**The session and UI shape** (gates M1/M2)~~ — concluded
   2026-08-02, all bars passed: see
-  [session-and-ui](../02-DESIGN/soulfold/session-and-ui.md) and
+  [session-and-ui](../02-DESIGN/soulstream-idp/session-and-ui.md) and
   [journey 0003](../04-JOURNEY/0046-soulfold-session-and-ui-shape.md).
 - ~~**KV entry protection at rest** (gates M1)~~ — concluded
   2026-08-02, all bars passed: app-layer xkey sealing ships (D16–D19,
   D6 amended — username index digested); filestore encryption is
   defense-in-depth, not a substitute. See
-  [store-and-key-lifecycle](../02-DESIGN/soulfold/store-and-key-lifecycle.md)
+  [store-and-key-lifecycle](../02-DESIGN/soulstream-idp/store-and-key-lifecycle.md)
   and [journey 0004](../04-JOURNEY/0051-soulfold-kv-encryption-at-rest.md).
 - ~~**The bootstrap story** (gates M3)~~ — concluded 2026-08-03, all
   four bars passed: invitation is the only enrollment right (D20–D24
-  in [lifecycle](../02-DESIGN/soulfold/lifecycle.md)); first-touch
+  in [lifecycle](../02-DESIGN/soulstream-idp/lifecycle.md)); first-touch
   deleted; pocket-id's open `/setup` refused. See
   [journey 0009](../04-JOURNEY/0059-soulfold-bootstrap-story.md).
 
@@ -875,17 +879,17 @@ admin lifecycle (M3).
 
 | Door | Constraint |
 |---|---|
-| **The seam.** | Once soulidentity's distribution defaults to the fold, any Soulstream-only claim, endpoint, or side-channel is a constitution-II amendment, not a feature — it would collapse the ecosystem's two planes into one. |
+| **The seam.** | Once soulstream-identity's distribution defaults to the fold, any Soulstream-only claim, endpoint, or side-channel is a constitution-II amendment, not a feature — it would collapse the ecosystem's two planes into one. |
 | **Passkeys only.** | Once users enroll, a password lane cannot be added without redefining Principle I; there is no quiet path to "temporary passwords". |
 | **Store shape.** | KV records must decode additively once M1 lands; a breaking record change is a stated migration, never a silent re-read. |
 
 ---
 
-## soulhelm — the helm
+## soulstream-shell — the shell
 
 *The human cockpit — observe and configure the whole soulsystem from a
 browser, beside the MCP door. Design:
-[`0001-soulhelm-the-helm.md`](../02-DESIGN/soulhelm/0001-soulhelm-the-helm.md).*
+[`0001-soulhelm-the-helm.md`](../02-DESIGN/soulstream-shell/0001-soulhelm-the-helm.md).*
 
 ### Where we are (2026-08-13, evening)
 
@@ -895,7 +899,7 @@ founded from the morning's graduated research ([episode
 0066](../04-JOURNEY/0066-ecosystem-soulsystem-cockpit.md)), the helm
 serves the observe surface with fold sessions and the first act, the
 whole human ceremony riding its consumer-position e2e in ~4 s, and
-soulnode runs it as `planes.helm` ([episode
+soulstream runs it as `planes.helm` ([episode
 0068](../04-JOURNEY/0068-soulnode-the-helm-plane.md)).
 
 **Direction change, same day:** the component is reframed as **the
@@ -911,7 +915,7 @@ re-centering's sweep ([episode
 ### Milestones
 
 1. ✅ **M0 — founding** (2026-08-13, episode 0067):
-   [impire-io/soulhelm](https://github.com/impire-io/soulhelm), the
+   [impire-io/soulstream-shell](https://github.com/impire-io/soulstream-shell), the
    founding articles in the README, hq wiring complete (component tag,
    constellation, this section).
 2. ✅ **M1 — the observe surface + sessions** (v0.1.0, same day). One
@@ -923,15 +927,15 @@ re-centering's sweep ([episode
 3. **M2 — the configure surfaces.** Design 0001 §4: classes (b) and (c)
    in the UI (tokens/people/clients; plane toggles with restart
    semantics). Class-(b) standalone authority may trail the tenancy
-   topic's grant answer ([O2]); as a soulnode plane the ops lane
+   topic's grant answer ([O2]); as a soulstream plane the ops lane
    carries it today.
 4. **Later, gated:** the participant client (its own research topic —
    [O4], with upstream ask #1's WebSocket listener); a dedicated scoped
-   helm ceremony user in soulnode (hardening).
+   helm ceremony user in soulstream (hardening).
 
 ### Open research questions (before their milestones)
 
-- **[O1/ask #1]** soulnode's embedded WebSocket listener — gates the
+- **[O1/ask #1]** soulstream's embedded WebSocket listener — gates the
   participant-client horizon, not the helm.
 - **[O2/ask #2]** the class-(b) grant lane for a standalone helm —
   tracked in [`platform-tenancy-guardrails`](../01-RESEARCH/platform-tenancy-guardrails/README.md).

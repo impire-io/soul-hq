@@ -1,4 +1,4 @@
-# SoulIdentity — the NATS surface (M3)
+# soulstream-identity — the NATS surface (M3)
 
 *The design the NATS-native rebuild implements: the agent's contract served
 over NATS request/reply with xkey-sealed payloads (D11), the caller's NATS
@@ -21,23 +21,23 @@ The socket surface, the `NATSOption` client seam, the file keystore, and the
 ## The operations
 
 Subjects below are shown at the bare default root; a deployment prefix
-(D14 as amended) prepends verbatim — `<prefix>.soulidentity.…`.
+(D14 as amended) prepends verbatim — `<prefix>.soulstream-identity.…`.
 
 | Subject (op suffix) | Milestone-1 op | Authorization (D18) | Body shapes |
 |---|---|---|---|
-| `soulidentity.status` *(open)* | `GET /v1/status` | none | unchanged |
-| `soulidentity.xkey` *(open, new)* | — | none | `{"xkey": "<service curve public key>"}` |
-| `soulidentity.<acct>.<user>.keys.list` | `GET /v1/keys` | admin | unchanged |
-| `soulidentity.<acct>.<user>.keys.import` | `POST /v1/keys` | admin | unchanged |
-| `soulidentity.<acct>.<user>.identities.list` | `GET /v1/identities` | admin | unchanged |
-| `soulidentity.<acct>.<user>.identities.put` | `POST /v1/identities` | admin | unchanged |
-| `soulidentity.<acct>.<user>.sign.record` | `POST /v1/sign/record` | act-as (D6) | unchanged; `key` must be `persona/<persona>` |
-| `soulidentity.<acct>.<user>.mint` | `POST /v1/mint` | self, or admin for others | unchanged (creds export stays the loud D7 escape) |
-| `soulidentity.<acct>.<user>.mint.ephemeral` | — (M2, agent.md D28) | ACL-gated op tail (D25); role by name | `{role, user, user_public_key, ttl_seconds, tags?}` → `{jwt}` — the caller's own key, JWT only, no creds escape exists |
-| `soulidentity.<acct>.<user>.tokens.create` | — (M4) | admin | `{account, user, label?, ttl_seconds?}` → `{token, digest}` — plaintext once (D22) |
-| `soulidentity.<acct>.<user>.tokens.list` | — (M4) | admin | → `{tokens: [{digest, account, user, label?, expires?}]}` |
-| `soulidentity.<acct>.<user>.tokens.revoke` | — (M4) | admin | `{digest}` |
-| `soulidentity.<acct>.<user>.sentinel.mint` | — (M4) | admin | → `{jwt, creds}` (bearer, deny-all — D19) |
+| `identity.status` *(open)* | `GET /v1/status` | none | unchanged |
+| `identity.xkey` *(open, new)* | — | none | `{"xkey": "<service curve public key>"}` |
+| `soulstream-identity.<acct>.<user>.keys.list` | `GET /v1/keys` | admin | unchanged |
+| `soulstream-identity.<acct>.<user>.keys.import` | `POST /v1/keys` | admin | unchanged |
+| `soulstream-identity.<acct>.<user>.identities.list` | `GET /v1/identities` | admin | unchanged |
+| `soulstream-identity.<acct>.<user>.identities.put` | `POST /v1/identities` | admin | unchanged |
+| `soulstream-identity.<acct>.<user>.sign.record` | `POST /v1/sign/record` | act-as (D6) | unchanged; `key` must be `persona/<persona>` |
+| `soulstream-identity.<acct>.<user>.mint` | `POST /v1/mint` | self, or admin for others | unchanged (creds export stays the loud D7 escape) |
+| `soulstream-identity.<acct>.<user>.mint.ephemeral` | — (M2, agent.md D28) | ACL-gated op tail (D25); role by name | `{role, user, user_public_key, ttl_seconds, tags?}` → `{jwt}` — the caller's own key, JWT only, no creds escape exists |
+| `soulstream-identity.<acct>.<user>.tokens.create` | — (M4) | admin | `{account, user, label?, ttl_seconds?}` → `{token, digest}` — plaintext once (D22) |
+| `soulstream-identity.<acct>.<user>.tokens.list` | — (M4) | admin | → `{tokens: [{digest, account, user, label?, expires?}]}` |
+| `soulstream-identity.<acct>.<user>.tokens.revoke` | — (M4) | admin | `{digest}` |
+| `soulstream-identity.<acct>.<user>.sentinel.mint` | — (M4) | admin | → `{jwt, creds}` (bearer, deny-all — D19) |
 | — | `POST /v1/sign/nonce` | — | **retired** — the nonce oracle left the connection story (D1, journey 0003) |
 
 The `<acct>` token is the account **public key** (`A…`) — exactly how the
@@ -52,9 +52,9 @@ client's `WithServiceXKey` option.
 
 ## D14 — The subject space is principal-scoped, and unversioned
 
-Operations live at `soulidentity.<account>.<user>.<op>`, with exactly two
-open subjects outside the principal scope: `soulidentity.status` and
-`soulidentity.xkey` (discovery — they reveal nothing an account member
+Operations live at `soulstream-identity.<account>.<user>.<op>`, with exactly two
+open subjects outside the principal scope: `identity.status` and
+`identity.xkey` (discovery — they reveal nothing an account member
 couldn't learn by connecting; no token-count collision with principal
 subjects, which always carry more tokens). Because user names ride subjects
 as single tokens, the registry refuses names containing `.`, `*`, `>`
@@ -68,8 +68,8 @@ and until M2 lands the space may still change freely. The
 principal claim — which D15 makes trustworthy.
 
 *Amended 2026-07-28 at the operator's direction (journey 0011): the root is
-`<prefix>.soulidentity`, with a **configurable shared ecosystem prefix**
-(empty by default — bare `soulidentity`).* The prefix is one value across
+`<prefix>.soulstream-identity`, with a **configurable shared ecosystem prefix**
+(empty by default — bare `soulstream-identity`).* The prefix is one value across
 the whole soulstream ecosystem — components find each other under it — and
 the *service segment* stays fixed per component so services share the
 prefix without colliding. Two things this buys:
@@ -80,7 +80,7 @@ prefix without colliding. Two things this buys:
 - **Cross-account composition.** With the account token at a declared
   position — `P+2` (1-based), `P` = prefix token count — the exporting
   account can publish the surface as
-  `export <prefix>.soulidentity.*.> with account_token_position = P+2`,
+  `export <prefix>.soulstream-identity.*.> with account_token_position = P+2`,
   and the server forces each importing account's public key into that
   token: D15's principal proof, extended across accounts by configuration
   alone.
@@ -101,12 +101,12 @@ well-known unprefixed subject as a new D-decision.
 The NATS service surface has no native "caller identity" on a message. The
 decision: **the claimed principal is read off the subject, and its proof is
 the server's publish-permission enforcement** — a caller may only publish to
-`soulidentity.<account>.<user>.>` for the identity it *is*, because its
+`soulstream-identity.<account>.<user>.>` for the identity it *is*, because its
 user JWT (scoped signing key template in mint mode, callout-issued
 permissions in callout mode, D5/D12) allows exactly its own prefix. The
 service never re-verifies the claim; it trusts what the server already
 enforced. This is constitution II applied to our own front door: the server
-is the verifier of record, and SoulIdentity's own check remains only "may
+is the verifier of record, and soulstream-identity's own check remains only "may
 this principal act as that persona" (D6) — now against a server-proven
 principal, which is what turns act-as from declared into enforced [M3 gate,
 mechanism-argument].
@@ -156,7 +156,7 @@ Every principal-scoped request body is sealed; the broker sees ciphertext
 - **Reply**: same envelope, `data` sealed to the request's ephemeral xkey,
   `xkey` carrying the service's. Errors travel inside the sealed body —
   the broker learns success/failure timing, not content.
-- **Discovery**: `soulidentity.xkey` returns the service's surface public
+- **Discovery**: `identity.xkey` returns the service's surface public
   key unsealed — it is public material; pinning it out of band is the
   deployment's option, not a protocol requirement.
 - The two open ops (`status`, `xkey`) are plaintext both ways.

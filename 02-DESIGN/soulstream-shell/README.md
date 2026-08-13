@@ -1,8 +1,8 @@
-# 02-DESIGN / soulhelm — the helm
+# 02-DESIGN / soulstream-shell — the helm
 
-The normative design for **soulhelm**, the soulsystem's human cockpit —
-the browser entry beside the MCP door. Numbered documents, soulrealm/
-soulnode convention.
+The normative design for **soulstream-shell**, the soulsystem's human cockpit —
+the browser entry beside the MCP door. Numbered documents, soulstream-workloads/
+soulstream convention.
 
 | Doc | What it decides |
 |---|---|
@@ -12,7 +12,7 @@ Born from research topic `soulsystem-cockpit` (graduated 2026-08-13,
 episode
 [0066](../../04-JOURNEY/0066-ecosystem-soulsystem-cockpit.md); the
 topic folder lives in git history). The repo was founded the same day
-([impire-io/soulhelm](https://github.com/impire-io/soulhelm), v0.1.0,
+([impire-io/soulstream-shell](https://github.com/impire-io/soulstream-shell), v0.1.0,
 episode [0067](../../04-JOURNEY/0067-soulhelm-founding-and-first-light.md))
-and `soulhelm` is a full component of the hq: legal journey tag,
+and `soulstream-shell` is a full component of the hq: legal journey tag,
 constellation entry, this design folder.

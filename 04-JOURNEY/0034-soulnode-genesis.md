@@ -59,5 +59,5 @@ one-process bet does not).
 
 Trail: `hq/` (GENESIS, roadmap); sibling readings in soulstream
 (`hq/01-RESEARCH/remote-mcp-node`, its journal 2026-07-30/31), soulidentity
-(`cmd/soulidentity/main.go`, `internal/`), soulrealm (`go.mod`,
+(`cmd/soulstream-identity/main.go`, `internal/`), soulrealm (`go.mod`,
 `internal/natstest/operator.go`). Commits <pending>.

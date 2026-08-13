@@ -5,14 +5,14 @@ Version change: (five ancestors) → 1.0.0 (MAJOR — the five per-project
 constitutions merge into one ecosystem constitution)
 Ancestry (final versions, frozen in ../99-ARCHIVE/genesis/):
   - soulstream   1.1.0  (ratified 2026-07-12, last amended 2026-07-24)
-  - soulrealm    0.1.1  (drafted 2026-07-22, never formally ratified)
-  - soulidentity 1.3.1  (ratified 2026-07-28, last amended 2026-07-29)
-  - soulnode     1.0.0  (ratified 2026-08-02)
-  - soulfold     1.0.0  (ratified 2026-08-02)
+  - soulstream-workloads    0.1.1  (drafted 2026-07-22, never formally ratified)
+  - soulstream-identity 1.3.1  (ratified 2026-07-28, last amended 2026-07-29)
+  - soulstream     1.0.0  (ratified 2026-08-02)
+  - soulstream-idp     1.0.0  (ratified 2026-08-02)
 Structure:
   - Shared articles S1–S5 factor out the principles all five ancestors carried
     (NATS-native, smallest-viable, docs-first, research gates, all-green gate).
-  - Component articles keep their ORIGINAL numbering (e.g. "soulrealm
+  - Component articles keep their ORIGINAL numbering (e.g. "soulstream-workloads
     constitution I" still names the substrate boundary), so every existing
     citation in design docs, journey episodes, and frozen specs resolves.
   - The Working Agreement is carried verbatim in substance; it was already
@@ -28,8 +28,8 @@ Follow-up TODOs: none
 # The Soul Constitution
 
 One constitution for the Soulstream ecosystem — **soulstream** (the record),
-**soulrealm** (the room), **soulidentity** (the name), **soulfold** (the
-fold), and **soulnode** (the house). The canonical copy lives at
+**soulstream-workloads** (the room), **soulstream-identity** (the name), **soulstream-idp** (the
+fold), and **soulstream** (the house). The canonical copy lives at
 `soul-hq/00-GENESIS/constitution.md`; each component repo's
 `.specify/memory/constitution.md` is a symlink to it, so every spec-kit
 plan's Constitution Check reads these articles. Decisions are held against
@@ -60,7 +60,7 @@ with JetStream, credentials, and the protocol — nothing else.
   MUST express it.
 - Coordination is deterministic rules, idempotent operations, and optimistic
   concurrency. Elections and consensus rounds are banned.
-- Where a component's front door is legitimately not NATS (soulfold's HTTP
+- Where a component's front door is legitimately not NATS (soulstream-idp's HTTP
   door — WebAuthn is origin-bound), the store and the deployment story stay
   NATS-native and the exception is named in that component's articles.
 
@@ -165,14 +165,14 @@ principles and live there now:
   simply enough for a five-year-old, and every user story's task list includes
   its `docs/` task.
 
-### Soulrealm — the room
+### soulstream-workloads — the room
 
-- **I. The Substrate Boundary (NON-NEGOTIABLE).** Soulrealm is a runtime,
+- **I. The Substrate Boundary (NON-NEGOTIABLE).** soulstream-workloads is a runtime,
   never a store of record. The authoritative home of any artefact — its bytes,
-  its history, its current state — is the soulstream topic. Soulrealm
+  its history, its current state — is the soulstream topic. soulstream-workloads
   launches, supervises, observes, and retires workloads; everything worth
   keeping flows back into the topic as ops. A workload that dies loses scratch
-  state, never history. No feature may make soulrealm the place a piece of
+  state, never history. No feature may make soulstream-workloads the place a piece of
   durable truth lives. This article does not relax for convenience.
 - **II. One Identity, No Privileged Tier.** Every workload runs as a persona
   with scoped NATS credentials — the same kind of identity a human persona
@@ -196,7 +196,7 @@ principles and live there now:
   never a silent hole.
 - **VI. All-Green Quality Gate** → shared article S5.
 
-### SoulIdentity — the name
+### soulstream-identity — the name
 
 - **I. Custody Without Possession.** Secrets live in the vault and answer
   requests; they are never handed out. No API surface may return a seed,
@@ -207,23 +207,23 @@ principles and live there now:
   material stays inside the vault package; the process boundary is the custody
   boundary.
 - **II. The Server Is the Verifier of Record.** The NATS server enforces;
-  SoulIdentity decides only what is genuinely its own. Transport permissions
+  soulstream-identity decides only what is genuinely its own. Transport permissions
   live NATS-side — scoped signing keys or callout-issued JWTs — enforced by
   the server on every connection, including the op tail of the subject (D25).
-  SoulIdentity's own policy surface is exactly the declared bindings, token
+  soulstream-identity's own policy surface is exactly the declared bindings, token
   records, and validated claims; who exists is the IAM's truth. Validations
   the server will repeat are diagnostics, never gates.
 - **III. Smallest Viable Implementation** → shared article S2.
 - **IV. Documentation Is a First-Class Citizen** → shared article S3.
 
-### SoulNode — the house
+### soulstream — the house
 
-- **I. Composition, Not Invention (NON-NEGOTIABLE).** SoulNode contains no
-  domain logic. Identity behavior lives in SoulIdentity, runtime behavior in
-  soulrealm, record behavior in soulstream; SoulNode wires their public
+- **I. Composition, Not Invention (NON-NEGOTIABLE).** soulstream contains no
+  domain logic. Identity behavior lives in soulstream-identity, runtime behavior in
+  soulstream-workloads, record behavior in soulstream; soulstream wires their public
   surfaces together and adds only what composition itself requires. Components
   are consumed as tagged releases through public packages — never `internal/`
-  paths, never `replace` directives on main — and a SoulNode release names the
+  paths, never `replace` directives on main — and a soulstream release names the
   component versions it bundles. If a feature cannot be built without new
   domain behavior, that behavior lands upstream first. This article does not
   relax for convenience.
@@ -235,19 +235,19 @@ principles and live there now:
 - **III. One Process, Planes by Configuration.** Enabled planes run in one
   process, each on an ordinary loopback NATS connection; repointing or
   disabling a plane is configuration, never a different build. Workloads
-  always run outside the process, through soulrealm's isolation backends; a
+  always run outside the process, through soulstream-workloads's isolation backends; a
   workload failure never takes the node down, and a node-plane failure is
   surfaced and named, never silent.
 - **IV. Research Gates Before Build Spends** → shared article S4.
-- **V. First Boot Is the Product.** `soulnode init` performs the entire
-  ceremony with zero manual key steps, and `soulnode up` reaches a connectable
+- **V. First Boot Is the Product.** `soulstream init` performs the entire
+  ceremony with zero manual key steps, and `soulstream up` reaches a connectable
   realm on a fresh machine in minutes. The distance from download to working
   realm is a measured, guarded number. First-boot regressions are release
   blockers; a manual step added to the ceremony is a constitution violation,
   not a documentation task.
 - **VI. All-Green Quality Gate** → shared article S5.
 
-### Soulfold — the fold
+### soulstream-idp — the fold
 
 - **I. Passkeys, Not Passwords.** The fold authenticates users with WebAuthn
   ceremonies and nothing else. No password lane exists, ever — not as a
@@ -258,12 +258,12 @@ principles and live there now:
 - **II. Indistinguishable by Design.** Consumers reach the fold only through
   the OIDC spec surfaces — discovery, JWKS, the authorization endpoint, the
   token endpoint. No Soulstream-only claim, header, endpoint, or side-channel
-  exists; soulidentity's callout issuer MUST be unable to tell the fold from
-  Entra (soulidentity's D23 seam is the contract). Group names surface as
+  exists; soulstream-identity's callout issuer MUST be unable to tell the fold from
+  Entra (soulstream-identity's D23 seam is the contract). Group names surface as
   roles-claim values that *name* declared roles; they carry no permissions,
   and the NATS server remains the verifier of record. Signing keys rotate
   through JWKS the way the spec says.
-- **III. Smallest Viable Implementation** → shared article S2. Soulfold's
+- **III. Smallest Viable Implementation** → shared article S2. soulstream-idp's
   specific rule stands: protocol comes from certified, maintained libraries —
   the OP core and the WebAuthn ceremonies are consumed, never hand-rolled.
 - **IV. Documentation Is a First-Class Citizen** → shared article S3.
@@ -287,16 +287,16 @@ Shared:
 
 Component-specific:
 
-- **soulidentity**: secrets at rest ride NATS KV with xkey envelope
+- **soulstream-identity**: secrets at rest ride NATS KV with xkey envelope
   encryption — only ciphertext is ever stored; NATS is the only transport
   (xkey-sealed request/reply; there is no socket and no TCP listener). The
   pre-connection moment belongs to the connection ladder: creds-file bypass or
   auth callout.
-- **soulfold**: the OP core from `zitadel/oidc`, the ceremonies from
+- **soulstream-idp**: the OP core from `zitadel/oidc`, the ceremonies from
   `go-webauthn/webauthn`; hand-rolled protocol or cryptography is a review
   blocker. The front door is HTTP(S), named honestly; JetStream KV is the
   store; the serve assembly is embeddable (the ecosystem's embed pattern,
-  soulidentity D29).
+  soulstream-identity D29).
 
 ## Development Workflow & Quality Gates
 
@@ -342,6 +342,6 @@ Component-specific:
   ecosystem constitution with shared articles S1–S5 and per-component
   articles keeping their original numbering. Ancestors, frozen with their
   full texts in [`../99-ARCHIVE/genesis/`](../99-ARCHIVE/genesis/):
-  soulstream 1.1.0, soulrealm 0.1.1 (draft), soulidentity 1.3.1, soulnode
-  1.0.0, soulfold 1.0.0. Recorded in the consolidation episode in
+  soulstream 1.1.0, soulstream-workloads 0.1.1 (draft), soulstream-identity 1.3.1, soulstream
+  1.0.0, soulstream-idp 1.0.0. Recorded in the consolidation episode in
   `../04-JOURNEY/`.

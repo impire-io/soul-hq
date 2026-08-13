@@ -113,8 +113,8 @@ M1 issues JWT access tokens (`op.AccessTokenTypeJWT` on the client
 record's answer), signed RS256 by the D7/D8 lifecycle, so both issued
 token kinds verify against the published JWKS.
 
-Reasoning: M4's seam is soulidentity's callout verifying a
-soulfold-issued **access token** against JWKS, and Entra's access
+Reasoning: M4's seam is soulstream-identity's callout verifying a
+soulstream-idp-issued **access token** against JWKS, and Entra's access
 tokens are JWTs — indistinguishability decides (constitution II)
 [mechanism-argument]. The graduating rig ran opaque Bearer tokens and
 everything else held; the switch is a certified-library flag, not new

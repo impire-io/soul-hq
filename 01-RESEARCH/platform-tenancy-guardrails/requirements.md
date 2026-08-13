@@ -33,7 +33,7 @@ rediscovering it.
 
 **S1 — A realm is an account; say so.** The protocol already defines a realm as
 one NATS account and as the tenancy and trust boundary
-([`core/01-protocol.md`](../../02-DESIGN/soulstream/core/01-protocol.md)). The
+([`core/01-protocol.md`](../../02-DESIGN/soulstream-core/core/01-protocol.md)). The
 vocabulary should say *account*, because that is what it is and it is legible
 to anyone who knows NATS. Naming, not architecture.
 
@@ -51,18 +51,18 @@ rejected.
 assistant and an autonomous agent are both personas, both run as workloads, and
 both use the existing declaration unchanged — it already carries *as which
 persona* and *anchored to which topic*
-([`0001-soulrealm-runtime.md`](../../02-DESIGN/soulrealm/0001-soulrealm-runtime.md)).
+([`0001-soulrealm-runtime.md`](../../02-DESIGN/soulstream-workloads/0001-soulrealm-runtime.md)).
 The difference is only what the program does when it wakes: one wakes on work
 and acts, the other wakes on being addressed and replies — and the
 wake-on-mention path already exists
-([`core/02-identity.md`](../../02-DESIGN/soulstream/core/02-identity.md)).
+([`core/02-identity.md`](../../02-DESIGN/soulstream-core/core/02-identity.md)).
 Therefore: no new persona type, no new declaration field, no new protocol.
 
 **S5 — No persona classification field.** Do not reintroduce a kind, type, or
 class. It was introduced, demoted to presentation-only metadata, and then
 removed outright, on the ground that the protocol cannot verify what sort of
 entity controls a key and so refuses to record the claim
-([`extensions/registry.md`](../../02-DESIGN/soulstream/extensions/registry.md)).
+([`extensions/registry.md`](../../02-DESIGN/soulstream-core/extensions/registry.md)).
 Everything wanted from a classification — who operates this, what it does, what
 it offers — is expressible without it. This has now been re-derived three times
 (persona kind, agent-versus-assistant, the persona passport); if it is ever
@@ -124,7 +124,7 @@ exist at all.
 - **A6 `[EXISTS]`** Cross-account exposure of a shared surface is already
   designed: a service exported with the account token at a declared position,
   with the substrate forcing each importing account's own key into that
-  position ([`nats-surface.md`](../../02-DESIGN/soulidentity/nats-surface.md),
+  position ([`nats-surface.md`](../../02-DESIGN/soulstream-identity/nats-surface.md),
   D14). A1–A5 build on this; it does not need reinventing.
 - **A7 `[OPEN]`** Where does account-creating authority live? The custodian
   holds keys and is the natural enforcement point, but account creation may
@@ -191,7 +191,7 @@ public prior art only.
 - **B9 `[OPEN]`** What is the input to an evaluation? At minimum the acting
   principal, the operation, its arguments, and the time. The principal is
   available cheaply and trustworthily because the server proves it
-  ([`nats-surface.md`](../../02-DESIGN/soulidentity/nats-surface.md), D15).
+  ([`nats-surface.md`](../../02-DESIGN/soulstream-identity/nats-surface.md), D15).
   Confirm nothing else is needed before designing a richer input.
 - **B10 `[OPEN]`** Where do guardrails sit relative to grants (§C)? A grant is
   a standing narrow authorization; an escalation approval is a one-shot
@@ -219,7 +219,7 @@ vocabulary with no cryptography.
 - **C6 `[NEW]`** Nothing pre-provisioned. A grant exists when issued and not
   before — consistent with D26's rule that a persona's own artifacts
   materialize on first use rather than through a provisioning act
-  ([`agent.md`](../../02-DESIGN/soulidentity/agent.md)).
+  ([`agent.md`](../../02-DESIGN/soulstream-identity/agent.md)).
 - **C7 `[OPEN]`** A grant store is a store, and a store was dissolved at
   [episode 0029](../../04-JOURNEY/0029-soulidentity-the-registry-dissolves.md)
   for being a second source of truth restating facts other artifacts carried.

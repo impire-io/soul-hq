@@ -2,7 +2,7 @@
 
 With the first-key story decided (episode 0004), M3's remaining gate was its
 design doc. Written the same day:
-[`../02-DESIGN/nats-surface.md`](../02-DESIGN/soulidentity/nats-surface.md), four new
+[`../02-DESIGN/nats-surface.md`](../02-DESIGN/soulstream-identity/nats-surface.md), four new
 decisions (D14–D17) on top of the re-centered direction (D11/D12), wire
 bodies deliberately unchanged from milestone 1 — the transport and the
 principal change, the contract does not.
@@ -45,6 +45,6 @@ the first place this could surface, observable as a blocked consumer issue)
 forces a caller-authentication mechanism inside the envelope as a new
 D-decision.
 
-Trail: [`../02-DESIGN/nats-surface.md`](../02-DESIGN/soulidentity/nats-surface.md);
+Trail: [`../02-DESIGN/nats-surface.md`](../02-DESIGN/soulstream-identity/nats-surface.md);
 design index, roadmap M3 gate note, and orientation pointers updated in the
 same change.

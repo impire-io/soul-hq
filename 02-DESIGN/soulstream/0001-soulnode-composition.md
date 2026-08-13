@@ -1,4 +1,4 @@
-# 0001 — The SoulNode composition
+# 0001 — The soulstream composition
 
 **Status**: graduated from `single-binary-composition` (journey
 [episode 0002](../../04-JOURNEY/0040-soulnode-the-composition-gate.md)), 2026-08-02.
@@ -7,7 +7,7 @@ front door (Phase 2) is seamed here but designed later.
 
 Validation tags per the [design README](README.md): **[V]** validated by
 the composition rig or a delivered upstream surface, **[D]** specified but
-not yet run in SoulNode itself, **[O]** interface fixed, internals open.
+not yet run in soulstream itself, **[O]** interface fixed, internals open.
 
 ## 1. The shape [V]
 
@@ -21,13 +21,13 @@ what makes decomposition configuration rather than architecture.
 | Plane | Surface consumed | Runs as |
 |---|---|---|
 | Server | `nats-server/v2/server` (embedded, operator mode, JetStream) | goroutine owning the listener |
-| Identity | `soulidentity/embed.Run` + `soulidentity/client` | goroutine on its two conns |
+| Identity | `soulstream-identity/embed.Run` + `soulstream-identity/client` | goroutine on its two conns |
 | Memory | `soulstream-archivist/keeper` + `archive`, `soulstream/topic.RespondMemory` | goroutine on a realm client |
-| Runtime | `soulrealm/{runner,backend/native,minter,declaration}` + `soulstream/{realm,topic}` | goroutine supervising child processes |
+| Runtime | `soulstream-workloads/{runner,backend/native,minter,declaration}` + `soulstream/{realm,topic}` | goroutine supervising child processes |
 | Front door | soulstream MCP surface (Phase 2 — see §8) | goroutine owning the HTTP listener |
 
 Workloads never run in the process: the runtime plane launches them
-through soulrealm's backends (native first), and a workload death is an
+through soulstream-workloads's backends (native first), and a workload death is an
 op on the topic, never a node crash.
 
 ## 2. Configuration: planes are declared, connections are URLs [D]
@@ -66,7 +66,7 @@ plane → realm provisioning → memory + runtime planes → front door.
 
 ## 4. The ceremony and the state directory [V for generation, D for persistence]
 
-`soulnode init` generates, in dependency order, the inventory the research
+`soulstream init` generates, in dependency order, the inventory the research
 enumerated and the rig proved executable from an empty directory
 [measured]:
 
@@ -82,8 +82,8 @@ enumerated and the rig proved executable from an empty directory
    minter's key; per-workload permissions ride in the JWTs it signs, a
    scoped key rejects them; as-built in 003) and the
    **scoped signing key** whose `jwt.UserScope` template *is* the admitted
-   persona's permission set — `soulidentity.{{account-subject()}}.{{name()}}.sign.record`
-   / `.keys.public`, `soulidentity.status` / `.xkey`, `SOULSTREAM.>`,
+   persona's permission set — `identity.{{account-subject()}}.{{name()}}.sign.record`
+   / `.keys.public`, `identity.status` / `.xkey`, `SOULSTREAM.>`,
    `$JS.API.>`, `$KV.>`, `$O.>`, `$SYS.REQ.USER.INFO` (pub);
    `_INBOX.>`, `SOULSTREAM.>` (sub).
 5. **Bypass-lane users**: AUTH issuer user; realm service, ops, and
@@ -106,12 +106,12 @@ account JWTs, sentinel, and config persist under the state dir (`0700`
 dirs, `0600` files); `init` on a non-empty state dir verifies and reports
 — it MUST NOT regenerate a trust root that JetStream state already
 depends on. Moving the realm to a new machine is copying the state dir
-(vision: day 2). Custody follows soulidentity's D13: raw seeds on the
+(vision: day 2). Custody follows soulstream-identity's D13: raw seeds on the
 node's own disk are the accepted trust class, stated without euphemism.
 
 **[O]** — the BYO-NATS ceremony subset: against a user-supplied server,
 which of steps 1–4 apply (their operator, their accounts) and what
-SoulNode refuses to touch. Interface: the config block above; default:
+soulstream refuses to touch. Interface: the config block above; default:
 BYO mode requires the accounts to exist and only runs steps 5–8. The
 exact split needs its own pass before BYO ships.
 
@@ -122,7 +122,7 @@ scoped user; the principal is server-asserted (the expanded `sign.record`
 grant names persona and account — no client-claimed identity anywhere).
 Refusals (garbage, revoked) land in the audit log. All measured through
 the public surfaces end to end. Revocation propagation bound = token TTL,
-inherited from soulidentity's D22.
+inherited from soulstream-identity's D22.
 
 ## 6. Plane wiring [V for identity/memory, D for runtime]
 
@@ -133,14 +133,14 @@ inherited from soulidentity's D22.
   `keeper.Witness` + `topic.RespondMemory` on a realm client
   (`realm.NewClient` over loopback, archivist persona, signer from the
   identity plane's `client.PersonaSigner`).
-- **Runtime** [V as-built in 003]: soulrealm public packages, native
-  backend, workloads as declarations — **invocation-scoped**: `soulnode
+- **Runtime** [V as-built in 003]: soulstream-workloads public packages, native
+  backend, workloads as declarations — **invocation-scoped**: `soulstream
   workload start` supervises one declared workload as persona `runner`
   (transport creds from the ceremony, signer vault-held), minting with
   the ceremony's *plain* workload signing key (a scoped key rejects the
   minter's carried permissions — the two-keys split). The long-running
-  node supervisor (claim-race placement, sweeper) is soulrealm's own
-  unbuilt Fleet milestone — SoulNode consumes it when it lands upstream
+  node supervisor (claim-race placement, sweeper) is soulstream-workloads's own
+  unbuilt Fleet milestone — soulstream consumes it when it lands upstream
   and MUST NOT invent one here (constitution I).
 
 ## 7. Shutdown and failure [D]
@@ -161,14 +161,14 @@ as the door plane: `planes.door {enabled, listen}` (loopback,
 handler mounted, the existing sentinel, the audit logger; local mode
 only. The door custodies nothing and consumes the same admission lane
 as any client. Public mode (`public_url`, `auth_issuer` — the OAuth
-story) joins the block additively when soulfold exists upstream; HTTPS
+story) joins the block additively when soulstream-idp exists upstream; HTTPS
 today is a fronting concern (`tailscale serve`), with Phase 3's tsnet
 behind its own gate.
 
 ## 9. Acceptance criteria (Phase 1, made precise per feature in specs/)
 
 - **M1.1 — the server and the identity plane**: on an empty state dir,
-  `soulnode init && soulnode up` reaches: sealed surface answers
+  `soulstream init && soulstream up` reaches: sealed surface answers
   `status`; sentinel + printed token admits with the persona scoped to
   its own prefix; garbage and revoked tokens refuse with audited
   refusals; `init` re-run is a verified no-op; every artifact of §4 is on
@@ -178,8 +178,8 @@ behind its own gate.
   to its persona with a vault-held key.
 - **M1.3 — an agent runs**: a declared agent workload launches through
   the runtime plane (native backend), posts a turn attributed to its
-  persona, and its lifecycle appears as work ops — the soulrealm M1.1
-  proof, re-run inside SoulNode.
+  persona, and its lifecycle appears as work ops — the soulstream-workloads M1.1
+  proof, re-run inside soulstream.
 
 ## Requirement language
 

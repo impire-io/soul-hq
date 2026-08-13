@@ -53,5 +53,5 @@ one-way door.
 Trail: `specs/006-the-fold-plane/`; soulnode `v0.3.0`; soulfold
 `v0.3.1`/`v0.3.2` and episode
 [0061](0061-soulfold-the-admin-console.md); design
-[lifecycle](../02-DESIGN/soulfold/lifecycle.md) (D25, D25a); the
+[lifecycle](../02-DESIGN/soulstream-idp/lifecycle.md) (D25, D25a); the
 `009-fold-urls` merge.

@@ -50,7 +50,7 @@ depending on NEX frees the word from NEX's node-runtime collision, so the role
 keeps its natural name.
 
 **What it opened.** Design doc
-[`0001-soulrealm-runtime.md`](../02-DESIGN/soulrealm/0001-soulrealm-runtime.md): the
+[`0001-soulrealm-runtime.md`](../02-DESIGN/soulstream-workloads/0001-soulrealm-runtime.md): the
 single-control-plane runtime, the role×lifecycle model, a realm-semantic
 per-workload minter (NEX's `CredVendor` + xkey-env as influence), lifecycle as
 ops over the work.md stage-4 vocabulary, and pluggable isolation backends. It

@@ -59,8 +59,8 @@ Reversal condition: none of its own — a completed build; the direction
 decisions it realizes carry theirs (D19's client-class carrier map, D22's
 policy-field smell, D11's still-open NGS half).
 
-Trail: [`../02-DESIGN/auth-callout.md`](../02-DESIGN/soulidentity/auth-callout.md)
+Trail: [`../02-DESIGN/auth-callout.md`](../02-DESIGN/soulstream-identity/auth-callout.md)
 (D19–D22 as built),
-[`../02-DESIGN/nats-surface.md`](../02-DESIGN/soulidentity/nats-surface.md) (ops
+[`../02-DESIGN/nats-surface.md`](../02-DESIGN/soulstream-identity/nats-surface.md) (ops
 table), `client/callout_e2e_test.go` (the measured gate), README and
 roadmap in the same change.

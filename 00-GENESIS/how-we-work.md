@@ -8,8 +8,8 @@ the lifecycles, the duties, and how all of it is enforced.
 all five components: research, designs, the roadmap, and the journey live
 here. Code, frozen spec-kit artifacts (`specs/NNN-*/`), and plain-words docs
 live in each component's own repository (a sibling checkout:
-`../soulstream`, `../soulrealm`, `../soulidentity`, `../soulnode`,
-`../soulfold`). Every artifact in this repo names its component; ecosystem-
+`../soulstream`, `../soulstream-workloads`, `../soulstream-identity`, `../soulstream`,
+`../soulstream-idp`). Every artifact in this repo names its component; ecosystem-
 level work uses the component tag `ecosystem`.
 
 ## The pipeline
@@ -40,11 +40,11 @@ Two hard boundaries:
   you're building; research exists to find out *whether* to build. Research
   uses the pre-registration method below, in `01-RESEARCH/`.
 - **Implementation always follows a design.** For the spec-kit components
-  (soulstream, soulrealm, soulnode) a design doc in `02-DESIGN/<component>/`
+  (soulstream, soulstream-workloads, soulstream) a design doc in `02-DESIGN/<component>/`
   is written to be the argument to `/speckit-specify`, run in the component
   repo; the generated plan's Constitution Check reads GENESIS through that
   repo's `.specify/memory/constitution.md` symlink (which points here). For
-  the D-number components (soulidentity, soulfold) a roadmap milestone points
+  the D-number components (soulstream-identity, soulstream-idp) a roadmap milestone points
   at the design doc and D-numbers it realizes; a capability that isn't
   decided yet starts as research, not as code.
 
@@ -61,9 +61,9 @@ happens.
 - **Method:** hypothesis → cheap discriminating experiment → verdict, one
   variable at a time. What a "discriminating experiment" is varies by
   component — a demonstrated NATS behavior (soulstream), a spike running a
-  real workload (soulrealm), a consumer-position rig wiring real component
-  releases (soulnode), a protocol rig against a stock client (soulfold,
-  soulidentity). Experiment scripts live in the session scratchpad;
+  real workload (soulstream-workloads), a consumer-position rig wiring real component
+  releases (soulstream), a protocol rig against a stock client (soulstream-idp,
+  soulstream-identity). Experiment scripts live in the session scratchpad;
   conclusions, documents, and principled code changes land in git.
 - **Always committed and pushed** — even work that will be abandoned. The
   point is a permanent trail; abandoned research keeps its full history in
@@ -82,8 +82,8 @@ conventions and its own README index:
 
 - **soulstream/** — `core/` (the protocol; a realm running only this is a
   working soulstream) + `extensions/` (optional conventions).
-- **soulrealm/**, **soulnode/** — numbered documents (`0001-…` onward).
-- **soulidentity/**, **soulfold/** — named documents carrying global
+- **soulstream-workloads/**, **soulstream/** — numbered documents (`0001-…` onward).
+- **soulstream-identity/**, **soulstream-idp/** — named documents carrying global
   D-numbered decisions.
 
 Documents are written functional-level — explicit enough that

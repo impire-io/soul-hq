@@ -50,5 +50,5 @@ by removing a claim.
 
 Trail: `specs/003-fold-in-the-fleet/` and the `e2e/` module in the
 soulfold repo; soulidentity's design
-[auth-callout](../02-DESIGN/soulidentity/auth-callout.md) (D23–D24,
+[auth-callout](../02-DESIGN/soulstream-identity/auth-callout.md) (D23–D24,
 unchanged — that is the point); the `003-fold-in-the-fleet` merge.

@@ -1,6 +1,6 @@
-# SoulIdentity — auth callout, the front door (M4)
+# soulstream-identity — auth callout, the front door (M4)
 
-*The design M4 implements: SoulIdentity as the NATS auth-callout issuer —
+*The design M4 implements: soulstream-identity as the NATS auth-callout issuer —
 the second lane of the connection ladder (D12), representing external
 identities inside NATS. Decisions here continue the numbering: D19–D24,
 grounded in the sentinel-credential and claims-mapping research
@@ -43,7 +43,7 @@ map for that class.
 
 ## D20 — The issuer is the mint with a callout trigger
 
-SoulIdentity's callout issuer is not new machinery (constitution III): it
+soulstream-identity's callout issuer is not new machinery (constitution III): it
 validates the presented credential against its authn backend, resolves the
 identity to a role and personas (registry-declared or claims-derived — D2;
 the mapping shape is the pending research), and then does what mint already
@@ -86,7 +86,7 @@ user lives in this account; issued users land in the target accounts.
 *As built (M4, journey 0010):* the service holds **two connections** — the
 sealed surface on its own account, the issuer subscription on the AUTH
 account (`--callout-creds`/`--callout-context`; its presence enables the
-issuer and the token/sentinel ops). SoulIdentity holds an AUTH **signing
+issuer and the token/sentinel ops). soulstream-identity holds an AUTH **signing
 key** in the vault (not the master; `--auth-key` names it, and
 `--auth-account` carries the account public key the sentinel declares),
 the optional callout xkey seed (`SOULIDENTITY_CALLOUT_KEY`), the token
@@ -231,8 +231,8 @@ Two costs, named honestly:
   still-valid cached token re-admitted 5.2 s after connect, the
   role-stripped fresh token refused [measured].
 - **Membership custody is delegated.** An Azure portal act (app-role
-  assignment) grants NATS access with no SoulIdentity act; the
-  SoulIdentity-side guard is that a team of that name must be declared,
+  assignment) grants NATS access with no soulstream-identity act; the
+  soulstream-identity-side guard is that a team of that name must be declared,
   bounding the blast radius to the declared teams' server-enforced
   scopes; the who-record for this lane is the tenant's assignment audit.
   Accepted after the adversarial pass (spec `001-entra-oidc-backend`,
@@ -247,10 +247,10 @@ policy source.
 ## Not yet decided (pending research)
 
 - **Multi-issuer dispatch**: D23 pins one OIDC issuer. The ecosystem's
-  default IdP is the sibling project soulfold ([journey
+  default IdP is the sibling project soulstream-idp ([journey
   0019](../../04-JOURNEY/0039-soulidentity-soulfold-the-default-idp.md)) — reached
   through this same seam, indistinguishable from Entra by design — so a
-  deployment running soulfold beside a second external issuer needs
+  deployment running soulstream-idp beside a second external issuer needs
   dispatch across issuers. Named, not built (constitution III); the
   first such deployment re-opens it.
 - **NGS**: whether a Synadia-managed server exposes callout configuration

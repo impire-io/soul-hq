@@ -40,7 +40,7 @@ All four bars passed, none amended [measured]:
   documented].
 
 What it opened: the fold's third design doc,
-[lifecycle](../02-DESIGN/soulfold/lifecycle.md) (D20–D24), whose
+[lifecycle](../02-DESIGN/soulstream-idp/lifecycle.md) (D20–D24), whose
 acceptance criteria are these bars restated as the M3 gate. The M3
 build follows immediately — the prototype that measured the bars is
 its foundation.
@@ -53,7 +53,7 @@ in-store artifacts — either reopens toward the topic's named fallback
 
 Trail: verdict and topic journey in git history at
 `01-RESEARCH/bootstrap-story/` (folder removed by this graduation);
-design [lifecycle](../02-DESIGN/soulfold/lifecycle.md); the bar rigs
+design [lifecycle](../02-DESIGN/soulstream-idp/lifecycle.md); the bar rigs
 ride the fold's `make test` (`internal/lifecycle/bars_test.go`,
 `internal/serve/bootstrap_test.go`) — permanent gate tests, not
 scratchpad.

@@ -48,6 +48,6 @@ deliberate default awaiting a consumer's chafe, not a decision to
 reverse).
 
 Trail: `specs/001-init-and-up/` (spec, plan, research R1–R8, data model,
-contracts, tasks all checked); `ceremony/`, `node/`, `cmd/soulnode/`;
+contracts, tasks all checked); `ceremony/`, `node/`, `cmd/soulstream/`;
 design 0001 §§3–6/§9-M1.1. Commits: the `001-init-and-up` branch, merged
 to main 2026-08-02.

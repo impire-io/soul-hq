@@ -51,7 +51,7 @@ than microVMs; the case for this backend is **adoption, not isolation
 strength** [mechanism-argument].
 
 What it opened: design
-[`0002-kubernetes-backend.md`](../02-DESIGN/soulrealm/0002-kubernetes-backend.md) —
+[`0002-kubernetes-backend.md`](../02-DESIGN/soulstream-workloads/0002-kubernetes-backend.md) —
 pod-per-workload behind the unchanged seam — carrying the open internals
 honestly: the artifact channel (node-side HTTP vs soulstream object store
 over `nats://`), node-arch-aware resolution for heterogeneous clusters, the
@@ -71,5 +71,5 @@ scheduler" reverses and the question moves to the Fleet gate.
 Trail: research topic `hq/01-RESEARCH/kubernetes-backend/` (removed at
 graduation; full history in git) — opened `9429ee2`, spikes `eff0468`
 `5444c7b` `a2c49b6` `5fc7a16`, verdict `f2f403c`; design
-[`0002-kubernetes-backend.md`](../02-DESIGN/soulrealm/0002-kubernetes-backend.md);
+[`0002-kubernetes-backend.md`](../02-DESIGN/soulstream-workloads/0002-kubernetes-backend.md);
 spike code in the session scratchpad (throwaway, per how-we-work).

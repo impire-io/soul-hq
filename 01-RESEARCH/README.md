@@ -36,8 +36,9 @@ answer is already known.
 
 - **States are exactly** `active`, `graduated`, `abandoned` — and no folder
   with a terminal state lingers here (the structural lint enforces both).
-- **Every topic names its component** (`soulstream`, `soulrealm`,
-  `soulidentity`, `soulnode`, `soulfold`, or `ecosystem`), so the graduation
+- **Every topic names its component** (the episode tag vocabulary:
+  `core`, `workloads`, `identity`, `idp`, `shell`, `mcp`, `cli`,
+  `soulstream`, or `ecosystem`), so the graduation
   knows which design folder receives the outcome.
 - **Always committed and pushed**, including work heading for abandonment.
   Abandoned research is a result: it gets the same quality of episode as a

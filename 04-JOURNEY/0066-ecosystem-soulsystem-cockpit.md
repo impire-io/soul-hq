@@ -97,7 +97,7 @@ SSE morphing cannot express, the Datastar rendering pick reopens with
 that interaction as the evidence.
 
 Trail: design
-[`0001-soulhelm-the-helm.md`](../02-DESIGN/soulhelm/0001-soulhelm-the-helm.md)
+[`0001-soulhelm-the-helm.md`](../02-DESIGN/soulstream-shell/0001-soulhelm-the-helm.md)
 (the component's founding design doc); the rigs (consumer-position
 module, WebSocket bench, helm prototype) ran in the session scratchpad
 per how-we-work, their measurements recorded in the topic journey;

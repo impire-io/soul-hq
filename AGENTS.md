@@ -1,10 +1,12 @@
 # AGENTS — orientation and reading order
 
-This repository is the headquarters of the Soulstream ecosystem: soulstream
-(the record), soulrealm (the room), soulidentity (the name), soulnode (the
-house), soulfold (the fold), soulhelm (the helm). Code lives in the sibling
-component repos;
-research, designs, the roadmap, and the journey live here.
+This repository is the headquarters of the Soulstream ecosystem:
+soulstream-core (the record), soulstream-workloads (the room),
+soulstream-identity (the name), soulstream (the product, the house),
+soulstream-idp (the fold), soulstream-shell (the shell),
+soulstream-mcp (the remote door), soulstream-archivist (the keeper).
+Code lives in the sibling component repos; research, designs, the
+roadmap, and the journey live here.
 
 ## Reading order
 

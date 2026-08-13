@@ -49,9 +49,9 @@ control) [measured].
 ### D22 — The first invite is an operator act; every later one is an admin op
 
 Possession of the deployment's state mints the bootstrap invite
-(`soulfold invite` on the state dir; `embed.Options.InviteSink` for
+(`soulstream-idp invite` on the state dir; `embed.Options.InviteSink` for
 embedding parents) — the same trust that founded the fold, mirroring
-soulidentity's first-key story. The from-nothing ceremony is four
+soulstream-identity's first-key story. The from-nothing ceremony is four
 counted acts (serve, seed admin, mint invite, one browser ceremony
 that enrolls and signs in), collapsing to init/up + one browser act in
 the bundled shape [measured]. After bootstrap, invites come from the
@@ -141,11 +141,11 @@ user / mints an invite / sets groups / disables an account from the
 browser; a non-admin passkey is refused; a forged CSRF changes
 nothing [measured].
 
-Deployment note (soulnode / any two-service host): the console shares
+Deployment note (soulstream / any two-service host): the console shares
 the fold's listener with the OIDC endpoints, so it is reachable
 wherever the fold's issuer is. It does **not** share the MCP door's
 listener — those are separate ports/services and must front to
-distinct public routes (soulnode logs both URLs and refuses a shared
+distinct public routes (soulstream logs both URLs and refuses a shared
 listen address).
 
 ## Acceptance criteria (the M3 gate inherits these)

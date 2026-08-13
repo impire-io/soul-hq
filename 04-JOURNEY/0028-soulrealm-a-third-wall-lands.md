@@ -1,7 +1,7 @@
 # Episode 0009 — A third wall lands: the Kubernetes backend ships (2026-07-29)
 
 M2.1 went from spec to green in one spec-kit pass
-([`specs/004-kubernetes-backend/`](../../soulrealm/specs/004-kubernetes-backend/)),
+([`specs/004-kubernetes-backend/`](../../soulstream-workloads/specs/004-kubernetes-backend/)),
 built directly on episode 0008's measured ground. The landed shape:
 `backend/k8s` runs one runner-supervised pod per workload behind the
 unchanged seam — the credential as a read-only Secret that **never touches
@@ -61,11 +61,11 @@ runner-supervised pods prove uncontrollable on real clusters (restart or
 eviction semantics that cannot be held off), "backend, not scheduler"
 reverses and the question moves to the Fleet gate.
 
-Trail: [`specs/004-kubernetes-backend/`](../../soulrealm/specs/004-kubernetes-backend/)
+Trail: [`specs/004-kubernetes-backend/`](../../soulstream-workloads/specs/004-kubernetes-backend/)
 (spec, plan with the recorded HTTP→OCI reversal, research D1–D7, tasks);
-design [`0002-kubernetes-backend.md`](../02-DESIGN/soulrealm/0002-kubernetes-backend.md)
+design [`0002-kubernetes-backend.md`](../02-DESIGN/soulstream-workloads/0002-kubernetes-backend.md)
 (amended: OCI channel, client-go, gate shape) and
-[`0001-soulrealm-runtime.md`](../02-DESIGN/soulrealm/0001-soulrealm-runtime.md) §6/§8;
+[`0001-soulrealm-runtime.md`](../02-DESIGN/soulstream-workloads/0001-soulrealm-runtime.md) §6/§8;
 code `backend/k8s/`, `backend/natsurl/`, `cmd/scope-probe/`,
 `integration/k8s_e2e_test.go`, `scripts/kind-registry.sh`; branch
 `004-kubernetes-backend` commits `d74cb5a` (spec) `7efb721` (plan)

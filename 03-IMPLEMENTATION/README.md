@@ -11,7 +11,7 @@
   component's repository — through the spec-kit flow (`/speckit-specify` →
   plan → tasks → implement, artifacts frozen in `<component>/specs/NNN-*/`)
   for the spec-kit components, or against the design's D-numbers for
-  soulidentity and soulfold — and lands together with a numbered episode in
+  soulstream-identity and soulstream-idp — and lands together with a numbered episode in
   [`../04-JOURNEY/`](../04-JOURNEY/README.md). Feature numbers come from git
   branches in the component repo; episode numbers from the shared journey
   sequence; release versions from that repo's git tags (`v*`).

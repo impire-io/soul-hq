@@ -60,6 +60,6 @@ recorded identically in D11.
 
 Trail: [`../00-GENESIS/vision.md`](../99-ARCHIVE/genesis/soulidentity/vision.md) (rewritten),
 [`../00-GENESIS/constitution.md`](../99-ARCHIVE/genesis/soulidentity/constitution.md) (1.1.0),
-[`../02-DESIGN/agent.md`](../02-DESIGN/soulidentity/agent.md) (D1, D4, D8, D10 amended;
+[`../02-DESIGN/agent.md`](../02-DESIGN/soulstream-identity/agent.md) (D1, D4, D8, D10 amended;
 D11 new), [`../03-IMPLEMENTATION/ROADMAP.md`](../03-IMPLEMENTATION/ROADMAP.md)
 (M3–M6, research questions); this change (single commit with the amendment).

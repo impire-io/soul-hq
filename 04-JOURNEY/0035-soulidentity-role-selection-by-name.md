@@ -7,7 +7,7 @@ the account multi-role, the observable D5's amendment reversal condition
 watches: a second signing key imported for an already-bound account, refused
 as ambiguous, recorded as an issue (soulidentity#1). As that condition
 instructs, role selection reopened as a new D-decision — **D28**, in
-[`../02-DESIGN/agent.md`](../02-DESIGN/soulidentity/agent.md): the selector is **declared
+[`../02-DESIGN/agent.md`](../02-DESIGN/soulstream-identity/agent.md): the selector is **declared
 configuration, the role name** (a vault account signing key with its D24
 account binding), never a field on a token record (D22's watch). The claims
 lane had already made this move (D24 — the roles claim names the declared
@@ -59,9 +59,9 @@ names (observable: a consumer computing role names client-side to simulate
 policy, recorded as an issue) reopens role selection a second time — any
 answer stays declared configuration, never a token-record field.
 
-Trail: [`../02-DESIGN/agent.md`](../02-DESIGN/soulidentity/agent.md) D28 + the D5
-amendment pointer; [`../02-DESIGN/auth-callout.md`](../02-DESIGN/soulidentity/auth-callout.md)
-D24's noun amendment; [`../02-DESIGN/nats-surface.md`](../02-DESIGN/soulidentity/nats-surface.md)
+Trail: [`../02-DESIGN/agent.md`](../02-DESIGN/soulstream-identity/agent.md) D28 + the D5
+amendment pointer; [`../02-DESIGN/auth-callout.md`](../02-DESIGN/soulstream-identity/auth-callout.md)
+D24's noun amendment; [`../02-DESIGN/nats-surface.md`](../02-DESIGN/soulstream-identity/nats-surface.md)
 ops table (`mint.ephemeral`); soulidentity#1 (soulrealm's evidence: their
 journey 0010, design 0003-fleet §5); `internal/mint.ForRole` /
 `internal/service` (`mint.ephemeral`) / `client.MintEphemeral`; the M3-gate

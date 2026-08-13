@@ -6,11 +6,11 @@ centre with the rest in orbit, and a single binary that gathers them
 all (the metaphor is a solar system; see
 [impire.io/soulsystem](https://impire.io/soulsystem)). The code lives in
 the component repositories (sibling checkouts:
-[`../soulstream`](../soulstream) the record,
-[`../soulrealm`](../soulrealm) the room,
-[`../soulidentity`](../soulidentity) the name,
-[`../soulnode`](../soulnode) the house, [`../soulfold`](../soulfold) the
-fold, [`../soulhelm`](../soulhelm) the helm), along with their frozen
+[`../soulstream-core`](../soulstream-core) the record,
+[`../soulstream-workloads`](../soulstream-workloads) the room,
+[`../soulstream-identity`](../soulstream-identity) the name,
+[`../soulstream`](../soulstream) the product, [`../soulstream-idp`](../soulstream-idp) the
+fold, [`../soulstream-shell`](../soulstream-shell) the shell), along with their frozen
 per-feature spec-kit artifacts
 (`specs/NNN-*/`) and plain-words `docs/`. Everything else — why the
 ecosystem exists, what we're investigating, what we've designed, what we're

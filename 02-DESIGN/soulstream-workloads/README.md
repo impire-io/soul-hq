@@ -1,4 +1,4 @@
-# 02-DESIGN — Soulrealm system specification (document set)
+# 02-DESIGN — soulstream-workloads system specification (document set)
 
 This set specifies, without ambiguity and from a functional point of view, the
 system to be built. It defines **what must exist** and **how each part

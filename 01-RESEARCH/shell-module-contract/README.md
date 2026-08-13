@@ -1,14 +1,13 @@
 # What module contract makes soulstream-shell a pure shell every human surface plugs into?
 
-**Component:** soulhelm
+**Component:** shell
 **State:** active
 **Started:** 2026-08-13
 
-*(The component renames **soulhelm → soulstream-shell** — the ecosystem
-naming re-centering, episode
-[0069](../../04-JOURNEY/0069-ecosystem-one-name-soulstream.md); bare
-*soulshell* was decided and superseded the same day. The Component field
-above carries the tag that stays legal until the rename sweep lands.)*
+*(The rename executed 2026-08-13: the repo is
+[impire-io/soulstream-shell](https://github.com/impire-io/soulstream-shell),
+v0.2.0 — episode 0070. The Component tag uses the short episode
+vocabulary: `shell`.)*
 
 ## Abstract
 
@@ -18,8 +17,8 @@ live. The operator's direction (2026-08-13): it becomes
 **soulstream-shell**, the surface humans use most and architecturally a
 **pure shell** — a modular
 frame that contains **zero module logic** and is **agnostic from
-soulsystem by contract**: the shell's packages import nothing
-soulsystem-specific, ever, checked mechanically. Every human surface —
+Soulstream by contract**: the shell's packages import nothing
+Soulstream-specific, ever, checked mechanically. Every human surface —
 the observe/cockpit core, the fold's administration, the agent
 designer/manager to come — is a module built *beside* the shell that
 plugs in through one exported contract; the shell's own job is
@@ -37,7 +36,7 @@ second real consumer — the agnosticism bar is what keeps it cheap.
 **What exported module contract lets soulstream-shell host every human
 surface as an externally-built module — registered through one seam, activated by
 what the deployment runs, cross-linked through the shell — while the
-shell itself imports nothing soulsystem-specific and custodies nothing?**
+shell itself imports nothing Soulstream-specific and custodies nothing?**
 
 Sub-questions that prove to need their own investigation become successor
 topics rather than growing this one; the candidates are named under
@@ -56,7 +55,7 @@ git.
   the fold's `/api/admin`), both registering through one exported
   contract (identity, activation predicate, navigation contribution,
   route mounting). **Pass:** both run through the same contract, and the
-  shell's packages import **no module and no soulsystem component** —
+  shell's packages import **no module and no Soulstream component** —
   checked mechanically from the import graph (`go list -deps` over the
   shell packages), not by eye; the existing consumer-position e2e stays
   green on the composed build.
@@ -74,7 +73,7 @@ git.
   scan clean after a full sign-in→act→sign-out session, positive control
   fired) both green; sessions stay in memory; the NATS-admission
   machinery (bearer → sentinel + callout → per-principal connection)
-  lives in the soulsystem module-support layer, never in the shell; no
+  lives in the Soulstream module-support layer, never in the shell; no
   module needed a privileged surface or a shell-owned store to earn its
   place.
 - **Bar 4 — the shell composes.** Two halves, both required. *Cross-
@@ -111,17 +110,17 @@ than dressed as measurements:
   against its constitution) versus sibling module repos versus the
   composition layer — is answered by the experiments.
 - **The fold's standalone `/admin` console** (its episode 0061): once
-  the fold module exists, whether soulfold's own console retires to the
+  the fold module exists, whether soulstream-idp's own console retires to the
   ceremony pages (sign-in, enrol, error — the OIDC surface itself) is a
-  soulfold scope decision, recorded at graduation.
+  soulstream-idp scope decision, recorded at graduation.
 - **The agent designer/manager** — declaring, launching, and observing
-  workloads over soulrealm's surface — is the third-module horizon. It
+  workloads over soulstream-workloads' surface — is the third-module horizon. It
   motivates the contract; it is not built here.
 - **Participation** (posting turns, talking to agents) stays [O4], the
   named successor, decided shell-first; it later lands as a module
   through this contract and still gates on upstream ask #1.
 - **Extraction.** A standalone generic framework is founded only when a
-  second real consumer outside soulsystem exists; Bar 1's agnosticism
+  second real consumer outside Soulstream exists; Bar 1's agnosticism
   check is what makes that extraction cheap when its day comes.
 
 ## Reversal condition
@@ -133,8 +132,8 @@ without a privileged surface or a shell-owned store of record — then the
 shell is the wrong shape at this size: the component returns to growing
 screens directly, and pluggability waits for the third real consumer to
 make the argument again. Narrower: **if the shell cannot stay
-soulsystem-agnostic** — observable as a real module need the contract
-cannot express without importing a soulsystem shape — then the
+Soulstream-agnostic** — observable as a real module need the contract
+cannot express without importing a Soulstream shape — then the
 agnosticism constraint falls (recorded with that concrete need as the
 evidence), not necessarily the module idea. Design 0001's own reversal
 condition stays live underneath: a required `internal/` import, a

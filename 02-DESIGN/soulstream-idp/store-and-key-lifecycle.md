@@ -8,7 +8,7 @@ extended by kv-encryption-at-rest (the envelope, D16–D19; D6 amended),
 **Realized by:** M1 (the OP skeleton) on the
 [roadmap](../../03-IMPLEMENTATION/ROADMAP.md).
 
-What Soulfold keeps, where, and how it changes: the JetStream KV layout
+What soulstream-idp keeps, where, and how it changes: the JetStream KV layout
 that is the fold's only store, and the signing-key lifecycle that lets
 JWKS roll over while consumers keep verifying, uninterrupted. Every
 mechanism below passed a pre-registered bar in the graduating research
@@ -23,7 +23,7 @@ lifecycle).
 ### D1 — One KV bucket per record kind
 
 Four buckets — `users`, `clients`, `keys`, `sessions` — each carrying a
-configurable name prefix, default `soulfold_`.
+configurable name prefix, default `soulstream_idp_`.
 
 Reasoning: retention is configured per bucket, and the kinds genuinely
 differ — sessions age out and want per-key TTL garbage collection
@@ -170,7 +170,7 @@ retirement [measured].
 
 The fold's signing keys are RSA (2048-bit minimum), `alg: RS256`.
 
-Reasoning: the consumer seam's verifier of record — soulidentity's auth
+Reasoning: the consumer seam's verifier of record — soulstream-identity's auth
 callout (its D23) — is pinned issuer + JWKS discovery + RS256, and
 Entra publishes RS256; indistinguishable-by-design (constitution II)
 decides the default [mechanism-argument]. The lifecycle mechanics are
@@ -208,7 +208,7 @@ envelope [measured]. Cost, priced on the real flow: +44 bytes and
   embedded: by or under the parent's ceremony), written `0600`.
 - **Home, per deployment shape**: always outside the JetStream store
   directory. Single binary: a file beside the config, never under the
-  store dir; embedded (soulnode): the parent's state area, sibling to
+  store dir; embedded (soulstream): the parent's state area, sibling to
   — never inside — its `jetstream/` dir; shared JetStream: the seed
   stays with the fold process, and the JetStream operator holds only
   ciphertext — this is the shape where custody bites hardest.

@@ -29,7 +29,7 @@ through, in order:
    own? Articles don't bend for product work. The load-bearing questions are
    usually: does this stay NATS-native (S1), is it the smallest thing that
    satisfies the spec (S2), and does it cross the component's named
-   non-negotiable (soulrealm I, soulnode I, soulidentity I, soulfold I/II)?
+   non-negotiable (soulstream-workloads I, soulstream I, soulstream-identity I, soulstream-idp I/II)?
    If an article genuinely must change, that's an amendment with a version
    bump and a journey episode, never a quiet exception.
 3. **Working agreement**: if the decision is load-bearing, it does not get

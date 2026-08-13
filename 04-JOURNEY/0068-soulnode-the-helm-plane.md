@@ -46,4 +46,4 @@ was at its own genesis.
 Trail: soulnode `specs/007-the-helm-plane/`, commits `d033175` +
 merge `e9d85ad`; soulhelm episode
 [0067](0067-soulhelm-founding-and-first-light.md); design
-[`0001-soulhelm-the-helm.md`](../02-DESIGN/soulhelm/0001-soulhelm-the-helm.md).
+[`0001-soulhelm-the-helm.md`](../02-DESIGN/soulstream-shell/0001-soulhelm-the-helm.md).

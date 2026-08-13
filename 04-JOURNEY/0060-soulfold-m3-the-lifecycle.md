@@ -44,5 +44,5 @@ design's own reversal conditions (episode 0059) stand.
 
 Trail: `specs/005-the-lifecycle/` (spec, quickstart with the four-act
 walk and the admin-API tour); design
-[lifecycle](../02-DESIGN/soulfold/lifecycle.md); soulfold `v0.2.0`;
+[lifecycle](../02-DESIGN/soulstream-idp/lifecycle.md); soulfold `v0.2.0`;
 the `005-the-lifecycle` and `008-founding-invite` merges.

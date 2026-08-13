@@ -40,4 +40,4 @@ The runtime itself — isolation, filesystems, process supervision — lives out
 
 ## Why this is an extension
 
-Every stage is additive vocabulary plus, at most, personas with habits (a runner, a sandbox host). Nothing here touches the wire format, the stream, or the acid-test list in the [README](../../../../soulstream/README.md) — which is exactly the test: if a stage ever needs core changes beyond a vocabulary, the design is wrong.
+Every stage is additive vocabulary plus, at most, personas with habits (a runner, a sandbox host). Nothing here touches the wire format, the stream, or the acid-test list in the [README](../../../../soulstream-core/README.md) — which is exactly the test: if a stage ever needs core changes beyond a vocabulary, the design is wrong.

@@ -44,5 +44,5 @@ written in the config.
 
 Trail: `.github/workflows/ci.yml`, `.github/workflows/release.yml`,
 `.goreleaser.yaml`, tag `v0.1.0` and its
-[release](https://github.com/impire-io/soulnode/releases/tag/v0.1.0);
+[release](https://github.com/impire-io/soulstream/releases/tag/v0.1.0);
 the `007-ci-and-release` merge.

@@ -1,41 +1,42 @@
-# 02-DESIGN — the normative design
+# 02-DESIGN — soulstream system specification (document set)
 
-This is what Soulstream *is*, specified functionally: **what must exist** and
-**how each part behaves**. An implementer should be able to build a working
-system from these documents without needing undocumented decisions. The reasons
-behind the choices are not here — they live in
-[`../00-GENESIS/rationale.md`](../../00-GENESIS/rationale.md).
+This set specifies, without ambiguity and from a functional point of view, the
+system to be built. It defines **what must exist** and **how each part
+behaves**, not the reasoning behind the choices. An implementer should be able
+to build a working system from these documents without needing undocumented
+decisions.
 
 **The spec-kit rule:** every document here is written explicit enough to be the
 argument to `/speckit-specify` — the capability, its seams, its configuration
-surface, and its acceptance criteria, with no guessing left to the spec writer.
-Graduating research enters through `/research-graduate`; behavioral changes made
-during implementation propagate back here (see
-[`../00-GENESIS/how-we-work.md`](../../99-ARCHIVE/genesis/soulstream/how-we-work.md)).
+surface, and its acceptance criteria, with no guessing left to the spec
+writer. New documents take the next free `NNNN-` number (`0001-…` onward).
+Graduating research enters through `/research-graduate`; behavioral changes
+made during implementation propagate back here (see
+[`../00-GENESIS/how-we-work.md`](../../99-ARCHIVE/genesis/soulnode/how-we-work.md)).
 
-## core/ — normative; this *is* Soulstream
+## Documents
 
-A realm running only this is a working soulstream.
+| # | Document | Covers | Status |
+|---|---|---|---|
+| 0001 | [`0001-soulnode-composition.md`](0001-soulnode-composition.md) | The all-loopback composition: five planes by configuration, the embedded operator-mode server, the persisted first-boot ceremony (`soulstream init`), admission, plane wiring, shutdown, the seamed front door, Phase 1 acceptance criteria | graduated from `single-binary-composition` (episode 0002) |
 
-| Doc | Covers |
-|---|---|
-| [`core/01-protocol.md`](core/01-protocol.md) | Realms, the stream, the subject taxonomy, the operation record |
-| [`core/02-identity.md`](core/02-identity.md) | Credentials, personas, attribution, delegation, notifications |
-| [`core/03-topics.md`](core/03-topics.md) | Topics as op-logs: vocabulary, lifecycle as ops, baselines, leaderless rollup, discovery |
+## Status legend (used once documents exist)
 
-## extensions/ — optional conventions
+Every component and requirement will carry one of these tags. They describe
+**validation maturity**, not importance.
 
-A realm running none of these is still a working soulstream.
+- **[V] Validated** — confirmed by a rig against real component releases and
+  an embedded server. Build as specified.
+- **[D] Design** — fully specified functionally, but not yet validated. Build
+  as specified; expect refinement once it runs.
+- **[O] Open** — the interface and a default behavior are specified, but the
+  best internal is a known unsolved problem. Build the interface and the
+  default; expect the internal to be replaced. **[O]** items are where
+  implementation risk concentrates.
 
-| Doc | Covers |
-|---|---|
-| [`extensions/registry.md`](extensions/registry.md) | Rich persona profiles, operator attestation, key distribution |
-| [`extensions/library-and-adapters.md`](extensions/library-and-adapters.md) | The reference library, MCP adapter, WebSocket door, bridges, presence |
-| [`extensions/curation.md`](extensions/curation.md) | Curator personas (what the old "steward" became) |
-| [`extensions/work.md`](extensions/work.md) | The work stages: versioned artefacts, work items, execution, sandboxes |
-| [`extensions/sealed-topics.md`](extensions/sealed-topics.md) | E2E-encrypted topics |
-| [`extensions/memory.md`](extensions/memory.md) | Persona memory and collective search |
+## Requirement language
 
-The build order for all of the above is in
-[`../03-IMPLEMENTATION/ROADMAP.md`](../../03-IMPLEMENTATION/ROADMAP.md); the frozen
-per-feature spec-kit artifacts are in `specs/NNN-*/`.
+- **MUST** / **MUST NOT** — mandatory / prohibited.
+- **MAY** — permitted, not required.
+- A value given as a *default* is the value shipped unless configuration
+  overrides it.

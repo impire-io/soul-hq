@@ -11,7 +11,7 @@ about the fold or any component goes into it; it facilitates modules
 working together (cross-linking) and brings things together — and the
 component renames: *helm* fell for the Helm-charts collision, bare
 *cockpit* for cockpit-project, and **soulshell** won — agnostic from
-soulsystem by contract, extraction into a generic framework deferred to
+Soulstream by contract, extraction into a generic framework deferred to
 a second real consumer. Bars rewritten accordingly before any spike;
 the folder renamed to `shell-module-contract`.
 

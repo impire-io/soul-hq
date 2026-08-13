@@ -42,7 +42,7 @@ that failure moves the version pin forward as an ordinary chore; if it
 recurs enough to be a tax, the proof migrates to a consumer repository as
 a new decision. Otherwise none — records a completed measurement.
 
-Trail: `e2e/` (module `github.com/impire-io/soulidentity/e2e`,
+Trail: `e2e/` (module `github.com/impire-io/soulstream-identity/e2e`,
 `m2_gate_test.go`), `Makefile` (tidy/test/lint run the module),
 `hq/03-IMPLEMENTATION/ROADMAP.md` M2; soulstream v0.6.0's seam (their
 journey 0006); committed as the episode's change-set on `main`.

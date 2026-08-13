@@ -51,5 +51,5 @@ Reversal condition: none — a completed build against the graduated
 lifecycle design, extended by D25 which carries its own reasoning.
 
 Trail: `specs/005-the-lifecycle/` (quickstart's day-to-day is now the
-console); design [lifecycle](../02-DESIGN/soulfold/lifecycle.md) (D25,
+console); design [lifecycle](../02-DESIGN/soulstream-idp/lifecycle.md) (D25,
 D24 amended); soulfold `v0.3.0`; the `006-admin-console` merge.

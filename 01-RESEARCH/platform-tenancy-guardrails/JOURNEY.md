@@ -42,7 +42,7 @@ survives this topic and binds anyone extending it.
 **Three findings changed the scoping** before a single requirement was written:
 
 1. **A realm is already one NATS account** — stated normatively in
-   [`core/01-protocol.md`](../../02-DESIGN/soulstream/core/01-protocol.md).
+   [`core/01-protocol.md`](../../02-DESIGN/soulstream-core/core/01-protocol.md).
    The expected "make realms into accounts" work turned out to be a rename
    (S1). The real gap is lifecycle, which does not exist at all
    `[mechanism-argument]`.
@@ -52,7 +52,7 @@ survives this topic and binds anyone extending it.
 3. **The persona registry already covers the "passport" requirement** —
    `operated_by` with a countersigned operator attestation, chains terminating
    at a principal, key distribution, service advertisement
-   ([`extensions/registry.md`](../../02-DESIGN/soulstream/extensions/registry.md)).
+   ([`extensions/registry.md`](../../02-DESIGN/soulstream-core/extensions/registry.md)).
    What was thought to be a build turned out to be two narrow gaps: status and
    richer capabilities `[mechanism-argument]`.
 

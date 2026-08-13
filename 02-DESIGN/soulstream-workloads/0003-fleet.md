@@ -16,7 +16,7 @@ work vocabulary per soulstream's `work.md` extension.
 
 ## 1. The capability
 
-A **fleet** is more than one soulrealm node serving the same realm:
+A **fleet** is more than one soulstream-workloads node serving the same realm:
 heterogeneous machines (a laptop on the msb backend, a bare-metal native
 node, a cluster behind the k8s backend), each running the same runner, all
 observing the same topics — with **location-transparent placement** and
@@ -25,12 +25,12 @@ observing the same topics — with **location-transparent placement** and
 The governing rule, generalized from the M1.2 boundary and measured
 end-to-end in the research: **the log nominates, transient evidence
 vetoes, the log decides.** Durable state transitions are ordinary ops on
-the stream; transient traffic (probes, RPC) rides soulrealm's own
+the stream; transient traffic (probes, RPC) rides soulstream-workloads's own
 non-captured subjects and may only *delay* a decision, never make one.
 Replay of the stream alone MUST reconstruct every placement and every
 reclaim `[V]`.
 
-**Node homogeneity `[D]`:** there are no node roles. No soulrealm node is
+**Node homogeneity `[D]`:** there are no node roles. No soulstream-workloads node is
 a minter (§5 — minting authority lives in the identity plane); every node
 is a launching node distinguished only by its node-side configuration
 (backend selection per M1.3, capacity/tags later). A fleet of one node is
@@ -64,7 +64,7 @@ the degenerate case and MUST behave identically to today's single runner.
   the window. Sweepers skip items they themselves own.
 - **Veto — probe-before-abandon** `[V]`: before abandoning a stale
   candidate, the sweeper sends one core-NATS request-reply probe to the
-  owning node (`SOULREALM.NODE.<realm>.<node>.PING` — transient, outside
+  owning node (`SOULSTREAM.NODE.<realm>.<node>.PING` — transient, outside
   the `SOULSTREAM.>` capture). A reply vetoes *this sweep's* abandon;
   silence lets it proceed. **Evidence, not authority** `[D]`: the probe
   carries no state, appears nowhere in the record, and failure degrades
@@ -102,14 +102,14 @@ the degenerate case and MUST behave identically to today's single runner.
   operator mode rejects anonymous connections). A node joins a realm by
   receiving one ordinary scoped **node credential** — never signing
   material. Research-measured minimum for the minting flow:
-  `{pub SOULREALM.SVC.MINT.<realm>, sub _INBOX.>}`; the full node scope
+  `{pub SOULSTREAM.SVC.MINT.<realm>, sub _INBOX.>}`; the full node scope
   (topic ops for claims/abandons, its `PING` subject, backend needs) is
   finalized at spec time `[O]`.
 - **The enrollment authority is the identity plane** `[D]`:
-  `soulidentity` — vault-held keys, xkey-sealed NATS surface, and the
+  `soulstream-identity` — vault-held keys, xkey-sealed NATS surface, and the
   auth-callout lane (a node arrives with a bootstrap token and receives a
   TTL-bounded credential; TTL is the revocation propagation bound). The
-  soulrealm side treats enrollment as configuration (§6); it MUST NOT
+  soulstream-workloads side treats enrollment as configuration (§6); it MUST NOT
   implement its own authority. Episode 0003's soulstream-only scope is
   amended by this document: the platform's identity service is now real,
   shipped, and consumed — the `minter.Minter` seam was built for exactly
@@ -119,9 +119,9 @@ the degenerate case and MUST behave identically to today's single runner.
 
 Two measured paths; the identity plane is preferred `[D]`:
 
-- **Preferred — tag-template scoped mint via soulidentity** `[V]` at the
+- **Preferred — tag-template scoped mint via soulstream-identity** `[V]` at the
   mechanism level: the realm account carries **one scoped signing key per
-  role** (e.g. `soulrealm-agent`) whose template is today's
+  role** (e.g. `soulstream-workloads-agent`) whose template is today's
   `minter.PermissionSet` with the dynamic parts as tag functions
   (`SOULSTREAM.TOPICS.OPS.{{tag(topic)}}`,
   `SOULSTREAM.PERSONA.NOTIFY.{{tag(persona)}}`). Workload users are minted
@@ -132,10 +132,10 @@ Two measured paths; the identity plane is preferred `[D]`:
   over-scope**, a property the fallback lacks. For ephemeral mints the
   workload-side keypair is generated locally and only the *public* key
   crosses the wire — no seed travels in either direction. Missing piece
-  `[O]`: soulidentity's mint does not stamp tags today (its M2 invites
+  `[O]`: soulstream-identity's mint does not stamp tags today (its M2 invites
   consumer-proven additions); until it does, this path cannot ship.
 - **Fallback — delegated minting** `[V]`: spike 3's shape, the current
-  `SigningKeyMinter` behind a transient `SOULREALM.SVC.MINT.<realm>`
+  `SigningKeyMinter` behind a transient `SOULSTREAM.SVC.MINT.<realm>`
   request-reply served by whatever holds the seed. Measured end-to-end:
   the launching node's disk/argv/env/output provably never see the seed;
   scope enforced; expiry floor 10 ms. Weaknesses recorded: the reply
@@ -155,18 +155,18 @@ Two measured paths; the identity plane is preferred `[D]`:
 All node configuration; none of it may appear in a declaration
 (constitution III). Sketch for the spec pass `[D]`:
 
-- `SOULREALM_NODE_NAME` — the node's persona for enrollment, probes, and
+- `SOULSTREAM_NODE_NAME` — the node's persona for enrollment, probes, and
   claim attribution.
-- `SOULREALM_NODE_CREDS` — the enrollment credential (file path today; the
+- `SOULSTREAM_NODE_CREDS` — the enrollment credential (file path today; the
   auth-callout bootstrap token lane when consumed).
-- `SOULREALM_SWEEP_WINDOW` / `SOULREALM_SWEEP_EVERY` /
-  `SOULREALM_PROBE_TIMEOUT` — liveness parameters (research spike scale:
+- `SOULSTREAM_SWEEP_WINDOW` / `SOULSTREAM_SWEEP_EVERY` /
+  `SOULSTREAM_PROBE_TIMEOUT` — liveness parameters (research spike scale:
   2 s / 500 ms / 500 ms; production defaults decided at spec time, probe
   timeout MUST fit inside the reclaim bound).
-- Backend selection stays `SOULREALM_BACKEND` (M1.3) — heterogeneity is
+- Backend selection stays `SOULSTREAM_BACKEND` (M1.3) — heterogeneity is
   per-node configuration, invisible to declarations.
 - Mint endpoint configuration (identity-plane service location or the
-  fallback mint subject) `[O]` — shape depends on the soulidentity tags
+  fallback mint subject) `[O]` — shape depends on the soulstream-identity tags
   addition.
 
 ## 7. Known limits carried openly

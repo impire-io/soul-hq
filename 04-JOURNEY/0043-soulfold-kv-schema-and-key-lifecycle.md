@@ -50,7 +50,7 @@ Entra both speak RS256 and indistinguishability decides
 noticed, so the mechanics are algorithm-independent [measured].
 
 What it opened: the fold's first design doc,
-[store-and-key-lifecycle](../02-DESIGN/soulfold/store-and-key-lifecycle.md)
+[store-and-key-lifecycle](../02-DESIGN/soulstream-idp/store-and-key-lifecycle.md)
 (D1–D8), whose acceptance criteria are these bars restated as M1 gate
 tests. M1's remaining research is the session and UI shape; the build
 follows it.
@@ -62,7 +62,7 @@ minimal rig against a supported nats-server — that evidence reopens
 the genesis KV-as-the-only-store decision itself, because the
 alternative would be a quiet second database.
 
-Trail: [store-and-key-lifecycle](../02-DESIGN/soulfold/store-and-key-lifecycle.md);
+Trail: [store-and-key-lifecycle](../02-DESIGN/soulstream-idp/store-and-key-lifecycle.md);
 the topic's pre-registration, journey, and verdict in git history at
 `hq/01-RESEARCH/kv-schema-and-key-lifecycle/` (opened dc5688f, results
 4870256, verdict bf97e25; folder removed by this graduation); rigs in

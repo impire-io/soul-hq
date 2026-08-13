@@ -18,13 +18,13 @@ sentence each:
 | Component | Role | What it is |
 |---|---|---|
 | **soulstream** | *the record* | The protocol and its reference library: topics as shared workbenches, operations, baselines, personas — collaboration as an op-log over NATS. |
-| **soulrealm** | *the room* | The runtime: launches, supervises, observes, and retires a realm's agents and tools as workloads; everything worth keeping flows back to the record. |
-| **soulidentity** | *the name* | The identity plane: the home of the persona — vault-held keys, signing oracle, credential minting; signs and mints instead of handing out keys. |
-| **soulfold** | *the fold* | The default IAM: a self-hosted, passkey-first OIDC provider — who exists and who belongs — standing exactly where Entra or any OIDC provider may stand instead. |
-| **soulnode** | *the house* | The single-binary distribution: the whole stack on a machine you own — `soulnode init && soulnode up`, point a client at the printed URL. |
+| **soulstream-workloads** | *the room* | The runtime: launches, supervises, observes, and retires a realm's agents and tools as workloads; everything worth keeping flows back to the record. |
+| **soulstream-identity** | *the name* | The identity plane: the home of the persona — vault-held keys, signing oracle, credential minting; signs and mints instead of handing out keys. |
+| **soulstream-idp** | *the fold* | The default IAM: a self-hosted, passkey-first OIDC provider — who exists and who belongs — standing exactly where Entra or any OIDC provider may stand instead. |
+| **soulstream** | *the house* | The single-binary distribution: the whole stack on a machine you own — `soulstream init && soulstream up`, point a client at the printed URL. |
 
-Soulstream is the record, soulrealm is the room, soulidentity is the name,
-soulfold is the fold, soulnode is the house.
+Soulstream is the record, soulstream-workloads is the room, soulstream-identity is the name,
+soulstream-idp is the fold, soulstream is the house.
 
 ## The founding bet
 
@@ -36,12 +36,12 @@ database, no coordinator. Each component holds its own version of the bet:
 
 - **soulstream** — a working soulstream is a NATS server + JetStream, a
   stream, an identity per persona, the protocol, and baselines. Nothing else.
-- **soulrealm** — a running agent is a persona, not a service tier.
-- **soulidentity** — custody without possession: like an ssh-agent, it signs
+- **soulstream-workloads** — a running agent is a persona, not a service tier.
+- **soulstream-identity** — custody without possession: like an ssh-agent, it signs
   instead of handing out keys; the NATS server stays the verifier of record.
-- **soulfold** — an IdP the ecosystem cannot special-case: standard OIDC,
+- **soulstream-idp** — an IdP the ecosystem cannot special-case: standard OIDC,
   passkeys only, replaceable by configuration.
-- **soulnode** — owning your realm costs one binary and one command, at the
+- **soulstream** — owning your realm costs one binary and one command, at the
   same shape a hosted deployment runs. Nothing less is worth self-hosting.
 
 ## Who it is for
@@ -64,15 +64,15 @@ horizons that shape design today:
   and work items shipped; live co-editing (eg-walker) and sealed topics
   gated on real use; a second library language when the wire must prove it is
   the contract.
-- **One workload contract, many walls** (soulrealm): native process, microVM,
+- **One workload contract, many walls** (soulstream-workloads): native process, microVM,
   and Kubernetes backends proven; fleet without orchestration — placement as
   `work.claim` on the op-log, no coordinator.
-- **Consumers wire in** (soulidentity): the signer seam and callout lanes are
+- **Consumers wire in** (soulstream-identity): the signer seam and callout lanes are
   live; attestation issuance and sealing keys arrive when their consumers do.
-- **The fold closes the loop** (soulfold): the OP skeleton, passkey
-  ceremonies, lifecycle, the consumer-position proof against soulidentity's
+- **The fold closes the loop** (soulstream-idp): the OP skeleton, passkey
+  ceremonies, lifecycle, the consumer-position proof against soulstream-identity's
   callout, then the embed seam for the distribution.
-- **The house ships** (soulnode): first boot is the product; the front door
+- **The house ships** (soulstream): first boot is the product; the front door
   on your own network; day 2 without an operator — the state directory *is*
   the realm.
 
@@ -89,15 +89,15 @@ makes its own testable (see
   service.
 - **A second door for the AI.** No bot API, no attribution laundering.
   Delegation is scoped credentials or a separately named persona.
-- **A store of record outside the record.** Soulrealm never becomes the home
+- **A store of record outside the record.** soulstream-workloads never becomes the home
   of durable truth; sandboxes and runtimes hold views, never the artefact.
 - **A KMS, an identity provider, or a parallel permission system.**
-  Soulidentity represents subjects; it never authenticates them (identity
+  soulstream-identity represents subjects; it never authenticates them (identity
   truth lives in the deployment's IAM — the fold or any OIDC provider) and
   never second-guesses what the NATS server enforces.
-- **A password store or a privileged peer.** Soulfold is passkeys-only and
+- **A password store or a privileged peer.** soulstream-idp is passkeys-only and
   must remain indistinguishable from any external OIDC provider.
-- **A dev-mode fork or a hosting platform.** Soulnode runs the real shape on
+- **A dev-mode fork or a hosting platform.** soulstream runs the real shape on
   your machine; every component remains independently deployable without it.
 - **A wrapper around NATS.** Lean on NATS, don't wrap it: subject permissions
   are nearly the whole security model.

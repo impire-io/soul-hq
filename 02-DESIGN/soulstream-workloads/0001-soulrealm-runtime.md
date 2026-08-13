@@ -1,4 +1,4 @@
-# 0001 — The soulrealm runtime
+# 0001 — The soulstream-workloads runtime
 
 **Status of this document:** first architecture doc, graduated from the
 `nex-runtime-substrate` research topic (episode 0002). It fixes the *shape* of
@@ -13,7 +13,7 @@ Maturity tags (per [`README.md`](README.md)): **[D]** designed, not yet built;
 
 ## 1. What the runtime is
 
-Soulrealm launches, supervises, observes, and retires a realm's **workloads** —
+soulstream-workloads launches, supervises, observes, and retires a realm's **workloads** —
 the agents and tools of a [soulstream](../../../soulstream) realm — and does so
 with the soulstream topic op-log as its **single control plane**. There is no
 second coordination system: a workload's whole visible life (requested,
@@ -24,15 +24,15 @@ separate control plane (`$NEX.control.*`, auctions, `$NEX.agent.*`) in favour of
 one plane the realm already trusts.
 
 NEX is **design influence, not a dependency.** Where NEX solved a problem well,
-soulrealm borrows the *shape* (named in §7) and reimplements it against the
+soulstream-workloads borrows the *shape* (named in §7) and reimplements it against the
 op-log, rather than importing its machinery and bridging two planes.
 
-**Dependency scope (decided 2026-07-22, episode 0003):** soulrealm depends on
+**Dependency scope (decided 2026-07-22, episode 0003):** soulstream-workloads depends on
 **soulstream only**. It provisions nothing of the wider Impire platform and
 takes no dependency on its services (identity, tenancy, vault) for now.
 Everything the runtime needs — realm, topics, personas, object store, and the
 account it mints credentials under — is soulstream's surface plus a
-soulrealm-held signing key. A future hand-off of signing authority to an
+soulstream-workloads-held signing key. A future hand-off of signing authority to an
 external platform service stays *possible* through the minter seam (§4), but is
 explicitly not designed in now.
 
@@ -55,9 +55,9 @@ Straight from the constitution; every later section serves these.
 ## 3. The workload model: two orthogonal axes
 
 The `nex-runtime-substrate` research established (measured) that *role* and
-*lifecycle* are independent. Soulrealm keeps both, explicitly.
+*lifecycle* are independent. soulstream-workloads keeps both, explicitly.
 
-**Role — what the workload is to the realm** (soulrealm's own axis):
+**Role — what the workload is to the realm** (soulstream-workloads's own axis):
 
 - **`agent`** `[D]` — a long-lived persona that *participates*: it holds a
   persona identity, follows and posts to topics, claims and completes work
@@ -84,26 +84,26 @@ Each workload gets a **freshly minted, per-workload NATS user**, scoped to the
 subjects its persona is allowed to touch — never a shared credential
 (constitution II). The design is influenced directly by NEX's minter
 (`models.CredVendor` + xkey-encrypted env delivery), reimplemented as
-soulrealm's own:
+soulstream-workloads's own:
 
-- **Minting** `[D]` — a soulrealm minter issues a user keypair + JWT per
+- **Minting** `[D]` — a soulstream-workloads minter issues a user keypair + JWT per
   workload, signed under the realm's account, with `Permissions` scoped to that
   persona's soulstream subjects (e.g. publish `SOULSTREAM.TOPICS.OPS.<topics
   the persona works>`, its own inbox, the object store it may read/write).
   Unlike stock NEX, the scope is *realm-semantic* from the start.
 - **Delivery** `[D]` — credentials reach the workload through its environment.
-  For a **local** process soulrealm forks itself (single node) there is no
+  For a **local** process soulstream-workloads forks itself (single node) there is no
   untrusted intermediary, so the env is injected directly (refined by spec 001
   research D4). The **xkey-encrypted environment** (NEX's mechanism, kept) is
-  the delivery for when a start request travels over NATS to a node soulrealm
+  the delivery for when a start request travels over NATS to a node soulstream-workloads
   does not control — a multi-node concern, added with multi-node.
-- **Trust** `[O]` — the realm's NATS account must trust the soulrealm signing
+- **Trust** `[O]` — the realm's NATS account must trust the soulstream-workloads signing
   key. Operator-mode provisioning (which account signs, how the key is held per
-  node vs central) is an open sub-question, scoped to soulstream + soulrealm:
-  soulrealm holds a realm-account signing key (dev: provisioned with `nsc`).
+  node vs central) is an open sub-question, scoped to soulstream + soulstream-workloads:
+  soulstream-workloads holds a realm-account signing key (dev: provisioned with `nsc`).
   The minter is a seam, so an external signing authority could take over later
   without changing the workload contract — the anticipated candidate is
-  **soulidentity** (the sibling identity project), which would slot in behind
+  **soulstream-identity** (the sibling identity project), which would slot in behind
   the `minter.Minter` interface — but no such external dependency is designed
   in now (see §1 dependency scope).
 
@@ -111,7 +111,7 @@ soulrealm's own:
 
 Every stage of a workload's life is an operation on a topic, following the
 soulstream work-extension vocabulary
-([work.md](../../../soulstream/hq/02-DESIGN/extensions/work.md), stage 4):
+([work.md](../../../soulstream-core/hq/02-DESIGN/extensions/work.md), stage 4):
 
 - A workload is **requested** as a work item (`work.open` flavoured for
   execution) on a topic. `[D]`
@@ -121,7 +121,7 @@ soulstream work-extension vocabulary
 - Results (artefacts, logs pointers) flow back as `attachment.add` / baseline
   ops; the object store holds bytes, the op-log holds history. `[D]`
 - **Placement / scheduling** across more than one node `[O]` — NEX uses an
-  auction. Soulrealm's placement must be expressed as ops on the plane too
+  auction. soulstream-workloads's placement must be expressed as ops on the plane too
   (a claim race, or a designed auction-in-ops); the mechanism is open and
   deferred until more than one node is real.
 
@@ -142,7 +142,7 @@ selects a backend; the declaration is unchanged across them (constitution III).
   `msb` CLI is supervised as a child process; the workload sees the identical
   env contract, with loopback NATS rewritten to the guest's host alias under
   a host-only network policy. Seam contract frozen in
-  [`specs/003-microsandbox-backend/contracts/backend-seam.md`](../../../soulrealm/specs/003-microsandbox-backend/contracts/backend-seam.md).
+  [`specs/003-microsandbox-backend/contracts/backend-seam.md`](../../../soulstream-workloads/specs/003-microsandbox-backend/contracts/backend-seam.md).
 - **Kubernetes pod** `[D]` — third backend, landed M2.1 (episode 0009;
   designed in [`0002-kubernetes-backend.md`](0002-kubernetes-backend.md),
   research episode 0008). One runner-supervised pod per workload; the
@@ -152,7 +152,7 @@ selects a backend; the declaration is unchanged across them (constitution III).
 - **Docker/OCI** `[O]`, **Firecracker microVM** `[O]` — each a backend plugin
   behind one interface: fetch the artefact, inject the xkey-encrypted
   creds/env, start, stream lifecycle as ops, stop, reap.
-- The backend interface is soulrealm's, shaped by NEX's nexlet/agent SDK
+- The backend interface is soulstream-workloads's, shaped by NEX's nexlet/agent SDK
   (artifact fetch via object store `nats://`, env-decrypt on the workload side)
   but owned here so it emits ops rather than NEX control messages.
 
@@ -162,7 +162,7 @@ Recorded so the influence is honest and the reversal condition (episode 0002)
 is checkable — if we end up reimplementing all of this at NEX's scope, the
 rebuild bet was wrong.
 
-| NEX idea | How soulrealm uses it |
+| NEX idea | How soulstream-workloads uses it |
 |---|---|
 | Per-workload minted scoped NATS user (`CredVendor`) | Reimplemented as a realm-semantic minter (§4) |
 | xkey-encrypted env delivery | Kept as-is in shape (§4) |

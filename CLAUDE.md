@@ -1,11 +1,15 @@
 # soul-hq — project instructions
 
-The headquarters of the Soulstream ecosystem — soulstream (the record),
-soulrealm (the room), soulidentity (the name), soulnode (the house),
-soulfold (the fold), soulhelm (the helm). This repo holds research,
-designs, the roadmap, and the journey for all six; code and frozen specs
-live in the sibling component repos (`../soulstream`, `../soulrealm`,
-`../soulidentity`, `../soulnode`, `../soulfold`, `../soulhelm`).
+The headquarters of the Soulstream ecosystem — soulstream-core (the
+record), soulstream-workloads (the room), soulstream-identity (the
+name), soulstream (the product, the house), soulstream-idp (the fold),
+soulstream-shell (the shell), soulstream-mcp (the remote door),
+soulstream-archivist (the keeper). This repo holds research, designs,
+the roadmap, and the journey for all of them; code and frozen specs
+live in the sibling component repos (`../soulstream-core`,
+`../soulstream-workloads`, `../soulstream-identity`, `../soulstream`,
+`../soulstream-idp`, `../soulstream-shell`, `../soulstream-mcp`,
+`../soulstream-archivist`).
 
 **Read [`AGENTS.md`](AGENTS.md) first** (reading order + the
 non-negotiables), then hold decisions against
@@ -20,8 +24,11 @@ Conventions:
   (`internal/hqlint`).
 - The journey duty: every landed feature, concluded research topic, or
   load-bearing decision gets an episode `NNNN-<component>-<slug>.md` in
-  `04-JOURNEY/` (components: soulstream, soulrealm, soulidentity, soulnode,
-  soulfold, soulhelm, ecosystem — one shared sequence). Use `/journey-log`; research
+  `04-JOURNEY/` (component tags, single-word by the episode grammar:
+  `core`, `workloads`, `identity`, `idp`, `shell`, `mcp`, `cli`,
+  `soulstream` for the product, `ecosystem` for cross-cutting — one
+  shared sequence; episodes ≤ 0069 keep the pre-rename tags, resolved
+  by the naming map in `04-JOURNEY/README.md`). Use `/journey-log`; research
   via `/research-graduate`. Refresh the index, the component's "Where things
   stand", and the roadmap in the same change.
 - Episodes 0001–0049 carry the five per-project journals (merged

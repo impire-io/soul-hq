@@ -15,7 +15,7 @@ the OAuth authorization-server story below is the open build decision.
 
 ## Why it exists
 
-The [MCP adapter](../../../../soulstream/docs/mcp.md) runs next to the agent and holds one
+The [MCP adapter](../../../../soulstream-core/docs/mcp.md) runs next to the agent and holds one
 persona's credentials ([library-and-adapters.md](library-and-adapters.md),
 Layer 2). Some hosts cannot run it at all: sandboxed Claude Desktop (observed
 failing to install the binary), claude.ai custom connectors, locked-down
@@ -24,7 +24,7 @@ reached by URL. This extension is that node.
 
 It also reframes Layer 2. The existing adapters are credential custodians. The
 remote node holds **no credentials and no keys**: the caller presents a bearer
-token, the node passes it straight to NATS, and SoulIdentity's auth callout
+token, the node passes it straight to NATS, and soulstream-identity's auth callout
 admits or refuses. Identity is the server's decision, per connection; the node
 is dumb plumbing on purpose. That is what makes one shared door safe for many
 people.
@@ -35,7 +35,7 @@ people.
   hosted client ──bearer──▶ [ node ] ──nats.Token(bearer)──▶ NATS server
    (Claude Desktop,          per-user                          │ auth callout
     claude.ai, …)            pooled conn                       ▼
-                                                        SoulIdentity issuer
+                                                        soulstream-identity issuer
                                                         (validate → mint JWT)
 ```
 
@@ -53,11 +53,11 @@ people.
    `sign.record` grant names the principal. No client-claimed identity is ever
    trusted. `persona == principal's user`.
 4. **Signing delegated, custody intact.** The per-user connection carries both
-   subject spaces (SoulIdentity user ops + the realm), so
+   subject spaces (soulstream-identity user ops + the realm), so
    `client.PersonaSigner` slots into `realm.Config.Signer` unmodified; the
    persona key materialises in the vault on first touch and never reaches the
    node. Readers verify from `keys.public` — the identity plane is the
-   directory (SoulIdentity journeys 0015–0016); the node publishes no profile.
+   directory (soulstream-identity journeys 0015–0016); the node publishes no profile.
 5. **Revocation is the callout's, not the node's.** A revoked or role-stripped
    token is refused at the next reconnect within ~TTL (Bar 3: +3.9 s on a 5 s
    TTL). Dead pool entries are evicted and admission retried on the next
@@ -66,8 +66,8 @@ people.
 ### The scope template (deployment requirement)
 
 The represented-user signing key the callout mints must grant, on the caller's
-own prefix: `soulidentity.status`, `soulidentity.xkey`,
-`soulidentity.{{account-subject()}}.{{name()}}.sign.record`,
+own prefix: `identity.status`, `identity.xkey`,
+`identity.{{account-subject()}}.{{name()}}.sign.record`,
 `…keys.public`, plus `SOULSTREAM.>`, `$JS.API.>`, `$KV.>`, `$O.>`,
 `$SYS.REQ.USER.INFO` (pub) and `_INBOX.>`, `SOULSTREAM.>` (sub). On Synadia
 Cloud this is a **programmatic scoped signing-key group** (its seed returned
@@ -100,7 +100,7 @@ server:
   registered client / CIMD / Anthropic-held credentials); `oid` becomes the
   persona so it must be a legal slug (`^[a-z0-9]+(-[a-z0-9]+)*$`, ≤64 — raw
   `auth0|…` subjects are illegal); the AS must emit the claim *names* the
-  validator reads, or SoulIdentity gains a small issuer-claim-profile config.
+  validator reads, or soulstream-identity gains a small issuer-claim-profile config.
 
 The two are not exclusive: the bridge unblocks a personal node now, the
 external AS is the multi-user target.
@@ -113,7 +113,7 @@ external AS is the multi-user target.
   shape is declared — the node must declare it.
 - **Persona presentation.** OIDC-lane personas are oids; human display names
   live only in the audit today. Readable boards need a persona-presentation op
-  beside `keys.public` on SoulIdentity's surface (a SoulIdentity D-decision) —
+  beside `keys.public` on soulstream-identity's surface (a soulstream-identity D-decision) —
   otherwise identity-plane realms lose display metadata the realm phone book
   carries.
 - **The node is stateless trust.** It stores no per-user secret and no trust
@@ -122,10 +122,10 @@ external AS is the multi-user target.
 
 ## Relationship to the roadmap
 
-This is the "node half" of SoulIdentity's M2 (its ROADMAP): one pooled
+This is the "node half" of soulstream-identity's M2 (its ROADMAP): one pooled
 connection per user, no node-held creds — the identity-plane side (callout,
 first-touch key materialisation, `keys.public` directory, `PersonaSigner`)
-shipped in SoulIdentity journeys 0013–0016 and is proven cross-service. The
+shipped in soulstream-identity journeys 0013–0016 and is proven cross-service. The
 build lives here as feature **018** — a consumer submodule of soulstream (the
 cycle guard: it imports both repos, neither core repo imports the other). The
 research prototype (node, rig, `byon-setup`, `cmd/probe`, the OAuth edge) is
