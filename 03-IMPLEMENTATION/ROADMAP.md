@@ -17,7 +17,21 @@ changes to it are decisions and belong in the journey as episodes.
 | [soulidentity](#soulidentity--the-name) | M1/M3/M4 shipped (+ Entra/OIDC lane, D25 registry dissolution, D28/D29 consumer-proven additions); `v0.1.0` tagged | M2's node half — proven upstream by soulstream 018; roadmap check-off pending. M5 gated on soulstream demand |
 | [soulnode](#soulnode--the-house) | **v0.3.0 + the helm plane on main** ([episodes 0057](../04-JOURNEY/0057-soulnode-the-folded-realm.md)/[0058](../04-JOURNEY/0058-soulnode-the-release-pipeline.md)/[0062](../04-JOURNEY/0062-soulnode-the-front-of-house.md)/[0068](../04-JOURNEY/0068-soulnode-the-helm-plane.md)): fold on by default, `planes.helm` composing soulhelm v0.1.0, four URLs logged, the OIDC lane on in local mode when the helm runs | Tag the next release (carries the helm plane); day-2 items; Phase 3 (tsnet) gated on fronting measured insufficient |
 | [soulfold](#soulfold--the-fold) | **Every milestone shipped — M1–M5, v0.2.0** ([episodes 0052](../04-JOURNEY/0052-soulfold-m1-the-op-skeleton.md)–[0060](../04-JOURNEY/0060-soulfold-m3-the-lifecycle.md)): the sealed store, passkeys, callout admission, the embed seam, and the lifecycle — invitation is the only door; physical-authenticator runbook pending (human act) | Named horizons only (deferred audit rows, multi-issuer demand); day-2 by demand |
-| [soulhelm](#soulhelm--the-helm) | **v0.1.0 — founded, shipped, and composed 2026-08-13** ([episodes 0066](../04-JOURNEY/0066-ecosystem-soulsystem-cockpit.md)/[0067](../04-JOURNEY/0067-soulhelm-founding-and-first-light.md)/[0068](../04-JOURNEY/0068-soulnode-the-helm-plane.md)): observe surface + fold sessions + the first act, the whole human ceremony riding `make test`; running in soulnode as `planes.helm` | M2 — the configure surfaces (classes (b)/(c)); the standalone grant lane rides tenancy; participant client a named successor topic |
+| [soulhelm](#soulhelm--the-helm) | **v0.1.0 — founded, shipped, and composed 2026-08-13** ([episodes 0066](../04-JOURNEY/0066-ecosystem-soulsystem-cockpit.md)/[0067](../04-JOURNEY/0067-soulhelm-founding-and-first-light.md)/[0068](../04-JOURNEY/0068-soulnode-the-helm-plane.md)): observe surface + fold sessions + the first act, the whole human ceremony riding `make test`; running in soulnode as `planes.helm` | Reframed as **the shell** the same day: the [`shell-module-contract`](../01-RESEARCH/shell-module-contract/README.md) research gates M2, which arrives module-shaped; renames **soulstream-shell** in the sweep ([episode 0069](../04-JOURNEY/0069-ecosystem-one-name-soulstream.md)) |
+
+**2026-08-13 — the naming re-centering** ([episode
+0069](../04-JOURNEY/0069-ecosystem-one-name-soulstream.md)): every project
+renames under the one brand — **soulstream-core** (the record library),
+**soulstream** (the product, ex-soulnode — the binary that spins up a full
+soulstream), **soulstream-workloads** (ex-soulrealm), **soulstream-mcp**
+(the remote MCP server, extracted from core's nested `node/` module),
+**soulstream-identity**, **soulstream-idp** (ex-soulfold),
+**soulstream-shell** (ex-helm), **soulstream-cli** (new — the client CLI,
+founded after the sweep), soulstream-archivist unchanged. Backwards
+compatibility is waived pre-v1, so wire-vocabulary renames ride each
+repo's sweep. Execution order: core vacates the bare name first, then
+soulnode claims it. The component sections below keep their old names
+until each sweep lands — the docs describe what is.
 
 Cross-component dependencies, tracked openly: soulnode consumes everything by
 tag — the standing pin exception closed 2026-08-02 (soulrealm v0.1.0,
@@ -883,6 +897,16 @@ serves the observe surface with fold sessions and the first act, the
 whole human ceremony riding its consumer-position e2e in ~4 s, and
 soulnode runs it as `planes.helm` ([episode
 0068](../04-JOURNEY/0068-soulnode-the-helm-plane.md)).
+
+**Direction change, same day:** the component is reframed as **the
+shell** — a pure modular frame with zero module logic, agnostic from
+Soulstream by contract; every human surface is a module plugging in
+through one exported contract. The
+[`shell-module-contract`](../01-RESEARCH/shell-module-contract/README.md)
+research (four pre-registered bars) now gates M2, which arrives
+module-shaped. The component renames **soulstream-shell** in the naming
+re-centering's sweep ([episode
+0069](../04-JOURNEY/0069-ecosystem-one-name-soulstream.md)).
 
 ### Milestones
 

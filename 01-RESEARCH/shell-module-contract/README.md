@@ -1,19 +1,22 @@
-# What module contract makes soulshell a pure shell every human surface plugs into?
+# What module contract makes soulstream-shell a pure shell every human surface plugs into?
 
 **Component:** soulhelm
 **State:** active
 **Started:** 2026-08-13
 
-*(The component renames **soulhelm → soulshell — the shell** — decided
-2026-08-13, execution pending; the Component field above carries the tag
-that is legal until the rename sweep lands. See the naming decision below.)*
+*(The component renames **soulhelm → soulstream-shell** — the ecosystem
+naming re-centering, episode
+[0069](../../04-JOURNEY/0069-ecosystem-one-name-soulstream.md); bare
+*soulshell* was decided and superseded the same day. The Component field
+above carries the tag that stays legal until the rename sweep lands.)*
 
 ## Abstract
 
 The component shipped v0.1.0 the same day it was designed — the observe
 surface, fold sessions, one act. First light, not yet the place humans
-live. The operator's direction (2026-08-13): it becomes **soulshell**, the
-surface humans use most and architecturally a **pure shell** — a modular
+live. The operator's direction (2026-08-13): it becomes
+**soulstream-shell**, the surface humans use most and architecturally a
+**pure shell** — a modular
 frame that contains **zero module logic** and is **agnostic from
 soulsystem by contract**: the shell's packages import nothing
 soulsystem-specific, ever, checked mechanically. Every human surface —
@@ -31,8 +34,8 @@ second real consumer — the agnosticism bar is what keeps it cheap.
 
 ## The question
 
-**What exported module contract lets soulshell host every human surface
-as an externally-built module — registered through one seam, activated by
+**What exported module contract lets soulstream-shell host every human
+surface as an externally-built module — registered through one seam, activated by
 what the deployment runs, cross-linked through the shell — while the
 shell itself imports nothing soulsystem-specific and custodies nothing?**
 
@@ -89,16 +92,18 @@ git.
 Design decisions this topic must take or route, recorded honestly rather
 than dressed as measurements:
 
-- **The name.** Decided 2026-08-13: **soulhelm → soulshell — the
-  shell**. The trail, honestly: *helm* fell for its collision with Helm
-  charts; bare *cockpit* was refused for colliding with cockpit-project
-  (Red Hat's browser server console — the same product category);
-  *soulshell* names the architecture itself and stays in the
-  constellation's byname family. Execution is the next work item: repo
-  rename + module path + fresh tag; soulnode's `planes.helm` →
-  `planes.shell` with the pin bump; the hq sweep (design folder,
-  roadmap, component lists, hqlint) and a journey episode — landed
-  together so the docs keep describing what is.
+- **The name.** Decided 2026-08-13, twice in one day: *helm* fell for
+  its collision with Helm charts; bare *cockpit* was refused for
+  colliding with cockpit-project (Red Hat's browser server console —
+  the same product category); *soulshell* won the morning and was
+  superseded the same day when the collision-avoidance argument
+  generalized into the ecosystem-wide **soulstream-*** scheme — the
+  component is **soulstream-shell** (episode
+  [0069](../../04-JOURNEY/0069-ecosystem-one-name-soulstream.md)).
+  Execution rides the ecosystem rename sweep: repo + module path +
+  fresh tag; the product's plane key with the pin bump; the hq sweep
+  (design folder, roadmap, component lists, hqlint) — landed so the
+  docs keep describing what is.
 - **Where module code lives.** Decided by the operator: **never in the
   shell** — the shell contains no module logic at all. The remaining
   open arm — a component's module in that component's own repo (the fold

@@ -765,10 +765,23 @@ ship an unauthenticated realm viewer). The consumer-position e2e
 (module path outside the namespace, upstreams at published tags) walks
 the whole human ceremony in ~4 s inside `make test`. Soulnode composed
 it the same day as `planes.helm` ([episode
-0068](0068-soulnode-the-helm-plane.md)). **Next:** the configure
-surfaces (classes (b)/(c) of the design's mutation table); the grant
-lane for standalone helms rides `platform-tenancy-guardrails`; the
-participant client stays a named successor topic.
+0068](0068-soulnode-the-helm-plane.md)).
+
+**The direction changed the same day** — the operator reframed the
+component as **the shell**: a pure modular frame containing zero module
+logic, agnostic from Soulstream by contract, every human surface — the
+observe core, the fold's administration, the agent designer/manager to
+come — a module plugging in through one exported contract, with the
+shell providing composition (registration, activation, navigation,
+sessions, cross-linking). Research topic:
+[`shell-module-contract`](../01-RESEARCH/shell-module-contract/README.md),
+four pre-registered bars. And the ecosystem naming re-centering renames
+the component **soulstream-shell** ([episode
+0069](0069-ecosystem-one-name-soulstream.md); bare *soulshell* was
+decided and superseded the same day). **Next:** the rename sweep; then
+the shell-module-contract bars — M2's configure surfaces arrive
+module-shaped behind that gate; the participant client stays a named
+successor topic.
 
 ## Episode index
 
@@ -842,6 +855,7 @@ participant client stays a named successor topic.
 | 0066 | ecosystem | [The helm: the cockpit earns its design (2026-08-13)](0066-ecosystem-soulsystem-cockpit.md) |
 | 0067 | soulhelm | [Founding and first light: the helm is real (2026-08-13)](0067-soulhelm-founding-and-first-light.md) |
 | 0068 | soulnode | [The helm plane: the cockpit joins the bundle (2026-08-13)](0068-soulnode-the-helm-plane.md) |
+| 0069 | ecosystem | [One name: Soulstream (2026-08-13)](0069-ecosystem-one-name-soulstream.md) |
 
 ## Pre-merge numbering map
 

@@ -14,3 +14,11 @@ component renames: *helm* fell for the Helm-charts collision, bare
 soulsystem by contract, extraction into a generic framework deferred to
 a second real consumer. Bars rewritten accordingly before any spike;
 the folder renamed to `shell-module-contract`.
+
+**Later the same day — the name widened past this topic.** The
+collision-avoidance argument generalized into the ecosystem naming
+re-centering ([episode
+0069](../../04-JOURNEY/0069-ecosystem-one-name-soulstream.md)): every
+project renames soulstream-*, and this component is
+**soulstream-shell** — *soulshell* superseded before it ever executed.
+The bars are untouched; only the name moved.
