@@ -116,4 +116,60 @@ the scope collapses to match the evidence rather than the ambition.
 
 ## Verdict
 
-*Empty until graduation.*
+Graduated to design, 2026-08-13 — all four bars PASS, all eight
+decisions taken, same day the topic opened.
+
+- **Bar 1 — pure consumer, compiler-proven: PASS** [measured]. Module
+  `soulhelm.invalid/rig` (outside every component namespace) pins
+  soulnode v0.3.1, soulstream v0.7.0, soulidentity v0.1.0 by tag —
+  soulfold v0.3.3, soulrealm v0.1.0, the archivist v0.2.0 arriving
+  transitively — **zero `replace` directives**, `go vet` clean. One
+  run, ~1.5 s wall: boot a whole realm in-process, found it, post a
+  signed topic, read back board (1 topic), a turn at `sig=verified`
+  (keyring earned from `keys.public`), a claimed work item, 5
+  archivist answers each with a citation, the door answering HTTP.
+  Browser half on the decided path: the Datastar dashboard rendered
+  live realm state in a real Chromium, across an in-place node
+  restart. Zero namespace dodges; two upstream asks recorded, neither
+  needed for the Go half.
+- **Bar 2 — custodies nothing: PASS** [measured]. Full ceremony:
+  passkey enrolment on the bundled fold (virtual authenticator, real
+  WebAuthn), helm sign-in via RFC 7591 DCR + code+PKCE, the session's
+  own NATS admission (audit: `callout ADMITTED lane=oidc
+  subject=u-90e41123cd67bc45 role=realm display=owner`), `work.open`
+  as that principal with `signed=true` (the persona signer
+  materialized for the fold principal — S6 held), sign-out. Scan of
+  the helm's storage after the session: **zero** credential-shaped
+  hits; the positive control fired (after the first, non-hex plant
+  was corrected — a control that cannot fire proves nothing); session
+  state memory-only.
+- **Bar 3 — configuration without a second control plane: PASS**
+  [measured]. The mutation table (8 rows, 3 classes) was committed
+  before the spike ran. Demonstrated from browser buttons: (a)
+  `work.open` on the record, live on the dashboard within a second;
+  (b) `tokens.create` through the identity plane — the owner lane
+  refused with an explicit server `Permissions Violation` on the op
+  tail [measured], minted via the node ops lane, `sit_` returned
+  once, issue audited; (c) `planes.memory.enabled=false` + in-place
+  restart, clients re-admitted, memory answers **5 → 0**. No mutation
+  required a new privileged side-channel or a helm-owned store. The
+  narrower reversal reading did not fire: mutations spread across all
+  three classes, not config-file edits alone.
+- **Bar 4 — one design system, two consumers: PASS** [measured]. One
+  `shared.css` (the seven token files verbatim, CDN font import
+  replaced by vendored `@font-face`, the `wdth` axis surviving)
+  renders the helm's first screen and the fold's sign-in page: helm 5
+  requests, fold 4, every one to the serving host, external resource
+  list empty, fonts genuinely loaded (`document.fonts`), no
+  per-surface token fork. C3 was recorded before the bar ran, as the
+  bar required.
+
+Decisions C1–C8 are in the table above with their reasoning in
+`JOURNEY.md`. Standing upstream asks: #1 a WebSocket listener in
+soulnode's embedded server (one options field — plumbing, not
+invention); #2 an owner-reachable token-management lane (soulidentity
+/ the tenancy topic's grant work). Findings of record: asking memory
+is participation, not observation [measured]; attribution rides
+soulfold's persona-shaped ids end-to-end [measured]; the Datastar v1
+protocol lessons (release bundle, `data-init`, `data-on:click`,
+one-shot SSE races) are banked for the build.
