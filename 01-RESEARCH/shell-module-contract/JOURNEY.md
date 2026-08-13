@@ -1,0 +1,16 @@
+# Journey — shell-module-contract
+
+*The investigation as it happens. Bars are in [`README.md`](README.md).*
+
+**2026-08-13 — opened, then reframed before any experiment ran.** The
+topic opened as `helm-skeleton` at the operator's direction (the helm
+becomes the surface humans use most; every surface a module that earns
+its place). The same session, two corrections sharpened it, both the
+operator's: the shell contains **no module logic at all** — nothing
+about the fold or any component goes into it; it facilitates modules
+working together (cross-linking) and brings things together — and the
+component renames: *helm* fell for the Helm-charts collision, bare
+*cockpit* for cockpit-project, and **soulshell** won — agnostic from
+soulsystem by contract, extraction into a generic framework deferred to
+a second real consumer. Bars rewritten accordingly before any spike;
+the folder renamed to `shell-module-contract`.
