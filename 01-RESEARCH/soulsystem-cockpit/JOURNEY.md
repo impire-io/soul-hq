@@ -43,6 +43,54 @@ register the system already owns: mono label strips, wordmarks, and
 badges ("the fold", "the house"). The rose edge retires with the dark
 language.
 
+## 2026-08-13 — Bar 4 measured: PASS — one source, two surfaces, zero external fetches
+
+The bar ran the same day C3 was decided, on a rig in the session
+scratchpad (`bar4/`: the shared source, two pages, vendored assets,
+screenshots — scripts stay out of git per how-we-work).
+
+**The rig.** One `shared.css`: the design system's seven token files
+carried verbatim, with exactly one change — the Google Fonts CDN
+`@import` replaced by vendored `@font-face` (Archivo variable woff2,
+90,096 B, `wght` 400–800 *and* the `wdth` 62–125 axis; JetBrains Mono
+400/500/700) — plus one shared component layer (transport bar, label
+strips, LED pips, molded keys, fields, pills, segmented meters, tables,
+the CRT screen) written to the system's own specs. Ten Lucide SVGs
+vendored once (unpkg; one via jsDelivr after an unpkg 1102 error) and
+inlined at build. Two pages consume it: the fold's sign-in re-rendered
+with the *same markup structure* as the shipped `internal/ui` login
+template, and the helm's first screen (four plane cards, a topics
+table with channel-colored author pills, the tape-tail CRT).
+
+**The measurement**, in a real Chromium against a loopback-only server:
+
+- Requests: helm 5, fold sign-in 4 — every one to `127.0.0.1:8471`;
+  `performance.getEntriesByType("resource")` filtered for external
+  origins returns **empty on both** [measured]. The only console entry
+  is the browser's automatic `/favicon.ico` probe against the serving
+  host (404, no external fetch).
+- Fonts real, not fallback: `document.fonts.status` = `loaded`;
+  Archivo 400–800 and JetBrains Mono 400/700 loaded, the wordmark
+  visibly condensed at `'wdth' 88` — the variable axis survived
+  vendoring. JBM 500 declared-unused on these two pages, honestly
+  noted [measured].
+- No per-surface fork: both pages link the same `shared.css`;
+  page-local `<style>` is layout-only and every value in it is a
+  token.
+- C3 exercised on screen: identity by label — "THE HELM" and "THE
+  DOOR" strips; amber/teal held strictly to the channel semantic
+  (author pills: daan amber, scribe/smith teal); no rose anywhere.
+
+**A finding that feeds C4, not decided here:** the whole proof needed
+no JS framework and no asset pipeline — the shared source is
+consumable as a single CSS string plus static markup, exactly the
+shape `webstyle` ships today (constitution III compatible). The design
+system's JSX component layer was *not* consumed directly: the token
+layer is shared verbatim, but the component layer was re-expressed as
+CSS classes from the system's written specs. Server-rendered
+consumption is proven cheap [measured]; direct JSX consumption remains
+unproven and is C4's remaining question.
+
 ## 2026-08-13 — C1 and C2 decided: a sibling component, soulhelm — the helm
 
 The operator decided the cockpit's home and its name.
