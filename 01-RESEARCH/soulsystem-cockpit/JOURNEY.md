@@ -43,6 +43,66 @@ register the system already owns: mono label strips, wordmarks, and
 badges ("the fold", "the house"). The rose edge retires with the dark
 language.
 
+## 2026-08-13 — Bar 3 measured: PASS — three classes from the browser; Bar 1 complete on both halves
+
+The helm prototype (scratchpad `bar1/rig/proto/`, same consumer-position
+module, pinned tags): a Datastar page over a live in-process realm with
+the three pre-registered mutation classes wired as buttons. Everything
+below happened in a real Chromium against the running system [measured].
+
+**Bar 1's browser half, closed on the decided path**: the dashboard
+renders live realm state in the browser — NATS and door URLs, topic
+count, turns, work items — through the backend-held realm client and
+`datastar-patch-elements` morphs, staying live *across an in-place node
+restart*. With spike A's compile guarantee and read coverage, **Bar 1
+is met in full**; the C5 WebSocket lane remains the participant-client
+horizon and upstream ask #1 stands on its own.
+
+**Bar 3, class by class:**
+
+- **(a) op on the record — PASS.** `work.open` from the browser button;
+  the item lands signed on the topic and the live dashboard shows it
+  within a second (`work "spike work item" · open`).
+- **(b) plane admin op — PASS, with the spike's sharpest finding.**
+  The founding owner's admission-lane connection is **refused** for
+  `tokens.create` — an explicit server-side `Permissions Violation` on
+  the op tail `soulidentity.<account>.owner.tokens.create` in the
+  audit log: D25's enforcement working exactly as designed, observed
+  from the consumer position. The node's ops lane then mints the token
+  (`sit_…` returned once, issue audited `user=ops`,
+  `target_user=helm-guest`). The mutation maps to an *existing*
+  surface — no new side-channel — but **the lane question is real**:
+  a helm running as a soulnode plane inherits the node's operator
+  standing; a standalone helm would need state-dir creds or a
+  delegated grant. That is upstream ask #2 (an owner-reachable
+  token-management lane), and it lands squarely in
+  `platform-tenancy-guardrails`' grant work — C7's parallelism is
+  already paying.
+- **(c) config file — PASS.** `planes.memory.enabled=false` written to
+  `config.json`, the node stopped and restarted in-place (the stated
+  semantics), clients auto-re-admitted (callout `ADMITTED` in the
+  audit), and the memory probe reads **0 answers where the same query
+  read 5 before** — the plane is verifiably gone, and the dashboard
+  never stopped rendering.
+
+**Bar 3 verdict: PASS** — table enumerated before the run (previous
+entry), one demonstration per class green, and no mutation in the
+table required a new privileged side-channel or a helm-owned store.
+
+**Bar 2 status: not run.** Its ceremony needs the helm to authenticate
+the browser user against the bundled fold (OIDC + passkey enrolment
+through the printed invite, virtual-authenticator-driven), act as that
+principal, sign out, then the storage scan with positive control. One
+preview finding is already on the record: the spike's own stdout log
+captured the fold invite (`sfi_…`) — precisely the class of leak the
+Bar 2 scan exists to catch, and a ready-made positive control.
+
+**Datastar lessons banked for the build**: the npm `+esm` build does
+not self-initialize (use the release bundle); the v1 attributes are
+`data-init` and `data-on:click`; concurrent one-shot SSE responses
+race on a shared target element — last write wins — so mutation
+results need per-action target ids or the `/live` channel.
+
 ## 2026-08-13 — Bar 3's mutation table, written before the spike runs
 
 Every mutation helm v1 offers, mapped to its class as Bar 3 requires —
