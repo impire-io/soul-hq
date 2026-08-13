@@ -43,6 +43,46 @@ register the system already owns: mono label strips, wordmarks, and
 badges ("the fold", "the house"). The rose edge retires with the dark
 language.
 
+## 2026-08-13 — C1 and C2 decided: a sibling component, soulhelm — the helm
+
+The operator decided the cockpit's home and its name.
+
+**Home: a sibling component repo** — the sixth component, following the
+consumer-position pattern the ecosystem has proven twice (the archivist,
+soulfold): its own repo and constitution, a public embed seam
+(`embed.Run(ctx, Options)`, the D29 pattern) that soulnode composes as a
+plane by tag — the fourth URL logged at `up`, beside the door, the fold
+sign-in, and the admin console — plus a standalone binary for
+deployments that run the components without soulnode. The other two
+candidates fell to constitutions, not taste:
+
+- **Growing the fold's console** is blocked by the fold's own one-way
+  door — "any Soulstream-only claim, endpoint, or side-channel is a
+  constitution-II amendment"; a Soulstream-aware IdP collapses the
+  ecosystem's two planes into one `[mechanism-argument]`.
+- **Cockpit code native to soulnode** breaks "composition, not
+  invention" (domain logic lands upstream — the article that has held
+  through six features) and couples the human surface to the house: a
+  realm running the components without soulnode would have no cockpit
+  at all `[mechanism-argument]`.
+
+The sibling shape also collapses a happy coincidence: Bar 1's
+consumer-position rig (module path outside every component's namespace)
+*is* the sibling repo's natural e2e gate — the bar's proof becomes the
+component's standing test `[judgment]` on the final shape.
+
+**Name: `soulhelm` — the helm** `[judgment]`: the place where the
+vessel is steered and watched, which is what a cockpit is; it keeps the
+one-noun family (the record, the room, the name, the house, the fold,
+the helm). `soulbridge` was rejected for a real collision — soulstream's
+*Later* section already names Slack/email protocol bridges — and
+`soulconsole` because "console" already names the fold's admin surface.
+
+Follow-through, named not done: the `soulhelm` component tag enters the
+hq (hqlint's component list, the README constellation, the journey
+conventions) when this topic graduates and the repo is founded — not
+before. The topic stays `ecosystem`-tagged.
+
 ## 2026-08-13 — scoping: what already exists
 
 The topic opens with more prior art than expected, found before any
