@@ -43,6 +43,59 @@ register the system already owns: mono label strips, wordmarks, and
 badges ("the fold", "the house"). The rose edge retires with the dark
 language.
 
+## 2026-08-13 — C4–C8 decided: browser-live over the realm's wire, plain words on screen
+
+Four decisions from the operator in one sitting, plus a copy rule that
+became C8.
+
+**C8 — plain words on human surfaces** (operator, reviewing the Bar 4
+screens): the component bynames — "the door", "the record", "the room" —
+are "too geeky" as UI copy. Human-facing labels say what things do:
+Storage, Connections, People & sign-in, Agents, Active topics, Latest
+activity. Product names (soulstream, soulfold) belong in mono detail
+rows; the bynames stay in internal docs and the journey. The Bar 4 rig's
+copy was reworked the same hour and re-rendered (copy-only change — the
+measurement stands). This rule is an upstream ask on the Design
+project's voice guidance.
+
+**C4 — a browser-live hypermedia UI**, not a compiled SPA (operator,
+overriding the drafted server-rendered recommendation): the realm made
+reachable over its own wire, with **Datastar or web components** as the
+rendering layer — the
+[datastar-skills](https://github.com/cbeauhilton/datastar-skills) repo
+(skills: `datastar`, `nats-jetstream`) is the named resource. Recorded
+honestly: the two candidates place the NATS connection differently —
+Datastar's own tao is "backend is source of truth" over SSE (a
+helm-held realm connection pushing DOM patches), while web components
+pair with `nats.js` speaking NATS directly in the browser. The pick
+between them is the rig's first discriminating question, not a
+decision taken today. Bar 4's server-rendered finding stands as the
+measured fallback either way.
+
+**C5 — NATS over WebSocket** (operator): the realm reachable from the
+browser over NATS's native WebSocket transport, `nats.js` only (the
+standing rule: `nats.ws` is deprecated). **Named upstream ask #1**, per
+Bar 1's rule: soulnode's embedded server exposes loopback TCP only
+today — no WebSocket listener exists; the knob (and its founding-time
+ceremony treatment) is soulnode's to grow. Custody note for Bar 2: the
+browser holding the *user's own* token is the MCP-client trust class —
+delegated to self, not helm custody; the bar's scan still applies to
+the helm's own storage.
+
+**C6 — observe + configure** stands as pre-registered; the participant
+client remains a named successor topic. **C7 — fully parallel** with
+`platform-tenancy-guardrails`: all configure surfaces may be built now,
+and the rework risk where tenancy's decisions land differently is
+accepted openly rather than hedged.
+
+**Bar 1 shape note, recorded before the bar runs:** C4/C5 split the
+prototype into a Go shell and a browser half. The compiler-enforced
+consumer-position guarantee applies to the Go shell (module path
+outside every component namespace, pinned tags, no `replace`); the
+browser half speaks only public wire surfaces (NATS subjects, JetStream
+API, the realm's published vocabulary). If measuring forces more than
+this clarification, the amendment lands here with its reasons, openly.
+
 ## 2026-08-13 — Bar 4 measured: PASS — one source, two surfaces, zero external fetches
 
 The bar ran the same day C3 was decided, on a rig in the session

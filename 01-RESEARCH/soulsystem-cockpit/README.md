@@ -93,10 +93,11 @@ about which of its outputs are evidence and which are choices.
 | C1 | ~~Where the cockpit lives~~ — **decided 2026-08-13** (see `JOURNEY.md`): a sibling component repo with a public embed seam, composed by soulnode as a plane by tag (the soulfold/archivist pattern); the fold-console and soulnode-native candidates fell to their own constitutions | structural |
 | C2 | ~~Its name~~ — **decided 2026-08-13** (see `JOURNEY.md`): **`soulhelm` — the helm**; `soulbridge` rejected (collides with soulstream's planned protocol bridges), `soulconsole` rejected (names the fold's surface) | cosmetic |
 | C3 | ~~The design-system canon~~ — **decided 2026-08-13** (see `JOURNEY.md`): cassette-futurism light is canon; per-component identity rides labels (mono strips, wordmarks), never a second color system; the violet/rose dark language retires | direction |
-| C4 | Serving architecture: server-rendered templates (the house pattern, no asset pipeline) vs compiled JS components (the design system's native shape) — or the line between them | structural |
-| C5 | Read transport for live state: a server-side realm client, or a browser WebSocket client (soulstream day-2 item 10, not built; if browser-side, `nats.js` — never the deprecated `nats.ws`) | structural |
-| C6 | The v1 scope boundary: cockpit (observe + configure) vs participant client (posting turns). The participant client is a named successor topic, not scope growth here | direction |
-| C7 | Sequencing against [`platform-tenancy-guardrails`](../platform-tenancy-guardrails/README.md): the configure surface will show tenancy's decisions — which cockpit parts may land ahead of that topic and which must trail it | sequencing |
+| C4 | ~~Serving architecture~~ — **decided 2026-08-13** (operator, see `JOURNEY.md`): a browser-live hypermedia UI — Datastar or web components — over the realm's own wire, not a compiled SPA; the Datastar-vs-web-components pick is the rig's first discriminating question (they place the NATS connection differently) | structural |
+| C5 | ~~Read transport~~ — **decided 2026-08-13** (operator): the realm reachable over **NATS WebSocket** (`nats.js`, never the deprecated `nats.ws`); named upstream ask: soulnode's embedded server has no WebSocket listener today | structural |
+| C6 | ~~The v1 scope boundary~~ — **decided 2026-08-13**: observe + configure; the participant client (posting turns) is a named successor topic | direction |
+| C7 | ~~Sequencing~~ — **decided 2026-08-13**: fully parallel with [`platform-tenancy-guardrails`](../platform-tenancy-guardrails/README.md); the rework risk on tenancy-shaped configure surfaces is accepted openly | sequencing |
+| C8 | Human-facing copy: plain functional labels (Storage, Connections, People & sign-in, Agents), never the component bynames — **decided 2026-08-13** (operator: the bynames are "too geeky" on screens; they stay in internal docs) | content |
 
 ## Reversal condition
 
