@@ -2,6 +2,47 @@
 
 Topic opened 2026-08-13. Appended as the investigation happens.
 
+## 2026-08-13 — C3 decided: cassette light is canon, identity by label
+
+The operator decided both halves of C3, ahead of Bar 4 as that bar
+requires.
+
+**Canon: the cassette-futurism light system** (the Soulsystem Design
+System project) becomes the ecosystem's visual language `[judgment]`.
+The deciding argument: the amber/teal rule — human channel and machine
+channel as two accents at deliberately equal weight, neither allowed to
+outrank the other — is the vision's "humans and AI as peers" turned
+into a color system; the violet/rose dark theme is semantically mute
+beside it. Supporting the call: it is the only *complete* system of the
+two (tokens, seventeen components, guidelines, voice canon, two UI
+kits; `webstyle` is one CSS string), and the migration cost is at its
+historic minimum — episode
+[0063](../../04-JOURNEY/0063-soulfold-the-console-gets-a-face.md) was a
+presentation-only change with reversal condition *none*, and the
+impire.io website rework is already in flight (episode
+[0065](../../04-JOURNEY/0065-ecosystem-fair-code.md)), so the site
+adopts the canon rather than being repainted twice.
+
+Costs accepted openly: this is a **committed light-only look** — "one
+dark surface: CRT glass" is a core rule, and there is no dark mode; a
+future dark key would be a deliberate amendment to that rule, never a
+drift. The fold's four shipped pages get restyled (soulfold repo work,
+sequenced later — Bar 4 needs only one fold page rendered from the
+shared source as proof); the violet/rose language is retired from the
+soulsystem. Middle paths were examined and rejected: re-keying the
+design project dark breaks its own central rule (the CRT surface reads
+as special only because the world is light), and a dual canon makes
+every future surface pick a side forever.
+
+**Per-component identity rides labels, not color**
+`[mechanism-argument]`: amber/teal are *channel* colors (who is
+speaking), the rose-edge idea was a *component* color (where you are) —
+two color systems on one screen fight, and the equal-weight rule cannot
+survive a third accent competing beside it. Component identity uses the
+register the system already owns: mono label strips, wordmarks, and
+badges ("the fold", "the house"). The rose edge retires with the dark
+language.
+
 ## 2026-08-13 — scoping: what already exists
 
 The topic opens with more prior art than expected, found before any

@@ -92,7 +92,7 @@ about which of its outputs are evidence and which are choices.
 |---|---|---|
 | C1 | Where the cockpit lives: a sibling component repo, a soulnode plane wired from an upstream package, or growth of the fold's console | structural |
 | C2 | Its name in the celestial family, if C1 makes it a component | cosmetic |
-| C3 | The design-system canon: cassette-futurism light (the Design project) vs the shipped dark violet/rose (`internal/webstyle`) — and whether per-component accents survive the choice | direction |
+| C3 | ~~The design-system canon~~ — **decided 2026-08-13** (see `JOURNEY.md`): cassette-futurism light is canon; per-component identity rides labels (mono strips, wordmarks), never a second color system; the violet/rose dark language retires | direction |
 | C4 | Serving architecture: server-rendered templates (the house pattern, no asset pipeline) vs compiled JS components (the design system's native shape) — or the line between them | structural |
 | C5 | Read transport for live state: a server-side realm client, or a browser WebSocket client (soulstream day-2 item 10, not built; if browser-side, `nats.js` — never the deprecated `nats.ws`) | structural |
 | C6 | The v1 scope boundary: cockpit (observe + configure) vs participant client (posting turns). The participant client is a named successor topic, not scope growth here | direction |
