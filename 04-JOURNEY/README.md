@@ -811,8 +811,13 @@ closed the same day** ([episode
 explicit-mentions arm (the first consumer-proven addition since the
 focus) plus the shell's @-picker — the body keeps what was typed, who
 it taps rides beside it, and C4's reversal condition was tested and
-survived with its cost named. **Next:** the module re-homing spike
-(Bar 1 of
+survived with its cost named. **The design pass held the canon**
+([episode 0077](0077-shell-the-canon-held.md)): the vendored design
+contract, hardware treatment everywhere, and the channel semantics
+made honest — amber for a voice that answers for itself, teal for a
+voice somebody else answers for (`operated_by`, accountability not
+species), Scribe the first machine voice on screen as a peer.
+**Next:** the module re-homing spike (Bar 1 of
 [`shell-module-contract`](../01-RESEARCH/shell-module-contract/README.md)).
 
 ## Episode index
@@ -895,6 +900,7 @@ survived with its cost named. **Next:** the module re-homing spike
 | 0074 | shell | [The spine and the details: the operator's screen review lands (2026-08-14)](0074-shell-the-spine-and-the-details.md) |
 | 0075 | shell | [Mentions land, and a word retires (2026-08-14)](0075-shell-mentions-and-a-word-retired.md) |
 | 0076 | shell | [Type @, pick a person: a name that taps somebody (2026-08-14)](0076-shell-a-name-that-taps-somebody.md) |
+| 0077 | shell | [The canon, held: two channels at equal weight (2026-08-14)](0077-shell-the-canon-held.md) |
 
 ## The naming map (2026-08-13)
 
