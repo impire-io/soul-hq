@@ -790,7 +790,12 @@ the mission is the **usable cockpit**: view topics, collaborate
 directly (post, reply, comment, open topics), mention notifications,
 riding the backend-held session admission already measured. The
 shell-module-contract bars ride that build, with the collaboration
-module as Bar 1's second module. **Next:** the collaborate slice.
+module as Bar 1's second module. **The composer landed the same
+morning** ([episode 0072](0072-shell-the-composer.md)): post and
+anchored reply from the topic view, as the session's own principal,
+gate ~6.9 s — plus two pre-existing rendering bugs fixed (SSE frame
+truncation, icon sizing). **Next:** mention notifications; then the
+module re-homing spike (Bar 1).
 
 ## Episode index
 
@@ -867,6 +872,7 @@ module as Bar 1's second module. **Next:** the collaborate slice.
 | 0069 | ecosystem | [One name: Soulstream (2026-08-13)](0069-ecosystem-one-name-soulstream.md) |
 | 0070 | ecosystem | [The rename sweep: eight repos, one evening (2026-08-13)](0070-ecosystem-the-rename-sweep.md) |
 | 0071 | ecosystem | [The focus: a product, not a platform (2026-08-14)](0071-ecosystem-the-focus.md) |
+| 0072 | shell | [The composer: the shell stops being a window (2026-08-14)](0072-shell-the-composer.md) |
 
 ## The naming map (2026-08-13)
 
