@@ -58,5 +58,5 @@ Trail: episodes [0069](0069-ecosystem-one-name-soulstream.md) /
 in place
 ([`0001-soulhelm-the-helm.md`](../02-DESIGN/soulstream-shell/0001-soulhelm-the-helm.md));
 the re-scoped
-[`shell-module-contract`](../01-RESEARCH/shell-module-contract/README.md)
+[`shell-module-contract`](0078-shell-the-module-contract.md)
 topic; the roadmap's focus note.

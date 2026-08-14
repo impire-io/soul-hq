@@ -3,7 +3,7 @@
 The constellation renames. What began as a one-component correction —
 *helm* falling to its Helm-charts collision during the shell reframe
 (research topic
-[`shell-module-contract`](../01-RESEARCH/shell-module-contract/README.md))
+[`shell-module-contract`](0078-shell-the-module-contract.md))
 — widened the same day into the operator's ecosystem-wide question: why
 not name every project by its function under the one brand? Decided,
 teach-back survived: **the ecosystem is Soulstream, and every component
@@ -68,7 +68,7 @@ practice, the product takes a suffixed name back and the record's claim
 to the flagship name reopens.
 
 Trail: research topic
-[`shell-module-contract`](../01-RESEARCH/shell-module-contract/README.md)
+[`shell-module-contract`](0078-shell-the-module-contract.md)
 (the same-day naming trail helm → cockpit → soulshell →
 soulstream-shell); roadmap note in
 [`ROADMAP.md`](../03-IMPLEMENTATION/ROADMAP.md); commits `01a23c7`,

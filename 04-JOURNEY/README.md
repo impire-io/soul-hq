@@ -777,7 +777,7 @@ observe core, the fold's administration, the agent designer/manager to
 come — a module plugging in through one exported contract, with the
 shell providing composition (registration, activation, navigation,
 sessions, cross-linking). Research topic:
-[`shell-module-contract`](../01-RESEARCH/shell-module-contract/README.md),
+[`shell-module-contract`](0078-shell-the-module-contract.md),
 four pre-registered bars. And the ecosystem naming re-centering renames
 the component **soulstream-shell** ([episode
 0069](0069-ecosystem-one-name-soulstream.md); bare *soulshell* was
@@ -816,9 +816,16 @@ survived with its cost named. **The design pass held the canon**
 contract, hardware treatment everywhere, and the channel semantics
 made honest — amber for a voice that answers for itself, teal for a
 voice somebody else answers for (`operated_by`, accountability not
-species), Scribe the first machine voice on screen as a peer.
-**Next:** the module re-homing spike (Bar 1 of
-[`shell-module-contract`](../01-RESEARCH/shell-module-contract/README.md)).
+species), Scribe the first machine voice on screen as a peer. **The
+research graduated** ([episode 0078](0078-shell-the-module-contract.md),
+design [`0002-the-module-shape.md`](../02-DESIGN/soulstream-shell/0002-the-module-shape.md)):
+all four bars PASS — the pure shell (compiler-guarded), the support
+layer, three modules (overview, conversations, People & sign-in — the
+last activating only when the deployment administers its own people),
+cross-linking without imports, and an outside-namespace probe module.
+**The stable point is tagged**: shell v0.3.0 inside soulstream
+v0.9.0 — build it, `soulstream init && soulstream up`, and live in
+it. **Next:** the operator tries the whole system; what chafes decides.
 
 ## Episode index
 
@@ -901,6 +908,7 @@ species), Scribe the first machine voice on screen as a peer.
 | 0075 | shell | [Mentions land, and a word retires (2026-08-14)](0075-shell-mentions-and-a-word-retired.md) |
 | 0076 | shell | [Type @, pick a person: a name that taps somebody (2026-08-14)](0076-shell-a-name-that-taps-somebody.md) |
 | 0077 | shell | [The canon, held: two channels at equal weight (2026-08-14)](0077-shell-the-canon-held.md) |
+| 0078 | shell | [The module contract: four bars, one shell (2026-08-13 → 2026-08-14)](0078-shell-the-module-contract.md) |
 
 ## The naming map (2026-08-13)
 

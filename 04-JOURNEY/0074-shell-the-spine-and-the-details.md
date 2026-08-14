@@ -35,4 +35,4 @@ Trail: soulstream-shell `22154b2`; screenshots
 `shell-v3-conversation.png` / `shell-v3-rail-expanded.png` /
 `shell-v3-home.png` shown to the operator; the rail's markup kept
 contribution-ready for the module contract
-([`shell-module-contract`](../01-RESEARCH/shell-module-contract/README.md)).
+([`shell-module-contract`](0078-shell-the-module-contract.md)).

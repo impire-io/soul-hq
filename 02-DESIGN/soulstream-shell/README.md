@@ -1,12 +1,13 @@
-# 02-DESIGN / soulstream-shell — the helm
+# 02-DESIGN / soulstream-shell — the shell
 
-The normative design for **soulstream-shell**, the soulsystem's human cockpit —
-the browser entry beside the MCP door. Numbered documents, soulstream-workloads/
+The normative design for **soulstream-shell**, Soulstream's human
+surface — the browser entry beside the MCP door. Numbered documents, soulstream-workloads/
 soulstream convention.
 
 | Doc | What it decides |
 |---|---|
 | [`0001-soulhelm-the-helm.md`](0001-soulhelm-the-helm.md) | The founding design: placement, surfaces, rendering architecture, identity and custody, the design-system contract, acceptance criteria. |
+| [`0002-the-module-shape.md`](0002-the-module-shape.md) | The module shape: the pure shell, the support layer, the contract (activation, navigation, routes, links), purity as a standing gate — graduated from `shell-module-contract` (episode [0078](../../04-JOURNEY/0078-shell-the-module-contract.md)). |
 
 Born from research topic `soulsystem-cockpit` (graduated 2026-08-13,
 episode

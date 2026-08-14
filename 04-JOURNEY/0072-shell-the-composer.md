@@ -37,5 +37,5 @@ direction's reversal lives in episode 0071.
 Trail: soulstream-shell `1a8784d` (built by a delegated session against
 the episode-0071 brief, reviewed and gate-re-run before push); design
 0001 §1 as amended; the
-[`shell-module-contract`](../01-RESEARCH/shell-module-contract/README.md)
+[`shell-module-contract`](0078-shell-the-module-contract.md)
 bars await the module re-homing spike.
