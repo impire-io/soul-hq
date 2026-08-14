@@ -828,8 +828,11 @@ cross-linking without imports, and an outside-namespace probe module.
 shell, paste it into the stdio door's config, and the agent
 collaborates as a named, accountable, revocable teal voice — core
 v0.8.2's revocable lane, shell v0.4.0's Agents module, soulstream
-**v0.10.0**. **Next:** the operator tries the whole system; what
-chafes decides.
+**v0.10.0**. **The frame went responsive the same night** ([episode
+0080](0080-shell-one-instrument-any-width.md)): zero horizontal
+overflow measured at 1000 px and 390 px across every screen, hermetic
+guards in the gate — shell v0.4.1, soulstream **v0.10.1**. **Next:**
+the operator tries the whole system; what chafes decides.
 
 ## Episode index
 
@@ -914,6 +917,7 @@ chafes decides.
 | 0077 | shell | [The canon, held: two channels at equal weight (2026-08-14)](0077-shell-the-canon-held.md) |
 | 0078 | shell | [The module contract: four bars, one shell (2026-08-13 → 2026-08-14)](0078-shell-the-module-contract.md) |
 | 0079 | shell | [Agents join the stream (2026-08-14)](0079-shell-agents-join-the-stream.md) |
+| 0080 | shell | [One instrument, any width (2026-08-14)](0080-shell-one-instrument-any-width.md) |
 
 ## The naming map (2026-08-13)
 
