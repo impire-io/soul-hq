@@ -146,4 +146,32 @@ store of record dissolves it, shell or not.
 
 ## Verdict
 
-*Empty until graduation.*
+All four bars **PASS**, measured 2026-08-14 on real builds:
+
+- **Bar 1 — PASS** `[measured]`: shell/ (pure frame + exported
+  contract), soulstream/ (support), modules/overview +
+  modules/conversations through one contract; `internal/purity` walks
+  `go list -deps`, fails on any module/support/component path, its
+  control fired on 7 dependencies; served HTML byte-identical across
+  all six screens; e2e ~9.5 s uncached. Shell's whole external cost:
+  go-oidc, oauth2, go-jose.
+- **Bar 2 — PASS** `[measured]`: modules/admin ("People & sign-in")
+  activates on one declared fact (the product's optional `AdminBase`);
+  present arm 9.19 s (people listed, a real invite issued), absent arm
+  3.34 s (external AS, no rail entry, 404s, everything else working).
+  Authority delegated (the person's own bearer); the idp needed zero
+  changes.
+- **Bar 3 — PASS** `[measured]`: on published tags only (product
+  v0.9.0 → shell v0.3.0, core v0.8.1, idp v0.4.0, mcp v0.1.0), sole
+  replaces the repo-under-test and the never-published probe; custody
+  scan with fired control inside the full ceremony; 13.5 s uncached.
+- **Bar 4 — PASS** `[measured]`: the link facility resolves through
+  the registry of active modules (present navigates, absent degrades
+  to plain text, no module imports another); `e2e/moduleprobe`
+  (outside even the impire-io namespace) composes through the exported
+  contract alone, zero shell changes; the outside-module import test's
+  control fired on 45 packages.
+
+The reversal condition's observable stayed quiet throughout: no
+special-casing entered the shell `[measured: the purity graph]`.
+Graduates to design.
