@@ -30,3 +30,27 @@ value center), so Bar 1's second module is amended pre-experiment from
 fold-administration to the **collaboration module**; fold admin waits
 as a later module. The bars otherwise stand. Amendment recorded here
 per the pre-registration rule.
+
+**2026-08-14 — Bar 1 measured: PASS.** The spike (soulstream-shell
+`4960ef7`) split the one package into four things that do not know
+each other: `shell/` (the pure frame — generic OIDC sessions, chrome,
+SSE plumbing, and the exported contract: identity, activation
+predicate, navigation contribution, route mounting), `soulstream/`
+(the module-support layer — bearer → sentinel + callout admission,
+clients, directory, mention tray), `modules/overview` and
+`modules/conversations` (the two real surfaces, each registering
+through the one contract, importing neither the other nor the
+composition), and `embed/` (the one place the pieces meet). The
+agnosticism is compiler-grade and standing: `internal/purity` walks
+`go list -deps` over every package under `shell/` and fails on any
+module, support, or component path — its positive control runs the
+same walk over the support layer and fired on 7 dependencies
+[measured]. The shell's whole external cost: go-oidc, oauth2,
+go-jose. Behavior and pixels unchanged [measured]: every e2e
+assertion untouched and green (~9.5 s uncached), served HTML
+byte-identical across all six screens (per-run ids masked), and a
+fresh browser screenshot indistinguishable from the pre-spike canon
+run. One honest structural note: the work-open act moved to the
+screen that offers it — no module serves another's button; the
+contract did NOT degenerate toward special-casing (the reversal
+condition's observable stayed quiet). Bars 2–4 remain.
