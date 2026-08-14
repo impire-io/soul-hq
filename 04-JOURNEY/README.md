@@ -801,8 +801,14 @@ wordmark. **The screen review landed the same morning** ([episode
 0074](0074-shell-the-spine-and-the-details.md)): the icon rail with
 Home ("Your realm at a glance"), the capped centered column, and the
 details panel — People, Status, Waiting on — all verified on live
-screenshots. **Next:** mention notifications; the "You" display nit;
-the module re-homing spike (Bar 1).
+screenshots. **Mentions landed the same day** ([episode
+0075](0075-shell-mentions-and-a-word-retired.md)): the session follows
+its own inbox, marks clear by reading, the mentioning message stays
+highlighted off the record; "Daan" replaces the raw id; "realm"
+retired from every screen with a mechanical assertion. Named upstream
+need: a display-name mention grammar (the id-keyed slug means `@Daan`
+taps nobody). **Next:** the module re-homing spike (Bar 1 of
+[`shell-module-contract`](../01-RESEARCH/shell-module-contract/README.md)).
 
 ## Episode index
 
@@ -882,6 +888,7 @@ the module re-homing spike (Bar 1).
 | 0072 | shell | [The composer: the shell stops being a window (2026-08-14)](0072-shell-the-composer.md) |
 | 0073 | shell | [The chat shape: a rail, a conversation, a docked composer (2026-08-14)](0073-shell-the-chat-shape.md) |
 | 0074 | shell | [The spine and the details: the operator's screen review lands (2026-08-14)](0074-shell-the-spine-and-the-details.md) |
+| 0075 | shell | [Mentions land, and a word retires (2026-08-14)](0075-shell-mentions-and-a-word-retired.md) |
 
 ## The naming map (2026-08-13)
 
