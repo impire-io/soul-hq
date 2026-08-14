@@ -831,8 +831,14 @@ v0.8.2's revocable lane, shell v0.4.0's Agents module, soulstream
 **v0.10.0**. **The frame went responsive the same night** ([episode
 0080](0080-shell-one-instrument-any-width.md)): zero horizontal
 overflow measured at 1000 px and 390 px across every screen, hermetic
-guards in the gate — shell v0.4.1, soulstream **v0.10.1**. **Next:**
-the operator tries the whole system; what chafes decides.
+guards in the gate — shell v0.4.1, soulstream **v0.10.1**. **The
+owner can no longer be locked out** ([episode
+0081](0081-idp-the-last-administrator-stays.md)): the idp enforces
+"the admin group never empties" atomically under CAS (raced 25×8,
+one admin standing every round), the shell reflects it — idp v0.4.1,
+shell v0.4.2, and the evaluation candidate tagged as the operator
+asked: **soulstream v0.11.0-rc.1**, a marked pre-release. **Next:**
+the operator lives on the candidate; what chafes decides.
 
 ## Episode index
 
@@ -918,6 +924,7 @@ the operator tries the whole system; what chafes decides.
 | 0078 | shell | [The module contract: four bars, one shell (2026-08-13 → 2026-08-14)](0078-shell-the-module-contract.md) |
 | 0079 | shell | [Agents join the stream (2026-08-14)](0079-shell-agents-join-the-stream.md) |
 | 0080 | shell | [One instrument, any width (2026-08-14)](0080-shell-one-instrument-any-width.md) |
+| 0081 | idp | [The last administrator stays (2026-08-14)](0081-idp-the-last-administrator-stays.md) |
 
 ## The naming map (2026-08-13)
 
