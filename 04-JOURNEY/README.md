@@ -781,10 +781,16 @@ sessions, cross-linking). Research topic:
 four pre-registered bars. And the ecosystem naming re-centering renames
 the component **soulstream-shell** ([episode
 0069](0069-ecosystem-one-name-soulstream.md); bare *soulshell* was
-decided and superseded the same day). **Next:** the rename sweep; then
-the shell-module-contract bars — M2's configure surfaces arrive
-module-shaped behind that gate; the participant client stays a named
-successor topic.
+decided and superseded the same day), executed in the sweep ([episode
+0070](0070-ecosystem-the-rename-sweep.md), v0.2.0).
+
+**The focus (2026-08-14,** [episode
+0071](0071-ecosystem-the-focus.md)**):** participation enters scope —
+the mission is the **usable cockpit**: view topics, collaborate
+directly (post, reply, comment, open topics), mention notifications,
+riding the backend-held session admission already measured. The
+shell-module-contract bars ride that build, with the collaboration
+module as Bar 1's second module. **Next:** the collaborate slice.
 
 ## Episode index
 
@@ -860,6 +866,7 @@ successor topic.
 | 0068 | soulnode | [The helm plane: the cockpit joins the bundle (2026-08-13)](0068-soulnode-the-helm-plane.md) |
 | 0069 | ecosystem | [One name: Soulstream (2026-08-13)](0069-ecosystem-one-name-soulstream.md) |
 | 0070 | ecosystem | [The rename sweep: eight repos, one evening (2026-08-13)](0070-ecosystem-the-rename-sweep.md) |
+| 0071 | ecosystem | [The focus: a product, not a platform (2026-08-14)](0071-ecosystem-the-focus.md) |
 
 ## The naming map (2026-08-13)
 

@@ -50,9 +50,11 @@ browser rig, the custody scan); conclusions and principled code land in
 git.
 
 - **Bar 1 — a pure, agnostic shell, proven by two real modules.** The
-  existing observe/configure core re-homed as a module, and a new
-  fold-administration module (people, invites, groups, OAuth clients over
-  the fold's `/api/admin`), both registering through one exported
+  existing observe/configure core re-homed as a module, and the new
+  **collaboration module** (post, reply, comment, open topics, mention
+  notifications — the usable-cockpit value of episode 0071; amended
+  pre-experiment from the fold-administration module, which waits as a
+  later module), both registering through one exported
   contract (identity, activation predicate, navigation contribution,
   route mounting). **Pass:** both run through the same contract, and the
   shell's packages import **no module and no Soulstream component** —
@@ -116,9 +118,11 @@ than dressed as measurements:
 - **The agent designer/manager** — declaring, launching, and observing
   workloads over soulstream-workloads' surface — is the third-module horizon. It
   motivates the contract; it is not built here.
-- **Participation** (posting turns, talking to agents) stays [O4], the
-  named successor, decided shell-first; it later lands as a module
-  through this contract and still gates on upstream ask #1.
+- **Participation** entered scope 2026-08-14 (episode 0071, amending
+  the shell-first call recorded here the day before): collaborating
+  from the cockpit is the value center and rides the backend-held
+  session admission — no upstream ask. The *browser-native* client
+  (upstream ask #1) stays a separate parked horizon.
 - **Extraction.** A standalone generic framework is founded only when a
   second real consumer outside Soulstream exists; Bar 1's agnosticism
   check is what makes that extraction cheap when its day comes.

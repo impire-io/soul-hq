@@ -8,11 +8,19 @@ the soulstream-shell repo (founded 2026-08-13, v0.1.0 — §10).
 
 ## §1 What soulstream-shell is
 
-The soulsystem's human cockpit: one browser surface where a person
+Soulstream's human surface: one browser surface where a person
 **observes** the whole running system — topics, turns, work items,
-memory, plane health — and **configures** it, beside the MCP door that
-serves machines. It is a *cockpit*, not a client: posting turns
-(participation) is a named successor, out of scope here.
+memory, plane health — **configures** it, and **participates** in it,
+beside the MCP door that serves machines.
+
+**Amended 2026-08-14 (episode 0071):** the founding line "a cockpit,
+not a client" is overturned by the operator — collaborating directly
+from this surface (posting turns, replying, commenting, opening
+topics, mention notifications) IS the product's value center.
+Participation rides the backend-held per-session admission this
+design already carries (§6) — the browser-native client and upstream
+ask #1 stay parked; they were only ever needed for NATS in the
+browser.
 
 ## §2 Placement — a sibling component (C1/C2)
 
@@ -139,8 +147,10 @@ model) resolves. The helm never works around this with a side-channel.
   class-(b) authority — tracked in `platform-tenancy-guardrails`.
 - **[O3]** ~~The id→display mapping source~~ — first answer as built
   (§10): the ID token's `name` claim, id fallback; richer mapping open.
-- **[O4]** The participant client — its own research topic, not helm
-  scope.
+- **[O4]** ~~The participant client~~ — dissolved into scope
+  2026-08-14 (episode 0071): participation is the shell's own mission,
+  riding backend sessions. A *browser-native* NATS client (with
+  upstream ask #1) remains a separate, parked horizon.
 
 ## §10 As built (v0.1.0, 2026-08-13 — episode 0067)
 

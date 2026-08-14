@@ -17,8 +17,8 @@ changes to it are decisions and belong in the journey as episodes.
 | [soulstream-identity](#soulstream-identity--the-name) | M1/M3/M4 shipped (+ Entra/OIDC lane, D25 registry dissolution, D28/D29 consumer-proven additions); `v0.2.0` tagged (renamed; wire segment `identity`) | M2's node half — proven upstream by soulstream 018; roadmap check-off pending. M5 gated on soulstream demand |
 | [soulstream](#soulstream--the-product-the-house) | **v0.8.0 — renamed soulstream, the product** (episode 0070; first tag on the reused path clears the record library's v0.1–v0.7 checksum history) ([episodes 0057](../04-JOURNEY/0057-soulnode-the-folded-realm.md)/[0058](../04-JOURNEY/0058-soulnode-the-release-pipeline.md)/[0062](../04-JOURNEY/0062-soulnode-the-front-of-house.md)/[0068](../04-JOURNEY/0068-soulnode-the-helm-plane.md)): fold on by default, `planes.shell` composing soulstream-shell v0.2.0, four URLs logged, the OIDC lane on in local mode when the helm runs | Day-2 items; Phase 3 (tsnet) gated on fronting measured insufficient |
 | [soulstream-idp](#soulstream-idp--the-fold) | **Every milestone shipped — M1–M5, v0.4.0** ([episodes 0052](../04-JOURNEY/0052-soulfold-m1-the-op-skeleton.md)–[0060](../04-JOURNEY/0060-soulfold-m3-the-lifecycle.md)): the sealed store, passkeys, callout admission, the embed seam, and the lifecycle — invitation is the only door; physical-authenticator runbook pending (human act) | Named horizons only (deferred audit rows, multi-issuer demand); day-2 by demand |
-| [soulstream-shell](#soulstream-shell--the-shell) | **v0.2.0 — founded, shipped, composed, and renamed 2026-08-13** ([episodes 0066](../04-JOURNEY/0066-ecosystem-soulsystem-cockpit.md)/[0067](../04-JOURNEY/0067-soulhelm-founding-and-first-light.md)/[0068](../04-JOURNEY/0068-soulnode-the-helm-plane.md)): observe surface + fold sessions + the first act, the whole human ceremony riding `make test`; running in soulstream as `planes.shell` | Reframed as **the shell** the same day: the [`shell-module-contract`](../01-RESEARCH/shell-module-contract/README.md) research gates M2, which arrives module-shaped; renamed **soulstream-shell** in the sweep ([episodes 0069](../04-JOURNEY/0069-ecosystem-one-name-soulstream.md)/[0070](../04-JOURNEY/0070-ecosystem-the-rename-sweep.md)) |
-| soulstream-mcp | **v0.1.0 — founded 2026-08-13** by extraction from soulstream/node v0.7.0 ([episode 0070](../04-JOURNEY/0070-ecosystem-the-rename-sweep.md)): the remote MCP server, own CI and release | Day-2 by demand; consumed by the product as the door plane |
+| [soulstream-shell](#soulstream-shell--the-shell) | **v0.2.0 — founded, shipped, composed, and renamed 2026-08-13** ([episodes 0066](../04-JOURNEY/0066-ecosystem-soulsystem-cockpit.md)/[0067](../04-JOURNEY/0067-soulhelm-founding-and-first-light.md)/[0068](../04-JOURNEY/0068-soulnode-the-helm-plane.md)): observe surface + fold sessions + the first act, the whole human ceremony riding `make test`; running in soulstream as `planes.shell` | **The focus ([episode 0071](../04-JOURNEY/0071-ecosystem-the-focus.md)): the usable cockpit** — collaborate + mention notifications, with the [`shell-module-contract`](../01-RESEARCH/shell-module-contract/README.md) bars riding the build |
+| soulstream-mcp | **v0.1.0 — founded 2026-08-13** by extraction from soulstream/node v0.7.0 ([episode 0070](../04-JOURNEY/0070-ecosystem-the-rename-sweep.md)): the remote MCP server, own CI and release | **Parked (episode 0071)** — stdio MCP is the choice of record for this iteration; built and waiting for the online-platform need |
 
 **2026-08-13 — the naming re-centering** ([episode
 0069](../04-JOURNEY/0069-ecosystem-one-name-soulstream.md)): every project
@@ -36,6 +36,18 @@ renamed, re-pinned, and tagged in dependency order, every gate and tag
 release green; the wire went with them. The section headers below now
 carry the new names; milestone prose keeps its historical vocabulary
 where it records what happened.
+
+**The focus (2026-08-14** — [episode
+0071](../04-JOURNEY/0071-ecosystem-the-focus.md)**):** Soulstream is a
+place for humans and AI, each connecting natively — humans through the
+shell, agents through **stdio MCP (the choice of record for this
+iteration)**. Effort goes to the **usable cockpit**: view topics,
+collaborate directly (post, reply, comment, open topics), mention
+notifications. Frozen behind real-demand gates: soulstream-mcp (built,
+waiting for the online-platform need), the idp's day-2, workloads'
+fleet build and further backends, and sealed topics (e2e is out of
+iteration one). The identity plane stays what the product needs and
+stops growing.
 
 Cross-component dependencies, tracked openly: soulstream consumes everything by
 tag — the standing pin exception closed 2026-08-02 (soulstream-workloads v0.1.0,

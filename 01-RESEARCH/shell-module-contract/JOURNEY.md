@@ -22,3 +22,11 @@ re-centering ([episode
 project renames soulstream-*, and this component is
 **soulstream-shell** — *soulshell* superseded before it ever executed.
 The bars are untouched; only the name moved.
+
+**2026-08-14 — the focus re-scope (episode 0071), before any spike.**
+The operator's slim-down: participation enters the shell's scope (the
+usable cockpit — view, collaborate, mention notifications — is the
+value center), so Bar 1's second module is amended pre-experiment from
+fold-administration to the **collaboration module**; fold admin waits
+as a later module. The bars otherwise stand. Amendment recorded here
+per the pre-registration rule.
