@@ -96,3 +96,19 @@ composition removes it cleanly [measured]. Purity green with fired
 control; whole e2e 13.7 s uncached. All four bars now measured PASS —
 Bar 3's formal run happens on the pinned build after the tag wave,
 then graduation.
+
+**2026-08-14 — Bar 3 measured: PASS, on the pinned build.** After the
+tag wave (shell v0.3.0 → product v0.9.0 pinning it → the e2e pinning
+the product), the standing doors ran formally over the module-shaped
+build: gate 1 — the consumer position rides published tags only
+(product v0.9.0 carrying shell v0.3.0, core v0.8.1, idp v0.4.0, mcp
+v0.1.0), the sole replaces being the repo under test and the local
+never-published probe, `internal/` imports impossible by module path
+(proven twice: the purity walk and the outside-module test, whose
+control fired on 45 packages); gate 2 — the custody scan runs inside
+the full ceremony with its positive control, sessions in memory,
+nothing credential-shaped in shell storage [measured: both arms +
+probe, 13.5 s uncached]. The NATS-admission machinery lives entirely
+in the `soulstream/` support layer — the pure shell's import graph
+carries no component. **All four bars measured PASS. Graduation
+follows.**
