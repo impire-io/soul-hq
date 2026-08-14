@@ -54,3 +54,24 @@ run. One honest structural note: the work-open act moved to the
 screen that offers it — no module serves another's button; the
 contract did NOT degenerate toward special-casing (the reversal
 condition's observable stayed quiet). Bars 2–4 remain.
+
+**2026-08-14 — Bar 2 measured: PASS.** The third module is the one
+that is not always there: `modules/admin` — "People & sign-in" on
+screen — list people, create an invite, take a sign-in away, through
+the same exported contract with zero shell changes (the purity graph
+is unchanged: seven non-stdlib packages). Activation is one declared
+fact: the product's `embed.Options` grew optional `AdminBase` (absent
+when the idp plane is off — soulstream `ce73152`), the support layer
+carries the lane, and `Active()` is a single comparison — no probe,
+no reachability guess, no shell configuration [measured]. Authority
+is delegated, never borrowed: every call rides the signed-in person's
+own bearer, and the idp needed NOTHING — `/api/admin` already
+verified its own issued bearers with the admin role. Both arms
+measured (shell `8366685`): present — rail entry, seeded people
+listed, a real invite issued by the idp (TestShellGate, 9.19 s);
+absent — the product boots with the idp plane off and sessions on a
+standalone external AS, no rail entry, admin routes 404, sign-in and
+conversations and mentions all working (TestExternalIdPGate, 3.34 s)
+[measured]. Named for the stable-point evaluation: the founding
+group value `realm` surfaces as data in GROUPS — a product-ceremony
+naming follow-up, not shell copy. Bars 3–4 remain.
