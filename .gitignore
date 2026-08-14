@@ -3,3 +3,5 @@
 # Local session artifacts
 helm-screen-v2.png
 .playwright-mcp/
+shell-chat-conversation.png
+shell-chat-reply-state.png

@@ -791,11 +791,15 @@ directly (post, reply, comment, open topics), mention notifications,
 riding the backend-held session admission already measured. The
 shell-module-contract bars ride that build, with the collaboration
 module as Bar 1's second module. **The composer landed the same
-morning** ([episode 0072](0072-shell-the-composer.md)): post and
-anchored reply from the topic view, as the session's own principal,
-gate ~6.9 s — plus two pre-existing rendering bugs fixed (SSE frame
-truncation, icon sizing). **Next:** mention notifications; then the
-module re-homing spike (Bar 1).
+morning** ([episode 0072](0072-shell-the-composer.md)) — post and
+anchored reply as the session's own principal, two pre-existing
+rendering bugs fixed — and **the chat shape the same day** ([episode
+0073](0073-shell-the-chat-shape.md)): conversations rail, own-message
+bubbles, threaded replies, docked composer, plus the `make screens`
+helper whose first real screenshots caught the retired *soulsystem*
+wordmark. **Next:** the operator's eye on the screens; then mention
+notifications, the details panel, and the module re-homing spike
+(Bar 1).
 
 ## Episode index
 
@@ -873,6 +877,7 @@ module re-homing spike (Bar 1).
 | 0070 | ecosystem | [The rename sweep: eight repos, one evening (2026-08-13)](0070-ecosystem-the-rename-sweep.md) |
 | 0071 | ecosystem | [The focus: a product, not a platform (2026-08-14)](0071-ecosystem-the-focus.md) |
 | 0072 | shell | [The composer: the shell stops being a window (2026-08-14)](0072-shell-the-composer.md) |
+| 0073 | shell | [The chat shape: a rail, a conversation, a docked composer (2026-08-14)](0073-shell-the-chat-shape.md) |
 
 ## The naming map (2026-08-13)
 
