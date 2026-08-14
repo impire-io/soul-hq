@@ -797,9 +797,12 @@ rendering bugs fixed — and **the chat shape the same day** ([episode
 0073](0073-shell-the-chat-shape.md)): conversations rail, own-message
 bubbles, threaded replies, docked composer, plus the `make screens`
 helper whose first real screenshots caught the retired *soulsystem*
-wordmark. **Next:** the operator's eye on the screens; then mention
-notifications, the details panel, and the module re-homing spike
-(Bar 1).
+wordmark. **The screen review landed the same morning** ([episode
+0074](0074-shell-the-spine-and-the-details.md)): the icon rail with
+Home ("Your realm at a glance"), the capped centered column, and the
+details panel — People, Status, Waiting on — all verified on live
+screenshots. **Next:** mention notifications; the "You" display nit;
+the module re-homing spike (Bar 1).
 
 ## Episode index
 
@@ -878,6 +881,7 @@ notifications, the details panel, and the module re-homing spike
 | 0071 | ecosystem | [The focus: a product, not a platform (2026-08-14)](0071-ecosystem-the-focus.md) |
 | 0072 | shell | [The composer: the shell stops being a window (2026-08-14)](0072-shell-the-composer.md) |
 | 0073 | shell | [The chat shape: a rail, a conversation, a docked composer (2026-08-14)](0073-shell-the-chat-shape.md) |
+| 0074 | shell | [The spine and the details: the operator's screen review lands (2026-08-14)](0074-shell-the-spine-and-the-details.md) |
 
 ## The naming map (2026-08-13)
 
