@@ -805,9 +805,14 @@ screenshots. **Mentions landed the same day** ([episode
 0075](0075-shell-mentions-and-a-word-retired.md)): the session follows
 its own inbox, marks clear by reading, the mentioning message stays
 highlighted off the record; "Daan" replaces the raw id; "realm"
-retired from every screen with a mechanical assertion. Named upstream
-need: a display-name mention grammar (the id-keyed slug means `@Daan`
-taps nobody). **Next:** the module re-homing spike (Bar 1 of
+retired from every screen with a mechanical assertion. **The named gap
+closed the same day** ([episode
+0076](0076-shell-a-name-that-taps-somebody.md)): core v0.8.1's
+explicit-mentions arm (the first consumer-proven addition since the
+focus) plus the shell's @-picker — the body keeps what was typed, who
+it taps rides beside it, and C4's reversal condition was tested and
+survived with its cost named. **Next:** the module re-homing spike
+(Bar 1 of
 [`shell-module-contract`](../01-RESEARCH/shell-module-contract/README.md)).
 
 ## Episode index
@@ -889,6 +894,7 @@ taps nobody). **Next:** the module re-homing spike (Bar 1 of
 | 0073 | shell | [The chat shape: a rail, a conversation, a docked composer (2026-08-14)](0073-shell-the-chat-shape.md) |
 | 0074 | shell | [The spine and the details: the operator's screen review lands (2026-08-14)](0074-shell-the-spine-and-the-details.md) |
 | 0075 | shell | [Mentions land, and a word retires (2026-08-14)](0075-shell-mentions-and-a-word-retired.md) |
+| 0076 | shell | [Type @, pick a person: a name that taps somebody (2026-08-14)](0076-shell-a-name-that-taps-somebody.md) |
 
 ## The naming map (2026-08-13)
 
