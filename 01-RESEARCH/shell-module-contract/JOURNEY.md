@@ -75,3 +75,24 @@ conversations and mentions all working (TestExternalIdPGate, 3.34 s)
 [measured]. Named for the stable-point evaluation: the founding
 group value `realm` surfaces as data in GROUPS — a product-ceremony
 naming follow-up, not shell copy. Bars 3–4 remain.
+
+**2026-08-14 — Bar 4 measured: PASS.** Both halves (shell `1fdf5f9`).
+*Cross-linking:* the contract grew one facility (`shell/link.go`) — a
+module names who it wants to reach, what kind of screen, and what it
+is about; the shell puts the ask to the modules this deployment runs;
+the owner builds its own link or declines; an inactive module is not
+in the registry at all. Concretely every name in the conversation's
+People panel is a way into that person's sign-in row —
+`modules/conversations` imports no part of `modules/admin`, hands the
+frame two agreed words and a persona, and renders the href that comes
+back or plain text when nothing does. Both arms measured: present
+resolves and navigates; absent degrades to plain text [measured].
+*Outside pluggability:* `e2e/moduleprobe` — module path
+`soulstream-shell.invalid/moduleprobe`, outside even the impire-io
+namespace, so the toolchain itself refuses it any `internal/` import —
+registers, contributes a rail entry, renders its screen through the
+exported contract alone, zero shell changes; removing it from
+composition removes it cleanly [measured]. Purity green with fired
+control; whole e2e 13.7 s uncached. All four bars now measured PASS —
+Bar 3's formal run happens on the pinned build after the tag wave,
+then graduation.
