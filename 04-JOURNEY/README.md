@@ -823,9 +823,13 @@ all four bars PASS — the pure shell (compiler-guarded), the support
 layer, three modules (overview, conversations, People & sign-in — the
 last activating only when the deployment administers its own people),
 cross-linking without imports, and an outside-namespace probe module.
-**The stable point is tagged**: shell v0.3.0 inside soulstream
-v0.9.0 — build it, `soulstream init && soulstream up`, and live in
-it. **Next:** the operator tries the whole system; what chafes decides.
+**Agents joined the stream the same evening** ([episode
+0079](0079-shell-agents-join-the-stream.md)): mint a credential in the
+shell, paste it into the stdio door's config, and the agent
+collaborates as a named, accountable, revocable teal voice — core
+v0.8.2's revocable lane, shell v0.4.0's Agents module, soulstream
+**v0.10.0**. **Next:** the operator tries the whole system; what
+chafes decides.
 
 ## Episode index
 
@@ -909,6 +913,7 @@ it. **Next:** the operator tries the whole system; what chafes decides.
 | 0076 | shell | [Type @, pick a person: a name that taps somebody (2026-08-14)](0076-shell-a-name-that-taps-somebody.md) |
 | 0077 | shell | [The canon, held: two channels at equal weight (2026-08-14)](0077-shell-the-canon-held.md) |
 | 0078 | shell | [The module contract: four bars, one shell (2026-08-13 → 2026-08-14)](0078-shell-the-module-contract.md) |
+| 0079 | shell | [Agents join the stream (2026-08-14)](0079-shell-agents-join-the-stream.md) |
 
 ## The naming map (2026-08-13)
 
