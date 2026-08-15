@@ -778,7 +778,16 @@ constraints — passkeys, not passwords; indistinguishable by design —
 and the roadmap sequences M1 (the OP skeleton) behind its KV-schema and
 key-lifecycle research. No product code exists yet.
 
-### soulstream-shell — the shell (as of 2026-08-13; named soulhelm until episode 0069)
+### soulstream-shell — the shell (as of 2026-08-15; named soulhelm until episode 0069)
+
+**The credential screen says where it goes** ([episode
+0084](0084-shell-where-this-goes.md)): the shown-once agent credential
+(episode 0079's block) now carries per-assistant set-up folds — Claude
+Code (the block is already the exact `.mcp.json`), codex (the same five
+values as a filled TOML table), and anything else that speaks MCP
+(pi.dev, opencode, …) in plain words — plus the one `soulstream-mcp`
+install line. Same reveal, same shown-once lifetime; the pinned 0079
+e2e passed untouched.
 
 **Founded, shipped, and composed in one day** ([episode
 0067](0067-soulhelm-founding-and-first-light.md); research graduated
@@ -953,6 +962,7 @@ the operator lives on the candidate; what chafes decides.
 | 0081 | idp | [The last administrator stays (2026-08-14)](0081-idp-the-last-administrator-stays.md) |
 | 0082 | ecosystem | [What wakes an agent (2026-08-15)](0082-ecosystem-agent-participation.md) |
 | 0083 | workloads | [The waker lands (2026-08-15)](0083-workloads-the-waker-lands.md) |
+| 0084 | shell | [Where this goes (2026-08-15)](0084-shell-where-this-goes.md) |
 
 ## The naming map (2026-08-13)
 
