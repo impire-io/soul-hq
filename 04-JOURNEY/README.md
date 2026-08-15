@@ -499,7 +499,14 @@ questions before their milestones (NGS callout
 capabilities, the sentinel-credential flow, the first-key story, the
 claims-mapping shape, service round-trip latency) are named on the roadmap.
 
-### soulstream — the product, the house (as of 2026-08-13; named soulnode until episode 0069)
+### soulstream — the product, the house (as of 2026-08-15; named soulnode until episode 0069)
+
+**v0.11.0-rc.2 — wrap ships** ([episode
+0086](0086-soulstream-v0-11-0-rc-2.md)): the second candidate pins core
+v0.8.4, workloads v0.3.0 and shell v0.4.3 — a person on this RC creates
+an agent in the shell, pastes one block, and either talks through their
+assistant (the MCP door) or lets it answer mentions for them
+(`soulstream wrap`), from their own machine with their own logins.
 
 **The helm plane — the cockpit joins the bundle** ([episode
 0068](0068-soulnode-the-helm-plane.md); `specs/007-the-helm-plane/`):
@@ -979,6 +986,7 @@ the operator lives on the candidate; what chafes decides.
 | 0083 | workloads | [The waker lands (2026-08-15)](0083-workloads-the-waker-lands.md) |
 | 0084 | shell | [Where this goes (2026-08-15)](0084-shell-where-this-goes.md) |
 | 0085 | workloads | [Wrap: run your agent where you are (2026-08-15)](0085-workloads-wrap-run-your-agent-where-you-are.md) |
+| 0086 | soulstream | [v0.11.0-rc.2: wrap ships (2026-08-15)](0086-soulstream-v0-11-0-rc-2.md) |
 
 ## The naming map (2026-08-13)
 
