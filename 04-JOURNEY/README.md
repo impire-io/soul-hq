@@ -676,7 +676,16 @@ no dev fork). Feasibility entered measured; so did the obstacles
 (SoulIdentity's serve path was `internal/`, soulrealm's `replace`
 directive) — both since dissolved by the upstream landings above.
 
-### soulstream-idp — the fold (as of 2026-08-03; named soulfold until episode 0069)
+### soulstream-idp — the fold (as of 2026-08-15; named soulfold until episode 0069)
+
+**The fold wears the ecosystem's canon** ([episode
+0090](0090-idp-the-fold-wears-the-canon.md); **v0.4.2**, design D30):
+sign-in, enrolment, and the admin console dropped the dark
+violet theme of the design system's earlier iteration for the
+Soulsystem light canon the shell vendors — one rewritten style block,
+same pages, same classes, the CRT surface kept for the shown-once
+token alone. The door now reads as the same product as the console it
+opens onto.
 
 **The admin console — a browser and your passkey**
 ([episode 0011](0061-soulfold-the-admin-console.md); `v0.3.0`): the
@@ -1020,6 +1029,7 @@ the operator lives on the candidate; what chafes decides.
 | 0087 | ecosystem | [The docs catch up, and the site learns to onboard (2026-08-15)](0087-ecosystem-the-docs-catch-up.md) |
 | 0088 | ecosystem | [The site speaks the new names (2026-08-15)](0088-ecosystem-the-site-speaks-the-new-names.md) |
 | 0089 | ecosystem | [Wrap in the house: one binary, one paste (2026-08-15)](0089-ecosystem-wrap-in-the-house.md) |
+| 0090 | idp | [The fold wears the ecosystem's canon (2026-08-15)](0090-idp-the-fold-wears-the-canon.md) |
 
 ## The naming map (2026-08-13)
 

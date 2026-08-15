@@ -123,6 +123,33 @@ library's contract]. Reversal: if a deployment needs opaque tokens
 (introspection-only estates), this becomes a per-client choice — the
 record already answers per client.
 
+### D30 — The fold's pages wear the ecosystem's design canon
+
+Every page the fold renders — sign-in, enrolment, error, the admin
+console — is styled by the one shared style block
+(`internal/webstyle`), and that block implements the Soulsystem design
+canon (cassette futurism in a light key: the shell-tone palette, warm
+charcoal ink, the amber accent on molded keys, hairline-and-etch
+edges, mono label strips, the segmented depth rules) — the same canon
+soulstream-shell vendors as its token source. The block stays a single
+inline `<style>` string (no asset pipeline — idp article III), so the
+typefaces are the canon's *fallback stacks* (`"Archivo","Helvetica
+Neue",Arial`; `ui-monospace` for data): the faces upgrade where
+installed and degrade honestly where not. The canon's one dark
+surface (CRT glass) is reserved for revealed secrets — the admin
+console's shown-once token — and prose never sits on it.
+
+Reasoning: the fold's first theme descended from the design system's
+earlier dark iteration; when the source of truth became the light
+canon (vendored by the shell 2026-08-14), the sign-in pages stopped
+reading as the same product as the console they sign people into —
+the operator's observation, 2026-08-15 [judgment]. D9's page
+inventory and page-local-JS rule are untouched: this is the same two
+pages in the product's own clothes. Reversal: if the fold ever needs
+the canon's full type faces (a measured legibility or brand need),
+the inline-string rule yields to one embedded-font route before this
+decision reopens.
+
 ## Acceptance criteria (the M1 and M2 gates inherit these)
 
 1. A stock OIDC RP completes sign-in with the measured page inventory
