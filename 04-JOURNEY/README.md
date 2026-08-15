@@ -112,6 +112,13 @@ eg-walker live co-editing, sealed topics, and a browser/WebSocket client.
 
 ### soulstream-workloads — the room (as of 2026-08-15; named soulrealm until episode 0069)
 
+**The template grew `mcp_args` — a subcommand can be the tool door**
+([episode 0089](0089-ecosystem-wrap-in-the-house.md);
+`specs/007-mcp-args/`, **v0.4.0**): additive through preset and the
+per-run MCP config, absent when empty, so the product binary can point
+a wrapped harness at its own `soulstream mcp` verb — no second binary
+on the agent's machine.
+
 **The waker became wrap the day it landed — run your agent where you
 are** ([episode 0085](0085-workloads-wrap-run-your-agent-where-you-are.md)):
 the operator retired the byname and repositioned the front door as
@@ -501,6 +508,19 @@ claims-mapping shape, service round-trip latency) are named on the roadmap.
 
 ### soulstream — the product, the house (as of 2026-08-15; named soulnode until episode 0069)
 
+**Wrap in the house — one binary, one paste** ([episode
+0089](0089-ecosystem-wrap-in-the-house.md);
+`specs/008-wrap-in-the-house/`, design
+[0002](../02-DESIGN/soulstream/0002-wrap-in-the-house.md)): the product
+binary answers `soulstream wrap` and `soulstream mcp` natively over the
+libraries it already pins — no Go toolchain, no PATH assembly on an
+agent's machine — and the getting-started teaches download-and-paste
+with `go install` gone. Proven live end to end: the Agents screen's
+paste block, unedited, under fish, answered a mention posted while the
+wrapper was off (one reply, real claude, 6.7 s); a revoked credential
+refused loudly. Pins shell v0.5.0 + workloads v0.4.0 (go.sum resolves
+once the tags are pushed).
+
 **v0.11.0-rc.2 — wrap ships** ([episode
 0086](0086-soulstream-v0-11-0-rc-2.md)): the second candidate pins core
 v0.8.4, workloads v0.3.0 and shell v0.4.3 — a person on this RC creates
@@ -801,6 +821,16 @@ key-lifecycle research. No product code exists yet.
 
 ### soulstream-shell — the shell (as of 2026-08-15; named soulhelm until episode 0069)
 
+**The agents screen breathes, and the wrap leads** ([episode
+0089](0089-ecosystem-wrap-in-the-house.md); **v0.5.0**): the credential
+card now opens with one portable paste block — writes the creds file,
+runs `soulstream wrap --harness claude`, POSIX and fish alike — with a
+Copy key, and folds the hard paths beneath as quiet cards, every one
+spelling the door as the product binary. The screen took the canon's
+rhythm (sections, styled folds, no stray note, no doubled operator
+ids), and the overview grew an Agents card pointing the way to a first
+agent. The pinned agents e2e passed with the new markup.
+
 **The credential screen says where it goes — and now offers the wrap**
 ([episodes 0084](0084-shell-where-this-goes.md)/[0085](0085-workloads-wrap-run-your-agent-where-you-are.md)):
 the shown-once agent credential
@@ -989,6 +1019,7 @@ the operator lives on the candidate; what chafes decides.
 | 0086 | soulstream | [v0.11.0-rc.2: wrap ships (2026-08-15)](0086-soulstream-v0-11-0-rc-2.md) |
 | 0087 | ecosystem | [The docs catch up, and the site learns to onboard (2026-08-15)](0087-ecosystem-the-docs-catch-up.md) |
 | 0088 | ecosystem | [The site speaks the new names (2026-08-15)](0088-ecosystem-the-site-speaks-the-new-names.md) |
+| 0089 | ecosystem | [Wrap in the house: one binary, one paste (2026-08-15)](0089-ecosystem-wrap-in-the-house.md) |
 
 ## The naming map (2026-08-13)
 

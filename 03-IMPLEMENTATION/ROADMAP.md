@@ -13,11 +13,11 @@ changes to it are decisions and belong in the journey as episodes.
 | Component | State | Next gate |
 |---|---|---|
 | [soulstream-core](#soulstream-core--the-record) | `v0.8.0` (renamed, episode 0070; the remote MCP node extracted to soulstream-mcp) — MVP + most of day-2 shipped; the remote MCP node built and consumable; two-week dogfood run live since 2026-07-27 | Sealed-topics build priority gated on the dogfood chafe log (to 2026-08-10); eg-walker gated on stage-1 chafe |
-| [soulstream-workloads](#soulstream-workloads--the-room) | Phases 1–2 complete; **M3.2 built and reshaped to wrap in one day** (episodes 0082→0083→0085: research gate → waker daemon → personal wrapper) — `soulstream wrap --harness claude` answers mentions from the person's own machine; core at v0.8.4 (external subcommands) | **`mcp_args` in flight** (design 0004 §5, for the product-native door); Fleet (design 0003, M3.1) runs spec-kit next; loop-safety research before any agent-wakes-agent deployment; the serve arm returns per design 0004 §9's reversal |
+| [soulstream-workloads](#soulstream-workloads--the-room) | Phases 1–2 complete; **M3.2 built and reshaped to wrap in one day** (episodes 0082→0083→0085), then **v0.4.0: `mcp_args`** (episode 0089) — the tool door can be a subcommand, so the product binary carries the whole wrap; core at v0.8.4 | Fleet (design 0003, M3.1) runs spec-kit next; loop-safety research before any agent-wakes-agent deployment; the serve arm returns per design 0004 §9's reversal |
 | [soulstream-identity](#soulstream-identity--the-name) | M1/M3/M4 shipped (+ Entra/OIDC lane, D25 registry dissolution, D28/D29 consumer-proven additions); `v0.2.0` tagged (renamed; wire segment `identity`) | M2's node half — proven upstream by soulstream 018; roadmap check-off pending. M5 gated on soulstream demand |
-| [soulstream](#soulstream--the-product-the-house) | **v0.11.0-rc.2 — wrap ships** ([episode 0086](../04-JOURNEY/0086-soulstream-v0-11-0-rc-2.md), pinning core v0.8.4 / workloads v0.3.0 / shell v0.4.3): create an agent in the shell, paste one block, talk through your assistant or let `soulstream wrap` answer mentions for you — from your own machine, your own logins | **Wrap in the house in flight** ([design 0002](../02-DESIGN/soulstream/0002-wrap-in-the-house.md): native `wrap`/`mcp` verbs, the portable paste block, no `go install` anywhere); RC soak toward v0.11.0; Phase 3 (tsnet) gated on fronting measured insufficient |
+| [soulstream](#soulstream--the-product-the-house) | **Wrap in the house — one binary, one paste** ([episode 0089](../04-JOURNEY/0089-ecosystem-wrap-in-the-house.md), atop v0.11.0-rc.2's wrap arc, [episode 0086](../04-JOURNEY/0086-soulstream-v0-11-0-rc-2.md)): native `soulstream wrap`/`mcp` verbs, the Agents screen's portable paste block proven live under fish, no `go install` anywhere — pinning workloads v0.4.0 / shell v0.5.0 | Push the workloads/shell tags, `go mod tidy`, cut the next RC; RC soak toward v0.11.0; Phase 3 (tsnet) gated on fronting measured insufficient |
 | [soulstream-idp](#soulstream-idp--the-fold) | **Every milestone shipped — M1–M5, v0.4.0** ([episodes 0052](../04-JOURNEY/0052-soulfold-m1-the-op-skeleton.md)–[0060](../04-JOURNEY/0060-soulfold-m3-the-lifecycle.md)): the sealed store, passkeys, callout admission, the embed seam, and the lifecycle — invitation is the only door; physical-authenticator runbook pending (human act) | Named horizons only (deferred audit rows, multi-issuer demand); day-2 by demand |
-| [soulstream-shell](#soulstream-shell--the-shell) | **v0.2.0 — founded, shipped, composed, and renamed 2026-08-13** ([episodes 0066](../04-JOURNEY/0066-ecosystem-soulsystem-cockpit.md)/[0067](../04-JOURNEY/0067-soulhelm-founding-and-first-light.md)/[0068](../04-JOURNEY/0068-soulnode-the-helm-plane.md)): observe surface + fold sessions + the first act, the whole human ceremony riding `make test`; running in soulstream as `planes.shell` | **v0.3.0 — the usable cockpit, module-shaped** (episodes [0072](../04-JOURNEY/0072-shell-the-composer.md)–[0078](../04-JOURNEY/0078-shell-the-module-contract.md)): composer, mentions with meaningful tags, the canon held, People & sign-in, all four research bars PASS (design [0002](../02-DESIGN/soulstream-shell/0002-the-module-shape.md)); composed in soulstream v0.9.0 | The operator tries the whole system — evaluation decides what changes |
+| [soulstream-shell](#soulstream-shell--the-shell) | **v0.5.0 — the agents screen breathes, and the wrap leads** ([episode 0089](../04-JOURNEY/0089-ecosystem-wrap-in-the-house.md), atop the module-shaped cockpit arc, episodes [0066](../04-JOURNEY/0066-ecosystem-soulsystem-cockpit.md)–[0078](../04-JOURNEY/0078-shell-the-module-contract.md) and the agents/responsive work through v0.4.3): the credential card opens with the portable paste block, hard paths folded beneath, canon rhythm restored, the overview pointing the way to a first agent | **v0.5.0 pinned by soulstream** alongside workloads v0.4.0 (tags to push) | The operator tries the whole system — evaluation decides what changes |
 | soulstream-mcp | **v0.1.0 — founded 2026-08-13** by extraction from soulstream/node v0.7.0 ([episode 0070](../04-JOURNEY/0070-ecosystem-the-rename-sweep.md)): the remote MCP server, own CI and release | **Parked (episode 0071)** — stdio MCP is the choice of record for this iteration; built and waiting for the online-platform need |
 
 **2026-08-13 — the naming re-centering** ([episode
@@ -338,11 +338,13 @@ homogeneous with the minter role dissolved into the identity plane
   the position). The central daemon is **cut**; its reversal condition
   (agents-as-infrastructure, or fleet placement landing) is design 0004
   §9. `make test-wrap` wakes a real `claude -p` (19s, live).
-- **The template grows `mcp_args`** — *in flight (2026-08-15)*, design
-  0004 §5: the per-run MCP config's `args` array, so a subcommand can
-  be the tool door (`soulstream mcp` — the product-native wrap of
-  design [`soulstream/0002`](../02-DESIGN/soulstream/0002-wrap-in-the-house.md)).
-  Additive; spec-kit next number.
+- **The template grows `mcp_args`** — ✅ **landed 2026-08-15, v0.4.0**
+  ([episode 0089](../04-JOURNEY/0089-ecosystem-wrap-in-the-house.md);
+  `specs/007-mcp-args/`; design 0004 §5): the per-run MCP config's
+  `args` array, so a subcommand can be the tool door (`soulstream mcp`
+  — the product-native wrap of design
+  [`soulstream/0002`](../02-DESIGN/soulstream/0002-wrap-in-the-house.md)).
+  Additive; an argless template writes the shape it always wrote.
 
 ### Later horizons (named, not planned)
 
@@ -760,17 +762,21 @@ ceremony's owner-only modes). Zero credentials anywhere: the operator
 made soulstream-workloads public, so the whole consumed stack fetches openly —
 the "private-module credential" blocker dissolved.
 
-### Wrap in the house — one binary, one paste — *in flight (2026-08-15)*
+### Wrap in the house — one binary, one paste — ✅ landed 2026-08-15
 
-Design [`0002-wrap-in-the-house.md`](../02-DESIGN/soulstream/0002-wrap-in-the-house.md)
-(operator direction: no Go toolchain, no PATH assembly on an agent's
-machine). The product binary answers `soulstream wrap` and `soulstream
-mcp` natively over the libraries it already pins; the Agents screen
-leads with a portable paste block and gets its density brought back to
-canon; `getting-started.md` loses every `go install`. Runs spec-kit
-here (from design 0002) after workloads lands `mcp_args` (design 0004
-§5); the shell's half is canon-conformance plus 0004 §10's surfacing.
-Exit: design 0002 §5's five criteria, the first proven live.
+**Same-day arc** ([episode 0089](../04-JOURNEY/0089-ecosystem-wrap-in-the-house.md);
+design [`0002-wrap-in-the-house.md`](../02-DESIGN/soulstream/0002-wrap-in-the-house.md);
+`specs/008-wrap-in-the-house/`): the product binary answers
+`soulstream wrap` and `soulstream mcp` natively over the libraries it
+already pins (workloads v0.4.0's `mcp_args` pointing the harness at the
+binary's own door) — no Go toolchain, no PATH assembly on an agent's
+machine. The Agents screen (shell v0.5.0) leads with the portable
+paste block; `getting-started.md` teaches download-and-paste with no
+`go install` left. **Criterion 1 proven live** [measured]: the block,
+unedited, under fish, answered a mention posted while the wrapper was
+off — one reply by a real claude run in 6.7 s; revoked refused loudly.
+Standing exception: `go.sum` for the v0.4.0/v0.5.0 pins resolves when
+those tags are pushed (then `go mod tidy`).
 
 ### Later horizons (named, not planned)
 
