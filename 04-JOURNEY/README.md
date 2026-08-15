@@ -132,7 +132,7 @@ every admitted wake ends in exactly one outcome op (proven under kill,
 timeout, and mid-run MCP posting), revocation refuses the next wake in
 ~2ms while the persona stays addressable, and a second harness costs a
 template, not code. Design
-[`0004-the-waker.md`](../02-DESIGN/soulstream-workloads/0004-the-waker.md):
+[`0004-wrap.md`](../02-DESIGN/soulstream-workloads/0004-wrap.md):
 the workload plane's trigger arm, with support-layer standing (the waker
 mints for the agent; the agent cannot mint for itself). Loop safety
 (agent-wakes-agent) is named **[O]** and leaves as a successor topic — now

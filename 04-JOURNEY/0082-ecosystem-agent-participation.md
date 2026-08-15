@@ -76,7 +76,7 @@ harness ecosystem consolidates on a third-party agent protocol (observable:
 two named harnesses shipping native support for the same one), the
 adapter-to-that-protocol door is re-argued.
 
-Trail: design [`0004-the-waker.md`](../02-DESIGN/soulstream-workloads/0004-the-waker.md);
+Trail: design [`0004-wrap.md`](../02-DESIGN/soulstream-workloads/0004-wrap.md);
 topic commits `cad444d` (pre-registration), `60310ca` (bars 1/2/4),
 `8fe3d9c` (bar 3); rig and runner spike in the session scratchpad per
 how-we-work; episode 0079 is the identity/acting substrate this measured

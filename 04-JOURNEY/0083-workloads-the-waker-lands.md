@@ -53,7 +53,7 @@ D2, reversal observable recorded).
 Reversal condition: none — records a completed build; the design's
 conditions (episode 0082) move with design 0004.
 
-Trail: design [`0004-the-waker.md`](../02-DESIGN/soulstream-workloads/0004-the-waker.md)
+Trail: design [`0004-wrap.md`](../02-DESIGN/soulstream-workloads/0004-wrap.md)
 (amended §5/§6/§7 with the landed corrections);
 [`specs/005-the-waker/`](../../soulstream-workloads/specs/005-the-waker/) frozen;
 workloads `7688e3d`→`944f424` (merge), core `4d50a8e` + tag `v0.8.3`.
