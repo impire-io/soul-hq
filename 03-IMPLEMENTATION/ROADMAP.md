@@ -13,7 +13,7 @@ changes to it are decisions and belong in the journey as episodes.
 | Component | State | Next gate |
 |---|---|---|
 | [soulstream-core](#soulstream-core--the-record) | `v0.8.0` (renamed, episode 0070; the remote MCP node extracted to soulstream-mcp) — MVP + most of day-2 shipped; the remote MCP node built and consumable; two-week dogfood run live since 2026-07-27 | Sealed-topics build priority gated on the dogfood chafe log (to 2026-08-10); eg-walker gated on stage-1 chafe |
-| [soulstream-workloads](#soulstream-workloads--the-room) | Phases 1–2 complete; **M3.2 the waker built** (episodes 0082→0083, same day: research gate to landed feature) — agents are addressable, a real `claude -p` wakes on a mention; core bumped to v0.8.3 | Fleet (design 0003, M3.1) runs spec-kit next; loop-safety research before any agent-wakes-agent deployment |
+| [soulstream-workloads](#soulstream-workloads--the-room) | Phases 1–2 complete; **M3.2 built and reshaped to wrap in one day** (episodes 0082→0083→0085: research gate → waker daemon → personal wrapper) — `soulstream wrap --harness claude` answers mentions from the person's own machine; core at v0.8.4 (external subcommands) | Fleet (design 0003, M3.1) runs spec-kit next; loop-safety research before any agent-wakes-agent deployment; the serve arm returns per design 0004 §9's reversal |
 | [soulstream-identity](#soulstream-identity--the-name) | M1/M3/M4 shipped (+ Entra/OIDC lane, D25 registry dissolution, D28/D29 consumer-proven additions); `v0.2.0` tagged (renamed; wire segment `identity`) | M2's node half — proven upstream by soulstream 018; roadmap check-off pending. M5 gated on soulstream demand |
 | [soulstream](#soulstream--the-product-the-house) | **v0.8.0 — renamed soulstream, the product** (episode 0070; first tag on the reused path clears the record library's v0.1–v0.7 checksum history) ([episodes 0057](../04-JOURNEY/0057-soulnode-the-folded-realm.md)/[0058](../04-JOURNEY/0058-soulnode-the-release-pipeline.md)/[0062](../04-JOURNEY/0062-soulnode-the-front-of-house.md)/[0068](../04-JOURNEY/0068-soulnode-the-helm-plane.md)): fold on by default, `planes.shell` composing soulstream-shell v0.2.0, four URLs logged, the OIDC lane on in local mode when the helm runs | Day-2 items; Phase 3 (tsnet) gated on fronting measured insufficient |
 | [soulstream-idp](#soulstream-idp--the-fold) | **Every milestone shipped — M1–M5, v0.4.0** ([episodes 0052](../04-JOURNEY/0052-soulfold-m1-the-op-skeleton.md)–[0060](../04-JOURNEY/0060-soulfold-m3-the-lifecycle.md)): the sealed store, passkeys, callout admission, the embed seam, and the lifecycle — invitation is the only door; physical-authenticator runbook pending (human act) | Named horizons only (deferred audit rows, multi-issuer demand); day-2 by demand |
@@ -326,6 +326,18 @@ homogeneous with the minter role dissolved into the identity plane
   declaration trigger vocabulary waits for the fleet's claim path
   (research D2); loop safety (agent-wakes-agent) is a successor research
   topic — now with two measured exhibits.
+- **M3.2, reshaped the same day — wrap** ([episode
+  0085](../04-JOURNEY/0085-workloads-wrap-run-your-agent-where-you-are.md);
+  [`specs/006-wrap/`](../../soulstream-workloads/specs/006-wrap/); design
+  [`0004-wrap.md`](../02-DESIGN/soulstream-workloads/0004-wrap.md)). The
+  operator retired the byname and made the front door personal:
+  `soulstream wrap --harness claude` (core v0.8.4's external-subcommand
+  seam, [`specs/019`](../../soulstream-core/specs/019-external-subcommands/))
+  wraps the assistant signed in on the person's own machine — one
+  process, one agent, one credential, no consumer state (the record is
+  the position). The central daemon is **cut**; its reversal condition
+  (agents-as-infrastructure, or fleet placement landing) is design 0004
+  §9. `make test-wrap` wakes a real `claude -p` (19s, live).
 
 ### Later horizons (named, not planned)
 

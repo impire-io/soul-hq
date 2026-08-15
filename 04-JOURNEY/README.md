@@ -112,7 +112,21 @@ eg-walker live co-editing, sealed topics, and a browser/WebSocket client.
 
 ### soulstream-workloads — the room (as of 2026-08-15; named soulrealm until episode 0069)
 
-**The waker is built — agents are addressable, not only runnable**
+**The waker became wrap the day it landed — run your agent where you
+are** ([episode 0085](0085-workloads-wrap-run-your-agent-where-you-are.md)):
+the operator retired the byname and repositioned the front door as
+personal — `soulstream wrap --harness claude` (core v0.8.4's new
+external-subcommand seam) wraps the assistant already signed in on your
+machine, dissolving the provider-login question outright. The central
+daemon is cut with its reversal recorded (design 0004 §9): the wrapper
+holds only the agent's credential and no consumer state — outcomes
+publish under deterministic ids, so **the record is the position** —
+catch-up from the bounded inbox, live from a raw subscription, restarts
+answer nothing twice, failures are the agent's own self-report. Real
+claude answered through it in 19s, and its reply's self-mention
+exercised the loop guard unprompted.
+
+**The waker was built first — agents are addressable, not only runnable**
 ([episode 0083](0083-workloads-the-waker-lands.md), same day as its
 research): `soulstream-workloads waker serve` holds a durable consumer per
 registered agent and turns a mention into one harness invocation with
@@ -780,8 +794,9 @@ key-lifecycle research. No product code exists yet.
 
 ### soulstream-shell — the shell (as of 2026-08-15; named soulhelm until episode 0069)
 
-**The credential screen says where it goes** ([episode
-0084](0084-shell-where-this-goes.md)): the shown-once agent credential
+**The credential screen says where it goes — and now offers the wrap**
+([episodes 0084](0084-shell-where-this-goes.md)/[0085](0085-workloads-wrap-run-your-agent-where-you-are.md)):
+the shown-once agent credential
 (episode 0079's block) now carries per-assistant set-up folds — Claude
 Code (the block is already the exact `.mcp.json`), codex (the same five
 values as a filled TOML table), and anything else that speaks MCP
@@ -963,6 +978,7 @@ the operator lives on the candidate; what chafes decides.
 | 0082 | ecosystem | [What wakes an agent (2026-08-15)](0082-ecosystem-agent-participation.md) |
 | 0083 | workloads | [The waker lands (2026-08-15)](0083-workloads-the-waker-lands.md) |
 | 0084 | shell | [Where this goes (2026-08-15)](0084-shell-where-this-goes.md) |
+| 0085 | workloads | [Wrap: run your agent where you are (2026-08-15)](0085-workloads-wrap-run-your-agent-where-you-are.md) |
 
 ## The naming map (2026-08-13)
 
