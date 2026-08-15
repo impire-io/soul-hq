@@ -988,6 +988,7 @@ the operator lives on the candidate; what chafes decides.
 | 0085 | workloads | [Wrap: run your agent where you are (2026-08-15)](0085-workloads-wrap-run-your-agent-where-you-are.md) |
 | 0086 | soulstream | [v0.11.0-rc.2: wrap ships (2026-08-15)](0086-soulstream-v0-11-0-rc-2.md) |
 | 0087 | ecosystem | [The docs catch up, and the site learns to onboard (2026-08-15)](0087-ecosystem-the-docs-catch-up.md) |
+| 0088 | ecosystem | [The site speaks the new names (2026-08-15)](0088-ecosystem-the-site-speaks-the-new-names.md) |
 
 ## The naming map (2026-08-13)
 
