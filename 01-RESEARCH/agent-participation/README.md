@@ -116,4 +116,38 @@ and the invocation-template direction is re-argued rather than assumed.
 
 ## Verdict
 
-*Empty until graduation.*
+Graduated 2026-08-15 `--to design` → [`02-DESIGN/soulstream-workloads/0004-the-waker.md`](../../02-DESIGN/soulstream-workloads/0004-the-waker.md), per G1 (the waker is the workload plane's trigger arm).
+
+- **Bar 1 — PASS** `[measured]`. A mention posted while no agent
+  process existed woke unmodified headless claude-code through the
+  runner spike (10.3s run); the typed terminal `result` landed as
+  exactly one `turn.post` authored by the agent persona.
+  Discriminating trial: with `post_turn` removed from the MCP surface
+  the reply still landed (4.4s, correct content) — the answer does
+  not depend on the model calling a tool.
+- **Bar 2 — PASS** `[measured]`. SIGKILL mid-run and hang-to-
+  max-deliver each ended in exactly **one** attributed failure turn
+  (delivery 2/2 named in the body); the MCP-mid-run trial ended in
+  exactly **one** turn (the model's own, runner acked without
+  posting). Consumer state after all trials: 0 unprocessed, 0
+  redelivered — no dangling wakes. Refinement forced by Bar 3: the
+  invariant is "every **admitted** wake ends in exactly one outcome
+  op"; refused wakes produce no op by design.
+- **Bar 3 — PASS** `[measured]`, on the full product stack (callout
+  always on). Three mentions accumulated and drained (after fixing a
+  real spike bug: correlation must diff before/after run snapshots,
+  not anchor ordering — the first attempt silently swallowed two
+  replies). Revocation refused the next wake in **2ms**, server-
+  enforced, with the persona still mentionable and history attributed;
+  re-grant re-admitted the *same* naked mention (delivery 2 answered).
+  `mint.ephemeral` per-run credentials: 5s-TTL cred admitted at t=0,
+  refused at t≈12s; a 150s-TTL cred carried a full wake as the
+  harness's only credential. Caveat: minting is operator-gated — the
+  runner mints, the agent cannot.
+- **Bar 4 — PASS** `[measured]`, with its pre-registered fallback. A
+  second harness speaking codex-cli 0.14's captured `exec --json`
+  grammar ran through the byte-identical runner binary on a
+  template-only change (dot-path terminal mapping). Live codex was
+  blocked by expired machine auth (typed error event captured — even
+  its failure path is machine-readable); the live rerun is one
+  command once the operator re-authenticates.

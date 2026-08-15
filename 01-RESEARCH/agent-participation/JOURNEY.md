@@ -186,3 +186,59 @@ post even by way of the runner.
   were exactly right; the *content* was the model's hallucination.
   The wake path guarantees the reply arrives and is honestly authored,
   never that it is smart.
+
+## 2026-08-15 — The decisions that are not bars, resolved
+
+- **G1 — the waker's home** `[judgment, on measured scope facts]`: the
+  waker joins **soulstream-workloads as its trigger arm**, not a new
+  component. The fleet design's op-log-triggered launch (0003-fleet)
+  is the same shape — a standing observer converting stream events
+  into launches — and `LifecycleFunction` is the reserved word waiting
+  for exactly this. The measured caveat carries into the design: the
+  waker's standing is privileged (durable consumer on the notify
+  stream, ops-lane minting, posting) — support-layer class, like the
+  shell's, never a workload's own scope. The reversal condition's
+  observable (a bespoke scheduler beside workloads) describes the
+  *spike*, as expected for a rig; it fires for the product only if the
+  trigger arm ships outside the workload plane.
+- **G2 — failure authorship** `[mechanism-argument]`: the runner posts
+  the agent's *reply* as the agent — custodian of output, the adapter
+  pattern, the text is the agent's own. But *failure* is the runner's
+  testimony **about** the agent, spoken in the runner's own persona
+  (the waker is a persona too — D27 makes jobs first-class),
+  mentioning the agent and the asker. Forced by measurement: a revoked
+  agent cannot speak at all (2ms refusal, no op possible), so the
+  agent's voice can never be the failure channel — and a runner that
+  ghostwrites failure as the agent would launder attribution the
+  moment the agent is gone.
+- **G3 — narration is presence, never turns** `[judgment]`: the
+  mid-run assistant events (observed in every run's event log) are the
+  agent's typing indicator; relaying them as ephemeral presence is an
+  affordance, posting them would pollute the op-log. Unmeasured —
+  presence relay was not built in the spike.
+- **G4 — subagents carry no personas** `[judgment]`: claude-code
+  spawned whatever it spawned inside its runs; nothing surfaced or
+  needed to. Internal machinery speaks through the parent's voice; a
+  subagent graduates to its own persona (with its own `operated_by`)
+  exactly when it becomes independently addressable — mentioned,
+  woken, revoked on its own.
+- **G5 — external agent protocols stay adapters** `[mechanism-
+  argument]`: a structurally different harness grammar cost one
+  template, zero code. The wire (notify subjects, `turn.post`) is the
+  contract; any third-party agent protocol that matters later is one
+  more template or bridge, never the seam.
+- **G6 — the invocation template, measured shape** `[measured]`: a
+  registered agent's "how to run it" record needs: command argv with
+  `{{PROMPT}}`/`{{MCP_CONFIG}}`/`{{RUN_DIR}}` placeholders; the
+  terminal-event mapping (dot-path type field, terminal value, text
+  field, optional status/success); the MCP env block; run timeout;
+  retry budget (max-deliver). Harness idioms live in the template,
+  not the runner: claude needs `--verbose` with stream-json, stdin
+  from `/dev/null`, `--strict-mcp-config`, tool allow/deny flags.
+- **G7 — loop safety is real and unbuilt** `[measured trigger,
+  successor topic]`: the very first wake's reply @-mentioned the
+  asker and fired a fresh notify. Two woken agents mentioning each
+  other would ping-pong on this machinery exactly as built. The waker
+  is the natural budget point (every wake passes through it);
+  debounce/budget design leaves as a successor topic, pre-registered
+  before any agent-wakes-agent deployment.
