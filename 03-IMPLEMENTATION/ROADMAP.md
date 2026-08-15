@@ -13,7 +13,7 @@ changes to it are decisions and belong in the journey as episodes.
 | Component | State | Next gate |
 |---|---|---|
 | [soulstream-core](#soulstream-core--the-record) | `v0.8.0` (renamed, episode 0070; the remote MCP node extracted to soulstream-mcp) — MVP + most of day-2 shipped; the remote MCP node built and consumable; two-week dogfood run live since 2026-07-27 | Sealed-topics build priority gated on the dogfood chafe log (to 2026-08-10); eg-walker gated on stage-1 chafe |
-| [soulstream-workloads](#soulstream-workloads--the-room) | Phases 1–2 complete — native, microsandbox, and Kubernetes backends run byte-identical declarations; `v0.2.0` renamed, wire at SOULSTREAM.* | Phase 3 (Fleet) unblocked: design 0003, M3.1 runs spec-kit next |
+| [soulstream-workloads](#soulstream-workloads--the-room) | Phases 1–2 complete — native, microsandbox, and Kubernetes backends run byte-identical declarations; `v0.2.0` renamed, wire at SOULSTREAM.*; the waker gate met (episode 0082, four bars PASS) | Phase 3 unblocked on both arms: Fleet (design 0003, M3.1) and the waker (design 0004, M3.2) run spec-kit next |
 | [soulstream-identity](#soulstream-identity--the-name) | M1/M3/M4 shipped (+ Entra/OIDC lane, D25 registry dissolution, D28/D29 consumer-proven additions); `v0.2.0` tagged (renamed; wire segment `identity`) | M2's node half — proven upstream by soulstream 018; roadmap check-off pending. M5 gated on soulstream demand |
 | [soulstream](#soulstream--the-product-the-house) | **v0.8.0 — renamed soulstream, the product** (episode 0070; first tag on the reused path clears the record library's v0.1–v0.7 checksum history) ([episodes 0057](../04-JOURNEY/0057-soulnode-the-folded-realm.md)/[0058](../04-JOURNEY/0058-soulnode-the-release-pipeline.md)/[0062](../04-JOURNEY/0062-soulnode-the-front-of-house.md)/[0068](../04-JOURNEY/0068-soulnode-the-helm-plane.md)): fold on by default, `planes.shell` composing soulstream-shell v0.2.0, four URLs logged, the OIDC lane on in local mode when the helm runs | Day-2 items; Phase 3 (tsnet) gated on fronting measured insufficient |
 | [soulstream-idp](#soulstream-idp--the-fold) | **Every milestone shipped — M1–M5, v0.4.0** ([episodes 0052](../04-JOURNEY/0052-soulfold-m1-the-op-skeleton.md)–[0060](../04-JOURNEY/0060-soulfold-m3-the-lifecycle.md)): the sealed store, passkeys, callout admission, the embed seam, and the lifecycle — invitation is the only door; physical-authenticator runbook pending (human act) | Named horizons only (deferred audit rows, multi-issuer demand); day-2 by demand |
@@ -313,6 +313,17 @@ homogeneous with the minter role dissolved into the identity plane
   dependency, tracked openly: the preferred minting path needs
   soulstream-identity to stamp tags on mints (its M2 "consumer-proven" clause);
   the measured delegated-minting fallback works today.
+- **M3.2 — the waker.** Gate met 2026-08-15 (research [episode
+  0082](../04-JOURNEY/0082-ecosystem-agent-participation.md): all four
+  pre-registered bars measured PASS — the wake path, the one-outcome-op
+  invariant under faults, address-outlives-process with 2ms revocation,
+  and harness-agnostic invocation templates). Runs the spec-kit flow
+  against design
+  [`0004-the-waker.md`](../02-DESIGN/soulstream-workloads/0004-the-waker.md)
+  (§11 acceptance criteria). Named open items carried in: the trigger
+  vocabulary in the declaration (`LifecycleFunction` becomes real), the
+  waker persona's own registration, and loop safety as a successor
+  research topic before any agent-wakes-agent deployment.
 
 ### Later horizons (named, not planned)
 
