@@ -133,3 +133,56 @@ terminal mapping is what makes a template configuration rather than
 code. Caveat, stated plainly: this proves the runner is
 harness-agnostic against a *faithful stand-in*; the live-codex rerun
 is a one-command repeat once the operator re-authenticates codex.
+
+## 2026-08-15 — Bar 3: PASS (full product stack), one spike bug found and fixed
+
+Stack: `soulstream init && up` (v0.11.0-rc.1 tree) on isolated ports —
+operator-mode NATS :4433, callout always on, identity plane embedded.
+Agent `wakebot` registered exactly as episode 0079's shell does it:
+`CreateToken(realmPub, handle, …)` over the ops lane via the public
+identity client (a 60-line `agentctl` spike). The runner grew three
+full-stack concerns: its own creds for the durable consumer (ops
+lane), a **pre-wake admission probe** — connect as the agent with
+sentinel + token before spending a harness run — and CLI posting
+through the agent's own token-lane context, so a revoked agent cannot
+post even by way of the runner.
+
+- **Backlog** `[measured]`: 3 mentions accumulated in
+  `SOULSTREAM_NOTIFY` while nothing ran, then drained — 3 distinct
+  replies. **The first drain attempt found a spike bug**: with several
+  mentions in one topic, correlation-by-stream-seq let wake 1's reply
+  masquerade as the answer to mentions 2 and 3 (both acked, no
+  replies — the unanswered ops stay visible in the trial topic as the
+  bug's honest cost). Fix: correlate by **before/after snapshot diff
+  of the run**, not by anchor ordering. Re-run passed. The
+  invocation-context snapshot the runner already takes is exactly the
+  right baseline — a lesson the design doc must carry.
+- **Revocation bites the wake in 2ms** `[measured]`: `RevokeToken` →
+  next mention's admission probe refused (`Authorization Violation`,
+  wake at .4329s refused at .4346s), no harness run, **no reply
+  possible** — and the persona stayed mentionable (the mention posted
+  fine) with all history attributed. The wake-path revocation bound is
+  *next wake*, tighter than 0079's general bound (open connections
+  end at JWT expiry) because per-wake connections don't outlive the
+  run `[mechanism-argument]`.
+- **Re-grant re-admits, not merely offers** `[measured]`: after
+  re-minting, the *same* naked mention redelivered (delivery 2) and
+  received its reply. A revocation window is a delay, not a loss.
+- **Per-run ephemeral lane** `[measured]`: `mint.ephemeral` (role
+  `realm`, caller-generated key, no vault entry) — a 5s-TTL credential
+  admitted at t=0 and refused outright at t≈12s; a 150s-TTL credential
+  carried a complete wake end-to-end as the harness's only credential
+  (no token in its env). Caveats stated: the minting caller must hold
+  operator-grade creds (the runner mints; the agent cannot), and the
+  spike pre-mints manually — folding the mint into the runner's
+  per-wake flow is one more step, not new machinery.
+- **Invariant refinement the trials forced**: a *refused* wake
+  produces no op at all — the agent cannot speak, so nothing is
+  posted and the mention waits. Bar 2's invariant is precisely "every
+  **admitted** wake ends in exactly one outcome op"; who tells the
+  topic the agent is gone is G2's question, now with measured stakes.
+- Wry note for calibration: the final reply said "the bar3 realm" —
+  the realm is `agentfull`. Attribution, custody, and the envelope
+  were exactly right; the *content* was the model's hallucination.
+  The wake path guarantees the reply arrives and is honestly authored,
+  never that it is smart.
