@@ -10,7 +10,7 @@ the component repositories (sibling checkouts:
 [`../soulstream-workloads`](../soulstream-workloads) the room,
 [`../soulstream-identity`](../soulstream-identity) the name,
 [`../soulstream`](../soulstream) the product, [`../soulstream-idp`](../soulstream-idp) the
-fold, [`../soulstream-shell`](../soulstream-shell) the shell), along with their frozen
+sign-in, [`../soulstream-shell`](../soulstream-shell) the shell), along with their frozen
 per-feature spec-kit artifacts
 (`specs/NNN-*/`) and plain-words `docs/`. Everything else — why the
 ecosystem exists, what we're investigating, what we've designed, what we're

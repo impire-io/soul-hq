@@ -508,6 +508,16 @@ claims-mapping shape, service round-trip latency) are named on the roadmap.
 
 ### soulstream — the product, the house (as of 2026-08-15; named soulnode until episode 0069)
 
+**One console, one vocabulary** ([episodes
+0091](0091-ecosystem-the-shell-is-the-console.md)/[0092](0092-ecosystem-the-names-say-what-they-do.md);
+`specs/009-one-console-one-vocabulary/`): the planes are named by
+function — `planes.signin`, `planes.mcp`, `--signin-listen`,
+`--mcp-listen` — with every byname-era spelling read forever and
+founded realms untouched (migration fixture in `make test`); the
+bundled sign-in plane serves its admin API and not its console
+(`/admin` → 404, pinned); `up` prints functional labels; docs and the
+site mirror the real output. Pins idp v0.5.0 + shell v0.6.0.
+
 **Wrap in the house — one binary, one paste** ([episode
 0089](0089-ecosystem-wrap-in-the-house.md);
 `specs/008-wrap-in-the-house/`, design
@@ -678,6 +688,13 @@ directive) — both since dissolved by the upstream landings above.
 
 ### soulstream-idp — the fold (as of 2026-08-15; named soulfold until episode 0069)
 
+**The console becomes the standalone deployment's surface** ([episode
+0091](0091-ecosystem-the-shell-is-the-console.md); **v0.5.0**, design
+D31): the admin API always serves; whether the HTML console does is a
+serve/embed option — on standalone, off inside the soulstream product,
+where the shell administers through the same published API. The page
+copy and README shed the bynames in the same pass (episode 0092).
+
 **The fold wears the ecosystem's canon** ([episode
 0090](0090-idp-the-fold-wears-the-canon.md); **v0.4.2**, design D30):
 sign-in, enrolment, and the admin console dropped the dark
@@ -829,6 +846,15 @@ and the roadmap sequences M1 (the OP skeleton) behind its KV-schema and
 key-lifecycle research. No product code exists yet.
 
 ### soulstream-shell — the shell (as of 2026-08-15; named soulhelm until episode 0069)
+
+**The shell is the console** ([episode
+0091](0091-ecosystem-the-shell-is-the-console.md); **v0.6.0**): the
+People & sign-in screen grew to the whole published admin contract —
+add a person, edit groups in place, shut out and let back in, and the
+apps that sign people in — drawn on the spine only for sessions whose
+own token carries the admin role, with the sign-in service's verified
+refusals as the authority. The idp's HTML console unmounts in the
+bundled product (D31); administration has one home.
 
 **The agents screen breathes, and the wrap leads** ([episode
 0089](0089-ecosystem-wrap-in-the-house.md); **v0.5.0**): the credential
@@ -1030,6 +1056,8 @@ the operator lives on the candidate; what chafes decides.
 | 0088 | ecosystem | [The site speaks the new names (2026-08-15)](0088-ecosystem-the-site-speaks-the-new-names.md) |
 | 0089 | ecosystem | [Wrap in the house: one binary, one paste (2026-08-15)](0089-ecosystem-wrap-in-the-house.md) |
 | 0090 | idp | [The fold wears the ecosystem's canon (2026-08-15)](0090-idp-the-fold-wears-the-canon.md) |
+| 0091 | ecosystem | [The shell is the console (2026-08-15)](0091-ecosystem-the-shell-is-the-console.md) |
+| 0092 | ecosystem | [The names say what they do (2026-08-15)](0092-ecosystem-the-names-say-what-they-do.md) |
 
 ## The naming map (2026-08-13)
 

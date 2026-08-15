@@ -17,7 +17,7 @@ changes to it are decisions and belong in the journey as episodes.
 | [soulstream-identity](#soulstream-identity--the-name) | M1/M3/M4 shipped (+ Entra/OIDC lane, D25 registry dissolution, D28/D29 consumer-proven additions); `v0.2.0` tagged (renamed; wire segment `identity`) | M2's node half — proven upstream by soulstream 018; roadmap check-off pending. M5 gated on soulstream demand |
 | [soulstream](#soulstream--the-product-the-house) | **Wrap in the house — one binary, one paste** ([episode 0089](../04-JOURNEY/0089-ecosystem-wrap-in-the-house.md), atop v0.11.0-rc.2's wrap arc, [episode 0086](../04-JOURNEY/0086-soulstream-v0-11-0-rc-2.md)): native `soulstream wrap`/`mcp` verbs, the Agents screen's portable paste block proven live under fish, no `go install` anywhere — pinning workloads v0.4.0 / shell v0.5.0 | Push the workloads/shell tags, `go mod tidy`, cut the next RC; RC soak toward v0.11.0; Phase 3 (tsnet) gated on fronting measured insufficient |
 | [soulstream-idp](#soulstream-idp--the-fold) | **Every milestone shipped — M1–M5**, and **v0.4.2 wears the ecosystem's canon** ([episode 0090](../04-JOURNEY/0090-idp-the-fold-wears-the-canon.md), design D30): the sealed store, passkeys, callout admission, the embed seam, the lifecycle — and pages that read as the same product as the shell; physical-authenticator runbook pending (human act) | Named horizons only (deferred audit rows, multi-issuer demand); day-2 by demand |
-| [soulstream-shell](#soulstream-shell--the-shell) | **v0.5.0 — the agents screen breathes, and the wrap leads** ([episode 0089](../04-JOURNEY/0089-ecosystem-wrap-in-the-house.md), atop the module-shaped cockpit arc, episodes [0066](../04-JOURNEY/0066-ecosystem-soulsystem-cockpit.md)–[0078](../04-JOURNEY/0078-shell-the-module-contract.md) and the agents/responsive work through v0.4.3): the credential card opens with the portable paste block, hard paths folded beneath, canon rhythm restored, the overview pointing the way to a first agent | **v0.5.0 pinned by soulstream** alongside workloads v0.4.0 (tags to push) | The operator tries the whole system — evaluation decides what changes |
+| [soulstream-shell](#soulstream-shell--the-shell) | **v0.6.0 — the shell is the console** ([episodes 0089](../04-JOURNEY/0089-ecosystem-wrap-in-the-house.md)/[0091](../04-JOURNEY/0091-ecosystem-the-shell-is-the-console.md)): the wrap-first agents screen, and full administration — people, groups, invites, the apps that sign people in — drawn only for administrators, with the sign-in service's refusals as the authority | **v0.6.0 pinned by soulstream** | The operator tries the whole system — evaluation decides what changes |
 | soulstream-mcp | **v0.1.0 — founded 2026-08-13** by extraction from soulstream/node v0.7.0 ([episode 0070](../04-JOURNEY/0070-ecosystem-the-rename-sweep.md)): the remote MCP server, own CI and release | **Parked (episode 0071)** — stdio MCP is the choice of record for this iteration; built and waiting for the online-platform need |
 
 **2026-08-13 — the naming re-centering** ([episode
@@ -778,22 +778,22 @@ off — one reply by a real claude run in 6.7 s; revoked refused loudly.
 Standing exception: `go.sum` for the v0.4.0/v0.5.0 pins resolves when
 those tags are pushed (then `go mod tidy`).
 
-### One console, one vocabulary — *in flight (2026-08-15)*
+### One console, one vocabulary — ✅ landed 2026-08-15
 
-Operator direction, recorded in design 0001 §2 (planes named by
-function, legacy keys read forever) and soulstream-idp design D31 (the
-admin console is the standalone deployment's surface; embedded, the
-admin API serves and the console does not): the shell grows to full
-admin parity through the published `/api/admin/*` contract and becomes
-the product's one console; the byname vocabulary ("the door", "the
-fold") leaves every user-facing surface — docs, CLI output, page copy,
-the website — including the identifier renames
-(`planes.signin`/`planes.mcp`, `--signin-listen`/`--mcp-listen`) with
-founded realms migrated by read-forever aliases and on-disk fallback.
-Exit: a fresh realm shows only functional names; a legacy-config realm
-still boots [to be measured]; the shell walks create→invite→enroll→
-sign-in as an admin and hides the surface from non-admins; zero prose
-bynames in the built site.
+**Same-day arc** ([episodes
+0091](../04-JOURNEY/0091-ecosystem-the-shell-is-the-console.md)/[0092](../04-JOURNEY/0092-ecosystem-the-names-say-what-they-do.md);
+`specs/009-one-console-one-vocabulary/`; designs 0001 §2 + idp D31):
+the shell reached full admin parity through the published
+`/api/admin/*` contract and is the product's one console (spine key
+admin-only; the idp's HTML console unmounts embedded, `/admin` → 404
+pinned); the planes are named by function with every byname-era
+spelling read forever and founded realms untouched (migration fixture
+in `make test` [measured]); the bynames left the docs, CLI output,
+page copy, the core docs, and the website — flagship line now "One
+protocol. No bot lane." Verified live: fresh found writes
+`planes: [memory, mcp, signin, shell]` + `signin.creds`, `up` prints
+functional labels [measured]. Ships as idp v0.5.0 + shell v0.6.0 +
+the product pinning both.
 
 ### Later horizons (named, not planned)
 
