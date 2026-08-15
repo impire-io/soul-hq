@@ -778,6 +778,23 @@ off — one reply by a real claude run in 6.7 s; revoked refused loudly.
 Standing exception: `go.sum` for the v0.4.0/v0.5.0 pins resolves when
 those tags are pushed (then `go mod tidy`).
 
+### One console, one vocabulary — *in flight (2026-08-15)*
+
+Operator direction, recorded in design 0001 §2 (planes named by
+function, legacy keys read forever) and soulstream-idp design D31 (the
+admin console is the standalone deployment's surface; embedded, the
+admin API serves and the console does not): the shell grows to full
+admin parity through the published `/api/admin/*` contract and becomes
+the product's one console; the byname vocabulary ("the door", "the
+fold") leaves every user-facing surface — docs, CLI output, page copy,
+the website — including the identifier renames
+(`planes.signin`/`planes.mcp`, `--signin-listen`/`--mcp-listen`) with
+founded realms migrated by read-forever aliases and on-disk fallback.
+Exit: a fresh realm shows only functional names; a legacy-config realm
+still boots [to be measured]; the shell walks create→invite→enroll→
+sign-in as an admin and hides the surface from non-admins; zero prose
+bynames in the built site.
+
 ### Later horizons (named, not planned)
 
 Each will get its own research gate when it approaches:

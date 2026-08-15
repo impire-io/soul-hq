@@ -56,6 +56,23 @@ loopback. The embedded server binds `127.0.0.1` only, port configurable
 (default the NATS conventional port; refusing to start on a bind conflict
 with a message naming the config key).
 
+**Planes are named by function [D — operator direction, 2026-08-15].**
+The config keys are `planes.signin` (the bundled OpenID sign-in service,
+soulstream-idp) and `planes.mcp` (the MCP endpoint for assistants) —
+the byname-era spellings `planes.fold` and `planes.door` are **read
+forever** as legacy aliases, so a founded realm's `config.json` never
+stops working. New founds write the functional keys and mint the
+sign-in plane's NATS artifacts under the functional name
+(`users/signin.creds`, user `signin`); an existing realm's artifacts
+keep their founded names — a NATS user's name is baked into the
+account JWTs and cannot be renamed without re-ceremony — and the node
+resolves them by fallback (`signin.creds`, then `fold.creds`). CLI
+flags follow the same rule: `--signin-listen` / `--mcp-listen`, with
+the old spellings accepted and only the new ones in the usage text.
+The sign-in plane, when embedded here, serves its admin **API** and
+not its HTML console (soulstream-idp design D31): the product's
+administration surface is the shell.
+
 ## 3. The embedded server [V]
 
 Provisioned entirely in code — `server.Options` + `MemAccResolver`, no

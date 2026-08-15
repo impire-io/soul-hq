@@ -150,6 +150,27 @@ the canon's full type faces (a measured legibility or brand need),
 the inline-string rule yields to one embedded-font route before this
 decision reopens.
 
+### D31 — The admin console is the standalone deployment's surface
+
+The HTML admin console (`/admin`) exists for deployments that run
+soulstream-idp on its own — no product console beside it — and as
+nothing else. The admin **API** (`/api/admin/*`, bearer-guarded,
+admin-role-verified) always serves; whether the HTML console serves is
+a serve/embed option, **on by default standalone, off when embedded in
+the soulstream product** — there, administration happens in the
+product's one console (the shell) through this same published API, and
+the product neither mounts nor advertises `/admin`.
+
+Reasoning: the shell already consumes the admin API as the signed-in
+person (delegated authority, the surface's own refusals); a second
+console with its own session machinery is a second place to be an
+administrator, and the operator's direction (2026-08-15) is one
+console [judgment]. The API/console split keeps standalone estates
+whole — the console is presentation over the same API, not a second
+authority. Reversal: a measured lockout incident that only a
+fold-local console could have fixed brings the bundled console back
+behind an explicit break-glass flag.
+
 ## Acceptance criteria (the M1 and M2 gates inherit these)
 
 1. A stock OIDC RP completes sign-in with the measured page inventory
