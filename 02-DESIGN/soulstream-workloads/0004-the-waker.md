@@ -3,7 +3,11 @@
 *Graduated from research `agent-participation` (episode
 [0082](../../04-JOURNEY/0082-ecosystem-agent-participation.md)); all four
 pre-registered bars measured PASS on a rig wiring core v0.8.2, the identity
-plane, and the full product stack. Status tags: **[V]** unless marked.*
+plane, and the full product stack. **Built as M3.2** (episode
+[0083](../../04-JOURNEY/0083-workloads-the-waker-lands.md),
+[`specs/005-the-waker/`](../../../soulstream-workloads/specs/005-the-waker/)) —
+amendments from the build are marked "landed correction". Status tags:
+**[V]** unless marked.*
 
 The waker is the workload plane's **trigger arm**: the standing component
 that converts a message on a persona's notify subject into one invocation
@@ -92,8 +96,12 @@ A registered agent's record carries, beside handle/shown-as/operator
 }
 ```
 
-Placeholders `{{PROMPT}}`, `{{MCP_CONFIG}}`, `{{RUN_DIR}}`. Harness idioms
-live in the template, never in waker code — measured: claude-code and a
+Placeholders `{{PROMPT}}`, `{{TOPIC}}`, `{{MCP_CONFIG}}`, `{{RUN_DIR}}`
+(landed correction: `{{TOPIC}}` joined for harnesses that take the topic as
+an argument). The template's home is the **waker configuration file**
+(research D2: registrations are operator configuration until the fleet's
+claim path gives the declaration a second consumer). Harness idioms live in
+the template, never in waker code — measured: claude-code and a
 codex-grammar harness ran through a byte-identical waker on template-only
 changes. A harness whose headless mode has no machine-readable terminal
 event MUST be refused a template (or wrapped and named degraded) — that is
@@ -102,11 +110,20 @@ harness cannot meet it.
 
 ## 6. The reply obligation **[V]**
 
-The runner owns the reply; MCP tools are enrichment. After the run, take an
-**after snapshot** and correlate by **set difference of the persona's turns
-between snapshots** — MUST NOT correlate by anchor stream order (measured
-failure: with several mentions in one topic, an earlier wake's reply
-masquerades as a later mention's answer and swallows replies).
+The runner owns the reply; MCP tools are enrichment. Every outcome
+publishes under the wake's one deterministic op id — **UUIDv5 of the notify
+op id and the agent persona** (landed correction: one mention can tap
+several registered agents; a wake is one delivery *to one agent* — hashing
+the notify op alone made two agents' outcomes dedupe into a single turn
+[measured, the build's multi-agent gate test]). The id doubles as
+`Nats-Msg-Id` (core v0.8.3's `PostTurnIdempotent`), so same-wake reposts
+dedupe inside the record's 2-minute window; beyond it, a redelivery
+pre-check (materialise, find the id) closes the crash-after-post window.
+After the run, take an **after snapshot** and correlate by **set difference
+of the persona's turns between snapshots** — MUST NOT correlate by anchor
+stream order (measured failure: with several mentions in one topic, an
+earlier wake's reply masquerades as a later mention's answer and swallows
+replies).
 
 - Harness posted during the run → ack, post nothing.
 - Terminal success with text → post the text as the agent, ack.
@@ -116,18 +133,25 @@ masquerades as a later mention's answer and swallows replies).
 Every admitted wake therefore ends in exactly one outcome op — measured
 under SIGKILL, timeout-to-budget, and mid-run MCP posting.
 
-## 7. Authorship **[V mechanics / D policy]**
+## 7. Authorship **[V]**
 
 The waker posts the agent's *reply* as the agent — custodian of output,
 the adapter pattern; the text is the agent's own, signed with the agent's
 key where one is wired (`SOULSTREAM_KEY_FILE`; an agent configured only by
 the 0079 block posts unsigned — the pinned standing defect). *Failure* is
 the waker's testimony **about** the agent and is authored by the waker's
-own persona (the waker is a persona — one noun, D27), mentioning the agent
-and the asker. Forced by measurement: a revoked agent cannot speak, so the
-agent's voice can never be the failure channel, and ghostwriting failure
-would launder attribution exactly when it matters. *(The spike posted
-failures as the agent; the policy above is the design correction.)*
+own persona (the waker is a persona — one noun, D27), **naming the agent
+in the body and tapping only the asker** (landed correction: the graduated
+design said "mentioning the agent and the asker"; tapping the agent
+notifies it, and a notify to a registered agent is a wake — the build's
+hermetic gate measured the loop, failure turn → notify → wake → failure
+turn, forever). A companion guard landed with it: a mention **authored by
+the agent itself** never wakes it. Forced by measurement: a revoked agent
+cannot speak, so the agent's voice can never be the failure channel, and
+ghostwriting failure would launder attribution exactly when it matters.
+*(The spike posted failures as the agent; the built waker enforces the
+corrected policy — authorship is mechanical, two live clients, no
+switchable author.)*
 
 ## 8. Credentials **[V]**
 

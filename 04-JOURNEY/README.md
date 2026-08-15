@@ -112,17 +112,31 @@ eg-walker live co-editing, sealed topics, and a browser/WebSocket client.
 
 ### soulstream-workloads — the room (as of 2026-08-15; named soulrealm until episode 0069)
 
-**The waker is designed — agents can be woken, not only run** ([episode
-0082](0082-ecosystem-agent-participation.md)): the `agent-participation`
-research measured all four bars PASS — a mention wakes a headless harness
-through a durable consumer and an invocation template, every admitted wake
-ends in exactly one outcome op (proven under kill, timeout, and mid-run MCP
-posting), revocation refuses the next wake in ~2ms while the persona stays
-addressable, and a second harness costs a template, not code. Graduated to
-design [`0004-the-waker.md`](../02-DESIGN/soulstream-workloads/0004-the-waker.md):
+**The waker is built — agents are addressable, not only runnable**
+([episode 0083](0083-workloads-the-waker-lands.md), same day as its
+research): `soulstream-workloads waker serve` holds a durable consumer per
+registered agent and turns a mention into one harness invocation with
+exactly one outcome op per admitted wake; `make test-wake` woke a real
+`claude -p` (mention → attributed reply, 6.6s). The build rode core
+v0.8.3's new `PostTurnIdempotent` and caught two design-level bugs the
+research rig never hit — the self-wake loop (failure testimony tapping the
+agent re-woke it; now it taps only the asker) and the outcome-id collision
+(one mention tapping two agents deduped their outcomes; the wake id now
+hashes notify op **and** persona) — both corrected in design 0004 and
+regression-guarded.
+
+**The waker was designed first — all four research bars measured PASS**
+([episode 0082](0082-ecosystem-agent-participation.md)): a mention wakes a
+headless harness through a durable consumer and an invocation template,
+every admitted wake ends in exactly one outcome op (proven under kill,
+timeout, and mid-run MCP posting), revocation refuses the next wake in
+~2ms while the persona stays addressable, and a second harness costs a
+template, not code. Design
+[`0004-the-waker.md`](../02-DESIGN/soulstream-workloads/0004-the-waker.md):
 the workload plane's trigger arm, with support-layer standing (the waker
 mints for the agent; the agent cannot mint for itself). Loop safety
-(agent-wakes-agent) is named **[O]** and leaves as a successor topic.
+(agent-wakes-agent) is named **[O]** and leaves as a successor topic — now
+carrying two measured exhibits.
 
 **Soulstream is pinned at v0.6.0 — the dev replace is gone** ([episode
 0011](0037-soulrealm-pinned-to-the-record.md)): soulnode's composition research named
@@ -938,6 +952,7 @@ the operator lives on the candidate; what chafes decides.
 | 0080 | shell | [One instrument, any width (2026-08-14)](0080-shell-one-instrument-any-width.md) |
 | 0081 | idp | [The last administrator stays (2026-08-14)](0081-idp-the-last-administrator-stays.md) |
 | 0082 | ecosystem | [What wakes an agent (2026-08-15)](0082-ecosystem-agent-participation.md) |
+| 0083 | workloads | [The waker lands (2026-08-15)](0083-workloads-the-waker-lands.md) |
 
 ## The naming map (2026-08-13)
 
