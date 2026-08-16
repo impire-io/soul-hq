@@ -506,7 +506,15 @@ questions before their milestones (NGS callout
 capabilities, the sentinel-credential flow, the first-key story, the
 claims-mapping shape, service round-trip latency) are named on the roadmap.
 
-### soulstream — the product, the house (as of 2026-08-15; named soulnode until episode 0069)
+### soulstream — the product, the house (as of 2026-08-16; named soulnode until episode 0069)
+
+**v0.12.0-rc.1 — the clean-break candidate** ([episode
+0094](0094-soulstream-v0-12-0-rc-1.md), pinning core v0.8.4 /
+workloads v0.4.0 / shell v0.6.0 / idp v0.5.0): everything episodes
+0089–0093 landed, released — one binary and one paste for agents, one
+canon on every page, one console for administration, one vocabulary
+with no fallbacks. A realm founded on an earlier candidate is refused
+with the hand-migration named; artifact round-tripped and verified.
 
 **One console, one vocabulary** ([episodes
 0091](0091-ecosystem-the-shell-is-the-console.md)/[0092](0092-ecosystem-the-names-say-what-they-do.md);
@@ -1060,6 +1068,7 @@ the operator lives on the candidate; what chafes decides.
 | 0091 | ecosystem | [The shell is the console (2026-08-15)](0091-ecosystem-the-shell-is-the-console.md) |
 | 0092 | ecosystem | [The names say what they do (2026-08-15)](0092-ecosystem-the-names-say-what-they-do.md) |
 | 0093 | soulstream | [Pre-v1 renames are clean breaks (2026-08-16)](0093-soulstream-pre-v1-renames-are-clean-breaks.md) |
+| 0094 | soulstream | [v0.12.0-rc.1: the clean-break candidate (2026-08-16)](0094-soulstream-v0-12-0-rc-1.md) |
 
 ## The naming map (2026-08-13)
 
