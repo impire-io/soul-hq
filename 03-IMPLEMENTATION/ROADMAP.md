@@ -786,9 +786,11 @@ those tags are pushed (then `go mod tidy`).
 the shell reached full admin parity through the published
 `/api/admin/*` contract and is the product's one console (spine key
 admin-only; the idp's HTML console unmounts embedded, `/admin` → 404
-pinned); the planes are named by function with every byname-era
-spelling read forever and founded realms untouched (migration fixture
-in `make test` [measured]); the bynames left the docs, CLI output,
+pinned); the planes are named by function — and, per the
+operator's next-day direction (episode 0093), **pre-v1 renames are
+clean breaks**: no alias keys, no alias flags, no fallbacks; a
+byname-era realm is refused by name with the hand-migration in the
+refusal, pinned in `make test` and live [measured]; the bynames left the docs, CLI output,
 page copy, the core docs, and the website — flagship line now "One
 protocol. No bot lane." Verified live: fresh found writes
 `planes: [memory, mcp, signin, shell]` + `signin.creds`, `up` prints

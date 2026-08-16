@@ -56,22 +56,22 @@ loopback. The embedded server binds `127.0.0.1` only, port configurable
 (default the NATS conventional port; refusing to start on a bind conflict
 with a message naming the config key).
 
-**Planes are named by function [D — operator direction, 2026-08-15].**
-The config keys are `planes.signin` (the bundled OpenID sign-in service,
-soulstream-idp) and `planes.mcp` (the MCP endpoint for assistants) —
-the byname-era spellings `planes.fold` and `planes.door` are **read
-forever** as legacy aliases, so a founded realm's `config.json` never
-stops working. New founds write the functional keys and mint the
-sign-in plane's NATS artifacts under the functional name
-(`users/signin.creds`, user `signin`); an existing realm's artifacts
-keep their founded names — a NATS user's name is baked into the
-account JWTs and cannot be renamed without re-ceremony — and the node
-resolves them by fallback (`signin.creds`, then `fold.creds`). CLI
-flags follow the same rule: `--signin-listen` / `--mcp-listen`, with
-the old spellings accepted and only the new ones in the usage text.
-The sign-in plane, when embedded here, serves its admin **API** and
-not its HTML console (soulstream-idp design D31): the product's
-administration surface is the shell.
+**Planes are named by function, and pre-v1 renames are clean breaks
+[D — operator direction, 2026-08-15/16].** The config keys are
+`planes.signin` (the bundled OpenID sign-in service, soulstream-idp)
+and `planes.mcp` (the MCP endpoint for assistants); the flags are
+`--signin-listen` / `--mcp-listen`; the state dir env var is
+`SOULSTREAM_STATE`; founds mint the sign-in plane's NATS artifacts as
+`users/signin.creds` (user `signin`) with plane state under
+`<state>/signin/`. There are **no compatibility shims before v1**: no
+alias keys, no alias flags, no path fallbacks — one schema, one code
+path. A realm founded under the byname-era spellings is **refused by
+name**, with the hand-migration spelled out in the refusal (rename the
+config keys `door→mcp`, `fold→signin`; `mv users/fold.creds
+users/signin.creds`; `mv fold/ signin/`) — an honest break, never a
+silent misread. The sign-in plane, when embedded here, serves its
+admin **API** and not its HTML console (soulstream-idp design D31):
+the product's administration surface is the shell.
 
 ## 3. The embedded server [V]
 

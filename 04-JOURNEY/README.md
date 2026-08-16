@@ -512,8 +512,9 @@ claims-mapping shape, service round-trip latency) are named on the roadmap.
 0091](0091-ecosystem-the-shell-is-the-console.md)/[0092](0092-ecosystem-the-names-say-what-they-do.md);
 `specs/009-one-console-one-vocabulary/`): the planes are named by
 function — `planes.signin`, `planes.mcp`, `--signin-listen`,
-`--mcp-listen` — with every byname-era spelling read forever and
-founded realms untouched (migration fixture in `make test`); the
+`--mcp-listen` — and pre-v1 renames are clean breaks (episode 0093):
+no aliases, no fallbacks; a byname-era realm is refused by name with
+the hand-migration in the refusal; the
 bundled sign-in plane serves its admin API and not its console
 (`/admin` → 404, pinned); `up` prints functional labels; docs and the
 site mirror the real output. Pins idp v0.5.0 + shell v0.6.0.
@@ -1058,6 +1059,7 @@ the operator lives on the candidate; what chafes decides.
 | 0090 | idp | [The fold wears the ecosystem's canon (2026-08-15)](0090-idp-the-fold-wears-the-canon.md) |
 | 0091 | ecosystem | [The shell is the console (2026-08-15)](0091-ecosystem-the-shell-is-the-console.md) |
 | 0092 | ecosystem | [The names say what they do (2026-08-15)](0092-ecosystem-the-names-say-what-they-do.md) |
+| 0093 | soulstream | [Pre-v1 renames are clean breaks (2026-08-16)](0093-soulstream-pre-v1-renames-are-clean-breaks.md) |
 
 ## The naming map (2026-08-13)
 
