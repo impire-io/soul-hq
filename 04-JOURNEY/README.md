@@ -508,6 +508,12 @@ claims-mapping shape, service round-trip latency) are named on the roadmap.
 
 ### soulstream — the product, the house (as of 2026-08-16; named soulnode until episode 0069)
 
+**v0.13.0-rc.2 — first contact hardened, the tap feeds itself**
+([episode 0100](0100-soulstream-v0-13-0-rc-2.md)): the six
+first-contact fixes released; goreleaser's first pipeline-driven
+formula push landed in the tap (the HOMEBREW_TAP_TOKEN act closed) and
+`brew upgrade` moved a real machine rc.1 → rc.2 [measured].
+
 **First contact: the BYON founding** ([episode
 0099](0099-soulstream-the-byon-founding.md)): realm `byon` founded
 live on the Impire DEV Synadia Cloud BYON — callout admitting on
@@ -526,9 +532,9 @@ the private-link idle-watchdog bug is Synadia's, evidence handed over.
 on macOS and Linux — the tap repo is live with the v0.13.0-rc.1
 formula (installed and `brew test`ed on a clean PATH [measured]), and
 goreleaser owns the formula from the next tag. Formula over cask
-(Linuxbrew matters; the goreleaser deprecation is watched). **Pending
-operator act: the `HOMEBREW_TAP_TOKEN` secret — without it the next
-release run fails at the brew step.**
+(Linuxbrew matters; the goreleaser deprecation is watched). The
+`HOMEBREW_TAP_TOKEN` act closed at rc.2 (episode 0100): the pipeline
+now feeds the tap itself.
 
 **v0.13.0-rc.1 — bring your own server** ([episode
 0097](0097-soulstream-v0-13-0-rc-1.md)): the BYO arc released — same
@@ -1119,6 +1125,7 @@ the operator lives on the candidate; what chafes decides.
 | 0097 | soulstream | [v0.13.0-rc.1: bring your own server (2026-08-16)](0097-soulstream-v0-13-0-rc-1.md) |
 | 0098 | soulstream | [brew install soulstream: the tap opens (2026-08-16)](0098-soulstream-the-tap-opens.md) |
 | 0099 | soulstream | [First contact: a realm founded on a live Synadia Cloud BYON (2026-08-16)](0099-soulstream-the-byon-founding.md) |
+| 0100 | soulstream | [v0.13.0-rc.2: first contact hardened, and the tap feeds itself (2026-08-16)](0100-soulstream-v0-13-0-rc-2.md) |
 
 ## The naming map (2026-08-13)
 

@@ -771,8 +771,10 @@ the "private-module credential" blocker dissolved.
 v0.13.0-rc.1 formula (installed + `brew test`ed [measured]);
 goreleaser publishes the formula from the next tag on, RCs included.
 Formula over cask (Linuxbrew; the goreleaser `brews` deprecation is
-watched). **Pending: the `HOMEBREW_TAP_TOKEN` secret — the next
-release run fails at the brew step without it.**
+watched). The
+`HOMEBREW_TAP_TOKEN` act closed at rc.2 ([episode
+0100](../04-JOURNEY/0100-soulstream-v0-13-0-rc-2.md)): goreleaser's
+first pipeline-driven formula push landed [measured].
 
 ### Wrap in the house — one binary, one paste — ✅ landed 2026-08-15
 
