@@ -508,6 +508,16 @@ claims-mapping shape, service round-trip latency) are named on the roadmap.
 
 ### soulstream — the product, the house (as of 2026-08-16; named soulnode until episode 0069)
 
+**brew install soulstream** ([episode
+0098](0098-soulstream-the-tap-opens.md)):
+`brew install impire-io/tap/soulstream` installs the current candidate
+on macOS and Linux — the tap repo is live with the v0.13.0-rc.1
+formula (installed and `brew test`ed on a clean PATH [measured]), and
+goreleaser owns the formula from the next tag. Formula over cask
+(Linuxbrew matters; the goreleaser deprecation is watched). **Pending
+operator act: the `HOMEBREW_TAP_TOKEN` secret — without it the next
+release run fails at the brew step.**
+
 **v0.13.0-rc.1 — bring your own server** ([episode
 0097](0097-soulstream-v0-13-0-rc-1.md)): the BYO arc released — same
 pins as v0.12.0-rc.1, one new capability: founding on a server
@@ -1095,6 +1105,7 @@ the operator lives on the candidate; what chafes decides.
 | 0095 | soulstream | [BYO NATS designed: founding on a server we don't run (2026-08-16)](0095-soulstream-byo-nats-designed.md) |
 | 0096 | soulstream | [BYO NATS ships: the kit, the probes, the driver (2026-08-16)](0096-soulstream-byo-nats-ships.md) |
 | 0097 | soulstream | [v0.13.0-rc.1: bring your own server (2026-08-16)](0097-soulstream-v0-13-0-rc-1.md) |
+| 0098 | soulstream | [brew install soulstream: the tap opens (2026-08-16)](0098-soulstream-the-tap-opens.md) |
 
 ## The naming map (2026-08-13)
 

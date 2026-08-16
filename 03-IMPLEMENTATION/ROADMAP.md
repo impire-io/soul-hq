@@ -765,6 +765,15 @@ ceremony's owner-only modes). Zero credentials anywhere: the operator
 made soulstream-workloads public, so the whole consumed stack fetches openly —
 the "private-module credential" blocker dissolved.
 
+**The Homebrew tap** ([episode
+0098](../04-JOURNEY/0098-soulstream-the-tap-opens.md), 2026-08-16):
+`brew install impire-io/tap/soulstream` — the tap repo live with the
+v0.13.0-rc.1 formula (installed + `brew test`ed [measured]);
+goreleaser publishes the formula from the next tag on, RCs included.
+Formula over cask (Linuxbrew; the goreleaser `brews` deprecation is
+watched). **Pending: the `HOMEBREW_TAP_TOKEN` secret — the next
+release run fails at the brew step without it.**
+
 ### Wrap in the house — one binary, one paste — ✅ landed 2026-08-15
 
 **Same-day arc** ([episode 0089](../04-JOURNEY/0089-ecosystem-wrap-in-the-house.md);
