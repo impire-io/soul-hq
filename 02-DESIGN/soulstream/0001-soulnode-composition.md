@@ -126,11 +126,12 @@ depends on. Moving the realm to a new machine is copying the state dir
 (vision: day 2). Custody follows soulstream-identity's D13: raw seeds on the
 node's own disk are the accepted trust class, stated without euphemism.
 
-**[O]** — the BYO-NATS ceremony subset: against a user-supplied server,
-which of steps 1–4 apply (their operator, their accounts) and what
-soulstream refuses to touch. Interface: the config block above; default:
-BYO mode requires the accounts to exist and only runs steps 5–8. The
-exact split needs its own pass before BYO ships.
+The BYO-NATS ceremony subset — formerly this section's [O] — is
+resolved by design [`0003-byo-nats.md`](0003-byo-nats.md)
+(2026-08-16): steps 1–2 stay the substrate's permanently, steps 3–4
+become the per-flavour account half (self-hosted kit or Synadia Cloud
+API), steps 5–8 regroup into local material and the wire half, both
+soulstream's own; no operator or account master key ever travels.
 
 ## 5. Admission [V]
 

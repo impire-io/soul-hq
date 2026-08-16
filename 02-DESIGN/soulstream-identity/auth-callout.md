@@ -253,8 +253,16 @@ policy source.
   deployment running soulstream-idp beside a second external issuer needs
   dispatch across issuers. Named, not built (constitution III); the
   first such deployment re-opens it.
-- **NGS**: whether a Synadia-managed server exposes callout configuration
-  at all (`ngs-capabilities`) — the open half of D11's reversal condition.
-  Blocked on operator access to the Synadia Cloud account (the account
-  currently refuses connections at its plan cap [measured 2026-07-28]).
-  This gates promising callout on NGS, not the self-hosted M4 build.
+- ~~**NGS**: whether a Synadia-managed server exposes callout
+  configuration at all (`ngs-capabilities`) — the open half of D11's
+  reversal condition.~~ *Resolved by scope decision 2026-08-16
+  (operator direction; product design
+  [`0003-byo-nats.md`](../soulstream/0003-byo-nats.md) §1): NGS shared
+  plans expose no callout configuration, so callout is not promised on
+  NGS and the substrate is refused by name. The managed flavour is
+  Synadia Cloud BYON, where callout enabled, wired, and fired
+  [measured, journey
+  0038](../../04-JOURNEY/0038-soulstream-remote-mcp-node.md). D11's
+  reversal condition's NGS half closes without triggering; its
+  self-hosted half was never in doubt. Reopens only if Synadia exposes
+  external-authorization configuration on shared-plan account JWTs.*
