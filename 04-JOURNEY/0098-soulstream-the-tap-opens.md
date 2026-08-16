@@ -22,10 +22,7 @@ extended config.
 - **Formula over cask.** goreleaser deprecates `brews` in favour of
   `homebrew_casks`, but casks are macOS-only and the BYO/self-hosted
   audience runs Linuxbrew — the formula serves both platforms today.
-  Deprecation accepted with eyes open. *Reversal condition*:
-  goreleaser v3 removing `brews` (observable: the release run failing
-  on the key) forces the move — cask for macOS plus a documented
-  Linux path, or a self-templated formula step.
+  Deprecation accepted with eyes open.
 - **RCs publish to the tap** (`skip_upload: false`, not `auto`): a tap
   that only serves stable versions would serve nothing before v1.
 
@@ -34,6 +31,13 @@ needs `HOMEBREW_TAP_TOKEN` (fine-grained PAT, contents read/write on
 the tap repo only) as a soulstream Actions secret. Until it is set,
 the next tag's release run FAILS at the brew step — the secret is an
 operator act pending at this episode's close.
+
+Reversal condition: goreleaser removing the `brews` key (observable:
+the release run failing on it) forces the move — cask for macOS plus a
+documented Linux path, or a self-templated formula step; and if RC
+churn in the tap ever misleads a consumer expecting stability
+(observable: an issue filed on a broken-by-RC install), `skip_upload`
+flips to `auto` and the tap waits for v1.
 
 Trail: [`impire-io/homebrew-tap`](https://github.com/impire-io/homebrew-tap)
 (first commit: the v0.13.0-rc.1 formula); soulstream `09a8902` (the
