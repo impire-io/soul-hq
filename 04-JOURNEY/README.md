@@ -508,6 +508,13 @@ claims-mapping shape, service round-trip latency) are named on the roadmap.
 
 ### soulstream — the product, the house (as of 2026-08-16; named soulnode until episode 0069)
 
+**v0.13.0-rc.1 — bring your own server** ([episode
+0097](0097-soulstream-v0-13-0-rc-1.md)): the BYO arc released — same
+pins as v0.12.0-rc.1, one new capability: founding on a server
+soulstream does not run, both flavours. Artifact round-tripped and
+verified. Known-open on the candidate: the live Synadia Cloud runbook
+and the platform-xkey sealing caveat.
+
 **BYO NATS — designed and shipped the same day** ([episodes
 0095](0095-soulstream-byo-nats-designed.md)/[0096](0096-soulstream-byo-nats-ships.md);
 design [0003](../02-DESIGN/soulstream/0003-byo-nats.md) resolving
@@ -1087,6 +1094,7 @@ the operator lives on the candidate; what chafes decides.
 | 0094 | soulstream | [v0.12.0-rc.1: the clean-break candidate (2026-08-16)](0094-soulstream-v0-12-0-rc-1.md) |
 | 0095 | soulstream | [BYO NATS designed: founding on a server we don't run (2026-08-16)](0095-soulstream-byo-nats-designed.md) |
 | 0096 | soulstream | [BYO NATS ships: the kit, the probes, the driver (2026-08-16)](0096-soulstream-byo-nats-ships.md) |
+| 0097 | soulstream | [v0.13.0-rc.1: bring your own server (2026-08-16)](0097-soulstream-v0-13-0-rc-1.md) |
 
 ## The naming map (2026-08-13)
 
