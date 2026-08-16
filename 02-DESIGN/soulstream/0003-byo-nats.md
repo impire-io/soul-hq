@@ -195,6 +195,15 @@ callout may run unsealed on our side when the platform custodies the
 xkey and yields no seed — said out loud at founding, never silently
 (the identity plane's `CalloutKey` is optional by contract).
 
+*Measured live (episode 0099, 2026-08-16):* the synadia-cloud flavour
+founded a real realm on a real BYON. First contact hardened the
+driver: each once-returned seed persists before the next API call;
+every mutation retries bounded through a measured-lossy agent channel,
+list-first; the platform's callout surface is anti-idempotent
+(re-enable/re-add draw persistent 500s), so enable and wiring are
+read-first. The platform set no xkey — the callout ran unsealed,
+printed at founding, accepted for the dev class.
+
 No alias keys, no fallback spellings (pre-v1 clean-break rule). A
 plane still MUST NOT behave differently because its URL is not
 loopback; the bundle remains the deployment where every URL happens to

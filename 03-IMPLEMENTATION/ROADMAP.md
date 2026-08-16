@@ -822,9 +822,13 @@ Each will get its own research gate when it approaches:
   by name; no operator or account master key ever travels [measured,
   the operator-rig e2e]. Released in
   [`v0.13.0-rc.1`](https://github.com/impire-io/soulstream/releases/tag/v0.13.0-rc.1)
-  ([episode 0097](../04-JOURNEY/0097-soulstream-v0-13-0-rc-1.md)).
-  Still open: the live Synadia Cloud founding (the spec's manual
-  runbook) and the platform-xkey sealing caveat.
+  ([episode 0097](../04-JOURNEY/0097-soulstream-v0-13-0-rc-1.md)); the
+  live Synadia Cloud founding measured 2026-08-16 ([episode
+  0099](../04-JOURNEY/0099-soulstream-the-byon-founding.md)) — realm
+  `byon` on the DEV BYON, callout admitting on Synadia's
+  infrastructure, unsealed callout measured and accepted for the dev
+  class. First contact's six fixes sit on main awaiting v0.13.0-rc.2
+  (gated on the `HOMEBREW_TAP_TOKEN` secret).
 - **Day 2.** Upgrade in place, backup/restore of the state dir, moving a
   realm to a new machine as a copy.
 - **Multi-node.** Deferred to soulstream-workloads's Fleet work; soulstream stays

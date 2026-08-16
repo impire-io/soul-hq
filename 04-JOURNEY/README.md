@@ -508,6 +508,18 @@ claims-mapping shape, service round-trip latency) are named on the roadmap.
 
 ### soulstream — the product, the house (as of 2026-08-16; named soulnode until episode 0069)
 
+**First contact: the BYON founding** ([episode
+0099](0099-soulstream-the-byon-founding.md)): realm `byon` founded
+live on the Impire DEV Synadia Cloud BYON — callout admitting on
+Synadia's infrastructure, garbage refused, every plane serving, the
+custody audit clean, the pre-existing wiring byte-identical. First
+contact forced six fixes (client-dir collision, system-by-id,
+awaiting-state resume, seeds-persist-immediately, lossy-channel
+retries, read-first callout ops) — all on main with replaying tests,
+awaiting v0.13.0-rc.2 behind the `HOMEBREW_TAP_TOKEN` secret. The
+unsealed-callout caveat is now measured (`sealed_requests=false`);
+the private-link idle-watchdog bug is Synadia's, evidence handed over.
+
 **brew install soulstream** ([episode
 0098](0098-soulstream-the-tap-opens.md)):
 `brew install impire-io/tap/soulstream` installs the current candidate
@@ -1106,6 +1118,7 @@ the operator lives on the candidate; what chafes decides.
 | 0096 | soulstream | [BYO NATS ships: the kit, the probes, the driver (2026-08-16)](0096-soulstream-byo-nats-ships.md) |
 | 0097 | soulstream | [v0.13.0-rc.1: bring your own server (2026-08-16)](0097-soulstream-v0-13-0-rc-1.md) |
 | 0098 | soulstream | [brew install soulstream: the tap opens (2026-08-16)](0098-soulstream-the-tap-opens.md) |
+| 0099 | soulstream | [First contact: a realm founded on a live Synadia Cloud BYON (2026-08-16)](0099-soulstream-the-byon-founding.md) |
 
 ## The naming map (2026-08-13)
 
