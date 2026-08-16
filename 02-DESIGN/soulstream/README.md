@@ -20,7 +20,7 @@ made during implementation propagate back here (see
 |---|---|---|---|
 | 0001 | [`0001-soulnode-composition.md`](0001-soulnode-composition.md) | The all-loopback composition: five planes by configuration, the embedded operator-mode server, the persisted first-boot ceremony (`soulstream init`), admission, plane wiring, shutdown, the seamed front door, Phase 1 acceptance criteria | graduated from `single-binary-composition` (episode 0002) |
 | 0002 | [`0002-wrap-in-the-house.md`](0002-wrap-in-the-house.md) | The no-toolchain agent path: native `soulstream wrap` and `soulstream mcp` verbs over the pinned libraries, the five-name lane contract, the credential screen's paste-block contract (portable, shown-once, wrap-first), acceptance criteria | designed 2026-08-15 (operator direction); realizes workloads 0004 §8's product half |
-| 0003 | [`0003-byo-nats.md`](0003-byo-nats.md) | Founding a realm on a server soulstream does not run: two flavours (self-hosted kit, Synadia Cloud BYON), the substrate contract (operator mode, account-JWT authoring), the ceremony split (local material / account half / wire half), the no-seed-crosses custody rule, named refusals, acceptance criteria | designed 2026-08-16 (operator direction); resolves 0001 §4's BYO [O] |
+| 0003 | [`0003-byo-nats.md`](0003-byo-nats.md) | Founding a realm on a server soulstream does not run: two flavours (self-hosted kit, Synadia Cloud BYON), the substrate contract (operator mode, account-JWT authoring), the ceremony split (local material / account half / wire half), the no-seed-crosses custody rule, named refusals, acceptance criteria | designed and implemented 2026-08-16 (soulstream specs/010, episode 0096); resolves 0001 §4's BYO [O] |
 
 ## Status legend (used once documents exist)
 

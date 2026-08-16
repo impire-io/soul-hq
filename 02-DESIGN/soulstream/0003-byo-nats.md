@@ -178,11 +178,22 @@ adds one block:
 ```
 byo: {
   flavour: "self-hosted" | "synadia-cloud",
+  url:           <client URL>,   // the substrate — the one URL every plane dials
   auth_account:  <public key>,   // self-hosted: handed back by the kit
   realm_account: <public key>,   // both flavours, once known
   synadia: { system: <id> }      // synadia-cloud only; token via env
 }
 ```
+
+*As built (soulstream specs/010, journey episode 0096):* the block
+gained `url` (this sketch had omitted where the substrate lives);
+`listen` and `byo` are mutually exclusive, refused by name together.
+Two more mechanics the build fixed: the issuer user's seed is a
+persisted phase-1 artifact (`keys/issuer-user.nk` — its public key must
+be in the kit before its creds can exist), and on Synadia Cloud the
+callout may run unsealed on our side when the platform custodies the
+xkey and yields no seed — said out loud at founding, never silently
+(the identity plane's `CalloutKey` is optional by contract).
 
 No alias keys, no fallback spellings (pre-v1 clean-break rule). A
 plane still MUST NOT behave differently because its URL is not
