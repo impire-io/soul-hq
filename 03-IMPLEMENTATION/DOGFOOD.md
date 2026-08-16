@@ -6,6 +6,22 @@ entirely in topics. This document is that run's protocol: what runs, how it is
 launched, and — the load-bearing part — what evidence it must leave behind,
 because two roadmap gates are decided by exactly that evidence.*
 
+## The second realm — `byon` on the DEV BYON (added 2026-08-16)
+
+The BYO NATS dogfood (episodes 0099/0100): realm `byon` founded through
+`soulstream init --byo synadia-cloud` on the Impire DEV system's BYON —
+the NATS server on `beno1` (tailnet `beno1.hippogryph-dinosaur.ts.net`,
+`nats://100.108.7.14:4222`). The node runs ON beno1 beside its server:
+state dir `~calmera/.soulstream-byon` (moved from altis, day-2 copy;
+altis keeps a cold backup, never `up` there), binary
+`/usr/local/bin/soulstream` (v0.13.0-rc.2), systemd unit
+`soulstream.service`, MCP on `127.0.0.1:8081` (beno1's :8080 belongs to
+private-link), sign-in issuer `https://beno1.hippogryph-dinosaur.ts.net`
+(tailscale serve 443→8378; shell 8443→8500 — set before the first
+passkey enrolled, the RP-ID one-way door). The intended shape: agents
+run on other machines (altis first) and connect through NATS with
+Agents-screen credentials — the planes stay with the substrate.
+
 ## The run
 
 - **Window:** two weeks, started 2026-07-27.
