@@ -804,13 +804,16 @@ the product pinning both.
 
 Each will get its own research gate when it approaches:
 
-- **BYO NATS.** Designed 2026-08-16
-  ([`0003-byo-nats.md`](../02-DESIGN/soulstream/0003-byo-nats.md),
-  resolving 0001 §4's [O]): two flavours — the self-hosted kit and
-  Synadia Cloud BYON — behind `byo.flavour`; operator mode required,
-  conf-auth and NGS shared refused by name; no operator or account
-  master key ever travels. Implementation ships behind its own
-  spec-kit pass, not with the bundle.
+- ~~**BYO NATS.**~~ Designed AND landed 2026-08-16
+  ([`0003-byo-nats.md`](../02-DESIGN/soulstream/0003-byo-nats.md)
+  resolving 0001 §4's [O]; soulstream `specs/010-byo-nats`, episodes
+  [0095](../04-JOURNEY/0095-soulstream-byo-nats-designed.md)/[0096](../04-JOURNEY/0096-soulstream-byo-nats-ships.md)):
+  two flavours behind `byo.flavour` — the self-hosted kit and Synadia
+  Cloud BYON; operator mode required, conf-auth and NGS shared refused
+  by name; no operator or account master key ever travels [measured,
+  the operator-rig e2e]. On main, unreleased; rides the next release
+  candidate. Still open there: the live Synadia Cloud founding (the
+  spec's manual runbook) and the platform-xkey sealing caveat.
 - **Day 2.** Upgrade in place, backup/restore of the state dir, moving a
   realm to a new machine as a copy.
 - **Multi-node.** Deferred to soulstream-workloads's Fleet work; soulstream stays
