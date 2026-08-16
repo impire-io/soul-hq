@@ -508,6 +508,19 @@ claims-mapping shape, service round-trip latency) are named on the roadmap.
 
 ### soulstream — the product, the house (as of 2026-08-16; named soulnode until episode 0069)
 
+**BYO NATS designed — founding on a server we don't run** ([episode
+0095](0095-soulstream-byo-nats-designed.md); design
+[0003](../02-DESIGN/soulstream/0003-byo-nats.md), resolving
+composition 0001 §4's [O]): two flavours behind `byo.flavour` — the
+self-hosted kit (exact `nsc` commands and config fragments, applied by
+the operator; verification refuses by name) and Synadia Cloud BYON
+(the account half driven through the control-plane API, episode 0038's
+proven wiring). Operator mode required; conf-auth and NGS shared
+refused by name — the roadmap's `ngs-capabilities` question closed
+unopened. The custody rule: no operator or account master key ever
+travels; self-hosted, no seed crosses the boundary in either
+direction. Implementation ships behind its own spec-kit pass.
+
 **v0.12.0-rc.1 — the clean-break candidate** ([episode
 0094](0094-soulstream-v0-12-0-rc-1.md), pinning core v0.8.4 /
 workloads v0.4.0 / shell v0.6.0 / idp v0.5.0): everything episodes
@@ -1069,6 +1082,7 @@ the operator lives on the candidate; what chafes decides.
 | 0092 | ecosystem | [The names say what they do (2026-08-15)](0092-ecosystem-the-names-say-what-they-do.md) |
 | 0093 | soulstream | [Pre-v1 renames are clean breaks (2026-08-16)](0093-soulstream-pre-v1-renames-are-clean-breaks.md) |
 | 0094 | soulstream | [v0.12.0-rc.1: the clean-break candidate (2026-08-16)](0094-soulstream-v0-12-0-rc-1.md) |
+| 0095 | soulstream | [BYO NATS designed: founding on a server we don't run (2026-08-16)](0095-soulstream-byo-nats-designed.md) |
 
 ## The naming map (2026-08-13)
 

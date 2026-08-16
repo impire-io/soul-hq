@@ -588,11 +588,14 @@ arrive over the NATS surface).
 
 ### Open research questions (before their milestones)
 
-- **NGS/Synadia Cloud capabilities** (gates M4, informs M2): does the account
-  plan expose creating/scoping account signing keys, and is auth callout
-  configurable? Verify against the real account before either mode is
-  promised on NGS — a `/research-start ngs-capabilities` topic when M2/M4
-  planning begins. This is also half of D11's reversal condition.
+- ~~**NGS/Synadia Cloud capabilities** (gates M4, informs M2)~~ — closed by
+  scope decision 2026-08-16 (product design
+  [`0003-byo-nats.md`](../02-DESIGN/soulstream/0003-byo-nats.md) §1): NGS
+  shared plans expose no callout configuration and are out of scope by
+  name; the managed flavour is Synadia Cloud BYON, where signing-key
+  groups return seeds once and callout fired live [measured, journey
+  0038]. No `ngs-capabilities` topic is needed; D11's reversal
+  condition's NGS half closes without triggering.
 - ~~**The sentinel-credential flow** (gated M4)~~ — answered 2026-07-28
   ([journey 0008](../04-JOURNEY/0019-soulidentity-sentinel-credential-flow.md), D19–D21
   in [`../02-DESIGN/auth-callout.md`](../02-DESIGN/soulstream-identity/auth-callout.md)): the
@@ -801,9 +804,13 @@ the product pinning both.
 
 Each will get its own research gate when it approaches:
 
-- **BYO NATS.** Design 0001 §4 carries the [O]: the ceremony subset
-  against a user-supplied server. Ships behind its own pass, not with the
-  bundle.
+- **BYO NATS.** Designed 2026-08-16
+  ([`0003-byo-nats.md`](../02-DESIGN/soulstream/0003-byo-nats.md),
+  resolving 0001 §4's [O]): two flavours — the self-hosted kit and
+  Synadia Cloud BYON — behind `byo.flavour`; operator mode required,
+  conf-auth and NGS shared refused by name; no operator or account
+  master key ever travels. Implementation ships behind its own
+  spec-kit pass, not with the bundle.
 - **Day 2.** Upgrade in place, backup/restore of the state dir, moving a
   realm to a new machine as a copy.
 - **Multi-node.** Deferred to soulstream-workloads's Fleet work; soulstream stays
