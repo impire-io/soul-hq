@@ -1,11 +1,12 @@
 # 0003 — soulstream-shell: conversation lifecycle
 
-**Status:** open — decided 2026-08-17 with the operator. This document
-fills in the participation scope 0001 §1 gained from episode
-[0071](../../04-JOURNEY/0071-ecosystem-the-focus.md): starting, closing
-and archiving conversations from the shell. Every act here is class (a)
-of [0001 §4](0001-soulhelm-the-helm.md) — the enumeration is unchanged;
-this is a feature inside it, not a design change.
+**Status:** built — decided and landed 2026-08-17 (episode
+[0102](../../04-JOURNEY/0102-shell-conversations-begin-and-end.md)).
+This document fills in the participation scope 0001 §1 gained from
+episode [0071](../../04-JOURNEY/0071-ecosystem-the-focus.md): starting,
+closing and archiving conversations from the shell. Every act here is
+class (a) of [0001 §4](0001-soulhelm-the-helm.md) — the enumeration is
+unchanged; this is a feature inside it, not a design change.
 
 ## §1 The gap
 
@@ -122,3 +123,18 @@ not lie in either direction:
 - **[O2]** The archived fold is a foot-of-list answer. A realm with
   hundreds of archived conversations may want a screen of its own;
   that is a new decision, not a stretch of this one.
+
+## §8 As built (2026-08-17, episode 0102)
+
+Landed as designed; the deltas worth recording:
+
+- Whether a conversation is archived is read once at the page serve
+  (one read-lane materialise), never on the tick — the board tick
+  gained no per-topic reads, as §5 requires.
+- The details panel's standing test invariant "no buttons" was relaxed
+  to "no unresolved anchors; every button is an act" to seat the
+  lifecycle acts — the spirit (nothing pretends to be a way somewhere)
+  survives, per-state honesty moved into its own test.
+- The e2e gate walks the whole §6.1 ladder against a real realm; the
+  two morph claims of §5 (script execution, the fold's preserved
+  toggle) were proven in a live browser over `make screens`.

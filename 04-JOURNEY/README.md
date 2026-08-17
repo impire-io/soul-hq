@@ -907,6 +907,19 @@ key-lifecycle research. No product code exists yet.
 
 ### soulstream-shell — the shell (as of 2026-08-17; named soulhelm until episode 0069)
 
+**Conversations begin and end in the shell** ([episode
+0102](0102-shell-conversations-begin-and-end.md); design
+[`0003`](../02-DESIGN/soulstream-shell/0003-conversation-lifecycle.md)):
+starting from a fold in the rail and a card on Home (one act, the
+person lands in the new conversation), the close-then-archive ladder
+in the details panel — Close while live, Archive only once closed and
+behind a two-step ask, no reopen because the record has none —
+archived conversations folded at the foot of the list with the toggle
+surviving the stream's morphs, the composer yielding where the record
+refuses the write, and copy that stays honest through the record's
+half-successes, all table-tested. Zero upstream additions; the e2e
+gate walks the whole ladder against a real realm.
+
 **The fronted console signs in** ([episode
 0101](0101-shell-the-fronted-console-signs-in.md); **v0.7.0**):
 `Options.PublicURL` — a console fronted by TLS termination or a
@@ -1137,6 +1150,7 @@ the operator lives on the candidate; what chafes decides.
 | 0099 | soulstream | [First contact: a realm founded on a live Synadia Cloud BYON (2026-08-16)](0099-soulstream-the-byon-founding.md) |
 | 0100 | soulstream | [v0.13.0-rc.2: first contact hardened, and the tap feeds itself (2026-08-16)](0100-soulstream-v0-13-0-rc-2.md) |
 | 0101 | shell | [The fronted console signs in: PublicURL crosses the seam (2026-08-16 → 08-17)](0101-shell-the-fronted-console-signs-in.md) |
+| 0102 | shell | [Conversations begin and end in the shell (2026-08-17)](0102-shell-conversations-begin-and-end.md) |
 
 ## The naming map (2026-08-13)
 

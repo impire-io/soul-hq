@@ -17,7 +17,7 @@ changes to it are decisions and belong in the journey as episodes.
 | [soulstream-identity](#soulstream-identity--the-name) | M1/M3/M4 shipped (+ Entra/OIDC lane, D25 registry dissolution, D28/D29 consumer-proven additions); `v0.2.0` tagged (renamed; wire segment `identity`) | M2's node half — proven upstream by soulstream 018; roadmap check-off pending. M5 gated on soulstream demand |
 | [soulstream](#soulstream--the-product-the-house) | **v0.12.0-rc.1 — the clean-break candidate** ([episode 0094](../04-JOURNEY/0094-soulstream-v0-12-0-rc-1.md), shipping episodes 0089–0093; pins core v0.8.4 / workloads v0.4.0 / shell v0.6.0 / idp v0.5.0): native wrap and mcp verbs, the paste block, one console, one vocabulary, no fallbacks — byname-era realms refused with the migration named | RC soak toward v0.12.0; Phase 3 (tsnet) gated on fronting measured insufficient |
 | [soulstream-idp](#soulstream-idp--the-fold) | **Every milestone shipped — M1–M5**, and **v0.4.2 wears the ecosystem's canon** ([episode 0090](../04-JOURNEY/0090-idp-the-fold-wears-the-canon.md), design D30): the sealed store, passkeys, callout admission, the embed seam, the lifecycle — and pages that read as the same product as the shell; physical-authenticator runbook pending (human act) | Named horizons only (deferred audit rows, multi-issuer demand); day-2 by demand |
-| [soulstream-shell](#soulstream-shell--the-shell) | **v0.7.0 — the fronted console signs in** ([episode 0101](../04-JOURNEY/0101-shell-the-fronted-console-signs-in.md)): PublicURL — the OAuth callback reaches the visitor behind a front; plus v0.6.0's console arc ([episodes 0089](../04-JOURNEY/0089-ecosystem-wrap-in-the-house.md)/[0091](../04-JOURNEY/0091-ecosystem-the-shell-is-the-console.md)) | **v0.7.0 pinned by soulstream** | The operator tries the whole system — evaluation decides what changes |
+| [soulstream-shell](#soulstream-shell--the-shell) | **Conversations begin and end in the shell** ([episode 0102](../04-JOURNEY/0102-shell-conversations-begin-and-end.md), design [0003](../02-DESIGN/soulstream-shell/0003-conversation-lifecycle.md)): start/close/archive from the surface, zero upstream additions; on v0.7.0 — the fronted console signs in ([episode 0101](../04-JOURNEY/0101-shell-the-fronted-console-signs-in.md)) and the console arc ([episodes 0089](../04-JOURNEY/0089-ecosystem-wrap-in-the-house.md)/[0091](../04-JOURNEY/0091-ecosystem-the-shell-is-the-console.md)) | **v0.7.0 pinned by soulstream** (lifecycle lands with the next tag) | The operator tries the whole system — evaluation decides what changes |
 | soulstream-mcp | **v0.1.0 — founded 2026-08-13** by extraction from soulstream/node v0.7.0 ([episode 0070](../04-JOURNEY/0070-ecosystem-the-rename-sweep.md)): the remote MCP server, own CI and release | **Parked (episode 0071)** — stdio MCP is the choice of record for this iteration; built and waiting for the online-platform need |
 
 **2026-08-13 — the naming re-centering** ([episode
@@ -997,26 +997,23 @@ admin lifecycle (M3).
 browser, beside the MCP door. Design:
 [`0001-soulhelm-the-helm.md`](../02-DESIGN/soulstream-shell/0001-soulhelm-the-helm.md).*
 
-### Where we are (2026-08-13, evening)
+### Where we are (2026-08-17)
 
-**v0.1.0 is shipped and composed** ([episode
-0067](../04-JOURNEY/0067-soulhelm-founding-and-first-light.md)):
-founded from the morning's graduated research ([episode
-0066](../04-JOURNEY/0066-ecosystem-soulsystem-cockpit.md)), the helm
-serves the observe surface with fold sessions and the first act, the
-whole human ceremony riding its consumer-position e2e in ~4 s, and
-soulstream runs it as `planes.helm` ([episode
-0068](../04-JOURNEY/0068-soulnode-the-helm-plane.md)).
-
-**Direction change, same day:** the component is reframed as **the
-shell** — a pure modular frame with zero module logic, agnostic from
-Soulstream by contract; every human surface is a module plugging in
-through one exported contract. The
-[`shell-module-contract`](../02-DESIGN/soulstream-shell/0002-the-module-shape.md)
-research (four pre-registered bars) now gates M2, which arrives
-module-shaped. The component renames **soulstream-shell** in the naming
-re-centering's sweep ([episode
-0069](../04-JOURNEY/0069-ecosystem-one-name-soulstream.md)).
+**v0.7.0 plus the conversation lifecycle on main.** The arc from
+founding to here lives in the journey (the shell's "Where things
+stand" in [`04-JOURNEY/README.md`](../04-JOURNEY/README.md) carries
+it episode by episode): founded and composed in a day (episodes
+0066–0068), reframed as the pure modular frame and renamed (0069–0070,
+module contract graduated in 0078), the participation arc — composer,
+chat shape, details, mentions, the @-picker, agents, responsiveness
+(0071–0080) — the admin console (0091, v0.6.0), PublicURL for fronted
+deployments (0101, v0.7.0), and now **conversations begin and end in
+the shell** ([episode
+0102](../04-JOURNEY/0102-shell-conversations-begin-and-end.md), design
+[`0003-conversation-lifecycle.md`](../02-DESIGN/soulstream-shell/0003-conversation-lifecycle.md)):
+start from the rail fold or the Home card, the close-then-archive
+ladder with its two-step ask, the archived fold, truthful copy under
+the record's half-successes — all class (a), zero upstream additions.
 
 ### Milestones
 
@@ -1030,12 +1027,16 @@ re-centering's sweep ([episode
    ships unauthenticated. Acceptance gates 1, 2, and 4 of design 0001
    §8 are standing tests; the first class-(a) act covers gate 3's
    record-op arm.
-3. **M2 — the configure surfaces.** Design 0001 §4: classes (b) and (c)
-   in the UI (tokens/people/clients; plane toggles with restart
-   semantics). Class-(b) standalone authority may trail the tenancy
-   topic's grant answer ([O2]); as a soulstream plane the ops lane
-   carries it today.
-4. **Later, gated:** the participant client (its own research topic —
+3. ✅ **M-participation — the usable cockpit** (2026-08-14 →
+   2026-08-17, episodes 0071–0080 and 0102): post, reply, mention and
+   be mentioned, agents as accountable teal voices — and the topic
+   lifecycle itself: start, close, archive, from the surface.
+4. ✅ **M2 (people arm) — the console** (v0.6.0, episode 0091): the
+   whole published admin contract in the shell; the idp's HTML console
+   unmounts in the bundled product (D31). Class-(c) plane toggles and
+   class-(b) standalone authority remain open — the latter still
+   trails the tenancy topic's grant answer ([O2]).
+5. **Later, gated:** the participant client (its own research topic —
    [O4], with upstream ask #1's WebSocket listener); a dedicated scoped
    helm ceremony user in soulstream (hardening).
 
