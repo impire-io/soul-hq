@@ -14,11 +14,14 @@ the NATS server on `beno1` (tailnet `beno1.hippogryph-dinosaur.ts.net`,
 `nats://100.108.7.14:4222`). The node runs ON beno1 beside its server:
 state dir `~calmera/.soulstream-byon` (moved from altis, day-2 copy;
 altis keeps a cold backup, never `up` there), binary
-`/usr/local/bin/soulstream` (v0.13.0-rc.2), systemd unit
+`/usr/local/bin/soulstream` (v0.13.0-rc.4), systemd unit
 `soulstream.service`, MCP on `127.0.0.1:8081` (beno1's :8080 belongs to
 private-link), sign-in issuer `https://beno1.hippogryph-dinosaur.ts.net`
 (tailscale serve 443→8378; shell 8443→8500 — set before the first
-passkey enrolled, the RP-ID one-way door). The intended shape: agents
+passkey enrolled, the RP-ID one-way door;
+`planes.shell.public_url` points the console's OAuth callback at the
+fronted name — episode 0101). Signed in and standing in the console
+2026-08-17. The intended shape: agents
 run on other machines (altis first) and connect through NATS with
 Agents-screen credentials — the planes stay with the substrate.
 

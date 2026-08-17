@@ -905,7 +905,17 @@ constraints — passkeys, not passwords; indistinguishable by design —
 and the roadmap sequences M1 (the OP skeleton) behind its KV-schema and
 key-lifecycle research. No product code exists yet.
 
-### soulstream-shell — the shell (as of 2026-08-15; named soulhelm until episode 0069)
+### soulstream-shell — the shell (as of 2026-08-17; named soulhelm until episode 0069)
+
+**The fronted console signs in** ([episode
+0101](0101-shell-the-fronted-console-signs-in.md); **v0.7.0**):
+`Options.PublicURL` — a console fronted by TLS termination or a
+tailnet serve registers an OAuth callback the visitor's browser can
+actually reach, instead of its own bound loopback address. Found live
+on the byon deployment's first passkey sign-in; measured fixed on the
+same deployment (product wiring `planes.shell.public_url`, shipped in
+soulstream v0.13.0-rc.4 after rc.3's pass-through gap — the plane gate
+now asserts the live /login redirect). Pinned by soulstream.
 
 **The shell is the console** ([episode
 0091](0091-ecosystem-the-shell-is-the-console.md); **v0.6.0**): the
@@ -1126,6 +1136,7 @@ the operator lives on the candidate; what chafes decides.
 | 0098 | soulstream | [brew install soulstream: the tap opens (2026-08-16)](0098-soulstream-the-tap-opens.md) |
 | 0099 | soulstream | [First contact: a realm founded on a live Synadia Cloud BYON (2026-08-16)](0099-soulstream-the-byon-founding.md) |
 | 0100 | soulstream | [v0.13.0-rc.2: first contact hardened, and the tap feeds itself (2026-08-16)](0100-soulstream-v0-13-0-rc-2.md) |
+| 0101 | shell | [The fronted console signs in: PublicURL crosses the seam (2026-08-16 → 08-17)](0101-shell-the-fronted-console-signs-in.md) |
 
 ## The naming map (2026-08-13)
 
