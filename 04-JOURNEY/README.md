@@ -755,8 +755,8 @@ one beside the access token, single-use by the codes' own CAS flip on
 a digest-keyed record (D12), 30 days idle bounds any one token,
 revocation deletes it, and the M1 gate walks the scenario: refresh
 without a ceremony, rotation, the spent token refused. Grown for the
-shell's sessions, which died with their one-hour bearer. On main,
-after v0.5.0.
+shell's sessions, which died with their one-hour bearer. Shipped as
+**v0.6.0**, pinned on soulstream main.
 
 **The console becomes the standalone deployment's surface** ([episode
 0091](0091-ecosystem-the-shell-is-the-console.md); **v0.5.0**, design
@@ -927,7 +927,9 @@ screen still saying signed in. The session now custodies the grant:
 grant behind the same session (the NATS admission by token handler on
 every reconnect, the admin lane per call), and a session that cannot
 produce a living credential closes itself into the sign-in card —
-drained exactly once, table-tested. On main, after v0.8.0.
+drained exactly once, table-tested. Shipped as **v0.9.0** (the
+`Session.Bearer` field became the renewing method — the pre-v1 clean
+break), pinned on soulstream main.
 
 **Conversations begin and end in the shell** ([episode
 0102](0102-shell-conversations-begin-and-end.md); design
