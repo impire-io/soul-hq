@@ -87,6 +87,37 @@ continues.
 
 ## Verdict
 
-<Empty until graduation. Filled by /research-graduate: PASS/FAIL per bar with the
-honest numbers, each load-bearing claim tagged [measured] / [mechanism-argument]
-/ [judgment].>
+- **Bar 1 — PASS** [measured, local rig per the registered protocol]:
+  the real fold (embed seam, virtual-passkey ceremonies) as the
+  external AS behind the real identity plane and the real remote node;
+  ada admitted as `u-cd00f20fc32ba2a3`, grace as `u-aed28616fbe46d78`
+  (2/2, each exactly itself), one topic with a turn from each and **0
+  cross-attributions** on an independent reader; 10/10 writes across
+  2.5× a 5s callout TTL on a living bearer; a dead bearer refused in
+  **12.6ms** (bound 2×TTL); no claim-profile change needed. Honest
+  finding, not a failure: refresh-token revocation does not refuse a
+  signature-valid access token — revocation propagates in
+  access-token `exp` (1h, package constant) + callout TTL, so the
+  fold's deferred token-lifetime knob is now demanded [measured].
+- **Bar 2 — PASS on the registered stand-in protocol; the
+  pre-registered real-provider morning step remains open** [measured]:
+  the scripted PKCE linking dance completes against Dex; 3/3
+  consecutive refresh rotations with the CAS-stored successor; an
+  8-way concurrent double-refresh under `-race` loses nothing (8/8
+  served, stored token still redeemable, both reuse-window regimes);
+  revocation deletes custody and the next access refuses;
+  **the principal clause is server-enforced** — bob's request for
+  alice's grant died as a publish permission violation and the broker
+  received alice's subject exactly once. Named residue: one real
+  provider (GitHub or Google) link + rotation + revoke, a morning act.
+- **Bar 3 — PASS** [measured, -race]: delegations mint only against
+  standing consent covering every requested resource and scope; 1
+  allowed vs 4 refusal classes (absent, expired, wrong caller,
+  out-of-bounds resource), every refusal audited naming both personas
+  (5/5); consent revocation refuses the next mint with the audit
+  intact; and on the wire the actor is the server-proven
+  subject-token principal — a *stolen, validly-signed* delegation
+  refused as an actor mismatch. The delegation's minting *home*
+  (wrapper mint-lane restoration vs subject-signed via the D26 key
+  directory) is a design argument, deliberately not closed by the rig
+  [judgment, argued in the design doc].
