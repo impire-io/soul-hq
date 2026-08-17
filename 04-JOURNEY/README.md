@@ -284,7 +284,28 @@ role dissolves into the identity plane (`soulidentity`), amending episode
 unblocked. **Next:** the spec-kit pass for the first Fleet milestone; the
 soulidentity tags-on-mint addition gates the preferred minting path.
 
-### soulstream-identity — the name (as of 2026-08-02; named soulidentity until episode 0069)
+### soulstream-identity — the name (as of 2026-08-17; named soulidentity until episode 0069)
+
+**Outbound grants designed — every remote call carries the calling
+user** ([episode 0104](0104-ecosystem-outbound-identity-grants.md); D30–D34 in
+[`grants.md`](../02-DESIGN/soulstream-identity/grants.md)): the
+overnight research topic `outbound-identity-grants` measured all three
+pre-registered bars on real components and graduated. The inversion:
+no outbound credential ever lives in agent, workload, or MCP-client
+config — a `grants.*` op family on the principal-scoped surface
+custodies per-persona OAuth grants in a **second sealed custody
+domain** (the key vault's records are immutable by design and refuse
+rotation — measured, not assumed), returns only derived short-lived
+access tokens (Article I's line, D32), and honors on-behalf-of only
+with a minted, bounded, **subject-signed** delegation whose actor is
+the server-proven principal — a stolen delegation refuses as an actor
+mismatch [measured]. Bar 1 ran the fold-as-AS composition multi-user
+through the real node: two passkey personas, zero cross-attributions,
+dead bearer refused in 12.6ms [measured]. Cross-component demands now
+on the record: the fold's token-lifetime knob (revocation propagates
+in `exp` + callout TTL) and its RFC 8693 exchange gap; the wrapper's
+per-run overlay seam returns to carry delegations. Build gated —
+see the roadmap's M6.
 
 **The default IdP is a sibling — soulfold, the refusal holds**
 ([episode 0019](0039-soulidentity-soulfold-the-default-idp.md)): the operator's
@@ -1176,6 +1197,7 @@ the operator lives on the candidate; what chafes decides.
 | 0101 | shell | [The fronted console signs in: PublicURL crosses the seam (2026-08-16 → 08-17)](0101-shell-the-fronted-console-signs-in.md) |
 | 0102 | shell | [Conversations begin and end in the shell (2026-08-17)](0102-shell-conversations-begin-and-end.md) |
 | 0103 | ecosystem | [The session outlives its token: the refresh grant crosses the seam (2026-08-17)](0103-ecosystem-the-session-outlives-its-token.md) |
+| 0104 | ecosystem | [Outbound identity: every remote call carries the calling user (2026-08-17)](0104-ecosystem-outbound-identity-grants.md) |
 
 ## The naming map (2026-08-13)
 
