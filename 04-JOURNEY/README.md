@@ -748,6 +748,16 @@ directive) — both since dissolved by the upstream landings above.
 
 ### soulstream-idp — the fold (as of 2026-08-15; named soulfold until episode 0069)
 
+**The refresh grant lands** ([episode
+0103](0103-ecosystem-the-session-outlives-its-token.md)): refresh
+tokens leave "not in M1's scope" — `offline_access` mints a rotating
+one beside the access token, single-use by the codes' own CAS flip on
+a digest-keyed record (D12), 30 days idle bounds any one token,
+revocation deletes it, and the M1 gate walks the scenario: refresh
+without a ceremony, rotation, the spent token refused. Grown for the
+shell's sessions, which died with their one-hour bearer. On main,
+after v0.5.0.
+
 **The console becomes the standalone deployment's surface** ([episode
 0091](0091-ecosystem-the-shell-is-the-console.md); **v0.5.0**, design
 D31): the admin API always serves; whether the HTML console does is a
@@ -906,6 +916,18 @@ and the roadmap sequences M1 (the OP skeleton) behind its KV-schema and
 key-lifecycle research. No product code exists yet.
 
 ### soulstream-shell — the shell (as of 2026-08-17; named soulhelm until episode 0069)
+
+**The session renews its bearer — and ends when it no longer can**
+([episode 0103](0103-ecosystem-the-session-outlives-its-token.md)):
+the shell held sign-in's one-hour access token for the life of an
+unexpiring session, and a console left open rotted an hour in — NATS
+reconnects re-presenting the dead bearer, the admin lane 401ing, the
+screen still saying signed in. The session now custodies the grant:
+`offline_access` at sign-in, renewal through the idp's new refresh
+grant behind the same session (the NATS admission by token handler on
+every reconnect, the admin lane per call), and a session that cannot
+produce a living credential closes itself into the sign-in card —
+drained exactly once, table-tested. On main, after v0.8.0.
 
 **Conversations begin and end in the shell** ([episode
 0102](0102-shell-conversations-begin-and-end.md); design
@@ -1151,6 +1173,7 @@ the operator lives on the candidate; what chafes decides.
 | 0100 | soulstream | [v0.13.0-rc.2: first contact hardened, and the tap feeds itself (2026-08-16)](0100-soulstream-v0-13-0-rc-2.md) |
 | 0101 | shell | [The fronted console signs in: PublicURL crosses the seam (2026-08-16 → 08-17)](0101-shell-the-fronted-console-signs-in.md) |
 | 0102 | shell | [Conversations begin and end in the shell (2026-08-17)](0102-shell-conversations-begin-and-end.md) |
+| 0103 | ecosystem | [The session outlives its token: the refresh grant crosses the seam (2026-08-17)](0103-ecosystem-the-session-outlives-its-token.md) |
 
 ## The naming map (2026-08-13)
 

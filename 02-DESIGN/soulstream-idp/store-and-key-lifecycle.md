@@ -126,8 +126,14 @@ Record shapes (fields additive-only per D2; timestamps RFC 3339 UTC):
   (`auth_request | access_token | refresh_token`), `client_id`,
   `user_id?`, `scopes[]`, `redirect_uri?`, `state?`, `nonce?`,
   `pkce_challenge?`, `pkce_method?`, `response_type?`, `auth_time?`,
-  `done?`, `csrf?` (one-shot, [session-and-ui](session-and-ui.md)
-  D13), `created_at`, `expires_at`.
+  `done?`, `consumed?`, `csrf?` (one-shot,
+  [session-and-ui](session-and-ui.md) D13), `created_at`,
+  `expires_at`. A `refresh_token` record lives under the token's
+  digest key (`rt.<digest>`, D12 — the bearer verbatim nowhere
+  server-side) and carries the CAS `consumed` flip itself: rotation
+  redeems each token exactly once, the code guarantee at the token
+  scale (built 2026-08-17, episode 0103 — `offline_access` mints one,
+  redemption rotates, revocation deletes).
 - **browser session** (`bs_*`) — `schema`, `id`, `subject`,
   `created_at`, `expires_at` ([session-and-ui](session-and-ui.md)
   D11).
