@@ -37,6 +37,14 @@ The per-component summaries below were carried whole at the hq merge and are ref
 
 ### soulstream-core — the record (as of 2026-08-18; named soulstream until episode 0069)
 
+**F1 and C4 are built — v0.9.0 and v0.10.0, the same evening they were
+designed** ([episodes 0108](0108-ecosystem-the-key-becomes-resolvable.md)/
+[0109](0109-ecosystem-consent-enters-the-record.md)):
+`registry.EnsureSigningKey` wired into all three signer consumers
+(unknown-key stops being the shipped default), and the grant vocabulary
+with its projection, dual attribution, rollup baking — **Bar 4 measured
+PASS on the full composition** in identity's embedgate.
+
 **The record's tenancy half is designed — and two canonical-form
 amendments are decided** ([episode
 0107](0107-ecosystem-platform-tenancy-guardrails.md);
@@ -1258,6 +1266,8 @@ the operator lives on the candidate; what chafes decides.
 | 0105 | identity | [The grants broker lands: outbound identity in custody (2026-08-18)](0105-identity-the-grants-broker-lands.md) |
 | 0106 | idp | [The token-lifetime knob: revocation propagation gets a dial (2026-08-18)](0106-idp-the-token-lifetime-knob.md) |
 | 0107 | ecosystem | [Tenancy and guardrails: the platform question answered (2026-08-04 → 2026-08-18)](0107-ecosystem-platform-tenancy-guardrails.md) |
+| 0108 | ecosystem | [F1 closes: every signing persona becomes readable (2026-08-18)](0108-ecosystem-the-key-becomes-resolvable.md) |
+| 0109 | ecosystem | [Consent enters the record, and Bar 4 finally measures (2026-08-18)](0109-ecosystem-consent-enters-the-record.md) |
 
 ## The naming map (2026-08-13)
 
