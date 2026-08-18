@@ -116,4 +116,66 @@ machinery should be cut rather than maintained.
 
 ## Verdict
 
-*Empty until graduation.*
+Recorded 2026-08-18. The question is answered: tenancy and guardrails
+can be added without changing a core invariant — the reversal condition
+never fired (no mutual import, no privileged identity tier; the two
+wire changes are clean breaks the operator's pre-v1 rule sanctions,
+taken deliberately below).
+
+**Bar 1 — PASS on the local arm** [measured, 6/6 runs]: an account
+whose JWT is built complete and stored as one act went store → first
+full round trip in **543µs–774µs**; zero restarts, zero edits to the
+pre-existing account, whose continuous probe (230–238 round trips per
+run, 5ms cadence) recorded zero failures, max inter-success gap 6.01ms.
+**The provider arm (Synadia BYON, A8) is the one named residue** — the
+operator act's shape is written; graduating with it named follows
+0104's precedent.
+
+**Bar 2 — PASS** [measured, 6/6 runs]: 2,418–2,826 pre-creation probes
+per run all failed closed, **zero partial successes**; post-creation
+the first probe was already a full success in every run. The A2
+ordering (complete artifact, then the one store) leaves no observable
+intermediate state.
+
+**Bar 3 — PASS** [measured, 3 runs]: unparseable and type-broken rules
+refused at compile; a nested-comprehension cost bomb terminated in
+689µs–982µs and a 100k²-element input bomb in 484µs–913µs; the
+backtracking regex probe ran linear (14µs, RE2). Allow path at 100
+compiled CEL rules per op over 10k ops: p50 58–69µs, **p99 206–220µs**
+against the pre-registered 2ms budget. The scare that became a design
+output: a cost limit alone let the input bomb take **622ms** to die —
+the evaluator discipline is cost limit + interrupt check + context
+deadline, belt-and-braces, never one mechanism.
+
+**Bar 4 — not measured; carried as the C4 build's gate criterion.**
+Its first two clauses (granted action performed, dual attribution)
+are measured on the delegation machinery [identity v0.3.0]; the third
+— revocation disturbing neither persona — is exactly the unbuilt
+standing consent record, and the delegation matrix is its rig.
+
+**Bar 5 — PASS** [measured]: after the full grant build, both core
+modules' complete dependency graphs contain zero references to each
+other; the consumer-position e2e imports both — the sanctioned shape.
+
+**F1 — confirmed** [measured, code trace]: no reader consults
+`keys.public`, no `PersonaSigner` consumer publishes a profile —
+unknown-key is the shipped default for every identity-plane-signed
+persona. Owner: the signer consumers, via one core registry ensure-act.
+
+**Decisions — all eleven taken by the operator, 2026-08-18 (remote
+review, teach-back per question):** A10 **account key in the canonical
+form** [judgment — overriding this topic's own draft recommendation;
+the pre-v1 clean-break rule discounts the compat argument, and the key
+scopes signatures to the true trust root]; E3 **required
+acting-credential field, two evidence grades** [judgment; the
+custodian-stamped half is mechanism-argument]; A7 `accounts.*` on the
+identity plane, backend-pluggable; A8 both custody arms, dissolved
+into Bar 1's matrix; A11 closed by events (the 0069/0070 rename); B8
+unskippable at capability chokepoints, advisory elsewhere; B9 minimal
+evaluation input + evaluator-held counters; B10 one mechanism —
+approvals are one-shot delegations; C7 the projection argument; C8
+present short-lived, look up standing; E4 self-declared profile field
+[all judgment/mechanism-argument, none dressed as measured].
+
+Outcome: **design** — `02-DESIGN/soulstream-identity/tenancy.md`
+(D35–D38) and `02-DESIGN/soulstream-core/extensions/tenancy.md`.

@@ -1,12 +1,17 @@
-# Decision memos — drafted for graduation
+# Decision memos — drafted for graduation, DECIDED 2026-08-18
 
-*Drafted 2026-08-18. These are the topic's ten "decisions that are not
-bars" (README), argued to a recommendation each. Nothing here is a
-recorded decision yet: the working agreement applies at recording time
-(teach-back; adversarial pass for protocol-shape calls), and the two
-wire-format one-way doors — **A10** and **E3** — are the operator's to
-take, with these memos as input. Evidence classes are marked; none of
-these is `[measured]` and none pretends to be.*
+*Drafted 2026-08-18, then **taken by the operator the same day** in a
+remote teach-back review, question by question. Two outcomes differ
+from the drafts below and supersede them: **A10 → the account KEY in
+the canonical form** (the operator invoked the pre-v1 clean-break rule,
+discounting the draft's compat argument; the key scopes signatures to
+the true trust root and aligns core with the identity plane's
+account=key vocabulary; migration is the standard refuse-by-name with
+the re-founding step) and **E3 → the acting-credential field is
+REQUIRED** (custodian-verified on the sign.record lane, testimony-grade
+on the self-custody lane — the same evidence-class split the signing
+story already has). All other memos were adopted as drafted. The
+verdict in README.md is the record; the design docs carry the outcomes.*
 
 ---
 
