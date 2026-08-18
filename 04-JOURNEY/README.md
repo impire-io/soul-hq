@@ -284,7 +284,23 @@ role dissolves into the identity plane (`soulidentity`), amending episode
 unblocked. **Next:** the spec-kit pass for the first Fleet milestone; the
 soulidentity tags-on-mint addition gates the preferred minting path.
 
-### soulstream-identity — the name (as of 2026-08-17; named soulidentity until episode 0069)
+### soulstream-identity — the name (as of 2026-08-18; named soulidentity until episode 0069)
+
+**The grants broker lands — v0.3.0** ([episode
+0105](0105-identity-the-grants-broker-lands.md); realizes D30–D33,
+`specs/003-grants-broker/`): the overnight slice reviewed sound and
+completed in the morning — the `grants.*` op family on the
+principal-scoped surface, custody in its own sealed CAS bucket, derived
+short-lived tokens the only return, subject-signed delegations with the
+not-before check the review added. The repo's own gate now carries the
+transport clause in consumer position [measured]: the imposter's publish
+dies at the server and the delivery log shows the victim's subject
+served exactly twice, by her own two calls. The CLI grew the ceremony
+(`grant link|access|ls|revoke`); the runbook find of record: GitHub
+answers form-encoded without `Accept: application/json` — caught
+writing SC-005's runbook, before it bit. Open, named: **SC-005, the
+real-provider walk** (a human act, runbook ready), the wrapper's
+overlay seam, the fold's two due items.
 
 **Outbound grants designed — every remote call carries the calling
 user** ([episode 0104](0104-ecosystem-outbound-identity-grants.md); D30–D34 in
@@ -1198,6 +1214,7 @@ the operator lives on the candidate; what chafes decides.
 | 0102 | shell | [Conversations begin and end in the shell (2026-08-17)](0102-shell-conversations-begin-and-end.md) |
 | 0103 | ecosystem | [The session outlives its token: the refresh grant crosses the seam (2026-08-17)](0103-ecosystem-the-session-outlives-its-token.md) |
 | 0104 | ecosystem | [Outbound identity: every remote call carries the calling user (2026-08-17)](0104-ecosystem-outbound-identity-grants.md) |
+| 0105 | identity | [The grants broker lands: outbound identity in custody (2026-08-18)](0105-identity-the-grants-broker-lands.md) |
 
 ## The naming map (2026-08-13)
 

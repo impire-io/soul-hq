@@ -65,6 +65,15 @@ and the design orders the writes to shrink it, not to zero. Access
 tokens are cached in memory only, keyed (persona, resource, scopes),
 never at rest.
 
+Two decisions from the build, kept at review (2026-08-18): contention
+is **bounded by time (5s), not round count** — one contender wins each
+rotation round and a fixed retry count was measured starving a loser at
+three attempts; and a contender whose redemption fails **polls briefly
+for the record's revision to move** before concluding the line is dead,
+because the loser can observe the redeem→CAS-write gap from the outside
+(the winner redeemed, its write still in flight) and must not mistake
+it for a lost line.
+
 **Reversal condition**: a provider whose rotation semantics cannot
 survive the redeem-then-write order (observable: a measured lost line
 with the discipline followed) forces a write-ahead intent record into
@@ -89,9 +98,10 @@ server-proven principal, the resource, and the decision.
 An agent acting for a person is never ambient config. `grants.access`
 with `on_behalf_of` requires a **delegation**: `{subject, actor,
 resources, scopes, issued_at, expires_at}` plus a signature, honored
-only when it verifies, is live, names the *server-proven caller* as
-actor and the named subject as subject, and covers the requested
-resource. Measured: the one allowed path against four refusal classes
+only when it verifies, is live — within `[issued_at, expires_at]`, both
+checked (review addition 2026-08-18: a future-dated `issued_at` refuses
+as not yet valid) — names the *server-proven caller* as actor and the
+named subject as subject, and covers the requested resource. Measured: the one allowed path against four refusal classes
 (absent, expired, wrong caller presenting a stolen delegation,
 out-of-bounds resource), every refusal audited **naming both
 personas**; a stolen, validly-signed delegation refuses as an actor

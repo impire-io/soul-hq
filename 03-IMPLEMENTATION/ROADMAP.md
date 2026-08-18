@@ -14,7 +14,7 @@ changes to it are decisions and belong in the journey as episodes.
 |---|---|---|
 | [soulstream-core](#soulstream-core--the-record) | `v0.8.0` (renamed, episode 0070; the remote MCP node extracted to soulstream-mcp) — MVP + most of day-2 shipped; the remote MCP node built and consumable; two-week dogfood run live since 2026-07-27 | Sealed-topics build priority gated on the dogfood chafe log (to 2026-08-10); eg-walker gated on stage-1 chafe |
 | [soulstream-workloads](#soulstream-workloads--the-room) | Phases 1–2 complete; **M3.2 built and reshaped to wrap in one day** (episodes 0082→0083→0085), then **v0.4.0: `mcp_args`** (episode 0089) — the tool door can be a subcommand, so the product binary carries the whole wrap; core at v0.8.4 | Fleet (design 0003, M3.1) runs spec-kit next; loop-safety research before any agent-wakes-agent deployment; the serve arm returns per design 0004 §9's reversal |
-| [soulstream-identity](#soulstream-identity--the-name) | M1/M3/M4 shipped (+ Entra/OIDC lane, D25 registry dissolution, D28/D29 consumer-proven additions); `v0.2.0` tagged (renamed; wire segment `identity`); **outbound grants designed** ([episode 0104](../04-JOURNEY/0104-ecosystem-outbound-identity-grants.md), D30–D34 in [`grants.md`](../02-DESIGN/soulstream-identity/grants.md) — bars measured on the real fold/plane/node) | M2's node half — proven upstream by soulstream 018; roadmap check-off pending. M5 gated on soulstream demand. M6 (grants broker) design done; build behind the focus gate, first slice started on branch per the operator's 2026-08-17 overnight directive |
+| [soulstream-identity](#soulstream-identity--the-name) | M1/M3/M4 shipped (+ Entra/OIDC lane, D25 registry dissolution, D28/D29 consumer-proven additions); **`v0.3.0` — M6's grants broker landed** ([episode 0105](../04-JOURNEY/0105-identity-the-grants-broker-lands.md): slice 1 + review pass merged, transport clause on the repo's own gate, CLI ceremony, runbook written) on 0104's graduated design (D30–D34 in [`grants.md`](../02-DESIGN/soulstream-identity/grants.md)) | **SC-005: the real-provider walk** (human act, runbook in `specs/003-grants-broker/quickstart.md`); M2's node half — proven upstream by soulstream 018; roadmap check-off pending. M5 gated on soulstream demand. Lane 3 (RFC 8693 exchange backend) behind the fold's exchange grant |
 | [soulstream](#soulstream--the-product-the-house) | **v0.13.0-rc.5 on the tap** — first contact hardened ([episode 0100](../04-JOURNEY/0100-soulstream-v0-13-0-rc-2.md)), the fronted console signs in ([episode 0101](../04-JOURNEY/0101-shell-the-fronted-console-signs-in.md)), conversations begin and end in the console ([episode 0102](../04-JOURNEY/0102-shell-conversations-begin-and-end.md)); pins core v0.8.4 / workloads v0.4.0 / shell v0.8.0 / idp v0.5.0 / archivist v0.3.0; on v0.12.0-rc.1's clean break ([episode 0094](../04-JOURNEY/0094-soulstream-v0-12-0-rc-1.md)) | RC soak toward v0.13.0 on the byon deployment; Phase 3 (tsnet) gated on fronting measured insufficient |
 | [soulstream-idp](#soulstream-idp--the-fold) | **Every milestone shipped — M1–M5**, and **v0.4.2 wears the ecosystem's canon** ([episode 0090](../04-JOURNEY/0090-idp-the-fold-wears-the-canon.md), design D30): the sealed store, passkeys, callout admission, the embed seam, the lifecycle — and pages that read as the same product as the shell; **v0.6.0 — the refresh grant** ([episode 0103](../04-JOURNEY/0103-ecosystem-the-session-outlives-its-token.md)): offline_access mints rotating refresh tokens, so a session outlives its one-hour bearer; physical-authenticator runbook pending (human act) | Named horizons only (deferred audit rows, multi-issuer demand); day-2 by demand — and **episode 0104 calls two due**: the token-lifetime knob (outbound revocation propagates in access-token `exp` + callout TTL [measured]) and the RFC 8693 exchange grant (audience is deployment-fixed today; the Article II argument rides Entra's own OBO support) |
 | [soulstream-shell](#soulstream-shell--the-shell) | **v0.8.0 — conversations begin and end in the shell** ([episode 0102](../04-JOURNEY/0102-shell-conversations-begin-and-end.md), design [0003](../02-DESIGN/soulstream-shell/0003-conversation-lifecycle.md)): start/close/archive from the surface, zero upstream additions; **v0.9.0 — session refresh** ([episode 0103](../04-JOURNEY/0103-ecosystem-the-session-outlives-its-token.md)): the bearer renews behind the session and the session ends honestly when it cannot; before that v0.7.0's PublicURL ([episode 0101](../04-JOURNEY/0101-shell-the-fronted-console-signs-in.md)) and the console arc ([episodes 0089](../04-JOURNEY/0089-ecosystem-wrap-in-the-house.md)/[0091](../04-JOURNEY/0091-ecosystem-the-shell-is-the-console.md)) | **v0.9.0 pinned on soulstream main** (rc.5 carries v0.8.0; the next rc ships the refresh) | The operator tries the whole system — evaluation decides what changes |
@@ -578,23 +578,28 @@ arrive over the NATS surface).
 5. **M5 — attestation issuance.** Soulstream `operated_by` attestation tokens
    issued from the vault (D6's static half). Gated on demand from the
    Soulstream side.
-6. **M6 — the grants broker (outbound identity).** Design done by
-   research graduation ([episode
-   0104](../04-JOURNEY/0104-ecosystem-outbound-identity-grants.md), D30–D34 in
-   [`grants.md`](../02-DESIGN/soulstream-identity/grants.md); all three
-   bars measured on the real fold, plane, and node): the `grants.*` op
-   family on the principal-scoped surface, the second sealed custody
-   domain with CAS rotation, derived-credential returns only (Article
-   I's D32 line), subject-signed delegations for on-behalf-of, four
-   lanes named by what the remote supports. Gate, from the measured
-   bars: server-enforced principal isolation (delivery-log proof),
-   rotation + concurrent-refresh custody under `-race`, the delegation
-   refusal matrix audited both-personas, refresh tokens nowhere
-   unsealed (positive-control grep), and one real provider closing the
-   Bar 2 residue. **Behind the 0071 focus gate** — the identity plane
-   grows only what the product demands; the operator's 2026-08-17
-   overnight directive started the first slice on a branch, unmerged,
-   for morning review. Cross-repo demands recorded: the fold's
+6. ✅ **M6 — the grants broker (outbound identity)** (shipped
+   2026-08-18, [episode
+   0105](../04-JOURNEY/0105-identity-the-grants-broker-lands.md);
+   design from research graduation [episode
+   0104](../04-JOURNEY/0104-ecosystem-outbound-identity-grants.md),
+   D30–D34 in [`grants.md`](../02-DESIGN/soulstream-identity/grants.md)):
+   the `grants.*` op family on the principal-scoped surface, the second
+   sealed custody domain with CAS rotation, derived-credential returns
+   only (Article I's D32 line), subject-signed delegations with the
+   not-before check the review added, the CLI ceremony
+   (`grant link|access|ls|revoke`), the scope-template duty stated in
+   docs. The operator's 2026-08-17 overnight directive built slice 1 on
+   a branch; the 2026-08-18 morning review completed the slice and
+   merged — `v0.3.0`. Gate met on the repo's own suite [measured]:
+   server-enforced principal isolation (delivery-log proof in the
+   consumer-position e2e), rotation + concurrent-refresh custody under
+   `-race`, the delegation refusal matrix audited both-personas,
+   refresh tokens nowhere unsealed (positive-control grep). **Open:
+   SC-005** — one real provider closing the Bar 2 residue (GitHub
+   preferred; runbook in `specs/003-grants-broker/quickstart.md`, a
+   human act). Lane 3 (the RFC 8693 exchange backend, no custody) waits
+   on the fold's exchange grant. Cross-repo demands stand: the fold's
    token-lifetime knob and RFC 8693 exchange (its roadmap), the
    wrapper's per-run overlay seam (workloads').
 7. **Later**: sealing keys (D9 — unwrap-once, waits on Soulstream sealed
