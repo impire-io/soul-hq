@@ -10,7 +10,7 @@ runtime, and the single-binary deployment that one has an *unresolved research
 effort* about `[judgment]`. Exactly two of its capabilities are worth having —
 **tenancy** and **guardrails** — and both are now enumerated as requirements in
 research topic
-[`platform-tenancy-guardrails`](../01-RESEARCH/platform-tenancy-guardrails/README.md).
+[`platform-tenancy-guardrails`](0107-ecosystem-platform-tenancy-guardrails.md).
 
 **Nothing is ported.** The other system is proprietary; this one is MIT. Only
 ideas cross, and the provenance rule written at the head of the topic's
@@ -84,5 +84,5 @@ privileged tier in the identity model — then the platform ambition does not
 belong in the core, the topic ends `abandoned`, and the capability lives in a
 layer above instead.
 
-Trail: [`01-RESEARCH/platform-tenancy-guardrails/`](../01-RESEARCH/platform-tenancy-guardrails/README.md)
+Trail: [`01-RESEARCH/platform-tenancy-guardrails/`](0107-ecosystem-platform-tenancy-guardrails.md)
 (README, requirements, JOURNEY); no code changed.

@@ -83,7 +83,7 @@ Connections, People & sign-in, Agents — and the component bynames stay
 in internal docs. Two upstream asks stand: **#1** a WebSocket listener
 in soulnode's embedded server (one options field); **#2** an
 owner-reachable token-management lane, which converges with
-[`platform-tenancy-guardrails`](../01-RESEARCH/platform-tenancy-guardrails/README.md)'s
+[`platform-tenancy-guardrails`](0107-ecosystem-platform-tenancy-guardrails.md)'s
 grant work — C7's decision to run fully parallel is already paying.
 The participant client (humans posting turns from the browser) is a
 named successor topic, not helm scope.

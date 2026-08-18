@@ -35,6 +35,7 @@ A realm running none of these is still a working soulstream.
 | [`extensions/work.md`](extensions/work.md) | The work stages: versioned artefacts, work items, execution, sandboxes |
 | [`extensions/sealed-topics.md`](extensions/sealed-topics.md) | E2E-encrypted topics |
 | [`extensions/memory.md`](extensions/memory.md) | Persona memory and collective search |
+| [`extensions/tenancy.md`](extensions/tenancy.md) | The record's tenancy half: grant vocabulary, registry additions (F1's ensure-act, E4), and the two decided canonical-form amendments (A10 key-in-record, E3 acting-credential) |
 
 The build order for all of the above is in
 [`../03-IMPLEMENTATION/ROADMAP.md`](../../03-IMPLEMENTATION/ROADMAP.md); the frozen

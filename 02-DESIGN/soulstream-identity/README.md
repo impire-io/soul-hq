@@ -12,6 +12,7 @@ the system as it is.
 | [`nats-surface.md`](nats-surface.md) | The NATS surface (M3): subject space, server-enforced principal, sealed envelope, KV vault, admin gate — decisions D14–D18 |
 | [`auth-callout.md`](auth-callout.md) | Auth callout (M4): sentinel connection contract, issuer-as-mint, AUTH topology, the mapping shape — decisions D19–D22 |
 | [`grants.md`](grants.md) | Outbound grants (the broker): the `grants.*` op family, the second custody domain, Article I's derived-credential line, delegated acting, the four lanes — decisions D30–D34 |
+| [`tenancy.md`](tenancy.md) | Tenancy and guardrails: the `accounts.*` lifecycle with pluggable authority, the general secret store, the guardrail evaluator and its chokepoints, approvals as one-shot delegations — decisions D35–D38 |
 
 Future documents arrive by research graduation (see
 [`../01-RESEARCH/README.md`](../../01-RESEARCH/README.md)) or design propagation

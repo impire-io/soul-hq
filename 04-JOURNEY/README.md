@@ -35,7 +35,22 @@ cite the per-project numbers).
 
 The per-component summaries below were carried whole at the hq merge and are refreshed with every new episode, as before.
 
-### soulstream-core — the record (as of 2026-08-02; named soulstream until episode 0069)
+### soulstream-core — the record (as of 2026-08-18; named soulstream until episode 0069)
+
+**The record's tenancy half is designed — and two canonical-form
+amendments are decided** ([episode
+0107](0107-ecosystem-platform-tenancy-guardrails.md);
+[`extensions/tenancy.md`](../02-DESIGN/soulstream-core/extensions/tenancy.md)):
+the grant-record vocabulary (`grant.issue`/`grant.revoke` + dual
+exercise attribution, Bar 4 its build gate, the projection duty
+answering 0029's objection), the registry's ensure-signing-key act
+(F1 — confirmed by code trace as the shipped default: no reader
+consults `keys.public`, no signer consumer publishes a profile), the
+self-declared responds-when-addressed field — and the operator's two
+pre-v1 clean breaks, landing with their builds: **A10** the account
+key replaces the realm name in the canonical signed form, **E3** a
+required acting-credential field, custodian-verified on the
+`sign.record` lane, testimony-grade on self-custody.
 
 **The node module is consumable** ([episode
 0010](0048-soulstream-the-node-becomes-consumable.md)): its landing-day
@@ -285,6 +300,20 @@ unblocked. **Next:** the spec-kit pass for the first Fleet milestone; the
 soulidentity tags-on-mint addition gates the preferred minting path.
 
 ### soulstream-identity — the name (as of 2026-08-18; named soulidentity until episode 0069)
+
+**Tenancy and guardrails designed — D35–D38** ([episode
+0107](0107-ecosystem-platform-tenancy-guardrails.md);
+[`tenancy.md`](../02-DESIGN/soulstream-identity/tenancy.md)): the
+`accounts.*` lifecycle op family with pluggable authority (local
+operator key | provider API — runtime birth measured at 543–774µs,
+zero restarts, no usable half-account across ~2,800 probes/run), the
+general secret store as the third custody domain, the guardrail
+evaluator (CEL; allow-path p99 206–220µs at 100 rules; the mandated
+belt-and-braces discipline after the 622ms cost-limit scare)
+unskippable at capability chokepoints, and approvals as one-shot D33
+delegations. All eleven open decisions taken by the operator
+2026-08-18; builds behind the 0071 focus gate; the BYON provider arm
+of Bar 1 the one named residue.
 
 **The grants broker lands — v0.3.0** ([episode
 0105](0105-identity-the-grants-broker-lands.md); realizes D30–D33,
@@ -1228,6 +1257,7 @@ the operator lives on the candidate; what chafes decides.
 | 0104 | ecosystem | [Outbound identity: every remote call carries the calling user (2026-08-17)](0104-ecosystem-outbound-identity-grants.md) |
 | 0105 | identity | [The grants broker lands: outbound identity in custody (2026-08-18)](0105-identity-the-grants-broker-lands.md) |
 | 0106 | idp | [The token-lifetime knob: revocation propagation gets a dial (2026-08-18)](0106-idp-the-token-lifetime-knob.md) |
+| 0107 | ecosystem | [Tenancy and guardrails: the platform question answered (2026-08-04 → 2026-08-18)](0107-ecosystem-platform-tenancy-guardrails.md) |
 
 ## The naming map (2026-08-13)
 
