@@ -67,3 +67,46 @@ should go first.
 `requirements.md`, and the latency budget for Bar 3, which cannot be fixed
 until the enforcement point is chosen (B8). That budget goes here, with its
 number, before Bar 3 runs — not into the bar retroactively.
+
+---
+
+## 2026-08-18 — F1 confirmed by code trace, and it is the default, not a corner
+
+The trace the opening entry demanded ran against the code as shipped
+[measured: code trace]. Both halves of the gap are real:
+
+- **Signing side.** Three real consumers construct `PersonaSigner` —
+  the product's runner (`soulstream/node/workload.go:65`) and archivist
+  (`soulstream/node/node.go:454`), and the remote node's per-user pool
+  (`soulstream-mcp/pool.go:455`, every door persona). The persona key
+  materializes in the vault on first touch
+  (`soulstream-identity/internal/service/service.go` `ownedPersonaKey`
+  → `GeneratePersonaKey`), owner-bound — and **no profile publication
+  exists on any of these paths** (product, mcp, shell, and archivist
+  repos all swept: the shell only reads the directory, the rig
+  publishes profiles only in test setup, the archivist references the
+  registry nowhere).
+- **Reading side.** Every reader builds its keyring from **registry
+  profiles + TOFU pins** and nothing else: core's `realmKeyring`
+  (`soulstream-core/internal/cli/connect.go:75`, backing CLI, stream,
+  memory, discover, inbox) and the node's `keyringFor`
+  (`soulstream-mcp/pool.go:483`). The identity plane's `keys.public`
+  directory (D26) is consulted by **no reader anywhere** — it is real
+  and proven in identity's own e2e, but no core-side consumer wires it.
+
+The consequence is stronger than the opening entry guessed: this is not
+a persona that *could* sign unverifiably — it is the **shipped default
+for every identity-plane-signed persona**. The product's own runner and
+archivist, and every person admitted through the remote door, sign ops
+that every reader in the realm renders `unknown-key`, unless someone
+manually published a profile for them (which the dogfood personas did,
+masking the gap).
+
+The fix stays what S7/S8 dictate — a **consumer wiring job**: the party
+constructing a `PersonaSigner` owns publishing (or refreshing) the
+persona's registry profile with the signing public key beside it. A
+reader-side fallback to `keys.public` is refused by the cycle guard
+(core cannot import the identity client). Owner and shape land with
+this topic's graduation outputs; the natural home is one core helper
+(`registry` gains an ensure-signing-key act) called by the three
+consumers above at signer construction.

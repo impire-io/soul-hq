@@ -303,8 +303,14 @@ deliberate rather than an oversight.
   a profile. Something must close that loop. Under S7's no-mutual-import rule
   this is a consumer's wiring job, which means it needs an owner or it stays
   unowned. Small, self-contained, independent of everything else here.
-  **Unverified:** inferred from the design docs, not traced through the running
-  code — confirm before acting.
+  **Confirmed 2026-08-18** [measured: code trace, JOURNEY.md entry]: every
+  reader keyring is registry-profiles + TOFU pins (`realmKeyring`,
+  `keyringFor`); `keys.public` is consulted by no reader; no
+  `PersonaSigner` consumer (product runner/archivist, the remote node's
+  per-user pool) publishes a profile — the gap is the shipped default for
+  every identity-plane-signed persona, masked in dogfood by manual profile
+  publication. Owner: the `PersonaSigner` consumers, via one core
+  `registry` ensure-act.
 
 ---
 
