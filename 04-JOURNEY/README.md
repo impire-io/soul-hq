@@ -298,9 +298,11 @@ dies at the server and the delivery log shows the victim's subject
 served exactly twice, by her own two calls. The CLI grew the ceremony
 (`grant link|access|ls|revoke`); the runbook find of record: GitHub
 answers form-encoded without `Accept: application/json` — caught
-writing SC-005's runbook, before it bit. Open, named: **SC-005, the
-real-provider walk** (a human act, runbook ready), the wrapper's
-overlay seam, the fold's two due items.
+writing SC-005's runbook, before it bit. **SC-005 closed the same
+evening** [measured]: the operator's real-GitHub walk rotated the line
+live and refused after revoke — 0104's Bar 2 residue closes (run
+recorded in the feature's quickstart). Still open, named: the
+wrapper's overlay seam and the fold's exchange grant.
 
 **Outbound grants designed — every remote call carries the calling
 user** ([episode 0104](0104-ecosystem-outbound-identity-grants.md); D30–D34 in
