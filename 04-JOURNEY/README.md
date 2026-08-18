@@ -307,7 +307,17 @@ role dissolves into the identity plane (`soulidentity`), amending episode
 unblocked. **Next:** the spec-kit pass for the first Fleet milestone; the
 soulidentity tags-on-mint addition gates the preferred minting path.
 
-### soulstream-identity — the name (as of 2026-08-18; named soulidentity until episode 0069)
+### soulstream-identity — the name (as of 2026-08-19; named soulidentity until episode 0069)
+
+**The tenancy set is BUILT — v0.4.0/v0.5.0/v0.6.0 in one overnight arc**
+([episode 0110](0110-identity-the-tenancy-set-builds.md)): the general
+secret store on the extracted sealed-CAS pattern (D36), the guardrail
+evaluator at the op-path chokepoint with fail-closed discipline and
+approvals as one-shot subject-signed delegations (D37/D38), and runtime
+tenancy — an account born, suspended, resumed on a live dir-resolver in
+1.69ms store→admitted, the new tenant mintable the moment the op
+returns (D35). Residues named: the ProviderAPI authority arm (BYON, an
+operator act), rate counters and approver policy by demonstrated need.
 
 **Tenancy and guardrails designed — D35–D38** ([episode
 0107](0107-ecosystem-platform-tenancy-guardrails.md);
@@ -1268,6 +1278,7 @@ the operator lives on the candidate; what chafes decides.
 | 0107 | ecosystem | [Tenancy and guardrails: the platform question answered (2026-08-04 → 2026-08-18)](0107-ecosystem-platform-tenancy-guardrails.md) |
 | 0108 | ecosystem | [F1 closes: every signing persona becomes readable (2026-08-18)](0108-ecosystem-the-key-becomes-resolvable.md) |
 | 0109 | ecosystem | [Consent enters the record, and Bar 4 finally measures (2026-08-18)](0109-ecosystem-consent-enters-the-record.md) |
+| 0110 | identity | [The tenancy set builds: secrets, the guardrail, approvals, accounts (2026-08-19)](0110-identity-the-tenancy-set-builds.md) |
 
 ## The naming map (2026-08-13)
 
