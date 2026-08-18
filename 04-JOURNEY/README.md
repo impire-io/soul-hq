@@ -783,7 +783,17 @@ no dev fork). Feasibility entered measured; so did the obstacles
 (SoulIdentity's serve path was `internal/`, soulrealm's `replace`
 directive) — both since dissolved by the upstream landings above.
 
-### soulstream-idp — the fold (as of 2026-08-15; named soulfold until episode 0069)
+### soulstream-idp — the fold (as of 2026-08-18; named soulfold until episode 0069)
+
+**The token-lifetime knob** ([episode
+0106](0106-idp-the-token-lifetime-knob.md); **v0.7.0**): the first of
+0104's two due demands closed — the access-token lifetime is a
+deployment knob through the whole seam
+(`embed.Options.AccessTokenLifetime`, `--access-token-lifetime`), zero
+keeping the default hour; the e2e proves both arms (a 5-minute fold
+issues 5-minute tokens through the full ceremony) [measured]. Named,
+not built: per-client lifetimes, the product-side plumbing, and the
+second due demand — the RFC 8693 exchange grant, spec first.
 
 **The refresh grant lands** ([episode
 0103](0103-ecosystem-the-session-outlives-its-token.md)): refresh
@@ -1215,6 +1225,7 @@ the operator lives on the candidate; what chafes decides.
 | 0103 | ecosystem | [The session outlives its token: the refresh grant crosses the seam (2026-08-17)](0103-ecosystem-the-session-outlives-its-token.md) |
 | 0104 | ecosystem | [Outbound identity: every remote call carries the calling user (2026-08-17)](0104-ecosystem-outbound-identity-grants.md) |
 | 0105 | identity | [The grants broker lands: outbound identity in custody (2026-08-18)](0105-identity-the-grants-broker-lands.md) |
+| 0106 | idp | [The token-lifetime knob: revocation propagation gets a dial (2026-08-18)](0106-idp-the-token-lifetime-knob.md) |
 
 ## The naming map (2026-08-13)
 
