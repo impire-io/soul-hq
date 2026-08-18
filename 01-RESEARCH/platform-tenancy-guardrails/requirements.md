@@ -203,6 +203,16 @@ public prior art only.
 The mechanism S6 depends on. Cheap to start: the recording half is additive
 vocabulary with no cryptography.
 
+*Reconciliation 2026-08-18 (JOURNEY.md): the grants broker (episodes
+0104/0105) built this mechanism for the outbound-resource class — C1,
+C3, C5, C6 are running, tested code there [measured]; C8 is answered
+for persona-to-persona delegation (a presentable subject-signed
+artifact, verified from the D26 directory, honored only from its named
+actor) [judgment]. Still open exactly as written: C2's independent
+revocation (the standing consent record, designed in D33, unbuilt), C4
+entirely (the op-log recording half), and C7's argument for the consent
+record when C4 is designed.*
+
 - **C1 `[NEW]`** A persona must be able to authorize another to do a specific,
   named thing on its behalf — without the second being able to act *as* the
   first.
@@ -237,6 +247,14 @@ vocabulary with no cryptography.
 The custodian holds keys and answers signing and minting requests. Grants (§C)
 and per-persona upstream credentials both need it to hold *secrets*, not only
 keys.
+
+*Reconciliation 2026-08-18 (JOURNEY.md): the broker's second custody
+domain (D31, identity v0.3.0) measures every mechanism here for its own
+domain — CAS (D2), structural namespacing (D3/D4), sealed at rest (D5),
+E2E sealing (D6/D7), act-with-without-receiving (D8) [measured]. D1's
+general caller-named paths do not exist; D9 gains a one-service data
+point (a second domain inside the service composes cleanly) but stays
+open as posed.*
 
 - **D1 `[NEW]`** Store, retrieve, list, and delete a secret at a named path.
 - **D2 `[NEW]`** Concurrent writers must not silently lose each other's writes;

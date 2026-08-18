@@ -110,3 +110,67 @@ reader-side fallback to `keys.public` is refused by the cycle guard
 this topic's graduation outputs; the natural home is one core helper
 (`registry` gains an ensure-signing-key act) called by the three
 consumers above at signer construction.
+
+---
+
+## 2026-08-18 — the grants broker lands elsewhere, and half of §C/§D lands with it
+
+The `outbound-identity-grants` topic (episode 0104) graduated overnight
+and its build merged this morning (episode 0105, soulstream-identity
+v0.3.0). That work was scoped to *outbound* credentials — but it built
+the very mechanisms §C and §D of this topic enumerate, for the
+outbound-resource class. Reconciled here so this topic measures what
+remains rather than re-planning what exists.
+
+**Bar 5 — PASS** [measured 2026-08-18]: after the full grant build
+(identity v0.3.0, delegations wired against soulstream's signing
+shape), both core modules' dependency graphs contain zero references to
+the other — `go.mod` and the complete `go mod graph`, both directions,
+all zero. The consumer-position e2e module imports both, which is the
+cycle guard's sanctioned shape (episode 0027). The grant work S8
+worried about is now real code, and the guard held.
+
+**§D — the custody pattern is proven; the general surface is not
+built.** D31's second custody domain measures every mechanism §D
+names, for its domain: CAS conditional writes (D2) under `-race`;
+paths namespaced by construction (`grant/<persona>/<resource>`) with
+reach structural via the transport op tail (D3/D4's property); sealed
+at rest under the deployment's first key, positive-control-verified
+(D5); the E2E-sealed surface (D6/D7); and act-with-without-receiving
+(D8) — the caller gets derived access tokens, the refresh token never
+crosses [all measured, identity's suite]. What §D still lacks is the
+*general* secret store: D1's arbitrary caller-named paths do not exist
+— the broker custodies one record shape it defines itself. **D9 gains a
+data point, not a closure**: the broker put a second custody domain
+*inside* the one service (own bucket, same first key, same surface
+discipline) and it composes cleanly — evidence for one-service, but the
+question as posed (general secrets beside key custody) is still open.
+
+**§C — the delegation half exists; the standing-grant half does not.**
+For the outbound-resource action class: C1 (authorize without
+acting-as), C3 (dual attribution, each readable independently — every
+on-behalf decision audits both personas), C5 (enforcement with the
+custodian), C6 (nothing pre-provisioned) are running, tested code
+[measured]. C8 is **answered for persona-to-persona delegation**
+[judgment, D33]: the grant *is* a presentable bearer artifact —
+subject-signed, verified by the enforcer from the D26 directory, no new
+trust root — honored only from its named actor, which removes the
+leak-amplification that made C8's bearer arm scary. What remains: C2's
+independent revocation (today a delegation ends by expiry; revoking the
+subject's grant custody disturbs the subject's own access — D33's
+standing **consent record**, revocable and refusing the next mint, is
+designed but deliberately unbuilt), and C4 entirely — the op-log
+recording half (S8's soulstream side): grant issuance, revocation, and
+exercise are visible today only in the identity plane's audit log, not
+in any topic the granter can watch. C7's argument sharpens: the
+refresh-token store is unambiguously an original fact (a secret with no
+other home); the *consent record* is the artifact that must still answer
+the dissolved-registry objection when C4 is designed.
+
+**Bar 4 — partially measurable, not yet a PASS.** The real machinery
+measures the granted action performed and the dual attribution [both
+measured]. The bar's third clause — revocation stops the action while
+disturbing *neither* persona's own standing — is exactly the unbuilt
+consent record: today's only revocation lever (custody deletion) kills
+the subject's own access too. Bar 4 waits on C2/C4's remaining half,
+and the delegation matrix is its measurement rig when that lands.
