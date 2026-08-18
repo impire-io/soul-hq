@@ -174,3 +174,46 @@ disturbing *neither* persona's own standing — is exactly the unbuilt
 consent record: today's only revocation lever (custody deletion) kills
 the subject's own access too. Bar 4 waits on C2/C4's remaining half,
 and the delegation matrix is its measurement rig when that lands.
+
+---
+
+## 2026-08-18 — pre-registration before the Bar 1/2/3 spikes
+
+Written before either rig runs, per the topic's own discipline.
+
+**Bar 3's enforcement point and budget, fixed now.** Point: the
+custodian's op path (the B8 memo's recommendation — the chokepoint a
+caller cannot bypass because the capability lives there). Budget:
+**added p99 ≤ 2ms** on a representative allow path with a rule set of
+~100 compiled rules, measured as evaluator-in-the-loop minus
+evaluator-absent on the same op shape. Hostile-rule pass criteria as
+the bar states: refused at compile/load, or terminated by the
+evaluator's own cost bound — the caller never waits unboundedly. The
+candidate rule language is CEL (public prior art: sandboxed,
+non-Turing-complete, per-evaluation cost limits) — B7's three
+properties by construction, to be verified, not assumed. If B8's
+eventual recording moves the enforcement point, the bar re-runs there;
+this run stands as the evaluator's own measurement either way.
+
+**Bar 1/2's rig shape.** An embedded operator-mode server (the
+embedgate ceremony idiom, memory account resolver — the same resolver
+class the product's founding uses); a service account exporting a
+request/reply surface with `account_token_position` forcing each
+importer's own account key into the subject (D14/A6's mechanics, a
+stand-in responder behind them); account A pre-existing with a
+continuous round-trip probe for the full duration. At T: account B's
+JWT is constructed **complete** — limits, the import, everything —
+and only then stored into the resolver, the A2 ordering bet being that
+no intermediate state ever exists on the wire. Probes: before the
+store, B's user connect must fail closed (unknown account) and any
+partial success fails Bar 2; after, B's user connects and completes a
+round trip on the shared surface. Bar 1 passes only with zero
+restarts, zero edits to A's configuration, and A's probe uninterrupted
+throughout. Stated honestly up front: the shared surface is a stand-in
+responder riding the real export/import JWTs — the identity plane
+rides the same mechanics by configuration (episode 0011's D14
+amendment) [mechanism-argument], and wiring the full plane into this
+rig is the graduation-time upgrade if the stand-in leaves doubt. The
+**provider arm** (A8: Synadia Cloud BYON control-plane API) is not
+runnable from this desk without the operator's portal token; it is
+named as the remaining Bar 1 arm, not silently dropped.
