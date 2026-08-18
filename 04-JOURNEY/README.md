@@ -1279,6 +1279,7 @@ the operator lives on the candidate; what chafes decides.
 | 0108 | ecosystem | [F1 closes: every signing persona becomes readable (2026-08-18)](0108-ecosystem-the-key-becomes-resolvable.md) |
 | 0109 | ecosystem | [Consent enters the record, and Bar 4 finally measures (2026-08-18)](0109-ecosystem-consent-enters-the-record.md) |
 | 0110 | identity | [The tenancy set builds: secrets, the guardrail, approvals, accounts (2026-08-19)](0110-identity-the-tenancy-set-builds.md) |
+| 0111 | ecosystem | [One session, several audiences: the exchange grant lands on both ends (2026-08-19)](0111-ecosystem-one-session-several-audiences.md) |
 
 ## The naming map (2026-08-13)
 
