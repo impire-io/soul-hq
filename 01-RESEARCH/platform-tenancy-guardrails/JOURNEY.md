@@ -217,3 +217,45 @@ rig is the graduation-time upgrade if the stand-in leaves doubt. The
 **provider arm** (A8: Synadia Cloud BYON control-plane API) is not
 runnable from this desk without the operator's portal token; it is
 named as the remaining Bar 1 arm, not silently dropped.
+
+---
+
+## 2026-08-18 — Bars 1, 2, and 3 measured: three passes and one honest scare
+
+Both rigs built and run this session (scratchpad modules `tenancy-rig`
+and `guardrail-rig`, per how-we-work). All numbers are spreads over
+repeated runs, not means.
+
+**Bar 1 — PASS (local arm)** [measured, 6/6 runs]: account B, its JWT
+built complete and stored as the one act, went from store to **first
+full round trip in 543µs–774µs** across runs — zero server restarts,
+zero edits to account A, and A's continuous probe (230–238 round trips
+per run at 5ms cadence) recorded **zero failures** with a max
+inter-success gap of 6.01ms. The server resolves a runtime-stored
+account on demand; nothing existing is touched. The provider arm (A8)
+remains named and unrun.
+
+**Bar 2 — PASS** [measured, 6/6 runs]: 2,418–2,826 pre-creation probes
+per run — connect attempts with valid-but-unknown-account credentials,
+each also attempting the shared surface — **all failed closed, zero
+partial successes**; post-creation, the first probe was already a full
+success (connect + round trip) in every run, with zero
+connected-but-unreachable states observed. The A2 ordering bet held:
+build the account artifact complete, then store — the store is the
+atom, and no intermediate state ever exists on the wire.
+
+**Bar 3 — PASS, and the bar earned its keep** [measured, 3 runs]: the
+hostile set against CEL: unparseable and type-broken rules **refused at
+compile**; a nested-comprehension cost bomb **terminated in
+689µs–982µs**; a 100k²-element input bomb **terminated in 484µs–913µs**;
+the catastrophic-backtracking regex probe ran linear in 14µs (RE2 by
+construction). Allow path at 100 compiled rules per op over 10k ops:
+**p50 58–69µs, p99 206–220µs, max ≤ 492µs** — an order of magnitude
+under the pre-registered 2ms budget. **The scare, recorded as a design
+output:** the first run used a cost limit alone (500k) and the input
+bomb, though terminated, took **622ms** to die — cost accounting is a
+step bound, not a wall-clock bound. The discipline that passes, and
+that the eventual build must carry: a tight cost limit sized to op-path
+rules (10k), an interrupt check every ~100 steps, and a **context
+deadline (25ms) as the hard stop** — B7 is realizable, but only as
+belt-and-braces, never as a single mechanism.
