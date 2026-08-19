@@ -329,6 +329,17 @@ soulidentity tags-on-mint addition gates the preferred minting path.
 
 ### soulstream-identity — the name (as of 2026-08-19; named soulidentity until episode 0069)
 
+**The provider arm closes — v0.9.0** ([episode
+0114](0114-identity-the-provider-arm-closes.md)): D35's second
+authority backend measured live on Synadia Cloud — an account born at
+runtime in ~51s (the local arm's 1.69ms, four orders of magnitude
+apart: propagation, not our path), a principal admitted through the
+real cloud, suspend/resume landing, the pre-existing account
+uninterrupted across 22 probes. The tenancy topic has **no open
+residue left**. Two defects the run forced: the control plane 5xxs on
+a just-created account (retry discipline added) and the SDK carries
+auth on the context.
+
 **The tenancy set is BUILT — v0.4.0/v0.5.0/v0.6.0 in one overnight arc**
 ([episode 0110](0110-identity-the-tenancy-set-builds.md)): the general
 secret store on the extracted sealed-CAS pattern (D36), the guardrail
@@ -1302,6 +1313,7 @@ the operator lives on the candidate; what chafes decides.
 | 0111 | ecosystem | [One session, several audiences: the exchange grant lands on both ends (2026-08-19)](0111-ecosystem-one-session-several-audiences.md) |
 | 0112 | ecosystem | [The canonical form breaks clean: the realm's key signs, the record names the hand (2026-08-19)](0112-ecosystem-the-canonical-form-breaks-clean.md) |
 | 0113 | workloads | [Placement is work.claim: the fleet lands (2026-08-19)](0113-workloads-placement-is-work-claim.md) |
+| 0114 | identity | [The provider arm closes: an account born on someone else's operator key (2026-08-19)](0114-identity-the-provider-arm-closes.md) |
 
 ## The naming map (2026-08-13)
 
