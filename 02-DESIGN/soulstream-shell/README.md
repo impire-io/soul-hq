@@ -9,6 +9,7 @@ soulstream convention.
 | [`0001-soulhelm-the-helm.md`](0001-soulhelm-the-helm.md) | The founding design: placement, surfaces, rendering architecture, identity and custody, the design-system contract, acceptance criteria. |
 | [`0002-the-module-shape.md`](0002-the-module-shape.md) | The module shape: the pure shell, the support layer, the contract (activation, navigation, routes, links), purity as a standing gate — graduated from `shell-module-contract` (episode [0078](../../04-JOURNEY/0078-shell-the-module-contract.md)). |
 | [`0003-conversation-lifecycle.md`](0003-conversation-lifecycle.md) | Conversation lifecycle from the shell: starting (rail fold + Home card), the close-then-archive ladder with its two-step confirm, the archived fold, truthful copy under partial failure — class (a) of 0001 §4, participation scope of episode [0071](../../04-JOURNEY/0071-ecosystem-the-focus.md). |
+| [`0004-the-storage-explorer.md`](0004-the-storage-explorer.md) | The storage explorer: reading the op-log itself — the list, one op whole, the live tail — on the signed-in person's own admission rather than the shared read lane (amending 0001 §3 for this surface), with search and any persistent index refused as the query layer the protocol declines. Designed 2026-08-19, episode [0116](../../04-JOURNEY/0116-ecosystem-what-shipped-without-a-human-end.md). |
 
 Born from research topic `soulsystem-cockpit` (graduated 2026-08-13,
 episode

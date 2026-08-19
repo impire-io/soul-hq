@@ -14,10 +14,10 @@ changes to it are decisions and belong in the journey as episodes.
 |---|---|---|
 | [soulstream-core](#soulstream-core--the-record) | **`v0.11.1` — the canonical form broke clean** ([episode 0112](../04-JOURNEY/0112-ecosystem-the-canonical-form-breaks-clean.md)): signatures bind the realm key (A10), records carry the required acting credential (E3), v1 reads as `legacy-shape`; before it **v0.9.0** F1's `EnsureSigningKey` ([episode 0108](../04-JOURNEY/0108-ecosystem-the-key-becomes-resolvable.md)) and **v0.10.0** the grant vocabulary ([episode 0109](../04-JOURNEY/0109-ecosystem-consent-enters-the-record.md)) | Sealed topics and eg-walker stay chafe-gated — the only core designs still unbuilt |
 | [soulstream-workloads](#soulstream-workloads--the-room) | Phases 1–2 complete; wrap + `mcp_args` shipped; **`v0.6.0` — M3.1, the fleet lands** ([episode 0113](../04-JOURNEY/0113-workloads-placement-is-work-claim.md)): placement IS work.claim, measured on two nodes; on core v0.11.1 | The declaration trigger vocabulary (unblocked by the claim path) and a long-running serve loop, both by demand; loop-safety research before any agent-wakes-agent deployment |
-| [soulstream-identity](#soulstream-identity--the-name) | **M6 and M7 complete, `v0.9.0`** — the grants broker (SC-005 closed live), the secret store, the guardrail chokepoint with approvals, runtime tenancy on **both** authority arms ([episodes 0110](../04-JOURNEY/0110-identity-the-tenancy-set-builds.md)/[0114](../04-JOURNEY/0114-identity-the-provider-arm-closes.md)), grants lane 3, and E3's custodial stamp | Rate counters and per-rule approver policy by demonstrated need; M5 gated on demand. **No open residue** — the tenancy topic's last one closed 2026-08-19 |
+| [soulstream-identity](#soulstream-identity--the-name) | **M6 and M7 complete, `v0.9.0`** — the grants broker (SC-005 closed live), the secret store, the guardrail chokepoint with approvals, runtime tenancy on **both** authority arms ([episodes 0110](../04-JOURNEY/0110-identity-the-tenancy-set-builds.md)/[0114](../04-JOURNEY/0114-identity-the-provider-arm-closes.md)), grants lane 3, and E3's custodial stamp | Rate counters and per-rule approver policy by demonstrated need; M5 gated on demand. The tenancy topic's last residue closed 2026-08-19; what remains is not residue but **missing human ends** — the grants broker and the guardrail are both built and unreachable by a person ([episode 0116](../04-JOURNEY/0116-ecosystem-what-shipped-without-a-human-end.md)), carried by two research topics |
 | [soulstream](#soulstream--the-product-the-house) | **v0.13.0-rc.8 — running the byon realm** ([episode 0115](../04-JOURNEY/0115-soulstream-byon-adopts-the-new-form.md)): the canonical break (rc.7) plus `soulstream adopt`, the precise migration — byon adopted 2026-08-19 with its passkeys and accounts intact, writing verified v2 records; main also carries the unreleased A10 founding wiring | RC soak toward v0.13.0 on byon; the operator tries the whole system — evaluation decides what changes; Phase 3 (tsnet) gated on fronting measured insufficient |
 | [soulstream-idp](#soulstream-idp--the-fold) | **Every milestone shipped**, plus both of episode 0104's due demands: **v0.7.0** the token-lifetime knob ([episode 0106](../04-JOURNEY/0106-idp-the-token-lifetime-knob.md)) and **v0.8.0/v0.8.1** the RFC 8693 exchange grant ([episode 0111](../04-JOURNEY/0111-ecosystem-one-session-several-audiences.md), spec 006 — audience re-scoping only, actor tokens refused); the physical-authenticator runbook is run | Named horizons only (deferred audit rows, multi-issuer demand, per-client lifetimes); day-2 by demand |
-| [soulstream-shell](#soulstream-shell--the-shell) | **v0.10.0** on core v0.11.1 — the console rode the canonical break with no source change; before it v0.9.0's session refresh and v0.8.0's conversation lifecycle | The operator tries the whole system on rc.7 — evaluation decides what changes |
+| [soulstream-shell](#soulstream-shell--the-shell) | **v0.10.0** on core v0.11.1 — the console rode the canonical break with no source change; before it v0.9.0's session refresh and v0.8.0's conversation lifecycle | The evaluation returned its first verdict ([episode 0116](../04-JOURNEY/0116-ecosystem-what-shipped-without-a-human-end.md)): the storage explorer designed ([`0004`](../02-DESIGN/soulstream-shell/0004-the-storage-explorer.md)) and ready to build; two topics opened whose answers each end in a shell module |
 | soulstream-mcp | **v0.3.1** — F1's ensure-act wired at signer construction ([episode 0108](../04-JOURNEY/0108-ecosystem-the-key-becomes-resolvable.md)), then core v0.11.1 | **Parked (episode 0071)** — stdio MCP is the choice of record for this iteration |
 
 **2026-08-13 — the naming re-centering** ([episode
@@ -1032,7 +1032,22 @@ admin lifecycle (M3).
 browser, beside the MCP door. Design:
 [`0001-soulhelm-the-helm.md`](../02-DESIGN/soulstream-shell/0001-soulhelm-the-helm.md).*
 
-### Where we are (2026-08-17)
+### Where we are (2026-08-19)
+
+**The evaluation named the next build** ([episode
+0116](../04-JOURNEY/0116-ecosystem-what-shipped-without-a-human-end.md)):
+the Storage card measures the store and shows nothing in it, so
+debugging leaves the surface for a terminal. Design
+[`0004-the-storage-explorer.md`](../02-DESIGN/soulstream-shell/0004-the-storage-explorer.md)
+is written and buildable — zero upstream additions, the op list over a
+subject pattern, one op whole with its canonical bytes and earned
+verdict, a capped live tail — with reads on the signed-in person's own
+admission rather than the shared read lane (amending 0001 §3 for this
+surface), and search refused as the query layer the protocol declines.
+Two further asks from the same evaluation became research topics whose
+answers each end in a shell module: `agent-external-tools` (the grants
+broker is built and off in the house) and `guardrail-human-end` (the
+evaluator is built with no human end).
 
 **v0.7.0 plus the conversation lifecycle on main.** The arc from
 founding to here lives in the journey (the shell's "Where things
@@ -1076,9 +1091,18 @@ pinned on soulstream main.
    unmounts in the bundled product (D31). Class-(c) plane toggles and
    class-(b) standalone authority remain open — the latter still
    trails the tenancy topic's grant answer ([O2]).
-5. **Later, gated:** the participant client (its own research topic —
+5. **M-storage — the storage explorer.** Designed, not built (design
+   [`0004`](../02-DESIGN/soulstream-shell/0004-the-storage-explorer.md),
+   episode [0116](../04-JOURNEY/0116-ecosystem-what-shipped-without-a-human-end.md)):
+   a module of its own reading the op-log — the list over a subject
+   pattern, one op whole, a capped live tail — on the session's own
+   admission, with the acceptance criteria of §6 as its gate. No gate
+   above it: the mechanisms are published surfaces of the pinned core,
+   and the demand is the operator's own.
+6. **Later, gated:** the participant client (its own research topic —
    [O4], with upstream ask #1's WebSocket listener); a dedicated scoped
-   helm ceremony user in soulstream (hardening).
+   helm ceremony user in soulstream (hardening); the two modules that
+   [O5] and [O6] would produce.
 
 ### Open research questions (before their milestones)
 
@@ -1088,6 +1112,13 @@ pinned on soulstream main.
   tracked in [`platform-tenancy-guardrails`](../04-JOURNEY/0107-ecosystem-platform-tenancy-guardrails.md).
 - **[O3]** the persona-id → display-name mapping source — decided at
   M1 build, recorded in design 0001.
+- **[O5]** external tools — where the resource catalog lives and how a
+  running agent gets a token at call time, given that the linking
+  ceremony needs a browser and the shell is the only surface with one:
+  [`agent-external-tools`](../01-RESEARCH/agent-external-tools/README.md).
+- **[O6]** the guardrail's human end — how a defer reaches a person,
+  gets answered, and releases the call:
+  [`guardrail-human-end`](../01-RESEARCH/guardrail-human-end/README.md).
 
 ### One-way doors
 

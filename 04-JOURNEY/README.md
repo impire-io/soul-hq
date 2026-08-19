@@ -329,6 +329,18 @@ soulidentity tags-on-mint addition gates the preferred minting path.
 
 ### soulstream-identity — the name (as of 2026-08-19; named soulidentity until episode 0069)
 
+**Built, and not yet reachable by a person** ([episode
+0116](0116-ecosystem-what-shipped-without-a-human-end.md)): the
+evaluation found both of the plane's newest capabilities complete and
+unwired at the product. The grants broker is off in the house — the
+`grants.*` ops enable on a non-empty `GrantResources` and `soulstream`
+declares none — and the guardrail is default-off with no read op for
+its standing rules, no feed of its decisions, and no home for D38's
+middle clause (a human's yes). Neither is a defect in the plane; both
+are missing ends. Two research topics carry them:
+[`agent-external-tools`](../01-RESEARCH/agent-external-tools/README.md)
+and [`guardrail-human-end`](../01-RESEARCH/guardrail-human-end/README.md).
+
 **The provider arm closes — v0.9.0** ([episode
 0114](0114-identity-the-provider-arm-closes.md)): D35's second
 authority backend measured live on Synadia Cloud — an account born at
@@ -1051,7 +1063,25 @@ constraints — passkeys, not passwords; indistinguishable by design —
 and the roadmap sequences M1 (the OP skeleton) behind its KV-schema and
 key-lifecycle research. No product code exists yet.
 
-### soulstream-shell — the shell (as of 2026-08-17; named soulhelm until episode 0069)
+### soulstream-shell — the shell (as of 2026-08-19; named soulhelm until episode 0069)
+
+**The evaluation names what the screens lack** ([episode
+0116](0116-ecosystem-what-shipped-without-a-human-end.md)): living on
+the candidate produced three asks, and the survey found the shell owns
+one of them outright. The Storage card measures the store and can show
+nothing in it, so debugging leaves the surface for a terminal; design
+[`0004-the-storage-explorer.md`](../02-DESIGN/soulstream-shell/0004-the-storage-explorer.md)
+takes it — the op list over a subject pattern, one op whole with its
+canonical bytes and earned verdict, a capped live tail, reached from the
+Storage card through the frame and from a key at the foot of the spine.
+Zero upstream additions. The load-bearing decision: reads ride the
+signed-in person's own admission rather than the shared read lane
+(amending 0001 §3 for this surface), stated honestly as narrowing
+nothing today because the product grants every persona `SOULSTREAM.>`
+and `$JS.API.>`. Search and any persistent index are refused as the
+query layer the protocol declines. The other two asks — external tools
+and the guardrail's human end — became research topics, both with a
+shell module at the end of them.
 
 **The session renews its bearer — and ends when it no longer can**
 ([episode 0103](0103-ecosystem-the-session-outlives-its-token.md)):
@@ -1324,6 +1354,7 @@ the operator lives on the candidate; what chafes decides.
 | 0113 | workloads | [Placement is work.claim: the fleet lands (2026-08-19)](0113-workloads-placement-is-work-claim.md) |
 | 0114 | identity | [The provider arm closes: an account born on someone else's operator key (2026-08-19)](0114-identity-the-provider-arm-closes.md) |
 | 0115 | soulstream | [byon adopts the new form: the migration that refused to be a re-founding (2026-08-19)](0115-soulstream-byon-adopts-the-new-form.md) |
+| 0116 | ecosystem | [What shipped without a human end (2026-08-19)](0116-ecosystem-what-shipped-without-a-human-end.md) |
 
 ## The naming map (2026-08-13)
 
