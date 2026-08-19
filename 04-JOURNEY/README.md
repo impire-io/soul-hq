@@ -35,7 +35,17 @@ cite the per-project numbers).
 
 The per-component summaries below were carried whole at the hq merge and are refreshed with every new episode, as before.
 
-### soulstream-core — the record (as of 2026-08-18; named soulstream until episode 0069)
+### soulstream-core — the record (as of 2026-08-19; named soulstream until episode 0069)
+
+**The canonical form broke clean — v0.11.0/v0.11.1** ([episode
+0112](0112-ecosystem-the-canonical-form-breaks-clean.md)): every
+signature binds the realm's cryptographic identity (A10 — born at
+first provision, first wins) and every record carries the required
+acting credential (E3), custodian-verified on the sign.record lane.
+Reads never hard-fail: v1 records parse and verify as the named
+`legacy-shape`. The whole ecosystem re-pinned in one pass; three real
+defects surfaced and were fixed, every other consumer compiled
+unchanged.
 
 **F1 and C4 are built — v0.9.0 and v0.10.0, the same evening they were
 designed** ([episodes 0108](0108-ecosystem-the-key-becomes-resolvable.md)/
@@ -133,7 +143,17 @@ is *not* yet built is the rest of the forward plan in
 [`../03-IMPLEMENTATION/ROADMAP.md`](../03-IMPLEMENTATION/ROADMAP.md):
 eg-walker live co-editing, sealed topics, and a browser/WebSocket client.
 
-### soulstream-workloads — the room (as of 2026-08-15; named soulrealm until episode 0069)
+### soulstream-workloads — the room (as of 2026-08-19; named soulrealm until episode 0069)
+
+**The fleet lands — v0.6.0, placement IS work.claim** ([episode
+0113](0113-workloads-placement-is-work-claim.md)): a submission is an
+ordinary work item, every idle node races, the log decides — measured
+on two nodes, four contested placements each run by exactly one node,
+a live owner never reclaimed and a silent one reclaimed as an ordinary
+abandon with no double close, no probe traffic on the stream, and the
+runner/declaration/backend seams untouched. Named, not built: the
+declaration trigger vocabulary (now unblocked) and a long-running
+serve loop.
 
 **The template grew `mcp_args` — a subcommand can be the tool door**
 ([episode 0089](0089-ecosystem-wrap-in-the-house.md);
@@ -1280,6 +1300,8 @@ the operator lives on the candidate; what chafes decides.
 | 0109 | ecosystem | [Consent enters the record, and Bar 4 finally measures (2026-08-18)](0109-ecosystem-consent-enters-the-record.md) |
 | 0110 | identity | [The tenancy set builds: secrets, the guardrail, approvals, accounts (2026-08-19)](0110-identity-the-tenancy-set-builds.md) |
 | 0111 | ecosystem | [One session, several audiences: the exchange grant lands on both ends (2026-08-19)](0111-ecosystem-one-session-several-audiences.md) |
+| 0112 | ecosystem | [The canonical form breaks clean: the realm's key signs, the record names the hand (2026-08-19)](0112-ecosystem-the-canonical-form-breaks-clean.md) |
+| 0113 | workloads | [Placement is work.claim: the fleet lands (2026-08-19)](0113-workloads-placement-is-work-claim.md) |
 
 ## The naming map (2026-08-13)
 
