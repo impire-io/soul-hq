@@ -69,10 +69,17 @@ than the edge on a real deployment (observable: the "stopped after examining"
 note appearing on ordinary reads), the walk needs a server-side reverse read
 and that is an upstream ask, not a bigger number.
 
+Shipped as **v0.11.0-rc.1**, a marked candidate — the operator lives on
+it before it becomes v0.11.0, the same rhythm the product's own
+candidates follow. The shell's release config gained `prerelease: auto`
+in the same push: it had never cut a candidate, so nothing in it said
+what one was.
+
 Trail: design
 [`0004-the-storage-explorer.md`](../02-DESIGN/soulstream-shell/0004-the-storage-explorer.md)
-(§8 as-built); shell `0daa95f` on main, unreleased — tagging is the
-operator's; episode [0116](0116-ecosystem-what-shipped-without-a-human-end.md)
+(§8 as-built); shell `0daa95f` (the module) and `8af8a16` (the release
+rule), tagged v0.11.0-rc.1; episode
+[0116](0116-ecosystem-what-shipped-without-a-human-end.md)
 (the evaluation that asked for it), [0078](0078-shell-the-module-contract.md)
 (the contract it plugs into), [0080](0080-shell-one-instrument-any-width.md)
 (the width guard it was measured against).

@@ -1079,7 +1079,8 @@ person's own admission rather than the shared read lane, and the screen
 says out loud that this narrows nothing here — the product grants every
 persona the whole subject space, and a test refuses four ways of
 implying otherwise. No act, no delete, no index, no search: the query
-layer is what the protocol deliberately lacks. The design's own first
+layer is what the protocol deliberately lacks. Shipped as
+**v0.11.0-rc.1**, a marked candidate. The design's own first
 draft was corrected by the build — `SOULSTREAM.>` is not a store; the
 op-log captures `SOULSTREAM.TOPICS.>`, the inboxes are their own
 stream, and the service lane is kept nowhere — which made the custody
