@@ -1,11 +1,12 @@
 # 0004 — soulstream-shell: the storage explorer
 
-**Status:** designed, not built — decided 2026-08-19 (episode
-[0116](../../04-JOURNEY/0116-ecosystem-what-shipped-without-a-human-end.md)).
+**Status:** built — decided and landed 2026-08-19 (episodes
+[0116](../../04-JOURNEY/0116-ecosystem-what-shipped-without-a-human-end.md)
+and [0117](../../04-JOURNEY/0117-shell-the-store-shows-what-it-holds.md)).
 This document fills a hole in [0001 §3](0001-soulhelm-the-helm.md)'s
 observe surface: the store is measured but never read. Pure
 observation — no mutation class of [0001 §4](0001-soulhelm-the-helm.md)
-applies, and none is claimed.
+applies, and none is claimed. §8 records what the build changed.
 
 ## §1 The gap
 
@@ -42,13 +43,14 @@ read lane they were built on.
 
 The argument is custody, not scoping. The shared read lane exists so
 the surface can render a realm's public shape before anybody is signed
-in and without acting as anybody; a raw op-log browser is not that. It
-is subject-level access to `SOULSTREAM.>`, which includes
-`SOULSTREAM.PERSONA.NOTIFY.<persona-id>` — one person's notifications —
-and, when sealed topics land, ciphertext whose readership the record
-itself decides. A surface that reads those on a lane it was handed for
-a different purpose is lending authority, which is exactly what
-[0001 §6](0001-soulhelm-the-helm.md)'s "delegated authority, never
+in and without acting as anybody; a raw browser over the stores is not
+that. It is subject-level access to two stores, and the second of them
+— the persona inbox, `SOULSTREAM_NOTIFY` over
+`SOULSTREAM.PERSONA.NOTIFY.>` — is per-person by construction; the
+first will hold, when sealed topics land, ciphertext whose readership
+the record itself decides. A surface that reads those on a lane it was
+handed for a different purpose is lending authority, which is exactly
+what [0001 §6](0001-soulhelm-the-helm.md)'s "delegated authority, never
 borrowed identity" refuses. The session's client already reads the
 stream in the shipped build (design [0003 §2](0003-conversation-lifecycle.md)'s
 close materialises on it), so the lane costs nothing to use.
@@ -79,15 +81,22 @@ and on System status offers a way in — asked for through the frame
 (`shell/link.go`: identity + screen kind + subject), so the overview
 module keeps importing nothing (design [0002 §2](0002-the-module-shape.md)).
 
+**Which store.** A realm keeps two and the screen keeps them apart: the
+op-log (`SOULSTREAM` over `SOULSTREAM.TOPICS.>`) and the persona
+inboxes (`SOULSTREAM_NOTIFY` over `SOULSTREAM.PERSONA.NOTIFY.>`). Each
+is offered under a plain name *and* the name the server answers to —
+this is the one screen where the real name is what somebody came for.
+The service lane (`SOULSTREAM.SVC.>`) is captured by no stream at all,
+so a filter aimed at it is answered with that fact rather than with an
+empty list: "nothing happened" and "nothing is kept" are different
+answers and only one of them is true.
+
 **The list.** Ops newest-first, one row each: the stream sequence, the
 stream's own timestamp (not the author's claim — the record says
-ordering authority is never a clock), the subject, the type, the author
-as a display name, and the signature verdict. Filtering is by **NATS
-subject pattern**, validated as one and refused as one when malformed —
-not a search box (§4). The taxonomy's classes get one-key filters
-because they are the questions people actually ask: this conversation's
-ops, the whole topic board, one person's notifications, the service
-lane.
+ordering authority is never a clock), the subject, the type, the
+author, and the signature verdict. Filtering is by **NATS subject
+pattern**, validated as one and refused as one when malformed — not a
+search box (§4).
 
 **One op.** Everything the message is: sequence and stream timestamp,
 every `Soulstream-*` header verbatim, the payload, the canonical bytes
@@ -175,3 +184,42 @@ that, and says whose refusal it is.
   transport, and a UI gate over a lane that already permits the read
   would be decoration. If the product narrows the scope (O3), the gate
   arrives for free and in the right place.
+
+## §8 As built (2026-08-19, episode [0117](../../04-JOURNEY/0117-shell-the-store-shows-what-it-holds.md))
+
+Landed as designed. The deltas worth recording:
+
+- **Two stores, not one subject space.** This document's first draft
+  said the explorer reads `SOULSTREAM.>`. It does not exist: the op-log
+  captures `SOULSTREAM.TOPICS.>` and the persona inboxes live in their
+  own stream, while the service lane is captured by nothing
+  [measured, code trace: `realm/spec.go`]. §2 and §3 are corrected
+  above. The custody argument came out **stronger** — the inbox store
+  is per-person by construction, so the lane decision is doing real
+  work there today rather than only in the future tense.
+- **The walk is backwards by sequence with a stated cap** (1000
+  examined, 50 shown, 25 on the tail). The client publishes no
+  reverse-filtered read, and a store that compacts leaves its live
+  messages clustered near the tail, so a page of messages is usually a
+  page of sequences. A sequence the store no longer holds is skipped
+  rather than reported — that is what a rolled-up history looks like
+  from outside. A read that stops at the cap says how far it looked
+  (§6's honesty requirement, made concrete).
+- **Following is a mode, not a toggle.** `?follow=1` renders the page
+  with the tail's SSE init; the key is a plain link. Pausing is a
+  navigation, so it needs no script, survives reload, and is
+  bookmarkable — better than the toggle §3 imagined.
+- **Subject matching is written in the module** (~20 lines, table
+  tested): the walk matches locally because the server's own filter
+  reads forward from a sequence and this screen reads backward from the
+  newest.
+- **One frame-level CSS addition**, `td.mono.whole`: a column whose
+  point is one unbreakable token is not wrapped mid-token to save the
+  table's width; the wrapper scrolls instead. Generic, in the shell's
+  own component layer, no module knowledge.
+- **Support layer:** `KeyringFor(personas...)` for a reader holding ops
+  rather than a materialised conversation; `Keyring(mt)` now calls it.
+- Measured live in a browser at 1000 px and 390 px: zero page overflow,
+  the table scrolling inside its own wrapper; the tail carried a
+  message written while it was running, verdict earned, within one
+  tick.

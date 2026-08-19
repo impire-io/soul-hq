@@ -1065,23 +1065,33 @@ key-lifecycle research. No product code exists yet.
 
 ### soulstream-shell — the shell (as of 2026-08-19; named soulhelm until episode 0069)
 
+**The store shows what it holds** ([episode
+0117](0117-shell-the-store-shows-what-it-holds.md); design
+[`0004`](../02-DESIGN/soulstream-shell/0004-the-storage-explorer.md),
+built the same day it was written): a module of its own for reading the
+stores — both of them under a plain name and the name the server
+answers to, a page of messages newest first over a validated subject
+pattern, one message whole (headers verbatim, payload as it is, the
+canonical form beside it), and a live tail that is a mode of the screen
+rather than a toggle on it. Verdicts run through core's own
+`VerifyRecord`; zero upstream additions. Reads ride the signed-in
+person's own admission rather than the shared read lane, and the screen
+says out loud that this narrows nothing here — the product grants every
+persona the whole subject space, and a test refuses four ways of
+implying otherwise. No act, no delete, no index, no search: the query
+layer is what the protocol deliberately lacks. The design's own first
+draft was corrected by the build — `SOULSTREAM.>` is not a store; the
+op-log captures `SOULSTREAM.TOPICS.>`, the inboxes are their own
+stream, and the service lane is kept nowhere — which made the custody
+argument stronger, not weaker. Measured live at 1000 px and 390 px:
+zero page overflow, the table scrolling inside its own wrapper.
+
 **The evaluation names what the screens lack** ([episode
 0116](0116-ecosystem-what-shipped-without-a-human-end.md)): living on
 the candidate produced three asks, and the survey found the shell owns
-one of them outright. The Storage card measures the store and can show
-nothing in it, so debugging leaves the surface for a terminal; design
-[`0004-the-storage-explorer.md`](../02-DESIGN/soulstream-shell/0004-the-storage-explorer.md)
-takes it — the op list over a subject pattern, one op whole with its
-canonical bytes and earned verdict, a capped live tail, reached from the
-Storage card through the frame and from a key at the foot of the spine.
-Zero upstream additions. The load-bearing decision: reads ride the
-signed-in person's own admission rather than the shared read lane
-(amending 0001 §3 for this surface), stated honestly as narrowing
-nothing today because the product grants every persona `SOULSTREAM.>`
-and `$JS.API.>`. Search and any persistent index are refused as the
-query layer the protocol declines. The other two asks — external tools
-and the guardrail's human end — became research topics, both with a
-shell module at the end of them.
+one of them outright — the storage explorer above. The other two,
+external tools and the guardrail's human end, became research topics,
+both with a shell module at the end of them.
 
 **The session renews its bearer — and ends when it no longer can**
 ([episode 0103](0103-ecosystem-the-session-outlives-its-token.md)):
@@ -1355,6 +1365,7 @@ the operator lives on the candidate; what chafes decides.
 | 0114 | identity | [The provider arm closes: an account born on someone else's operator key (2026-08-19)](0114-identity-the-provider-arm-closes.md) |
 | 0115 | soulstream | [byon adopts the new form: the migration that refused to be a re-founding (2026-08-19)](0115-soulstream-byon-adopts-the-new-form.md) |
 | 0116 | ecosystem | [What shipped without a human end (2026-08-19)](0116-ecosystem-what-shipped-without-a-human-end.md) |
+| 0117 | shell | [The store shows what it holds (2026-08-19)](0117-shell-the-store-shows-what-it-holds.md) |
 
 ## The naming map (2026-08-13)
 

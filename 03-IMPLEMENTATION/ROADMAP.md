@@ -17,7 +17,7 @@ changes to it are decisions and belong in the journey as episodes.
 | [soulstream-identity](#soulstream-identity--the-name) | **M6 and M7 complete, `v0.9.0`** — the grants broker (SC-005 closed live), the secret store, the guardrail chokepoint with approvals, runtime tenancy on **both** authority arms ([episodes 0110](../04-JOURNEY/0110-identity-the-tenancy-set-builds.md)/[0114](../04-JOURNEY/0114-identity-the-provider-arm-closes.md)), grants lane 3, and E3's custodial stamp | Rate counters and per-rule approver policy by demonstrated need; M5 gated on demand. The tenancy topic's last residue closed 2026-08-19; what remains is not residue but **missing human ends** — the grants broker and the guardrail are both built and unreachable by a person ([episode 0116](../04-JOURNEY/0116-ecosystem-what-shipped-without-a-human-end.md)), carried by two research topics |
 | [soulstream](#soulstream--the-product-the-house) | **v0.13.0-rc.8 — running the byon realm** ([episode 0115](../04-JOURNEY/0115-soulstream-byon-adopts-the-new-form.md)): the canonical break (rc.7) plus `soulstream adopt`, the precise migration — byon adopted 2026-08-19 with its passkeys and accounts intact, writing verified v2 records; main also carries the unreleased A10 founding wiring | RC soak toward v0.13.0 on byon; the operator tries the whole system — evaluation decides what changes; Phase 3 (tsnet) gated on fronting measured insufficient |
 | [soulstream-idp](#soulstream-idp--the-fold) | **Every milestone shipped**, plus both of episode 0104's due demands: **v0.7.0** the token-lifetime knob ([episode 0106](../04-JOURNEY/0106-idp-the-token-lifetime-knob.md)) and **v0.8.0/v0.8.1** the RFC 8693 exchange grant ([episode 0111](../04-JOURNEY/0111-ecosystem-one-session-several-audiences.md), spec 006 — audience re-scoping only, actor tokens refused); the physical-authenticator runbook is run | Named horizons only (deferred audit rows, multi-issuer demand, per-client lifetimes); day-2 by demand |
-| [soulstream-shell](#soulstream-shell--the-shell) | **v0.10.0** on core v0.11.1 — the console rode the canonical break with no source change; before it v0.9.0's session refresh and v0.8.0's conversation lifecycle | The evaluation returned its first verdict ([episode 0116](../04-JOURNEY/0116-ecosystem-what-shipped-without-a-human-end.md)): the storage explorer designed ([`0004`](../02-DESIGN/soulstream-shell/0004-the-storage-explorer.md)) and ready to build; two topics opened whose answers each end in a shell module |
+| [soulstream-shell](#soulstream-shell--the-shell) | **The storage explorer is on main, unreleased** ([episode 0117](../04-JOURNEY/0117-shell-the-store-shows-what-it-holds.md)) — a module of its own reading both stores, zero upstream additions; before it v0.10.0 rode the canonical break with no source change, v0.9.0's session refresh, v0.8.0's conversation lifecycle | Tag and pin (the operator's act); then the two topics opened by [episode 0116](../04-JOURNEY/0116-ecosystem-what-shipped-without-a-human-end.md), whose answers each end in a shell module |
 | soulstream-mcp | **v0.3.1** — F1's ensure-act wired at signer construction ([episode 0108](../04-JOURNEY/0108-ecosystem-the-key-becomes-resolvable.md)), then core v0.11.1 | **Parked (episode 0071)** — stdio MCP is the choice of record for this iteration |
 
 **2026-08-13 — the naming re-centering** ([episode
@@ -1034,20 +1034,21 @@ browser, beside the MCP door. Design:
 
 ### Where we are (2026-08-19)
 
-**The evaluation named the next build** ([episode
-0116](../04-JOURNEY/0116-ecosystem-what-shipped-without-a-human-end.md)):
-the Storage card measures the store and shows nothing in it, so
-debugging leaves the surface for a terminal. Design
-[`0004-the-storage-explorer.md`](../02-DESIGN/soulstream-shell/0004-the-storage-explorer.md)
-is written and buildable — zero upstream additions, the op list over a
-subject pattern, one op whole with its canonical bytes and earned
-verdict, a capped live tail — with reads on the signed-in person's own
-admission rather than the shared read lane (amending 0001 §3 for this
-surface), and search refused as the query layer the protocol declines.
-Two further asks from the same evaluation became research topics whose
-answers each end in a shell module: `agent-external-tools` (the grants
-broker is built and off in the house) and `guardrail-human-end` (the
-evaluator is built with no human end).
+**The storage explorer landed the day it was designed** ([episode
+0117](../04-JOURNEY/0117-shell-the-store-shows-what-it-holds.md), design
+[`0004`](../02-DESIGN/soulstream-shell/0004-the-storage-explorer.md)):
+a module of its own reading both stores — a page of messages newest
+first over a validated subject pattern, one message whole with its
+canonical bytes and earned verdict, a capped live tail — on the
+signed-in person's own admission rather than the shared read lane, with
+search and any persistent index refused as the query layer the protocol
+declines. Zero upstream additions; on main, unreleased. Two further
+asks from the same evaluation ([episode
+0116](../04-JOURNEY/0116-ecosystem-what-shipped-without-a-human-end.md))
+became research topics whose answers each end in a shell module:
+`agent-external-tools` (the grants broker is built and off in the
+house) and `guardrail-human-end` (the evaluator is built with no human
+end).
 
 **v0.7.0 plus the conversation lifecycle on main.** The arc from
 founding to here lives in the journey (the shell's "Where things
@@ -1091,14 +1092,16 @@ pinned on soulstream main.
    unmounts in the bundled product (D31). Class-(c) plane toggles and
    class-(b) standalone authority remain open — the latter still
    trails the tenancy topic's grant answer ([O2]).
-5. **M-storage — the storage explorer.** Designed, not built (design
-   [`0004`](../02-DESIGN/soulstream-shell/0004-the-storage-explorer.md),
-   episode [0116](../04-JOURNEY/0116-ecosystem-what-shipped-without-a-human-end.md)):
-   a module of its own reading the op-log — the list over a subject
-   pattern, one op whole, a capped live tail — on the session's own
-   admission, with the acceptance criteria of §6 as its gate. No gate
-   above it: the mechanisms are published surfaces of the pinned core,
-   and the demand is the operator's own.
+5. ✅ **M-storage — the storage explorer** (2026-08-19, episode
+   [0117](../04-JOURNEY/0117-shell-the-store-shows-what-it-holds.md);
+   design [`0004`](../02-DESIGN/soulstream-shell/0004-the-storage-explorer.md),
+   written and built the same day): a module of its own reading both
+   stores — the list over a subject pattern, one message whole, a
+   capped live tail — on the session's own admission. All seven
+   acceptance criteria of §6 are standing tests; the lane, the scope
+   sentence, and the refusal to grow an act are each pinned
+   mechanically. Two design corrections are recorded in §8, the
+   load-bearing one being that `SOULSTREAM.>` is not a store.
 6. **Later, gated:** the participant client (its own research topic —
    [O4], with upstream ask #1's WebSocket listener); a dedicated scoped
    helm ceremony user in soulstream (hardening); the two modules that
