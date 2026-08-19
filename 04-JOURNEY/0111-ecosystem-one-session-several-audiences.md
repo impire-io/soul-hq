@@ -33,6 +33,19 @@ store staying empty), on-behalf refused by name: there is no custody to
 redeem for a subject. Lane 3 is now what D34 preferred it to be —
 same surface, no custody.
 
+One process finding, recorded because it is the honest kind: `v0.8.0`
+was tagged, released, then **retagged** one commit later after a lint
+fix (a local variable shadowing a builtin). The published binaries
+therefore came from the pre-fix commit while the tag pointed past it,
+and the second release run failed on the already-existing release. The
+source difference was a rename only, and the module pin resolved
+correctly either way — but a tag whose artifacts disagree with it is
+not a tag. Fixed by cutting **v0.8.1** from the settled commit so the
+binaries match their tag [measured: release green, 5 assets]. The
+lesson for the night's own practice: verify a gate's exit status
+before tagging, never a piped tail — three of tonight's runs hid a
+non-zero exit behind `| tail`.
+
 Reversal condition: none — records completed builds against a
 published RFC. (Spec 006's own condition stands: a consumer proving a
 need the actor-token refusal cannot meet reopens that scope, argued
