@@ -623,7 +623,16 @@ questions before their milestones (NGS callout
 capabilities, the sentinel-credential flow, the first-key story, the
 claims-mapping shape, service round-trip latency) are named on the roadmap.
 
-### soulstream — the product, the house (as of 2026-08-16; named soulnode until episode 0069)
+### soulstream — the product, the house (as of 2026-08-19; named soulnode until episode 0069)
+
+**byon runs rc.8, adopted rather than re-founded** ([episode
+0115](0115-soulstream-byon-adopts-the-new-form.md)): the canonical
+break's refusal got precise — `soulstream adopt` reads the realm's own
+op-log, adopts an empty one and refuses a populated one by count. The
+live realm migrated with its passkeys, accounts, and vault intact, and
+a signed turn on it now reads wire-v2, acting-named, verified
+[measured]. F1 closed itself in production the moment rc.8 started: the
+archivist's profile appeared in a personas bucket empty for three days.
 
 **v0.13.0-rc.2 — first contact hardened, the tap feeds itself**
 ([episode 0100](0100-soulstream-v0-13-0-rc-2.md)): the six
@@ -1314,6 +1323,7 @@ the operator lives on the candidate; what chafes decides.
 | 0112 | ecosystem | [The canonical form breaks clean: the realm's key signs, the record names the hand (2026-08-19)](0112-ecosystem-the-canonical-form-breaks-clean.md) |
 | 0113 | workloads | [Placement is work.claim: the fleet lands (2026-08-19)](0113-workloads-placement-is-work-claim.md) |
 | 0114 | identity | [The provider arm closes: an account born on someone else's operator key (2026-08-19)](0114-identity-the-provider-arm-closes.md) |
+| 0115 | soulstream | [byon adopts the new form: the migration that refused to be a re-founding (2026-08-19)](0115-soulstream-byon-adopts-the-new-form.md) |
 
 ## The naming map (2026-08-13)
 
