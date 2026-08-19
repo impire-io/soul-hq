@@ -100,3 +100,57 @@ MCP the choice of record for this iteration. Whether the forwarding door
 is the stdio door growing an outbound side, or the parked remote door
 waking up, is a scope decision this topic should put to the operator
 before it spends a rig on either.
+
+## 2026-08-19 — the door question answers itself
+
+Followed the trace one step further rather than asking, and the scope
+question above dissolved. Three facts, all read off the code:
+
+1. **soulstream-core imports nothing of this ecosystem** — its `go.mod`
+   has no `impire-io` requirement at all — and the cycle guard says
+   neither core repo imports the other
+   ([`soulstream-mcp/cycleguard_test.go`](../../../soulstream-mcp/cycleguard_test.go),
+   the guard episode [0027](../../04-JOURNEY/0027-soulstream-dx-hardening-and-the-cycle-guard.md)
+   set and 0107's Bar 5 re-proved) [measured, code trace]. Fetching
+   `grants.access` needs the identity client, so **the forwarding half
+   cannot live in `soulstream-core/mcpserver`**. It has to sit in an
+   adapter position, where the two halves already meet.
+2. **The agent's stdio door is already in an adapter position.** It is
+   not a separate component at all: `soulstream wrap` points the harness
+   at its own executable with the verb `mcp`
+   (`cmd/soulstream/wrap.go`: `lane.MCPCommandLoc = exe`,
+   `lane.MCPArgs = []string{"mcp"}`), and `cmdMCP` connects a realm
+   client and runs `mcpserver.NewServer(client)` over stdio [measured,
+   code trace]. The product binary already composes core *and* identity
+   elsewhere, so the outbound half costs it no new dependency and
+   breaks no guard.
+3. **The tool surface is already extensible, for free.**
+   `mcpserver.NewServer(c, opts...)` returns the SDK's own
+   `*mcp.Server` rather than a wrapper, so a composer can
+   `mcp.AddTool(s, …)` its own tools onto the same server [measured,
+   code trace]. Forwarding tools register beside the record's tools
+   with **no core change**.
+
+So the answer to "which door" is neither of the two the last entry
+posed: the forwarding half belongs to **whoever composes the door**, and
+the product binary is already that for stdio. `soulstream-mcp` is the
+same position for remote clients and inherits the same half when its
+own demand arrives — which is what its founding article already calls
+itself ("this module imports BOTH core repos"). Nothing needs to be
+un-parked, and the 0071 focus is not strained: stdio stays the choice of
+record.
+
+The scope question is withdrawn rather than escalated. What replaces it
+is narrower and belongs to Bar 4: the catalog still has to live
+somewhere, and the broker's resource map is still built once and never
+written.
+
+**Next, and it needs the operator:** the bars are now measurable in a
+rig. Bar 1 and Bar 3 can run against a stand-in authorization server the
+way episode 0104's Bar 2 did (Dex, or this ecosystem's own idp, which
+speaks OIDC and now RFC 8693). Bar 2 needs a real agent through
+`soulstream wrap` against a remote MCP server that requires OAuth —
+standable locally. What no rig can supply is episode 0104's still-open
+residue, inherited here: **one real third-party provider** (a GitHub or
+Google OAuth app), which is an account act only the operator can
+perform.
