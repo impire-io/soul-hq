@@ -384,6 +384,53 @@ Under this statement Bar 1's pass becomes the graduated design's
 acceptance criterion (add through the op under the probe, zero
 restarts), not a research re-run.
 
+## 2026-08-21 — the operator amends Bar 4: one view, two custodies
+
+The operator, on the draft statement: excluding run-our-own tools from
+the catalog spreads "which tools are there" across two systems — better
+to always have a record in the catalog. And: why isn't the catalog just
+the persona registry?
+
+**The registry answer, held**: the catalog cannot literally be the
+persona registry because the registry is key-anchored — name →
+published signing key → rotation chain → operator countersignature is
+its one semantic, and every trust decision hanging off it assumes a
+key someone controls. A remote tool holds no key; a keyless entry (or
+a `resource` entry-kind) would bend that semantic and reintroduce the
+kind taxonomy the protocol deliberately removed [mechanism-argument].
+
+**The unified-view objection, conceded — and the ecosystem already has
+the pattern**: A10 split cryptographic truth (the realm key in the
+canonical) from **display-layer resolution** (names, the registry).
+The same two layers fit tools:
+
+- **One discovery face on the record, for every tool, uniformly** — a
+  run-our-own tool's entry points at its workload persona (already in
+  the registry; the operator's earlier split holds), a remote tool's
+  entry carries the public half. Realm-readable, agent-discoverable:
+  an agent asks "what can I use here?" where it asks everything else.
+- **Custody stays where custody works**: the client secret in the D36
+  sealed store, the `resources.*` ops on the identity plane, the
+  guardrail at that door. The plane never reads the record — the
+  cycle guard's zero edges stay zero, because the *writer* (the shell
+  module, at add time) writes both halves and the *door* (which
+  composes both sides anyway) reads the discovery face.
+- Drift between halves is bounded honestly: a record entry whose plane
+  resource is absent fails at link time as "this tool isn't serving" —
+  the cross-link failure mode, the failure to have.
+- A side-benefit recorded for later, not designed now: tools named on
+  the record give future tool-use vocabulary something to bind to.
+
+**The Bar 4 statement, as amended**: every tool has a record-borne
+catalog entry (the discovery layer, uniform across both kinds); the
+identity plane custodies only what needs a safe (`resources.*` + D36);
+workload declarations stay what they are. The losing options gain one:
+the previous draft's identity-plane-only catalog, which loses on the
+unified view and on agent discoverability. Static config still loses
+on the actor; secrets-on-the-record still loses on custody; the
+literal persona registry loses on key-anchoring but contributed the
+two-layer pattern.
+
 ## 2026-08-21 — the real-provider residue closes (operator act)
 
 The operator reports the real-provider validation is already done
