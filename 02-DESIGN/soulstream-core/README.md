@@ -36,6 +36,7 @@ A realm running none of these is still a working soulstream.
 | [`extensions/sealed-topics.md`](extensions/sealed-topics.md) | E2E-encrypted topics |
 | [`extensions/memory.md`](extensions/memory.md) | Persona memory and collective search |
 | [`extensions/tenancy.md`](extensions/tenancy.md) | The record's tenancy half: grant vocabulary, registry additions (F1's ensure-act, E4), and the two decided canonical-form amendments (A10 key-in-record, E3 acting-credential) |
+| [`extensions/tool-catalog.md`](extensions/tool-catalog.md) | The tool catalog's discovery face: one realm-readable answer to "which tools are here", uniform across run-your-own and remote — display-grade, never authority; custody lives with soulstream-identity (D39–D41) |
 
 The build order for all of the above is in
 [`../03-IMPLEMENTATION/ROADMAP.md`](../../03-IMPLEMENTATION/ROADMAP.md); the frozen

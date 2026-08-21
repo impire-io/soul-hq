@@ -329,6 +329,38 @@ soulidentity tags-on-mint addition gates the preferred minting path.
 
 ### soulstream-identity — the name (as of 2026-08-19; named soulidentity until episode 0069)
 
+**The guardrail's human end measured to where it stops, then designed
+shut** ([episode 0119](0119-ecosystem-guardrail-human-end.md)): D38's
+loop is missing **two** ends, not one — the emit half works today and
+the approval mints publicly as a plain D33 delegation, but the client
+has no `approvals.present`, so a correct approval leaves the retry
+still deferring [measured, 6/6]. The carrier question dissolved (the
+plane can neither write the record nor push where anyone may listen —
+it keeps readable state and the originating adapter carries the news),
+a doc/code drift in D38's hash sketch was caught and corrected, and
+the operator's ticket-lifecycle direction — durable tickets with their
+own TTL, expiry as a recorded and notified outcome, async by
+construction — became design
+[`approvals.md`](../02-DESIGN/soulstream-identity/approvals.md)
+(D42–D45). Builds behind the focus gate.
+
+**External tools measured and designed** ([episode
+0118](0118-ecosystem-agent-external-tools.md)): the research opened by
+0116 graduated in two days with its riskiest claim measured on the
+full composition — a wrapped agent's forwarding door, holding no
+token, fetching authority per call, and **the remote seeing the
+calling person** (6/6, zero cross-attributions, stolen delegations
+refused, revocation biting one agent while the other kept serving);
+Bar 2's custody scan over a real wrap wake found zero provider tokens
+anywhere the agent reads (5/5). The graduated designs:
+[`external-tools.md`](../02-DESIGN/soulstream-identity/external-tools.md)
+(D39 the two-layer catalog, D40 `resources.*`, D41 the door
+invariants) and the record's
+[`tool-catalog.md`](../02-DESIGN/soulstream-core/extensions/tool-catalog.md)
+discovery convention — the operator's own questions reshaped the
+catalog twice (the run-your-own/remote split; one discovery face over
+two custodies). Builds behind the 0071 focus gate.
+
 **Built, and not yet reachable by a person** ([episode
 0116](0116-ecosystem-what-shipped-without-a-human-end.md)): the
 evaluation found both of the plane's newest capabilities complete and
@@ -337,9 +369,8 @@ unwired at the product. The grants broker is off in the house — the
 declares none — and the guardrail is default-off with no read op for
 its standing rules, no feed of its decisions, and no home for D38's
 middle clause (a human's yes). Neither is a defect in the plane; both
-are missing ends. Two research topics carry them:
-[`agent-external-tools`](../01-RESEARCH/agent-external-tools/README.md)
-and [`guardrail-human-end`](../01-RESEARCH/guardrail-human-end/README.md).
+are missing ends. Two research topics carried them; both graduated
+2026-08-21 (episodes 0118 and 0119).
 
 **The provider arm closes — v0.9.0** ([episode
 0114](0114-identity-the-provider-arm-closes.md)): D35's second
@@ -1367,6 +1398,8 @@ the operator lives on the candidate; what chafes decides.
 | 0115 | soulstream | [byon adopts the new form: the migration that refused to be a re-founding (2026-08-19)](0115-soulstream-byon-adopts-the-new-form.md) |
 | 0116 | ecosystem | [What shipped without a human end (2026-08-19)](0116-ecosystem-what-shipped-without-a-human-end.md) |
 | 0117 | shell | [The store shows what it holds (2026-08-19)](0117-shell-the-store-shows-what-it-holds.md) |
+| 0118 | ecosystem | [External tools: the agent reaches out, the person is who the remote sees (2026-08-19 → 2026-08-21)](0118-ecosystem-agent-external-tools.md) |
+| 0119 | ecosystem | [The guardrail's human end: the loop measured to where it stops, then designed shut (2026-08-19 → 2026-08-21)](0119-ecosystem-guardrail-human-end.md) |
 
 ## The naming map (2026-08-13)
 

@@ -89,9 +89,12 @@ than a screen.
 Trail: design
 [`soulstream-shell/0004-the-storage-explorer.md`](../02-DESIGN/soulstream-shell/0004-the-storage-explorer.md)
 (new) and its index entry; research topics
-[`agent-external-tools`](../01-RESEARCH/agent-external-tools/README.md)
-and [`guardrail-human-end`](../01-RESEARCH/guardrail-human-end/README.md)
-(pre-registered, unstarted); roadmap sections for the shell and the
+[`agent-external-tools`](0118-ecosystem-agent-external-tools.md)
+and [`guardrail-human-end`](0119-ecosystem-guardrail-human-end.md)
+(pre-registered, unstarted at this episode's writing; both graduated
+2026-08-21 — the links point at their graduation episodes, the folders
+having been removed per the research lifecycle); roadmap sections for
+the shell and the
 identity plane; episodes
 [0104](0104-ecosystem-outbound-identity-grants.md)/[0105](0105-identity-the-grants-broker-lands.md)
 (the broker this finds unreachable),
