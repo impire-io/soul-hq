@@ -431,6 +431,14 @@ on the actor; secrets-on-the-record still loses on custody; the
 literal persona registry loses on key-anchoring but contributed the
 two-layer pattern.
 
+## 2026-08-21 — Bar 4 ratified
+
+The operator ratifies the amended statement ("bar 4 looks good"): one
+record-borne discovery catalog for every tool, custody split behind it
+— client secrets in the D36 store behind `resources.*` ops, workload
+declarations unchanged. All four bars now have their verdicts; the
+topic is ready to graduate to design at the operator's word.
+
 ## 2026-08-21 — the real-provider residue closes (operator act)
 
 The operator reports the real-provider validation is already done
