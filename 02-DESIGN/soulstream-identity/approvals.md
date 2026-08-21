@@ -169,9 +169,11 @@ recording:
   tickets is the natural refinement.
 - **[O2] Rate counters** for defer floods stay where 0110 left them:
   by demonstrated need.
-- **[O3] The shell's half** — the approvals screen (pending read, the
-  yes/no as mint-plus-deliver, the originator-facing status) — a shell
-  module design at its build, and the place the argument-visibility
-  question gets answered for humans.
+- **[O3] The shell's half** — ✅ closed: the approvals module (shell
+  design [`0006`](../soulstream-shell/0006-the-approvals-module.md),
+  shell v0.11.0-rc.2, episode
+  [0122](../../04-JOURNEY/0122-ecosystem-the-shell-arc-lands.md)); the
+  argument-visibility question stays the plane's line, said on the
+  screen.
 - **[O4] Group-based approver clauses** (D45's second half), when the
   presentation lane can carry verified group claims.

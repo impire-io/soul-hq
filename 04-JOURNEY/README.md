@@ -1109,7 +1109,21 @@ constraints — passkeys, not passwords; indistinguishable by design —
 and the roadmap sequences M1 (the OP skeleton) behind its KV-schema and
 key-lifecycle research. No product code exists yet.
 
-### soulstream-shell — the shell (as of 2026-08-19; named soulhelm until episode 0069)
+### soulstream-shell — the shell (as of 2026-08-21; named soulhelm until episode 0069)
+
+**Tools and approvals join the spine — v0.11.0-rc.2** ([episode
+0122](0122-ecosystem-the-shell-arc-lands.md); designs
+[`0005`](../02-DESIGN/soulstream-shell/0005-the-tools-module.md)/[`0006`](../02-DESIGN/soulstream-shell/0006-the-approvals-module.md)):
+the tools screen — the catalog with each person's own standing,
+connect/disconnect as the person's own OAuth ceremony through the
+module's callback, the admin's both-halves add with the secret crossing
+once — and the approvals screen — the guardrail's tickets with their
+count on the spine, one tap minting the person's own signed answer and
+delivering it to the originator's tail, mint and delivery kept apart in
+the design's own words. Activation by the deployment's declared
+GuardrailOn fact. The consumer-position gate walks both against the
+published product; composed into the house as soulstream v0.13.0-rc.11.
+Episode 0116's three asks are all screens now.
 
 **The store shows what it holds** ([episode
 0117](0117-shell-the-store-shows-what-it-holds.md); design
@@ -1417,6 +1431,7 @@ the operator lives on the candidate; what chafes decides.
 | 0119 | ecosystem | [The guardrail's human end: the loop measured to where it stops, then designed shut (2026-08-19 → 2026-08-21)](0119-ecosystem-guardrail-human-end.md) |
 | 0120 | ecosystem | [The tools arc builds: catalog, custody, door (2026-08-21)](0120-ecosystem-the-tools-arc-builds.md) |
 | 0121 | ecosystem | [The approvals loop closes: tickets, presentation, policy (2026-08-21)](0121-ecosystem-the-approvals-loop-closes.md) |
+| 0122 | ecosystem | [The shell arc lands: both human ends on the spine (2026-08-21)](0122-ecosystem-the-shell-arc-lands.md) |
 
 ## The naming map (2026-08-13)
 

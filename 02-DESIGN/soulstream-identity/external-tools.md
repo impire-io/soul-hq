@@ -177,11 +177,10 @@ recording:
 - **[O3] Tool-use visibility on the record**: catalog entries give
   future vocabulary a name to bind to ("scribe used github, on Daan's
   behalf"); deliberately not designed here.
-- **[O4] The shell's halves** — the `resources.*` admin surface and
-  the per-person linking ceremony (the browser half: `link.start`'s
-  authorize URL wants a redirect back to a shell route, so the
-  declared `redirect_uri` points at the shell) — a shell module design
-  at its build.
+- **[O4] The shell's halves** — ✅ closed: the tools module (shell
+  design [`0005`](../soulstream-shell/0005-the-tools-module.md), shell
+  v0.11.0-rc.2, episode
+  [0122](../../04-JOURNEY/0122-ecosystem-the-shell-arc-lands.md)).
 - **[O5] Workload-target authority**: today the door sends no bearer
   in-deployment; if a workload tool needs to tell callers apart, that
   is the guardrail at the door's own chokepoint (D37's third), not a
