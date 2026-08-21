@@ -121,10 +121,57 @@ becomes this decision's acceptance criterion.
 5. The cycle guard re-measured at zero after the build [Bar 2's
    standing half].
 
+## As built (2026-08-21, episode [0121](../../04-JOURNEY/0121-ecosystem-the-approvals-loop-closes.md))
+
+Landed as identity v0.11.0; the house turns the guardrail on
+(soulstream v0.13.0-rc.9: `EnableGuardrail` with an empty rule set,
+rules loading live) so the loop has a live home. The deltas worth
+recording:
+
+- **`approvals.deny` exists** — this document's op table named the
+  denied state and no way to reach it. The no rides the same
+  verification shape as the yes (a subject-signed delegation naming
+  the invocation, actor-bound, window-checked), and a yes presented
+  after a no refuses by the ticket's state.
+- **The guardrail exemption went prefix-wide** (`guardrail.*`,
+  `approvals.*`): a rule deferring `approvals.status` would deadlock
+  the loop that resolves deferrals.
+- **A fresh ask reopens a fresh window**: a terminal ticket (spent,
+  denied, expired) re-opens pending when the same invocation defers
+  again — the originator asked again, so the human's window does too.
+  A live pending or approved ticket stands; retries never reset the
+  clock.
+- **Expiry is written on observation**: the read that finds a pending
+  ticket past its window records the transition (best-effort CAS; a
+  losing race means someone else recorded one). No sweeper exists —
+  the state machine's truth is derivable at read time and witnessed on
+  touch.
+- **What the approver sees**: principal, action, rule, ticket, window
+  — never arguments, on the ticket's own privacy line. Whether an
+  approving human needs more context than the rule's name is the shell
+  module's question ([O3]).
+- **D45 ships persona-name approvers only**: group-based clauses need
+  claims the presentation lane does not carry; a named follow-up, not
+  a quiet gap.
+- **Measured, consumer position** [6/6 clean + full-gate runs]: the
+  whole loop — defer (parsed by `ParseDeferral`) → pending visible →
+  yes minted and presented → retry served → spent witnessed — plus the
+  deny arm, the rogue-approver refusal by name, expiry witnessed with
+  a late yes refused by state, cross-principal status answering
+  not-found indistinguishably, and Bar 3's at-rest arm at last: the
+  ticket store carries the invocation's name and never its arguments,
+  sealed, plant control fired, audit silent.
+
 ## Open [O]
 
-- **[O1] The approver-side scope** of `approvals.pending` once D45
-  lands: per-rule approvers seeing only their rules' tickets is the
-  natural refinement; decided when D45 builds.
+- **[O1] The approver-side scope** of `approvals.pending` once D45's
+  per-rule clauses see real use: approvers seeing only their rules'
+  tickets is the natural refinement.
 - **[O2] Rate counters** for defer floods stay where 0110 left them:
   by demonstrated need.
+- **[O3] The shell's half** — the approvals screen (pending read, the
+  yes/no as mint-plus-deliver, the originator-facing status) — a shell
+  module design at its build, and the place the argument-visibility
+  question gets answered for humans.
+- **[O4] Group-based approver clauses** (D45's second half), when the
+  presentation lane can carry verified group claims.

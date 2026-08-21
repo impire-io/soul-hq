@@ -129,13 +129,60 @@ record: ~2s [measured].
   linking ceremony (the browser half the broker always needed); a
   module design of its own at build time.
 
+## As built (2026-08-21, episode [0120](../../04-JOURNEY/0120-ecosystem-the-tools-arc-builds.md))
+
+Landed as core v0.12.0/v0.12.1 (toolcatalog), identity v0.10.0
+(`resources.*`), workloads v0.7.0 (the lane's declared door
+environment), soulstream v0.13.0-rc.9 (the door). The deltas worth
+recording:
+
+- **The resource record rests whole in the grants custody domain**, not
+  the D36 bucket this document drafted: one sealed record
+  (`resource/<name>`, public half beside its secret, same first key)
+  in the store the broker already owns — D39's own anti-split-brain
+  rule applied at rest, and one custody domain fewer in the path. D36
+  remains the general per-persona store.
+- **The grants half went always-on in embed**: a deployment declaring
+  nothing statically still serves `resources.add` and comes alive
+  without a restart — the enable-on-non-empty rule died with the
+  static catalog.
+- **The remote's service endpoint lives on the catalog entry**, not
+  here: building the door found it living nowhere (the resource holds
+  only OAuth endpoints), and reachability is the catalog's to say for
+  both kinds. Core v0.12.1 carries the correction.
+- **Startup collisions refuse loudly**: a name both declared and
+  stored refuses the broker's construction; a link completed after its
+  resource was retired refuses by name rather than dialing a
+  zero-valued provider.
+- **D40's acceptance bar, measured on the built op** [measured,
+  consumer position]: an add under a 5ms-cadence probe on a
+  pre-existing resource — 0 failed accesses, max gap 5.7ms against the
+  50ms bar, the added resource serving its first ceremony 2.1ms after
+  the op returned, zero restarts. Plus persistence across a plane
+  restart, removal leaving standing custody untouched, the
+  declared-name refusal, the transport killing a represented user's
+  `resources.add`, and the secret sealed at rest with a fired control.
+- **D41's build decisions**: tool names always prefix
+  (`<entry>_<tool>` — [O1] closed); discovery runs at door startup,
+  authority fetched for the listing exactly as for a call, per-entry
+  failures degrading to stderr notes ([O2] closed as
+  startup-discovery; lazy per-person listing returns if real catalogs
+  chafe); workload targets ride no bearer (in-deployment authority is
+  the guardrail's, D34 lane 4); the account segment derives from the
+  connection's own server-asserted grants unless declared; an entry
+  named to shadow the record's own tools is refused with a note.
+
 ## Open [O]
 
-- **[O1] Tool-name prefixing** across targets (D41.2) — user-visible,
-  decided at the door's build.
-- **[O2] Discovery's credential half**: listing a target's tools needs
-  a credential too; lazy per-person listing vs catalog-declared
-  surfaces, decided at the door's build.
 - **[O3] Tool-use visibility on the record**: catalog entries give
   future vocabulary a name to bind to ("scribe used github, on Daan's
   behalf"); deliberately not designed here.
+- **[O4] The shell's halves** — the `resources.*` admin surface and
+  the per-person linking ceremony (the browser half: `link.start`'s
+  authorize URL wants a redirect back to a shell route, so the
+  declared `redirect_uri` points at the shell) — a shell module design
+  at its build.
+- **[O5] Workload-target authority**: today the door sends no bearer
+  in-deployment; if a workload tool needs to tell callers apart, that
+  is the guardrail at the door's own chokepoint (D37's third), not a
+  token.

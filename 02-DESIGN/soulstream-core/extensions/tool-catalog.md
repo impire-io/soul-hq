@@ -28,13 +28,19 @@ grammar). Value, JSON, additive like every record vocabulary:
 | `name` | the tool's catalog name (equals the key) |
 | `kind` | `"remote"` — reached through the identity plane's resource of the same name — or `"workload"` — run by this deployment |
 | `persona` | workload kind only: the tool workload's persona, resolvable in the persona registry like any participant |
-| `endpoint` | workload kind only: where a door reaches it |
+| `endpoint` | where a door reaches the tool — the remote MCP server's URL for a remote entry, the workload's serving address for a workload one |
 | `description` | one plain-language line for screens and agents |
 
-A `remote` entry deliberately carries **no** endpoints, client ids, or
-secrets — the public half a ceremony needs lives with the custody half
-on the identity plane, keyed by the same name, so the record never
-holds a secret and never partially describes one.
+A `remote` entry deliberately carries **no** OAuth endpoints, client
+ids, or secrets — the ceremony's half lives with the custody half on
+the identity plane, keyed by the same name, so the record never holds
+a secret and never partially describes one. The service `endpoint` is
+not ceremony: where a door reaches a tool is the catalog's to say for
+both kinds — the build's first correction (episode
+[0120](../../../04-JOURNEY/0120-ecosystem-the-tools-arc-builds.md)),
+made when the door found the remote's own URL living nowhere. A
+`remote` entry still refuses a `persona`: a remote tool holds no realm
+identity.
 
 `kind` here classifies **catalog entries**, not personas — the persona
 taxonomy the protocol removed stays removed. A workload tool's persona

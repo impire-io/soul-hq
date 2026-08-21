@@ -329,6 +329,21 @@ soulidentity tags-on-mint addition gates the preferred minting path.
 
 ### soulstream-identity — the name (as of 2026-08-19; named soulidentity until episode 0069)
 
+**Both graduated designs BUILT, two days after the asks** ([episodes
+0120](0120-ecosystem-the-tools-arc-builds.md)/[0121](0121-ecosystem-the-approvals-loop-closes.md)):
+the tools arc across four repos — core v0.12.0/v0.12.1 (the
+`toolcatalog` discovery face, plus the correction the door forced:
+reachability is not ceremony), identity v0.10.0 (`resources.*` runtime
+custody, measured beating its own baseline: 0 failed accesses and a
+5.7ms max gap under the probe, first ceremony 2.1ms after add, zero
+restarts), workloads v0.7.0 (the lane's declared door environment),
+soulstream v0.13.0-rc.9 (the forwarding door: one door, many targets,
+per-call authority, refusals in words) — and the approvals loop closed
+in identity v0.11.0 (durable tickets with witnessed expiry, the
+public presentation/deny/status/pending/list ends, per-rule approvers)
+with the house's guardrail turned on. What remains of both designs is
+their shell halves, named [O]s in the design docs.
+
 **The guardrail's human end measured to where it stops, then designed
 shut** ([episode 0119](0119-ecosystem-guardrail-human-end.md)): D38's
 loop is missing **two** ends, not one — the emit half works today and
@@ -1400,6 +1415,8 @@ the operator lives on the candidate; what chafes decides.
 | 0117 | shell | [The store shows what it holds (2026-08-19)](0117-shell-the-store-shows-what-it-holds.md) |
 | 0118 | ecosystem | [External tools: the agent reaches out, the person is who the remote sees (2026-08-19 → 2026-08-21)](0118-ecosystem-agent-external-tools.md) |
 | 0119 | ecosystem | [The guardrail's human end: the loop measured to where it stops, then designed shut (2026-08-19 → 2026-08-21)](0119-ecosystem-guardrail-human-end.md) |
+| 0120 | ecosystem | [The tools arc builds: catalog, custody, door (2026-08-21)](0120-ecosystem-the-tools-arc-builds.md) |
+| 0121 | ecosystem | [The approvals loop closes: tickets, presentation, policy (2026-08-21)](0121-ecosystem-the-approvals-loop-closes.md) |
 
 ## The naming map (2026-08-13)
 
