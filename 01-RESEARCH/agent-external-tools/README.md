@@ -83,4 +83,47 @@ much smaller shell module and no identity-plane change at all.
 
 ## Verdict
 
-<Empty until graduation.>
+Graduated to design 2026-08-21. Rigs in the session scratchpad
+(`bar3rig/`), consumer position: core v0.11.1 + identity v0.9.0 +
+workloads v0.6.0 by tag, zero replaces.
+
+- **Bar 1 — FAIL on today's mechanism, by construction, baseline
+  priced** [measured, 6 runs]: no hot-add exists (the broker's resource
+  map is built once and never written), so adding a resource is a plane
+  restart. Through the embed seam under a 5ms-cadence probe: max gap
+  between successful accesses 9.2–16.9ms, 1–2 failed accesses of ~200,
+  the added resource serving its first link ceremony 5.5–9.2ms after
+  the restart began. The pre-registered fail lane ("adding a tool is an
+  operator config act") was NOT taken: the fail prices the mechanism
+  the graduated design adds, and Bar 1's pass becomes that design's
+  acceptance criterion.
+- **Bar 2 — PASS, 5/5** [measured]: a real agent run through the real
+  wrap machinery (mention wake → scripted harness → forwarding door
+  over stdio → per-call on-behalf → remote MCP server → outcome op,
+  ~2s); the scan over every file the run left on disk (mcp.json,
+  events.jsonl, stderr, the harness's own env and argv dumps) found
+  zero of the AS's ever-minted access/refresh tokens; planted control
+  found.
+- **Bar 3 — PASS, 6/6** [measured]: two humans' agents, one remote
+  logging its authenticated subject: every call attributed to the
+  calling person's own remote subject, zero cross-attributions; a
+  stolen delegation refused; one person's revocation refused their
+  agent's next call (which never reached the remote) while the other's
+  kept serving; every on-behalf access audited both personas. Door
+  round trip 1.8–3.4ms.
+- **Bar 4 — the statement, ratified by the operator 2026-08-21**: every
+  tool has a record-borne discovery entry (one uniform catalog face for
+  run-your-own and remote alike); custody splits behind it — client
+  secrets in the D36 sealed store behind a `resources.*` op family on
+  the identity plane, workload declarations unchanged. Losing options:
+  static config (loses on the actor — a config file cannot be a
+  button — not on its measured ~10ms restart price); secrets on the
+  record (custody); an identity-plane-only catalog (the first draft —
+  loses on the unified view and agent discoverability); the literal
+  persona registry (key-anchored semantics — but it contributed the
+  two-layer display/authority pattern, A10's own) [judgment, operator
+  decision].
+
+Residue closed: the real-provider confirmation was performed by the
+operator [operator-attested]; provider and ceremony arms to be named
+in the trail.

@@ -87,4 +87,46 @@ reach.
 
 ## Verdict
 
-<Empty until graduation.>
+Graduated to design 2026-08-21. Rig in the session scratchpad
+(`guardrailrig/`), consumer position: identity v0.9.0 by tag, zero
+replaces, deliberately no soulstream-core requirement.
+
+- **Bar 1 — FAIL by construction, both halves measured to the gap**
+  [measured, 6/6 runs]: the emit half works today (the refusal carries
+  the rule and a deterministic, argument-sensitive invocation id) and
+  the mint half is public (the approval is a D33 delegation naming
+  `invocation:<id>`, one `MintDelegation` away) — and no consumer can
+  present it: the public client (27 methods) has no `approvals.present`
+  and the sealed envelope is internal. Proven mechanically: a correctly
+  minted, verifiable approval leaves the retry still deferring. The
+  loop is missing two ends, not one.
+- **Bar 2 — resolved** [measured + mechanism-argument]: zero
+  soulstream-core edges in identity v0.9.0's entire module graph; and
+  the carrier question dissolves — the defer already reaches the
+  caller, the plane can neither write the record (cycle guard) nor
+  push where any persona may listen (sub permissions are `_INBOX.>` /
+  `SOULSTREAM.>`), so the plane keeps readable state and the
+  originating adapter carries the news. Nothing ever crosses the line.
+- **Bar 3 — PASS on the artifact as minted, 6/6** [measured]: the
+  deferred op's arguments carried a planted secret; the minted
+  artifact carries the invocation hash and the parties and nothing of
+  the arguments; positive control fired. Honest scope: the wire and
+  at-rest arms wait for a presentable loop — nothing can go on a wire
+  yet.
+- **Bar 4 — FAIL by construction** [code trace, re-confirmed in
+  consumer position]: the dispatch serves exactly `guardrail.load` and
+  `approvals.present`; no read op for standing rules, no feed of
+  decisions. The read surface is the graduated design's build item.
+- **Bar 5 — FAIL by construction** [code trace]: any
+  directory-resolvable persona's signature approves; no policy layer
+  exists to refuse one, and refusal cannot be demonstrated end-to-end
+  until presentation exists. Per-rule approver policy is the graduated
+  design's build item.
+
+Also found: D38's sketch says the invocation hash includes time; the
+implementation rightly excludes it (a retry could never match a
+time-salted hash) [measured]. The design doc's wording is corrected in
+the graduated design. The operator's ticket-lifecycle direction
+(2026-08-21) is folded into the design: stateful tickets with their
+own TTL, expiry as a recorded and notified outcome, async by
+construction, notification carried by the originating adapter.
