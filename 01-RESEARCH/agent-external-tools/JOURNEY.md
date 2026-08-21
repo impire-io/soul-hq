@@ -225,3 +225,79 @@ standable locally. What no rig can supply is episode 0104's still-open
 residue, inherited here: **one real third-party provider** (a GitHub or
 Google OAuth app), which is an account act only the operator can
 perform.
+
+## 2026-08-21 — Bar 3 measures PASS; Bar 1's baseline is measured
+
+The operator re-ordered the plan before any rig was spent, and was
+right to: Bar 4 is a statement bar (prototyping two catalog homes
+overbuilds for a paragraph), 0107's build-order precedent puts the most
+irreversible piece last, and the concentrated unmeasured risk was
+Bar 3 — a wrapped agent's door connects as the *agent's* persona while
+the remote must see the *calling person*, a composition (C4 consent →
+D33 delegation → `AccessOnBehalf` → remote) never run outside the
+embedgate rig. So: rig first with the catalog hardcoded, Bar 4 last.
+
+**The rig** (session scratchpad, `bar3rig/`, consumer position:
+published tags core v0.11.1 + identity v0.9.0, module path outside the
+namespace, zero replaces): the embedgate ceremony (operator-mode server,
+auth callout, memory resolver), a per-user stand-in AS with strict
+rotation whose authorization codes name the remote user, a **real MCP
+server as the remote** (go-sdk streamable HTTP behind Bearer auth,
+logging the authenticated remote user per `tools/call`), and **the
+forwarding door exactly as the journal's shape says**:
+`mcpserver.NewServer(agent's realm client)` + one `mcp.AddTool` — the
+record's tools and the forwarding tool on one server, zero core
+changes — holding the subject's delegation and *no token*, fetching
+authority per call via `grants.access` on-behalf. Agents are MCP
+clients over in-memory transports, the way a harness holds its stdio
+door.
+
+**Bar 3 — PASS, 6/6 runs** [measured]:
+
+- Two humans (daan-ext, avery-ext), each with an agent (scribe-daan,
+  scribe-avery). Each human links their own grant (the code binding
+  custody to their remote user), issues C4 consent on the record, and
+  the mint consults the projection before signing (the S8 split held
+  end to end).
+- Each agent took the same tool call through its door. The remote's
+  attribution log: `[remote-daan, remote-avery]` — each call the
+  calling person's own remote subject, **zero cross-attributions**.
+- A **stolen delegation refused**: avery's agent presenting daan's
+  delegation from its own server-proven connection was refused.
+- **Revocation**: daan unlinking the resource refused his agent's next
+  call — which never reached the remote — while avery's kept serving
+  (post-revoke remote log gained exactly one `remote-avery`).
+- Every on-behalf access **audited both personas** (subject= lines for
+  both humans; `grants.access` lines naming the acting agent).
+- **Custody**: no access token the AS ever minted appeared in anything
+  the agent saw (tools list + every tool result), positive control
+  fired.
+- Door round trip (consent-consulted access + remote MCP session +
+  call): **1.8–3.4ms** across 6 runs.
+
+**Bar 1 — FAIL on today's mechanism, by construction, with the
+baseline priced** [measured, 6 runs]: no hot-add exists (the broker's
+resource map is built once), so adding a resource is a plane restart.
+Measured through the embed seam under a 5ms-cadence probe on the
+pre-existing resource: **max gap between successful accesses
+9.2–16.9ms, 1–2 failed accesses of ~200, and the added resource served
+its first link ceremony 5.5–9.2ms after the restart began**. The number
+that matters for Bar 4: an in-process plane restart is **~10ms of
+surface outage** — the house runs identity as an in-process plane, so
+a product that can cycle the plane pays roughly this, not a process
+restart. Caveat recorded: this is the embed-seam restart on a warm
+process; a full process restart (spawn + reconnect + bucket open) was
+not measured and would be larger.
+
+Two things the rig surfaced for the design, not for the bars:
+
+- **Where the delegation lives is a design decision Bar 2 will force.**
+  The delegation is not an outbound credential (it authorizes only its
+  named actor, server-proven, at the identity plane) — it is the
+  agent's own authority artifact, like its NATS credential. But it has
+  to reach the door somehow, and "in the door's config" needs saying
+  out loud rather than happening by default.
+- **The door refuses in words**: a refused on-behalf access comes back
+  to the agent as an `IsError` tool result naming the refusal, and the
+  refused call never touches the remote. That behaviour fell out of
+  the composition and should be kept deliberately.
