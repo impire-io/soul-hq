@@ -383,3 +383,15 @@ The losing options, and why they lost:
 Under this statement Bar 1's pass becomes the graduated design's
 acceptance criterion (add through the op under the probe, zero
 restarts), not a research re-run.
+
+## 2026-08-21 — the real-provider residue closes (operator act)
+
+The operator reports the real-provider validation is already done
+[operator-attested]. That closes the one residue no rig could touch —
+inherited from episode 0104's Bar 2 ("one real third-party provider
+completes link → rotation → revoke", also
+[`grants.md`](../../02-DESIGN/soulstream-identity/grants.md)'s
+acceptance criterion 5). The provider's name and which arms of the
+ceremony ran (link / rotation / revoke) should be recorded at
+graduation so the trail says what was exercised, not only that
+something was.
