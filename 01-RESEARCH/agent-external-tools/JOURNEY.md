@@ -301,3 +301,85 @@ Two things the rig surfaced for the design, not for the bars:
   to the agent as an `IsError` tool result naming the refusal, and the
   refused call never touches the remote. That behaviour fell out of
   the composition and should be kept deliberately.
+
+## 2026-08-21 — Bar 2 measures PASS through the real wrap machinery
+
+**The rig grew the agent half**: two binaries built from the rig module —
+a **door** (the stand-in for what the product's `soulstream mcp` verb
+would grow: environment-only lane, `mcpserver.NewServer` + the
+forwarding tool, stdio transport, authority fetched per call) and a
+**scripted harness** (everything a real assistant is to the wrap
+machinery — reads the generated MCP config, launches the door over
+stdio, takes one tool call, emits the JSONL terminal event — with no
+LLM, because the bar measures the custody surface, not the reasoning).
+The wrap side is the real thing at its published tag: `wrap.Wrapper`
+(workloads v0.6.0) — mention wake, catch-up, run directory, generated
+`mcp.json`, sanitized environment, terminal extraction, outcome op.
+
+**Bar 2 — PASS, 5/5 runs** [measured]: the human's mention woke the
+wrapped agent; the harness launched the door from the run's own
+`mcp.json`; the door minted nothing and stored nothing, fetching
+authority per call (`grants.access` on-behalf under the standing C4
+consent); the remote attributed the call to `remote-daan`; the outcome
+op on the record carries the remote's own answer — the whole loop
+person → record → wake → harness → door → identity plane → remote →
+record, in ~2s wall-clock including the wake machinery. Then the scan:
+**every file the run left on disk** (the run tree: `mcp.json`,
+`events.jsonl`, `stderr.txt`, plus the harness's own dumps of its
+environment and argv, captured from inside the process) grepped for
+**every access and refresh token the AS ever minted — zero hits**, with
+the planted control found and the three scan surfaces asserted present.
+The plane's audit named the subject through the whole wrapped run.
+
+Two mechanical findings about wrap worth keeping (cost: two wrong runs):
+`{{MCP_CONFIG}}` and `{{PROMPT}}` are argv template variables, not
+environment — a harness is *handed* its config path in its own
+command line, which is exactly where the real presets put it; and
+`{{BODY}}` fills the Prompt, which then fills argv as `{{PROMPT}}` —
+the two-stage fill is deliberate and undocumented-by-example until now.
+
+**Where the bars now stand:** Bar 3 PASS (6/6), Bar 2 PASS (5/5),
+Bar 1 FAIL-by-construction with its baseline priced (~10ms in-process
+plane cycle), Bar 4 owed its statement. The one residue no rig closes:
+the real third-party provider confirmation (a GitHub/Google OAuth
+app) — the operator act inherited from episode 0104. The rig
+(scratchpad `bar3rig/`, per how-we-work) is the draft of the standing
+gates the build inherits at graduation.
+
+## 2026-08-21 — Bar 4, the draft statement (for the operator to ratify)
+
+**The catalog lives on the identity plane as a small admin op family
+(`resources.add|remove|list`), its records in the sealed custody the
+plane already has — the D36 secret store holding the client secret,
+the public half beside it — loaded into the broker under a lock.**
+Owner: soulstream-identity. Cost: one op family, a mutable resource
+map, and nothing new at the chokepoint — the guardrail (D37) already
+sits on the op path, and "who may add a tool" is exactly the kind of
+op it exists to evaluate.
+
+The losing options, and why they lost:
+
+- **Static configuration (the status quo)** loses on the actor, not
+  the price. Bar 1 measured its price honestly — an in-process plane
+  cycle is ~10ms of surface outage, near-invisible under a 5ms probe —
+  so the case against it was never performance. It is that adding a
+  tool stays an operator-and-restart act (the shell's class (c)),
+  which can never serve the demand this topic was opened by: a person
+  adding a tool from the shell. A deployment class that refuses
+  runtime mutation keeps static declaration as a merged baseline —
+  the design should allow both lists, one store.
+- **The record as catalog** loses on custody: a client secret cannot
+  rest on an append-only log every persona in the realm can read, and
+  splitting one entry across record (public half) and store (secret
+  half) buys incoherence for no property. The record's half of the
+  operator's split stays exactly where it is: a tool this deployment
+  *runs* is a workload declaration, already runtime, already the
+  record's.
+- **A per-user catalog** was never a candidate and D26 stands un-bent:
+  entries remain realm-level declarations, no per-user rows anywhere —
+  linking remains the person's own act on their own prefix, which is
+  the isolation property the transport already enforces.
+
+Under this statement Bar 1's pass becomes the graduated design's
+acceptance criterion (add through the op under the probe, zero
+restarts), not a research re-run.
