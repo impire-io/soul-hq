@@ -106,3 +106,55 @@ front of a person and turns their yes into the mint+present pair;
 The reversal condition stands untested: whether real deferrals survive
 their minutes-long TTL until a human reaches a browser is measurable
 only with the surface built.
+
+## 2026-08-21 — the operator directs the ticket lifecycle
+
+The operator, on the ELI5: tickets need a TTL of their own; a
+synchronous call must be handleable asynchronously (a human takes an
+arbitrary time, possibly longer than any TTL); an expired ticket must
+notify the originator; and a *deferred* ticket must notify the
+originator that a human is now required. Folded into the design the
+topic graduates to:
+
+- **The ticket becomes stateful.** Today the defer is stateless — a
+  refusal string, no pending record anywhere. The operator's TTL
+  requirement confirms the pending store must exist (it was already
+  half of Bar 4's read-op gap). States: pending → approved → spent,
+  with pending → **expired** as a first-class, recorded, notified
+  outcome — never a silent death. Denied joins as the human's no.
+- **Two clocks, deliberately distinct.** The ticket TTL is the human's
+  window (long); the approval TTL is the retry's window (minutes,
+  one-shot, already built, and its clock starts at the yes — so human
+  latency never eats the retry's window). Nothing changes in the
+  built half.
+- **Async by construction, as an invariant**: no call ever waits for a
+  human. The op returns refused-with-ticket immediately; the retry is
+  the execution. The refusal becomes structured (ticket id, TTL,
+  "a human has been asked") rather than prose, so the originating side
+  can act on it programmatically — a door answers its agent's tool
+  call promptly as pending, never a hung MCP call.
+- **Notification decomposes under the wall, twice over**: the plane
+  can neither write the record (cycle guard) nor push on its own
+  prefix (a persona's sub permissions are `_INBOX.>` and
+  `SOULSTREAM.>` — nobody may listen where the plane may publish)
+  [measured: the template in both rigs]. So the plane owns the truth —
+  the ticket store, every transition, a `status` read op on the
+  principal's own tail (the same template addition `grants.>` was) —
+  and **the adapter that originated the call carries the news**: the
+  door tells its agent, the shell shows its human. Composition carries
+  in both directions; the plane stays core-free and push-free.
+- **Notification is correctness, not courtesy** [mechanism-argument]:
+  the approval TTL starts at the yes, so an originator polling slowly
+  would always miss its window. "Approved — retry now" reaching the
+  originator promptly is what makes the one-shot approval usable, and
+  belongs in the design's acceptance criteria.
+- **Open, named for the design doc**: restart semantics. Approvals are
+  in-memory and fail closed on restart — defensible at minutes-scale.
+  Tickets at human-scale TTLs are harder: a restart would expire every
+  pending ask unwitnessed. Durable (the plane has sealed stores) vs
+  in-memory-with-honest-loss is a D-decision to take at graduation.
+
+The reversal condition softens accordingly: expiry being visible,
+recorded, and notified makes longer ticket TTLs tolerable, so
+"deferrals die before a human sees them" now argues for tuning the
+ticket clock and pre-authorization policy — not against the surface.
