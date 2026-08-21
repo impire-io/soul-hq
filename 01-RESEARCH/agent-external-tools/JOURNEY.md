@@ -145,6 +145,77 @@ is narrower and belongs to Bar 4: the catalog still has to live
 somewhere, and the broker's resource map is still built once and never
 written.
 
+## 2026-08-21 — the operator splits the question in two
+
+The operator, reading the door finding: "does that mean we have an
+adapter for each mcp server but might not run the mcp server ourselves?
+Which would allow for remote MCP servers to be used while still allowing
+stdio or 'remote' MCP servers to be ran as well through workloads?"
+
+The question is sharper than the topic's own framing, and it splits
+**adding a tool** into two things this journal had been treating as one:
+
+- **Reaching one nobody here runs** — a hosted remote MCP server behind
+  OAuth. No process to supervise; the whole problem is identity and
+  credentials. This is what the topic was opened for, and it is grants
+  lane 2/3 behind the forwarding door.
+- **Running one** — a stdio server, or a remote one this deployment
+  hosts. That is a workload, and **workloads already has the vocabulary
+  for it**: `declaration.RoleTool` is documented as "a capability other
+  workloads call", and `LifecycleService` ("long-lived; runs until
+  stopped") is the only lifecycle `Validate` accepts, so every workload
+  the room runs today is already a long-lived service [measured, code
+  trace: `declaration/declaration.go`]. Running an MCP server is an
+  existing declaration shape pointed at a different artifact, not new
+  machinery.
+
+**One correction to the operator's framing, and one invariant it
+suggests.** Not an adapter per server: the agent talks to one door (the
+stdio `soulstream mcp` its wrap config already points at), and that door
+speaks MCP-client to N targets and re-exposes their tools. Per-server
+adapters would put N entries back in the agent's own configuration, and
+the catalog with them, which is the shape Bar 2 pushed us out of. And
+the invariant, proposed here for the design that graduates: **the door
+speaks only to endpoints and never spawns a process.** A stdio target is
+run by workloads and exposed; the door's view stays uniform, supervision
+stays where supervision belongs, and the door stays small enough to be
+worth trusting.
+
+**Consequence for Bar 4, arrived at from a direction the topic did not
+anticipate.** The catalog's tension was declared-configuration versus
+runtime data (D26's "no per-user rows"). If half the catalog is workload
+declarations — which are *already* runtime data, already ops on the
+record — then arguing the other half must remain static configuration is
+much harder. The operator's question is an argument **for** the runtime
+catalog. Bar 4 is unchanged as a criterion; what changed is that its
+losing options now have to answer this.
+
+**Open, and named rather than assumed:**
+
+- **Tool-name collisions** when one door re-exposes several servers.
+  Prefixing is user-visible, so it is a design decision, not an
+  implementation detail.
+- **Discovery is chicken-and-egg**: listing a target's tools needs a
+  credential too, so either the door lists lazily per person or the
+  catalog declares the tool surface.
+- **The two kinds have different identity stories, and conflating them
+  is the mistake this design could most easily make.** For a remote
+  nobody here runs, the point is that the remote sees the *calling
+  person* (grants + a bounded delegation). For one this deployment runs,
+  who may call it is a Soulstream authorization decision — the guardrail
+  chokepoint, and D34 lane 4 territory. Same door, different question
+  behind it.
+- **Doc/code drift noticed in passing**: `RoleTool`'s comment says "Not
+  accepted in M1.1" while `Validate` accepts it. Not verified end to
+  end; recorded so the next reader does not take either at face value.
+
+**Scope held, deliberately.** The topic's pre-registered question is
+about the tool nobody here runs — clause (b), "the remote sees the
+calling person", does not apply the same way to a tool this deployment
+hosts. So running-our-own stays out of the question and in this journal
+as the finding that makes the endpoint invariant right. No bar is
+amended.
+
 **Next, and it needs the operator:** the bars are now measurable in a
 rig. Bar 1 and Bar 3 can run against a stand-in authorization server the
 way episode 0104's Bar 2 did (Dex, or this ecosystem's own idp, which
