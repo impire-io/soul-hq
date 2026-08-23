@@ -120,3 +120,45 @@ Finding the design must carry:
    accept a record reference (topic + artefact lineage, digest-checked
    at materialisation) — schema growth in workloads, same seam as
    finding 4, still nothing core.
+
+## 2026-08-23 — Bar 3: PASS [measured]
+
+The heaviest rig: an operator-mode embedded server (own operator, SYS,
+one APP/realm account carrying an unscoped signing key for the bypass
+lane and one **scoped** signing key whose template is the entire tool
+policy), with the identity plane run **in-process through the D29 embed
+seam** and reached only through the public client. The declaration
+gained `capabilities: {role, tools}` — a role name and tool names,
+no policy.
+
+The chain, every link shipped machinery: the scoped key imported as a
+vault entry bound to its account (D24) under the name `agent-role`; the
+agent generated its user keypair locally; `mint.ephemeral` (D28) minted
+against the **declared role name** with the declaration's tools riding
+as tags (`tool:toola`); the account's scoped template —
+`SOULSTREAM.SVC.{{tag(tool)}}` — expanded them server-side. Granted
+tool: request answered (`ok:toola`). Ungranted tool: requester timed
+out, the *agent connection* surfaced "Permissions Violation", and the
+responder's delivery counter read **0** — refusal at the transport,
+before any service or rig code could have an opinion. The rig contains
+zero authorization code and no policy store; the assertion is
+structural as registered. 1.64s single run; all three bars
+`-race -count=2` green in 17.9s.
+
+Findings the design must carry:
+
+7. **This was the ecosystem's first `{{tag(...)}}` scoped template in
+   Go code** [measured]: the mechanism the fleet design (0003 §5) and
+   D28 describe worked exactly as written — tags lowercased into the
+   user claims, template expanded at authorization, permission-less JWT
+   impossible to over-scope. The fleet design's open item now has a
+   measured exhibit; descendant scoping (`{{tag(topic)}}.>`) remains
+   untested, as its docs already admit.
+8. **Capabilities in the declaration are names, not grants**
+   [mechanism-argument]: `capabilities.role` selects a declared signing
+   key (D28's own selector), `capabilities.tools` become tags the
+   template may or may not honor. The declaration cannot widen anything
+   — a wake-declared agent whose tags name an unbound tool gets a
+   credential that reaches nothing extra. Who may *declare* which tags
+   stays the identity plane's named-not-built tag-policy item (D28),
+   untouched here.
