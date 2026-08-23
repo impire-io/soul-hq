@@ -48,15 +48,30 @@ creation is a deliberate act with a surface of its own.
   bytes — the payload and the verdict lead, the wire forms rest one
   click away, all still served.
 
-## §3 Forms show what the choice reads
+## §3 Forms are sections, and show what the choice reads
 
-A form with a kind-select shows the fields that kind actually reads
-and no others: the select drives a page-local signal
-(`data-bind:kind`), each branch stands behind `data-show`. The tools
-form's everyday face is four fields; "Runs as" exists only for
-"runs here", the seven OAuth fields only for "connected service", and
-those fold further under "Provider sign-in". Required inputs carry
-`required`; optional ones say "— optional" in their placeholder.
+A form with a kind-select is sections: what every kind takes first
+(name, kind, description), then **one labeled section per kind and
+none for the other** — the select drives a page-local signal
+(`data-bind:kind`), each section stands behind `data-show`, and a
+label strip names it the way the details panel names its own sections.
+The tools form's remote branch is "Connected service" (its address)
+and "Provider sign-in" (the seven provider fields with a plain
+sentence about where they come from); the runs-here branch is "Runs
+here" (address, runs-as). A field both kinds take but mean differently
+— the address — lives in each section with its own words, `disabled`
+while hidden (`data-attr:disabled`) so only the living one submits.
+Required inputs carry `required`; optional ones say "— optional" in
+their placeholder.
+
+**The register, calibrated (operator's rule, 2026-08-23):** the
+audience is smart and not technical. Machine-room vocabulary never
+reaches a screen — "identity plane" becomes "the sign-in service",
+"where its MCP server answers" becomes "from the service's
+documentation" — and an explanation that merely restates jargon
+explains nothing. The machine room's own names survive only where the
+person will meet them elsewhere: the provider's console says "scopes",
+so the form does too.
 
 ## §4 A destructive key asks first
 
