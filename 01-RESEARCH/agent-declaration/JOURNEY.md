@@ -162,3 +162,58 @@ Findings the design must carry:
    credential that reaches nothing extra. Who may *declare* which tags
    stays the identity plane's named-not-built tag-policy item (D28),
    untouched here.
+
+## 2026-08-23 — Bar 4: PASS [measured]
+
+The composition drive: the whole declare-from-shell flow, run through
+shipped surfaces only, the shell UI out of scope as registered.
+
+The enumeration, each step a shipped surface, each mutation in the
+record or the realm KV:
+
+| flow step | shipped surface | visible as |
+|---|---|---|
+| name + shown-as | `registry.NewAttestationToken` (operator's key) + `registry.Publish` by the agent persona itself | profile in `soulstream-personas`, `AttestationStatus == "attested"` |
+| instructions | `attachment.add` | stage-1 artefact on the soul topic |
+| wake + capabilities | the registration **is a record artefact** (`agent-decl.json`) | `attachment.add`, digest-checked |
+| placement | `work.open` (the fleet's shipped pattern; `fleet.Submit` is the product surface) | work item, author `owner` |
+| launch | `work.claim` by the agent; dispatcher boots **from the registration artefact read back out of the record** — no local file | claim event, author `sprite` |
+| liveness | the mention wake answered under the declared instructions (`COMPOSED` in the outcome body) | `turn.post`, author `sprite` |
+| retirement of the declare item | `work.done` | timeline `open:owner → claim:sprite → done:sprite` |
+
+No step lacked a surface; the missing piece is exactly and only the
+*verb that sequences them* — which is what "composition" means. Wrap
+§10's "registrations-as-shell-objects" resolves as: the registration is
+already a record object; the shell renders and sequences, it never
+stores. 0.41s single run; the full four-bar suite `-race -count=2`
+green in 18.9s.
+
+Addressed head-on, because the reversal condition watches for it: the
+one mutation in the whole topic that never appears as an op is the
+identity plane's role-key import (Bar 3). That is not a second
+coordination store — it is the shipped identity pillar doing exactly
+what its constitution demands (keys never in the record; the process
+boundary is the custody boundary), it is per-role operator provisioning
+rather than per-agent state, and the declaration references it by name
+only. Nothing agent-shaped lives outside the record. **Neither reversal
+condition fired**: no bar needed a store beside the record, and no code
+path anywhere branches on human vs machine — the persona flow Bar 4
+drove is byte-for-byte the flow a human persona uses.
+
+## Where this stands
+
+All four pre-registered bars: **PASS**, each `[measured]` on a live rig,
+race-checked. The question's answer as measured: yes — "declare an
+agent from instructions" decomposes entirely into existing vocabulary,
+with the growth confined to (a) a `wake` section + record-form
+`artifact` scheme in the workloads declaration (the roadmap's named
+hole, schema not machinery), (b) one additive schedule stream beside
+the notify stream, and (c) a wider read scope (or runtime-side reads)
+for enforced record-position agents. Findings 1–8 above are the design
+doc's spine. Named successors stand: agent-wakes-agent loop safety
+(before any colony), runtime join/leave (watched, unfired), tag policy
+(identity plane's own item).
+
+Graduation (`/research-graduate agent-declaration --to design`) stays
+the owner's call after the teach-back the Working Agreement requires —
+the adversarial pass belongs in that conversation, not appended here.
