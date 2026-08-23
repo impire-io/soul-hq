@@ -85,7 +85,12 @@ sentences on keys.
   opened by … — signed and on the record"), the day behind a chat
   message's clock, the moment behind an agent's Added date. The
   approvals window says "4m10s left" with the exact deadline in the
-  hover — computed at render and honest about it.
+  hover — and the screen re-reads itself every five seconds
+  (`/approvals/live`, the storage tail's shape): countdowns run,
+  arrivals appear, expiries go, and the mark on the spine counts down
+  to nothing and back. The tally is always an element carrying its id,
+  so the tick can patch it either way; the result line stays the
+  acts' own, never the stream's.
 
 ## §6 The details column steps aside, not away
 

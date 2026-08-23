@@ -26,9 +26,12 @@ confirm's shape (the act endpoints unchanged), behind one-word keys —
 Disable, Enable, Revoke, Remove — with the whole sentence in the
 hover; rows speak the person's words (new / going on / quiet / closed
 / archived; a work mark's sentence agrees with its stamped strip); raw
-ids ride hovers; the storage message panel leads with payload and
-verdict, Headers and Signed bytes folded; and the details column
-becomes a drawer on its own signal instead of disappearing. 24 files,
+ids ride hovers; the approvals screen re-reads itself every five
+seconds — the storage tail's shape — so countdowns run and the spine's
+mark stays true on a screen left open; the storage message panel leads
+with payload and verdict, Headers and Signed bytes folded; and the
+details column becomes a drawer on its own signal instead of
+disappearing. 24 files,
 +803/−174, on the shell's `ux-cognitive-load` branch atop v0.11.0-rc.2;
 the full gate green — unit suites, the realm-booting e2e (21.8s), lint
 clean [measured].
@@ -56,6 +59,6 @@ and ask-every-time choices; the components stay either way.
 
 Trail: design
 [`0007-the-sheet-shape.md`](../02-DESIGN/soulstream-shell/0007-the-sheet-shape.md);
-the survey and pass in this session; commit `41a0042` on
-`ux-cognitive-load` in
+the survey and pass in this session; the commit series from `41a0042`
+on `ux-cognitive-load` in
 [impire-io/soulstream-shell](https://github.com/impire-io/soulstream-shell).
