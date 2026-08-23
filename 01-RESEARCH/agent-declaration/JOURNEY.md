@@ -89,3 +89,34 @@ Findings the design must carry:
    dispatcher as an enforced workload needs either a widened scoped
    template or reads done by the runtime on the workload's behalf —
    named for Bar 3 / the design, not decided here.
+
+## 2026-08-23 — Bar 2: PASS [measured]
+
+Same rig, one wake source (mentions) for crispness. The declaration
+gained `instructions: {topic, artefact}` — a reference into the record,
+never a host path (wrap §10's "registration pointing at an artifact
+rather than a host command", made concrete). The dispatcher materialises
+the artefact's tip at every wake — it has no field to cache it in, so
+"no durable copy" holds structurally, and the digest is verified against
+the object store on each load.
+
+The run: revision A (`ALPHA`) attached as an ordinary `attachment.add`
+by the owner; wake 1's outcome body carried ALPHA. Revised to `BRAVO`
+through an ordinary anchored revision — **the same running dispatcher**
+served BRAVO on wake 2: no redeploy, no restart, the record was the
+distribution channel. Dispatcher killed, fresh instance started: wake 3
+still BRAVO, and afterwards the soul topic held the full 2-revision
+lineage, the object-store tip read BRAVO, and every earlier outcome
+still counted exactly 1 — a dispatcher death lost scratch only, never
+history. Owner authored the revisions, sprite authored the outcomes —
+attribution end to end in one log. 0.93s single run; both bars
+`-race -count=2` green in 14.8s.
+
+Finding the design must carry:
+
+6. **The artifact scheme must grow a record form**
+   [mechanism-argument]: shipped `declaration.Artifact` validates
+   `file://` only. Instructions-declared agents need the registration to
+   accept a record reference (topic + artefact lineage, digest-checked
+   at materialisation) — schema growth in workloads, same seam as
+   finding 4, still nothing core.
