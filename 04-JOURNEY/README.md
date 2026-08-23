@@ -1109,7 +1109,29 @@ constraints — passkeys, not passwords; indistinguishable by design —
 and the roadmap sequences M1 (the OP skeleton) behind its KV-schema and
 key-lifecycle research. No product code exists yet.
 
-### soulstream-shell — the shell (as of 2026-08-21; named soulhelm until episode 0069)
+### soulstream-shell — the shell (as of 2026-08-23; named soulhelm until episode 0069)
+
+**The sheet shape: the cognitive-load pass** ([episode
+0123](0123-shell-the-sheet-shape.md); design
+[`0007`](../02-DESIGN/soulstream-shell/0007-the-sheet-shape.md)): the
+operator's read of the landed screens, answered in one pass. The three
+list pages lead with their tables and each add-form waits in a shared
+slide-over (the rail drawer's mechanics on the frame's own panel
+signal, at every width) with a result line of its own; the tools form
+branches on Kind — four everyday fields, the seven provider fields
+folded under "Provider sign-in"; every destructive act stands behind a
+question in the archive confirm's shape behind one-word keys (Disable,
+Enable, Revoke, Remove — the sentence rides the hover); rows speak the
+person's words (new / going on / quiet / closed / archived, a work
+mark's sentence agreeing with its stamped strip, the status act
+answering in a sentence); raw ids ride hovers; the storage panel leads
+with payload and verdict, Headers and Signed bytes folded; and below
+1180px the details column becomes a drawer on its own signal instead
+of vanishing with the close/archive acts. The standing gates were
+re-pointed, not weakened — the banned-word gate refused `.archfold`'s
+class name on a sheet (hence `.stow`), and the e2e tripped on exactly
+the copy the pass exists to change. On branch `ux-cognitive-load`,
+gate green, unreleased.
 
 **Tools and approvals join the spine — v0.11.0-rc.2** ([episode
 0122](0122-ecosystem-the-shell-arc-lands.md); designs
@@ -1432,6 +1454,7 @@ the operator lives on the candidate; what chafes decides.
 | 0120 | ecosystem | [The tools arc builds: catalog, custody, door (2026-08-21)](0120-ecosystem-the-tools-arc-builds.md) |
 | 0121 | ecosystem | [The approvals loop closes: tickets, presentation, policy (2026-08-21)](0121-ecosystem-the-approvals-loop-closes.md) |
 | 0122 | ecosystem | [The shell arc lands: both human ends on the spine (2026-08-21)](0122-ecosystem-the-shell-arc-lands.md) |
+| 0123 | shell | [The sheet shape: tables lead, forms slide over, keys ask first (2026-08-23)](0123-shell-the-sheet-shape.md) |
 
 ## The naming map (2026-08-13)
 

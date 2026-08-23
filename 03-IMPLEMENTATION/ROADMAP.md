@@ -17,7 +17,7 @@ changes to it are decisions and belong in the journey as episodes.
 | [soulstream-identity](#soulstream-identity--the-name) | **`v0.11.0`** — the approvals loop closed and the runtime tool catalog ([episodes 0120](../04-JOURNEY/0120-ecosystem-the-tools-arc-builds.md)/[0121](../04-JOURNEY/0121-ecosystem-the-approvals-loop-closes.md)); before it **M6 and M7 complete, `v0.9.0`** — the grants broker (SC-005 closed live), the secret store, the guardrail chokepoint with approvals, runtime tenancy on **both** authority arms ([episodes 0110](../04-JOURNEY/0110-identity-the-tenancy-set-builds.md)/[0114](../04-JOURNEY/0114-identity-the-provider-arm-closes.md)), grants lane 3, and E3's custodial stamp | **Both graduated designs BUILT** ([episodes 0120](../04-JOURNEY/0120-ecosystem-the-tools-arc-builds.md)/[0121](../04-JOURNEY/0121-ecosystem-the-approvals-loop-closes.md)): **v0.10.0** `resources.*` runtime custody (the acceptance bar beaten: 5.7ms max gap under the probe, zero restarts) and **v0.11.0** the approvals loop (durable tickets, public presentation, per-rule approvers). The shell halves landed too (episode [0122](../04-JOURNEY/0122-ecosystem-the-shell-arc-lands.md)); M5 stays demand-gated |
 | [soulstream](#soulstream--the-product-the-house) | **v0.13.0-rc.11 — the whole arc in one house** ([episodes 0120](../04-JOURNEY/0120-ecosystem-the-tools-arc-builds.md)/[0122](../04-JOURNEY/0122-ecosystem-the-shell-arc-lands.md)): the door forwarding (rc.9), the persona scope's grants/approvals tails (rc.10), the shell with tools and approvals composed and the guardrail fact declared (rc.11); before it rc.8 running the byon realm ([episode 0115](../04-JOURNEY/0115-soulstream-byon-adopts-the-new-form.md)) | RC soak toward v0.13.0 on byon; the operator tries the whole system — evaluation decides what changes; Phase 3 (tsnet) gated on fronting measured insufficient |
 | [soulstream-idp](#soulstream-idp--the-fold) | **Every milestone shipped**, plus both of episode 0104's due demands: **v0.7.0** the token-lifetime knob ([episode 0106](../04-JOURNEY/0106-idp-the-token-lifetime-knob.md)) and **v0.8.0/v0.8.1** the RFC 8693 exchange grant ([episode 0111](../04-JOURNEY/0111-ecosystem-one-session-several-audiences.md), spec 006 — audience re-scoping only, actor tokens refused); the physical-authenticator runbook is run | Named horizons only (deferred audit rows, multi-issuer demand, per-client lifetimes); day-2 by demand |
-| [soulstream-shell](#soulstream-shell--the-shell) | **v0.11.0-rc.2 — tools and approvals join the spine** ([episode 0122](../04-JOURNEY/0122-ecosystem-the-shell-arc-lands.md)): the two graduated designs' human ends, walked end to end by the gate; before it rc.1's storage explorer ([episode 0117](../04-JOURNEY/0117-shell-the-store-shows-what-it-holds.md)) | The operator lives on the candidate — episode 0116's three asks are all screens now; what chafes decides |
+| [soulstream-shell](#soulstream-shell--the-shell) | **v0.11.0-rc.2 plus the sheet-shape pass on `ux-cognitive-load`** ([episode 0123](../04-JOURNEY/0123-shell-the-sheet-shape.md), design [`0007`](../02-DESIGN/soulstream-shell/0007-the-sheet-shape.md)): tables lead, add-forms slide over, destructive keys ask first, rows speak the person's words; before it rc.2's tools and approvals ([episode 0122](../04-JOURNEY/0122-ecosystem-the-shell-arc-lands.md)) and rc.1's storage explorer ([episode 0117](../04-JOURNEY/0117-shell-the-store-shows-what-it-holds.md)) | Merge and tag the sheet-shape branch; the operator lives on the candidate — what chafes decides |
 | soulstream-mcp | **v0.3.1** — F1's ensure-act wired at signer construction ([episode 0108](../04-JOURNEY/0108-ecosystem-the-key-becomes-resolvable.md)), then core v0.11.1 | **Parked (episode 0071)** — stdio MCP is the choice of record for this iteration |
 
 **2026-08-13 — the naming re-centering** ([episode
@@ -1032,7 +1032,17 @@ admin lifecycle (M3).
 browser, beside the MCP door. Design:
 [`0001-soulhelm-the-helm.md`](../02-DESIGN/soulstream-shell/0001-soulhelm-the-helm.md).*
 
-### Where we are (2026-08-19)
+### Where we are (2026-08-23)
+
+**The sheet-shape pass answers the operator's cognitive-load read**
+([episode 0123](../04-JOURNEY/0123-shell-the-sheet-shape.md), design
+[`0007-the-sheet-shape.md`](../02-DESIGN/soulstream-shell/0007-the-sheet-shape.md)):
+every list page leads with its table, the add-forms wait in a shared
+slide-over at every width, the tools form shows only what the chosen
+kind reads, every destructive act asks first behind one-word keys, and
+the details column becomes a drawer below 1180px instead of taking
+close/archive off screen. On branch `ux-cognitive-load`, full gate
+green, awaiting merge and tag.
 
 **The storage explorer landed the day it was designed** ([episode
 0117](../04-JOURNEY/0117-shell-the-store-shows-what-it-holds.md), design
