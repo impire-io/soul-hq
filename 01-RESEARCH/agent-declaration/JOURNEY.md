@@ -296,3 +296,44 @@ optionally a pinned revision digest in the registration); (3) declared
 agents make colonies one op away while loop safety is unfinished —
 *stands as a sequencing rule*: mention-wake agents ship before
 topic-wake colonies.
+
+## 2026-08-24 — convergence with main's presence thread; two notes corrected
+
+Read (not touched) on main's in-flight tree, drafted the same day as
+the teach-back: `02-DESIGN/soulstream-core/extensions/presence.md`
+(proposed, not decided) plus shell design 0008, the operational thread
+making today's *wrap* agents first-class (profile on start, aliveness
+ongoing). The convergence is real and the threads compose rather than
+collide:
+
+- **The heartbeat follow-on is presence.md.** Yesterday's named
+  follow-on decision dissolves into main's draft, which decides two
+  points *better than the teach-back wording*: (a) **no TTL** — the
+  entry never expires; freshness is the reader's judgment against the
+  KV entry's own timestamp, and "last seen" evidence survives. This
+  supersedes "the entry eventually disappears" and dissolves this
+  journal's no-tombstone caveat entirely — nothing needs to watch for
+  deletion because nothing is deleted. (b) **Advisory, never
+  authority** — presence informs courtesy, and the fleet never imports
+  the reader. My note that a heartbeat KV "can be fleet 0003's
+  transient evidence" is hereby **withdrawn**: that coupling is exactly
+  what the draft's advisory rule refuses; the fleet keeps
+  probe-before-abandon.
+- **The SYSTEM consolidation is unaffected and reconciles cleanly**:
+  *streams* consolidate under `SOULSTREAM_SYSTEM` (schedules/ticks —
+  this topic's measured decision, unchanged); *KV faces* follow the
+  house bucket-per-face pattern (`soulstream-personas`,
+  `soulstream-tools`, `soulstream-presence`). No "system KV" is needed.
+- **Sequencing, in main's own words**: shell 0008 lands presence
+  "without waiting for the record's declaration vocabulary" — and this
+  topic *is* that vocabulary. Main makes hand-run wrap agents visible
+  citizens today; this topic makes agents declarable so the runtime
+  spawns them tomorrow. A declared agent inherits profile-on-start and
+  the presence lease for free by being the same kind of persona
+  (Bar 4 already had it self-publish its profile), and presence's
+  "each thing writes its own key, no collector, no privileged
+  side-channel" is the same no-privileged-tier grammar the reconciler
+  answer used.
+
+Graduation should cite presence.md as the liveness answer (once it is
+decided on main) instead of carrying a liveness design of its own.
