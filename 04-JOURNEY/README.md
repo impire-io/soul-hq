@@ -37,6 +37,18 @@ The per-component summaries below were carried whole at the hq merge and are ref
 
 ### soulstream-core — the record (as of 2026-08-24; named soulstream until episode 0069)
 
+**Presence BUILT — v0.13.0, the same day it was decided** ([episode
+0125](0125-ecosystem-the-presence-lease-builds.md)): the `presence`
+package in the tool catalog's shape plus the new ground — `State`
+carries the KV entry's own timestamp as the renewal moment,
+`Read(now)` derives *present / left / last-seen* as the reader's
+judgment, `Hold` is the whole lease in one call, and renewal is a
+plain put (after a crash-and-restart a stale revision must never make
+the fresh writer lose). The lease-honesty triple, additive round-trip,
+and the unchanged op-log census are standing tests [measured]; the
+docs page ships with it. The wrap is its first writer (soulstream
+branch `011-presence-lease`, episode 0125).
+
 **Presence is a decided extension — the who-is-around face** ([episode
 0124](0124-ecosystem-the-first-hour-and-the-presence-lease.md);
 [`extensions/presence.md`](../02-DESIGN/soulstream-core/extensions/presence.md),
@@ -697,7 +709,22 @@ questions before their milestones (NGS callout
 capabilities, the sentinel-credential flow, the first-key story, the
 claims-mapping shape, service round-trip latency) are named on the roadmap.
 
-### soulstream — the product, the house (as of 2026-08-19; named soulnode until episode 0069)
+### soulstream — the product, the house (as of 2026-08-24; named soulnode until episode 0069)
+
+**The wrap announces itself and lights its lamp — branch
+`011-presence-lease`** ([episode
+0125](0125-ecosystem-the-presence-lease-builds.md); spec
+`specs/011-presence-lease/`, the first spec-kit feature since 010):
+before answering mentions the wrap ensures a directory floor
+(lookup-first, because `registry.Publish` replaces metadata; no
+signing key, because the lane holds none — said honestly) and holds
+the presence lease beside the run loop, the farewell waited for
+before the connection closes. Advisory throughout: a lease failure is
+a log line, never a refusal to answer. The live rig measures the
+whole story through real admission — the persona scope's existing
+tails let a wrap create and write the presence bucket with no
+ceremony change [measured]. Pushed, awaiting merge; the live run on
+byon is the quickstart's pending human act.
 
 **byon runs rc.8, adopted rather than re-founded** ([episode
 0115](0115-soulstream-byon-adopts-the-new-form.md)): the canonical
@@ -1490,6 +1517,7 @@ the operator lives on the candidate; what chafes decides.
 | 0122 | ecosystem | [The shell arc lands: both human ends on the spine (2026-08-21)](0122-ecosystem-the-shell-arc-lands.md) |
 | 0123 | shell | [The sheet shape: tables lead, forms slide over, keys ask first (2026-08-23)](0123-shell-the-sheet-shape.md) |
 | 0124 | ecosystem | [The first hour and the presence lease (2026-08-23 → 2026-08-24)](0124-ecosystem-the-first-hour-and-the-presence-lease.md) |
+| 0125 | ecosystem | [The presence lease builds: the lamp lights (2026-08-24)](0125-ecosystem-the-presence-lease-builds.md) |
 
 ## The naming map (2026-08-13)
 

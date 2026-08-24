@@ -132,7 +132,10 @@ Applied where the evidence stands today:
   in / left {when} / last seen {when}* while the person still holds
   the paste block, and the first-steps card's arrival line reads it
   live. This design does not gate on it; the two moves above stand
-  without it.
+  without it. **Built 2026-08-24** (episode
+  [0125](../../04-JOURNEY/0125-ecosystem-the-presence-lease-builds.md):
+  core v0.13.0's `presence` package, the wrap wired on soulstream
+  branch `011-presence-lease`) — the arrival line has a face to read.
 
 ## §5 An empty state points somewhere (normative)
 

@@ -1,7 +1,12 @@
 # Extension: presence (the who-is-around face)
 
 *Optional convention. **Decided 2026-08-24** (episode
-[0124](../../../04-JOURNEY/0124-ecosystem-the-first-hour-and-the-presence-lease.md)).
+[0124](../../../04-JOURNEY/0124-ecosystem-the-first-hour-and-the-presence-lease.md))
+and **built the same day** as soulstream-core **v0.13.0**'s `presence`
+package, the wrap its first writer (episode
+[0125](../../../04-JOURNEY/0125-ecosystem-the-presence-lease-builds.md);
+acceptance criteria 1–3 are standing tests, criterion 4 a review
+duty).
 Grown from the thin presence paragraph in
 [`library-and-adapters.md`](library-and-adapters.md) and from
 soulstream-shell design
