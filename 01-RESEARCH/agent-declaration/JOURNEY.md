@@ -252,3 +252,47 @@ single `SOULSTREAM.SYSTEM.>` capture (9.97s). Per-message `Nats-TTL`
 (AllowMsgTTL is on) keeps stale-tick expiry per schedule — the wake
 vocabulary's `ttl` knob rides family-level headers, not stream config,
 so co-tenancy costs schedules nothing.
+
+## 2026-08-24 — teach-back held; direction survives with precisions
+
+The owner's restatement, held against the evidence:
+
+- **"Declare agents on the soulstream; workloads make them run"** —
+  survives [measured, Bars 2/4], with one precision: what was measured
+  is declaration-as-record-artefact reaching the runtime through the
+  fleet's placement grammar (work item, first-claim-wins, sweeper
+  reclaim). A watch-and-converge reconciler was *not* measured.
+- **"Not merging imps; agents/imps spawned by workloads"** — survives;
+  the triangle stands (record / room / inhabitant), instruction-declared
+  agents and coded imps ride the same declaration path.
+- **"Heartbeats as KV puts with TTL on a system KV"** — *not a finding*;
+  no bar touched liveness. Recorded as a **named follow-on decision**,
+  not evidence: it fits the SYSTEM taxonomy (non-record, unsigned,
+  expiring) and per-key TTL is real on the pinned server
+  [mechanism-argument, unmeasured]; a KV bucket is a stream under the
+  hood, so the rationale is "no per-feature proliferation", not "no new
+  streams"; TTL expiry emits no tombstone — absence must be *polled*,
+  which is the sweeper shape fleet 0003 already has. Interacts with
+  fleet's decided probe-before-abandon: a heartbeat KV can be that
+  rule's transient evidence, as a fleet-design amendment.
+
+**Opened by the owner: the reconciler's shape.** Should the
+declaration-watcher be an agent? The house grammar answers the shape:
+a persona with ordinary scoped credentials, lifecycle as ops
+(work.md: "a runner is a persona that does things — not a service
+tier"; constitution II forbids a privileged tier). The bootstrap fixed
+point stands apart: one hand-started process per node *wears* a
+persona; declaring the reconciler itself is only coherent in a fleet
+where another node supervises it — a later rung, not the floor. The
+loop-safety successor applies to it doubly.
+
+**Adversarial pass delivered** (recorded at full strength before any
+graduation): (1) wake-vocabulary-belongs-to-the-inhabitant — refuted
+because wake determines credential scope and placement, which the
+inhabitant must not self-declare; (2) instructions-in-the-record makes
+revision a privilege escalation — *stands as a design obligation*: the
+soul topic is a guarded surface (posting rights, verified authorship,
+optionally a pinned revision digest in the registration); (3) declared
+agents make colonies one op away while loop safety is unfinished —
+*stands as a sequencing rule*: mention-wake agents ship before
+topic-wake colonies.
