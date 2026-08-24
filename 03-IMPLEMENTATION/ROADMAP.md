@@ -12,12 +12,12 @@ changes to it are decisions and belong in the journey as episodes.
 
 | Component | State | Next gate |
 |---|---|---|
-| [soulstream-core](#soulstream-core--the-record) | **`v0.11.1` — the canonical form broke clean** ([episode 0112](../04-JOURNEY/0112-ecosystem-the-canonical-form-breaks-clean.md)): signatures bind the realm key (A10), records carry the required acting credential (E3), v1 reads as `legacy-shape`; before it **v0.9.0** F1's `EnsureSigningKey` ([episode 0108](../04-JOURNEY/0108-ecosystem-the-key-becomes-resolvable.md)) and **v0.10.0** the grant vocabulary ([episode 0109](../04-JOURNEY/0109-ecosystem-consent-enters-the-record.md)) | The tool catalog SHIPPED as **v0.12.0/v0.12.1** ([episode 0120](../04-JOURNEY/0120-ecosystem-the-tools-arc-builds.md)); sealed topics and eg-walker remain the unbuilt designs, chafe-gated |
+| [soulstream-core](#soulstream-core--the-record) | **`v0.11.1` — the canonical form broke clean** ([episode 0112](../04-JOURNEY/0112-ecosystem-the-canonical-form-breaks-clean.md)): signatures bind the realm key (A10), records carry the required acting credential (E3), v1 reads as `legacy-shape`; before it **v0.9.0** F1's `EnsureSigningKey` ([episode 0108](../04-JOURNEY/0108-ecosystem-the-key-becomes-resolvable.md)) and **v0.10.0** the grant vocabulary ([episode 0109](../04-JOURNEY/0109-ecosystem-consent-enters-the-record.md)) | The tool catalog SHIPPED as **v0.12.0/v0.12.1** ([episode 0120](../04-JOURNEY/0120-ecosystem-the-tools-arc-builds.md)); **presence decided 2026-08-24** ([episode 0124](../04-JOURNEY/0124-ecosystem-the-first-hour-and-the-presence-lease.md), [`extensions/presence.md`](../02-DESIGN/soulstream-core/extensions/presence.md)) — unbuilt, the wrap its first writer; sealed topics and eg-walker remain the chafe-gated unbuilt designs |
 | [soulstream-workloads](#soulstream-workloads--the-room) | Phases 1–2 complete; wrap + `mcp_args` shipped; **`v0.7.0` — the lane carries a door's outbound identity** ([episode 0120](../04-JOURNEY/0120-ecosystem-the-tools-arc-builds.md)); before it `v0.6.0` — M3.1, the fleet lands ([episode 0113](../04-JOURNEY/0113-workloads-placement-is-work-claim.md)): placement IS work.claim, measured on two nodes | The declaration trigger vocabulary (unblocked by the claim path) and a long-running serve loop, both by demand; loop-safety research before any agent-wakes-agent deployment |
 | [soulstream-identity](#soulstream-identity--the-name) | **`v0.11.0`** — the approvals loop closed and the runtime tool catalog ([episodes 0120](../04-JOURNEY/0120-ecosystem-the-tools-arc-builds.md)/[0121](../04-JOURNEY/0121-ecosystem-the-approvals-loop-closes.md)); before it **M6 and M7 complete, `v0.9.0`** — the grants broker (SC-005 closed live), the secret store, the guardrail chokepoint with approvals, runtime tenancy on **both** authority arms ([episodes 0110](../04-JOURNEY/0110-identity-the-tenancy-set-builds.md)/[0114](../04-JOURNEY/0114-identity-the-provider-arm-closes.md)), grants lane 3, and E3's custodial stamp | **Both graduated designs BUILT** ([episodes 0120](../04-JOURNEY/0120-ecosystem-the-tools-arc-builds.md)/[0121](../04-JOURNEY/0121-ecosystem-the-approvals-loop-closes.md)): **v0.10.0** `resources.*` runtime custody (the acceptance bar beaten: 5.7ms max gap under the probe, zero restarts) and **v0.11.0** the approvals loop (durable tickets, public presentation, per-rule approvers). The shell halves landed too (episode [0122](../04-JOURNEY/0122-ecosystem-the-shell-arc-lands.md)); M5 stays demand-gated |
 | [soulstream](#soulstream--the-product-the-house) | **v0.13.0-rc.11 — the whole arc in one house** ([episodes 0120](../04-JOURNEY/0120-ecosystem-the-tools-arc-builds.md)/[0122](../04-JOURNEY/0122-ecosystem-the-shell-arc-lands.md)): the door forwarding (rc.9), the persona scope's grants/approvals tails (rc.10), the shell with tools and approvals composed and the guardrail fact declared (rc.11); before it rc.8 running the byon realm ([episode 0115](../04-JOURNEY/0115-soulstream-byon-adopts-the-new-form.md)) | RC soak toward v0.13.0 on byon; the operator tries the whole system — evaluation decides what changes; Phase 3 (tsnet) gated on fronting measured insufficient |
 | [soulstream-idp](#soulstream-idp--the-fold) | **Every milestone shipped**, plus both of episode 0104's due demands: **v0.7.0** the token-lifetime knob ([episode 0106](../04-JOURNEY/0106-idp-the-token-lifetime-knob.md)) and **v0.8.0/v0.8.1** the RFC 8693 exchange grant ([episode 0111](../04-JOURNEY/0111-ecosystem-one-session-several-audiences.md), spec 006 — audience re-scoping only, actor tokens refused); the physical-authenticator runbook is run | Named horizons only (deferred audit rows, multi-issuer demand, per-client lifetimes); day-2 by demand |
-| [soulstream-shell](#soulstream-shell--the-shell) | **v0.11.0-rc.2 plus the sheet-shape pass on `ux-cognitive-load`** ([episode 0123](../04-JOURNEY/0123-shell-the-sheet-shape.md), design [`0007`](../02-DESIGN/soulstream-shell/0007-the-sheet-shape.md)): tables lead, add-forms slide over, destructive keys ask first, rows speak the person's words; before it rc.2's tools and approvals ([episode 0122](../04-JOURNEY/0122-ecosystem-the-shell-arc-lands.md)) and rc.1's storage explorer ([episode 0117](../04-JOURNEY/0117-shell-the-store-shows-what-it-holds.md)) | Merge and tag the sheet-shape branch; the operator lives on the candidate — what chafes decides |
+| [soulstream-shell](#soulstream-shell--the-shell) | **v0.11.0-rc.2 plus the sheet-shape pass on `ux-cognitive-load`** ([episode 0123](../04-JOURNEY/0123-shell-the-sheet-shape.md), design [`0007`](../02-DESIGN/soulstream-shell/0007-the-sheet-shape.md)): tables lead, add-forms slide over, destructive keys ask first, rows speak the person's words; before it rc.2's tools and approvals ([episode 0122](../04-JOURNEY/0122-ecosystem-the-shell-arc-lands.md)) and rc.1's storage explorer ([episode 0117](../04-JOURNEY/0117-shell-the-store-shows-what-it-holds.md)) | Merge and tag the sheet-shape branch; then the first hour ([episode 0124](../04-JOURNEY/0124-ecosystem-the-first-hour-and-the-presence-lease.md), design [`0008`](../02-DESIGN/soulstream-shell/0008-the-first-hour.md)) — the derived first-steps card, arrival, empty states; the operator lives on the candidate — what chafes decides |
 | soulstream-mcp | **v0.3.1** — F1's ensure-act wired at signer construction ([episode 0108](../04-JOURNEY/0108-ecosystem-the-key-becomes-resolvable.md)), then core v0.11.1 | **Parked (episode 0071)** — stdio MCP is the choice of record for this iteration |
 
 **2026-08-13 — the naming re-centering** ([episode
@@ -144,7 +144,7 @@ The wire format already carries every future hook: `Soulstream-Parents` (merge),
    ([journey 0003](../04-JOURNEY/0009-soulstream-memory-convention-and-exhibits.md)); its own
    end-to-end test replays the keep → rollup → verified-recovery story for real.
 9. **Sealed topics** — the crypto is the single biggest build item and the dogfood scenario doesn't need it. *Not yet built* — but **design-validated 2026-07-28** ([journey 0005](../04-JOURNEY/0011-soulstream-sealed-topics.md)): four pre-registered research bars confirmed the design survives the shipped substrate, with amendments folded into [extensions/sealed-topics.md](../02-DESIGN/soulstream-core/extensions/sealed-topics.md); speckit-ready. Build priority gated on the dogfood chafe log (to 2026-08-10).
-10. **WebSocket/browser client, presence.** *Not yet built.*
+10. **WebSocket/browser client, presence.** *Not yet built* — but **presence is a decided design as of 2026-08-24** ([episode 0124](../04-JOURNEY/0124-ecosystem-the-first-hour-and-the-presence-lease.md), [extensions/presence.md](../02-DESIGN/soulstream-core/extensions/presence.md)): the who-is-around face — a `soulstream-presence` KV lease per running thing, staleness read as gone, no collector, no TTL-delete, words a person reads never numbers a machine steers by. The wrap is its first mandatory writer (shell 0008's upstream ask #3); not chafe-gated. The WebSocket/browser client remains unbuilt and separate.
 11. **Remote MCP node** (`018`) — a URL into a realm for clients that cannot
     install anything (sandboxed Claude Desktop, claude.ai connectors). **BUILT
     + released v0.7.0 (2026-08-02)** ([journey
@@ -1032,7 +1032,23 @@ admin lifecycle (M3).
 browser, beside the MCP door. Design:
 [`0001-soulhelm-the-helm.md`](../02-DESIGN/soulstream-shell/0001-soulhelm-the-helm.md).*
 
-### Where we are (2026-08-23)
+### Where we are (2026-08-24)
+
+**The first hour is designed, ahead of its build** ([episode
+0124](../04-JOURNEY/0124-ecosystem-the-first-hour-and-the-presence-lease.md),
+design
+[`0008-the-first-hour.md`](../02-DESIGN/soulstream-shell/0008-the-first-hour.md)):
+the answer to the operator's day-one cliff — a first-steps card on
+Home **derived from realm state per render, never stored** (no
+onboarding flag, no per-person tour, no wizard), the arrival
+principle (an act ends when the realm's own evidence shows the thing
+arrived, live, on the acting screen), and empty states that offer
+their act. Upstream ask #3 asks the wrap for a profile on start plus
+the presence lease
+([`extensions/presence.md`](../02-DESIGN/soulstream-core/extensions/presence.md),
+decided in the same episode); the design gates on neither. The step
+ordering awaits its test: one fresh-eyes install, chafe log open from
+minute one ([O1]).
 
 **The sheet-shape pass answers the operator's cognitive-load read**
 ([episode 0123](../04-JOURNEY/0123-shell-the-sheet-shape.md), design
@@ -1113,7 +1129,15 @@ pinned on soulstream main.
    sentence, and the refusal to grow an act are each pinned
    mechanically. Two design corrections are recorded in §8, the
    load-bearing one being that `SOULSTREAM.>` is not a store.
-6. **Later, gated:** the participant client (its own research topic —
+6. **M-first-hour — designed, unbuilt** (decided 2026-08-24, episode
+   [0124](../04-JOURNEY/0124-ecosystem-the-first-hour-and-the-presence-lease.md);
+   design
+   [`0008`](../02-DESIGN/soulstream-shell/0008-the-first-hour.md)):
+   the derived first-steps card on Home, the arrival principle on the
+   agent path, the empty-state rule across the sheets. Gates on
+   nothing; prefers the presence face where it stands (upstream ask
+   #3 — the wrap's profile-on-start plus lease).
+7. **Later, gated:** the participant client (its own research topic —
    [O4], with upstream ask #1's WebSocket listener); a dedicated scoped
    helm ceremony user in soulstream (hardening); the two modules that
    [O5] and [O6] would produce.

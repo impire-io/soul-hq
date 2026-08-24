@@ -50,3 +50,5 @@ A persona may publish ephemeral state — currently-open topic, focus/away — f
 
 - **Advisory by definition.** Nothing may *depend* on presence.
 - **Ephemeral by construction.** Presence must not accumulate in the `SOULSTREAM` stream: publish outside the captured prefix (e.g. `SOULSTREAM_PRESENCE.<persona-id>` as plain core NATS — a different first token, so the stream never sees it) or use a per-subject-limited side stream. Presence in the op-log is a bug.
+
+Grown into its own convention — [`presence.md`](presence.md) (decided 2026-08-24, episode 0124): the store, the lease and its reader semantics, writers by kind, and the payload line. The two rules above hold there unchanged.

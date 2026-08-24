@@ -35,7 +35,23 @@ cite the per-project numbers).
 
 The per-component summaries below were carried whole at the hq merge and are refreshed with every new episode, as before.
 
-### soulstream-core — the record (as of 2026-08-19; named soulstream until episode 0069)
+### soulstream-core — the record (as of 2026-08-24; named soulstream until episode 0069)
+
+**Presence is a decided extension — the who-is-around face** ([episode
+0124](0124-ecosystem-the-first-hour-and-the-presence-lease.md);
+[`extensions/presence.md`](../02-DESIGN/soulstream-core/extensions/presence.md),
+grown from the thin paragraph in `library-and-adapters.md`): a
+`soulstream-presence` KV holding one lease per persona for everything
+that runs — renewed on a cadence, a farewell as manners, staleness
+read as gone, because **departure is derived, never merely announced**
+[mechanism-argument: a crashed writer cannot say goodbye]. The store
+forgets nothing (no TTL-delete — *left* and *vanished* stay
+distinguishable), each thing writes its own key on its own admission
+(no collector), and the payload line keeps it presence rather than
+telemetry: words a person reads, never numbers a machine steers by —
+advisory sharpened to *courtesy, never correctness*. The wrap is the
+first mandatory writer (shell 0008's upstream ask #3); unbuilt, not
+chafe-gated.
 
 **The canonical form broke clean — v0.11.0/v0.11.1** ([episode
 0112](0112-ecosystem-the-canonical-form-breaks-clean.md)): every
@@ -1109,7 +1125,25 @@ constraints — passkeys, not passwords; indistinguishable by design —
 and the roadmap sequences M1 (the OP skeleton) behind its KV-schema and
 key-lifecycle research. No product code exists yet.
 
-### soulstream-shell — the shell (as of 2026-08-23; named soulhelm until episode 0069)
+### soulstream-shell — the shell (as of 2026-08-24; named soulhelm until episode 0069)
+
+**The first hour is designed, ahead of its build** ([episode
+0124](0124-ecosystem-the-first-hour-and-the-presence-lease.md); design
+[`0008`](../02-DESIGN/soulstream-shell/0008-the-first-hour.md)): the
+operator named the 0116 disease one level up — the product without a
+first hour, every screen assuming the person knows why they are
+there. The answer keeps the house rules: **guidance is a reading,
+never a store** — a first-steps card on Home derived entirely from
+realm state per render (no onboarding store, no per-person tour, no
+wizard; D26 and 0001 §4 upheld), the **arrival principle** (an act
+ends when the realm's own evidence shows the thing arrived, live, on
+the acting screen), and empty states that offer their act. The agent
+path's floor is honest to what exists — the paste block already
+ships; the wrap announces nothing, so first evidence is the first
+answer [measured, code trace] — and **upstream ask #3** asks the wrap
+for a profile on start plus a presence lease (the core extension
+decided in the same episode). Open and named: the fresh-eyes install
+that would test the step ordering ([O1]).
 
 **The sheet shape: the cognitive-load pass** ([episode
 0123](0123-shell-the-sheet-shape.md); design
@@ -1455,6 +1489,7 @@ the operator lives on the candidate; what chafes decides.
 | 0121 | ecosystem | [The approvals loop closes: tickets, presentation, policy (2026-08-21)](0121-ecosystem-the-approvals-loop-closes.md) |
 | 0122 | ecosystem | [The shell arc lands: both human ends on the spine (2026-08-21)](0122-ecosystem-the-shell-arc-lands.md) |
 | 0123 | shell | [The sheet shape: tables lead, forms slide over, keys ask first (2026-08-23)](0123-shell-the-sheet-shape.md) |
+| 0124 | ecosystem | [The first hour and the presence lease (2026-08-23 → 2026-08-24)](0124-ecosystem-the-first-hour-and-the-presence-lease.md) |
 
 ## The naming map (2026-08-13)
 
