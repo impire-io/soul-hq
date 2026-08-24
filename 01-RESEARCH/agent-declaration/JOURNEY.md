@@ -217,3 +217,38 @@ doc's spine. Named successors stand: agent-wakes-agent loop safety
 Graduation (`/research-graduate agent-declaration --to design`) stays
 the owner's call after the teach-back the Working Agreement requires —
 the adversarial pass belongs in that conversation, not appended here.
+
+## 2026-08-24 — the additive stream is SOULSTREAM_SYSTEM [judgment, owner's call]
+
+The owner named the Bar 1 stream: not a per-purpose
+`SOULSTREAM_SCHEDULES`, but **`SOULSTREAM_SYSTEM`** — one additive
+stream for the realm's non-record substrate plumbing, one capture
+prefix (`SOULSTREAM.SYSTEM.>`), families nested under it
+(`SOULSTREAM.SYSTEM.SCHEDULES.<persona>.<name>`,
+`SOULSTREAM.SYSTEM.TICKS.<persona>.<name>`, later families beside
+them). Rationale: the stream count must not grow per feature; a system
+stream serves the next non-record need without another provisioning
+artefact.
+
+This sharpens the taxonomy rather than blurring it:
+
+- **SOULSTREAM** — the record. Signed ops only.
+- **SOULSTREAM_NOTIFY** — record-grade (mention.notify is a full
+  signed record), per-persona bounded. Stays its own stream *because*
+  it is record-grade with its own retention shape.
+- **SOULSTREAM_SYSTEM** — non-record plumbing: server-generated,
+  unsigned, replayable but never authoritative. Schedules and ticks
+  today.
+
+The drift guard, written now: SOULSTREAM_SYSTEM must never become a
+shadow record. Anything worth keeping still flows to topics as ops
+(constitution I); a system family whose messages start needing
+signatures or authorship has outgrown the stream and belongs in the
+record. Observable trip-wire: a consumer materialising system messages
+into durable state that no op carries.
+
+Rig updated and re-measured: all four bars green under `-race` with the
+single `SOULSTREAM.SYSTEM.>` capture (9.97s). Per-message `Nats-TTL`
+(AllowMsgTTL is on) keeps stale-tick expiry per schedule — the wake
+vocabulary's `ttl` knob rides family-level headers, not stream config,
+so co-tenancy costs schedules nothing.
