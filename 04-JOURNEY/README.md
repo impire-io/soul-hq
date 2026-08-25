@@ -37,6 +37,19 @@ The per-component summaries below were carried whole at the hq merge and are ref
 
 ### soulstream-core — the record (as of 2026-08-25; named soulstream until episode 0069)
 
+**Sealed topics BUILT — the locked binder** ([episode
+0131](0131-core-sealed-topics-build.md); `specs/021-sealed-topics`,
+merged `724f10d`, unreleased): the design-validated extension is real —
+`sealed.op`/`sealed.epoch` with epoch and nonce inside the signed
+payload, the AAD splice matrix refusing every arm [measured], the Bar 3
+rollup re-carrying the wrapped-key table (a fresh member reads from the
+post-purge baseline [measured]), endorsed X25519 sealing keys in the
+registry (strict decode ships first — Bar 2), the `Unwrapper` custody
+seam mirroring `Signer` for D9's custodian, curator blind and memory
+silent on purpose. The build caught one design blind spot: sealed topic
+ids derive from the word `sealed`, never the display name they would
+have leaked. Eg-walker is now the last chafe-gated unbuilt core design.
+
 **The system stream lands — schedules ride the substrate** ([episode
 0130](0130-ecosystem-the-agent-declaration-builds.md); feature
 `020-system-stream`, merged `f0a09f2`, unreleased): `SOULSTREAM_SYSTEM`
@@ -1603,6 +1616,7 @@ the operator lives on the candidate; what chafes decides.
 | 0128 | ecosystem | [Loop safety: the room budgets the cascade (2026-08-25)](0128-ecosystem-loop-safety.md) |
 | 0129 | workloads | [The wake budget builds: the colony gate ships (2026-08-25)](0129-workloads-the-wake-budget-builds.md) |
 | 0130 | ecosystem | [The agent declaration builds: the record declares, the room runs (2026-08-25)](0130-ecosystem-the-agent-declaration-builds.md) |
+| 0131 | core | [Sealed topics build: the locked binder (2026-08-25)](0131-core-sealed-topics-build.md) |
 
 ## The naming map (2026-08-13)
 
