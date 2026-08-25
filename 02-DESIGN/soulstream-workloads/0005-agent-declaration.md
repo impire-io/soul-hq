@@ -8,7 +8,11 @@ This document grows the workload declaration so an agent can be declared
 record, and run by the existing runtime. It fills the roadmap's named
 hole (the declaration trigger vocabulary) and closes wrap
 [`0004`](0004-wrap.md) §10's harness-as-workload and
-registrations-as-shell-objects questions.*
+registrations-as-shell-objects questions. **BUILT 2026-08-25** ([episode
+0130](../../04-JOURNEY/0130-ecosystem-the-agent-declaration-builds.md);
+workloads `specs/009-agent-declaration`, core `specs/020-system-stream`)
+— §5's `[O]` resolved **runtime-side reads**; capabilities resolution is
+the named follow-on `capability-minting`.*
 
 ## 1. What this adds — and what it refuses
 
@@ -39,7 +43,7 @@ fact readers and shells MUST surface:
 | kind | fields | delivery **[V]** |
 |---|---|---|
 | `mention` | — | replay-exact (notify stream, inbox-window bounded) |
-| `topic` | `path`, `types[]` (default `turn.post`) | replay-exact (ops stream) |
+| `topic` | `path`, `types[]` (default `turn.post`; the shipped engine restricts to the replayable set — `turn.post`, `comment.add`, `comment.reply`, `attachment.add`) | replay-exact (ops stream) |
 | `schedule` | `name`, `pattern` (`@every` / `@at` / 6-field cron), `ttl` (optional) | replay-exact, TTL-bounded backlog (per-message `Nats-TTL`) |
 | `subject` | `subject` | **at-most-once** — a wake arriving while the agent is down is lost; declaring it is declaring that honestly |
 
@@ -60,6 +64,10 @@ fact readers and shells MUST surface:
   0128), a prerequisite for colonies (§7).
 - Non-record wakes (schedule, subject) land their outcomes on the
   declared home topic; record wakes answer where they were triggered.
+- **Build facts (episode 0130):** a mention and a topic wake on the
+  same op collapse to one outcome slot — the deterministic id makes
+  the collapse honest, stated not hidden; a schedule wake parked at
+  shutdown answers on the next start (replay-exact within its TTL).
 
 ## 4. SOULSTREAM_SYSTEM — the one additive stream [V]
 
@@ -99,12 +107,19 @@ tool answers; ungranted tool times out with a permissions violation on
 the agent's own connection and zero responder deliveries. Who may
 declare which tags stays the identity plane's named tag-policy item.
 
-**[O] The enforcement-read gap.** The shipped agent scope grants
-`$JS.API.INFO` only; record-position wakes need stream/consumer read
-APIs. Two candidate answers, one must be chosen at build time: widen
-the agent role's scoped template with the JS read tails, or have the
-runtime perform reads on the workload's behalf. Neither was measured
-under enforcement; this is where implementation risk concentrates.
+**The enforcement-read gap — RESOLVED: runtime-side reads** (build
+decision, [episode
+0130](../../04-JOURNEY/0130-ecosystem-the-agent-declaration-builds.md)).
+The wake engine performs every record-position read (catch-up,
+materialisation, outcome-existence, budget computation, ticks,
+instructions) on its **own** connection; the declared agent's minted
+scope stays the shipped `$JS.API.INFO`. The widened-scope arm was
+rejected because the JS read tails are stream-wide — granting them
+breaches own-prefix confinement — and because scoped templates are
+written at account founding, making template widening a per-deployment
+control-plane migration (the byon rc.10 deployment duty). Reversal
+condition: a wake host that cannot hold a credential able to read the
+record it dispatches reopens the widened-scope arm.
 
 ## 6. The soul topic is a guarded surface
 
@@ -167,11 +182,15 @@ probe-before-abandon.
 
 ## Open [O]
 
-- The enforcement-read gap (§5) — decide widened-scope vs
-  runtime-reads.
-- Loop-safety budgets (§7) — graduated to design
-  [`0006-loop-safety.md`](0006-loop-safety.md); colony-gating until
-  built into the admission path.
+- ~~The enforcement-read gap (§5)~~ — RESOLVED runtime-side reads
+  (build decision, episode 0130; reversal condition in §5).
+- ~~Loop-safety budgets (§7)~~ — built ([episodes
+  0128](../../04-JOURNEY/0128-ecosystem-loop-safety.md)/[0129](../../04-JOURNEY/0129-workloads-the-wake-budget-builds.md));
+  the shipped engine routes every wake kind through the budget at
+  admission, so topic wakes carry their colony gate by construction.
+- Capabilities resolution — schema shipped; the D28 `mint.ephemeral`
+  tag lane is the named follow-on feature `capability-minting` (the
+  repo keeps no identity-plane dependency until that demand).
 - Runtime join/leave (a declared agent's topic set changing without a
   restart) — imps design 0003's reversal condition, watched, unfired.
 - Descendant tag scoping (`{{tag(topic)}}.>`) — untested, per the

@@ -35,7 +35,16 @@ cite the per-project numbers).
 
 The per-component summaries below were carried whole at the hq merge and are refreshed with every new episode, as before.
 
-### soulstream-core — the record (as of 2026-08-24; named soulstream until episode 0069)
+### soulstream-core — the record (as of 2026-08-25; named soulstream until episode 0069)
+
+**The system stream lands — schedules ride the substrate** ([episode
+0130](0130-ecosystem-the-agent-declaration-builds.md); feature
+`020-system-stream`, merged `f0a09f2`, unreleased): `SOULSTREAM_SYSTEM`
+provisioned create-or-report with `AllowMsgSchedules` + `AllowMsgTTL`
+and the `SCHEDULES`/`TICKS` subject helpers — non-record plumbing by
+taxonomy, server-generated, unsigned, never authoritative. The design
+0005 bet held [measured]: a `@every 1s` registration produced a server
+tick with no consumer running, and per-message TTL expiry is real.
 
 **Presence BUILT — v0.13.0, the same day it was decided** ([episode
 0125](0125-ecosystem-the-presence-lease-builds.md)): the `presence`
@@ -173,6 +182,26 @@ eg-walker live co-editing, sealed topics, and a browser/WebSocket client.
 
 ### soulstream-workloads — the room (as of 2026-08-25; named soulrealm until episode 0069)
 
+**Agent declaration is BUILT — the record declares, the room runs**
+([episode 0130](0130-ecosystem-the-agent-declaration-builds.md);
+`specs/009-agent-declaration`, merged `09c446f`): the declaration grows
+`instructions` (materialised at the lineage tip every wake,
+digest-checked, scratch-only — a revision reached the next wake with no
+redeploy [measured]), `capabilities` (schema this slice; the D28 mint
+lane is the named follow-on `capability-minting`), the 0006 `budget`
+block, the `soulstream://` record-form artifact (digest-tamper refuses
+and abandons [measured]), and all four `wake` kinds through wrap's
+five-step admission — exactly-once across an engine restart for every
+stream-backed kind, subject honestly at-most-once, an uncooperative
+topic-wake cycle halted at 2K=8 with op-less loud refusals [measured].
+The enforcement-read gap `[O]` RESOLVED: **runtime-side reads** — the
+engine's credential reads the record; the agent scope stays
+`$JS.API.INFO` (stream-wide JS read tails would breach own-prefix
+confinement; founding-time scope templates make widening a
+per-deployment migration — the byon rc.10 lesson). Topic wakes ship
+*with* their colony gate: the budget sits in the dispatcher's admission
+path, satisfying design 0006 §6 by construction.
+
 **Loop safety is ANSWERED and BUILT — the colony gate ships, same day
 as its research** ([episodes 0128](0128-ecosystem-loop-safety.md)/[0129](0129-workloads-the-wake-budget-builds.md);
 design
@@ -205,11 +234,9 @@ artefact materialised per wake — revision reaches a running agent with
 no redeploy), and `capabilities` (names resolved by D28 tag-template
 mints — the ecosystem's first measured `{{tag()}}` template); schedules
 ride the one additive `SOULSTREAM_SYSTEM` stream; the declare flow is
-composition of shipped surfaces end to end. Not yet built — the
-enforcement-read gap `[O]` (widened scope vs runtime reads) decides
-first, and mention-wake agents ship before topic-wake colonies
-(loop-safety graduated to design 0006, episode 0128 — the colony gate is
-now a build, not a question).
+composition of shipped surfaces end to end. Built two days later
+([episode 0130](0130-ecosystem-the-agent-declaration-builds.md)) with
+the enforcement-read gap resolved runtime-side.
 
 **The fleet lands — v0.6.0, placement IS work.claim** ([episode
 0113](0113-workloads-placement-is-work-claim.md)): a submission is an
@@ -1575,6 +1602,7 @@ the operator lives on the candidate; what chafes decides.
 | 0127 | shell | [The first hour builds: the card derives, the roster breathes (2026-08-25)](0127-shell-the-first-hour-builds.md) |
 | 0128 | ecosystem | [Loop safety: the room budgets the cascade (2026-08-25)](0128-ecosystem-loop-safety.md) |
 | 0129 | workloads | [The wake budget builds: the colony gate ships (2026-08-25)](0129-workloads-the-wake-budget-builds.md) |
+| 0130 | ecosystem | [The agent declaration builds: the record declares, the room runs (2026-08-25)](0130-ecosystem-the-agent-declaration-builds.md) |
 
 ## The naming map (2026-08-13)
 
