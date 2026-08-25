@@ -173,9 +173,11 @@ eg-walker live co-editing, sealed topics, and a browser/WebSocket client.
 
 ### soulstream-workloads — the room (as of 2026-08-25; named soulrealm until episode 0069)
 
-**Loop safety is ANSWERED — the colony gate has a mechanism** ([episode
-0128](0128-ecosystem-loop-safety.md); design
-[`0006-loop-safety.md`](../02-DESIGN/soulstream-workloads/0006-loop-safety.md)):
+**Loop safety is ANSWERED and BUILT — the colony gate ships, same day
+as its research** ([episodes 0128](0128-ecosystem-loop-safety.md)/[0129](0129-workloads-the-wake-budget-builds.md);
+design
+[`0006-loop-safety.md`](../02-DESIGN/soulstream-workloads/0006-loop-safety.md);
+`specs/008-loop-safety`, merged `af49b80`):
 all four pre-registered bars PASS [measured], same day as its opening. The
 danger is a number now — an unenforced three-agent colony amplified one
 human op into 434 ops in 0.34s (1,264.7 ops/s), doubling per generation —
@@ -188,8 +190,11 @@ while a legitimate owner→A→B→A delegation completed with zero refusals.
 Refuted by measurement: a budget in the harness slot (refusal became a
 312-turn failure ping-pong — the gate sits at admission, op-less and
 loud, or nowhere) and depth alone (404/404 self-posted outcomes invisible
-to record-only ancestry). Not yet built; colonies unblock when the budget
-ships in the admission path.
+to record-only ancestry). The build landed the same day (episode 0129):
+wrap evaluates the budget at admission with defaults on (D=4, K=8/10m),
+`Unbudgeted` the explicit opt-out, the walker shipped as diagnostic —
+the rig's cases green as the feature's own `-race` suite. Colonies now
+wait only on a dispatcher that carries this gate at its admission seam.
 
 **Agent declaration is DESIGNED — all four research bars measured**
 ([episode 0126](0126-ecosystem-agent-declaration.md); design
@@ -1569,6 +1574,7 @@ the operator lives on the candidate; what chafes decides.
 | 0126 | ecosystem | [Agent declaration: the record declares, the room runs (2026-08-23 → 2026-08-25)](0126-ecosystem-agent-declaration.md) |
 | 0127 | shell | [The first hour builds: the card derives, the roster breathes (2026-08-25)](0127-shell-the-first-hour-builds.md) |
 | 0128 | ecosystem | [Loop safety: the room budgets the cascade (2026-08-25)](0128-ecosystem-loop-safety.md) |
+| 0129 | workloads | [The wake budget builds: the colony gate ships (2026-08-25)](0129-workloads-the-wake-budget-builds.md) |
 
 ## The naming map (2026-08-13)
 
