@@ -736,8 +736,10 @@ before the connection closes. Advisory throughout: a lease failure is
 a log line, never a refusal to answer. The live rig measures the
 whole story through real admission — the persona scope's existing
 tails let a wrap create and write the presence bucket with no
-ceremony change [measured]. Pushed, awaiting merge; the live run on
-byon is the quickstart's pending human act.
+ceremony change [measured]. Merged to main 2026-08-25 (`b86ec57`), and
+the house now composes shell v0.11.0-rc.3 — the first hour's screens
+(episode [0127](0127-shell-the-first-hour-builds.md), pin `68acda6`);
+the live run on byon is the quickstart's pending human act.
 
 **byon runs rc.8, adopted rather than re-founded** ([episode
 0115](0115-soulstream-byon-adopts-the-new-form.md)): the canonical
@@ -1165,7 +1167,21 @@ constraints — passkeys, not passwords; indistinguishable by design —
 and the roadmap sequences M1 (the OP skeleton) behind its KV-schema and
 key-lifecycle research. No product code exists yet.
 
-### soulstream-shell — the shell (as of 2026-08-24; named soulhelm until episode 0069)
+### soulstream-shell — the shell (as of 2026-08-25; named soulhelm until episode 0069)
+
+**The first hour BUILT — v0.11.0-rc.3, composed into the house the
+same day** ([episode 0127](0127-shell-the-first-hour-builds.md)):
+Home's first-steps card derives from realm state at every render — the
+no-store rule a pure function under unit test, the whole lifecycle
+walked by an unseeded e2e (four pending steps, each act flips its own,
+the card gone with nothing to dismiss) [measured]. The roster's Around
+column reads the presence face in the person's words (in / left {when}
+/ seen {when}, the honest dash, a 5s live channel), the paste card
+names the next step, and the tools/people/apps empty states now offer
+their act. The support layer's last-seen refusal rewritten honestly:
+no store of its own — the realm grew a face to read. Remaining: the
+byon soak and the fresh-eyes install ([O1] — the ordering is still
+asserted, not measured).
 
 **The first hour is designed, ahead of its build** ([episode
 0124](0124-ecosystem-the-first-hour-and-the-presence-lease.md); design
@@ -1532,6 +1548,7 @@ the operator lives on the candidate; what chafes decides.
 | 0124 | ecosystem | [The first hour and the presence lease (2026-08-23 → 2026-08-24)](0124-ecosystem-the-first-hour-and-the-presence-lease.md) |
 | 0125 | ecosystem | [The presence lease builds: the lamp lights (2026-08-24)](0125-ecosystem-the-presence-lease-builds.md) |
 | 0126 | ecosystem | [Agent declaration: the record declares, the room runs (2026-08-23 → 2026-08-25)](0126-ecosystem-agent-declaration.md) |
+| 0127 | shell | [The first hour builds: the card derives, the roster breathes (2026-08-25)](0127-shell-the-first-hour-builds.md) |
 
 ## The naming map (2026-08-13)
 

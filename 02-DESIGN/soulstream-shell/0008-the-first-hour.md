@@ -1,10 +1,13 @@
 # 0008 — soulstream-shell: the first hour
 
-**Status:** decided 2026-08-24, ahead of its build (episode
+**Status:** decided 2026-08-24 (episode
 [0124](../../04-JOURNEY/0124-ecosystem-the-first-hour-and-the-presence-lease.md);
-drafted 2026-08-23). The operator's ask, in one line: *most people are
-lost once they installed soulstream, not knowing what to do next.*
-Episode
+drafted 2026-08-23), **built 2026-08-25** as soulstream-shell
+v0.11.0-rc.3 (episode
+[0127](../../04-JOURNEY/0127-shell-the-first-hour-builds.md); [O1]'s
+fresh-eyes install still open). The operator's ask, in one line: *most
+people are lost once they installed soulstream, not knowing what to do
+next.* Episode
 [0116](../../04-JOURNEY/0116-ecosystem-what-shipped-without-a-human-end.md)
 named features without a human end and the arc that followed closed
 them (episodes
