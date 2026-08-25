@@ -55,8 +55,9 @@ fact readers and shells MUST surface:
   stream and the post-attempt level.
 - **Self-wake exclusion is normative.** A `topic` wake MUST exclude
   ops authored by the declared persona — the loop appears on day one
-  without it **[V]**. Budgets beyond this guard are the loop-safety
-  research topic, a prerequisite for colonies (§7).
+  without it **[V]**. Budgets beyond this guard are design
+  [`0006-loop-safety.md`](0006-loop-safety.md) (graduated, episode
+  0128), a prerequisite for colonies (§7).
 - Non-record wakes (schedule, subject) land their outcomes on the
   declared home topic; record wakes answer where they were triggered.
 
@@ -118,8 +119,12 @@ agents, making drift a refusal instead of a surprise.
 
 Mention-wake agents ship before topic-wake colonies. The loop-safety
 research topic (agent-wakes-agent budgets; two measured exhibits in
-episodes 0082/0083, a third in this topic's rig) is a **prerequisite**
-for any deployment where declared agents wake each other.
+episodes 0082/0083, a third in this topic's rig) GRADUATED 2026-08-25
+([episode 0128](../../04-JOURNEY/0128-ecosystem-loop-safety.md), design
+[`0006-loop-safety.md`](0006-loop-safety.md)): the composed wake budget
+at admission. The prerequisite resolves to a **build** requirement: any
+deployment where declared agents wake each other carries the 0006
+budget in its admission path.
 
 ## 8. The declare flow is composition [V]
 
@@ -164,7 +169,9 @@ probe-before-abandon.
 
 - The enforcement-read gap (§5) — decide widened-scope vs
   runtime-reads.
-- Loop-safety budgets (§7) — its own research topic, colony-gating.
+- Loop-safety budgets (§7) — graduated to design
+  [`0006-loop-safety.md`](0006-loop-safety.md); colony-gating until
+  built into the admission path.
 - Runtime join/leave (a declared agent's topic set changing without a
   restart) — imps design 0003's reversal condition, watched, unfired.
 - Descendant tag scoping (`{{tag(topic)}}.>`) — untested, per the

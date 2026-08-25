@@ -173,6 +173,24 @@ eg-walker live co-editing, sealed topics, and a browser/WebSocket client.
 
 ### soulstream-workloads — the room (as of 2026-08-25; named soulrealm until episode 0069)
 
+**Loop safety is ANSWERED — the colony gate has a mechanism** ([episode
+0128](0128-ecosystem-loop-safety.md); design
+[`0006-loop-safety.md`](../02-DESIGN/soulstream-workloads/0006-loop-safety.md)):
+all four pre-registered bars PASS [measured], same day as its opening. The
+danger is a number now — an unenforced three-agent colony amplified one
+human op into 434 ops in 0.34s (1,264.7 ops/s), doubling per generation —
+and the composed wake budget at admission (authorship-window floor,
+unforgeable because authorship is mechanical; provable-chain depth bound
+over the `WakeOpID` UUIDv5 binding) halted every measured cascade at its
+pre-computed bound: the uncooperative ping-pong at exactly D, the
+id-evading self-post cascade at exactly 2K, the colony at exactly N·K —
+while a legitimate owner→A→B→A delegation completed with zero refusals.
+Refuted by measurement: a budget in the harness slot (refusal became a
+312-turn failure ping-pong — the gate sits at admission, op-less and
+loud, or nowhere) and depth alone (404/404 self-posted outcomes invisible
+to record-only ancestry). Not yet built; colonies unblock when the budget
+ships in the admission path.
+
 **Agent declaration is DESIGNED — all four research bars measured**
 ([episode 0126](0126-ecosystem-agent-declaration.md); design
 [`0005-agent-declaration.md`](../02-DESIGN/soulstream-workloads/0005-agent-declaration.md)):
@@ -185,7 +203,8 @@ ride the one additive `SOULSTREAM_SYSTEM` stream; the declare flow is
 composition of shipped surfaces end to end. Not yet built — the
 enforcement-read gap `[O]` (widened scope vs runtime reads) decides
 first, and mention-wake agents ship before topic-wake colonies
-(loop-safety research is the colony gate).
+(loop-safety graduated to design 0006, episode 0128 — the colony gate is
+now a build, not a question).
 
 **The fleet lands — v0.6.0, placement IS work.claim** ([episode
 0113](0113-workloads-placement-is-work-claim.md)): a submission is an
@@ -240,8 +259,8 @@ template, not code. Design
 [`0004-wrap.md`](../02-DESIGN/soulstream-workloads/0004-wrap.md):
 the workload plane's trigger arm, with support-layer standing (the waker
 mints for the agent; the agent cannot mint for itself). Loop safety
-(agent-wakes-agent) is named **[O]** and leaves as a successor topic — now
-carrying two measured exhibits.
+(agent-wakes-agent) was named **[O]** here and left as a successor topic —
+answered in [episode 0128](0128-ecosystem-loop-safety.md).
 
 **Soulstream is pinned at v0.6.0 — the dev replace is gone** ([episode
 0011](0037-soulrealm-pinned-to-the-record.md)): soulnode's composition research named
@@ -1549,6 +1568,7 @@ the operator lives on the candidate; what chafes decides.
 | 0125 | ecosystem | [The presence lease builds: the lamp lights (2026-08-24)](0125-ecosystem-the-presence-lease-builds.md) |
 | 0126 | ecosystem | [Agent declaration: the record declares, the room runs (2026-08-23 → 2026-08-25)](0126-ecosystem-agent-declaration.md) |
 | 0127 | shell | [The first hour builds: the card derives, the roster breathes (2026-08-25)](0127-shell-the-first-hour-builds.md) |
+| 0128 | ecosystem | [Loop safety: the room budgets the cascade (2026-08-25)](0128-ecosystem-loop-safety.md) |
 
 ## The naming map (2026-08-13)
 
