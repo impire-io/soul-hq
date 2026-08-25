@@ -84,6 +84,32 @@ not weakened.
 
 ## Verdict
 
-<Empty until graduation. Filled by /research-graduate: PASS/FAIL per bar with the
-honest numbers, each load-bearing claim tagged [measured] / [mechanism-argument]
-/ [judgment].>
+All four bars **PASS**, none amended. Full suite `-race -count=1` green,
+45.9s, embedded JetStream, real component libraries.
+
+- **Bar 1 PASS [measured]:** 421 agent turns in 5.0s (84.2 wakes/s
+  unenforced), 421/421 resolved to a human root from the record alone, 0
+  ambiguous; three concurrent cascades cleanly separated (3 turns per
+  depth, depths 1–141). Hazard confirmed and total [measured]: the
+  self-posted (MCP-arm) variant left 404/404 unresolvable.
+- **Bar 2 PASS [measured]:** admission-time `depth(D=4)` halted the
+  maximally uncooperative ping-pong at exactly 4 outcomes (the
+  pre-computed bound), 1 op-less loud refusal. Depth alone evaded by
+  self-posts (393 turns in 3s, 0 refusals) [measured]; the
+  authorship-window budget (K=3/min) halted the same evading cascade at
+  exactly 2K=6 [measured]. Gate placement decided [measured]: a refusal
+  in the harness slot became a 312-turn failure ping-pong (156
+  self-reports) — the gate sits at admission or nowhere.
+- **Bar 3 PASS [measured]:** composed budget (depth 5, window 5/min),
+  human-rooted owner→A→B→A delegation: exactly 3 outcomes, 0 refusals,
+  depths {1,2,3}, all chained to root.
+- **Bar 4 PASS [measured]:** colony of 3 topic-wake agents, unenforced:
+  434 ops in 0.34s (1,264.7 ops/s) from one human op, doubling per
+  generation (3→192). Window K=3: exactly N·K=9 ops, 12 loud refusals; a
+  probe op drew +3 refusals and 0 new ops — parked and loud, not wedged.
+
+The direction: a **composed budget at wake admission** — authorship-window
+as the unforgeable enforcement floor, provable-chain depth as the tight
+bound and diagnostic [measured]; refusals op-less and loud
+[measured + mechanism-argument]; budget exhaustion is a delay, not a loss
+[mechanism-argument]. Neither reversal observable fired.
