@@ -786,7 +786,20 @@ questions before their milestones (NGS callout
 capabilities, the sentinel-credential flow, the first-key story, the
 claims-mapping shape, service round-trip latency) are named on the roadmap.
 
-### soulstream — the product, the house (as of 2026-08-24; named soulnode until episode 0069)
+### soulstream — the product, the house (as of 2026-08-25; named soulnode until episode 0069)
+
+**v0.14.0-rc.1 — the rc carries both builds, brew-installable**
+([episode 0132](0132-soulstream-the-rc-carries-both-builds.md)): pins
+to core `v0.14.0-rc.1` (system stream + sealed topics) and workloads
+`v0.8.0-rc.1` (the agent declaration), the wrap verb grows
+`--declaration` (the same thin-main wiring as `soulstream-wrap`), and
+`init`/`up` provisions `SOULSTREAM_SYSTEM` for free. The tap formula
+moved with the release — `brew install impire-io/tap/soulstream`
+serves the rc; the darwin_arm64 tarball's binary verified from the
+outside [measured]. One defect died on the way: the spec-011 rig's
+fixed-port bind (8378 race under package parallelism) — the flake
+fixed on main with the foldplane pattern. The byon soak stays on the
+v0.13.0-rc line; adopting the rc there is the operator's own act.
 
 **The wrap announces itself and lights its lamp — branch
 `011-presence-lease`** ([episode
@@ -1617,6 +1630,7 @@ the operator lives on the candidate; what chafes decides.
 | 0129 | workloads | [The wake budget builds: the colony gate ships (2026-08-25)](0129-workloads-the-wake-budget-builds.md) |
 | 0130 | ecosystem | [The agent declaration builds: the record declares, the room runs (2026-08-25)](0130-ecosystem-the-agent-declaration-builds.md) |
 | 0131 | core | [Sealed topics build: the locked binder (2026-08-25)](0131-core-sealed-topics-build.md) |
+| 0132 | soulstream | [The rc carries both builds: v0.14.0-rc.1 across the stack (2026-08-25)](0132-soulstream-the-rc-carries-both-builds.md) |
 
 ## The naming map (2026-08-13)
 
