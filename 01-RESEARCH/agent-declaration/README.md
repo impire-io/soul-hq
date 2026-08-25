@@ -108,6 +108,43 @@ Written now, phrased as observable readings:
 
 ## Verdict
 
-*Empty until graduation. Filled by `/research-graduate`: PASS/FAIL per bar
-with the honest numbers, each load-bearing claim tagged [measured] /
-[mechanism-argument] / [judgment].*
+Graduated `--to design` 2026-08-25 (episode 0126; design
+[`0005-agent-declaration.md`](../../02-DESIGN/soulstream-workloads/0005-agent-declaration.md)).
+
+- **Bar 1 — PASS [measured].** 4/4 wake sources fired from one
+  declaration on the live rig; every stream-backed wake in a
+  mid-backlog restart answered exactly once at both the stream level
+  (count per outcome id == 1) and the attempt level (post attempts
+  across two dispatcher lives == 1); the core-subject wake fired while
+  the dispatcher was down was lost — at-most-once, measured, becoming
+  the vocabulary's delivery-class seam. Single run 5.43s;
+  `-race -count=3` green 18.6s. Schedules needed one additive stream
+  (`SOULSTREAM_SYSTEM`, owner-named) — no core wire or stream change;
+  the fail condition never tripped.
+- **Bar 2 — PASS [measured].** Registration referenced a stage-1
+  artefact, never a host path; revision B was served by the *running*
+  dispatcher on the next wake (no redeploy); a dispatcher death lost
+  scratch only — 2-revision lineage, tip, and every outcome intact;
+  authorship attributable end to end. 0.93s.
+- **Bar 3 — PASS [measured].** Identity plane in-process (D29 embed
+  seam); D28 `mint.ephemeral` against the declared role name with the
+  declaration's tools as tags; `SOULSTREAM.SVC.{{tag(tool)}}` scoped
+  template enforced at the transport — granted tool answered,
+  ungranted timed out with "Permissions Violation" on the agent
+  connection and **0** responder deliveries. Zero authorization code,
+  no policy store in the rig. First `{{tag()}}` template in ecosystem
+  Go code. 1.64s.
+- **Bar 4 — PASS [measured].** The full declare flow drove through
+  shipped surfaces only: attestation token → self-published profile
+  ("attested"), instructions + registration as artefacts, placement as
+  `work.open`, the dispatcher booting from the registration read back
+  out of the record, timeline `open:owner → claim:sprite →
+  done:sprite`. The only missing piece is the verb that sequences the
+  steps — composition by definition. 0.41s; full suite
+  `-race -count=2` green 18.9s.
+
+Neither reversal condition fired: nothing agent-shaped lives outside
+the record (the role-key import is the identity pillar's own per-role
+provisioning [mechanism-argument]), and no code path branches on human
+vs machine. Teach-back survived 2026-08-24 with two precisions; the
+liveness follow-on dissolved into the decided presence extension.
