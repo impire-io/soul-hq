@@ -1,12 +1,15 @@
 # 0003 — Fleet
 
 **Status of this document:** graduated from the `fleet` research topic
-(episode [0010](../../04-JOURNEY/0033-soulrealm-fleet.md)); **not yet built** — the
-spec-kit pass for the first Fleet milestone starts from here. All three
+(episode [0010](../../04-JOURNEY/0033-soulrealm-fleet.md)); **M3.1 built
+2026-08-19** ([episode 0113](../../04-JOURNEY/0113-workloads-placement-is-work-claim.md),
+`v0.6.0`): placement IS work.claim, sweep + probe-before-abandon reclaim,
+measured on two nodes against one realm. Remaining fleet horizons (the
+serve loop, further enrollment rungs) stay by demand. All three
 pre-registered research bars were **measured PASS** via spikes (placement,
 node death, seedless scoped launch), plus a measured post-bar follow-up
 (tag-template scoped minting). Tags mark what is validated **[V]** (by
-research spike — no fleet feature has landed), decided **[D]**, and open
+research spike or the landed M3.1 build), decided **[D]**, and open
 **[O]**, per [`README.md`](README.md).
 
 Seam vocabulary per [`0001-soulrealm-runtime.md`](0001-soulrealm-runtime.md);
