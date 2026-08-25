@@ -171,7 +171,21 @@ is *not* yet built is the rest of the forward plan in
 [`../03-IMPLEMENTATION/ROADMAP.md`](../03-IMPLEMENTATION/ROADMAP.md):
 eg-walker live co-editing, sealed topics, and a browser/WebSocket client.
 
-### soulstream-workloads — the room (as of 2026-08-19; named soulrealm until episode 0069)
+### soulstream-workloads — the room (as of 2026-08-25; named soulrealm until episode 0069)
+
+**Agent declaration is DESIGNED — all four research bars measured**
+([episode 0126](0126-ecosystem-agent-declaration.md); design
+[`0005-agent-declaration.md`](../02-DESIGN/soulstream-workloads/0005-agent-declaration.md)):
+the declaration grows `wake` (four kinds with honest delivery classes;
+the trigger vocabulary the roadmap named), `instructions` (a stage-1
+artefact materialised per wake — revision reaches a running agent with
+no redeploy), and `capabilities` (names resolved by D28 tag-template
+mints — the ecosystem's first measured `{{tag()}}` template); schedules
+ride the one additive `SOULSTREAM_SYSTEM` stream; the declare flow is
+composition of shipped surfaces end to end. Not yet built — the
+enforcement-read gap `[O]` (widened scope vs runtime reads) decides
+first, and mention-wake agents ship before topic-wake colonies
+(loop-safety research is the colony gate).
 
 **The fleet lands — v0.6.0, placement IS work.claim** ([episode
 0113](0113-workloads-placement-is-work-claim.md)): a submission is an
@@ -179,9 +193,8 @@ ordinary work item, every idle node races, the log decides — measured
 on two nodes, four contested placements each run by exactly one node,
 a live owner never reclaimed and a silent one reclaimed as an ordinary
 abandon with no double close, no probe traffic on the stream, and the
-runner/declaration/backend seams untouched. Named, not built: the
-declaration trigger vocabulary (now unblocked) and a long-running
-serve loop.
+runner/declaration/backend seams untouched. Named, not built: a
+long-running serve loop.
 
 **The template grew `mcp_args` — a subcommand can be the tool door**
 ([episode 0089](0089-ecosystem-wrap-in-the-house.md);
@@ -1518,6 +1531,7 @@ the operator lives on the candidate; what chafes decides.
 | 0123 | shell | [The sheet shape: tables lead, forms slide over, keys ask first (2026-08-23)](0123-shell-the-sheet-shape.md) |
 | 0124 | ecosystem | [The first hour and the presence lease (2026-08-23 → 2026-08-24)](0124-ecosystem-the-first-hour-and-the-presence-lease.md) |
 | 0125 | ecosystem | [The presence lease builds: the lamp lights (2026-08-24)](0125-ecosystem-the-presence-lease-builds.md) |
+| 0126 | ecosystem | [Agent declaration: the record declares, the room runs (2026-08-23 → 2026-08-25)](0126-ecosystem-agent-declaration.md) |
 
 ## The naming map (2026-08-13)
 
