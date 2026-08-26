@@ -8,11 +8,12 @@
 //     IssuerAccount=tenant, signed by the tenant's signing key.
 //
 // Two server-side unknowns the recon flagged, measured in isolation:
-//   Q1 (scoped-on-plain-key): does the server admit a SetScoped(true) user
-//       signed by a PLAIN signing key, and what permissions does it get?
-//   Q2 (allowed_accounts): can a callout-issued user land in a freshly-created
-//       tenant that AUTH.allowed_accounts does not list — and does amending
-//       allowed_accounts fix it, at what cost?
+//
+//	Q1 (scoped-on-plain-key): does the server admit a SetScoped(true) user
+//	    signed by a PLAIN signing key, and what permissions does it get?
+//	Q2 (allowed_accounts): can a callout-issued user land in a freshly-created
+//	    tenant that AUTH.allowed_accounts does not list — and does amending
+//	    allowed_accounts fix it, at what cost?
 package main
 
 import (
@@ -195,8 +196,8 @@ func main() {
 	defer sysConn.Close()
 
 	// --- BIRTH: create tenant "acme" as one act (mirror localoperator). ---
-	acmeKP, acmePub := acct()          // the tenant account identity
-	acmeSKKP, acmeSKPub := acct()      // its signing key (plain)
+	acmeKP, acmePub := acct()     // the tenant account identity
+	acmeSKKP, acmeSKPub := acct() // its signing key (plain)
 	acmeSKSeed, _ := acmeSKKP.Seed()
 	_ = acmeSKSeed
 	born := time.Now()

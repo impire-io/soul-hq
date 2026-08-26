@@ -1,21 +1,21 @@
 // Bar 4 rig — the multi-tenant human, expressible and loud. Three clauses:
 //
-//  C1 (token lane): one human, two API tokens into tenants A and B, admits
-//      into both; the two admitted identities are isolated (neither reaches
-//      the other's account subjects) — cross-tenant action refused by the server.
+//	C1 (token lane): one human, two API tokens into tenants A and B, admits
+//	    into both; the two admitted identities are isolated (neither reaches
+//	    the other's account subjects) — cross-tenant action refused by the server.
 //
-//  C2 (OIDC ambiguity): D24's roleFor refuses a subject whose roles claim names
-//      two declared tenants — deterministically, regardless of claim order.
-//      roleFor is reproduced verbatim from issuer.go:241-267 and fuzzed over
-//      orderings; the code-trace argument (a length count cannot depend on
-//      order) is the mechanism, the fuzz is the demonstration.
+//	C2 (OIDC ambiguity): D24's roleFor refuses a subject whose roles claim names
+//	    two declared tenants — deterministically, regardless of claim order.
+//	    roleFor is reproduced verbatim from issuer.go:241-267 and fuzzed over
+//	    orderings; the code-trace argument (a length count cannot depend on
+//	    order) is the mechanism, the fuzz is the demonstration.
 //
-//  C3 (persona-name scope): the identity vault keys persona keys as
-//      "persona/<user>" with NO account component (service.go:524 +
-//      vault.GeneratePersonaKey), so a SHARED platform vault makes persona
-//      names GLOBAL across tenants — first-owner-wins, the second tenant's
-//      same-named user cannot sign. Reproduced behaviorally; the two
-//      resolution options are stated for the operator.
+//	C3 (persona-name scope): the identity vault keys persona keys as
+//	    "persona/<user>" with NO account component (service.go:524 +
+//	    vault.GeneratePersonaKey), so a SHARED platform vault makes persona
+//	    names GLOBAL across tenants — first-owner-wins, the second tenant's
+//	    same-named user cannot sign. Reproduced behaviorally; the two
+//	    resolution options are stated for the operator.
 package main
 
 import (

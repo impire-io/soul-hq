@@ -5,10 +5,11 @@
 // The mechanism (confirmed against nats-server's own TestJWTAccountProtectedImport):
 // an account may only DEFINE an import whose subject carries ITS OWN account
 // key at the token position. So isolation holds two ways:
-//   (1) runtime — a tenant's valid import routes only its own key; naming
-//       another tenant's key matches no import and reaches no responder;
-//   (2) definition — a tenant that tries to import ANOTHER tenant's key has
-//       its import rejected by the server, so the route never exists.
+//
+//	(1) runtime — a tenant's valid import routes only its own key; naming
+//	    another tenant's key matches no import and reaches no responder;
+//	(2) definition — a tenant that tries to import ANOTHER tenant's key has
+//	    its import rejected by the server, so the route never exists.
 //
 // The "surface" is a decision-free echo responder on the platform account:
 // it makes zero authorization decisions, so any isolation observed is the

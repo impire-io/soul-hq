@@ -174,7 +174,10 @@ func clauseC2() {
 		fmt.Printf("    roles=%v → %v\n", c, errStr(err))
 	}
 	// Single-tenant and none, for contrast.
-	oneOK := func() bool { r, e := roleForRepro([]string{"undeclared", roleA}, declared, authKey); return e == nil && r == roleA }()
+	oneOK := func() bool {
+		r, e := roleForRepro([]string{"undeclared", roleA}, declared, authKey)
+		return e == nil && r == roleA
+	}()
 	noneRefused := func() bool { _, e := roleForRepro([]string{"undeclared"}, declared, authKey); return e != nil }()
 
 	if allAmbiguous && oneOK && noneRefused {
@@ -249,7 +252,9 @@ func clauseC3() {
 
 func named(c *jwt.AccountClaims, n string) *jwt.AccountClaims { c.Name = n; return c }
 
-func mustEnc(claims interface{ Encode(nkeys.KeyPair) (string, error) }, kp nkeys.KeyPair) string {
+func mustEnc(claims interface {
+	Encode(nkeys.KeyPair) (string, error)
+}, kp nkeys.KeyPair) string {
 	tok, err := claims.Encode(kp)
 	die("encode", err)
 	return tok

@@ -89,6 +89,92 @@ with the run recorded.
 
 ## Verdict
 
-<Empty until graduation. Filled by /research-graduate: PASS/FAIL per bar with the
-honest numbers, each load-bearing claim tagged [measured] / [mechanism-argument]
-/ [judgment].>
+*All four bars measured 2026-08-26 (rigs preserved in `rigs/`, full
+detail in [`JOURNEY.md`](JOURNEY.md)). The topic's own question —
+does the platform-services-account topology fit inside the core
+invariants — is answered **YES**: the reversal condition never fired
+(no wire change beyond additive vocabulary, no mutual import across the
+cycle guard, no privileged identity tier; the cross-account export path
+preserves the D15 proof). The topology is **sound and belongs in the
+architecture**. It is not free: the bars surfaced two required fixes,
+one required design discipline, and two operator decisions, all
+localised to the identity plane — none touching the wire or a core
+invariant.*
+
+**Bar 1 — cross-account export preserves the principal proof: PASS**
+[measured, 3 runs; mechanism-argument from nats-server's own
+`TestJWTAccountProtectedImport`]. `account_token_position` enforces at
+import-definition time: a tenant can only import its own account key at
+the token position, so it cannot construct a route to another tenant's
+surface. Server-refused (no-responder), zero service-side decisions, a
+negative control confirming the position is the load-bearing mechanism.
+The D15 proof extends across the account boundary by export
+configuration alone — the topology's central seam is real.
+
+**Bar 2 — one-act tenant birth and admission: CONDITIONAL PASS**
+[measured, 5 runs]. Birth is one fast act (395–776µs; 0110's 1.69ms
+full-engine number corroborated) and the combined-fix admission works
+end to end (callout round trip 2–3.5ms, well under the 5s bar). BUT the
+as-built authority cannot birth a *usable* tenant — two measured,
+required fixes: **(1)** `accounts.create` never adds the new tenant to
+AUTH `allowed_accounts`, so the callout refuses admission
+(`Authorization Violation`); **(2)** it installs the tenant signing key
+*plain* while every mint issues `SetScoped(true)` users, so the minted
+user inherits 0-subscription/0-payload sentinel limits — **admitted but
+inert**. Both fixes measured sufficient (install the signing key as a
+scoped signer with the persona template; add the tenant to
+`allowed_accounts`). The product wires none of this today (`SystemConn`
+absent, no client/CLI surface for `accounts.*`).
+
+**Bar 3 — isolation holds through shared services: PASS** [measured, 3
+runs, on real provisioned `SOULSTREAM` streams]. The only shared-service
+model that composes with account isolation is per-tenant connections;
+under it, a tenant-A principal cannot read (P1) or write (P2) tenant B's
+account data, cannot address the service's B-connection (P3), and a
+client-supplied tenant claim is ignored — the connection decides, never
+the payload (P5, D15 for shared services); every service act lands in
+exactly one tenant's stream (P4). Two disciplines the design must
+record: per-tenant account-scoped connections, and tenant-from-connection
+never-from-payload.
+
+**Bar 4 — the multi-tenant human: PASS, with a finding and a decision**
+[measured, 3 runs; C2/C3 reproduce the identity algorithms verbatim].
+Token lane (C1): the same human holds two tokens into two tenants,
+admitted to both and server-isolated — 0064-S2 is a non-issue for the
+token lane. OIDC lane (C2): D24's ambiguity refusal is deterministic and
+order-independent (a length count), so an OIDC human assigned into two
+tenants **cannot connect** — the **operator decision**: add an explicit
+tenant-selection input to the OIDC lane, or keep the deliberate refusal.
+Persona-name scope (C3): the vault keys persona keys as `persona/<user>`
+with no account component, so a shared platform vault **silently shadows**
+same-named personas across tenants (fails the bar's no-silent-shadowing
+clause) — a **required fix**: make persona-key names account-scoped
+(per-tenant vault buckets, or a `persona/<account>/<user>` D26
+clean-break rename; the control proves the latter).
+
+### What graduation-to-design must carry
+
+Recommended outcome: **`--to design`** — the topology is viable and the
+design should capture the seam and the fixes. The design cycle must
+resolve, with the operator, the decisions the bars reserved:
+
+1. **Persona-name scope** (Bar 4 C3, required): per-tenant vault vs.
+   account-scoped persona-key rename. Natural companion to the S1
+   realm→account rename.
+2. **OIDC multi-tenant humans** (Bar 4 C2, decision): tenant-selection
+   mechanism vs. keep the two-tenant refusal.
+3. **Where the AUTH `allowed_accounts` coupling is performed** (Bar 2,
+   required): folded into `accounts.create`, or a stated separate act.
+4. **Tenant signing key as a scoped signer** (Bar 2, required): the
+   authority must install the persona template, not a plain key.
+5. **The export seam** (Bar 1): `account_token_position = P+2`, adopting
+   D14/D15's already-designed extension path as the platform surface's
+   deployment shape.
+6. **Shared-service disciplines** (Bar 3): per-tenant connections;
+   tenant derived from the server-proven connection, never a payload.
+
+Items 1–2 are genuine operator direction calls (the decision test:
+options remain, so they wait for the human); 3–6 are mechanical and
+measured-sufficient. Graduation held for the operator's ratification of
+direction — the *research* is complete; the *direction decision* is the
+operator's.

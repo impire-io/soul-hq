@@ -9,11 +9,12 @@
 // This rig provisions REAL SOULSTREAM streams (soulstream-core/realm.ProvisionOn)
 // in two tenant accounts A and B, runs a shared service holding one connection
 // into each, and fires adversarial probes from a principal in A:
-//   P1  A reads B's SOULSTREAM stream directly            → must refuse
-//   P2  A writes B's account subjects directly            → must refuse
-//   P3  A drives the shared service to act in B           → must be impossible
-//   P4  the service's act on A's behalf lands in A's      → attribution/isolation
-//       stream, never B's
+//
+//	P1  A reads B's SOULSTREAM stream directly            → must refuse
+//	P2  A writes B's account subjects directly            → must refuse
+//	P3  A drives the shared service to act in B           → must be impossible
+//	P4  the service's act on A's behalf lands in A's      → attribution/isolation
+//	    stream, never B's
 package main
 
 import (
@@ -44,7 +45,9 @@ func acct() (nkeys.KeyPair, string) {
 	return kp, pub
 }
 
-func enc(c interface{ Encode(nkeys.KeyPair) (string, error) }, kp nkeys.KeyPair) string {
+func enc(c interface {
+	Encode(nkeys.KeyPair) (string, error)
+}, kp nkeys.KeyPair) string {
 	t, err := c.Encode(kp)
 	die("encode", err)
 	return t
