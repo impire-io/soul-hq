@@ -244,3 +244,52 @@ same-named personas across tenants today. Option (b) is the smaller,
 cleaner change and is a natural companion to the S1 realm→account
 rename. No wire change, no core-invariant breach; reversal condition
 unfired.
+
+## 2026-08-26 — Bar 3: isolation holds through shared services — **PASS** [measured]
+
+Rig `rigs/bar3/` provisions **real `SOULSTREAM` streams**
+(`soulstream-core/realm.ProvisionOn`) in two tenant accounts A and B,
+runs one shared service (an archivist/runtime stand-in) holding a
+scoped connection into *each* tenant, and fires adversarial probes from
+a scoped tenant-A principal. 3 runs, all probes stable.
+
+**The topology fact this establishes**: the only shared-service model
+that composes with account isolation is **per-tenant connections** — the
+service shares process and code, never credentials, and reaches each
+tenant only through that tenant's own account-scoped connection. Under
+that model:
+
+- **P1 — direct cross-account read: unreachable by construction.** A's
+  JetStream API lists only A's own streams; B's `SOULSTREAM` is in a
+  separate account and there is no cross-account JS addressing — A
+  cannot even *name* B's stream.
+- **P2 — direct cross-account write: refused.** A's publish to
+  `SOULSTREAM.TOPICS.*` stays in A's account; a B-account watcher sees
+  nothing (both accounts reuse the subject *name*, but they are
+  different accounts' streams).
+- **P3 — driving the shared service: A reaches only the service's
+  A-connection.** A's request to `SOULSTREAM.MEMORY.REQUEST` is served
+  by the service's A-side subscription (server-proven), and A can never
+  address the B-side subscription (it lives on B's account).
+- **P5 — the one real break, refused: a client-supplied tenant is
+  ignored.** A sends a payload *claiming* tenant "B"; the correctly-built
+  service serves A anyway, because the **connection** decides the
+  tenant, never the payload. This is D15 ("the principal is the subject,
+  server-enforced, never client-claimed") applied to a shared service —
+  and it is the design rule the topology MUST state: a shared service
+  derives the target tenant from its server-proven connection, never
+  from a request argument. A service that trusted a payload tenant field
+  would be the one way to break isolation.
+- **P4 — attribution: every service act lands in exactly one tenant's
+  stream.** The service's act on A's behalf lands in A's `SOULSTREAM`
+  (msgs≥1) and B's stays untouched (msgs=0).
+
+**Reading**: Bar 3 met. Isolation through shared services holds — not
+by a new check, but by construction, provided two disciplines the
+design must record: (1) shared services reach tenants via per-tenant
+account-scoped connections (never a single connection spanning
+tenants), and (2) they derive the acting tenant from the server-proven
+connection, never from request payloads (P5, the D15 rule). Both are
+statements of existing Soulstream invariants extended to the multi-
+tenant service, not new machinery. No wire change, no core-invariant
+breach; reversal condition unfired.
