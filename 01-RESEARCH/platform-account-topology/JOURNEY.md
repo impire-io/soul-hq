@@ -101,3 +101,74 @@ permissions violation — structural absence of a route, which is the
 strongest possible refusal (the caller cannot express the request at
 all) but is worth stating plainly: a probing tenant sees a timeout-class
 silence, not an error naming the boundary.
+
+## 2026-08-26 — Bar 2: one-act tenant birth and admission — **CONDITIONAL PASS, two required fixes found** [measured]
+
+Rig `rigs/bar2/` reproduces the exact JWT shapes the identity code
+produces (cited to `localoperator.go` buildJWT and `mint.go`
+claims()+ephemeral) so the server behaviour it measures is the
+behaviour the product would get. It isolates the two unknowns the
+recon flagged. 5 runs, spreads reported.
+
+**Timing — the one-act birth is fast and clean.**
+- Tenant birth (the `$SYS.REQ.CLAIMS.UPDATE` push, one act): **395µs –
+  776µs** [measured, 5 runs] — corroborating episode 0110's full-engine
+  1.69ms (which also does the vault import). Well under the 100ms bar.
+- AUTH `allowed_accounts` amend land: **1.1 – 1.5ms**.
+- Callout admission round trip (combined-fix tenant): **2.0 – 3.5ms**.
+- create → first *working* token admission is therefore **single-digit
+  ms**, against the 5s bar — enormous margin, *once the two fixes below
+  are applied*.
+
+**But as-built, `accounts.create` cannot birth a *usable* tenant.**
+Two independent gaps, each measured:
+
+1. **The AUTH `allowed_accounts` coupling (Q2a) — CONFIRMED.** A
+   callout-issued user for the freshly-created tenant draws
+   `nats: Authorization Violation` at connect, every run: the issuer may
+   only place users into accounts AUTH lists (D21), and `accounts.create`
+   never amends the AUTH JWT (`localoperator.go` touches only the tenant
+   JWT). Fix measured sufficient: add the tenant to `allowed_accounts`
+   and re-land the AUTH JWT (a second one-act push, 1.1–1.5ms) — Q2b/Q2c
+   then admit.
+
+2. **Scoped-mint-on-plain-key = an INERT user (Q1) — a real defect.**
+   The mint issues `SetScoped(true)` users (`mint.go` claims()), but
+   `accounts.create` installs the tenant signing key with plain
+   `SigningKeys.Add` (`localoperator.go:57`), *not* `AddScopedSigner`
+   with a permission template. A scoped user whose signing key carries
+   no scope template inherits the scoped **sentinel limits (0
+   subscriptions / 0 payload)**: the server *admits the connection* but
+   it is **inert** — cannot subscribe or publish anything. The signal
+   surfaces either at connect or at first subscribe (both
+   `maximum subscriptions exceeded`), same 0-limit cause. So episode
+   0110's "the existing mint path serves the new tenant the moment the
+   op returns" is **false through admission**: the minted user connects
+   dead. Fix measured sufficient (Q1c / Q2c): install the tenant signing
+   key as a **scoped signer carrying the persona template** (the same
+   `personaScope` template `ceremony.go` gives the founding realm) — the
+   minted user then gets the correct persona permissions (realm subjects
+   and `$JS.API.>` allowed, foreign subjects denied by permissions
+   violation).
+
+**The combined fix works, end to end (Q2c) [measured].** A tenant born
+with a scoped-signer signing key *and* added to `allowed_accounts`
+admits a callout user in 2–3.5ms whose permissions are exactly the
+persona template — realm allowed, foreign denied. So the topology's
+tenant-birth path is sound; the current code is two small, local edits
+short of delivering it.
+
+**Reading**: Bar 2's mechanism passes with margin, but the pre-registered
+"one-act tenant birth through the product" is **not** what ships today —
+it is a **three-act** sequence the product does not wire at all
+(`SystemConn` absent, no client/CLI surface for `accounts.*`), and even
+driven directly the authority produces an inert tenant. The topic's
+build list gains two concrete, measured items:
+(a) `accounts.create` must add the new tenant to AUTH `allowed_accounts`
+    (or the design must state where that coupling is performed), and
+(b) the tenant signing key must be installed as a scoped signer with the
+    persona template, not plain — otherwise every minted tenant user is
+    inert.
+Neither is a wire change or a core-invariant breach (the reversal
+condition stays unfired); both are localised to the identity plane's
+tenancy authority. Flagged for the operator's build-order review.
