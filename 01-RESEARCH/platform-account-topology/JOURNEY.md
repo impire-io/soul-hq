@@ -172,3 +172,75 @@ build list gains two concrete, measured items:
 Neither is a wire change or a core-invariant breach (the reversal
 condition stays unfired); both are localised to the identity plane's
 tenancy authority. Flagged for the operator's build-order review.
+
+## 2026-08-26 — Bar 4: the multi-tenant human — **PASS, with one finding and one operator decision** [measured]
+
+Rig `rigs/bar4/`, three clauses. C1 is a live callout rig; C2 and C3
+reproduce the exact algorithms verbatim from the identity code (cited)
+and demonstrate their properties behaviorally.
+
+**C1 — the token lane multi-tenant human: PASS** [measured, 3 runs].
+The same human holds two API tokens — `(A, daan)` and `(B, daan)` — and
+is admitted into *both* tenants, each connection scoped to its own
+tenant. Tenant A's identity cannot reach tenant B's account subjects
+(server-isolated, even though both use the `SOULSTREAM.>` subject name —
+they are different accounts' streams). So the 0064-S2 "a principal
+belongs to exactly one account" constraint is a **non-issue for the
+token lane**: multi-tenancy for a human is two tokens, not one identity
+spanning accounts. Nothing to build.
+
+**C2 — the OIDC lane multi-tenant human: the D24 refusal is
+deterministic and order-independent: PASS** [measured; mechanism-argument
+from `issuer.go:241-267`]. `roleFor` collects *every* declared role
+match, then decides on `len(declared)` — 0 refuses, 1 admits, >1 refuses
+"ambiguous". A length count cannot depend on order, and the fuzz
+confirms it: a subject holding two declared-tenant roles refuses as
+ambiguous in **every** ordering and with noise/undeclared/auth-key
+values interleaved; exactly one declared role admits; none refuses. The
+consequence, named honestly: **an OIDC human assigned into two tenants
+cannot connect at all** — the lane has no tenant-selection mechanism, by
+design (claim order must never decide authorization). The bar is met
+(the behavior is deterministic and named); the *decision* it surfaces
+for the operator: if multi-tenant OIDC humans are a requirement, the
+OIDC lane needs an explicit tenant-selection input (e.g. per-tenant
+audience, or a connect-time account hint) — a contained D24 reopening,
+not an architecture change. If they are not, the deliberate refusal
+stands and is correct.
+
+**C3 — persona-name scope: a real finding — SILENT cross-tenant
+shadowing as-built** [measured, code trace]. The identity vault keys
+persona keys as `persona/<user>` with **no account component**
+(`service.go:524` `PersonaKeyPrefix + user`; `vault.GeneratePersonaKey`
+collision check on that bare key). So a **single shared platform vault
+makes persona names GLOBAL across all tenants**: tenant A's `daan` signs
+first and materializes `persona/daan` bound to A; tenant B's `daan` then
+hits the same vault key, mismatches the owner, and its signing is
+**refused** — and refused *silently*, because `service.go`'s
+anti-probing rule maps it to the generic "has no persona key" without
+naming the first owner (D26). The pre-registered bar wanted "either
+signs in both, or the second refuses **loudly naming the first owner** —
+no silent shadowing." As-built with a shared vault, it is **exactly the
+silent shadowing the bar rules out** — so this clause **fails as-built**
+and needs resolution for the topology. Two options, the control proving
+option (b):
+  - **(a) per-tenant vault buckets** — each tenant's identity plane holds
+    its own vault; `persona/daan` in A ≠ `persona/daan` in B. Account-
+    scoped names, no collision. Cost: the "one identity plane" fragments
+    into per-tenant vaults, and the open `keys.public` directory read
+    becomes per-tenant.
+  - **(b) account-scoped persona-key names** — key persona keys as
+    `persona/<account>/<user>`; one shared vault, account-scoped names.
+    A D26 clean-break rename. The rig's control confirms both tenants'
+    `daan` then sign with no collision. This also makes room to render
+    the collision **loud** if one is ever wanted (there no longer is one).
+
+**Reading**: Bar 4 met for the token lane (works today) and for the
+OIDC lane's determinism (measured, order-independent). Two things for
+the operator: a **decision** — whether the OIDC lane gains tenant
+selection or keeps its deliberate two-tenant refusal — and a **required
+fix** for the topology — persona-name scope must become account-scoped
+(option a or b), because a shared platform vault silently shadows
+same-named personas across tenants today. Option (b) is the smaller,
+cleaner change and is a natural companion to the S1 realm→account
+rename. No wire change, no core-invariant breach; reversal condition
+unfired.
