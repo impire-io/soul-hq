@@ -39,7 +39,9 @@ The per-component summaries below were carried whole at the hq merge and are ref
 
 **Sealed topics BUILT — the locked binder** ([episode
 0131](0131-core-sealed-topics-build.md); `specs/021-sealed-topics`,
-merged `724f10d`, unreleased): the design-validated extension is real —
+merged `724f10d`, pre-released the same day in `v0.14.0-rc.1`,
+episode [0132](0132-soulstream-the-rc-carries-both-builds.md)): the
+design-validated extension is real —
 `sealed.op`/`sealed.epoch` with epoch and nonce inside the signed
 payload, the AAD splice matrix refusing every arm [measured], the Bar 3
 rollup re-carrying the wrapped-key table (a fresh member reads from the
@@ -52,7 +54,8 @@ have leaked. Eg-walker is now the last chafe-gated unbuilt core design.
 
 **The system stream lands — schedules ride the substrate** ([episode
 0130](0130-ecosystem-the-agent-declaration-builds.md); feature
-`020-system-stream`, merged `f0a09f2`, unreleased): `SOULSTREAM_SYSTEM`
+`020-system-stream`, merged `f0a09f2`, pre-released the same day in
+`v0.14.0-rc.1`): `SOULSTREAM_SYSTEM`
 provisioned create-or-report with `AllowMsgSchedules` + `AllowMsgTTL`
 and the `SCHEDULES`/`TICKS` subject helpers — non-record plumbing by
 taxonomy, server-generated, unsigned, never authoritative. The design
@@ -195,10 +198,27 @@ eg-walker live co-editing, sealed topics, and a browser/WebSocket client.
 
 ### soulstream-workloads — the room (as of 2026-08-27; named soulrealm until episode 0069)
 
+**The focus turns to the room's missing daemon — agents as
+infrastructure** ([episode
+0140](0140-ecosystem-the-focus-agents-as-infrastructure.md)): the
+operator's demand-driven direction the evening rc.2 shipped — the next
+builds are the **standing dispatcher** (submit-and-forget declared
+agents: design 0004 §9's recorded reversal condition firing by its own
+words) and the shell's declare surface, with **inference providers and
+models** named part of the storyline (a dispatcher-served agent has no
+signed-in person to wrap). Research `agents-as-infrastructure` is open
+with five pre-registered bars: submit-and-forget exactly-once across
+dispatcher restart, placement by the 0003 claim path, the 0006 budget
+measured at the dispatcher's admission, provider credentials custodied
+in the identity plane, and the whole loop drivable from the shell's
+pure-consumer position.
+
 **Capability minting is BUILT — the declaration's names become the
 credential** ([episode 0137](0137-ecosystem-capability-minting.md);
 `specs/010-capability-minting`, merged `14e95a0` + `2465dba`,
-unreleased): the schema-only `capabilities` block reaches the minter
+pre-released in `v0.8.0-rc.2`, episode
+[0139](0139-soulstream-the-rc2-carries-the-tenants-and-the-capabilities.md)):
+the schema-only `capabilities` block reaches the minter
 seam — `Scope` carries the selectors, `MintTags` renders the
 `tool:`/`topic:`/`persona:` vocabulary in one refusing surface (a
 subject-grammar value never leaves), the local minter narrows
@@ -455,7 +475,9 @@ soulidentity tags-on-mint addition gates the preferred minting path.
 **The sealed record gains its custodian — D9 builds** ([episode
 0138](0138-identity-the-sealed-record-gains-its-custodian.md); design
 [`sealing-keys.md`](../02-DESIGN/soulstream-identity/sealing-keys.md)
-D50–D53, `specs/005-sealing-custody` merged `72bd164`, unreleased):
+D50–D53, `specs/005-sealing-custody` merged `72bd164`, released in
+`v0.12.0`, episode
+[0139](0139-soulstream-the-rc2-carries-the-tenants-and-the-capabilities.md)):
 the `persona-sealing-key` vault kind with D26's first-touch clause
 realized, one `seal.unwrap` op releasing artifacts and never material,
 `keys.public` growing the `sealing/` grammar (one directory door), the
@@ -471,7 +493,7 @@ re-render note for pre-capability accounts.
 
 **The agent scope ships — one template, resolved per mint** ([episode
 0137](0137-ecosystem-capability-minting.md); `specs/004-agent-scope`,
-merged `e032687`, unreleased): the canonical agent capability template
+merged `e032687`, released in `v0.12.0`): the canonical agent capability template
 exported beside the persona scope (`AgentScopePubAllow/SubAllow`,
 `{{tag(topic)}}`/`{{tag(tool)}}`, notify by `{{name()}}` so
 reachability cannot drift from attribution), and research 0126's rig
@@ -484,7 +506,7 @@ consumer.
 
 **The BYON live run: two defects caught, then the provider arm
 measures sound** ([episode 0136](0136-identity-the-byon-live-run.md),
-identity `a0545c8`/`31279c6`, unreleased): the one bound episode 0135
+identity `a0545c8`/`31279c6`, released in `v0.12.0`): the one bound episode 0135
 left — the provider arm compile-proven, unmeasured — was paid in three
 runs against the real Synadia Cloud BYON system. Run one drew 400: the
 D47 amend patched `allowed_accounts` alone, and the JWT law refuses
@@ -522,7 +544,7 @@ shadows same-named personas across tenants, measured). Design:
 [`platform-topology.md`](../02-DESIGN/soulstream-identity/platform-topology.md).
 **D47 landed the same day** ([episode
 0134](0134-identity-tenants-born-admissible.md), identity `447ec6b`,
-unreleased): the tenant signing key is a scoped signer carrying the
+released in `v0.12.0`): the tenant signing key is a scoped signer carrying the
 canonical persona template (exported once from `client`, prefix-aware
 — the ceremony adopts the same source on its next touch), and creation
 amends AUTH `allowed_accounts` (idempotent, fail-closed between acts;
@@ -895,7 +917,23 @@ claims-mapping shape, service round-trip latency) are named on the roadmap.
 
 ### soulstream — the product, the house (as of 2026-08-27; named soulnode until episode 0069)
 
-**Capability minting in the house — spec 013, on main unreleased**
+**v0.14.0-rc.2 — the 08-27 arc becomes installable the evening it
+landed** ([episode
+0139](0139-soulstream-the-rc2-carries-the-tenants-and-the-capabilities.md)):
+the pins move from the day's pseudo-versions to named tags (`8f72f66`,
+the idp `v0.8.1` patch taken along) — identity `v0.12.0` (D47 + agent
+scope + sealing custodian), workloads `v0.8.0-rc.2` (capability
+minting, gate proven `GOWORK=off` against the pinned core), core
+unchanged at rc.1 — carrying specs 012 and 013. Verified from the
+outside [measured]: prerelease with all four tarballs, the tap at
+`0.14.0-rc.2`, the darwin_arm64 binary printing its version and
+answering `soulstream account`. The declaration story is now
+brew-installable end to end; that an agent still runs only where a
+person runs wrap became the next focus the same evening ([episode
+0140](0140-ecosystem-the-focus-agents-as-infrastructure.md)).
+
+**Capability minting in the house — spec 013, released in
+v0.14.0-rc.2 (episode 0139)**
 ([episode 0137](0137-ecosystem-capability-minting.md), merged
 `baf5a7e`): the founding grows the **agent capability key** — a scoped
 signer on the realm account rendering `client.AgentScope*`, beside the
@@ -909,11 +947,12 @@ refuse capability declarations by name before any op publishes
 (pre-v1 clean break); the identity vault gains **no** second role, so
 the token lane is untouched (the RoleForAccount finding, spec 013).
 The D47 persona-scope adoption rode along: the ceremony renders
-`client.PersonaScope*` from the one exported source. Standing
-exception: workloads/identity pins bump after their mains push (the
-0089 precedent).
+`client.PersonaScope*` from the one exported source. The standing
+exception (workloads/identity pins bump after their mains push, the
+0089 precedent) closed inside the rc.2 cut (episode 0139).
 
-**The house grew tenants — spec 012, on main unreleased** ([episode
+**The house grew tenants — spec 012, released in v0.14.0-rc.2
+(episode 0139)** ([episode
 0135](0135-ecosystem-the-residues-close.md)): the platform topology's
 product half, taken as a full cycle at the operator's direction. The
 embedded server's resolver became a **dir resolver** under
@@ -1385,7 +1424,17 @@ constraints — passkeys, not passwords; indistinguishable by design —
 and the roadmap sequences M1 (the OP skeleton) behind its KV-schema and
 key-lifecycle research. No product code exists yet.
 
-### soulstream-shell — the shell (as of 2026-08-25; named soulhelm until episode 0069)
+### soulstream-shell — the shell (as of 2026-08-27; named soulhelm until episode 0069)
+
+**The declare surface is the named next module — behind the
+dispatcher's submit op** ([episode
+0140](0140-ecosystem-the-focus-agents-as-infrastructure.md)): the
+agents-as-infrastructure focus's human end — authoring and submitting
+agent declarations from the shell. Its design waits for research
+`agents-as-infrastructure` to fix the submit op's shape; Bar 5 of that
+topic exists to prove the whole declare→submit→served→answer loop
+reachable from the shell's pure-consumer position before the module
+design is written (the one-way door holds by measurement, not hope).
 
 **The first hour BUILT — v0.11.0-rc.3, composed into the house the
 same day** ([episode 0127](0127-shell-the-first-hour-builds.md)):
@@ -1778,6 +1827,8 @@ the operator lives on the candidate; what chafes decides.
 | 0136 | identity | [The BYON live run: two defects caught, then the provider arm measures sound (2026-08-27)](0136-identity-the-byon-live-run.md) |
 | 0137 | ecosystem | [Capability minting: the declaration's names become the credential (2026-08-27)](0137-ecosystem-capability-minting.md) |
 | 0138 | identity | [The sealed record gains its custodian: D9 builds (2026-08-27)](0138-identity-the-sealed-record-gains-its-custodian.md) |
+| 0139 | soulstream | [The rc.2 carries the tenants and the capabilities: v0.14.0-rc.2, identity v0.12.0, workloads v0.8.0-rc.2 (2026-08-27)](0139-soulstream-the-rc2-carries-the-tenants-and-the-capabilities.md) |
+| 0140 | ecosystem | [The focus: agents as infrastructure (2026-08-27)](0140-ecosystem-the-focus-agents-as-infrastructure.md) |
 
 ## The naming map (2026-08-13)
 
