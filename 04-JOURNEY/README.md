@@ -193,7 +193,25 @@ is *not* yet built is the rest of the forward plan in
 [`../03-IMPLEMENTATION/ROADMAP.md`](../03-IMPLEMENTATION/ROADMAP.md):
 eg-walker live co-editing, sealed topics, and a browser/WebSocket client.
 
-### soulstream-workloads — the room (as of 2026-08-25; named soulrealm until episode 0069)
+### soulstream-workloads — the room (as of 2026-08-27; named soulrealm until episode 0069)
+
+**Capability minting is BUILT — the declaration's names become the
+credential** ([episode 0137](0137-ecosystem-capability-minting.md);
+`specs/010-capability-minting`, merged `14e95a0` + `2465dba`,
+unreleased): the schema-only `capabilities` block reaches the minter
+seam — `Scope` carries the selectors, `MintTags` renders the
+`tool:`/`topic:`/`persona:` vocabulary in one refusing surface (a
+subject-grammar value never leaves), the local minter narrows
+`SOULSTREAM.SVC.>` to exactly the declared tools (empty list grants
+none), and the operator rig measures granted-answers /
+ungranted-refused with zero responder deliveries [measured]. The
+load-bearing find rode the product wiring: the planned D28 vault-role
+import would trip the binding-resolved ambiguity refusal and break the
+token lane, so the scoped lane ships **local-first** —
+`ScopedSigningKeyMinter`, the identical D28 claim shape signed by a
+deployment-held role seed (open amendment in spec 010); the op lane
+stays the fleet-era path gated on the token lane's named-role answer.
+The repo still imports nothing of the identity plane.
 
 **Agent declaration is BUILT — the record declares, the room runs**
 ([episode 0130](0130-ecosystem-the-agent-declaration-builds.md);
@@ -433,6 +451,19 @@ unblocked. **Next:** the spec-kit pass for the first Fleet milestone; the
 soulidentity tags-on-mint addition gates the preferred minting path.
 
 ### soulstream-identity — the name (as of 2026-08-27; named soulidentity until episode 0069)
+
+**The agent scope ships — one template, resolved per mint** ([episode
+0137](0137-ecosystem-capability-minting.md); `specs/004-agent-scope`,
+merged `e032687`, unreleased): the canonical agent capability template
+exported beside the persona scope (`AgentScopePubAllow/SubAllow`,
+`{{tag(topic)}}`/`{{tag(tool)}}`, notify by `{{name()}}` so
+reachability cannot drift from attribution), and research 0126's rig
+reborn as a standing e2e that measured the arc's two open server
+behaviors: multi-value tag expansion (both tagged tools answer through
+one credential) and the zero-matching-tag line drop (a tool-less mint
+admits and reaches nothing) [measured]. No op, mint, or vault change —
+D28 already stamps tags; the tag-policy watch now has its first
+consumer.
 
 **The BYON live run: two defects caught, then the provider arm
 measures sound** ([episode 0136](0136-identity-the-byon-live-run.md),
@@ -846,6 +877,24 @@ capabilities, the sentinel-credential flow, the first-key story, the
 claims-mapping shape, service round-trip latency) are named on the roadmap.
 
 ### soulstream — the product, the house (as of 2026-08-27; named soulnode until episode 0069)
+
+**Capability minting in the house — spec 013, on main unreleased**
+([episode 0137](0137-ecosystem-capability-minting.md), merged
+`baf5a7e`): the founding grows the **agent capability key** — a scoped
+signer on the realm account rendering `client.AgentScope*`, beside the
+plain workload key — and the runtime plane routes capability-bearing
+declarations through the scoped lane on the state-held seed. Measured
+(TestM14): the granted scope-probe completes `done`; granting a
+different tool leaves the probe's own subject server-denied and the
+run abandons — the narrowing bites through the full authority chain
+[measured]. Legacy realms and BYON realms without the agent scope
+refuse capability declarations by name before any op publishes
+(pre-v1 clean break); the identity vault gains **no** second role, so
+the token lane is untouched (the RoleForAccount finding, spec 013).
+The D47 persona-scope adoption rode along: the ceremony renders
+`client.PersonaScope*` from the one exported source. Standing
+exception: workloads/identity pins bump after their mains push (the
+0089 precedent).
 
 **The house grew tenants — spec 012, on main unreleased** ([episode
 0135](0135-ecosystem-the-residues-close.md)): the platform topology's
@@ -1710,6 +1759,7 @@ the operator lives on the candidate; what chafes decides.
 | 0134 | identity | [Tenants are born admissible: D47 lands (2026-08-27)](0134-identity-tenants-born-admissible.md) |
 | 0135 | ecosystem | [The residues close: tenancy reaches the hand, both arms carry D47 (2026-08-27)](0135-ecosystem-the-residues-close.md) |
 | 0136 | identity | [The BYON live run: two defects caught, then the provider arm measures sound (2026-08-27)](0136-identity-the-byon-live-run.md) |
+| 0137 | ecosystem | [Capability minting: the declaration's names become the credential (2026-08-27)](0137-ecosystem-capability-minting.md) |
 
 ## The naming map (2026-08-13)
 

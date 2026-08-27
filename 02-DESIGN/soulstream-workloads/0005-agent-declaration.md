@@ -11,8 +11,12 @@ hole (the declaration trigger vocabulary) and closes wrap
 registrations-as-shell-objects questions. **BUILT 2026-08-25** ([episode
 0130](../../04-JOURNEY/0130-ecosystem-the-agent-declaration-builds.md);
 workloads `specs/009-agent-declaration`, core `specs/020-system-stream`)
-— §5's `[O]` resolved **runtime-side reads**; capabilities resolution is
-the named follow-on `capability-minting`.*
+— §5's `[O]` resolved **runtime-side reads**. Capabilities resolution
+BUILT 2026-08-27 ([episode
+0137](../../04-JOURNEY/0137-ecosystem-capability-minting.md); workloads
+`specs/010-capability-minting`, identity `specs/004-agent-scope`,
+soulstream `specs/013-capability-minting`) — with §5's as-built
+amendment: the scoped lane is local-first.*
 
 ## 1. What this adds — and what it refuses
 
@@ -107,6 +111,28 @@ tool answers; ungranted tool times out with a permissions violation on
 the agent's own connection and zero responder deliveries. Who may
 declare which tags stays the identity plane's named tag-policy item.
 
+**As built (2026-08-27, open amendment — [episode
+0137](../../04-JOURNEY/0137-ecosystem-capability-minting.md)): the
+scoped lane is local-first.** The D28 *op* was not wired: a second
+vault role bound to the realm account trips the binding-resolved
+ambiguity refusal (`RoleForAccount`, D5 as amended) and would break
+the token lane — measured by identity's M3 gate proof 6. The runtime's
+minter seam instead carries `ScopedSigningKeyMinter`: the identical
+D28 claim shape (permission-less `SetScoped` user, the scope's tags,
+required TTL) signed by the deployment-held agent role seed; the
+account template — `client.AgentScopePubAllow/SubAllow`, one exported
+source — stays the entire policy, server-enforced. The `mint.ephemeral`
+op lane remains the fleet-era path for seedless nodes, gated on the
+identity plane's named "token lane's named-role answer". Everything
+else in this section is as designed and measured, including the tag
+vocabulary (`tool:`/`topic:`/`persona:`, dual-written across the cycle
+guard, drift-courted by the product e2e) and the multi-tag expansion
+(both declared tools reachable through one credential — measured in
+identity's standing gate). Note for the tool catalog: the template
+presumes the `SOULSTREAM.SVC.<name>` serving convention
+`minter.ServiceSubject` encodes; a tool discoverable at another
+address is reachable only if its subject is also its name.
+
 **The enforcement-read gap — RESOLVED: runtime-side reads** (build
 decision, [episode
 0130](../../04-JOURNEY/0130-ecosystem-the-agent-declaration-builds.md)).
@@ -188,9 +214,12 @@ probe-before-abandon.
   0128](../../04-JOURNEY/0128-ecosystem-loop-safety.md)/[0129](../../04-JOURNEY/0129-workloads-the-wake-budget-builds.md));
   the shipped engine routes every wake kind through the budget at
   admission, so topic wakes carry their colony gate by construction.
-- Capabilities resolution — schema shipped; the D28 `mint.ephemeral`
-  tag lane is the named follow-on feature `capability-minting` (the
-  repo keeps no identity-plane dependency until that demand).
+- ~~Capabilities resolution~~ — BUILT 2026-08-27 ([episode
+  0137](../../04-JOURNEY/0137-ecosystem-capability-minting.md)),
+  local-first per §5's as-built amendment; the repo still has no
+  identity-plane dependency. Remaining behind it, named: the Synadia
+  BYON signing-key-group arm (live-run gated) and the D28 op lane for
+  seedless fleet nodes (gated on the token lane's named-role answer).
 - Runtime join/leave (a declared agent's topic set changing without a
   restart) — imps design 0003's reversal condition, watched, unfired.
 - Descendant tag scoping (`{{tag(topic)}}.>`) — untested, per the

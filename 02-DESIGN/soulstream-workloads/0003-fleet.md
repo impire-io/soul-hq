@@ -134,9 +134,16 @@ Two measured paths; the identity plane is preferred `[D]`:
   is rejected at connection — **a compromised mint path cannot
   over-scope**, a property the fallback lacks. For ephemeral mints the
   workload-side keypair is generated locally and only the *public* key
-  crosses the wire — no seed travels in either direction. Missing piece
-  `[O]`: soulstream-identity's mint does not stamp tags today (its M2 invites
-  consumer-proven additions); until it does, this path cannot ship.
+  crosses the wire — no seed travels in either direction. ~~Missing piece
+  `[O]`: soulstream-identity's mint does not stamp tags today~~ —
+  resolved: D28 landed tags 2026-07-31 (identity journey 0035), and
+  capability-minting consumed the lane 2026-08-27 ([episode
+  0137](../../04-JOURNEY/0137-ecosystem-capability-minting.md)) with one
+  measured caveat: the *vault-role* import this path sketched trips the
+  binding-resolved ambiguity refusal on the realm account, so the shipped
+  single-node lane signs locally from the state-held role seed
+  (`ScopedSigningKeyMinter`, identical claim shape); the op lane waits on
+  the token lane's named-role answer.
 - **Fallback — delegated minting** `[V]`: spike 3's shape, the current
   `SigningKeyMinter` behind a transient `SOULSTREAM.SVC.MINT.<realm>`
   request-reply served by whatever holds the seed. Measured end-to-end:
@@ -169,8 +176,9 @@ All node configuration; none of it may appear in a declaration
 - Backend selection stays `SOULSTREAM_BACKEND` (M1.3) — heterogeneity is
   per-node configuration, invisible to declarations.
 - Mint endpoint configuration (identity-plane service location or the
-  fallback mint subject) `[O]` — shape depends on the soulstream-identity tags
-  addition.
+  fallback mint subject) `[O]` — the single-node product answered it
+  in-process (the state-held seed, episode 0137); the fleet-era shape
+  waits on the D28 op lane's token-lane named-role answer.
 
 ## 7. Known limits carried openly
 
