@@ -68,6 +68,21 @@ With both, create → first working token-lane admission is single-digit
 milliseconds against Bar 2's 5s bound [measured: birth 395–776µs,
 admission 2.0–3.5ms].
 
+*As built (2026-08-27, identity `447ec6b`, episode
+[0134](../../04-JOURNEY/0134-identity-tenants-born-admissible.md)):*
+both amendments landed in the LocalOperator authority. The one-source
+template is `client.PersonaScopePubAllow`/`PersonaScopeSubAllow`
+(prefix-aware; the embed seam passes the deployment's prefix) — the
+founding ceremony adopts the same export on its next touch. The AUTH
+amend is lookup → add → re-land complete (idempotent; tenant lands
+first so the between-acts window fails closed), and an empty
+`AuthAccount` skips the coupling — no callout half, no admission list
+to maintain (its reversal condition lives in the episode). Live-test
+proof: store → **usable** admission 2.77ms, out-of-scope publish
+drawing the permissions violation, the tenant read back from AUTH's
+stored JWT [measured]. The ProviderAPI arm's D47 parity remains A8's
+named BYON residue.
+
 **The product-side residue, named**: the composed node wires no
 `SystemConn` (the `accounts.*` ops are dark in the house), and no
 client/CLI surface for `accounts.*` exists anywhere. Both are the

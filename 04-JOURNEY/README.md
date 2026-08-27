@@ -452,8 +452,18 @@ works today on the token lane while the OIDC ambiguity refusal stands
 by operator decision. Per-tenant persona custody decided (each
 tenant's persona keys on its own JetStream — a shared vault silently
 shadows same-named personas across tenants, measured). Design:
-[`platform-topology.md`](../02-DESIGN/soulstream-identity/platform-topology.md);
-builds behind the 0071 focus gate, D47's admission fix first.
+[`platform-topology.md`](../02-DESIGN/soulstream-identity/platform-topology.md).
+**D47 landed the same day** ([episode
+0134](0134-identity-tenants-born-admissible.md), identity `447ec6b`,
+unreleased): the tenant signing key is a scoped signer carrying the
+canonical persona template (exported once from `client`, prefix-aware
+— the ceremony adopts the same source on its next touch), and creation
+amends AUTH `allowed_accounts` (idempotent, fail-closed between acts;
+empty `AuthAccount` skips honestly). Store → **usable** admission
+2.77ms with the out-of-scope publish refused [measured]. Remaining
+behind the focus gate: D46 export configuration, D48 per-tenant
+persona custody, D49's disciplines with the first shared-service
+build; the ProviderAPI arm's D47 parity stays A8's BYON residue.
 
 **Both graduated designs BUILT, two days after the asks** ([episodes
 0120](0120-ecosystem-the-tools-arc-builds.md)/[0121](0121-ecosystem-the-approvals-loop-closes.md)):
@@ -1653,6 +1663,7 @@ the operator lives on the candidate; what chafes decides.
 | 0131 | core | [Sealed topics build: the locked binder (2026-08-25)](0131-core-sealed-topics-build.md) |
 | 0132 | soulstream | [The rc carries both builds: v0.14.0-rc.1 across the stack (2026-08-25)](0132-soulstream-the-rc-carries-both-builds.md) |
 | 0133 | ecosystem | [The platform-account topology: measured sound, two fixes short (2026-08-26 → 2026-08-27)](0133-ecosystem-platform-account-topology.md) |
+| 0134 | identity | [Tenants are born admissible: D47 lands (2026-08-27)](0134-identity-tenants-born-admissible.md) |
 
 ## The naming map (2026-08-13)
 
