@@ -432,7 +432,28 @@ role dissolves into the identity plane (`soulidentity`), amending episode
 unblocked. **Next:** the spec-kit pass for the first Fleet milestone; the
 soulidentity tags-on-mint addition gates the preferred minting path.
 
-### soulstream-identity — the name (as of 2026-08-19; named soulidentity until episode 0069)
+### soulstream-identity — the name (as of 2026-08-27; named soulidentity until episode 0069)
+
+**The platform-account topology measured sound, designed as D46–D49**
+([episode 0133](0133-ecosystem-platform-account-topology.md)): the
+operator's realms-are-accounts question ran as two-day research — all
+four bars measured on live operator-mode servers, the reversal
+condition never fired. The export seam (`account_token_position`
+enforces at import-*definition* time — a tenant cannot even construct
+a route to another tenant's surface) carries the D15 proof across
+account boundaries by configuration alone; tenant birth is one fast
+act (395–776µs) but as-built births an unusable tenant — no AUTH
+`allowed_accounts` coupling, and a plain signing key that leaves every
+minted user **admitted but inert** (0110's serves-immediately claim
+refuted through admission); isolation holds through shared services
+under two named disciplines (per-tenant connections; the connection
+decides the tenant, never the payload); and the multi-tenant human
+works today on the token lane while the OIDC ambiguity refusal stands
+by operator decision. Per-tenant persona custody decided (each
+tenant's persona keys on its own JetStream — a shared vault silently
+shadows same-named personas across tenants, measured). Design:
+[`platform-topology.md`](../02-DESIGN/soulstream-identity/platform-topology.md);
+builds behind the 0071 focus gate, D47's admission fix first.
 
 **Both graduated designs BUILT, two days after the asks** ([episodes
 0120](0120-ecosystem-the-tools-arc-builds.md)/[0121](0121-ecosystem-the-approvals-loop-closes.md)):
@@ -1631,6 +1652,7 @@ the operator lives on the candidate; what chafes decides.
 | 0130 | ecosystem | [The agent declaration builds: the record declares, the room runs (2026-08-25)](0130-ecosystem-the-agent-declaration-builds.md) |
 | 0131 | core | [Sealed topics build: the locked binder (2026-08-25)](0131-core-sealed-topics-build.md) |
 | 0132 | soulstream | [The rc carries both builds: v0.14.0-rc.1 across the stack (2026-08-25)](0132-soulstream-the-rc-carries-both-builds.md) |
+| 0133 | ecosystem | [The platform-account topology: measured sound, two fixes short (2026-08-26 → 2026-08-27)](0133-ecosystem-platform-account-topology.md) |
 
 ## The naming map (2026-08-13)
 

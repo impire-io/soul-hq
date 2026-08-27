@@ -15,6 +15,7 @@ the system as it is.
 | [`tenancy.md`](tenancy.md) | Tenancy and guardrails: the `accounts.*` lifecycle with pluggable authority, the general secret store, the guardrail evaluator and its chokepoints, approvals as one-shot delegations — decisions D35–D38 |
 | [`external-tools.md`](external-tools.md) | External tools: the two-layer catalog (record discovery face + plane custody), the `resources.*` op family, and the forwarding door's invariants (adapter position, endpoints only, no token held, the remote sees the calling person) — decisions D39–D41 |
 | [`approvals.md`](approvals.md) | Approvals: the deferral becomes a durable ticket with its own TTL and witnessed expiry, the loop's public ends (`PresentApproval`, status/pending/list reads), notification as composition's duty, per-rule approver policy — decisions D42–D45, and D38's hash-sketch correction |
+| [`platform-topology.md`](platform-topology.md) | The platform-account topology: the export seam (`account_token_position`) as deployment shape, tenant birth completing admission (scoped signer + AUTH coupling, amending D35), per-tenant persona custody, shared-service disciplines and the OIDC multi-tenant stance — decisions D46–D49 |
 
 Future documents arrive by research graduation (see
 [`../01-RESEARCH/README.md`](../../01-RESEARCH/README.md)) or design propagation
