@@ -14,7 +14,7 @@ the NATS server on `beno1` (tailnet `beno1.hippogryph-dinosaur.ts.net`,
 `nats://100.108.7.14:4222`). The node runs ON beno1 beside its server:
 state dir `~calmera/.soulstream-byon` (moved from altis, day-2 copy;
 altis keeps a cold backup, never `up` there), binary
-`/usr/local/bin/soulstream` (**v0.13.0-rc.8** since 2026-08-19), systemd unit
+`/usr/local/bin/soulstream` (**v0.13.0-rc.11** since 2026-08-21), systemd unit
 `soulstream.service`, MCP on `127.0.0.1:8081` (beno1's :8080 belongs to
 private-link), sign-in issuer `https://beno1.hippogryph-dinosaur.ts.net`
 (tailscale serve 443→8378; shell 8443→8500 — set before the first
@@ -28,10 +28,36 @@ rather than costing a re-founding — the fold's enrolled passkey, the
 Synadia accounts, and the vault all kept. Records written since carry
 canonical v2 and verify [measured]; the realm's identity key is
 `ADDHFS6…` (minted, not the account key — the founding path predated
-`realm.WithConn`). A pre-rc.8 copy of the state directory sits beside
-it as `~calmera/.soulstream-byon.pre-rc8-*`. The intended shape: agents
-run on other machines (altis first) and connect through NATS with
-Agents-screen credentials — the planes stay with the substrate.
+`realm.WithConn`). Pre-upgrade copies of the state directory sit beside
+it as `~calmera/.soulstream-byon.pre-rc8-*` and `.pre-rc11-*`, and the
+previous binary as `/usr/local/bin/soulstream.pre-rc11`. The intended
+shape: agents run on other machines (altis first) and connect through
+NATS with Agents-screen credentials — the planes stay with the
+substrate.
+
+**Carrying the shell arc, on rc.11 since 2026-08-21** (episode
+[0122](../04-JOURNEY/0122-ecosystem-the-shell-arc-lands.md)): a version
+bump only — no record-format change, so no second `adopt`. Every plane
+came back serving, the guardrail evaluator is live with an empty rule
+set (`guardrail allow … rule=""` in the journal, admitting everything
+as designed), and the two new surfaces are mounted — `/approvals` and
+`/tools` redirect to sign-in where an unknown path 404s [measured].
+
+**The deployment duty rc.10 stated, found unpaid and paid the same day**
+[measured, before and after, from the realm account JWT in beno1's
+`/data/jwt`]: byon's `soulstream-user` scope carried the pre-rc.10
+pub-allow set — the scope is written **at founding** and this realm is
+BYO synadia-cloud, so installing a newer binary could never add the
+`grants.>` and `approvals.>` tails. Paid at the provider on 2026-08-21:
+a control-plane PATCH of the `soulstream-user` scoped signing-key
+group's scope — scope only, **no key rotation** (the scoped key
+`AARDCFOT…` is unchanged before and after, so every issued persona
+credential survives), the group's other limits untouched by the patch
+semantics. The control plane reported `jwt_sync_status: Complete` and
+the re-signed account JWT verified in beno1's resolver cache with both
+tails present. byon is now a grants-enabled deployment in
+soulstream-identity's sense: a persona can link a grant and ask after
+its own tickets from its own credential.
 
 ## The run
 
