@@ -434,6 +434,25 @@ soulidentity tags-on-mint addition gates the preferred minting path.
 
 ### soulstream-identity — the name (as of 2026-08-27; named soulidentity until episode 0069)
 
+**The BYON live run: two defects caught, then the provider arm
+measures sound** ([episode 0136](0136-identity-the-byon-live-run.md),
+identity `a0545c8`/`31279c6`, unreleased): the one bound episode 0135
+left — the provider arm compile-proven, unmeasured — was paid in three
+runs against the real Synadia Cloud BYON system. Run one drew 400: the
+D47 amend patched `allowed_accounts` alone, and the JWT law refuses
+accounts without users — fixed as a whole-object read-union-write
+(`auth_users`/`xkey` carried forward, correct under merge or replace
+patch semantics) with a userless AUTH refused by name. Run two held
+the coupling live but exposed the probe outliving `t.Fatalf` and
+re-creating its account mid-cleanup (now joined before any name is
+freed), and taught that a BYON system's view carries no client URL —
+the operator's fact, passed explicitly. Run three PASSED [measured]:
+births 4.36s/3.29s against Bar 2's 5s bound, the scoped round trip
+alive in the newborn account, AUTH carrying both tenants on read-back,
+suspend/resume through the provider, the pre-existing account probed
+12 times uninterrupted, zero leftovers. Every residue of the 0133
+verdict is closed — both D47 arms measured, local and BYON.
+
 **The platform-account topology measured sound, designed as D46–D49**
 ([episode 0133](0133-ecosystem-platform-account-topology.md)): the
 operator's realms-are-accounts question ran as two-day research — all
@@ -466,7 +485,7 @@ residues closed the same day** ([episode
 op family and the e2e proves D47 through the real op family (create →
 usable admission 11.2ms, `df8e4a3`); the provider arm carries both
 halves (`f6a1a33` — the group's scope, the jwt_settings coupling; the
-live BYON run awaits the operator's token); and the house grew
+live BYON run followed the same day, episode 0136); and the house grew
 tenants (soulstream spec 012): dir resolver persisting runtime
 tenants, `SystemConn` wired, `soulstream account …` the hand — create
 → usable admission 8.8ms through the running house, surviving
@@ -1690,6 +1709,7 @@ the operator lives on the candidate; what chafes decides.
 | 0133 | ecosystem | [The platform-account topology: measured sound, two fixes short (2026-08-26 → 2026-08-27)](0133-ecosystem-platform-account-topology.md) |
 | 0134 | identity | [Tenants are born admissible: D47 lands (2026-08-27)](0134-identity-tenants-born-admissible.md) |
 | 0135 | ecosystem | [The residues close: tenancy reaches the hand, both arms carry D47 (2026-08-27)](0135-ecosystem-the-residues-close.md) |
+| 0136 | identity | [The BYON live run: two defects caught, then the provider arm measures sound (2026-08-27)](0136-identity-the-byon-live-run.md) |
 
 ## The naming map (2026-08-13)
 

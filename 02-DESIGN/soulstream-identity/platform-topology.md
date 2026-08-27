@@ -95,9 +95,17 @@ op-family e2e measures this design's acceptance criterion end to end:
 create → usable token-lane admission **11.2ms** through the sealed
 surface and callout [measured]. The provider arm carries both D47
 halves too (`f6a1a33`: the group's `Scope`, the `jwt_settings`
-authorization read-union-write); its live BYON measurement awaits the
-operator's control-plane token — the byon_live rig is upgraded and
-compile-proven.
+authorization read-union-write); its live BYON run (2026-08-27,
+episode 0136) caught two defects before passing — the authorization
+amend must write the object **whole** (`auth_users`/`xkey` carried
+forward beside the unioned `allowed_accounts`, valid under merge or
+replace patch semantics; a userless AUTH is refused by name, since
+the JWT law forbids accounts without users) — then measured sound:
+births 3.3–4.4s inside Bar 2's 5s bound, the scoped round trip alive
+in the newborn account, AUTH carrying both tenants on read-back
+[measured]. A BYON system's control-plane view exposes no
+client-reachable URL; the round-trip clause takes the deployment's
+own URL as operator input.
 
 **Acceptance criteria**: Bar 2 re-measured through the real op family —
 `accounts.create` then token-lane admission with a **usable** user
