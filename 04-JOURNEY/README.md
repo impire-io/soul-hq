@@ -452,6 +452,23 @@ soulidentity tags-on-mint addition gates the preferred minting path.
 
 ### soulstream-identity — the name (as of 2026-08-27; named soulidentity until episode 0069)
 
+**The sealed record gains its custodian — D9 builds** ([episode
+0138](0138-identity-the-sealed-record-gains-its-custodian.md); design
+[`sealing-keys.md`](../02-DESIGN/soulstream-identity/sealing-keys.md)
+D50–D53, `specs/005-sealing-custody` merged `72bd164`, unreleased):
+the `persona-sealing-key` vault kind with D26's first-touch clause
+realized, one `seal.unwrap` op releasing artifacts and never material,
+`keys.public` growing the `sealing/` grammar (one directory door), the
+persona template growing exactly one tail, and the client's
+`PersonaUnwrapper` satisfying core's `Unwrapper` seam structurally.
+The D9 gate measures the no-oracle line as a number: three sealed
+messages across two epochs materialise at exactly 2 unwraps — one per
+epoch — with the sealed mention body opening through the same op,
+structure-only and foreign-owner negatives, and no path from any op to
+a sealing seed [measured]. Named [O]s: rotation (old wraps make it
+never replace-and-forget), batch unwrap, product wiring, the scope
+re-render note for pre-capability accounts.
+
 **The agent scope ships — one template, resolved per mint** ([episode
 0137](0137-ecosystem-capability-minting.md); `specs/004-agent-scope`,
 merged `e032687`, unreleased): the canonical agent capability template
@@ -1760,6 +1777,7 @@ the operator lives on the candidate; what chafes decides.
 | 0135 | ecosystem | [The residues close: tenancy reaches the hand, both arms carry D47 (2026-08-27)](0135-ecosystem-the-residues-close.md) |
 | 0136 | identity | [The BYON live run: two defects caught, then the provider arm measures sound (2026-08-27)](0136-identity-the-byon-live-run.md) |
 | 0137 | ecosystem | [Capability minting: the declaration's names become the credential (2026-08-27)](0137-ecosystem-capability-minting.md) |
+| 0138 | identity | [The sealed record gains its custodian: D9 builds (2026-08-27)](0138-identity-the-sealed-record-gains-its-custodian.md) |
 
 ## The naming map (2026-08-13)
 

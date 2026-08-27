@@ -105,4 +105,12 @@ deadline owned by the client's per-request timeout.
 
 ## Where things stand
 
-Designed 2026-08-27; build follows in identity `specs/005-sealing-custody`.
+Designed and BUILT 2026-08-27 ([episode
+0138](../../04-JOURNEY/0138-identity-the-sealed-record-gains-its-custodian.md);
+identity `specs/005-sealing-custody`, merged `72bd164`, unreleased —
+e2e modules pin core `v0.14.0-rc.1`). The D9 gate measures the
+no-oracle claim: 3 sealed messages across 2 epochs materialise through
+the custodian at exactly 2 unwraps (one per epoch); the sealed mention
+body opens through the same one op; no op reaches a sealing seed
+(`ExportSeed` stays user-key-only by code path). The [O] ledger above
+is the live list.
