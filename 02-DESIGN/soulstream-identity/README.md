@@ -16,8 +16,9 @@ the system as it is.
 | [`external-tools.md`](external-tools.md) | External tools: the two-layer catalog (record discovery face + plane custody), the `resources.*` op family, and the forwarding door's invariants (adapter position, endpoints only, no token held, the remote sees the calling person) — decisions D39–D41 |
 | [`approvals.md`](approvals.md) | Approvals: the deferral becomes a durable ticket with its own TTL and witnessed expiry, the loop's public ends (`PresentApproval`, status/pending/list reads), notification as composition's duty, per-rule approver policy — decisions D42–D45, and D38's hash-sketch correction |
 | [`platform-topology.md`](platform-topology.md) | The platform-account topology: the export seam (`account_token_position`) as deployment shape, tenant birth completing admission (scoped signer + AUTH coupling, amending D35), per-tenant persona custody, shared-service disciplines and the OIDC multi-tenant stance — decisions D46–D49 |
+| [`sealing-keys.md`](sealing-keys.md) | Sealing keys (D9 realized): the `persona-sealing-key` vault kind with first-touch materialization, the one `seal.unwrap` op (artifact out, never the seed), `keys.public` as the one directory door, consumer-side ensure-publication (F1 applied) — decisions D50–D53 |
 
 Future documents arrive by research graduation (see
 [`../01-RESEARCH/README.md`](../../01-RESEARCH/README.md)) or design propagation
 from landed work; the roadmap names the expected ones (auth callout with
-claims-derived authorization, attestation issuance, sealing keys).
+claims-derived authorization, attestation issuance).

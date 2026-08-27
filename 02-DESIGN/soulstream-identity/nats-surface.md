@@ -288,7 +288,9 @@ may be required anywhere. Two consequences:
   pattern `GenerateUserKey` set for minted user keys. Import remains the
   operator path for bring-your-own keys. When D9's sealed topics land,
   the persona's X25519 sealing key follows this same materialization
-  pattern — decided now as the pattern, built then (constitution III).
+  pattern — decided now as the pattern, built then (constitution III);
+  *that moment came 2026-08-27:*
+  *[`sealing-keys.md`](sealing-keys.md) D50 realizes exactly this clause.*
 - **`keys.public` is the directory read, open to any authenticated
   caller.** The vault that custodies the keys IS the realm's key
   directory: a reader resolves any persona's public form — public

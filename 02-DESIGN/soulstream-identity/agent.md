@@ -257,6 +257,10 @@ already a shared group secret, not an identity — is then released to the
 member's session for message decryption. Per-message decryption through an
 oracle is a non-goal; nobody should later design one by symmetry.
 
+*Realized 2026-08-27 as D50–D53 in
+[`sealing-keys.md`](sealing-keys.md), against core's shipped `Unwrapper`
+seam (core `specs/021-sealed-topics`).*
+
 ## D10 — Storage backends are pluggable; the vault is not a KMS
 
 The Soulstream-specific value is the persona model, act-as policy, and
