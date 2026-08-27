@@ -293,3 +293,36 @@ connection, never from request payloads (P5, the D15 rule). Both are
 statements of existing Soulstream invariants extended to the multi-
 tenant service, not new machinery. No wire change, no core-invariant
 breach; reversal condition unfired.
+
+## 2026-08-27 — The two reserved decisions, taken by the operator
+
+**Persona-name scope → per-tenant vault buckets** (Bar 4 C3's option
+a). The operator's ground: the information is not used outside the
+tenants — persona keys and their owner bindings serve attribution
+*within* a tenant, so nothing is lost by scoping the store itself. The
+shape that follows, recorded as part of the decision: each tenant's
+persona-key bucket lives on **that tenant's own JetStream**, reached
+through the platform service's per-tenant connection (the Bar 3
+discipline) — a tenant's persona keys travel with its account
+(suspension and export take them along), and `persona/daan` in tenant A
+and tenant B are different keys in different buckets by construction.
+The **platform vault keeps only platform custody**: the operator key,
+the AUTH signing key, the tenant signing keys (`team/<name>`). The
+D26 open-directory read (`keys.public`) becomes a per-tenant read,
+which is the decision's rationale made mechanical. The sealed-store
+pattern (D31: a domain per bucket, one custody discipline) already
+accommodates this; no new machinery.
+
+**OIDC multi-tenant humans → keep the deliberate refusal** (Bar 4
+C2). Constitution III's answer, ratified by the operator: no
+tenant-selection machinery until a real blocked consumer demands it —
+the refusal is deterministic, order-independent, and named, and the
+token lane already serves multi-tenant humans today (C1). **Reversal
+condition, named now**: a real OIDC human assigned into two tenants and
+blocked at connection (observable: recorded as an issue) reopens tenant
+selection as a D-decision — per-tenant audience and a connect-time
+account hint are the two candidate shapes the rig discussion
+identified, neither designed further until then.
+
+With these, nothing in the verdict remains reserved. The topic is
+ready to graduate `--to design`.

@@ -175,6 +175,12 @@ resolve, with the operator, the decisions the bars reserved:
 
 Items 1–2 are genuine operator direction calls (the decision test:
 options remain, so they wait for the human); 3–6 are mechanical and
-measured-sufficient. Graduation held for the operator's ratification of
-direction — the *research* is complete; the *direction decision* is the
-operator's.
+measured-sufficient. *Resolved 2026-08-27 by the operator:* **(1)
+per-tenant vault buckets** — persona keys are not used outside their
+tenant, so each tenant's persona custody lives on its own JetStream,
+reached through the service's per-tenant connection; the platform vault
+keeps platform custody only. **(2) keep the deliberate OIDC refusal** —
+constitution III; the reversal condition (a real blocked multi-tenant
+OIDC human) is named in the design. Graduated `--to design`:
+[`../../02-DESIGN/soulstream-identity/platform-topology.md`](../../02-DESIGN/soulstream-identity/platform-topology.md)
+(D46–D49), episode 0133.
