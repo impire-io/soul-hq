@@ -83,11 +83,21 @@ drawing the permissions violation, the tenant read back from AUTH's
 stored JWT [measured]. The ProviderAPI arm's D47 parity remains A8's
 named BYON residue.
 
-**The product-side residue, named**: the composed node wires no
-`SystemConn` (the `accounts.*` ops are dark in the house), and no
-client/CLI surface for `accounts.*` exists anywhere. Both are the
-product's to build when it adopts multi-tenancy; neither is this
-plane's machinery.
+**The product-side residue — closed 2026-08-27** (episode
+[0135](../../04-JOURNEY/0135-ecosystem-the-residues-close.md), spec
+`012-tenants-in-the-house`): the node wires `SystemConn` (a SYS user
+minted in memory), the client mirrors the op family
+(`AccountCreate/Resolve/Accounts/Suspend/Resume`, identity `df8e4a3`),
+`soulstream account …` is the hand, and the embedded server's dir
+resolver persists runtime tenants across restarts with a
+create-if-absent seed protecting AUTH's runtime amendments. The
+op-family e2e measures this design's acceptance criterion end to end:
+create → usable token-lane admission **11.2ms** through the sealed
+surface and callout [measured]. The provider arm carries both D47
+halves too (`f6a1a33`: the group's `Scope`, the `jwt_settings`
+authorization read-union-write); its live BYON measurement awaits the
+operator's control-plane token — the byon_live rig is upgraded and
+compile-proven.
 
 **Acceptance criteria**: Bar 2 re-measured through the real op family —
 `accounts.create` then token-lane admission with a **usable** user

@@ -75,11 +75,25 @@ the product's administration surface is the shell.
 
 ## 3. The embedded server [V]
 
-Provisioned entirely in code — `server.Options` + `MemAccResolver`, no
-config file, no `nsc` [measured, the rig]: `TrustedKeys` = the operator,
-`SystemAccount` = SYS, resolver preloaded from the persisted account JWTs,
-JetStream on `<state>/jetstream`. Boot order: server ready → identity
-plane → realm provisioning → memory + runtime planes → front door.
+Provisioned entirely in code — `server.Options` + a **dir resolver**
+under `<state>/resolver`, no config file, no `nsc` [measured, the rig;
+amended 2026-08-27, spec 012 / hq episode 0135]: `TrustedOperators` =
+operator claims synthesized in memory from the ceremony's operator
+seed (the dir resolver refuses bare `TrustedKeys` [measured]),
+`SystemAccount` = SYS, the resolver seeded **create-if-absent** from
+the persisted founding JWTs — never overwrite, because the runtime
+amends stored JWTs (`accounts.create` teaches AUTH each tenant, D47)
+and re-seeding founding shapes would silently unlearn every tenant —
+JetStream on `<state>/jetstream`. Runtime-created tenant accounts
+persist in the resolver dir across restarts [measured, the 012 gate].
+*(As founded through v0.14.0-rc: `MemAccResolver` preloaded from the
+persisted JWTs — retired when tenancy needed persistence.)* Boot
+order: server ready → identity plane → realm provisioning → memory +
+runtime planes → front door. The identity plane's `SystemConn` (the
+tenancy ops' channel, D35) rides a SYS user minted in memory per
+start; the operator key enters the vault as an ensure at start
+(`operator/root`) — no new state-dir artifact anywhere, realms founded
+before tenancy gain the capability on their next `up`.
 
 ## 4. The ceremony and the state directory [V for generation, D for persistence]
 

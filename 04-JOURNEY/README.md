@@ -460,10 +460,19 @@ canonical persona template (exported once from `client`, prefix-aware
 — the ceremony adopts the same source on its next touch), and creation
 amends AUTH `allowed_accounts` (idempotent, fail-closed between acts;
 empty `AuthAccount` skips honestly). Store → **usable** admission
-2.77ms with the out-of-scope publish refused [measured]. Remaining
-behind the focus gate: D46 export configuration, D48 per-tenant
-persona custody, D49's disciplines with the first shared-service
-build; the ProviderAPI arm's D47 parity stays A8's BYON residue.
+2.77ms with the out-of-scope publish refused [measured]. **Both
+residues closed the same day** ([episode
+0135](0135-ecosystem-the-residues-close.md)): the client mirrors the
+op family and the e2e proves D47 through the real op family (create →
+usable admission 11.2ms, `df8e4a3`); the provider arm carries both
+halves (`f6a1a33` — the group's scope, the jwt_settings coupling; the
+live BYON run awaits the operator's token); and the house grew
+tenants (soulstream spec 012): dir resolver persisting runtime
+tenants, `SystemConn` wired, `soulstream account …` the hand — create
+→ usable admission 8.8ms through the running house, surviving
+restart [measured]. Remaining behind the focus gate: D46 export
+configuration, D48 per-tenant persona custody, D49's disciplines with
+the first shared-service build.
 
 **Both graduated designs BUILT, two days after the asks** ([episodes
 0120](0120-ecosystem-the-tools-arc-builds.md)/[0121](0121-ecosystem-the-approvals-loop-closes.md)):
@@ -817,7 +826,23 @@ questions before their milestones (NGS callout
 capabilities, the sentinel-credential flow, the first-key story, the
 claims-mapping shape, service round-trip latency) are named on the roadmap.
 
-### soulstream — the product, the house (as of 2026-08-25; named soulnode until episode 0069)
+### soulstream — the product, the house (as of 2026-08-27; named soulnode until episode 0069)
+
+**The house grew tenants — spec 012, on main unreleased** ([episode
+0135](0135-ecosystem-the-residues-close.md)): the platform topology's
+product half, taken as a full cycle at the operator's direction. The
+embedded server's resolver became a **dir resolver** under
+`<state>/resolver` (runtime tenants persist; seeded create-if-absent
+so AUTH's runtime amendments survive restart — and the dir resolver
+demanded the operator's claims, synthesized in memory from the
+ceremony seed), the identity plane's `SystemConn` is wired (SYS user
+minted in memory — no new artifact, day-2 realms gain tenancy on
+their next `up` via the operator-key ensure), and `soulstream account
+create|list|show|suspend|resume` is the hand. Gate measured: create →
+usable token-lane admission **8.8ms** through the running house, the
+tenant admitting after stop-and-start, M1.1 green on the dir
+resolver. BYO stays honestly off (design 0003 — no operator material
+on that side). Design 0001 §3 amended in the same change.
 
 **v0.14.0-rc.1 — the rc carries both builds, brew-installable**
 ([episode 0132](0132-soulstream-the-rc-carries-both-builds.md)): pins
@@ -1664,6 +1689,7 @@ the operator lives on the candidate; what chafes decides.
 | 0132 | soulstream | [The rc carries both builds: v0.14.0-rc.1 across the stack (2026-08-25)](0132-soulstream-the-rc-carries-both-builds.md) |
 | 0133 | ecosystem | [The platform-account topology: measured sound, two fixes short (2026-08-26 → 2026-08-27)](0133-ecosystem-platform-account-topology.md) |
 | 0134 | identity | [Tenants are born admissible: D47 lands (2026-08-27)](0134-identity-tenants-born-admissible.md) |
+| 0135 | ecosystem | [The residues close: tenancy reaches the hand, both arms carry D47 (2026-08-27)](0135-ecosystem-the-residues-close.md) |
 
 ## The naming map (2026-08-13)
 
