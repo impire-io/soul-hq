@@ -69,6 +69,16 @@ grants, nothing in the declaration can widen anything):
 
 - Names resolve node-side; a declaration carrying a credential-shaped
   value refuses by name (pre-v1 clean break, no compatibility shim).
+- **Amendment 2026-08-28** — the successor clause fired the day of
+  graduation: at the operator's direction the inference story became
+  its own research topic, `inference-plane` (a fleet of stateless
+  single-model instances behind capability subjects; the model an
+  instance attribute resolved client-side, never a request
+  parameter). If it graduates, this block's names resolve against the
+  **plane's catalogue** (virtual model names / capability + tags)
+  rather than directly to a provider key, and `provider` here becomes
+  the fallback vocabulary. The dispatcher's spec pass should hold
+  this block's schema until that topic answers.
 - Absent block: the wrap default — the harness's own ambient
   authentication (a person's signed-in assistant). A dispatcher
   serving a declaration with no `inference` block and no ambient lane
@@ -104,6 +114,15 @@ grants, nothing in the declaration can widen anything):
   fake it.
 - Secret naming (`providers/<name>`), rotation, and per-tenant trees
   are spec-time decisions [O].
+- **Amendment 2026-08-28** — research `inference-plane` (opened at the
+  operator's direction) tests moving custody one layer further from
+  the agent: provider credentials living with **inference-plane
+  instances**, the harness reaching the plane with realm credentials
+  only, and this section's env-injection demoting to the fallback for
+  provider-native harness features the plane cannot carry. The
+  measured mechanics here (wake-time resolve, `Template.Env`,
+  structural scope denials) stand either way — the question is what
+  the injected credential unlocks, not how it travels.
 
 ## 5. Credentials for the served agent [V→O]
 
@@ -169,7 +188,8 @@ credential cannot even publish a submission `[V]`.
 
 - §2 the serve seam's shape (hook vs own path) — spec time.
 - §3 the `inference` block's exact schema and the `{{MODEL}}`
-  template variable — spec time.
+  template variable — spec time, held until research `inference-plane`
+  answers (opened 2026-08-28, the operator's direction).
 - §4 secret naming/rotation/per-tenant trees; the grants-broker lane
   for person-owned provider accounts — its own demand gate.
 - §5 the founding's role naming and engine-credential TTL/renewal —
