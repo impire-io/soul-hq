@@ -164,9 +164,16 @@ product-wiring spec, not here. The resolver is a client library
 
 ## 6. The door: harnesses think through the realm [V]
 
-An HTTP front speaking the Messages API shape harnesses already speak:
-health endpoint, key auth, one translation to a plane request, replies
-returned as SSE (streaming) or JSON (one-shot). Measured with the real
+An HTTP front speaking **both shapes API-compatible harnesses already
+speak** — the Messages API and Chat Completions (episode 0146, the
+operator's direction) — over one plane connection: health endpoint, key
+auth, one translation to a plane request, replies returned as SSE
+(streaming) or JSON (one-shot). The two surfaces share everything
+except dialect: one `think` middle, one `Authorize`, each surface
+reading the key from the header its own clients send (`X-Api-Key` /
+`Authorization: Bearer`) — which header carries the key is dialect,
+not policy. `GET /v1/models` advertises the catalogue's names through
+a hook that must not disagree with `Route`. Measured with the real
 harness: base-URL + env-key redirection is the lane, and the key takes
 precedence over the harness's own login in its own words `[V — Bar 3,
 2.21s round trips]`.

@@ -1720,6 +1720,18 @@ the operator lives on the candidate; what chafes decides.
 
 ### soulstream-inference — the mind (as of 2026-08-28)
 
+**The other dialect — OpenAI compatibility both directions** ([episode
+0146](0146-inference-the-other-dialect.md); `fc7bdcf`, the operator's
+direction): `adapter/openai` speaks Chat Completions — the dialect
+OpenAI, Ollama, vLLM, LM Studio and llama.cpp all answer, so local
+runtimes become plane instances (keyless-with-explicit-BaseURL legal,
+keyless-default-URL refused, `[DONE]` carrying the whole terminal
+weight); the door grows `POST /v1/chat/completions` (Bearer — which
+header carries the key is dialect, not policy) and `GET /v1/models`
+behind the catalogue's future hook; provider error codes centralise in
+`internal/providercode` so they cannot drift between adapters. Live
+arms pending as the operator's acts (a keyless Ollama run included).
+
 **M2 — the first real provider, the same day** ([episode
 0145](0145-inference-the-first-provider.md); `1bc8f55`): the anthropic
 adapter behind the seam — SSE consumed as it arrives, nothing
@@ -1916,6 +1928,7 @@ mint, chunked input by demand, realtime behind its own gate) is design
 | 0143 | workloads | [The dispatcher builds: submit-and-forget is real (2026-08-28)](0143-workloads-the-dispatcher-builds.md) |
 | 0144 | inference | [The mind serves: M1 of the inference plane (2026-08-28)](0144-inference-the-mind-serves.md) |
 | 0145 | inference | [The first provider: M2's anthropic adapter (2026-08-28)](0145-inference-the-first-provider.md) |
+| 0146 | inference | [The other dialect: OpenAI compatibility, both directions (2026-08-28)](0146-inference-the-other-dialect.md) |
 
 ## The naming map (2026-08-13)
 
