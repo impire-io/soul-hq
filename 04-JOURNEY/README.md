@@ -1474,17 +1474,21 @@ constraints — passkeys, not passwords; indistinguishable by design —
 and the roadmap sequences M1 (the OP skeleton) behind its KV-schema and
 key-lifecycle research. No product code exists yet.
 
-### soulstream-shell — the shell (as of 2026-08-27; named soulhelm until episode 0069)
+### soulstream-shell — the shell (as of 2026-08-28; named soulhelm until episode 0069)
 
-**The declare surface is the named next module — behind the
-dispatcher's submit op** ([episode
-0140](0140-ecosystem-the-focus-agents-as-infrastructure.md)): the
-agents-as-infrastructure focus's human end — authoring and submitting
-agent declarations from the shell. Its design waits for research
-`agents-as-infrastructure` to fix the submit op's shape; Bar 5 of that
-topic exists to prove the whole declare→submit→served→answer loop
-reachable from the shell's pure-consumer position before the module
-design is written (the one-way door holds by measurement, not hope).
+**The declare surface is BUILT — an agent placed from a browser**
+([episode 0148](0148-shell-the-declare-surface.md); design
+[`0009`](../02-DESIGN/soulstream-shell/0009-the-declare-surface.md),
+merged `bf0258f`, composed in the house `dd8d6b1`, unreleased): the
+agents sheet's Declared agents lane — the form's output IS the CLI's
+JSON with upstream's own refusals inline, submit on the session's own
+admission, arrival as `open → claimed by <node>` read live from the
+record with the no-dispatcher deployment answered in honest words, the
+lists as readings, no retirement invented, no secret through the
+shell. The composition grew two declared facts (`PlacementsTopic`,
+`CapabilityRole`) on the pattern `AdminBase` rides. The e2e walks the
+browser-grade loop in 6.38s [measured]. One new dependency, named:
+workloads' `declaration` + `fleet` at the rc.3 tag.
 
 **The first hour BUILT — v0.11.0-rc.3, composed into the house the
 same day** ([episode 0127](0127-shell-the-first-hour-builds.md)):
@@ -1947,6 +1951,7 @@ mint, chunked input by demand, realtime behind its own gate) is design
 | 0145 | inference | [The first provider: M2's anthropic adapter (2026-08-28)](0145-inference-the-first-provider.md) |
 | 0146 | inference | [The other dialect: OpenAI compatibility, both directions (2026-08-28)](0146-inference-the-other-dialect.md) |
 | 0147 | soulstream | [The thinking house: submit-and-forget meets a person's hands (2026-08-28)](0147-soulstream-the-thinking-house.md) |
+| 0148 | shell | [The declare surface: an agent placed from a browser (2026-08-28)](0148-shell-the-declare-surface.md) |
 
 ## The naming map (2026-08-13)
 

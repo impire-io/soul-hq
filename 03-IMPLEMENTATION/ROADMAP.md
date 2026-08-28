@@ -1248,15 +1248,15 @@ pinned on soulstream main.
    roster reading the presence face live, the paste card's next step,
    the empty-state rule across the sheets. The fresh-eyes install
    ([O1]) remains open — the ordering is asserted, not measured.
-7. **Next, named 2026-08-27:** the **agent declare surface** — the
-   agents-as-infrastructure focus's human end ([episode
-   0140](../04-JOURNEY/0140-ecosystem-the-focus-agents-as-infrastructure.md)):
-   authoring and submitting agent declarations from the shell, designed
-   against `fleet.Submit`'s shape and design
-   [`0007-agents-as-infrastructure.md`](../02-DESIGN/soulstream-workloads/0007-agents-as-infrastructure.md)
-   §7 (Bar 5 proved the loop reachable from pure-consumer position,
-   561ms end to end — [episode
-   0141](../04-JOURNEY/0141-ecosystem-agents-as-infrastructure.md)).
+7. ✅ **M-declare — the declare surface** (designed AND built
+   2026-08-28, [episode 0148](../04-JOURNEY/0148-shell-the-declare-surface.md);
+   design [`0009`](../02-DESIGN/soulstream-shell/0009-the-declare-surface.md),
+   `bf0258f`, composed `dd8d6b1`): the Declared agents lane — the
+   form's output IS the CLI's JSON, submit on the session admission,
+   arrival as the record's evidence, honest no-dispatcher words, no
+   retirement invented, no secrets through the shell; the e2e walks
+   the browser loop in 6.38s. Named [O]s: catalogue writing from the
+   shell, and the retirement act when the vocabulary exists.
 8. **Later, gated:** the participant client (its own research topic —
    [O4], with upstream ask #1's WebSocket listener); a dedicated scoped
    helm ceremony user in soulstream (hardening); the two modules that
