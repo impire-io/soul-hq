@@ -77,3 +77,50 @@ not fire.
 - Credential custody is faked (hermetic realm, no auth): the dispatcher
   connects "as" the declared persona freely. Bar 4 owns the honest
   version.
+
+## 2026-08-28 — Bar 2 measured: PASS, same day
+
+**Hypothesis:** the 0003 claim path needs nothing new to decide which
+dispatcher node serves an agent — and the reclaim discipline (projection
+nominates, probe vetoes, ordinary abandon decides) carries the *serving*
+handoff too, with the wake-dedup mechanism guarding the takeover the way
+it guards a restart.
+
+**Rig:** the Bar 1 spike's dispatcher grown the fleet half, all shipped
+surfaces: it answers `fleet.ProbeSubject(self)` for the items it serves,
+and runs `fleet.Node.Sweep` (the shipped reclaim — Sweep needs no
+Runner) every 300ms with a 1s reclaim bound. Two nodes, four agents
+each with its own desk topic, all submissions contested (both nodes up
+before the first submit), submitter gone.
+
+**Measured, 3 consecutive `-race` runs + the first [measured]:**
+
+- contested placement: split node-a=2 / node-b=2 every run, every item
+  exactly one live claim, zero double-launches;
+- every agent answered its mention wherever it landed (4/4, one
+  invocation each);
+- live owners never reclaimed: sweeps ran continuously from startup
+  (every claim older than the 1s bound within a few polls), zero
+  abandons on any live item across all runs;
+- failover: node-a hard-killed owning 2 agents, a mention posted into
+  the window — answered by the survivor 1.051–1.064s after the kill
+  (reclaim bound 1s + sweep cadence; the bound is the knob), exactly
+  one outcome (no double serve), every reclaimed item's timeline
+  exactly `claim,abandon,claim`, node-b's own items undisturbed;
+- the survivor's takeover re-serves the reclaimed agents and
+  `wake_already_answered` drops their already-served triggers — **the
+  restart dedup and the failover dedup are the same mechanism**, which
+  is the finding that makes the dispatcher's serve arm boring (good);
+- census: zero probe traffic on the stream [measured, the fleet gate's
+  clause re-proven through the dispatcher].
+
+**Verdict on the bar:** PASS. No new vocabulary, no coordinator; the
+one composition the shipped fleet lacked was "serve via the wrap engine
+instead of Runner.Launch" — which is a seam question, not a mechanism
+question.
+
+**Still open for the build design (not bars):** a node that dies and
+RESTARTS between the death and a peer's reclaim resumes its own claims
+legitimately (it answers probes again) — correct by construction,
+worth a standing test at build time. The spike's poll should become a
+live subscription with poll as catch-up.
