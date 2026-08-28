@@ -43,3 +43,41 @@ the agent gets anycast, and pinning (the virtual-model catalogue's
 job) happens node-side. That division is probably right — the
 catalogue was going to live infrastructure-side anyway (Bar 4) — but
 it is now a measured boundary, not a preference.
+
+## 2026-08-28 — Bar 3 measured: PASS — the real harness thinks through the door
+
+**The probe first, because it decides the reversal condition:** the
+real production harness pointed at a local base URL with an env API key
+announced, in its own words, that the env key *takes precedence over
+the interactive login*, sent a health check (`HEAD /api/hello`) and a
+genuine Messages-API request carrying the realm key in `X-Api-Key`, and
+consumed our response. The "no harness accepts a realm door" reversal
+reading is dead on the strongest harness there is [measured].
+
+**Rig:** a minimal realm door — Messages-API-compatible HTTP front
+(health check, key auth, request translated to a plane anycast, the
+answer returned as SSE stream or one-shot JSON per the request's own
+`stream` flag) — over one stand-in instance whose provider credential
+exists only instance-side. The whole authentication world handed to
+the harness: the door URL and a realm-issued key, injected exactly as
+the dispatcher would (the shipped `Template.Env` seam).
+
+**Measured, first run + 3 consecutive `-race` runs, live harness each
+time [measured]:**
+
+- the real `claude -p` completed a full round trip through door +
+  plane in **2.21s**: one door call, one plane round trip, the plane's
+  marker text verbatim in the harness's printed answer — the thinking
+  demonstrably came through the realm;
+- **refusal arm**: a keyless request answered 401 at the door with
+  zero plane deliveries;
+- **custody**: no provider material in the harness's environment
+  (constructed, checked), none in its output, realm key ≠ provider
+  key — the provider credential never left the instance.
+
+**What the build takes from this:** the door is small — a health
+endpoint, key auth, one translation, one SSE shape — and the harness
+needs nothing bespoke: base-URL + key is the lane every API-compatible
+harness already speaks. Per-run keys minted at wake time (instead of
+the spike's static string) are the obvious hardening, and the door is
+where metering headers will surface.
