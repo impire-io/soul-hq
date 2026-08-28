@@ -132,4 +132,41 @@ nothing here builds for it.
 
 ## Verdict
 
-<Empty until graduation.>
+Graduated to design 2026-08-28 — all five bars PASS, measured the day
+the topic opened, in consumer-position spikes (operator-mode rigs where
+the bar demanded scope enforcement; the live harness where the bar
+demanded a real one), each suite 3× under `-race`.
+
+- **Bar 1 — the fleet shape holds: PASS** [measured]. Anycast 40
+  requests in 4.5ms split 24/16; micro's `$SRV.INFO` the resolve
+  surface with model/tags as instance metadata; resolve→filter→pin
+  unicast 10/10; an unserved capability answered no-responders. The
+  load-bearing find: an agent-scope mint tagged `tool:infer-chat`
+  reached the plane through the SHIPPED template — inference
+  capabilities are tools, zero scope widening; resolve-and-pin is
+  infrastructure's act (measured boundary).
+- **Bar 2 — one client loop: PASS** [measured]. All four arms through
+  one collect function whose only branch is the grammar's own
+  one-shot tell; strictly-consecutive sequences + terminator count
+  check (the enemy is silent truncation); `ErrMaxPayload` client-side
+  and survivable; headers charged against the payload, subjects not
+  (overhead byte-exact); the server's 503 control frame intercepted
+  client-side as a typed error in ~1.4ms.
+- **Bar 3 — the harness thinks credential-free: PASS** [measured].
+  Real `claude -p` announced the env key takes precedence over its
+  login, completed door+plane round trips in 2.21s with the plane's
+  marker verbatim in its answer; keyless requests 401 with zero plane
+  deliveries; no provider material anywhere the harness touched.
+- **Bar 4 — names, not routes: PASS** [measured]. Re-pointing a
+  virtual name moved traffic alpha→beta (effort default riding along)
+  with zero caller change; un-pinned falls back to anycast; the model
+  never in a subject, header, or the caller's hands.
+- **Bar 5 — the record stays the only record: PASS** [measured].
+  Context assembled fresh from the topic each round (1→3→5 turns
+  seen); the instance killed and replaced mid-conversation with round
+  3 unchanged; census clean — the plane created no stream, KV, or
+  bucket.
+
+None of the three reversal readings fired. Outcome: the founding
+design of the new component,
+[`02-DESIGN/soulstream-inference/0001-the-inference-plane.md`](../../02-DESIGN/soulstream-inference/0001-the-inference-plane.md).
