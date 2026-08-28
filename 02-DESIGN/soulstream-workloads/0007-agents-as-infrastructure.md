@@ -40,22 +40,20 @@ Deliberately absent, unchanged from 0004: consumer state beside the
 log, a coordinator, any new realm vocabulary. Submission IS
 `fleet.Submit` — an ordinary work item carrying the declaration.
 
-## 2. The serve seam [O]
+## 2. The serve seam [V — resolved (b), built]
 
 `fleet.Node.TryPlace` hardwires `Runner.Launch` — correct for backend
-workloads, wrong for engine-served agents. The smallest honest change
-decides at spec time between:
-
-- **(a) a serve hook on the fleet node** — `TryPlace` takes (or the
-  Node carries) a launch function, `Runner.Launch` the default; the
-  dispatcher passes an engine-serve closure; or
-- **(b) the dispatcher owns its claim path** — the spike's shape:
-  claim + read-back + serve beside `fleet.Node`'s probe/sweep halves
-  (which need no Runner today `[V]`).
-
-Either way the reclaim discipline is untouched, and a placement's
-declared `role`/`lifecycle` decides engine-serve (agent/service with
-wake) vs backend-launch (everything else).
+workloads, wrong for engine-served agents. **Resolved at the spec pass
+(specs/011, episode 0143) as (b): the dispatcher owns its claim path**
+— claim + read-back + serve beside `fleet.Node`'s probe/sweep halves
+(which need no Runner `[V]`); `fleet` is untouched, so a dispatcher
+node and a runner node share one realm without either knowing about
+the other. The self-selection line is `dispatcher.Servable`: an agent
+with a wake set is engine-served, everything else stays the Runner
+path's — pinned by a standing test. The build added one node-local
+knob the design had not named: `RaceBackoff`, so a declaration a node
+cannot serve does not become a claim/abandon spin on the record — it
+delays a decision, never makes one.
 
 ## 3. The declaration grows `inference` [O]
 
@@ -186,15 +184,15 @@ credential cannot even publish a submission `[V]`.
 
 ## 9. Open, named [O]
 
-- §2 the serve seam's shape (hook vs own path) — spec time.
+- ~~§2 the serve seam's shape~~ — resolved (b) and BUILT
+  (`specs/011-dispatcher`, episode 0143).
 - §3 the `inference` block's exact schema and the `{{MODEL}}`
-  template variable — spec time, held until research `inference-plane`
-  answers (opened 2026-08-28, the operator's direction).
+  template variable — the plane graduated (episode 0142); the block
+  closes against its catalogue's names at the product wiring.
 - §4 secret naming/rotation/per-tenant trees; the grants-broker lane
   for person-owned provider accounts — its own demand gate.
 - §5 the founding's role naming and engine-credential TTL/renewal —
   the product's spec.
 - §7 the shell declare-surface module design — at its build.
-- Live subscription on the placement topic (poll as catch-up only) —
-  build requirement, not open, named here so the spike's poll is not
-  copied.
+- ~~Live subscription on the placement topic~~ — paid in the build:
+  the dispatcher watches live with materialise-poll as catch-up only.

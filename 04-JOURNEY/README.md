@@ -199,7 +199,25 @@ eg-walker live co-editing, sealed topics, and a browser/WebSocket client.
 
 ### soulstream-workloads — the room (as of 2026-08-28; named soulrealm until episode 0069)
 
-**The dispatcher is DESIGNED — five bars measured in one day**
+**The dispatcher is BUILT — submit-and-forget is real** ([episode
+0143](0143-workloads-the-dispatcher-builds.md); `specs/011-dispatcher`,
+merged `438a4c3`, unreleased): the standing serve arm over the shipped
+mechanisms — watch live with poll as catch-up, race through the
+ordinary claim path (design 0007 §2 resolved **option (b)**: the
+dispatcher owns its claim path, `fleet` untouched,
+`dispatcher.Servable` the self-selection line), resume from the log
+with no new op, serve through the specs/009 wake engine with the 0006
+budget riding admission unchanged, probes and sweeps on fleet's own
+reclaim discipline, drain-vs-crash as deliberate ceremony, credentials
+excluded by construction (`ConnectAgent` is the whole seam). Built by
+a parallel agent against the design, reviewed line by line, verified
+independently: six standing tests 3× `-race` in 48.4s [measured]. One
+build lesson recorded: `RaceBackoff`, so an unservable declaration
+cannot spin the record. Next: the product wiring — the founding's
+engine-credential lane, a dispatcher plane in the house, and the
+`inference` block closing against the plane's catalogue.
+
+**The dispatcher was DESIGNED — five bars measured in one day**
 ([episode 0141](0141-ecosystem-agents-as-infrastructure.md); design
 [`0007-agents-as-infrastructure.md`](../02-DESIGN/soulstream-workloads/0007-agents-as-infrastructure.md)):
 the `agents-as-infrastructure` research graduated the morning after
@@ -1870,6 +1888,7 @@ mint, chunked input by demand, realtime behind its own gate) is design
 | 0140 | ecosystem | [The focus: agents as infrastructure (2026-08-27)](0140-ecosystem-the-focus-agents-as-infrastructure.md) |
 | 0141 | ecosystem | [Agents as infrastructure: five bars in a day, the dispatcher is a composition (2026-08-27 → 2026-08-28)](0141-ecosystem-agents-as-infrastructure.md) |
 | 0142 | ecosystem | [The inference plane: five bars in a day, and a new component is founded (2026-08-28)](0142-ecosystem-the-inference-plane.md) |
+| 0143 | workloads | [The dispatcher builds: submit-and-forget is real (2026-08-28)](0143-workloads-the-dispatcher-builds.md) |
 
 ## The naming map (2026-08-13)
 
