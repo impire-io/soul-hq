@@ -53,8 +53,10 @@ Every plane came back serving with the functional labels, the shell
 answering 200 and the issuer's discovery document served from the
 fronted name [measured]; the restart dropped the signed-in session's
 renewing connection (its 15-minute callout admissions with it —
-sessions are process-held by design), so the sign-in loop's live proof
-on rc.4 is the operator's next console sign-in. The dispatcher and inference planes stay
+sessions are process-held by design), and the operator's fresh sign-in
+the same evening closed the loop: `callout ADMITTED` on the oidc lane
+at 20:21:59, the session's own ops (keys, tokens, resources, grants)
+admitted through the guardrail right behind it [measured]. The dispatcher and inference planes stay
 **undeclared** — the shell's declare lane shows its honest absent arm;
 enabling them on byon is a named follow-up (the dispatcher needs a
 harness/template declared, and this realm's founding predates the
