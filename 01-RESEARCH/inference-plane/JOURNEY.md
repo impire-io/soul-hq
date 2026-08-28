@@ -81,3 +81,31 @@ needs nothing bespoke: base-URL + key is the lane every API-compatible
 harness already speaks. Per-run keys minted at wake time (instead of
 the spike's static string) are the obvious hardening, and the door is
 where metering headers will surface.
+
+## 2026-08-28 — Bars 4+5 measured: PASS, same afternoon
+
+**Bar 4 — names, not routes** [measured, first run + 3× `-race`]: a
+virtual model name resolved node-side through a catalogue descriptor
+(`{model_pin, default_params}`) into resolve-and-pin or anycast.
+Re-pointing the name — alpha to beta, and the effort default with it —
+moved the traffic with **zero caller change**: same name, same request
+body, same capability subject. Un-pinning the name fell back to
+anycast with both instances serving. The model appeared in no subject,
+no header, and never in the caller's hands; effort rode the request
+`params`. Left for the design: where the catalogue LIVES (a realm KV
+entry the node watches is the natural shape) — the spike proved the
+resolve-time mechanism, deliberately not the storage.
+
+**Bar 5 — the record stays the only record** [measured, first run +
+3× `-race`]: three conversation rounds where each request's context
+was assembled fresh from the topic's materialisation (the stand-in
+instance reports how many turns it saw: 1, then 3, then 5 — the
+context demonstrably traveled complete). The serving instance was
+killed and replaced mid-conversation; round 3 completed unchanged
+with the full context — nothing the plane held mattered because it
+held nothing. The census: every stream on the server is the realm's
+own provisioning; the plane created no stream, no KV, no bucket. The
+third reversal reading (statelessness breaking under real context)
+did not fire at spike scale; the design must still carry the wire
+discipline honestly for long conversations (chunking/reference
+escape hatches — a design section, not a blocker).
