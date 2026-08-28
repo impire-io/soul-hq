@@ -1720,6 +1720,16 @@ the operator lives on the candidate; what chafes decides.
 
 ### soulstream-inference — the mind (as of 2026-08-28)
 
+**M2 — the first real provider, the same day** ([episode
+0145](0145-inference-the-first-provider.md); `1bc8f55`): the anthropic
+adapter behind the seam — SSE consumed as it arrives, nothing
+buffered (emitted output stands, the grammar's contract), the
+credential construction-time only, provider error codes adapter-side
+so `wire` stays provider-agnostic. Hermetic SSE-stub suite +
+composition, 3× `-race`. **The live provider arm has not run** —
+`make test-live-anthropic` with a real key is the operator's pending
+act; effort→thinking mapping a named [O].
+
 **M1 serves — the first slice built and published the founding day**
 ([episode 0144](0144-inference-the-mind-serves.md);
 [impire-io/soulstream-inference](https://github.com/impire-io/soulstream-inference)
@@ -1905,6 +1915,7 @@ mint, chunked input by demand, realtime behind its own gate) is design
 | 0142 | ecosystem | [The inference plane: five bars in a day, and a new component is founded (2026-08-28)](0142-ecosystem-the-inference-plane.md) |
 | 0143 | workloads | [The dispatcher builds: submit-and-forget is real (2026-08-28)](0143-workloads-the-dispatcher-builds.md) |
 | 0144 | inference | [The mind serves: M1 of the inference plane (2026-08-28)](0144-inference-the-mind-serves.md) |
+| 0145 | inference | [The first provider: M2's anthropic adapter (2026-08-28)](0145-inference-the-first-provider.md) |
 
 ## The naming map (2026-08-13)
 
