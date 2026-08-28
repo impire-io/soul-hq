@@ -143,11 +143,12 @@ config cannot give each agent's tool door its own authority.
 `ConnectAgent` covers the engine's connection only. The shipped
 `dispatcher serve` builds door lanes carrying URL+realm alone —
 degraded but safe (the door can impersonate nobody; replies always
-post on the agent's own client). Before a real harness is wired under
-the dispatcher, the engine seam must become per-persona — either
-`ConnectAgent` returning an engine config beside the client, or a
-second `EngineFor(ctx, persona)` hook — decided with the product
-wiring, where the spec-010 agent-scope mint is at hand.
+post on the agent's own client). **The seam landed the same day
+(`f7cf154`): `EngineFor(ctx, persona)` yields one persona's engine
+config, declining falls back to `Engine`, an error refuses the
+placement whole — proven three-armed in the integration suite.** The
+product wiring decides what fills it (the spec-010 agent-scope mint
+for the door lane).
 
 ## 6. Drain and crash are different ends [V]
 
