@@ -56,11 +56,19 @@ renewing connection (its 15-minute callout admissions with it —
 sessions are process-held by design), and the operator's fresh sign-in
 the same evening closed the loop: `callout ADMITTED` on the oidc lane
 at 20:21:59, the session's own ops (keys, tokens, resources, grants)
-admitted through the guardrail right behind it [measured]. The dispatcher and inference planes stay
-**undeclared** — the shell's declare lane shows its honest absent arm;
-enabling them on byon is a named follow-up (the dispatcher needs a
-harness/template declared, and this realm's founding predates the
-capability key, so tool capabilities would refuse by name — spec 013).
+admitted through the guardrail right behind it [measured]. **The dispatcher plane declared the same evening** (config
+`planes.dispatcher {enabled, harness: "claude"}`, config backed up
+beside as `config.json.pre-dispatcher-*`): `dispatcher_up` with
+placements topic `placements-8o73` resolve-or-started on the board,
+the dispatcher persona minting through the vault's `realm` role
+(verified present before enabling) and `persona/dispatcher` published
+[measured] — the shell's declare lane is live on byon. Standing
+limits, each honest: `claude` is not installed on beno1, so a
+declared agent is claimed but not served until the harness is
+installed and authenticated there; tool capabilities refuse by name
+(spec 013 — the founding predates the capability key); the inference
+plane stays undeclared, so models are the CLI-act-in-words empty
+state and declarations ride the ambient lane.
 
 **The deployment duty rc.10 stated, found unpaid and paid the same day**
 [measured, before and after, from the realm account JWT in beno1's
