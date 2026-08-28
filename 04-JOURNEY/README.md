@@ -950,9 +950,18 @@ claims-mapping shape, service round-trip latency) are named on the roadmap.
 
 ### soulstream — the product, the house (as of 2026-08-28; named soulnode until episode 0069)
 
+**v0.14.0-rc.3 — the thinking house is installable** ([episode
+0149](0149-soulstream-the-rc3-carries-the-thinking-house.md)): pins to
+workloads `v0.8.0-rc.3` (dispatcher, EngineFor, the inference block,
+the fleet race fix) and the mind's **first tag** `v0.1.0`; verified
+from the outside — the tarball binary prints its version and answers
+`agent submit`, `model set|ls`, `provider set`; the tap serves it.
+Queued for the next cut: the shell's declare lane + composition, the
+wall fixes (`103a532`), the ceremony constants on a published tag.
+
 **The thinking house — submit-and-forget meets a person's hands**
 ([episode 0147](0147-soulstream-the-thinking-house.md); spec 014,
-merged `79354b9`, unreleased): two opt-in planes close the
+merged `79354b9`, released v0.14.0-rc.3): two opt-in planes close the
 agents-as-infrastructure arc. The dispatcher plane fills upstream's
 two seams and nothing else — `ConnectAgent` minting against the
 founding's existing realm role (0007 §5's question answered with a key
@@ -1952,6 +1961,7 @@ mint, chunked input by demand, realtime behind its own gate) is design
 | 0146 | inference | [The other dialect: OpenAI compatibility, both directions (2026-08-28)](0146-inference-the-other-dialect.md) |
 | 0147 | soulstream | [The thinking house: submit-and-forget meets a person's hands (2026-08-28)](0147-soulstream-the-thinking-house.md) |
 | 0148 | shell | [The declare surface: an agent placed from a browser (2026-08-28)](0148-shell-the-declare-surface.md) |
+| 0149 | soulstream | [The rc.3 carries the thinking house: v0.14.0-rc.3, workloads v0.8.0-rc.3, the mind's v0.1.0 (2026-08-28)](0149-soulstream-the-rc3-carries-the-thinking-house.md) |
 
 ## The naming map (2026-08-13)
 
