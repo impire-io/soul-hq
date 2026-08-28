@@ -109,3 +109,43 @@ third reversal reading (statelessness breaking under real context)
 did not fire at spike scale; the design must still carry the wire
 discipline honestly for long conversations (chunking/reference
 escape hatches — a design section, not a blocker).
+
+## 2026-08-28 — Bar 2 measured: PASS (parallel spike, independently verified)
+
+Run as a parallel spike in its own consumer-position module
+(`infplane-grammar`, nine tests), then verified independently — the
+suite re-run and the client read line by line from this side before
+recording [measured, my run: 9/9 green, `-race` ×3 green].
+
+**The one-client-loop claim holds honestly.** All four arms — streamed
+(5 frames + a mid-stream progress frame + terminator, 1.24ms),
+one-shot (single reply, 429µs, provably no terminator on the wire),
+oversized one-shot (120 bytes arriving as 2 frames though the request
+asked `stream=false`, 343µs), and mid-stream error (3 frames kept,
+stream abandoned, partial output standing marked incomplete) — went
+through one `collect` function whose only branch is the grammar's own
+one-shot tell: *first message, content-bearing, unnumbered*. That is
+the grammar deciding, not the caller special-casing [measured].
+
+**Invariants pinned as protocol errors, not conventions:** a content
+frame carrying status refuses; an unnumbered content frame mid-stream
+refuses; a sequence jump refuses; the terminator's sequence is a gap
+check against frames actually seen (inbox delivery is at-most-once —
+the check caught a deliberately dropped frame in the suite).
+
+**Two mechanism findings beyond the brief:**
+
+- **No-responders never enters the loop.** The server answers an
+  unserved subject with its own empty-payload 503 control frame — the
+  same idiom this grammar uses — and the client library intercepts it
+  at the subscription, surfacing a typed error in ~1.4ms. "No
+  instance" arrives as itself, immediately, no timeout burned, and
+  the grammar reserves no status code for it [measured].
+- **The payload budget charges headers, not subjects.** At
+  `max_payload=1024`, the largest deliverable content frame body was
+  998 bytes — 26 bytes are the serialized headers, charged against
+  the payload limit; the subject is not [measured]. The design's
+  wire-size section inherits this as fact.
+
+**All five bars now PASS.** Ready to graduate; the design's home
+(component/repo) is the operator decision pending.
