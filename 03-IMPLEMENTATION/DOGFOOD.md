@@ -14,7 +14,8 @@ the NATS server on `beno1` (tailnet `beno1.hippogryph-dinosaur.ts.net`,
 `nats://100.108.7.14:4222`). The node runs ON beno1 beside its server:
 state dir `~calmera/.soulstream-byon` (moved from altis, day-2 copy;
 altis keeps a cold backup, never `up` there), binary
-`/usr/local/bin/soulstream` (**v0.13.0-rc.11** since 2026-08-21), systemd unit
+`/usr/local/bin/soulstream` (**v0.14.0-rc.4** since 2026-08-28; before
+it v0.13.0-rc.11 since 2026-08-21), systemd unit
 `soulstream.service`, MCP on `127.0.0.1:8081` (beno1's :8080 belongs to
 private-link), sign-in issuer `https://beno1.hippogryph-dinosaur.ts.net`
 (tailscale serve 443→8378; shell 8443→8500 — set before the first
@@ -42,6 +43,22 @@ came back serving, the guardrail evaluator is live with an empty rule
 set (`guardrail allow … rule=""` in the journal, admitting everything
 as designed), and the two new surfaces are mounted — `/approvals` and
 `/tools` redirect to sign-in where an unknown path 404s [measured].
+
+**On v0.14.0-rc.4 since 2026-08-28** ([episode
+0150](../04-JOURNEY/0150-soulstream-the-rc4-carries-the-declare-surface.md)'s
+cut): a version bump only — no record-format change, no `adopt` asked;
+the state copy sits beside as `.pre-v0.14.0-rc.4-20260828-193842` and
+the previous binary as `/usr/local/bin/soulstream.pre-v0.14.0-rc.4`.
+Every plane came back serving with the functional labels, the shell
+answering 200 and the issuer's discovery document served from the
+fronted name [measured]; the restart dropped the signed-in session's
+renewing connection (its 15-minute callout admissions with it —
+sessions are process-held by design), so the sign-in loop's live proof
+on rc.4 is the operator's next console sign-in. The dispatcher and inference planes stay
+**undeclared** — the shell's declare lane shows its honest absent arm;
+enabling them on byon is a named follow-up (the dispatcher needs a
+harness/template declared, and this realm's founding predates the
+capability key, so tool capabilities would refuse by name — spec 013).
 
 **The deployment duty rc.10 stated, found unpaid and paid the same day**
 [measured, before and after, from the realm account JWT in beno1's
