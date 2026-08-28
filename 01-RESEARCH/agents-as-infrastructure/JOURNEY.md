@@ -124,3 +124,40 @@ RESTARTS between the death and a peer's reclaim resumes its own claims
 legitimately (it answers probes again) — correct by construction,
 worth a standing test at build time. The spike's poll should become a
 live subscription with poll as catch-up.
+
+## 2026-08-28 — Bar 3 measured: PASS, same day
+
+**Hypothesis:** design 0006 §6's by-construction claim — the budget sits
+at any dispatcher's admission because the dispatcher serves through the
+same engine — holds when the budget arrives via the *submission* path
+(declaration JSON → `fleet.Submit` → `DeclaredConfig` → `handleWake`)
+rather than a local config.
+
+**Rig:** the spike dispatcher grown per-persona script invokers (the 008
+suite's shape); both agents SUBMITTED with their budget in the
+declaration and served by one dispatcher; a `wake_refused` log counter
+as the loudness probe.
+
+**Measured, first run + 3 consecutive `-race` runs [measured]:**
+
+- the uncooperative two-agent cycle (replies always mention the other)
+  halted at **exactly the declared MaxHops = 4** agent turns, settled,
+  with 1 loud refusal and zero refusal-testimony ops on the record —
+  the 0128 case reproduced bit-for-bit through the dispatcher path;
+- the legitimate owner→A→B→A delegation under engine **defaults** (no
+  budget block in the declaration) completed with exactly 3 outcomes
+  and **zero refusals**.
+
+**Verdict on the bar:** PASS. The seam claim is now measured, not
+assumed: a submitted declaration's budget block is enforced at the
+dispatcher's admission with nothing added — the gate travels with the
+engine, exactly as 0006 designed it to.
+
+**Bars 1–3 all passed on day one because the composition already
+existed in the shipped pieces** — the research's real finding so far is
+that the standing dispatcher is a *seam extraction* (serve-instead-of-
+launch on the fleet path) plus an ops question, not new mechanism.
+The unpaid bars are the ones with genuine unknowns: Bar 4 (whose
+custody lane serves provider credentials, and whether a real harness
+accepts them non-interactively) and Bar 5 (the loop from the shell's
+pure-consumer position).
