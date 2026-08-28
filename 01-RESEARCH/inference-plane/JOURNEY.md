@@ -149,3 +149,42 @@ the check caught a deliberately dropped frame in the suite).
 
 **All five bars now PASS.** Ready to graduate; the design's home
 (component/repo) is the operator decision pending.
+
+### Bar 2 addendum — the spike's full report, facts the design needs
+
+- **The one-path evidence, sharpened:** the request's `stream` flag
+  never reaches the reply loop (grep-verified: two occurrences, both
+  request-side); arms 2 and 3 pass **literally identical caller
+  arguments** and differ only in the instance's result size — the
+  caller cannot tell one-shot from streamed and does not need to
+  [measured]. Wire counts asserted from a third connection.
+- **`max_payload` recovery is client-side and survivable:** a
+  too-large publish returns `ErrMaxPayload` before the wire and the
+  connection stays usable — the streaming fallback is implementable
+  precisely because the limit does not kill the connection
+  [measured]. Overhead equals the serialized header block byte for
+  byte (asserted as an equality, confirmed in the client library's
+  own size computation); subject and reply are not charged.
+- **The per-frame threshold consequence:** an instance's streaming
+  threshold is `max_payload` minus its own serialized headers, and
+  the budget shrinks by one byte when the sequence number gains a
+  digit — a hardcoded threshold fails on the last frames of a long
+  stream. Compute per frame from the actual header block.
+- **Grammar decisions the design must take deliberately** (found by
+  building, pre-decided nowhere):
+  1. where a terminal error's code lives — the spike kept the result
+     struct clean and returned a typed error beside the partial
+     output; the design picks the contract;
+  2. **strictly consecutive, not merely monotonic** sequences — the
+     failure mode being designed against is silent truncation (short
+     text marked complete, the worst outcome this grammar can
+     produce); the spike checks consecutiveness at each frame AND the
+     terminator's count;
+  3. **every empty frame must carry a recognized discriminator** — an
+     empty frame with neither status nor progress is unroutable and
+     refuses as a protocol error.
+- **Fan-out is ordered per subscription, not simultaneous across
+  subscriptions** — an observer connection receives its copy after
+  the requester has already returned. Bit the spike once as a test
+  flake; every future rig watching the wire from a second connection
+  waits for counts then requires a quiet window.
