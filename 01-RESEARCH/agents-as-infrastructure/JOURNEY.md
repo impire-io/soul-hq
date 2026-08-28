@@ -161,3 +161,105 @@ The unpaid bars are the ones with genuine unknowns: Bar 4 (whose
 custody lane serves provider credentials, and whether a real harness
 accepts them non-interactively) and Bar 5 (the loop from the shell's
 pure-consumer position).
+
+## 2026-08-28 — Bar 4 measured: PASS — custody is structural, not policed
+
+**The load-bearing discovery came from reading before running:** neither
+canonical scope reaches `secrets.*` at all. `AgentScopePubAllow` grants
+no identity-plane subject whatsoever, and even `PersonaScopePubAllow`'s
+op-tails are sign.record / keys.public / grants / approvals /
+seal.unwrap only — **no secrets tail exists in any template a workload
+or persona is minted under**. Secrets custody is infrastructure-side by
+construction; the probes below measure that as server denials, not
+service refusals.
+
+**Rig:** a real operator-mode realm (operator/SYS/APP), BOTH canonical
+scoped signers rendered from identity v0.12.0's exported templates, the
+identity plane through the public `embed.Run` seam, both role keys in
+the vault — consumer position throughout. The lane measured first:
+**the D36 secret store** (an infrastructure inference key is deployment
+config; the grants broker stays the lane for thinking on a *person's*
+provider account — a named design distinction, not measured here).
+
+**Measured, first run + 3 consecutive `-race` runs [measured]:**
+
+- the declaration names its provider (`args` carry it in the spike —
+  the build should grow a first-class `inference` block, a named [O]);
+  no credential field exists anywhere in the declaration to abuse;
+- the dispatcher resolved the secret **at wake time in 1.98ms** from
+  its own D36 tree (audit log shows exactly one `secrets.get` per
+  wake), and a real subprocess read it from its environment and
+  matched the stored value — the same non-interactive lane claude
+  `-p`/codex take via env API keys [mechanism-argument for the real
+  harnesses; the spike's subprocess is the measured stand-in];
+- `wrap.Template.Env` already exists as the injection seam — the build
+  needs no engine change;
+- custody probes, all three server-denied as permissions violations
+  with the requests never reaching the service [measured]: the
+  agent-scope credential's `secrets.get` on its own prefix (the scope
+  is structurally blind to the identity plane), the engine's
+  persona-scope credential's `secrets.get` on its own prefix (no
+  secrets tail in the canonical template), and cross-prefix into the
+  dispatcher's tree;
+- record census: the secret value in no contribution and no work item
+  on either topic;
+- a bonus proof the build wants: the wrap engine ran a full
+  declared-agent wake under a MINTED canonical persona-scope
+  credential on the operator-mode server — the engine's credential
+  story and the canonical template are compatible today.
+
+**Verdict on the bar:** PASS. The reversal condition's first reading
+(no non-interactive lane exists) did not fire: env-injected keys are
+the lane, and the injection seam is shipped.
+
+## 2026-08-28 — Bar 5 measured: PASS — the loop closes on a session admission
+
+**Rig:** the same operator-mode realm. daan holds a minted canonical
+persona-scope credential — exactly what a signed-in shell session
+speaks with — and drives the whole loop: starts the agent's home topic,
+submits the declaration (the JSON a shell form would produce) through
+`fleet.Submit` on their own admission, mentions the declared agent, and
+reads the answer back through their own materialisation.
+
+**Measured, first run + 3 consecutive `-race` runs [measured]:**
+
+- declare → submit → claimed → served → answered → read back:
+  **561ms end to end**, every act an ordinary public record op through
+  published client packages;
+- the pure-consumer line is compiler-enforced in the spike itself: the
+  module sits outside every repo namespace, so an `internal/` import
+  cannot compile — no shell-only upstream surface was needed anywhere;
+- the refused arm: the least-privileged credential in the system (an
+  agent-scope workload mint) cannot even *publish* a submission — the
+  op died at the server and the census counted exactly one placement
+  on the dispatch topic.
+
+**Verdict on the bar:** PASS.
+
+## 2026-08-28 — All five bars PASS; ready to graduate
+
+The topic's question is answered in one day of spikes: the standing
+dispatcher is a composition of shipped mechanisms — submission is
+`fleet.Submit`, placement is the 0003 claim path, serving is the wrap
+engine, the budget travels with the engine, custody is structural, and
+the whole loop is drivable from a session admission. What graduation
+must decide (the design's open points, for the operator):
+
+1. **The serve seam** — fleet's `TryPlace` hardwires `Runner.Launch`;
+   the dispatcher needs a seam that takes a serve function (or its own
+   claim path). Smallest honest change wins.
+2. **The declaration's `inference` block** — provider/model as
+   first-class named requirements (the spike rode `args`); schema
+   growth, pre-v1 clean break rules apply.
+3. **The engine credential lane in the house** — the dispatcher mints
+   the engine's persona-scope credential per agent (D28 by role); the
+   founding must decide which role key serves it.
+4. **Provider secret naming** — the spike used `providers/<name>` in
+   the dispatcher's tree; the design should fix the convention and the
+   grants-broker boundary (person-owned provider accounts).
+5. **Drain vs crash** — a drained dispatcher posts failure
+   self-reports, a killed one leaves the record clean; the dispatcher's
+   stop ceremony should choose drain deliberately.
+6. **Live subscription** — the spike polls; the build should watch the
+   placement topic live with poll as catch-up (the engine's own
+   pattern).
