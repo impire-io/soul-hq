@@ -169,11 +169,12 @@ the name moves traffic — and default params — with zero caller change
 `[V — Bar 4]`. The concrete model stays an instance attribute; a name
 nobody serves answers no-responders, truthfully.
 
-The catalogue's **home** is an [O]: a realm KV bucket the resolvers
-watch is the natural shape (the product provisions it; the shell reads
-it; the dispatcher and door resolve through it) — decided at the
-product-wiring spec, not here. The resolver is a client library
-(`client/resolver`), never a worker.
+The catalogue's **home is decided and built** (spec 014, episode
+0147): a realm KV bucket the product provisions, read **fresh per
+resolution** by the door and the dispatcher — no cache, no watch;
+watching is the surviving [O], paid when resolution cost measures
+real. The resolver stays a client library, never a worker; `soulstream
+model set|ls` is the hand.
 
 ## 6. The door: harnesses think through the realm [V]
 
@@ -194,11 +195,13 @@ precedence over the harness's own login in its own words `[V — Bar 3,
 - The door custodies nothing and holds no provider credential; a
   keyless or wrong-key request dies at the door with zero plane
   deliveries `[V]`.
-- **Per-run keys**: the dispatcher mints a short-lived door key per
-  wake and injects `{BASE_URL, KEY}` through the shipped
-  `Template.Env` seam — design 0007 §4's mechanics with the door as
-  the target [O: the key mint rides the identity plane's existing
-  machinery; its exact lane is the door spec's first decision].
+- **Per-serve keys, built; per-wake the surviving [O]** (spec 014,
+  episode 0147): the dispatcher plane issues one random key per serve
+  and injects `{BASE_URL, KEY}` through the shipped `Template.Env`
+  seam; issuing for a persona revokes its predecessor, stopping the
+  plane revokes all. Wake granularity needs a mint inside the
+  engine's admission path — a workloads seam that does not exist —
+  recorded rather than faked.
 - The door is the **metering surface**: usage headers aggregate here
   per key/persona [O: where metering lands — the record? — decided
   with the product wiring].

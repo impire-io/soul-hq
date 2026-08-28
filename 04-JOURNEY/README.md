@@ -948,7 +948,24 @@ questions before their milestones (NGS callout
 capabilities, the sentinel-credential flow, the first-key story, the
 claims-mapping shape, service round-trip latency) are named on the roadmap.
 
-### soulstream — the product, the house (as of 2026-08-27; named soulnode until episode 0069)
+### soulstream — the product, the house (as of 2026-08-28; named soulnode until episode 0069)
+
+**The thinking house — submit-and-forget meets a person's hands**
+([episode 0147](0147-soulstream-the-thinking-house.md); spec 014,
+merged `79354b9`, unreleased): two opt-in planes close the
+agents-as-infrastructure arc. The dispatcher plane fills upstream's
+two seams and nothing else — `ConnectAgent` minting against the
+founding's existing realm role (0007 §5's question answered with a key
+every founded realm already holds; TTL the revocation bound, no
+renewal loop), `EngineFor` giving each agent its own MCP lane plus
+door URL + per-serve key when the declaration names a model. The
+inference plane runs catalogue (realm KV) + door + instances with the
+two custody lines never meeting. The hands: `soulstream agent submit`,
+`model set|ls`, `provider set`. TestM15 walks the whole composition —
+submit, walk away, mention answered through door and plane, custody
+clean, ambient lane untouched, restart resuming from the log
+[measured]. Remaining, named: the shell declare surface, per-wake
+keys, catalogue watching, the live provider arms, the next rc.
 
 **v0.14.0-rc.2 — the 08-27 arc becomes installable the evening it
 landed** ([episode
@@ -1929,6 +1946,7 @@ mint, chunked input by demand, realtime behind its own gate) is design
 | 0144 | inference | [The mind serves: M1 of the inference plane (2026-08-28)](0144-inference-the-mind-serves.md) |
 | 0145 | inference | [The first provider: M2's anthropic adapter (2026-08-28)](0145-inference-the-first-provider.md) |
 | 0146 | inference | [The other dialect: OpenAI compatibility, both directions (2026-08-28)](0146-inference-the-other-dialect.md) |
+| 0147 | soulstream | [The thinking house: submit-and-forget meets a person's hands (2026-08-28)](0147-soulstream-the-thinking-house.md) |
 
 ## The naming map (2026-08-13)
 

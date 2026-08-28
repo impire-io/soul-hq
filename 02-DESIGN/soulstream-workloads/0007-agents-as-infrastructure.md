@@ -130,10 +130,12 @@ to the agent's persona. The measured shape `[V]`: a D28
 engine ran a full declared-agent wake under a minted canonical
 persona-scope credential on an operator-mode server. The capability
 credential (spec 010's agent scope, for the harness's tool door) is
-unchanged. Open [O]: which role key the founding installs for the
-dispatcher's engine mints, and the credential's TTL/renewal cadence
-across long-lived serves — the product's founding ceremony decides
-(soulstream spec, not this repo).
+unchanged. ~~Open [O]: which role key / TTL-renewal~~ — **answered in
+the product wiring (spec 014, episode 0147)**: the founding's existing
+realm role mints the engine credential (a key every founded realm
+already holds), the TTL is the revocation bound, and there is
+deliberately no renewal loop — an expiry ends the engine, the
+placement returns to the race, the next serve mints fresh.
 
 **The build sharpened the [O] (episode 0143, finding 3): the tool
 door's credential is per-agent while the engine template is
