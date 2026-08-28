@@ -85,11 +85,16 @@ request would truncate a multi-frame reply `[V]`).
   sentinel — correlation is the completion signal. A one-shot result
   too large for the wire **streams regardless**; the first frame's
   sequence tells the caller which case it got.
-- **One client loop.** All four shapes (stream, one-shot, oversized
-  one-shot, mid-stream error) are consumed by one loop whose only
-  branch is the grammar's own tell: first message, content-bearing,
-  unnumbered → one-shot `[V — the request's stream flag never
-  reaches the loop]`.
+- **One client loop, two entries.** All four shapes (stream, one-shot,
+  oversized one-shot, mid-stream error) are consumed by one loop whose
+  only branch is the grammar's own tell: first message,
+  content-bearing, unnumbered → one-shot `[V — the request's stream
+  flag never reaches the loop]`. `Collect` returns the whole; `Stream`
+  is the same loop with chunks delivered as they arrive — the seam an
+  interactive surface needs, because a door that waits for the whole
+  answer flattens the plane's stream into one delta (the M2b finding,
+  built: both door surfaces relay deltas, pinned by a
+  count-the-deltas test).
 - **Errors are terminal — and metered.** One error sentinel (status +
   error code + the usage seen before the break), then silence; partial
   output already delivered stands, marked incomplete `[V]`. Standing
@@ -97,6 +102,14 @@ request would truncate a multi-frame reply `[V]`).
   partials would undercount exactly the runs that need accounting most
   (the M2 finding, built). In the Go client the code travels as a
   typed error beside the partial result (the decided contract).
+- **Usage meters both directions.** The outcome headers carry output
+  AND input tokens (`Infer-Usage-Input-Tokens`) — adapters have the
+  number and the door's metering needs a truthful `prompt_tokens`
+  source; a message-count guess is not one (the M2b finding, built).
+  The door's surfaces map the plane's outcome truthfully into each
+  dialect's stop vocabulary — a caller whose generation hit the cap is
+  never told the model finished; short text marked complete must not
+  re-enter through a door.
 - **Invariants refuse as protocol errors**, not conventions `[V]`: a
   content frame never carries status; every empty frame carries a
   recognized discriminator (`Infer-Status` or `Infer-Progress`); a
