@@ -56,6 +56,25 @@ episode). What remains is by-demand and named: catalogue writing from
 the shell, per-wake keys, retirement vocabulary, the live provider
 arms, and the fresh-eyes install that now has one more thing to see.
 
+The build's full report added the ledger, and two of its walls earned
+same-day fixes in workloads (`103a532`): **`artifact` is now optional
+exactly where it was meaningless** (role agent with a wake set — two
+independent consumers had been writing `file:///dev/null` to satisfy
+the validator; the deliberate pre-v1 break 0007 §9 named, taken on
+accumulated evidence), and **the budget defaults gained their one
+source** (`declaration.DefaultBudget`, consumed by wrap — a screen
+showing the bounds a person runs under and the engine enforcing them
+can no longer drift). Placed as [O]s: the fleet submit/node split (a
+shell-class consumer pays for runner/backend/minter to get two
+functions), the resolve-or-start-by-name discipline existing twice,
+and — for whoever cuts the next soulstream tag — `ceremony.AgentRole`
+and `DefaultPlacements` exist on no published tag yet, so the shell's
+consumer-position rig spells them as its own constants until then.
+Also of record: the purity gate GREW a bar (the shell may reach
+exactly the two workloads packages it named, with a control requiring
+both), and the banned-word exemption for declaration JSON was
+narrowed with its own control rather than widened.
+
 Reversal condition: none — records a completed build against design
 0009; the e2e gate and the purity gates are its standing tripwires.
 

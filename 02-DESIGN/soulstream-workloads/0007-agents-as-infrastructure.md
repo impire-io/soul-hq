@@ -235,12 +235,22 @@ credential cannot even publish a submission `[V]`.
 - §7 the shell declare-surface module design — at its build.
 - ~~Live subscription on the placement topic~~ — paid in the build:
   the dispatcher watches live with materialise-poll as catch-up only.
-- **`artifact` in the declaration schema** (episode 0143, finding 2):
-  required by `Validate`, meaningless for engine-served agents — the
-  engine runs the node's harness template, never the declared
-  executable. Candidate: optional when a wake set is present. A
-  pre-v1 clean break for the declaration spec, taken deliberately,
-  not silently.
+- ~~**`artifact` in the declaration schema**~~ — CLOSED 2026-08-28
+  (workloads `103a532`, after TWO independent consumers were writing
+  `file:///dev/null` to satisfy the validator): optional exactly where
+  it was meaningless — role agent WITH a wake set; a wake-less agent
+  and every tool still declare what to run. The deliberate pre-v1
+  break episode 0143 named, taken on accumulated evidence.
+- **`fleet.Submit` costs the whole placement plane** (episode 0148's
+  ledger): fleet imports runner only because `Node` holds one, so a
+  consumer needing Submit + DeclarationOf pays for runner, backend,
+  minter and jwt. Candidate: split the submit/read half from the node
+  half — two functions wide for the shell-class consumer.
+- **Resolve-or-start by topic NAME exists twice** (episode 0148's
+  ledger): the house's `ensurePlacements` and the shell's
+  read-only-resolve are independent implementations of one discipline
+  (reading must not write; the first submit starts). An exported
+  helper would give both one source.
 - **No retirement path** (episode 0143, finding 6): nothing un-places
   a placement — the dispatcher never posts `work.done`, and
   `fleet.Release` serves the Runner path only. Retiring a declared
