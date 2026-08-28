@@ -90,10 +90,13 @@ request would truncate a multi-frame reply `[V]`).
   branch is the grammar's own tell: first message, content-bearing,
   unnumbered → one-shot `[V — the request's stream flag never
   reaches the loop]`.
-- **Errors are terminal.** One error sentinel (status + error code),
-  then silence; partial output already delivered stands, marked
-  incomplete `[V]`. In the Go client the code travels as a typed
-  error beside the partial result (the decided contract).
+- **Errors are terminal — and metered.** One error sentinel (status +
+  error code + the usage seen before the break), then silence; partial
+  output already delivered stands, marked incomplete `[V]`. Standing
+  output rides the error terminator's usage header, because unmetered
+  partials would undercount exactly the runs that need accounting most
+  (the M2 finding, built). In the Go client the code travels as a
+  typed error beside the partial result (the decided contract).
 - **Invariants refuse as protocol errors**, not conventions `[V]`: a
   content frame never carries status; every empty frame carries a
   recognized discriminator (`Infer-Status` or `Infer-Progress`); a
@@ -126,6 +129,23 @@ An instance = one adapter + one model + one custody tree.
   scope, structurally `[V — the 0141 custody probes]`.
 - Effort/thinking/params map to provider request properties inside
   the adapter; the plane never interprets them.
+- **Adapter duties the compiler cannot enforce** (M2's findings, now
+  in the seam's contract): a provider stream ending without its own
+  terminal marker is refused as an error, never returned as a clean
+  result — silent truncation would otherwise enter through the one
+  door the grammar cannot watch; the partial result beside an error
+  meters the output that stands; the credential is construction-time
+  only. Named [O]s from the first real adapter: **effort naming** —
+  the provider's home is an effort *level* vocabulary (thinking
+  budgets are gone on current models), so the decision is which plane
+  word means which provider level, not a translation; **participant
+  attribution** — the plane's transcript is strictly richer than the
+  provider request shape, and writing the speaker into prompt text
+  would cross the attribution-is-data line, so participants stop at
+  the provider boundary until decided otherwise; and a recorded
+  hazard: current models refuse a non-default `temperature`, which the
+  adapter forwards anyway because the parameter belongs to the
+  caller's model choice.
 
 ## 5. The catalogue: names, not routes [V mechanism, O home]
 
@@ -203,5 +223,12 @@ precedence over the harness's own login in its own words `[V — Bar 3,
 - Additional capabilities (`embed`, `transcribe`, `speak`) and
   provider adapters — each a process to start, by demand.
 - Realtime media — its own research gate, later.
-- The dispatcher's `inference` block schema (design 0007 §3, held
-  there) resolves against §5's names once both specs land.
+- ~~The dispatcher's `inference` block schema~~ — landed in the
+  declaration (workloads `67a75e2`): a virtual name, agent-only,
+  credentials refused by construction; the product wiring closes it
+  against §5's catalogue.
+- A wedged provider inside `RunTimeout`: the instance emits no
+  progress frames today, so a stalled generation is silent until the
+  timeout. A per-chunk idle deadline in adapters, or progress frames
+  from the instance's stream path, closes it — by demand, with the
+  first long-job capability.
