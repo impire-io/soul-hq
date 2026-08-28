@@ -21,10 +21,15 @@ runner node share one realm without either knowing about the other.
 The design's open decisions, taken and recorded in the spec:
 
 - **§2 the serve seam → option (b)**: the dispatcher owns its claim
-  path; `fleet` is untouched. `TryPlace` hardwires `Runner.Launch` —
-  correct for backend workloads — while the probe/sweep halves need no
-  Runner at all [the graduation research's measured shape, now the
-  shipped one].
+  path. `TryPlace` hardwires `Runner.Launch` — correct for backend
+  workloads — while the probe/sweep halves need no Runner at all [the
+  graduation research's measured shape, now the shipped one].
+  *Correction to this episode's first form (same day): "fleet
+  untouched" overstated — fleet gained exactly one additive change,
+  the unexported `placementOf` exported as `fleet.DeclarationOf`, so
+  the placement wire format keeps exactly one definition rather than
+  a drifting copy. No behavior change; the reclaim discipline and the
+  Runner path are untouched.*
 - **`Servable` is the self-selection line**: an agent with a wake set
   is engine-served; everything else stays the Runner path's — pinned
   by its own standing test (the sixth, beyond the asked-for bars).
@@ -50,12 +55,27 @@ uncooperative cycle through the dispatcher path (2.35s) and the
 legitimate delegation clean under defaults (2.33s); the runner path
 untouched (1.22s). `make check` green on the merge.
 
+The build's review also paid a debt in shipped code: **`fleet.Node`'s
+owned set was an unsynchronised map** — written by `TryPlace`/`Release`
+on the caller's goroutine, read by the probe callback on the
+connection's; today's tests never interleave the accesses, so `-race`
+had never fired. Fixed the same hour (`a5c7d0a`), guarded exactly as
+the dispatcher guards its own served set. Five more findings entered
+design 0007's ledger (§5/§6/§9): the tool door's credential is
+per-agent while the template is per-node — the engine seam needs a
+per-persona answer before a real harness is wired under the
+dispatcher; the drain ceremony's self-report is a `Retries:1` property;
+an engine that stops on its own converges on reclaim through the
+probe-silence path [the build's reading, adopted]; `artifact` is
+required by the schema but meaningless for engine-served agents; and
+no retirement path exists — nothing ever un-places a placement.
+
 What remains before a person can submit-and-forget end to end: the
 product wiring — the founding mints the engine-credential lane behind
-`ConnectAgent` (design 0007 §5's [O]), a `dispatcher` plane in the
-house, and the declaration's `inference` block closing against the
-plane's catalogue (episode 0142, design 0001 §5) — one spec in
-`soulstream`, next.
+`ConnectAgent` (design 0007 §5's [O], now including the tool door's
+per-persona half), a `dispatcher` plane in the house, and the
+declaration's `inference` block closing against the plane's catalogue
+(episode 0142, design 0001 §5) — one spec in `soulstream`, next.
 
 Reversal condition: none — records a completed build against a
 graduated design; the deviations taken are recorded above and in the

@@ -135,6 +135,20 @@ dispatcher's engine mints, and the credential's TTL/renewal cadence
 across long-lived serves — the product's founding ceremony decides
 (soulstream spec, not this repo).
 
+**The build sharpened the [O] (episode 0143, finding 3): the tool
+door's credential is per-agent while the engine template is
+per-node.** `wrap.Template.MCPEnv` carries the persona and its
+credential, so one dispatcher serving many personas from one base
+config cannot give each agent's tool door its own authority.
+`ConnectAgent` covers the engine's connection only. The shipped
+`dispatcher serve` builds door lanes carrying URL+realm alone —
+degraded but safe (the door can impersonate nobody; replies always
+post on the agent's own client). Before a real harness is wired under
+the dispatcher, the engine seam must become per-persona — either
+`ConnectAgent` returning an engine config beside the client, or a
+second `EngineFor(ctx, persona)` hook — decided with the product
+wiring, where the spec-010 agent-scope mint is at hand.
+
 ## 6. Drain and crash are different ends [V]
 
 - **Crash** (connections dropped): nothing posts — the half-finished
@@ -152,6 +166,15 @@ for operator-intended stops (the record hears the truth), abrupt exit
 for supervision-restart paths (the successor speaks instead). A stop
 that accidentally drains mid-deploy would post spurious failure
 testimony — the build treats the choice as config, not chance.
+
+Two sharpenings from the build (episode 0143): the drain-time
+self-report is a **`Retries:1` property** — with retries configured, a
+wake cancelled between attempts parks instead of self-reporting, and
+the successor speaks; and **an engine that stops on its own leaves the
+served set**, silencing this node's probe answers for that placement,
+so a peer's sweep reclaims it into a fresh race while the local
+backoff keeps the node's own retry off a hot loop — both paths
+converge on the record [the build's reading, adopted as the design's].
 
 ## 7. What the shell gets [V, module design at build]
 
@@ -196,3 +219,17 @@ credential cannot even publish a submission `[V]`.
 - §7 the shell declare-surface module design — at its build.
 - ~~Live subscription on the placement topic~~ — paid in the build:
   the dispatcher watches live with materialise-poll as catch-up only.
+- **`artifact` in the declaration schema** (episode 0143, finding 2):
+  required by `Validate`, meaningless for engine-served agents — the
+  engine runs the node's harness template, never the declared
+  executable. Candidate: optional when a wake set is present. A
+  pre-v1 clean break for the declaration spec, taken deliberately,
+  not silently.
+- **No retirement path** (episode 0143, finding 6): nothing un-places
+  a placement — the dispatcher never posts `work.done`, and
+  `fleet.Release` serves the Runner path only. Retiring a declared
+  agent (and what it means for its persona and topics) needs its own
+  vocabulary decision.
+- **The zombie cap** (design 0003 §3, still open, inherited): an
+  engine that answers probes but is wedged suppresses reclaim
+  indefinitely.
