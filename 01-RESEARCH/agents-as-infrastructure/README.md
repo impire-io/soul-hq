@@ -120,4 +120,45 @@ per topic).
 
 ## Verdict
 
-<Empty until graduation.>
+Graduated to design 2026-08-28 — all five bars PASS, measured in one
+day of consumer-position spikes over the rc.2 tags (core v0.14.0-rc.1,
+workloads v0.8.0-rc.2, identity v0.12.0), each 3× under `-race`.
+
+- **Bar 1 — submit-and-forget: PASS** [measured]. Submitter gone before
+  the claim; submit→claimed+served 159.7–162.1ms; a fresh dispatcher
+  instance resumed from the log alone (one live claim across the
+  restart), answered the missed mention in 162.9–214.5ms and deduped
+  the served one (`wake_already_answered`). Hard-kill arm: zero
+  outcomes while dead, invocation at-least-once (2), outcome
+  exactly-once (1), 208ms after restart. Finding of record: a graceful
+  stop posts the failure self-report — drain and crash are different
+  ends.
+- **Bar 2 — placement decides which node: PASS** [measured]. Contested
+  split 2/2 every run, one live claim per item; live owners never
+  reclaimed under continuous sweeps; a hard-killed node's agents
+  reclaimed `claim,abandon,claim` and a wake posted into the failover
+  window answered by the survivor in 1.051–1.064s, exactly one
+  outcome; zero probe ops on the stream. Restart dedup and failover
+  dedup are the same mechanism.
+- **Bar 3 — the budget gates the dispatcher's admission: PASS**
+  [measured]. The declared budget rode submission→DeclaredConfig→
+  admission: the uncooperative cycle halted at exactly MaxHops=4 with
+  a loud op-less refusal; owner→A→B→A under defaults completed 3
+  outcomes, zero refusals.
+- **Bar 4 — the harness thinks on custodied credentials: PASS**
+  [measured]. Neither canonical scope carries a secrets tail — custody
+  is structural [measured: all three probes server-denied]; the
+  dispatcher resolved the secret at wake time in 1.98ms from its D36
+  tree; a real subprocess read it from its environment
+  (mechanism-argument for real harnesses' env API keys); record census
+  clean; `wrap.Template.Env` is the shipped injection seam.
+- **Bar 5 — the shell drives the loop as a pure consumer: PASS**
+  [measured]. declare→submit→served→answered→read-back on a minted
+  persona-scope session admission in 561ms; pure-consumer
+  compiler-enforced (module outside every repo namespace); the
+  agent-scope submission never reached the record.
+
+Neither reversal reading fired: env-injected keys are the
+non-interactive lane, and no store beside the log was needed.
+Outcome: design
+[`0007-agents-as-infrastructure.md`](../../02-DESIGN/soulstream-workloads/0007-agents-as-infrastructure.md).
