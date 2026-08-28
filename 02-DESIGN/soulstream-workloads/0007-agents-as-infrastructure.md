@@ -128,9 +128,16 @@ Per served placement the dispatcher needs an engine connection bound
 to the agent's persona. The measured shape `[V]`: a D28
 `mint.ephemeral` against the deployment's persona-scope role — the
 engine ran a full declared-agent wake under a minted canonical
-persona-scope credential on an operator-mode server. The capability
-credential (spec 010's agent scope, for the harness's tool door) is
-unchanged. ~~Open [O]: which role key / TTL-renewal~~ — **answered in
+persona-scope credential on an operator-mode server. **This is not a
+preference but a ceiling (spec 014's load-bearing finding):** both
+narrow lanes — the minter's realm-semantic scope and the canonical
+agent scope — grant `$JS.API.INFO` and nothing else on the JetStream
+API, while the engine materialises topics and reads inboxes at every
+wake; a narrow-lane credential dies at the transport before the first
+answer. The same ceiling means the spec-010 agent-scope credential
+**cannot host a record-reading tool door** as this section once
+assumed — the door carries the persona-scope credential too, which is
+EngineFor's whole point. ~~Open [O]: which role key / TTL-renewal~~ — **answered in
 the product wiring (spec 014, episode 0147)**: the founding's existing
 realm role mints the engine credential (a key every founded realm
 already holds), the TTL is the revocation bound, and there is
@@ -212,9 +219,15 @@ credential cannot even publish a submission `[V]`.
 
 - ~~§2 the serve seam's shape~~ — resolved (b) and BUILT
   (`specs/011-dispatcher`, episode 0143).
-- §3 the `inference` block's exact schema and the `{{MODEL}}`
-  template variable — the plane graduated (episode 0142); the block
-  closes against its catalogue's names at the product wiring.
+- ~~§3 the `inference` block and `{{MODEL}}`~~ — CLOSED (episodes
+  0142/0147): the block is a virtual name in the declaration; the
+  name reaches the harness as its own environment
+  (`ANTHROPIC_MODEL`), not a template variable.
+- **`EngineFor` cannot see the declaration** (spec 014, wall 1): the
+  seam carries only the persona, so a hook needing the declared
+  inference block re-materialises the placement topic — correct but
+  one round trip per serve start. Candidate upstream fix: the hook
+  takes the declaration whole.
 - §4 secret naming/rotation/per-tenant trees; the grants-broker lane
   for person-owned provider accounts — its own demand gate.
 - §5 the founding's role naming and engine-credential TTL/renewal —

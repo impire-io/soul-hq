@@ -255,3 +255,16 @@ precedence over the harness's own login in its own words `[V — Bar 3,
   timeout. A per-chunk idle deadline in adapters, or progress frames
   from the instance's stream path, closes it — by demand, with the
   first long-job capability.
+- A pinned name costs a discovery scatter per request (the resolve
+  window, ~150ms in the house). Read-fresh is right for the
+  *catalogue*; the *instance* resolve wants a cache or a watch —
+  paid when the cost measures real (spec 014, wall 5). A two-instance
+  pin ambiguity refuses at config verify rather than being left to
+  resolve-order chance.
+- D36 custody has **no cross-tree access, even for operators** — any
+  component needing a provider secret loaded must be able to become
+  its own principal (`soulstream provider set` mints the plane's
+  runtime identity for exactly this). Forecloses "the console writes
+  the plane's secret" unless the shell gains the same minting
+  standing — a fact the shell declare-surface design must carry
+  (spec 014, wall 3).

@@ -45,6 +45,27 @@ of the whole house resuming the serve from the log [measured]. One
 defect found and fixed on the way: planes now release what they hold
 when a start fails partway (`c803ebb`).
 
+The build's full report added the arc's sharpest findings, ledgered in
+the designs the same day. **The load-bearing one refuted the brief:**
+"mint exactly as workload start does" cannot serve a wake engine — both
+narrow lanes (the minter's realm-semantic scope and the canonical agent
+scope) grant `$JS.API.INFO` and nothing else on the JetStream API,
+while the engine materialises topics and reads inboxes at every wake;
+on an operator-mode server that credential dies at the transport before
+the first answer. The engine credential is therefore the D28
+persona-scope mint — design 0007 §5's measured shape, now also its
+built one — and the same ceiling means **the agent-scope capability
+credential cannot host a record-reading tool door as 0007 §5 once
+assumed**. Also found: `EngineFor` cannot see the declaration (the
+house re-materialises the placement inside the hook; the candidate
+upstream fix is passing the declaration whole); D36 custody has no
+cross-tree access even for operators, so any component needing a
+secret loaded must be able to become its own principal — which is why
+`soulstream provider set` exists; a two-instance pin ambiguity refuses
+at config verify; and `ANTHROPIC_MODEL` carries the virtual name,
+answering 0007 §3's `{{MODEL}}` question as harness environment rather
+than template variable.
+
 What remains of the storyline, named: the shell's declare surface
 (design 0007 §7 — the one human-facing chapter left), per-wake door
 keys and catalogue watching (this spec's [O]s), the live provider arms

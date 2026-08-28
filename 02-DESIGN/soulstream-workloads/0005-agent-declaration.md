@@ -220,6 +220,14 @@ probe-before-abandon.
   identity-plane dependency. Remaining behind it, named: the Synadia
   BYON signing-key-group arm (live-run gated) and the D28 op lane for
   seedless fleet nodes (gated on the token lane's named-role answer).
+  **A measured ceiling on the capability scope (spec 014, episode
+  0147):** both narrow lanes grant `$JS.API.INFO` and nothing else on
+  the JetStream API, so the agent-scope credential narrows *tools*
+  but cannot host anything that READS the record — a wake engine or
+  an MCP door under it dies at the transport. Record-reading
+  companions run on the persona-scope mint; widening the capability
+  template would breach own-prefix confinement (the byon rc.10
+  lesson), so the split is the design, not a gap.
 - Runtime join/leave (a declared agent's topic set changing without a
   restart) — imps design 0003's reversal condition, watched, unfired.
 - Descendant tag scoping (`{{tag(topic)}}.>`) — untested, per the
