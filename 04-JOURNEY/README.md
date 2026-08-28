@@ -950,14 +950,22 @@ claims-mapping shape, service round-trip latency) are named on the roadmap.
 
 ### soulstream — the product, the house (as of 2026-08-28; named soulnode until episode 0069)
 
+**v0.14.0-rc.4 — the declare surface is installable** ([episode
+0150](0150-soulstream-the-rc4-carries-the-declare-surface.md)): the
+cut 0149 queued, made the same evening — pins to shell `v0.11.0-rc.4`
+(the declared-agents lane, the walls' fixes consumed) and workloads
+`v0.8.0-rc.4` (artifact optional where meaningless and absent on the
+wire, `DefaultBudget` the one source); verified from the outside —
+prerelease with all four tarballs, the tap's sha256 matching the
+downloaded tarball, the binary printing its version. The whole
+0140–0148 storyline now brew-installable at every altitude.
+
 **v0.14.0-rc.3 — the thinking house is installable** ([episode
 0149](0149-soulstream-the-rc3-carries-the-thinking-house.md)): pins to
 workloads `v0.8.0-rc.3` (dispatcher, EngineFor, the inference block,
 the fleet race fix) and the mind's **first tag** `v0.1.0`; verified
 from the outside — the tarball binary prints its version and answers
 `agent submit`, `model set|ls`, `provider set`; the tap serves it.
-Queued for the next cut: the shell's declare lane + composition, the
-wall fixes (`103a532`), the ceremony constants on a published tag.
 
 **The thinking house — submit-and-forget meets a person's hands**
 ([episode 0147](0147-soulstream-the-thinking-house.md); spec 014,
@@ -1485,19 +1493,25 @@ key-lifecycle research. No product code exists yet.
 
 ### soulstream-shell — the shell (as of 2026-08-28; named soulhelm until episode 0069)
 
-**The declare surface is BUILT — an agent placed from a browser**
-([episode 0148](0148-shell-the-declare-surface.md); design
+**The declare surface is BUILT and RELEASED — v0.11.0-rc.4, an agent
+placed from a browser** ([episodes
+0148](0148-shell-the-declare-surface.md)/[0150](0150-soulstream-the-rc4-carries-the-declare-surface.md);
+design
 [`0009`](../02-DESIGN/soulstream-shell/0009-the-declare-surface.md),
-merged `bf0258f`, composed in the house `dd8d6b1`, unreleased): the
-agents sheet's Declared agents lane — the form's output IS the CLI's
-JSON with upstream's own refusals inline, submit on the session's own
-admission, arrival as `open → claimed by <node>` read live from the
-record with the no-dispatcher deployment answered in honest words, the
-lists as readings, no retirement invented, no secret through the
-shell. The composition grew two declared facts (`PlacementsTopic`,
-`CapabilityRole`) on the pattern `AdminBase` rides. The e2e walks the
-browser-grade loop in 6.38s [measured]. One new dependency, named:
-workloads' `declaration` + `fleet` at the rc.3 tag.
+merged `bf0258f`, composed in the house, released in soulstream
+`v0.14.0-rc.4`): the agents sheet's Declared agents lane — the form's
+output IS the CLI's JSON with upstream's own refusals inline, submit
+on the session's own admission, arrival as `open → claimed by <node>`
+read live from the record with the no-dispatcher deployment answered
+in honest words, the lists as readings, no retirement invented, no
+secret through the shell. The composition grew two declared facts
+(`PlacementsTopic`, `CapabilityRole`) on the pattern `AdminBase`
+rides. The e2e walks the browser-grade loop in 6.38s [measured]. One
+new dependency, named: workloads' `declaration` + `fleet`, at the
+rc.4 tag whose wall fixes the lane consumes (`2cac96d`): no
+placeholder artifact, the budget prefill from
+`declaration.DefaultBudget`, the rig on the product's published
+ceremony constants.
 
 **The first hour BUILT — v0.11.0-rc.3, composed into the house the
 same day** ([episode 0127](0127-shell-the-first-hour-builds.md)):
@@ -1962,6 +1976,7 @@ mint, chunked input by demand, realtime behind its own gate) is design
 | 0147 | soulstream | [The thinking house: submit-and-forget meets a person's hands (2026-08-28)](0147-soulstream-the-thinking-house.md) |
 | 0148 | shell | [The declare surface: an agent placed from a browser (2026-08-28)](0148-shell-the-declare-surface.md) |
 | 0149 | soulstream | [The rc.3 carries the thinking house: v0.14.0-rc.3, workloads v0.8.0-rc.3, the mind's v0.1.0 (2026-08-28)](0149-soulstream-the-rc3-carries-the-thinking-house.md) |
+| 0150 | soulstream | [The rc.4 carries the declare surface: v0.14.0-rc.4, shell v0.11.0-rc.4, workloads v0.8.0-rc.4 (2026-08-28)](0150-soulstream-the-rc4-carries-the-declare-surface.md) |
 
 ## The naming map (2026-08-13)
 
