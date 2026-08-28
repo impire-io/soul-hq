@@ -12,6 +12,8 @@ component folder keeps its own conventions and its own README index:
 | [`soulstream-identity/`](soulstream-identity/README.md) | the name | Named documents carrying global D-numbered decisions (D1, D2, …) |
 | [`soulstream/`](soulstream/README.md) | the house | Numbered documents (`0001-…`), next free number onward |
 | [`soulstream-idp/`](soulstream-idp/README.md) | the fold | Named documents carrying global D-numbered decisions |
+| [`soulstream-shell/`](soulstream-shell/README.md) | the shell | Numbered documents (`0001-…`), next free number onward |
+| [`soulstream-inference/`](soulstream-inference/README.md) | the mind | Numbered documents (`0001-…`), next free number onward |
 
 **The spec-kit rule:** every document here is written explicit enough to be
 the argument to `/speckit-specify` (run in the component's repo) — the

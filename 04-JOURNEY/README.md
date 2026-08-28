@@ -12,7 +12,8 @@ load-bearing as the shipped code.
 > episode with `/journey-log` (research topics get theirs via
 > `/research-graduate`). Episodes are named `NNNN-<component>-<slug>.md` —
 > one shared sequence; component tags are single-word (`core`,
-> `workloads`, `identity`, `idp`, `shell`, `mcp`, `cli`, `soulstream`
+> `workloads`, `identity`, `idp`, `shell`, `mcp`, `cli`, `inference`,
+> `soulstream`
 > for the product, `ecosystem` for cross-cutting). Episodes ≤ 0069 keep
 > the pre-rename tags — the [naming map](#the-naming-map-2026-08-13)
 > resolves them. Follow
@@ -1699,6 +1700,30 @@ shell v0.4.2, and the evaluation candidate tagged as the operator
 asked: **soulstream v0.11.0-rc.1**, a marked pre-release. **Next:**
 the operator lives on the candidate; what chafes decides.
 
+### soulstream-inference — the mind (as of 2026-08-28)
+
+**Founded at the operator's direction, the day its research measured
+out** ([episode 0142](0142-ecosystem-the-inference-plane.md); founding
+design
+[`0001-the-inference-plane.md`](../02-DESIGN/soulstream-inference/0001-the-inference-plane.md)):
+the realm serves its agents' thinking as a fleet of stateless,
+single-model instances behind capability subjects in the tool space —
+**inference capabilities are tools**, reachable through the shipped
+capability-minting machinery with zero scope widening [measured]. The
+model is an instance attribute resolved through micro's own discovery,
+never a request parameter; the reply grammar is content frames plus an
+empty-payload header-carrying sentinel with refusing invariants (the
+enemy is silent truncation); provider credentials live instance-side
+so harnesses think credential-free through a small Messages-API door
+(the real `claude -p` measured through it, 2.21s round trips); virtual
+names re-point traffic with zero caller change; and **the record stays
+the only record** — the plane holds no conversation state, by census
+and by mid-conversation instance replacement [all five bars measured
+the day the topic opened, episode 0142]. The repo founding and the M1
+build follow immediately; the [O] ledger (catalogue home, door-key
+mint, chunked input by demand, realtime behind its own gate) is design
+0001 §9.
+
 ## Episode index
 
 | # | Component | Episode |
@@ -1844,6 +1869,7 @@ the operator lives on the candidate; what chafes decides.
 | 0139 | soulstream | [The rc.2 carries the tenants and the capabilities: v0.14.0-rc.2, identity v0.12.0, workloads v0.8.0-rc.2 (2026-08-27)](0139-soulstream-the-rc2-carries-the-tenants-and-the-capabilities.md) |
 | 0140 | ecosystem | [The focus: agents as infrastructure (2026-08-27)](0140-ecosystem-the-focus-agents-as-infrastructure.md) |
 | 0141 | ecosystem | [Agents as infrastructure: five bars in a day, the dispatcher is a composition (2026-08-27 → 2026-08-28)](0141-ecosystem-agents-as-infrastructure.md) |
+| 0142 | ecosystem | [The inference plane: five bars in a day, and a new component is founded (2026-08-28)](0142-ecosystem-the-inference-plane.md) |
 
 ## The naming map (2026-08-13)
 

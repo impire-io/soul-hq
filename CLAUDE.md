@@ -4,12 +4,13 @@ The headquarters of the Soulstream ecosystem — soulstream-core (the
 record), soulstream-workloads (the room), soulstream-identity (the
 name), soulstream (the product, the house), soulstream-idp (the fold),
 soulstream-shell (the shell), soulstream-mcp (the remote door),
-soulstream-archivist (the keeper). This repo holds research, designs,
+soulstream-archivist (the keeper), soulstream-inference (the mind).
+This repo holds research, designs,
 the roadmap, and the journey for all of them; code and frozen specs
 live in the sibling component repos (`../soulstream-core`,
 `../soulstream-workloads`, `../soulstream-identity`, `../soulstream`,
 `../soulstream-idp`, `../soulstream-shell`, `../soulstream-mcp`,
-`../soulstream-archivist`).
+`../soulstream-archivist`, `../soulstream-inference`).
 
 **Read [`AGENTS.md`](AGENTS.md) first** (reading order + the
 non-negotiables), then hold decisions against
@@ -26,7 +27,8 @@ Conventions:
   load-bearing decision gets an episode `NNNN-<component>-<slug>.md` in
   `04-JOURNEY/` (component tags, single-word by the episode grammar:
   `core`, `workloads`, `identity`, `idp`, `shell`, `mcp`, `cli`,
-  `soulstream` for the product, `ecosystem` for cross-cutting — one
+  `inference`, `soulstream` for the product, `ecosystem` for
+  cross-cutting — one
   shared sequence; episodes ≤ 0069 keep the pre-rename tags, resolved
   by the naming map in `04-JOURNEY/README.md`). Use `/journey-log`; research
   via `/research-graduate`. Refresh the index, the component's "Where things
