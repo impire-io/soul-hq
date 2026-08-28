@@ -196,9 +196,27 @@ is *not* yet built is the rest of the forward plan in
 [`../03-IMPLEMENTATION/ROADMAP.md`](../03-IMPLEMENTATION/ROADMAP.md):
 eg-walker live co-editing, sealed topics, and a browser/WebSocket client.
 
-### soulstream-workloads — the room (as of 2026-08-27; named soulrealm until episode 0069)
+### soulstream-workloads — the room (as of 2026-08-28; named soulrealm until episode 0069)
 
-**The focus turns to the room's missing daemon — agents as
+**The dispatcher is DESIGNED — five bars measured in one day**
+([episode 0141](0141-ecosystem-agents-as-infrastructure.md); design
+[`0007-agents-as-infrastructure.md`](../02-DESIGN/soulstream-workloads/0007-agents-as-infrastructure.md)):
+the `agents-as-infrastructure` research graduated the morning after
+its pre-registration — submit-and-forget from the log alone
+(submit→served ~160ms, restart resumes with no re-claim, hard-kill
+serves exactly once), placement by the 0003 claim path with the
+serving handoff (failover answered in ~1.05s, restart-dedup and
+failover-dedup one mechanism), the declared budget riding
+submission→admission (cycle halts at its bound, delegation clean),
+custody structural (no canonical scope carries a secrets tail; the
+provider secret resolves at wake time in 1.98ms and injects through
+the shipped `Template.Env`), and the whole loop drivable from a
+session admission in 561ms [measured, all 3× -race]. The finding: the
+dispatcher is a **composition of shipped mechanisms, not new
+mechanism**. Unbuilt; §9's [O]s (serve seam, `inference` block schema,
+founding role naming) go to spec.
+
+**The focus turned to the room's missing daemon — agents as
 infrastructure** ([episode
 0140](0140-ecosystem-the-focus-agents-as-infrastructure.md)): the
 operator's demand-driven direction the evening rc.2 shipped — the next
@@ -206,12 +224,8 @@ builds are the **standing dispatcher** (submit-and-forget declared
 agents: design 0004 §9's recorded reversal condition firing by its own
 words) and the shell's declare surface, with **inference providers and
 models** named part of the storyline (a dispatcher-served agent has no
-signed-in person to wrap). Research `agents-as-infrastructure` is open
-with five pre-registered bars: submit-and-forget exactly-once across
-dispatcher restart, placement by the 0003 claim path, the 0006 budget
-measured at the dispatcher's admission, provider credentials custodied
-in the identity plane, and the whole loop drivable from the shell's
-pure-consumer position.
+signed-in person to wrap). The research ran the same evening and
+graduated the next morning (episode 0141, above).
 
 **Capability minting is BUILT — the declaration's names become the
 credential** ([episode 0137](0137-ecosystem-capability-minting.md);
@@ -1829,6 +1843,7 @@ the operator lives on the candidate; what chafes decides.
 | 0138 | identity | [The sealed record gains its custodian: D9 builds (2026-08-27)](0138-identity-the-sealed-record-gains-its-custodian.md) |
 | 0139 | soulstream | [The rc.2 carries the tenants and the capabilities: v0.14.0-rc.2, identity v0.12.0, workloads v0.8.0-rc.2 (2026-08-27)](0139-soulstream-the-rc2-carries-the-tenants-and-the-capabilities.md) |
 | 0140 | ecosystem | [The focus: agents as infrastructure (2026-08-27)](0140-ecosystem-the-focus-agents-as-infrastructure.md) |
+| 0141 | ecosystem | [Agents as infrastructure: five bars in a day, the dispatcher is a composition (2026-08-27 → 2026-08-28)](0141-ecosystem-agents-as-infrastructure.md) |
 
 ## The naming map (2026-08-13)
 

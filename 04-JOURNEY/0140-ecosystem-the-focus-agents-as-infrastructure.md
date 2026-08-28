@@ -64,9 +64,10 @@ does not return in this shape and the finding is recorded where the
 demand can see it. The focus itself reverses only on the operator
 reading the same demand differently.
 
-Trail: research pre-registration
-[`01-RESEARCH/agents-as-infrastructure/README.md`](../01-RESEARCH/agents-as-infrastructure/README.md)
-(`7f895c1`); design 0004 §9 (the fired clause), design 0006 §6 (the
+Trail: research pre-registration `01-RESEARCH/agents-as-infrastructure/`
+(`7f895c1`; graduated and removed the next morning — [episode
+0141](0141-ecosystem-agents-as-infrastructure.md), git history keeps
+the folder); design 0004 §9 (the fired clause), design 0006 §6 (the
 waiting seam); the demand-side context in episode
 [0116](0116-ecosystem-what-shipped-without-a-human-end.md)'s method —
 evaluation finds what is built but unreachable by a person.
