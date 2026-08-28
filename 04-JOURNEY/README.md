@@ -1720,6 +1720,21 @@ the operator lives on the candidate; what chafes decides.
 
 ### soulstream-inference — the mind (as of 2026-08-28)
 
+**M1 serves — the first slice built and published the founding day**
+([episode 0144](0144-inference-the-mind-serves.md);
+[impire-io/soulstream-inference](https://github.com/impire-io/soulstream-inference)
+`8f4f4a6`): `wire` (the grammar's invariants enforced at construction
+and refused at reading, the per-frame budget computed per frame),
+`client` (the one Collect loop, Resolve, the catalogue Descriptor),
+`instance` (the Adapter seam, the wish overruled by an exact fit
+check, no secret read anywhere), `adapter/standin`, and the `door`
+(key auth, SSE + one-shot, custodies nothing). The five §8 criteria
+stand as the repo's own tests, 3× `-race`, and the live arm ran the
+real harness through the M1 door in 2.40s — catching the one bug the
+research missed (the harness sends `system` as content blocks). Named
+next: the `anthropic` adapter (M2), the product wiring (M3), the
+release pipeline at first consumer demand.
+
 **Founded at the operator's direction, the day its research measured
 out** ([episode 0142](0142-ecosystem-the-inference-plane.md); founding
 design
@@ -1889,6 +1904,7 @@ mint, chunked input by demand, realtime behind its own gate) is design
 | 0141 | ecosystem | [Agents as infrastructure: five bars in a day, the dispatcher is a composition (2026-08-27 → 2026-08-28)](0141-ecosystem-agents-as-infrastructure.md) |
 | 0142 | ecosystem | [The inference plane: five bars in a day, and a new component is founded (2026-08-28)](0142-ecosystem-the-inference-plane.md) |
 | 0143 | workloads | [The dispatcher builds: submit-and-forget is real (2026-08-28)](0143-workloads-the-dispatcher-builds.md) |
+| 0144 | inference | [The mind serves: M1 of the inference plane (2026-08-28)](0144-inference-the-mind-serves.md) |
 
 ## The naming map (2026-08-13)
 
