@@ -128,6 +128,16 @@ model) resolves. The helm never works around this with a side-channel.
   People & sign-in, Agents, Active topics, Latest activity. Component
   bynames never appear in product UI.
 
+**Amended 2026-08-29 (design [0011](0011-the-second-canon.md),
+episode 0154):** the canon changes hands — the **Impire design
+system** (the operator's "New Impire Design System" project, same
+design-sync vendoring lane) replaces Soulsystem: paper/ink surfaces,
+Geist/Geist Mono, one teal accent, borders over bevels. The
+amber/teal two-channel semantic is re-homed, not reversed — see 0011
+§4. Everything else in this section holds: single vendored token
+source, fonts and icons vendored, zero CDN, label-carried component
+identity, the C8 copy rule.
+
 ## §8 Acceptance criteria (the research bars as standing gates)
 
 1. The consumer-position module compiles against pinned tags only —
