@@ -950,6 +950,18 @@ claims-mapping shape, service round-trip latency) are named on the roadmap.
 
 ### soulstream — the product, the house (as of 2026-08-29; named soulnode until episode 0069)
 
+**v0.14.0-rc.7 — the second canon composed** ([episode
+0156](0156-soulstream-the-rc7-carries-the-second-canon.md);
+`f4f7c3f`): the operator called the canon held on the before/after
+screens (design 0011 §9.4), the `second-canon` branches
+fast-forwarded onto both mains, and the pins moved — shell
+`v0.11.0-rc.6` and idp `v0.8.2`, the full house gate green on the new
+tags before any of them reached the remote (fetches routed to the
+sibling clones through a throwaway scoped git config — no replace, no
+go.work). Every human-facing surface now wears Impire's paper and
+ink; every word on them is byte-for-byte what rc.6 said. The byon
+binary bump is the operator's dogfood act.
+
 **v0.14.0-rc.6 — a runtime of your own serves the realm, and byon
 THINKS** ([episode
 0153](0153-soulstream-a-runtime-of-your-own.md); `8cb48f9`): the
@@ -1516,27 +1528,27 @@ key-lifecycle research. No product code exists yet.
 
 ### soulstream-shell — the shell (as of 2026-08-29; named soulhelm until episode 0069)
 
-**The second canon is DECIDED and BUILT — the Impire design system,
-visual-for-visual, awaiting the operator's eyes** ([episodes
-0154](0154-shell-the-second-canon.md)/[0155](0155-shell-the-second-canon-builds.md);
+**The second canon is HELD and SHIPPED — v0.11.0-rc.6, the Impire
+design system visual-for-visual** ([episodes
+0154](0154-shell-the-second-canon.md)/[0155](0155-shell-the-second-canon-builds.md)/[0156](0156-soulstream-the-rc7-carries-the-second-canon.md);
 design
 [`0011`](../02-DESIGN/soulstream-shell/0011-the-second-canon.md),
-built on branch `second-canon` — shell `3a1ca5d`, idp `32855fd`):
-the operator's new design system and console kit replace Soulsystem
-as the visual canon — paper/ink, Geist, one teal accent, borders over
-bevels, the icon spine becoming a labeled sidebar — while every
-screen name, route, act, and the sheet grammar hold. The build was a
-values swap, not a rebuild: the class vocabulary held, zero module
-render files changed, three test sites moved, both repos' full gates
-green (the shell e2e whole in 35.8s, the offline gate fetching
-Geist). The kit's platform vocabulary (Bridges, gateway, vault,
-scopes) is deliberately not adopted — its foundation documents stand
-on the roadmap as a named horizon; the two-channel accent semantic is
-re-homed into words and the byline's dot (0077's accountability
-reading keeps standing, loses its paint). Unmerged until 0011 §9.4 —
-the operator calling the canon held on the published before/after
-screens; the mark, the dark theme, and the vocabulary horizon are the
-named [O]s.
+accepted §9.4 — the operator called the canon held on the
+before/after screens): the operator's new design system and console
+kit replace Soulsystem as the visual canon — paper/ink, Geist, one
+teal accent, borders over bevels, the icon spine becoming a labeled
+sidebar — while every screen name, route, act, and the sheet grammar
+hold. The build was a values swap, not a rebuild: the class
+vocabulary held, zero module render files changed, three test sites
+moved, both repos' full gates green (the shell e2e whole in 35.8s,
+the offline gate fetching Geist). The fold moved with it (idp
+`v0.8.2`), the house composes both as `v0.14.0-rc.7`. The kit's
+platform vocabulary (Bridges, gateway, vault, scopes) is deliberately
+not adopted — its foundation documents stand on the roadmap as a
+named horizon; the two-channel accent semantic is re-homed into words
+and the byline's dot (0077's accountability reading keeps standing,
+loses its paint). The mark, the dark theme, and the vocabulary
+horizon are the named [O]s.
 
 **The models surface is BUILT — the thinking side gains its human end**
 ([episode 0151](0151-shell-the-models-surface.md); design
@@ -2065,6 +2077,7 @@ mint, chunked input by demand, realtime behind its own gate) is design
 | 0153 | soulstream | [A runtime of your own serves the realm: the openai arm in the house, and byon thinks (2026-08-29)](0153-soulstream-a-runtime-of-your-own.md) |
 | 0154 | shell | [The second canon: the skin moves, the words hold (2026-08-29)](0154-shell-the-second-canon.md) |
 | 0155 | shell | [The second canon builds: a values swap, not a rebuild (2026-08-29)](0155-shell-the-second-canon-builds.md) |
+| 0156 | soulstream | [The rc.7 carries the second canon: held, merged, pinned (2026-08-29)](0156-soulstream-the-rc7-carries-the-second-canon.md) |
 
 ## The naming map (2026-08-13)
 

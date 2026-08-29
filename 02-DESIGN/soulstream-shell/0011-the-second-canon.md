@@ -1,12 +1,11 @@
 # 0011 — soulstream-shell: the second canon
 
-**Status:** decided 2026-08-29, at the operator's direction (episode
-[0154](../../04-JOURNEY/0154-shell-the-second-canon.md)); **built the
-same day** on branch `second-canon` in both repos (shell `3a1ca5d`,
-idp `32855fd` — episode
-[0155](../../04-JOURNEY/0155-shell-the-second-canon-builds.md)), full
-gates green, awaiting §9.4 — the operator's eyes on the before/after
-screens. Build amendments are marked in §11. The
+**Status:** decided, built, and **ACCEPTED 2026-08-29** — the
+operator called the canon held on the before/after screens (§9.4
+paid; episodes
+[0154](../../04-JOURNEY/0154-shell-the-second-canon.md)/[0155](../../04-JOURNEY/0155-shell-the-second-canon-builds.md)/[0156](../../04-JOURNEY/0156-soulstream-the-rc7-carries-the-second-canon.md)).
+Merged and shipped: shell **v0.11.0-rc.6**, idp **v0.8.2**, the house
+pinning both as **v0.14.0-rc.7**. Build amendments are marked in §11. The
 operator authored a new design system and a full console kit in a
 design project (**"New Impire Design System"**, the design-sync lane —
 the same lane the first canon rode, episode
