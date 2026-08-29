@@ -14,9 +14,9 @@ the NATS server on `beno1` (tailnet `beno1.hippogryph-dinosaur.ts.net`,
 `nats://100.108.7.14:4222`). The node runs ON beno1 beside its server:
 state dir `~calmera/.soulstream-byon` (moved from altis, day-2 copy;
 altis keeps a cold backup, never `up` there), binary
-`/usr/local/bin/soulstream` (**v0.14.0-rc.6** since 2026-08-29; before
-it v0.14.0-rc.5 the same morning, v0.14.0-rc.4 since 2026-08-28,
-v0.13.0-rc.11 since 2026-08-21),
+`/usr/local/bin/soulstream` (**v0.14.0-rc.7** since 2026-08-29 — the
+third bump that day, after v0.14.0-rc.6 and v0.14.0-rc.5;
+v0.14.0-rc.4 since 2026-08-28, v0.13.0-rc.11 since 2026-08-21),
 systemd unit
 `soulstream.service`, MCP on `127.0.0.1:8081` (beno1's :8080 belongs to
 private-link), sign-in issuer `https://beno1.hippogryph-dinosaur.ts.net`
@@ -113,6 +113,27 @@ limits now: `claude` still not installed on beno1 (a declared agent is
 claimed, its engine unserved) and tool capabilities still refuse by
 name (spec 013); the models empty state is RETIRED — the Models sheet
 has a row and a serving instance to show.
+
+**On v0.14.0-rc.7 since 2026-08-29 — byon wears the second canon**
+([episode
+0156](../04-JOURNEY/0156-soulstream-the-rc7-carries-the-second-canon.md)):
+a version bump only — no record-format change, no `adopt` asked; the
+state copy sits beside as `.pre-v0.14.0-rc.7-20260829-143646` and the
+previous binary as `/usr/local/bin/soulstream.pre-v0.14.0-rc.7`; the
+tarball's checksum verified against the release's own before install.
+Every plane came back serving — the inference instance
+(GLM-4.7-Flash-GGUF via the openai arm), identity, memory, the
+dispatcher on `placements-8o73` with `dispatcher_up` and its wake
+caught up, thinking on :8600, the shell on :8500 — and the shell and
+the issuer's discovery document answer 200 from the fronted names
+[measured]. The bump's own evidence: the console now serves the
+**second canon** — `tokens.css` opens in Impire's name and
+`geist-100-900.woff2` answers `wOF2` from byon itself [measured] —
+so the deployment the operator lives on wears the paper-and-ink dress
+the acceptance was called on. The restart dropped the signed-in
+session's renewing connection as designed; the fresh sign-in is the
+operator's act. Standing limits unchanged: `claude` still not
+installed on beno1, tool capabilities still refuse by name (spec 013).
 
 **The deployment duty rc.10 stated, found unpaid and paid the same day**
 [measured, before and after, from the realm account JWT in beno1's
