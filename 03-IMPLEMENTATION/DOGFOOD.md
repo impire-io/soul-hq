@@ -14,9 +14,9 @@ the NATS server on `beno1` (tailnet `beno1.hippogryph-dinosaur.ts.net`,
 `nats://100.108.7.14:4222`). The node runs ON beno1 beside its server:
 state dir `~calmera/.soulstream-byon` (moved from altis, day-2 copy;
 altis keeps a cold backup, never `up` there), binary
-`/usr/local/bin/soulstream` (**v0.14.0-rc.7** since 2026-08-29 — the
-third bump that day, after v0.14.0-rc.6 and v0.14.0-rc.5;
-v0.14.0-rc.4 since 2026-08-28, v0.13.0-rc.11 since 2026-08-21),
+`/usr/local/bin/soulstream` (**v0.14.0-rc.8** since 2026-08-29
+evening — the fourth bump that day, after v0.14.0-rc.7, rc.6, and
+rc.5; v0.14.0-rc.4 since 2026-08-28, v0.13.0-rc.11 since 2026-08-21),
 systemd unit
 `soulstream.service`, MCP on `127.0.0.1:8081` (beno1's :8080 belongs to
 private-link), sign-in issuer `https://beno1.hippogryph-dinosaur.ts.net`
@@ -134,6 +134,23 @@ the acceptance was called on. The restart dropped the signed-in
 session's renewing connection as designed; the fresh sign-in is the
 operator's act. Standing limits unchanged: `claude` still not
 installed on beno1, tool capabilities still refuse by name (spec 013).
+
+**On v0.14.0-rc.8 since 2026-08-29 evening — byon takes the calm
+pass** ([episode 0157](../04-JOURNEY/0157-shell-the-calm-pass.md)): a
+version bump only — no record-format change, no `adopt` asked; the
+state copy sits beside as `.pre-v0.14.0-rc.8-20260829-213939` and the
+previous binary as `/usr/local/bin/soulstream.pre-v0.14.0-rc.8`; the
+tarball's checksum verified against the release's own before install.
+Every plane came back serving — the inference instance, identity,
+memory, the dispatcher on `placements-8o73` with `dispatcher_up`,
+thinking, the shell — and the shell and the issuer's discovery
+document answer 200 from the fronted names [measured]. The bump's own
+evidence: the calm layer is served from byon itself — the token
+source carries the page-head, tiles, steps, and wizard-foot classes
+the pass added [measured]. The restart dropped the signed-in session
+as designed; the fresh sign-in is the operator's act — and the first
+signed-in look at the calm Home on the realm they live in is theirs
+to take. Standing limits unchanged.
 
 **The deployment duty rc.10 stated, found unpaid and paid the same day**
 [measured, before and after, from the realm account JWT in beno1's
