@@ -948,7 +948,16 @@ questions before their milestones (NGS callout
 capabilities, the sentinel-credential flow, the first-key story, the
 claims-mapping shape, service round-trip latency) are named on the roadmap.
 
-### soulstream — the product, the house (as of 2026-08-28; named soulnode until episode 0069)
+### soulstream — the product, the house (as of 2026-08-29; named soulnode until episode 0069)
+
+**v0.14.0-rc.5 — the models surface is installable** ([episode
+0152](0152-soulstream-the-rc5-carries-the-models-surface.md)): pins to
+shell `v0.11.0-rc.5` (the Models sheet, the InferenceOn fact from a
+published shell) and the mind's `v0.2.0` (the catalogue contract);
+verified from the outside — prerelease with all four tarballs, the
+tap's sha256 matching the downloaded tarball, the binary printing its
+version. The thinking side has its hands at every altitude, and the
+shell e2e's last models-era replace dropped behind the tag.
 
 **v0.14.0-rc.4 — the declare surface is installable** ([episode
 0150](0150-soulstream-the-rc4-carries-the-declare-surface.md)): the
@@ -1513,11 +1522,12 @@ chokepoint stays a named [O]. One new declared fact (`InferenceOn`,
 config-derived) words the empty states; `default_params` gets no
 editor until upstream applies them anywhere. The e2e walks the sheet
 on a rig running a real stand-in instance in 6.7s [measured]. The
-publish step is PAID (2026-08-29): inference tagged `v0.2.0`, the shell
-tagged `v0.11.0-rc.5` with its pin moved, the house pinning both
-(`fc27c72`) — every repo standalone on published tags again; the e2e's
-one remaining TEMPORARY replace (soulstream) drops with the next house
-tag.
+publish step is PAID (2026-08-29, episode
+[0152](0152-soulstream-the-rc5-carries-the-models-surface.md)):
+inference tagged `v0.2.0`, the shell tagged `v0.11.0-rc.5`, the house
+released as `v0.14.0-rc.5` pinning both — every repo standalone on
+published tags, the e2e's soulstream replace dropped behind the tag
+(`c68afea`), the tap serving the sheet.
 
 **The declare surface is BUILT and RELEASED — v0.11.0-rc.4, an agent
 placed from a browser** ([episodes
@@ -2015,6 +2025,7 @@ mint, chunked input by demand, realtime behind its own gate) is design
 | 0149 | soulstream | [The rc.3 carries the thinking house: v0.14.0-rc.3, workloads v0.8.0-rc.3, the mind's v0.1.0 (2026-08-28)](0149-soulstream-the-rc3-carries-the-thinking-house.md) |
 | 0150 | soulstream | [The rc.4 carries the declare surface: v0.14.0-rc.4, shell v0.11.0-rc.4, workloads v0.8.0-rc.4 (2026-08-28)](0150-soulstream-the-rc4-carries-the-declare-surface.md) |
 | 0151 | shell | [The models surface: names managed, serving read (2026-08-28 → 2026-08-29)](0151-shell-the-models-surface.md) |
+| 0152 | soulstream | [The rc.5 carries the models surface: v0.14.0-rc.5, shell v0.11.0-rc.5, inference v0.2.0 (2026-08-29)](0152-soulstream-the-rc5-carries-the-models-surface.md) |
 
 ## The naming map (2026-08-13)
 
