@@ -1,8 +1,12 @@
 # 0011 — soulstream-shell: the second canon
 
-**Status:** decided 2026-08-29, at the operator's direction — ahead
-of its build (episode
-[0154](../../04-JOURNEY/0154-shell-the-second-canon.md)). The
+**Status:** decided 2026-08-29, at the operator's direction (episode
+[0154](../../04-JOURNEY/0154-shell-the-second-canon.md)); **built the
+same day** on branch `second-canon` in both repos (shell `3a1ca5d`,
+idp `32855fd` — episode
+[0155](../../04-JOURNEY/0155-shell-the-second-canon-builds.md)), full
+gates green, awaiting §9.4 — the operator's eyes on the before/after
+screens. Build amendments are marked in §11. The
 operator authored a new design system and a full console kit in a
 design project (**"New Impire Design System"**, the design-sync lane —
 the same lane the first canon rode, episode
@@ -179,3 +183,26 @@ its counter.
   (bridges, gateway, vault, teams) graduates from research, the
   console vocabulary revisit rides those designs — tracked on the
   roadmap, explicitly out of this document's scope.
+
+## §11 As built (2026-08-29, branch `second-canon`)
+
+- **§8's three movements collapsed into one commit.** The class
+  vocabulary held whole, so the port was a values swap: **zero module
+  render files changed** — the predicted 654-line re-class never
+  happened, and of the ~250 markup-asserting test lines only three
+  sites moved (the frame's own tests, the collapse-ladder table, the
+  mention-mark test). The blast radius was the token source, the
+  chrome, and the canon prose.
+- **The ladder re-steps.** The 560px "bar sheds a strip" step dies
+  with the bar; the 900px step now also sheds the sidebar's labels to
+  a slim icon rail (`--spine-slim`, 60px), with the labels back over
+  the content on the frame's own `$rail` signal. Measured at 390px:
+  scrollWidth = innerWidth, nothing sideways.
+- **Geist vendored as the variable binaries** (100–900, 58KB each,
+  OFL alongside) from the `geist` npm package — one file per family,
+  the archivo-shape kept; the e2e offline gate re-pointed and green.
+- **The fold moved the same day** — `internal/webstyle` a pure values
+  swap, every selector held, idp gate green.
+- **The one filled key per view held for free**: `.btn` is teal,
+  `.btn.ghost` (the product's own secondary everywhere) is the white
+  key with the ink edge — no call sites changed.

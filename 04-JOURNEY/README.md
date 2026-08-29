@@ -1516,22 +1516,27 @@ key-lifecycle research. No product code exists yet.
 
 ### soulstream-shell — the shell (as of 2026-08-29; named soulhelm until episode 0069)
 
-**The second canon is DECIDED — the Impire design system,
-visual-for-visual** ([episode 0154](0154-shell-the-second-canon.md);
+**The second canon is DECIDED and BUILT — the Impire design system,
+visual-for-visual, awaiting the operator's eyes** ([episodes
+0154](0154-shell-the-second-canon.md)/[0155](0155-shell-the-second-canon-builds.md);
 design
 [`0011`](../02-DESIGN/soulstream-shell/0011-the-second-canon.md),
-ahead of its build): the operator's new design system and console kit
-replace Soulsystem as the visual canon — paper/ink, Geist, one teal
-accent, borders over bevels, the icon spine becoming a labeled
-sidebar — while every screen name, route, act, and the sheet grammar
-hold. The kit's platform vocabulary (Bridges, gateway, vault, scopes)
-is deliberately not adopted — its foundation documents describe an
-architecture soulstream does not have and stand on the roadmap as a
-named horizon; the two-channel accent semantic is re-homed into words
-(0077's accountability reading keeps standing, loses its paint). The
-arc lands as three movements on one branch (tokens → chrome →
-screens), all ten screens then the idp fold; the mark, the dark
-theme, and the vocabulary horizon are the named [O]s.
+built on branch `second-canon` — shell `3a1ca5d`, idp `32855fd`):
+the operator's new design system and console kit replace Soulsystem
+as the visual canon — paper/ink, Geist, one teal accent, borders over
+bevels, the icon spine becoming a labeled sidebar — while every
+screen name, route, act, and the sheet grammar hold. The build was a
+values swap, not a rebuild: the class vocabulary held, zero module
+render files changed, three test sites moved, both repos' full gates
+green (the shell e2e whole in 35.8s, the offline gate fetching
+Geist). The kit's platform vocabulary (Bridges, gateway, vault,
+scopes) is deliberately not adopted — its foundation documents stand
+on the roadmap as a named horizon; the two-channel accent semantic is
+re-homed into words and the byline's dot (0077's accountability
+reading keeps standing, loses its paint). Unmerged until 0011 §9.4 —
+the operator calling the canon held on the published before/after
+screens; the mark, the dark theme, and the vocabulary horizon are the
+named [O]s.
 
 **The models surface is BUILT — the thinking side gains its human end**
 ([episode 0151](0151-shell-the-models-surface.md); design
@@ -2059,6 +2064,7 @@ mint, chunked input by demand, realtime behind its own gate) is design
 | 0152 | soulstream | [The rc.5 carries the models surface: v0.14.0-rc.5, shell v0.11.0-rc.5, inference v0.2.0 (2026-08-29)](0152-soulstream-the-rc5-carries-the-models-surface.md) |
 | 0153 | soulstream | [A runtime of your own serves the realm: the openai arm in the house, and byon thinks (2026-08-29)](0153-soulstream-a-runtime-of-your-own.md) |
 | 0154 | shell | [The second canon: the skin moves, the words hold (2026-08-29)](0154-shell-the-second-canon.md) |
+| 0155 | shell | [The second canon builds: a values swap, not a rebuild (2026-08-29)](0155-shell-the-second-canon-builds.md) |
 
 ## The naming map (2026-08-13)
 
