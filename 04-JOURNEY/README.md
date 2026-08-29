@@ -1512,9 +1512,12 @@ gate is a **courtesy line, said as one** [mechanism-argument]; a real
 chokepoint stays a named [O]. One new declared fact (`InferenceOn`,
 config-derived) words the empty states; `default_params` gets no
 editor until upstream applies them anywhere. The e2e walks the sheet
-on a rig running a real stand-in instance in 6.7s [measured].
-Unreleased: the publish step (inference tag, pins, replaces) is the
-operator's push.
+on a rig running a real stand-in instance in 6.7s [measured]. The
+publish step is PAID (2026-08-29): inference tagged `v0.2.0`, the shell
+tagged `v0.11.0-rc.5` with its pin moved, the house pinning both
+(`fc27c72`) — every repo standalone on published tags again; the e2e's
+one remaining TEMPORARY replace (soulstream) drops with the next house
+tag.
 
 **The declare surface is BUILT and RELEASED — v0.11.0-rc.4, an agent
 placed from a browser** ([episodes
@@ -1795,8 +1798,8 @@ codec with the wire form pinned by its own test — one definition every
 hand consumes (the house's verbs, the shell's models sheet). It holds
 no connection and creates nothing: provisioning stays the caller's, the
 plane's census stands, and the name grammar stays the record's
-(callers validate; the plane still does not know the record). Untagged:
-the release carrying it is the operator's push.
+(callers validate; the plane still does not know the record). Tagged
+**v0.2.0** the same day; the shell (v0.11.0-rc.5) and the house pin it.
 
 **The other dialect — OpenAI compatibility both directions** ([episode
 0146](0146-inference-the-other-dialect.md); `fc7bdcf`, the operator's
