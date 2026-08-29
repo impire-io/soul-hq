@@ -14,8 +14,9 @@ the NATS server on `beno1` (tailnet `beno1.hippogryph-dinosaur.ts.net`,
 `nats://100.108.7.14:4222`). The node runs ON beno1 beside its server:
 state dir `~calmera/.soulstream-byon` (moved from altis, day-2 copy;
 altis keeps a cold backup, never `up` there), binary
-`/usr/local/bin/soulstream` (**v0.14.0-rc.5** since 2026-08-29; before
-it v0.14.0-rc.4 since 2026-08-28, v0.13.0-rc.11 since 2026-08-21),
+`/usr/local/bin/soulstream` (**v0.14.0-rc.6** since 2026-08-29; before
+it v0.14.0-rc.5 the same morning, v0.14.0-rc.4 since 2026-08-28,
+v0.13.0-rc.11 since 2026-08-21),
 systemd unit
 `soulstream.service`, MCP on `127.0.0.1:8081` (beno1's :8080 belongs to
 private-link), sign-in issuer `https://beno1.hippogryph-dinosaur.ts.net`
@@ -87,6 +88,31 @@ operator's act. Standing limits as at rc.4, one now with a screen:
 the inference plane stays undeclared, so the Models sheet shows its
 honest empty state — declaring `planes.inference` takes a provider key
 through `soulstream provider set`, the operator's act by custody.
+
+**On v0.14.0-rc.6 since 2026-08-29, and byon THINKS** ([episode
+0153](../04-JOURNEY/0153-soulstream-a-runtime-of-your-own.md)): the
+operator's answer to the provider-key question was a pivot — no
+Anthropic key; the provider is **lemonade-server on beno4**
+(`lemond.service`, OpenAI dialect on `:13305`, GLM-4.7-Flash loaded on
+llama-server behind it). rc.6 carries the house's new openai arm, so
+the plane is declared **keyless**: `planes.inference` with one instance
+`{adapter: openai, model: GLM-4.7-Flash-GGUF, base_url:
+http://192.168.50.149:13305}` — no provider secret exists anywhere on
+byon, honestly, because the runtime is the deployment's own. Backups
+beside as `.pre-v0.14.0-rc.6-20260829-123139` and
+`config.json.pre-inference-*`; checksum-verified install. Measured:
+`thinking (agents) http://127.0.0.1:8600` in the journal, the door
+refusing keyless with 401 on both dialects, the `$SRV.INFO.infer`
+scatter answering in 470µs with the instance's model and both
+subjects, and **one real generation through the plane's own anycast**
+— a NATS request on `SOULSTREAM.SVC.infer-chat` answered `served` with
+the grammar's usage headers riding (`Infer-Usage-Output-Tokens: 165`,
+`Infer-Model: GLM-4.7-Flash-GGUF`): beno1's realm thinking on beno4's
+GPU. The catalogue holds its first name: `glm-flash`, pinned. Standing
+limits now: `claude` still not installed on beno1 (a declared agent is
+claimed, its engine unserved) and tool capabilities still refuse by
+name (spec 013); the models empty state is RETIRED — the Models sheet
+has a row and a serving instance to show.
 
 **The deployment duty rc.10 stated, found unpaid and paid the same day**
 [measured, before and after, from the realm account JWT in beno1's

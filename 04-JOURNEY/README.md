@@ -950,6 +950,20 @@ claims-mapping shape, service round-trip latency) are named on the roadmap.
 
 ### soulstream — the product, the house (as of 2026-08-29; named soulnode until episode 0069)
 
+**v0.14.0-rc.6 — a runtime of your own serves the realm, and byon
+THINKS** ([episode
+0153](0153-soulstream-a-runtime-of-your-own.md); `8cb48f9`): the
+openai arm joins the house — `planes.inference.instances` gains
+`base_url`, keyless legal when the runtime is the deployment's own,
+verify refusing the unhonourable shapes by name — because the
+operator's provider turned out to be lemonade-server on beno4, not an
+Anthropic key. Deployed on byon the same hour: a keyless
+GLM-4.7-Flash instance, discovery answering in 470µs, one real
+generation through `SOULSTREAM.SVC.infer-chat` with usage headers
+riding, the catalogue's first name (`glm-flash`) set, no provider
+secret existing anywhere [measured]. The Models sheet's empty state is
+retired on the realm that recorded it.
+
 **v0.14.0-rc.5 — the models surface is installable** ([episode
 0152](0152-soulstream-the-rc5-carries-the-models-surface.md)): pins to
 shell `v0.11.0-rc.5` (the Models sheet, the InferenceOn fact from a
@@ -2026,6 +2040,7 @@ mint, chunked input by demand, realtime behind its own gate) is design
 | 0150 | soulstream | [The rc.4 carries the declare surface: v0.14.0-rc.4, shell v0.11.0-rc.4, workloads v0.8.0-rc.4 (2026-08-28)](0150-soulstream-the-rc4-carries-the-declare-surface.md) |
 | 0151 | shell | [The models surface: names managed, serving read (2026-08-28 → 2026-08-29)](0151-shell-the-models-surface.md) |
 | 0152 | soulstream | [The rc.5 carries the models surface: v0.14.0-rc.5, shell v0.11.0-rc.5, inference v0.2.0 (2026-08-29)](0152-soulstream-the-rc5-carries-the-models-surface.md) |
+| 0153 | soulstream | [A runtime of your own serves the realm: the openai arm in the house, and byon thinks (2026-08-29)](0153-soulstream-a-runtime-of-your-own.md) |
 
 ## The naming map (2026-08-13)
 
