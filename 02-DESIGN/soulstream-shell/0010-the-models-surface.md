@@ -1,17 +1,20 @@
 # 0010 — soulstream-shell: the models surface
 
 **Status:** drafted 2026-08-28, at the operator's direction — the
-thinking house's operator window. Closes the [O] design
-[0009](0009-the-declare-surface.md) §4 named ("writing the catalogue
-from the shell is a named [O], not a refusal") and answers the line
-the byon soak recorded the same week
+thinking house's operator window; **built 2026-08-29** across the three
+repos (inference `513c75a` the contract, house `6635aac` the rewire and
+the fact, shell `ad86a9f`/`6a70447` the module and its gate — the e2e
+walks the sheet on the thinking rig in 6.7s [measured]). Closes the [O]
+design [0009](0009-the-declare-surface.md) §4 named ("writing the
+catalogue from the shell is a named [O], not a refusal") and answers
+the line the byon soak recorded the same week
 ([`DOGFOOD.md`](../../03-IMPLEMENTATION/DOGFOOD.md)): the inference
 plane undeclared, models a CLI-act-in-words empty state. Grounded in
 the measured facts of spec 014 ([episode
 0147](../../04-JOURNEY/0147-soulstream-the-thinking-house.md)) and the
 plane's founding design
 ([inference 0001](../soulstream-inference/0001-the-inference-plane.md));
-evidence classes as there.
+evidence classes as there. Build amendments are marked in place below.
 
 ## §1 The surface, in one sentence
 
@@ -118,9 +121,11 @@ paste-able command.
 ## §5 Boundaries, each already a house rule
 
 - **One new dependency, named openly**: soulstream-inference's
-  published client surface (`client`, `wire`) — the purity allowlist
-  grows a bar with its reached-ness control, the exact pattern the
-  workloads bar set. No `internal/` import anywhere.
+  published client surface — the purity allowlist grows a bar with its
+  reached-ness control, the exact pattern the workloads bar set. No
+  `internal/` import anywhere. *(Build amendment: the packages are
+  `catalogue` + `client`, not the drafted `client` + `wire` — the codec
+  landed as its own package and `wire` is never reached.)*
 - **One new declared fact**: `InferenceOn`, from the deployment's
   config, absent-means-absent — ordering-safe because the helm plane
   starts before the inference plane, so the fact is the config's, the
@@ -133,7 +138,7 @@ paste-able command.
 
 ## §6 Upstream asks
 
-1. **(inference)** The catalogue's entry encoding becomes the plane's
+1. ~~**(inference)** The catalogue's entry encoding becomes the plane's
    published contract: the JSON shape
    `{capability, model_pin?, tags?, default_params?}`, the bucket
    name, and get/set/list over a handed KV handle — with the house's
@@ -141,7 +146,13 @@ paste-able command.
    bucket constant retired (the drift episode
    [0148](../../04-JOURNEY/0148-shell-the-declare-surface.md) flagged,
    closed at its source). Provisioning stays the product's: the
-   plane's census keeps creating nothing.
+   plane's census keeps creating nothing.~~ **Honored the same day**:
+   the `catalogue` package (inference `513c75a`) with the wire form
+   pinned by its own test; the house delegates, keeping only its
+   posture (provisioning, absence-as-ordinary, the record's name
+   grammar at the hand); every spelled constant retired, the e2e's
+   included. The publish step stands until the tags: the inference tag
+   carrying the package, the shell and house pins moved onto it.
 2. **(soulstream, by demand)** A `default_params` consumer on the
    door's route path — before any surface offers to edit them.
 

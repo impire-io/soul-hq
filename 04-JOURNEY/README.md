@@ -1491,7 +1491,30 @@ constraints — passkeys, not passwords; indistinguishable by design —
 and the roadmap sequences M1 (the OP skeleton) behind its KV-schema and
 key-lifecycle research. No product code exists yet.
 
-### soulstream-shell — the shell (as of 2026-08-28; named soulhelm until episode 0069)
+### soulstream-shell — the shell (as of 2026-08-29; named soulhelm until episode 0069)
+
+**The models surface is BUILT — the thinking side gains its human end**
+([episode 0151](0151-shell-the-models-surface.md); design
+[`0010`](../02-DESIGN/soulstream-shell/0010-the-models-surface.md),
+shell `ad86a9f`/`6a70447`, drafted at the operator's direction the
+evening the declare surface shipped, built the next day across three
+repos): the Models sheet — every virtual name a row saying where it
+points with the stored truth folded whole, naming/re-pointing as one
+form whose entry is byte-identical to the CLI's (the catalogue's stored
+shape now the plane's published contract, `soulstream-inference/catalogue`,
+every spelled constant retired — 0148's drift closed at its source),
+removal behind a question that counts the declared agents naming the
+name, Serving now from the plane's own discovery, the provider key a
+paste-able placeholder and never a value. The fact-finding overturned
+the lane assumption: the persona scope carries `$KV.>`, so catalogue
+writes are the person's own act on their own admission and the admin
+gate is a **courtesy line, said as one** [mechanism-argument]; a real
+chokepoint stays a named [O]. One new declared fact (`InferenceOn`,
+config-derived) words the empty states; `default_params` gets no
+editor until upstream applies them anywhere. The e2e walks the sheet
+on a rig running a real stand-in instance in 6.7s [measured].
+Unreleased: the publish step (inference tag, pins, replaces) is the
+operator's push.
 
 **The declare surface is BUILT and RELEASED — v0.11.0-rc.4, an agent
 placed from a browser** ([episodes
@@ -1762,7 +1785,18 @@ shell v0.4.2, and the evaluation candidate tagged as the operator
 asked: **soulstream v0.11.0-rc.1**, a marked pre-release. **Next:**
 the operator lives on the candidate; what chafes decides.
 
-### soulstream-inference — the mind (as of 2026-08-28)
+### soulstream-inference — the mind (as of 2026-08-29)
+
+**The catalogue's stored shape becomes the published contract**
+([episode 0151](0151-shell-the-models-surface.md); `513c75a`, shell
+design 0010's upstream ask #1): the `catalogue` package — the bucket
+name, its canonical config for whoever provisions it, and the entry
+codec with the wire form pinned by its own test — one definition every
+hand consumes (the house's verbs, the shell's models sheet). It holds
+no connection and creates nothing: provisioning stays the caller's, the
+plane's census stands, and the name grammar stays the record's
+(callers validate; the plane still does not know the record). Untagged:
+the release carrying it is the operator's push.
 
 **The other dialect — OpenAI compatibility both directions** ([episode
 0146](0146-inference-the-other-dialect.md); `fc7bdcf`, the operator's
@@ -1977,6 +2011,7 @@ mint, chunked input by demand, realtime behind its own gate) is design
 | 0148 | shell | [The declare surface: an agent placed from a browser (2026-08-28)](0148-shell-the-declare-surface.md) |
 | 0149 | soulstream | [The rc.3 carries the thinking house: v0.14.0-rc.3, workloads v0.8.0-rc.3, the mind's v0.1.0 (2026-08-28)](0149-soulstream-the-rc3-carries-the-thinking-house.md) |
 | 0150 | soulstream | [The rc.4 carries the declare surface: v0.14.0-rc.4, shell v0.11.0-rc.4, workloads v0.8.0-rc.4 (2026-08-28)](0150-soulstream-the-rc4-carries-the-declare-surface.md) |
+| 0151 | shell | [The models surface: names managed, serving read (2026-08-28 → 2026-08-29)](0151-shell-the-models-surface.md) |
 
 ## The naming map (2026-08-13)
 
