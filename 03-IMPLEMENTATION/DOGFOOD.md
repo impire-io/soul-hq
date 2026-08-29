@@ -14,8 +14,9 @@ the NATS server on `beno1` (tailnet `beno1.hippogryph-dinosaur.ts.net`,
 `nats://100.108.7.14:4222`). The node runs ON beno1 beside its server:
 state dir `~calmera/.soulstream-byon` (moved from altis, day-2 copy;
 altis keeps a cold backup, never `up` there), binary
-`/usr/local/bin/soulstream` (**v0.14.0-rc.4** since 2026-08-28; before
-it v0.13.0-rc.11 since 2026-08-21), systemd unit
+`/usr/local/bin/soulstream` (**v0.14.0-rc.5** since 2026-08-29; before
+it v0.14.0-rc.4 since 2026-08-28, v0.13.0-rc.11 since 2026-08-21),
+systemd unit
 `soulstream.service`, MCP on `127.0.0.1:8081` (beno1's :8080 belongs to
 private-link), sign-in issuer `https://beno1.hippogryph-dinosaur.ts.net`
 (tailscale serve 443→8378; shell 8443→8500 — set before the first
@@ -69,6 +70,23 @@ installed and authenticated there; tool capabilities refuse by name
 (spec 013 — the founding predates the capability key); the inference
 plane stays undeclared, so models are the CLI-act-in-words empty
 state and declarations ride the ambient lane.
+
+**On v0.14.0-rc.5 since 2026-08-29** ([episode
+0152](../04-JOURNEY/0152-soulstream-the-rc5-carries-the-models-surface.md)'s
+cut): a version bump only — no record-format change, no `adopt` asked;
+the state copy sits beside as `.pre-v0.14.0-rc.5-20260829-121311` and
+the previous binary as `/usr/local/bin/soulstream.pre-v0.14.0-rc.5`;
+the tarball's checksum verified against the release's own before
+install. Every plane came back serving with the functional labels —
+the dispatcher on `placements-8o73` as before — the shell and the
+issuer's discovery document answering 200 from the fronted name, and
+the new models screen mounted: `/models` redirects to sign-in where an
+unclaimed path 404s [measured]. The restart dropped the signed-in
+session's renewing connection as designed; the fresh sign-in is the
+operator's act. Standing limits as at rc.4, one now with a screen:
+the inference plane stays undeclared, so the Models sheet shows its
+honest empty state — declaring `planes.inference` takes a provider key
+through `soulstream provider set`, the operator's act by custody.
 
 **The deployment duty rc.10 stated, found unpaid and paid the same day**
 [measured, before and after, from the realm account JWT in beno1's
