@@ -108,3 +108,25 @@ spinner.
    one new dependency is the two named workloads packages.
 7. Empty states offer their act (0008's rule): a realm with no
    declared agents explains what declaring is and points at the form.
+
+## §7 Amendments in place (2026-08-29 — the calm pass, episode 0157)
+
+- **The form is the kit's three-step wizard** (shell v0.11.0-rc.7):
+  Name it → Wake it → Instruct it, steps as visibility on a
+  page-local signal — the form stays one and the §2 sections live
+  inside their steps. The **limits stay unfolded** inside step three:
+  a fold was tried and this design's own test refused it, by its own
+  words — a bound nobody sees is a bound nobody knows they are
+  running under. The wizard does the calming; the numbers stay on the
+  screen.
+- **A home that does not exist yet is started at declare time**
+  (`f6e1cbb`): the home picker's first choice is "a new one, named
+  after it" — on a fresh board the only choice — and the act starts
+  that conversation (named after the agent) before validating and
+  submitting, the same start-on-first-use the placements topic gets.
+  The one-codec claim holds whole: `declarationFrom` stays pure, an
+  empty topic is still invalid as a document, and what lands on the
+  record always carries a real path. The JSON view says plainly that
+  the home arrives at declare time rather than letting the validator
+  refuse a gap the act closes; the answer names the home it made; the
+  e2e reads the conversation named after the agent off the board.

@@ -164,6 +164,19 @@ one-URL tool add (MCP auth discovery, dynamic client registration) is
 an identity-plane research question that would make step 3 shorter —
 it is not this document's, and this document does not wait for it.
 
+**Amended 2026-08-29 — the calm pass (episode 0157, shell
+v0.11.0-rc.7):** the first-steps card's dress changes, its derivation
+does not. It counts itself quietly ("2 of 4 done" at the head's
+right), a done step is a filled dot beside muted words, a pending one
+a hollow dot and a way there with its longer sentence riding the
+hover; a step whose act lives on this screen opens the slide-over it
+leads into (the start form moved there — creation is a deliberate act
+with a surface of its own, here as on every sheet). Home's readouts
+become four uniform tiles (icon, label, one value, one note); the
+instruments — the level ladder, the readout line — live on the
+system-status screen alone. The no-store rule, the derivation, and
+the empty-state rule stand exactly as written.
+
 ## §7 Acceptance criteria
 
 1. **Fresh realm, first sign-in**: Home leads with the first-steps

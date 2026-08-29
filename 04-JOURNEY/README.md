@@ -950,6 +950,12 @@ claims-mapping shape, service round-trip latency) are named on the roadmap.
 
 ### soulstream — the product, the house (as of 2026-08-29; named soulnode until episode 0069)
 
+**v0.14.0-rc.8 — the calm pass composed** ([episode
+0157](0157-shell-the-calm-pass.md); `db50f4d`): pins shell
+`v0.11.0-rc.7` — the second canon's feel, walked screen by screen
+with the operator, plus the declared agent's home started on first
+use. Full house gate green on the pin.
+
 **v0.14.0-rc.7 — the second canon composed** ([episode
 0156](0156-soulstream-the-rc7-carries-the-second-canon.md);
 `f4f7c3f`): the operator called the canon held on the before/after
@@ -1528,6 +1534,23 @@ key-lifecycle research. No product code exists yet.
 
 ### soulstream-shell — the shell (as of 2026-08-29; named soulhelm until episode 0069)
 
+**The calm pass is SHIPPED — v0.11.0-rc.7, the feel follows the
+looks** ([episode 0157](0157-shell-the-calm-pass.md); the house
+pinning it as `v0.14.0-rc.8`): the operator called the visual swap
+looks-without-feel and directed a screen-by-screen walk — one act
+leading each screen from the page head, verified silent in the
+thread (the record's screen still names every verdict), Home a
+glance of four uniform tiles with the instruments retreating to
+System status, messages unboxed to words on the paper, creation
+waiting in the slide-over, the kit's stepped wizards for the two big
+creations (the declare limits staying unfolded — design 0009's own
+test refused the fold in its own words), and a declared agent's home
+**started at declare time** when the board has none to offer, the
+placements topic's own courtesy with the one-codec claim held whole.
+Zero act endpoints changed; amendments ledgered in designs 0007 §7,
+0008 §6, 0009 §7. Parked for the operator: the storage record-detail
+slide-over, the Home title's length, the Add/Declare key hierarchy.
+
 **The second canon is HELD and SHIPPED — v0.11.0-rc.6, the Impire
 design system visual-for-visual** ([episodes
 0154](0154-shell-the-second-canon.md)/[0155](0155-shell-the-second-canon-builds.md)/[0156](0156-soulstream-the-rc7-carries-the-second-canon.md);
@@ -2078,6 +2101,7 @@ mint, chunked input by demand, realtime behind its own gate) is design
 | 0154 | shell | [The second canon: the skin moves, the words hold (2026-08-29)](0154-shell-the-second-canon.md) |
 | 0155 | shell | [The second canon builds: a values swap, not a rebuild (2026-08-29)](0155-shell-the-second-canon-builds.md) |
 | 0156 | soulstream | [The rc.7 carries the second canon: held, merged, pinned (2026-08-29)](0156-soulstream-the-rc7-carries-the-second-canon.md) |
+| 0157 | shell | [The calm pass: the feel follows the looks (2026-08-29)](0157-shell-the-calm-pass.md) |
 
 ## The naming map (2026-08-13)
 

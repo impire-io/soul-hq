@@ -5,7 +5,15 @@ operator called the canon held on the before/after screens (§9.4
 paid; episodes
 [0154](../../04-JOURNEY/0154-shell-the-second-canon.md)/[0155](../../04-JOURNEY/0155-shell-the-second-canon-builds.md)/[0156](../../04-JOURNEY/0156-soulstream-the-rc7-carries-the-second-canon.md)).
 Merged and shipped: shell **v0.11.0-rc.6**, idp **v0.8.2**, the house
-pinning both as **v0.14.0-rc.7**. Build amendments are marked in §11. The
+pinning both as **v0.14.0-rc.7**. Build amendments are marked in §11.
+**The feel followed the looks the same day** — the operator called
+the visual swap looks-without-feel and directed a screen-by-screen
+calm pass (episode
+[0157](../../04-JOURNEY/0157-shell-the-calm-pass.md), shell
+**v0.11.0-rc.7**, the house **v0.14.0-rc.8**): composition moved to
+the kit's restraint, amendments ledgered in designs 0007 §7, 0008 §6,
+and 0009 §7. This document's visual-for-visual scope line was the
+decision of its day, superseded by that pass where the two touch. The
 operator authored a new design system and a full console kit in a
 design project (**"New Impire Design System"**, the design-sync lane —
 the same lane the first canon rode, episode

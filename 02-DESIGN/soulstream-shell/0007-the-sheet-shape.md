@@ -128,3 +128,18 @@ translation. The credential card, the invite card, and the shown-once
 discipline are as they were. The purity gates, the banned-word gates,
 and the collapse ladder all still hold, re-pointed where the ladder's
 1180 step now reads "drawer" instead of "gone".
+
+**Amended 2026-08-29 — the calm pass (episode 0157, shell
+v0.11.0-rc.7):** the rhythm of §2 refines under the second canon's
+restraint. The act key moves off the list's flow and into the **page
+head's right** (`.page-head`: name and lede left, the screen's one act
+beside them — one accent per view, so a second key on the same head
+goes quiet). Row acts become **quiet links** rather than bordered keys
+— the ask a destructive key stands behind is unchanged, only the
+dress. The two big creation forms (the tools add, the agent declare)
+become **stepped wizards** in the kit's own shape (`shell.Steps`, a
+page-local signal, a `wiz-foot` carrying the quiet sentence and
+Back/Next): steps are visibility, not pages — the form stays one and
+every field submits at the end — with the §3 kind-branching and the
+stow folds living *inside* their step. Empty states hold the reading
+measure. Everything else in this document stands.
