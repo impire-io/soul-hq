@@ -43,12 +43,14 @@ required; if the outcome is missing, ask — do not infer it.
    the topic journey's substance; link the trail documents.
 
 4. **Route the outcome.**
-   - `design`: create or update the design doc under
-     `02-DESIGN/<component>/`, following that component's convention
-     (soulstream: `core/` if protocol-normative, `extensions/` if an optional
-     convention; soulrealm/soulnode: next free `NNNN-` number; soulidentity/
-     soulfold: named doc with the next free D-numbers) — functional level,
-     explicit enough for `/speckit-specify`. The episode links it.
+   - `design`: create or update the design doc under the component's
+     `02-DESIGN/` folder (folders carry the repo name — tag `shell` lands
+     in `02-DESIGN/soulstream-shell/`), following that folder's convention
+     (core: `core/` if protocol-normative, `extensions/` if an optional
+     convention; workloads/soulstream/shell/inference: next free `NNNN-`
+     number; identity/idp: named doc with the next free D-numbers; a
+     component with no design folder yet gets one, numbered) — functional
+     level, explicit enough for `/speckit-specify`. The episode links it.
    - `artifact`: the deliverable ships wherever it belongs (an example, a
      `docs/` page in the component repo, a tool); the episode links it.
    - `abandoned`: nothing ships; the episode is the record.

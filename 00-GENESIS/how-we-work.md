@@ -5,11 +5,13 @@ the lifecycles, the duties, and how all of it is enforced.
 [`../README.md`](../README.md) holds the one-screen map.
 
 **The two-repo reality.** This repository (soul-hq) is the headquarters for
-all five components: research, designs, the roadmap, and the journey live
+every component: research, designs, the roadmap, and the journey live
 here. Code, frozen spec-kit artifacts (`specs/NNN-*/`), and plain-words docs
 live in each component's own repository (a sibling checkout:
-`../soulstream`, `../soulstream-workloads`, `../soulstream-identity`, `../soulstream`,
-`../soulstream-idp`). Every artifact in this repo names its component; ecosystem-
+`../soulstream-core`, `../soulstream-workloads`, `../soulstream-identity`,
+`../soulstream`, `../soulstream-idp`, `../soulstream-shell`,
+`../soulstream-mcp`, `../soulstream-archivist`, `../soulstream-inference`).
+Every artifact in this repo names its component; ecosystem-
 level work uses the component tag `ecosystem`.
 
 ## The pipeline
@@ -40,7 +42,7 @@ Two hard boundaries:
   you're building; research exists to find out *whether* to build. Research
   uses the pre-registration method below, in `01-RESEARCH/`.
 - **Implementation always follows a design.** For the spec-kit components
-  (soulstream, soulstream-workloads, soulstream) a design doc in `02-DESIGN/<component>/`
+  (soulstream-core, soulstream-workloads, soulstream) a design doc in `02-DESIGN/<component>/`
   is written to be the argument to `/speckit-specify`, run in the component
   repo; the generated plan's Constitution Check reads GENESIS through that
   repo's `.specify/memory/constitution.md` symlink (which points here). For
@@ -60,7 +62,7 @@ happens.
 
 - **Method:** hypothesis → cheap discriminating experiment → verdict, one
   variable at a time. What a "discriminating experiment" is varies by
-  component — a demonstrated NATS behavior (soulstream), a spike running a
+  component — a demonstrated NATS behavior (soulstream-core), a spike running a
   real workload (soulstream-workloads), a consumer-position rig wiring real component
   releases (soulstream), a protocol rig against a stock client (soulstream-idp,
   soulstream-identity). Experiment scripts live in the session scratchpad;
@@ -80,9 +82,10 @@ happens.
 The normative design, one folder per component; each folder keeps its own
 conventions and its own README index:
 
-- **soulstream/** — `core/` (the protocol; a realm running only this is a
+- **soulstream-core/** — `core/` (the protocol; a realm running only this is a
   working soulstream) + `extensions/` (optional conventions).
-- **soulstream-workloads/**, **soulstream/** — numbered documents (`0001-…` onward).
+- **soulstream-workloads/**, **soulstream/**, **soulstream-shell/**,
+  **soulstream-inference/** — numbered documents (`0001-…` onward).
 - **soulstream-identity/**, **soulstream-idp/** — named documents carrying global
   D-numbered decisions.
 

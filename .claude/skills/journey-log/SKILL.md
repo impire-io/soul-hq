@@ -25,8 +25,9 @@ component repo's log when the work landed there).
    investigation (research topics get theirs via `/research-graduate` instead —
    do not duplicate), or a load-bearing decision (spec change, criterion
    amendment, refuted hypothesis, direction call). If none applies, say so and
-   stop. Identify the component (`soulstream`, `soulrealm`, `soulidentity`,
-   `soulnode`, `soulfold`, or `ecosystem` for cross-cutting work).
+   stop. Identify the component tag (`core`, `workloads`, `identity`,
+   `idp`, `shell`, `mcp`, `cli`, `inference`, `soulstream` for the
+   product, or `ecosystem` for cross-cutting work).
 
 2. **Write the episode.** Next free number `NNNN` in `04-JOURNEY/`, file
    `NNNN-<component>-<short-kebab-slug>.md`, following `04-JOURNEY/TEMPLATE.md`

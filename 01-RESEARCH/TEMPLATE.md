@@ -1,6 +1,6 @@
 # <Title — the question, phrased as a question>
 
-**Component:** <soulstream | soulrealm | soulidentity | soulnode | soulfold | ecosystem>
+**Component:** <core | workloads | identity | idp | shell | mcp | cli | inference | soulstream | ecosystem>
 **State:** active
 **Started:** <YYYY-MM-DD>
 

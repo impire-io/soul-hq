@@ -1,7 +1,7 @@
 ---
 name: "research-start"
 description: "Open a new research topic in 01-RESEARCH with a pre-registration README and its own journey file."
-argument-hint: "<component> <slug> — component (soulstream|soulrealm|soulidentity|soulnode|soulfold|ecosystem) and short kebab-case topic name, optionally followed by the question"
+argument-hint: "<component> <slug> — component (core|workloads|identity|idp|shell|mcp|cli|inference|soulstream|ecosystem) and short kebab-case topic name, optionally followed by the question"
 compatibility: "Requires the soul-hq structure (01-RESEARCH/TEMPLATE.md)"
 metadata:
   author: "soul-hq"
@@ -15,8 +15,9 @@ disable-model-invocation: false
 $ARGUMENTS
 ```
 
-Parse `$ARGUMENTS` as: a `<component>` (one of `soulstream`, `soulrealm`,
-`soulidentity`, `soulnode`, `soulfold`, `ecosystem`), a kebab-case `<slug>`
+Parse `$ARGUMENTS` as: a `<component>` (one of `core`, `workloads`,
+`identity`, `idp`, `shell`, `mcp`, `cli`, `inference`, `soulstream` for
+the product, `ecosystem` for cross-cutting work), a kebab-case `<slug>`
 (required), and optionally the research question in the remaining text. If
 the component or slug is missing or illegal, ask instead of guessing.
 

@@ -29,7 +29,12 @@ var (
 	areas        = []string{"00-GENESIS", "01-RESEARCH", "02-DESIGN", "03-IMPLEMENTATION", "04-JOURNEY", "99-ARCHIVE"}
 	genesisFiles = []string{"README.md", "vision.md", "constitution.md", "how-we-work.md", "rationale.md"}
 	components   = []string{"soulstream", "soulstream-core", "soulstream-workloads", "soulstream-identity", "soulstream-idp", "soulstream-shell", "soulstream-inference"}
-	legalTags    = map[string]bool{"soulstream": true, "soulrealm": true, "soulidentity": true, "soulnode": true, "soulfold": true, "soulhelm": true, "ecosystem": true, "core": true, "workloads": true, "identity": true, "idp": true, "shell": true, "mcp": true, "cli": true, "inference": true}
+	// currentTags is the live single-word component vocabulary (the episode
+	// grammar in 04-JOURNEY/README.md); research topics and new episodes use
+	// it. historicTags are the pre-rename tags episodes ≤ 0069 keep — the
+	// naming map resolves them; they are legal only there.
+	currentTags  = map[string]bool{"core": true, "workloads": true, "identity": true, "idp": true, "shell": true, "mcp": true, "cli": true, "inference": true, "soulstream": true, "ecosystem": true}
+	historicTags = map[string]bool{"soulrealm": true, "soulidentity": true, "soulnode": true, "soulfold": true, "soulhelm": true}
 	legalStates  = map[string]bool{"active": true, "graduated": true, "abandoned": true}
 	terminal     = map[string]bool{"graduated": true, "abandoned": true}
 	nonEpisode   = map[string]bool{"README.md": true, "TEMPLATE.md": true}
@@ -129,8 +134,8 @@ func TestResearchTopicsHaveComponentAndLegalNonterminalStates(t *testing.T) {
 		}
 		if m := componentRe.FindStringSubmatch(text); m == nil {
 			t.Errorf("%s: README lacks a '**Component:** ...' line", e.Name())
-		} else if !legalTags[m[1]] {
-			t.Errorf("%s: illegal component %q", e.Name(), m[1])
+		} else if !currentTags[m[1]] {
+			t.Errorf("%s: illegal component %q (legal: core|workloads|identity|idp|shell|mcp|cli|inference|soulstream|ecosystem)", e.Name(), m[1])
 		}
 		m := stateRe.FindStringSubmatch(text)
 		if m == nil {
@@ -157,10 +162,10 @@ func TestJourneyEpisodesNumberedContiguouslyWithLegalComponents(t *testing.T) {
 			t.Errorf("file in 04-JOURNEY that is not an NNNN-<component>-<slug>.md episode: %s", name)
 			continue
 		}
-		if !legalTags[m[2]] {
-			t.Errorf("%s: illegal component tag %q", name, m[2])
-		}
 		n, _ := strconv.Atoi(m[1])
+		if !currentTags[m[2]] && (!historicTags[m[2]] || n > 69) {
+			t.Errorf("%s: illegal component tag %q (pre-rename tags are legal only in episodes ≤ 0069)", name, m[2])
+		}
 		nums = append(nums, n)
 	}
 	seen := map[int]bool{}
