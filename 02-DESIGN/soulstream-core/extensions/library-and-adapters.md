@@ -18,7 +18,7 @@ One library that clients and agents embed. It owns:
 - topic materialisation: baseline first (inline or manifest), tail replay, live subscription, eg-walker merge;
 - the mechanical routines: mention parsing and notify-publishing, idle detection, periodic re-baselining with the expected-sequence guard;
 - the vocabulary: typed operation constructors and projection rules (edit supersession, comment threading, attachment resolution);
-- the local topic projection (replay of `SOULSTREAM.TOPICS.INFO.>`) and the `topic.discover` scatter/gather client and responder.
+- the local topic projection (replay of `SOULSTREAM.TOPICS.INFO.>`) and the `topic.discover` scatter/gather client and responder — grown into the followed board, [`followed-board.md`](followed-board.md) (drafted 2026-08-30 as upstream ask #4): one ordered consumer over `SOULSTREAM.TOPICS.>` maintaining the live board with lifecycle and last activity.
 
 **Language choice:** two targets sharing a spec test-suite — **Go** for infrastructure-adjacent processes (adapters, CLI) and **TypeScript** for browser clients and the JS agent ecosystem. The spec tests (record golden files, merge scenarios, baseline round-trips, rollup races) are the actual source of truth, so a third implementation is a porting exercise, not archaeology.
 

@@ -100,3 +100,9 @@ the followed board as upstream ask #4, the partition as a derived
 role, the agent detail carrying the room, the four bars restated as
 the build's acceptance criteria. The topic stays **active**: bars 3–4
 close at build time and graduation composes the episode then.
+
+Upstream ask #4 drafted the same day on the core side:
+[`extensions/followed-board.md`](../../02-DESIGN/soulstream-core/extensions/followed-board.md)
+— Layer 1 library growth by the presence pattern (a
+library-and-adapters bullet grown into its own doc), the wire spec
+untouched, the rig's numbers as its §1.
