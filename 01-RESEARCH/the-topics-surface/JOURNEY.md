@@ -106,3 +106,21 @@ Upstream ask #4 drafted the same day on the core side:
 — Layer 1 library growth by the presence pattern (a
 library-and-adapters bullet grown into its own doc), the wire spec
 untouched, the rig's numbers as its §1.
+
+## 2026-08-30 — ask #4 builds: spec 022 on its branch
+
+`topic.FollowBoard` implemented in `../soulstream-core` (branch
+`022-followed-board`, `bfdf8c1`, full gate green): the lifecycle
+semantics extracted into one `lifecycleFold` driven by both `apply`
+and the projection; the projection mirrors apply's content gates over
+a body-free id-index, pinned by adversarial equivalence tests (void
+edits leave a dormant topic dormant; a valid-shaped work ref to a
+ghost item wakes it — both proven equal to `Board` field-for-field
+across twelve seeded lifecycles, rollup, manifest baseline, and a
+live-observed archive). **Shipped numbers [measured]:** cold build 7ms
+med at 200×20 (Board: 106.8ms on the same run — 15×), warm `Entries()`
+0.2ms, zero round trips. One honest amendment recorded in spec 022
+FR-3: the memory bound is *no op bodies* — the summary plus a bounded
+id-index of op-ids, which the three application-gated content types
+require; the design doc's "sized by topic count" wording propagates at
+landing.
