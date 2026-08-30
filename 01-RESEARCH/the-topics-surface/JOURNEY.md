@@ -91,3 +91,12 @@ surface and stay open until the design builds.
 
 Spike source: `topics-surface-spike/` in the session scratchpad
 (main.go: A1–A4, B1–B3; flags -topics/-ops/-iters).
+
+## 2026-08-30 — the design drafts ahead of graduation
+
+At the operator's direction the findings composed into design
+[`0012-the-topics-surface.md`](../../02-DESIGN/soulstream-shell/0012-the-topics-surface.md):
+the followed board as upstream ask #4, the partition as a derived
+role, the agent detail carrying the room, the four bars restated as
+the build's acceptance criteria. The topic stays **active**: bars 3–4
+close at build time and graduation composes the episode then.
