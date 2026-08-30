@@ -14,8 +14,9 @@ the NATS server on `beno1` (tailnet `beno1.hippogryph-dinosaur.ts.net`,
 `nats://100.108.7.14:4222`). The node runs ON beno1 beside its server:
 state dir `~calmera/.soulstream-byon` (moved from altis, day-2 copy;
 altis keeps a cold backup, never `up` there), binary
-`/usr/local/bin/soulstream` (**v0.14.0-rc.8** since 2026-08-29
-evening — the fourth bump that day, after v0.14.0-rc.7, rc.6, and
+`/usr/local/bin/soulstream` (**v0.14.0-rc.9** since 2026-08-30;
+v0.14.0-rc.8 since 2026-08-29 evening — the fourth bump that day,
+after v0.14.0-rc.7, rc.6, and
 rc.5; v0.14.0-rc.4 since 2026-08-28, v0.13.0-rc.11 since 2026-08-21),
 systemd unit
 `soulstream.service`, MCP on `127.0.0.1:8081` (beno1's :8080 belongs to
@@ -151,6 +152,26 @@ the pass added [measured]. The restart dropped the signed-in session
 as designed; the fresh sign-in is the operator's act — and the first
 signed-in look at the calm Home on the realm they live in is theirs
 to take. Standing limits unchanged.
+
+**On v0.14.0-rc.9 since 2026-08-30 — byon carries the followed board**
+([episode 0158](../04-JOURNEY/0158-core-the-followed-board.md)): a
+version bump only — no record-format change, no `adopt` asked; the
+state copy sits beside as `.pre-v0.14.0-rc.9-20260830-183339` and the
+previous binary as `/usr/local/bin/soulstream.pre-v0.14.0-rc.9`; the
+tarball's checksum verified against the release's own before install.
+Every plane came back serving — identity, memory, the dispatcher on
+`placements-8o73` with `dispatcher_up` and its wake caught up, the
+inference instance (GLM-4.7-Flash-GGUF via the openai arm), thinking
+on :8600, the shell on :8500 — and the shell and the issuer's
+discovery document answer 200 from the fronted names [measured]. The
+rc's cargo is core `v0.14.0-rc.2`'s `topic.FollowBoard` — a library
+capability with **no consumer surface yet** (shell design 0012's build
+is its intended first reader), so the bump's own evidence is exactly
+the planes returning; behavior is unchanged by design. The restart
+dropped the signed-in session's renewing connection as designed; the
+fresh sign-in is the operator's act. Standing limits unchanged:
+`claude` still not installed on beno1, tool capabilities still refuse
+by name (spec 013).
 
 **The deployment duty rc.10 stated, found unpaid and paid the same day**
 [measured, before and after, from the realm account JWT in beno1's
