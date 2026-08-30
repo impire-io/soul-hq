@@ -124,3 +124,10 @@ FR-3: the memory bound is *no op bodies* — the summary plus a bounded
 id-index of op-ids, which the three application-gated content types
 require; the design doc's "sized by topic count" wording propagates at
 landing.
+
+**Landed the same day** (episode
+[0158](../../04-JOURNEY/0158-core-the-followed-board.md)): merged
+`4a3860f`, tagged core `v0.14.0-rc.2`, pinned into soulstream
+`v0.14.0-rc.9`; the FR-3 wording propagated into the design doc
+(§2 amended, §6 as-built). Design 0012's build is unblocked — bars
+3–4 close there.

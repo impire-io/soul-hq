@@ -47,6 +47,11 @@ The build binds to the ask; no interim half-mechanism ships. Until the
 ask lands, the surface stays as it is — a stopgap that keeps the O(n)
 board on the tick would ship the disease with a new label.
 
+*Ask #4 LANDED 2026-08-30* (core `v0.14.0-rc.2`, episode
+[0158](../../04-JOURNEY/0158-core-the-followed-board.md), reachable
+from soulstream `v0.14.0-rc.9`): `topic.FollowBoard` as specified,
+7ms cold at 200×20 [measured]. This design's build is unblocked.
+
 ## §3 The list — conversations, ordered by life
 
 Leaning into the record's idea of topics is mechanics, not vocabulary:

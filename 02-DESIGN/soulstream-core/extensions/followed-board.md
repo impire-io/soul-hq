@@ -1,9 +1,14 @@
 # Extension: The Followed Board
 
-**Status:** drafted 2026-08-30 as **upstream ask #4** from shell design
+**Status:** built — drafted 2026-08-30 as **upstream ask #4** from
+shell design
 [`soulstream-shell/0012`](../../soulstream-shell/0012-the-topics-surface.md)
 (research topic `the-topics-surface`, measured on its rig the same
-day). The wire spec is untouched: no new subject, no new op type, no
+day) and **built the same day** as core spec `022-followed-board`
+(episode
+[0158](../../../04-JOURNEY/0158-core-the-followed-board.md); tag
+`v0.14.0-rc.2`, pinned into soulstream `v0.14.0-rc.9`) — see §6. The
+wire spec is untouched: no new subject, no new op type, no
 new stream — this is Layer 1 library growth
 ([`library-and-adapters.md`](library-and-adapters.md)), and
 [`core/03-topics.md`](../core/03-topics.md) already names the local
@@ -51,9 +56,14 @@ in-memory projection and serving:
 - **Nothing persists.** The projection is memory; a reconnect rebuilds
   from the log (proven restart-identical on the rig [measured]). The
   ordered consumer's own sequence-checked recreation is the gap guard.
-- **Memory is O(topics), never O(ops):** the projection holds the
-  per-topic summary only — announcements, lifecycle, one timestamp —
-  and drops op bodies as it folds them.
+- **Memory holds no op bodies** (amended at build, spec 022 FR-3): the
+  projection keeps the per-topic summary — announcements, lifecycle,
+  one timestamp — plus a bounded, body-free id-index (contribution
+  author/kind/resolved, edit-chain aliases, attachment removal) that
+  the three application-gated content types require; bodies are
+  dropped as they fold. The original "sized by topic count" wording
+  proved unachievable exactly: `edit`, `comment.resolve`, and
+  `attachment.remove` count as content only when they apply.
 
 `Board` stays for one-shot callers. Whether it re-derives internally
 from the same single-pass fold — retiring its per-topic loop, a
@@ -100,3 +110,24 @@ strict improvement — is its own spec decision (§5).
   against 105ms on the same rig), decided at spec time.
 - **[O3]** TypeScript parity: Layer 1 names two targets; the TS
   projection follows by demand, against the shared spec tests.
+
+## §6 As built (2026-08-30, episode 0158)
+
+Landed as designed, with the deltas worth recording:
+
+- **The numbers** [measured, research rig, 5 iters]: cold build
+  6.5/7/8.9ms (min/med/max) at 200 topics × 20 ops — the same run
+  where one `Board` call cost 103.4/106.8/109.8ms; warm `Entries()`
+  0.2ms flat, zero round trips. §4.1's 100ms bound met 14× over.
+- **§2's memory bullet amended** (above): no op bodies, plus the
+  bounded id-index the application-gated content types require.
+- **One fold held whole**: `lifecycleFold` extracted and driven by
+  both `apply` and the projection; the existing suite passed
+  untouched. The content classifier's projection-side mirror is
+  pinned by adversarial equivalence tests — void edits/resolves leave
+  a dormant topic dormant, a valid-shaped work ref to a ghost item
+  wakes it, rollup checkpoints fold as no-ops, a live-observed
+  archive folds transition-then-checkpoint.
+- **[O1] exercised at build**: a >128KB rollup produced a manifest
+  baseline; the projection resolved it lazily and read equal to
+  `Board`.

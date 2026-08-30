@@ -36,7 +36,21 @@ cite the per-project numbers).
 
 The per-component summaries below were carried whole at the hq merge and are refreshed with every new episode, as before.
 
-### soulstream-core — the record (as of 2026-08-25; named soulstream until episode 0069)
+### soulstream-core — the record (as of 2026-08-30; named soulstream until episode 0069)
+
+**The followed board BUILT — one consumer, the live board** ([episode
+0158](0158-core-the-followed-board.md); `specs/022-followed-board`,
+merged `4a3860f`, tagged `v0.14.0-rc.2`, pinned into soulstream
+`v0.14.0-rc.9` the same day): `topic.FollowBoard` — ONE ordered
+consumer over `SOULSTREAM.TOPICS.>` maintaining the whole board in
+memory with the new `BoardEntry.LastActivity`, a snapshot read and a
+change signal, nothing persisted. Cold build 7ms med at 200×20 against
+106.8ms for one `Board` call on the same rig [measured]; the lifecycle
+semantics extracted into one `lifecycleFold` both `apply` and the
+projection drive, the content-classifier mirror pinned by adversarial
+equivalence tests. Upstream ask #4 of shell design 0012
+(`the-topics-surface`, research still active) — the shell's
+topics-surface build is the intended first reader.
 
 **Sealed topics BUILT — the locked binder** ([episode
 0131](0131-core-sealed-topics-build.md); `specs/021-sealed-topics`,
@@ -2102,6 +2116,7 @@ mint, chunked input by demand, realtime behind its own gate) is design
 | 0155 | shell | [The second canon builds: a values swap, not a rebuild (2026-08-29)](0155-shell-the-second-canon-builds.md) |
 | 0156 | soulstream | [The rc.7 carries the second canon: held, merged, pinned (2026-08-29)](0156-soulstream-the-rc7-carries-the-second-canon.md) |
 | 0157 | shell | [The calm pass: the feel follows the looks (2026-08-29)](0157-shell-the-calm-pass.md) |
+| 0158 | core | [The followed board: one consumer, the live board (2026-08-30)](0158-core-the-followed-board.md) |
 
 ## The naming map (2026-08-13)
 
