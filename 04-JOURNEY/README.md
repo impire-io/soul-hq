@@ -1546,7 +1546,27 @@ constraints — passkeys, not passwords; indistinguishable by design —
 and the roadmap sequences M1 (the OP skeleton) behind its KV-schema and
 key-lifecycle research. No product code exists yet.
 
-### soulstream-shell — the shell (as of 2026-08-29; named soulhelm until episode 0069)
+### soulstream-shell — the shell (as of 2026-09-02; named soulhelm until episode 0069)
+
+**The topics surface is SHIPPED — v0.11.0-rc.8, the machinery leaves
+the rail** ([episode 0159](0159-shell-the-topics-surface.md); design
+[`0012`](../02-DESIGN/soulstream-shell/0012-the-topics-surface.md),
+graduated from research `the-topics-surface` with all four bars
+closed; composed as soulstream `v0.14.0-rc.10`): the conversations
+list orders by last activity and hides the record's own rooms — agent
+homes and the placements topic, a role derived from the declarations
+at every render, never stored — while the new agent detail
+(`/agents/room`) carries identity, presence, the declaration's facts,
+and the room's thread with a composer that mentions the agent it talks
+to. The support layer's watch rides core rc.2's followed board plus a
+placements follow: zero JetStream reads on the render tick [measured].
+Deep-opened rooms say whose they are; a mention in a hidden room still
+reaches the person clickably (bar 4, e2e'd). As-built deltas ledgered
+in 0012 §7: the partition's second follower (the board projection
+holds no op bodies), the thread rendering moved to the support layer
+(no module imports another), the rail's hidden-rooms pointer. Parked
+for the operator: the visual pass on the new markup; a follow-topic
+watcher for the open thread's per-tick materialise.
 
 **The calm pass is SHIPPED — v0.11.0-rc.7, the feel follows the
 looks** ([episode 0157](0157-shell-the-calm-pass.md); the house
@@ -2117,6 +2137,7 @@ mint, chunked input by demand, realtime behind its own gate) is design
 | 0156 | soulstream | [The rc.7 carries the second canon: held, merged, pinned (2026-08-29)](0156-soulstream-the-rc7-carries-the-second-canon.md) |
 | 0157 | shell | [The calm pass: the feel follows the looks (2026-08-29)](0157-shell-the-calm-pass.md) |
 | 0158 | core | [The followed board: one consumer, the live board (2026-08-30)](0158-core-the-followed-board.md) |
+| 0159 | shell | [The topics surface: the machinery leaves the rail (2026-09-02)](0159-shell-the-topics-surface.md) |
 
 ## The naming map (2026-08-13)
 

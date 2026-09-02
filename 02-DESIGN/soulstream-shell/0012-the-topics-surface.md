@@ -138,7 +138,34 @@ home topic's thread with a composer** — the room, where it belongs.
 6. Standing gates unchanged and green: purity, custody scan, plain
    register, the e2e whole.
 
-## §7 Open questions [O]
+## §7 As built (2026-09-02, episode 0159 — shell v0.11.0-rc.8)
+
+Landed as designed; the deltas worth recording:
+
+- **The partition rides a second follower.** §2 promised the one pass
+  would serve it, but core's followed board deliberately retains no op
+  bodies (spec 022 FR-3) and a declaration IS a work-item body — so
+  the support layer follows the placements topic itself beside the
+  board projection. Same stream, same memory-only rebuild-on-connect,
+  and the tick still performs zero JetStream reads; the "one pass"
+  wording was optimistic, the invariant held.
+- **The thread rendering moved to the support layer**
+  (`soulstream/threadview.go`) — §4's structural decision, made by the
+  `UnreadMark` precedent: two modules put the same thing on screen, so
+  it renders once where both may reach it. No module imports another;
+  the purity gates passed untouched.
+- **The rail grew the hidden-rooms pointer** §4 implied but never
+  drew: when a mention waits in a room the rail does not list, a line
+  at the rail's foot says so and leads to the agent's detail.
+- **Out of this design's scope, named**: the open thread's per-tick
+  materialise is pre-existing surface behavior — a follow-topic
+  watcher is the natural later mechanism. The new markup rides canon
+  classes with no bespoke CSS; the visual pass is the operator's call.
+- All four research bars closed at this build or its core half
+  (episode 0159 carries the verdicts); §6's criteria are the standing
+  e2e (`TestTopicsSurfaceGate`) plus core spec 022's own gate.
+
+## §8 Open questions [O]
 
 - **[O1]** Sub-topics: the record carries `Parent`/`ParentKnown`; the
   rail stays flat. Grouping by parentage is its own decision when
