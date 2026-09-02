@@ -14,7 +14,8 @@ the NATS server on `beno1` (tailnet `beno1.hippogryph-dinosaur.ts.net`,
 `nats://100.108.7.14:4222`). The node runs ON beno1 beside its server:
 state dir `~calmera/.soulstream-byon` (moved from altis, day-2 copy;
 altis keeps a cold backup, never `up` there), binary
-`/usr/local/bin/soulstream` (**v0.14.0-rc.9** since 2026-08-30;
+`/usr/local/bin/soulstream` (**v0.14.0-rc.10** since 2026-09-02;
+v0.14.0-rc.9 since 2026-08-30;
 v0.14.0-rc.8 since 2026-08-29 evening — the fourth bump that day,
 after v0.14.0-rc.7, rc.6, and
 rc.5; v0.14.0-rc.4 since 2026-08-28, v0.13.0-rc.11 since 2026-08-21),
@@ -172,6 +173,34 @@ dropped the signed-in session's renewing connection as designed; the
 fresh sign-in is the operator's act. Standing limits unchanged:
 `claude` still not installed on beno1, tool capabilities still refuse
 by name (spec 013).
+
+**On v0.14.0-rc.10 since 2026-09-02 — byon wears the topics surface**
+([episode 0159](../04-JOURNEY/0159-shell-the-topics-surface.md)): a
+version bump only — no record-format change, no `adopt` asked; the
+state copy sits beside as `.pre-v0.14.0-rc.10-20260902-211608` and the
+previous binary as `/usr/local/bin/soulstream.pre-v0.14.0-rc.10`; the
+tarball's checksum verified against the release's own before install.
+The bump rode a new path honestly noted: the operator's machine was
+off byon's LAN, so the install went through beno4 as the jump host
+(`-J beno4` to `192.168.50.205`), the host key verified against the
+known `beno1` pin by alias — the same ritual, one hop longer. Every
+plane came back serving — identity, memory, the dispatcher on
+`placements-8o73` with `dispatcher_up` and BOTH standing placements
+(`dev`, `test-daan`) caught up and wrapped, the inference instance
+(GLM-4.7-Flash-GGUF via the openai arm), thinking on :8600, the shell
+— and the shell and the issuer's discovery document answer 200 from
+the fronted names [measured]. The bump's own evidence is the surface
+itself: the two declared agents' home conversations now leave the
+conversations list for their rooms behind the Agents screen, the list
+orders by last activity over core rc.2's followed board (zero reads on
+the render tick), and talking to an agent from its detail posts the
+mention that wakes it — the first realm where design 0012 meets real
+declared agents. The restart dropped the signed-in session's renewing
+connection as designed; the fresh sign-in — and the first look at a
+rail with the machinery gone — is the operator's act. Standing limits
+unchanged: `claude` still not installed on beno1 (the placements are
+claimed, their engines unserved), tool capabilities still refuse by
+name (spec 013).
 
 **The deployment duty rc.10 stated, found unpaid and paid the same day**
 [measured, before and after, from the realm account JWT in beno1's
